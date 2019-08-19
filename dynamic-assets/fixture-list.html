@@ -113,25 +113,40 @@
                 
                 console.log(json);
                 
-                var team_names = [];
+                var gameweek = 1;
+                var player_names = [];
+                var fixture_list = []
                 
                 Object.keys(json).forEach(function(k){
-                    team_names.push(json[k]["team name"]);
+                    player_names.push(k);
                 });
                 
-                console.log(team_names)
+                console.log(player_names)
                 
                 // randomise the list of team names
-                team_names.sort(function(a, b){return 0.5 - Math.random()});
+                player_names.sort(function(a, b){return 0.5 - Math.random()});
+                                
+                while (player_names.length > 0) {
+                    player_one = player_names.pop()
+                    player_two = json[player_one]["gw data"][gameweek]["opponent"].toLowerCase()
+                    
+                    player_names.splice(player_names.indexOf(player_two), 1)
+                    console.log(player_one, player_two)
+                    
+                    fixture = {}
+                    
+                    fixture.team_one = json[player_one]["team name"]
+                    fixture.team_two = json[player_two]["team name"]
+                    
+                    fixture_list.push(fixture)
+                    
+                }
                 
-                // Populate the page with random fixtures
+                console.log(fixture_list)
                 
-                for (i = 0; i < (team_names.length / 2); i++) { 
+                for (i = 0; i < (fixture_list.length); i++) { 
                     
                     var fixture_container = $( "#fixtures div.container" );
-                    
-                    var home_team = team_names[i]
-                    var away_team = team_names[i+10]
                     
                     var fixture_container_div = document.createElement('div');
                     fixture_container_div.setAttribute('class', 'fixture-container');
@@ -141,11 +156,11 @@
                     
                     var home_div = document.createElement('div');
                     home_div.setAttribute('class', 'team_name');
-                    home_div.textContent = home_team;
+                    home_div.textContent = fixture_list[i]["team_one"];
                     
                     var away_div = document.createElement('div');
                     away_div.setAttribute('class', 'team_name');
-                    away_div.textContent = away_team;
+                    away_div.textContent = fixture_list[i]["team_two"];
                     
                     
                     fixture_container.append(fixture_container_div);
@@ -153,6 +168,9 @@
                     fixture_contents_div.append(home_div, " vs ", away_div);
                     
                 }
+                
+                $( "#gw" ).text(gameweek)
+                $(document).prop('title', 'The Chumpionship 2020 : GW' + gameweek);;
                 
                 // determine max and min character counts for fixtures
                 
@@ -199,6 +217,13 @@
                     
                 });
                 
+                function resize_text() {
+                    $("#fixtures div.container div.fixture-content").each( function() {
+                        fitty(this);
+                    })
+                }
+                
+                resize_text()
                 
                 //var item = items[Math.floor(Math.random()*items.length)];
                 
@@ -214,7 +239,7 @@
         <main>
             <section id="fixtures">
                 <div class="container">
-                    <div class="title-container"><h1>&#62;&#62; Gameweek <span id="gw">1</span> &#60;&#60;</h1></div>
+                    <div class="title-container"><h1>&#62;&#62; Gameweek <span id="gw"></span> &#60;&#60;</h1></div>
                 </div>
             </section>
         </main>
