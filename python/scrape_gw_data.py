@@ -146,7 +146,7 @@ def scrape_data():
             print("Points spent:", tranfers_cost)    
 
             data[player]["gw data"][str(gw_input)]["transfers made"] = int(tranfers_made)
-            data[player]["gw data"][str(gw_input)]["points spent"] = int(tranfers_cost*-1)
+            data[player]["gw data"][str(gw_input)]["points spent"] = int(tranfers_cost)*-1
 
             #calculate fixture score
 
@@ -292,14 +292,14 @@ def scrape_data():
         spend_count = 0
         league_points_count = 0
         
-        #add fixture total / points spent / transfers made to date
+        #add up fixture total / points spent / transfers made to date
         for x in range(1, gw_input+1):
-            score_count = score_count + data[player]["gw data"][str(gw_input)]["points scored"]
-            transfers_count = transfers_count + data[player]["gw data"][str(gw_input)]["transfers made"]
-            spend_count = spend_count + data[player]["gw data"][str(gw_input)]["points spent"]
-            
-            fixture_result = data[player]["gw data"][str(gw_input)]["fixture result"]
-            
+            score_count = score_count + data[player]["gw data"][str(x)]["points scored"]
+            transfers_count = transfers_count + data[player]["gw data"][str(x)]["transfers made"]
+            spend_count = spend_count + data[player]["gw data"][str(x)]["points spent"]
+
+            fixture_result = data[player]["gw data"][str(x)]["fixture result"]
+
             if fixture_result == "win":
                 league_points_count = league_points_count + 3
             elif fixture_result == "draw":
@@ -309,20 +309,20 @@ def scrape_data():
             else:
                 print("Error in calculating league points gained in gw", x)
                 
+        #update the data -- DO THIS ONLY ONCE!
         data[player]["total points scored"] = score_count
         data[player]["total points spent"] = spend_count
         data[player]["overall points"] = score_count - spend_count
         data[player]["total league points"] = league_points_count
         data[player]["total transfers made"] = transfers_count
-        
+
         print("total transfers made:", transfers_count)
-        
+
         print("total points scored:", score_count)
         print("total points spent:", spend_count)
         print("overall score:", score_count - spend_count)
-        
-        print("total league points:", league_points_count)
-        
+
+        print("total league points:", league_points_count)        
         
         
 
