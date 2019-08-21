@@ -33,6 +33,9 @@ while len(player_names_list) > 0:
     player_one_score = data[player_one_name]["gw data"][str(gw_input)]["fixture total"]
     player_two_score = data[player_two_name]["gw data"][str(gw_input)]["fixture total"]
     
+    player_one_result = data[player_one_name]["gw data"][str(gw_input)]["fixture result"]
+    player_two_result = data[player_two_name]["gw data"][str(gw_input)]["fixture result"]
+    
     player_one_team = data[player_one_name]["team name"]
     player_two_team = data[player_two_name]["team name"]
     
@@ -42,6 +45,8 @@ while len(player_names_list) > 0:
     fixture["player_two_team"] = player_two_team
     fixture["player_one_score"] = player_one_score
     fixture["player_two_score"] = player_two_score
+    fixture["player_one_result"] = player_one_result
+    fixture["player_two_result"] = player_two_result
     
     fixtures_list.append(fixture)
     
@@ -96,9 +101,29 @@ for fixture in fixtures_list:
     if len(player_two_score) < 3: 
         player_two_score = player_two_score + " "
         
+
+    #determine result indicator
+    player_one_result = str(fixture["player_one_result"])
+    player_two_result = str(fixture["player_two_result"])
     
+    if player_one_result == "win":
+        player_one_result = "(*) "
+    else:
+        player_one_result = "    "
+        
+    if player_two_result == "win":
+        player_two_result = " (*)"
+    else:
+        player_two_result = "    "
+        
+    
+    
+
     score = "  " + player_one_score + " // " + player_two_score +   "  "
             
-    f.write(player_one_team + score + player_two_team + "\r\n")
+    f.write(player_one_result + player_one_team + score + player_two_team + player_two_result + "\r\n")
+    
+    
+f.write("\r\n- - -\r\n(*) denotes fixture winners")
         
 f.close() 
