@@ -2015,3 +2015,5 @@ console.error: BroadcastService:
 
 1566291156588	Marionette	INFO	Stopped listening on port 65255
 JavaScript warning: resource:///modules/UrlbarView.jsm, line 123: Array.reduce is deprecated; use Array.prototype.reduce instead
+[Parent 20535, Gecko_IOThread] WARNING: pipe error: Broken pipe: file /builds/worker/workspace/build/src/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 727
+1566316601265	Marionette	INFO	Stopped listening on port 64503
