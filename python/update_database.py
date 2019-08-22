@@ -14,4 +14,4 @@ print("Loaded file: '../json/2020_database_temp.json'")
 with open("../json/2020_database.json", 'w') as outfile:
     json.dump(data, outfile, sort_keys=True, indent=4, separators=(',', ': '))
     
-    print("Saved file: '../json/2020_database.json' '")
+    print("Saved file: '../json/2020_database.json'")
