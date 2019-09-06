@@ -327,7 +327,7 @@ def scrape_data():
         
 
     with open("../json/2020_database_temp.json", 'w') as outfile:
-        print("Exporting data to file...")
+        print("Exporting data to file: '../json/2020_database_temp.json'")
         json.dump(data, outfile, sort_keys=True, indent=4, separators=(',', ': '))
         
 scrape_data()    
