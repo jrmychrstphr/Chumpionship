@@ -1,0 +1,208 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"> 
+
+<html lang="en">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <title>Title Goes Here</title>
+        
+        <style>
+            @font-face {
+                font-family: 'Champion';
+                src: url('fonts/Champion HTFFlyweight Regular.otf');
+                font-weight: 200;
+            }
+        
+            @font-face {
+                font-family: 'Champion';
+                src: url('fonts/Champion HTFFeatherweight Regular.otf');
+                font-weight: 400;
+            }
+        
+            @font-face {
+                font-family: 'Champion';
+                src: url('fonts/Champion HTFMiddleweight Regular.otf');
+                font-weight: 600;
+            }
+        
+            @font-face {
+                font-family: 'Champion';
+                src: url('fonts/Champion HTFHeavyweight Regular.otf');
+                font-weight: 800;
+            }
+            
+            body {
+                font-family: 'Champion'
+            }
+            
+            .fly {
+                font-weight: 200;
+            }
+            
+            .feather {
+                font-weight: 400;
+            }
+            
+            .middle {
+                font-weight: 600;
+            }
+            
+            .heavy {
+                font-weight: 800;
+            }
+            
+            main {}
+            
+            #fixtures {
+                background-image: linear-gradient(-90deg, #00FF00, #0000FF);
+                //background-image: linear-gradient(-90deg, rgb(57,255,0), rgb(42,0,142));
+                width: 500px;
+                margin: 0 auto;
+                padding: 2em;
+            }
+            
+            div.title-container {
+                width: calc(100%-2em);
+                background: black;
+                padding: 1em 1em 0.5em;
+                color: white;
+                text-align: center;
+            }
+            
+            h1 {
+                text-transform: uppercase;
+                font-weight: 400;
+                font-size: 5em;
+                margin: 0;
+                line-height: 1em;
+            }
+            
+            div.fixture-container {
+                width: 100%;
+                margin: 0 auto;
+                text-align: center;
+                border-bottom: 10px solid black;
+            }
+            
+            div.fixture-content {
+                //width: inherit;
+            }
+            
+            div.team {
+                display: inline-block;
+                text-transform: uppercase;
+            }
+            
+            div.fixture-content {
+                margin: 0 0 -0.15em 0;
+                padding: 0.5rem 0;
+                line-height: 1em;   
+            }
+            
+            div.win {
+                color: white;
+            }
+        
+            
+        </style>
+        
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="fitty.min.js"></script>
+        
+        <script>
+            
+            var database_url = "https://raw.githubusercontent.com/jrmychrstphr/Chumpionship/master/json/2020_database.json"
+            
+            
+            $.getJSON(database_url, function(json) {
+                
+                //console.log(json);
+                var player_names = [];
+                
+                // populate an array of player names
+                Object.keys(json).forEach(function(k){
+                    player_names.push(k);
+                });
+                
+                
+                var fixture_container = $( "#league_table div.container" );
+                
+                var table_container_div = $("<div />").addClass('table-container')
+                    .appendTo(fixture_container);
+                
+                for (i = 0; i < (player_names.length); i++) {
+                                        
+                    var team_name = json[player_names[i]]["team name"]
+                    var player_name = player_names[i]
+                    var league_position = json[player_names[i]]["league position"]
+                    var overall_points = json[player_names[i]]["overall points"]
+                    var total_league_points = json[player_names[i]]["total league points"]
+                    
+                    
+                    var table_row = $("<div />").addClass('table-row')
+                    .data( "league_position", league_position )
+                    .appendTo(table_container_div);
+                    
+                    var position_column = $("<div />").addClass('table-column')
+                    .addClass('position')
+                    .text(league_position)
+                    .appendTo(table_row);
+                    
+                    var team_name_column = $("<div />").addClass('table-column')
+                    .addClass('team_name')
+                    .text(team_name)
+                    .appendTo(table_row);
+                    
+                    var overall_points_column = $("<div />").addClass('table-column')
+                    .addClass('overall_points')
+                    .text(overall_points)
+                    .appendTo(table_row);
+                    
+                    var total_league_points_column = $("<div />").addClass('table-column')
+                    .addClass('total_league_points')
+                    .text(total_league_points)
+                    .appendTo(table_row);
+                                    
+                }
+                
+                var sorted = $('div.table-row').sort(function (a, b) {
+                    
+                    //console.log($(a).data("league_position"))
+
+                    var contentA =parseInt( $(a).data( "league_position" ) );
+                    var contentB =parseInt( $(b).data( "league_position" ) );
+                    return (contentA < contentB) ? -1 : (contentA > contentB) ? 1 : 0;
+                    
+                });
+                
+                table_container_div.html(sorted)
+                
+                                                    
+            });
+            
+            
+            /*
+            
+            function resize_text() {
+                $("#fixtures div.container div.fixture-content").each( function() {
+                    fitty(this);
+                })
+            }
+            
+            */
+
+            
+        
+        </script>
+        
+    </head> 
+    
+    <body> 
+        <main>
+            <section id="league_table">
+                <div class="container">
+                    
+                </div>
+            </section>
+        </main>
+    </body> 
+</html>
