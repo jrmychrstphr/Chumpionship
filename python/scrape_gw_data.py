@@ -96,9 +96,16 @@ def scrape_data():
 
             #wait for element to appear
             element = WebDriverWait(driver, 10).until(
+                EC.presence_of_element_located((By.CSS_SELECTOR, "div.sc-bdVaJa.elkxqB"))
+            )
+            
+            '''
+            #wait for element to appear
+            element = WebDriverWait(driver, 10).until(
                 EC.presence_of_element_located((By.CSS_SELECTOR, "div.Layout__Wrapper-eg6k6r-0"))
             )
-
+            '''
+        
             #'click' the "List View" button
             #list_view_link = driver.find_element_by_link_text('List View').click()
             driver.find_element_by_link_text('List View').click()
@@ -120,10 +127,11 @@ def scrape_data():
             #filter to just main page content
             main_content = soup.find(id="root")
 
+            #get points scored
             gw_final_points_title = main_content.find("h4", string="Final Points")
             gw_final_points_value = gw_final_points_title.next_sibling.text
             print("Points scored:", int(gw_final_points_value))
-
+            
             #update points scored in database temp variable
             data[player]["gw data"][str(gw_input)]["points scored"] = int(gw_final_points_value)
 
@@ -149,10 +157,61 @@ def scrape_data():
             data[player]["gw data"][str(gw_input)]["points spent"] = int(tranfers_cost)*-1
 
             #calculate fixture score
-
             data[player]["gw data"][str(gw_input)]["fixture total"] = (data[player]["gw data"][str(gw_input)]["points scored"])-(data[player]["gw data"][str(gw_input)]["points spent"])
 
             print("Fixture total:", data[player]["gw data"][str(gw_input)]["fixture total"])    
+            
+            
+            #get chip played
+            gw_chip_played_div_list = main_content.select("div.EntryEvent__ChipStatus-l17rqm-15.csGQqo")
+            
+            if len(gw_chip_played_div_list) > 0:
+                
+                
+                if len(gw_chip_played_div_list) == 1:
+                    
+                    print("A chip was played!")
+
+                    for idx, chip_div in enumerate(gw_chip_played_div_list):
+                        print(chip_div.text)
+                        chip_string = chip_div.text
+                        
+                        chip = ""
+                        
+                        if "Triple Captain" in chip_string:
+                            print("Triple Captain played")
+                            chip = "Triple Captain"
+                        
+                        elif "Bench Boost" in chip_string:
+                            print("Bench Boost played")
+                            chip = "Bench Boost"
+                            
+                        elif "Wildcard" in chip_string:
+                            print("Wildcard played")
+                            
+                                                        
+                        elif "Free Hit" in chip_string:
+                            print("Free Hit played")
+                            chip = "Free Hit"
+                            
+                        else:
+                            print("Unable to determine which chip was played!")
+                            print('Press enter to continue:')
+                            input()
+                        
+                        data[player]["gw data"][str(gw_input)]["chip played"] = chip
+                        
+                else:
+                    
+                        print('HELP! Multiple chip divs found!')
+                        print('Press enter to continue:')
+                        input()
+
+                    
+            else:
+                print("No chip played!")
+                
+                
 
             #find stats tables for player data
             stats_tables = main_content.find_all("table", class_="EntryEventTable__StatsTable-sc-1d2xgo1-1")

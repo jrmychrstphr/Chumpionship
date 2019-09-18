@@ -52,12 +52,16 @@
             
             main {}
             
-            #fixtures {
+            #league_table {
                 background-image: linear-gradient(-90deg, #00FF00, #0000FF);
                 //background-image: linear-gradient(-90deg, rgb(57,255,0), rgb(42,0,142));
                 width: 500px;
                 margin: 0 auto;
                 padding: 2em;
+                
+                font-size: 4em;
+                text-transform: uppercase;
+
             }
             
             div.title-container {
@@ -76,11 +80,21 @@
                 line-height: 1em;
             }
             
-            div.fixture-container {
+            div.table-row {
                 width: 100%;
                 margin: 0 auto;
-                text-align: center;
+                text-align: left;
                 border-bottom: 10px solid black;
+            }
+            
+            div.table-row {
+                font-weight: 600;
+                font-size: 1.75rem;
+            }
+            
+            div.table-row:nth-child(-n+4), div.table-row:nth-child(n+18) {
+                font-weight: 200;
+                font-size: 4.5rem;
             }
             
             div.fixture-content {
@@ -92,11 +106,22 @@
                 text-transform: uppercase;
             }
             
-            div.fixture-content {
+            div.table-column {
                 margin: 0 0 -0.15em 0;
                 padding: 0.5rem 0;
-                line-height: 1em;   
+                line-height: 1em;
+                
+                display: inline-block;
             }
+            
+            div.table-column:not(:first-child) {
+                margin-left: 1rem;
+            }
+
+            div.table-column:not(:last-child) {
+                margin-right: 1rem;
+            }
+
             
             div.win {
                 color: white;
@@ -152,14 +177,16 @@
                     .text(team_name)
                     .appendTo(table_row);
                     
+                    /*
                     var overall_points_column = $("<div />").addClass('table-column')
                     .addClass('overall_points')
                     .text(overall_points)
                     .appendTo(table_row);
+                    */
                     
                     var total_league_points_column = $("<div />").addClass('table-column')
                     .addClass('total_league_points')
-                    .text(total_league_points)
+                    .text(total_league_points + 'pts')
                     .appendTo(table_row);
                                     
                 }
