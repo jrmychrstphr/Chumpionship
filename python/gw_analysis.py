@@ -28,4 +28,4 @@ for player in player_list:
     for x in range(gw_input-form_duration, gw_input):
         x += 1
         if x > 0:
-            print("GW", x, ": ", data[player]["gw data"][str(x)]["fixture result"])
+            print("GW", x, ": ", data[player]["gw data"][str(x)]["fixture result"], data[player]["gw data"][str(x)]["fixture total"])
