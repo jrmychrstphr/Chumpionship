@@ -8,6 +8,9 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
+import operator
+
+
 ###############
 # Set global variables #
 
@@ -545,13 +548,65 @@ def analyse_overall():
         print("total points spent:", spend_count)
         print("overall score:", score_count - spend_count)
         print("total league points:", league_points_count)
-        
-        
+    
+    #Calculate overall league positions
+    def calculate_overall_league_position():
+        print("Calculating league positions")
+        table_list = []
+
+        # create a sortable list
+        for player in data:
+            player_list = []
+
+            player_list.insert(0, player)                         #0 - player name
+            player_list.insert(1, data[player]["team name"])              #1 - team name
+            player_list.insert(2, data[player]["overall points"])         #2 - overall points
+            player_list.insert(3, data[player]["total league points"])    #3 - league points
+
+            table_list.append(player_list)
+
+        #sort the list
+        table_list = sorted(table_list, key = lambda x: (x[3]*-1, x[2]*-1, x[1]))
+
+        #cycle through sorted list and define league position
+        #including if there are equally positioned teams 
+        #(i.e. same points and score)
+        for idx,item in enumerate(table_list):
+
+            prev_position = 0
+            prev_score = 0
+            prev_points = 0
+
+            position = 0
+
+            if idx == 0:
+                position = idx + 1
+                previous_position = idx + 1
+
+            else:
+                if previous_points == table_list[idx][3] and previous_score == table_list[idx][2]:
+                    position = previous_position
+                else:
+                    position = idx + 1
+                    previous_position = idx + 1
+
+            previous_score = table_list[idx][2]
+            previous_points = table_list[idx][3]
+
+            print("#" + str(position), table_list[idx][1].title(), table_list[idx][2], table_list[idx][3])
+            
+            data[table_list[idx][0]]["league position"] = int(position)
+
         ######################
         #To add: 
-        #- League position every gameweek
-        #- League position overall
-        #- Finish formation count analysis
+        #   - check against FPL site table
+
+    calculate_overall_league_position()        
+        
+    ######################
+    #To add: 
+    #- League position every gameweek
+    #- Finish formation count analysis
         
         
 def reset_gw_data():

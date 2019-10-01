@@ -6,6 +6,8 @@ data = json.load(f)
 f.close()
 
 gw_input = 2
+print('Enter gameweek:')
+gw_input = int(input())
 
 score_count = 0
 
@@ -19,11 +21,21 @@ for player in data:
     
     score_count += data[player]["gw data"][str(gw_input)]["fixture total"]
     
-    print(player, team_name)
+    print("- - - - -")
+    print(player.title(), team_name)
     print("league_points", league_points)
     print("overall_points", overall_points)
     print("gw_transfers", gw_transfers)
     print("gw_spend", gw_spend)
+    print("")
+    print("Recent form:")
+    
+    for x in range(gw_input-5, gw_input):
+        x += 1
+        if x > 0:
+            print("GW", x, ": ", data[player]["gw data"][str(x)]["fixture result"], data[player]["gw data"][str(x)]["fixture total"])
+            
+    print(" ")
     print(" ")
     
 print("points scored: ", score_count)
