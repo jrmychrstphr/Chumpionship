@@ -2552,3 +2552,6 @@ Exiting due to channel error.
 1569947738989	Marionette	INFO	Listening on port 52964
 1569947739061	Marionette	WARN	TLS certificate errors will be ignored for this session
 1569947779097	Marionette	INFO	Stopped listening on port 52964
+console.error: (new Error("Connection closed before committing the transaction.", "resource://gre/modules/Sqlite.jsm", 683))
+1569949209915	Marionette	INFO	Stopped listening on port 52837
+1569949212070	Marionette	INFO	Stopped listening on port 52079
