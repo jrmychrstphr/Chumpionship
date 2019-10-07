@@ -2555,3 +2555,11 @@ Exiting due to channel error.
 console.error: (new Error("Connection closed before committing the transaction.", "resource://gre/modules/Sqlite.jsm", 683))
 1569949209915	Marionette	INFO	Stopped listening on port 52837
 1569949212070	Marionette	INFO	Stopped listening on port 52079
+1570473402596	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/dj/r_d53pv97qn6cb7zp_63kxxh0000gn/T/rust_mozprofile.oL9zqXFANq5C"
+1570473403291	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1570473403292	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1570473403292	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1570473403292	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1570473405282	Marionette	INFO	Listening on port 63378
+1570473405366	Marionette	WARN	TLS certificate errors will be ignored for this session
+1570473440240	Marionette	INFO	Stopped listening on port 63378
