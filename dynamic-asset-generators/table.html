@@ -54,12 +54,9 @@
             
             #league_table {
                 background-image: linear-gradient(-90deg, #00FF00, #0000FF);
-                //background-image: linear-gradient(-90deg, rgb(57,255,0), rgb(42,0,142));
-                width: 500px;
+                width: 770px;
                 margin: 0 auto;
                 padding: 2em;
-                
-                font-size: 4em;
                 text-transform: uppercase;
 
             }
@@ -80,11 +77,56 @@
                 line-height: 1em;
             }
             
+            div.table-group {
+                padding-left: 100px;
+                position: relative;
+            }
+            
+            div.group-title {
+                position: absolute;
+                color: white;
+            }
+            
+            div.table-group.top div.group-title {
+                top: -16px;
+                left: -92px;
+                font-size: 160px;
+            }
+            
+            div.table-group.bottom div.group-title {
+                transform: rotate(-90deg);
+                top: -2px;
+                left: -102px;
+                font-size: 100px;
+            }
+            
+            
+            div.table-group.top, div.table-group.bottom {
+                border: 10px solid black;
+                border-left: 110px solid black;
+                padding: 0 20px 0 20px;
+                background-color: black;
+                color: white;
+            }
+            
+            div.table-group.middle {
+                margin: 0 20px;
+                padding: 0 10px 0 110px;
+            }
+            div.table-group.bottom {}
+            
             div.table-row {
                 width: 100%;
                 margin: 0 auto;
                 text-align: left;
-                border-bottom: 10px solid black;
+            }
+            
+            div.table-row:not(:last-child) {
+                border-bottom: 5px solid;
+            }
+            
+            div.table-group:not(.middle) div.table-row {
+                //border-color: white;
             }
             
             div.table-row {
@@ -92,7 +134,7 @@
                 font-size: 1.75rem;
             }
             
-            div.table-row:nth-child(-n+4), div.table-row:nth-child(n+18) {
+            div.table-row.large {
                 font-weight: 200;
                 font-size: 4.5rem;
             }
@@ -121,7 +163,10 @@
             div.table-column:not(:last-child) {
                 margin-right: 1rem;
             }
-
+            
+            div.overall_points, div.total_league_points {
+                text-align: right;
+            }
             
             div.win {
                 color: white;
@@ -137,74 +182,157 @@
             
             var database_url = "https://raw.githubusercontent.com/jrmychrstphr/Chumpionship/master/json/2020_database.json"
             
+            function return_formatted_number_with_commas(x) {
+                return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            }
             
             $.getJSON(database_url, function(json) {
-                
+
                 //console.log(json);
                 var player_names = [];
-                
+
                 // populate an array of player names
                 Object.keys(json).forEach(function(k){
                     player_names.push(k);
                 });
-                
-                
-                var fixture_container = $( "#league_table div.container" );
-                
+
+
+                var table_container = $( "#league_table div.container" );
+
                 var table_container_div = $("<div />").addClass('table-container')
-                    .appendTo(fixture_container);
-                
+                    .appendTo(table_container);
+
                 for (i = 0; i < (player_names.length); i++) {
-                                        
+
                     var team_name = json[player_names[i]]["team name"]
                     var player_name = player_names[i]
                     var league_position = json[player_names[i]]["league position"]
                     var overall_points = json[player_names[i]]["overall points"]
                     var total_league_points = json[player_names[i]]["total league points"]
-                    
-                    
+
+
                     var table_row = $("<div />").addClass('table-row')
                     .data( "league_position", league_position )
                     .appendTo(table_container_div);
-                    
+
                     var position_column = $("<div />").addClass('table-column')
                     .addClass('position')
                     .text(league_position)
                     .appendTo(table_row);
-                    
+
                     var team_name_column = $("<div />").addClass('table-column')
                     .addClass('team_name')
                     .text(team_name)
                     .appendTo(table_row);
-                    
-                    /*
+
                     var overall_points_column = $("<div />").addClass('table-column')
                     .addClass('overall_points')
-                    .text(overall_points)
+                    .text(return_formatted_number_with_commas((Number(overall_points)).toString()))
                     .appendTo(table_row);
-                    */
-                    
+
                     var total_league_points_column = $("<div />").addClass('table-column')
                     .addClass('total_league_points')
                     .text(total_league_points + 'pts')
                     .appendTo(table_row);
-                                    
+
                 }
-                
+
+
                 var sorted = $('div.table-row').sort(function (a, b) {
-                    
+
                     //console.log($(a).data("league_position"))
 
                     var contentA =parseInt( $(a).data( "league_position" ) );
                     var contentB =parseInt( $(b).data( "league_position" ) );
                     return (contentA < contentB) ? -1 : (contentA > contentB) ? 1 : 0;
-                    
+
                 });
-                
+
                 table_container_div.html(sorted)
                 
-                                                    
+                var table_group_top_div = $("<div />").addClass('table-group top')
+                    .appendTo(table_container);
+
+                var table_group_middle_div = $("<div />").addClass('table-group middle')
+                    .appendTo(table_container);
+
+                var table_group_bottom_div = $("<div />").addClass('table-group bottom')
+                    .appendTo(table_container);
+                
+                var group_top_title = $("<div />").addClass('group-title').text("£")
+                    .appendTo(table_group_top_div);
+
+                var group_bottom_title = $("<div />").addClass('group-title').text("<<<")
+                    .appendTo(table_group_bottom_div);
+
+                $( "#league_table div.table-container" ).children( ".table-row" ).each(function( index ) {
+
+                    index_list = [4,17,20]
+                    console.log( index, $(this) )
+                    
+                    if ( index < index_list[0] ) {
+                        var container = table_group_top_div
+                        
+                    } else if ( index < index_list[1] ) {
+                        var container = table_group_middle_div
+                        
+                    } else if ( index < index_list[2] ) {
+                        var container = table_group_bottom_div
+                        
+                    }
+                    
+                    $(this).appendTo(container)
+
+                })
+
+                cell_width_array = []
+
+                $( "#league_table div.table-row" ).each(function() {
+
+                    //console.log( $( this ).contents() )
+
+
+                    $( this ).children().each(  function( index ) {
+
+                        if (cell_width_array.length < index+1 ) {
+                            cell_width_array[index] = []
+                        }
+
+                        //console.log( $( this ))
+
+                        cell_width = Number($( this ).width())
+                        //console.log(cell_width)
+                        cell_width_array[index].push(cell_width)
+
+                    })
+
+                });
+
+                console.log(cell_width_array)
+
+                max_array = []
+
+                for (i = 0; i < cell_width_array.length; i++) {
+
+                    sorted_array = cell_width_array[i].sort(function(a, b){
+                        return Number(b)-Number(a)
+                    })
+
+                    max_array[i] = sorted_array[0]
+
+                }
+                
+
+                for (i = 0; i < max_array.length; i++) {
+                    
+
+                    $( "#league_table div.table-row div.table-column:nth-child("+(i+1)+")" ).width(max_array[i])
+
+
+                }
             });
+            
+            
             
             
             /*
