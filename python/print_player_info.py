@@ -1,5 +1,5 @@
 import json
-from pathlib import Path
+import os.path
 
 f = open("../json/2020_database_temp.json")
 data = json.load(f)
