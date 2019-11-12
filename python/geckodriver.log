@@ -2610,3 +2610,4 @@ console.error: (new Error("Connection closed before committing the transaction."
 1573557214985	Marionette	INFO	Listening on port 59627
 1573557214995	Marionette	WARN	TLS certificate errors will be ignored for this session
 1573557248922	Marionette	INFO	Stopped listening on port 59627
+1573575101155	Marionette	INFO	Stopped listening on port 59586
