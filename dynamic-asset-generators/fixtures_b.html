@@ -1,0 +1,322 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"> 
+
+<html lang="en">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <title>Title Goes Here</title>
+        
+        <style>
+            @font-face {
+                font-family: 'Champion';
+                src: url('fonts/Champion HTFFlyweight Regular.otf');
+                font-weight: 200;
+            }
+        
+            @font-face {
+                font-family: 'Champion';
+                src: url('fonts/Champion HTFFeatherweight Regular.otf');
+                font-weight: 400;
+            }
+        
+            @font-face {
+                font-family: 'Champion';
+                src: url('fonts/Champion HTFMiddleweight Regular.otf');
+                font-weight: 600;
+            }
+        
+            @font-face {
+                font-family: 'Champion';
+                src: url('fonts/Champion HTFHeavyweight Regular.otf');
+                font-weight: 800;
+            }
+            
+            body {
+                font-family: sans-serif;
+            }
+            
+            #fixtures {
+                font-family: 'Champion'
+            }
+            
+            .fly {
+                font-weight: 200;
+            }
+            
+            .feather {
+                font-weight: 400;
+            }
+            
+            .middle {
+                font-weight: 600;
+            }
+            
+            .heavy {
+                font-weight: 800;
+            }
+            
+            main {}
+            
+            #fixtures {
+                background-image: linear-gradient(-90deg, #00FF00, #0000FF);
+                //background-image: linear-gradient(-90deg, rgb(57,255,0), rgb(42,0,142));
+                width: 500px;
+                margin: 0 auto;
+                padding: 2em;
+            }
+            
+            div.title-block {
+                width: calc(100%-2em);
+                background: black;
+                padding: 1em 1em 0.5em;
+                color: white;
+                text-align: center;
+            }
+            
+            h1 {
+                text-transform: uppercase;
+                font-weight: 400;
+                font-size: 5em;
+                margin: 0;
+                line-height: 1em;
+            }
+            
+            div.fixture-container {
+                width: 100%;
+                margin: 0 auto;
+                text-align: center;
+                border-bottom: 10px solid black;
+            }
+            
+            div.fixture-content {
+                //width: inherit;
+            }
+            
+            div.team {
+                display: inline-block;
+                text-transform: uppercase;
+            }
+            
+            div.fixture-content {
+                margin: 0 0 -0.15em 0;
+                padding: 0.5rem 0;
+                line-height: 1em;   
+            }
+            
+            div.win {
+                color: white;
+            }
+        
+            
+        </style>
+        
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="fitty.min.js"></script>
+        
+        <script>
+            
+            var database_url = "https://raw.githubusercontent.com/jrmychrstphr/Chumpionship/master/json/2020_database.json"
+            
+            var data;
+            
+            function build_controls() {
+                                
+                list_of_options = []
+                
+                for (i = 0, len = 38, text = ""; i < len+1; i++) {
+                    if ( i == 0 ) {
+                        //list_of_options.push("Overall")
+                    } else {
+                        list_of_options.push(i.toString())
+                    }
+                }
+                
+                var DOM_Body = $( "body" );
+                
+                var input_container =  $("<section />").attr("id", "input")
+                .prependTo(DOM_Body);
+                
+                var gameweek_input_element = $("<div />")
+                .appendTo(input_container);
+                
+                var gameweek_input_title = $("<p />").text("Gameweek:")
+                .appendTo(gameweek_input_element);
+                
+                var gameweek_input_select = $("<select />").attr("name", "gameweek")
+                .attr("id", "gameweek_input")
+                .appendTo(gameweek_input_element);
+                
+                for (i = 0, len = list_of_options.length, text = ""; i < len; i++) {
+                    $("<option />").attr("value", list_of_options[i])
+                    .text(list_of_options[i])
+                    .appendTo(gameweek_input_select);
+                }
+                
+                var generate_button = $("<button />").attr("type", "button")
+                .text("Generate fixtures")
+                .click(function(){
+                    //function
+                    console.log("Button clicked!")
+                    
+                    var val = $("#gameweek_input").val()    // grab gw input from select
+                    generate_fixtures(val)                    // trigger generate_fixtures funtion
+                })
+                .appendTo(input_container);
+                
+                var resize_button = $("<button />").attr("type", "button")
+                .text("Resize text")
+                .click(function(){
+                    //function
+                    resize_text()                    // trigger generate_fixtures funtion
+                })
+                .appendTo(input_container);
+                
+                
+                
+            } 
+                    
+            function generate_fixtures(x) {
+                
+                var gameweek;
+                
+                
+                if(x) {
+                    gameweek = x.toString();
+                } else {
+                    gameweek = "1";
+                }
+                
+                var player_names = [];
+                var fixture_list = [];
+
+                // populate an array of player names
+                Object.keys(data).forEach(function(k){
+                    player_names.push(k);
+                });
+
+
+                // randomise the list of player names
+                player_names.sort(function(a, b){return 0.5 - Math.random()});
+
+                while (player_names.length > 0) {
+                    p_one = player_names.pop()
+                    console.log(p_one)
+                    console.log(gameweek)
+                    console.log(data[p_one]["gw data"][gameweek])
+                    p_two = data[p_one]["gw data"][gameweek]["opponent"].toLowerCase()
+
+                    player_names.splice(player_names.indexOf(p_two), 1)
+                    console.log(p_one, p_two)
+
+                    fixture = {}
+
+                    fixture.team_one_name = data[p_one]["team name"]                    
+                    fixture.team_two_name = data[p_two]["team name"]
+
+                    fixture_list.push(fixture)
+
+                }
+
+                var fixture_container = $( "#fixtures div.fixture-block" );
+                fixture_container.empty();
+                
+                for (i = 0; i < fixture_list.length; i++) { 
+
+
+                    var fixture_container_div = $("<div />").addClass('fixture-container')
+                    .appendTo(fixture_container);
+
+                    var fixture_contents_div = $("<div />").addClass('fixture-content')
+                    .appendTo(fixture_container_div);
+
+                    var home_div = $("<div />").addClass('team home')
+                    .appendTo(fixture_contents_div);
+
+                    var home_name = $("<span />").addClass('name')
+                    .text(fixture_list[i]["team_one_name"])
+                    .appendTo(home_div);
+
+                    var fixture_divider = $("<span />").text(' vs ')
+                    .appendTo(fixture_contents_div);
+
+                    var away_div = $("<div />").addClass('team away')
+                    .appendTo(fixture_contents_div);
+
+                    var away_name = $("<span />").addClass('name')
+                    .text(fixture_list[i]["team_two_name"])
+                    .appendTo(away_div);
+
+
+                }
+
+                $( "#gw" ).text(gameweek)
+                $(document).prop('title', 'The Chumpionship 2020 : GW' + gameweek);;
+
+                // determine max and min character counts for fixtures
+
+                var character_counts_array = [];
+                var character_counts_total = 0;
+
+                $("#fixtures div.container div.fixture").each( function() {
+
+                    //calculate character count
+                    var character_count = $.trim($(this).text()).length;
+                    console.log($(this).text(), character_count);
+
+                    character_counts_array.push(character_count);
+                    character_counts_total += character_count;
+
+                });
+
+                var character_count_avg = character_counts_total/character_counts_array.length;
+                console.log("average", character_count_avg)
+
+                //set style class based on character count
+                $("#fixtures div.container div.fixture-content").each( function() {
+                    var character_count = $.trim($(this).text()).length;
+             var font_styles = ["fly", "feather", "middle", "heavy"]
+
+                    $(this).addClass( function() {
+
+                        var x = font_styles[Math.floor(Math.random()*font_styles.length)]
+                        console.log(x)
+                        return x
+
+                    })            })
+                
+            };
+            
+            
+            $.getJSON(database_url, function(json) {                                
+                data = json;    // >> store database in variable
+            });
+            
+            function resize_text() {
+                $("#fixtures div.container div.fixture-content").each( function() {
+                    fitty(this);
+                })
+            }
+            
+            
+            
+            $( function(){
+                
+                build_controls()
+                
+            });
+
+            
+        
+        </script>
+        
+    </head> 
+    
+    <body> 
+            <section id="fixtures">
+                <div class="container">
+                    <div class="title-block"><h1>&#62;&#62; Gameweek <span id="gw"></span> &#60;&#60;</h1></div>
+                    <div class="fixture-block"></div>
+                </div>
+            </section>
+        </main>
+    </body> 
+</html>

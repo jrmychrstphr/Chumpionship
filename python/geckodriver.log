@@ -2611,3 +2611,11 @@ console.error: (new Error("Connection closed before committing the transaction."
 1573557214995	Marionette	WARN	TLS certificate errors will be ignored for this session
 1573557248922	Marionette	INFO	Stopped listening on port 59627
 1573575101155	Marionette	INFO	Stopped listening on port 59586
+1574789241057	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/dj/r_d53pv97qn6cb7zp_63kxxh0000gn/T/rust_mozprofile.K8IQ6D7as1Q7"
+1574789242742	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1574789242743	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1574789242743	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1574789242743	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1574789244745	Marionette	INFO	Listening on port 55782
+1574789244764	Marionette	WARN	TLS certificate errors will be ignored for this session
+1574789282216	Marionette	INFO	Stopped listening on port 55782
