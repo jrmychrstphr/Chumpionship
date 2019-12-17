@@ -1,0 +1,288 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"> 
+
+<html lang="en">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <title>Title Goes Here</title>
+        
+        <style>
+            @font-face {
+                font-family: 'Champion';
+                src: url('fonts/Champion HTFFlyweight Regular.otf');
+                font-weight: 200;
+            }
+        
+            @font-face {
+                font-family: 'Champion';
+                src: url('fonts/Champion HTFFeatherweight Regular.otf');
+                font-weight: 400;
+            }
+        
+            @font-face {
+                font-family: 'Champion';
+                src: url('fonts/Champion HTFMiddleweight Regular.otf');
+                font-weight: 600;
+            }
+        
+            @font-face {
+                font-family: 'Champion';
+                src: url('fonts/Champion HTFHeavyweight Regular.otf');
+                font-weight: 800;
+            }
+            
+            body {
+                font-family: sans-serif;
+            }
+            
+            #fixtures {
+                font-family: 'Champion'
+            }
+            
+            .fly {
+                font-weight: 200;
+            }
+            
+            .feather {
+                font-weight: 400;
+            }
+            
+            .middle {
+                font-weight: 600;
+            }
+            
+            .heavy {
+                font-weight: 800;
+            }
+            
+            main {}
+            
+            #fixtures {
+                background-image: linear-gradient(-90deg, #00FF00, #0000FF);
+                //background-image: linear-gradient(-90deg, rgb(57,255,0), rgb(42,0,142));
+                width: 500px;
+                margin: 0 auto;
+                padding: 2em;
+            }
+            
+            div.title-block {
+                width: calc(100%-2em);
+                background: black;
+                padding: 1em 1em 0.5em;
+                color: white;
+                text-align: center;
+            }
+            
+            h1 {
+                text-transform: uppercase;
+                font-weight: 400;
+                font-size: 5em;
+                margin: 0;
+                line-height: 1em;
+            }
+            
+            div.fixture-container {
+                width: 100%;
+                margin: 0 auto;
+                text-align: center;
+                border-bottom: 10px solid black;
+            }
+            
+            div.fixture-content {
+                //width: inherit;
+            }
+            
+            div.team {
+                display: inline-block;
+                text-transform: uppercase;
+            }
+            
+            div.fixture-content {
+                margin: 0 0 -0.15em 0;
+                padding: 0.5rem 0;
+                line-height: 1em;   
+            }
+            
+            div.win {
+                color: white;
+            }
+        
+            
+        </style>
+        
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="fitty.min.js"></script>
+        <script src="https://d3js.org/d3.v5.min.js"></script>
+        
+        <script>
+            
+            var database_url = "https://raw.githubusercontent.com/jrmychrstphr/Chumpionship/master/json/2020_database.json"
+            
+            var data;
+            
+            function init() {
+                
+                //define dataset
+                
+                top_scores_data = rtn_scores(rtn_scores_list(), "best", 5)
+                console.log(top_scores_data)
+                
+                //create visualisation
+                                
+            }
+            
+            function rtn_scores_list(x) {
+                
+                var gameweek;
+                
+                if(x) {
+                    gameweek = x.toString();
+                } else {
+                    gameweek = "overall";
+                }
+                
+                // create a list of player names
+                // i.e. a list of top-level objects from the dataset
+                
+                var player_names = [];
+
+                // populate an array of player names
+                Object.keys(data).forEach(function(k){
+                    player_names.push(k);
+                });
+                
+                //console.log(player_names)
+                
+                // create an object with scores data
+                
+                var scores_data = []
+                
+                if (gameweek == "overall") {
+                    
+                    //populate with overall scores
+                    
+                    $.each( player_names, function() {
+                                                
+                        temp_obj = {}
+                        
+                        temp_obj["team_name"] = data[this]["team name"]
+                        temp_obj["team_name"] = data[this]["team name"]
+                        temp_obj["points"] = data[this]["overall points"]
+                        
+                        scores_data.push(temp_obj)
+                        
+                    })
+                    
+                } else {
+                    
+                    //populate with gw-specific scores
+                    $.each( player_names, function() {
+                                                
+                        temp_obj = {}
+                        
+                        temp_obj["team_name"] = data[this]["team name"]
+                        temp_obj["team_name"] = data[this]["team name"]
+                        temp_obj["points"] = data[this]["gw data"][gameweek]["fixture total"]
+                        
+                        scores_data.push(temp_obj)
+                        
+                    })
+                    
+                }
+                
+                //console.log(scores_data)
+                return scores_data
+
+            }
+            
+            function rtn_scores(list_of_scores, best_or_worst, number_to_return) {
+                
+                var scores_input, order_input, shortlist_input;
+                
+                if(list_of_scores) { 
+                    scores_input = list_of_scores;
+                } else {
+                    console.log("scores not found")
+                }
+                
+                if(best_or_worst) { 
+                    order_input = best_or_worst;
+                } else {
+                    order_input = "best"
+                }
+                
+                if(number_to_return) { 
+                    shortlist_input = number_to_return;
+                } else {
+                    shortlist_input = "all"
+                }
+                
+                //sort the list
+                list_of_scores.sort((a, b) => (a.points > b.points) ? 1 : -1)                
+                if (order_input == "best") { list_of_scores.reverse() }
+                
+                //console.log(list_of_scores)
+                
+                if (shortlist_input == "all") {
+                    
+                    return list_of_scores;
+                    
+                } else {
+                    
+                    var temp_array = []
+                    var num = Number(shortlist_input)
+                    var prev_score;
+                    
+                    $.each( list_of_scores, function(index, value) {
+                        
+                        
+                        if (index < num || prev_score !== null && list_of_scores[index].points == prev_score) {
+                            temp_array.push(list_of_scores[index])
+                        } else if (index => num ) {
+                            return false
+                        }                       
+                        
+                        prev_score = list_of_scores[index].points                        
+                        
+                    })
+                    
+                    return temp_array;
+                    
+                }
+                
+            }
+            
+            
+            $.getJSON(database_url, function(json) {                                
+                data = json;    // >> store database in variable
+            });
+            
+            function resize_text() {
+                $("#fixtures div.container div.fixture-content").each( function() {
+                    fitty(this);
+                })
+            }
+            
+            
+            
+            $( function(){
+                
+                init()
+                
+            });
+
+            
+        
+        </script>
+        
+    </head> 
+    
+    <body> 
+            <section id="viz">
+                <div class="container">
+                    <div class="title-block"></div>
+                    <div class="viz-block"></div>
+                </div>
+            </section>
+        </main>
+    </body> 
+</html>
