@@ -3,7 +3,7 @@
 <html lang="en">
     <head>
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
-        <title>Title Goes Here</title>
+        <title>Chumpionship Data Visualisations</title>
         
         <style>
             @font-face {
@@ -34,7 +34,7 @@
                 font-family: sans-serif;
             }
             
-            #fixtures {
+            #viz {
                 font-family: 'Champion'
             }
             
@@ -56,7 +56,7 @@
             
             main {}
             
-            #fixtures {
+            #viz {
                 background-image: linear-gradient(-90deg, #00FF00, #0000FF);
                 //background-image: linear-gradient(-90deg, rgb(57,255,0), rgb(42,0,142));
                 width: 500px;
@@ -80,30 +80,19 @@
                 line-height: 1em;
             }
             
-            div.fixture-container {
+            div.viz-block {
                 width: 100%;
                 margin: 0 auto;
                 text-align: center;
                 border-bottom: 10px solid black;
             }
             
-            div.fixture-content {
-                //width: inherit;
-            }
-            
-            div.team {
-                display: inline-block;
+            svg {
+                
+                font-size: 1.75em;
+                font-weight: 600;
                 text-transform: uppercase;
-            }
-            
-            div.fixture-content {
-                margin: 0 0 -0.15em 0;
-                padding: 0.5rem 0;
-                line-height: 1em;   
-            }
-            
-            div.win {
-                color: white;
+                
             }
         
             
@@ -112,6 +101,20 @@
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="fitty.min.js"></script>
         <script src="https://d3js.org/d3.v5.min.js"></script>
+        
+    </head> 
+    
+    <body> 
+        <main>
+            <section id="viz">
+                <div class="container">
+                    <div class="title-block">
+                        <h1>Title goes in here</h1>
+                    </div>
+                    <div class="viz-block"></div>
+                </div>
+            </section>
+        </main>
         
         <script>
             
@@ -123,11 +126,75 @@
                 
                 //define dataset
                 
-                top_scores_data = rtn_scores(rtn_scores_list(), "best", 5)
-                console.log(top_scores_data)
+                const viz_dataset = rtn_scores(rtn_scores_list(), "best", 5)
+                console.log(viz_dataset)
                 
                 //create visualisation
-                                
+                
+                
+                //scales
+                
+                //create DOM elements
+                const vizContainer = d3.select("#viz").select("div.viz-block");
+                
+                const viz_width = vizContainer.style("width");
+                console.log(viz_width)
+                
+                const bar_height = 50;
+                
+                const svg = vizContainer.append("svg")
+                            .attr("width", viz_width)
+                            .attr("height", bar_height * viz_dataset.length);
+                
+                const item_g = svg.selectAll("g")
+                                .data(viz_dataset)
+                                .enter()
+                                .append("g")
+                                .attr("transform", function (d, i) {
+                                    return "translate(0," + i * bar_height + ")";
+                                })
+                                .classed("item_container", true);
+                
+                item_g.append("text")
+                    .attr("x", 0)
+                    .attr("y", bar_height / 2)
+                    .attr("dy", ".35em")
+                    .text(function (d, i) { return d.team_name; });
+                
+                
+                const bar_g = item_g.append("g")
+                .classed("bar_container", true)
+                .attr("transform", "translate(200,0)");
+                
+                bar_g.append("rect")
+                    .classed("bar_background", true)
+                    .attr("height", bar_height)
+                    .attr("width", function (d,i) {
+
+                        //return max data 
+                        //or return max range
+                    
+                        return 100;
+                    
+                    });
+                
+                bar_g.append("rect")
+                    .classed("bar_data", true)
+                    .attr("height", bar_height)
+                    .attr("width", function (d,i) {
+                    
+                        //return max data 
+                        //or return max range
+                    
+                        return 50;
+                    
+                    });
+                
+                bar_g.append("text")
+                    .attr("x", 0)
+                    .attr("y", bar_height / 2)
+                    .attr("dy", ".35em")
+                    .text(function (d, i) { return d.points; });
             }
             
             function rtn_scores_list(x) {
@@ -272,17 +339,6 @@
 
             
         
-        </script>
-        
-    </head> 
-    
-    <body> 
-            <section id="viz">
-                <div class="container">
-                    <div class="title-block"></div>
-                    <div class="viz-block"></div>
-                </div>
-            </section>
-        </main>
+        </script>        
     </body> 
 </html>
