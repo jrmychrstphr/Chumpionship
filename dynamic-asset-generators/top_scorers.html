@@ -34,10 +34,6 @@
                 font-family: sans-serif;
             }
             
-            #viz {
-                font-family: 'Champion'
-            }
-            
             .fly {
                 font-weight: 200;
             }
@@ -56,6 +52,7 @@
             
             main {}
             
+            /*
             #viz {
                 background-image: linear-gradient(-90deg, #00FF00, #0000FF);
                 //background-image: linear-gradient(-90deg, rgb(57,255,0), rgb(42,0,142));
@@ -69,13 +66,13 @@
                 background: black;
                 padding: 1em 1em 0.5em;
                 color: white;
-                text-align: center;
+                text-align: left;
             }
             
             h1 {
                 text-transform: uppercase;
-                font-weight: 400;
-                font-size: 5em;
+                font-weight: 600;
+                font-size: 1.75em;
                 margin: 0;
                 line-height: 1em;
             }
@@ -87,12 +84,56 @@
                 border-bottom: 10px solid black;
             }
             
-            svg {
-                
-                font-size: 1.75em;
-                font-weight: 600;
+            */
+            
+            section {
+                background-image: linear-gradient(-90deg, #00FF00, #0000FF);
+                width: 500px;
+                margin: 0 auto;
+                padding: 2em;
+            }
+            
+            .container {
+                background: black;
+                padding: 1em 1em 0.5em;
+            }
+            
+            .title-block {
+                width: calc(100%-2em);
+                padding: 0em;
+                margin: 0 0 2em;
+                text-align: left;
+                color: white;
+            }
+            
+            .title-block .title {
+                font-family: 'Champion';
                 text-transform: uppercase;
-                
+                font-weight: 600;
+                font-size: 1.75em;
+                margin: 0;
+                line-height: 1em;
+            }
+            
+            .viz-block.bar-chart {
+                font-family: 'Champion';
+                line-height: 1em;
+            }
+            
+            .viz-block.bar-chart .label.category {
+                color: white;
+                text-transform: capitalize;
+                font-weight: 600;
+                font-size: .9em;
+                //letter-spacing: 0.05em;
+            }
+        
+            .viz-block.bar-chart .label.value {
+                color: black;
+                background: white;
+                padding: 0em;
+                font-weight: 600;
+                font-size: 1.5em;
             }
         
             
@@ -109,9 +150,10 @@
             <section id="viz">
                 <div class="container">
                     <div class="title-block">
-                        <h1>Title goes in here</h1>
+                        <div class="title">Overall Score</div>
                     </div>
-                    <div class="viz-block"></div>
+                    <div class="viz-block bar-chart">
+                    </div>
                 </div>
             </section>
         </main>
@@ -126,32 +168,41 @@
                 
                 //define dataset
                 
-                const viz_dataset = rtn_scores(rtn_scores_list(), "best", 5)
+                var viz_dataset = rtn_scores(rtn_scores_list(), "best", 3);
+                var supplementary_data = rtn_scores(rtn_scores_list(), "worst", 1);
+                
+                $.each(supplementary_data, function() {
+                    viz_dataset.push(this)
+                })
+                                
                 console.log(viz_dataset)
                 
                 //create visualisation
                 
+                const category_margin = 200, bar_margin = 20, bar_height = 30;
                 
-                //scales
-                
-                //create DOM elements
                 const vizContainer = d3.select("#viz").select("div.viz-block");
                 
-                const viz_width = vizContainer.style("width");
+                const viz_width = parseInt(vizContainer.style("width"));
                 console.log(viz_width)
                 
-                const bar_height = 50;
-                
+                //scales
+                const xScale = d3.scaleLinear()
+                    .domain([0, d3.max( viz_dataset, function(d) { 
+                        return d.points
+                    } ) ])
+                    .range([0, (viz_width - category_margin)]);
+                            
                 const svg = vizContainer.append("svg")
                             .attr("width", viz_width)
-                            .attr("height", bar_height * viz_dataset.length);
+                            .attr("height", (bar_height+bar_margin) * viz_dataset.length);
                 
                 const item_g = svg.selectAll("g")
                                 .data(viz_dataset)
                                 .enter()
                                 .append("g")
                                 .attr("transform", function (d, i) {
-                                    return "translate(0," + i * bar_height + ")";
+                                    return "translate(0," + i * (bar_height+bar_margin) + ")";
                                 })
                                 .classed("item_container", true);
                 
@@ -159,39 +210,37 @@
                     .attr("x", 0)
                     .attr("y", bar_height / 2)
                     .attr("dy", ".35em")
-                    .text(function (d, i) { return d.team_name; });
+                    .text(function (d, i) { return d.team_name; })
+                    .classed("label", true)
+                    .classed("category", true)
+                    .style( "fill", "white" );
                 
                 
                 const bar_g = item_g.append("g")
                 .classed("bar_container", true)
-                .attr("transform", "translate(200,0)");
+                .attr("transform", "translate("+category_margin+",0)");
                 
                 bar_g.append("rect")
-                    .classed("bar_background", true)
+                    .classed("bar_data", true)
+                    .style("fill", "white")
                     .attr("height", bar_height)
                     .attr("width", function (d,i) {
 
                         //return max data 
                         //or return max range
+                        console.log(d)
+                        console.log(d.points)
+                        console.log(parseInt(d.points))
+                        console.log(xScale(400))
                     
-                        return 100;
-                    
-                    });
-                
-                bar_g.append("rect")
-                    .classed("bar_data", true)
-                    .attr("height", bar_height)
-                    .attr("width", function (d,i) {
-                    
-                        //return max data 
-                        //or return max range
-                    
-                        return 50;
+                        return xScale(d.points);
                     
                     });
-                
                 bar_g.append("text")
-                    .attr("x", 0)
+                    .classed("label", true)
+                    .classed("value", true)
+                    .attr("x", 10)
+                    .attr("x", 10)
                     .attr("y", bar_height / 2)
                     .attr("dy", ".35em")
                     .text(function (d, i) { return d.points; });
