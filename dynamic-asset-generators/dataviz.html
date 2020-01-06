@@ -1,0 +1,427 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"> 
+
+<html lang="en">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <title>Chumpionship Data Visualisations</title>
+        
+        
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://d3js.org/d3.v5.min.js"></script>
+        
+        <style>
+            
+            @import url('https://fonts.googleapis.com/css?family=Roboto+Slab:100,200,300,400,500,600,700,800,900&display=swap');
+        
+            body {
+                font-family: 'Roboto Slab', serif;
+            }
+            
+            body div {
+                margin: 0 auto;
+            }
+            
+            div.viz-container text.label_main {
+                font-weight: 500;
+                
+            }
+        
+            div.viz-container text.label_secondary {
+                text-transform: uppercase;
+                font-weight: 400;
+                font-size: 0.7em;
+            }
+        
+        </style>
+        
+    </head> 
+    
+    <body> 
+        <script>
+        
+            const database_url = "https://raw.githubusercontent.com/jrmychrstphr/Chumpionship/master/json/2020_database.json"
+            var database, datasets = {};
+            
+            $.getJSON(database_url, function(json) {                                
+                database = json;
+                init()
+            });
+            
+            function init() {
+                console.log("database loaded")
+                create_datasets()
+                
+                $.each(datasets, function() { console.log(this)})
+                
+                build_datavis()
+                
+                
+            }
+            
+            function create_datasets() {
+                console.log("create_datasets() called")
+                
+                create_dataset__winning_margins()
+                //create_dataset__overall_score()
+                //create_dataset__fixture_scores()
+                
+            }
+            
+            function build_datavis() {
+                console.log("build_datavis() called")
+                
+                build_dataviz__winning_margins()
+            }
+                
+            function create_dataset__winning_margins() {
+                
+                console.log("create_dataset__winning_margins() called")
+                
+                // Winning Margins
+                var temp_array = [], id = 0;
+                $.each( database, function() {
+                    
+                    
+                    var team_name = this["team name"];
+                    var player_name = this["first name"] + " " + this["surname"];
+                        
+                    $.each( this["gw data"], function(key) {
+                                        
+                        var temp_obj = {}
+                        
+                        var gameweek = key;
+                        var score = this["fixture total"];
+                        var opponent_name = this["opponent"];
+                        var opponent_team = database[this["opponent"].toLowerCase()]["team name"];
+                        var opponent_score = this["points against"];
+                        var fixture_result = this["fixture result"];
+                        var fixture_margin = score - opponent_score;
+                        
+                        temp_obj["team_name"] = team_name
+                        temp_obj["player_name"] = player_name
+
+                        temp_obj["gameweek"] = gameweek
+                        temp_obj["score"] = score
+                        temp_obj["opponent_name"] = opponent_name
+                        temp_obj["opponent_team"] = opponent_team
+                        temp_obj["opponent_score"] = opponent_score
+                        temp_obj["fixture_result"] = fixture_result
+                        temp_obj["fixture_margin"] = fixture_margin
+                        
+                        id++
+                        temp_obj["id"] = id
+                        
+                        //filter out non-existent data points
+                        if (fixture_result != "" ) {
+                            temp_array.push(temp_obj)
+                            }
+                        
+                    })
+
+                });
+                
+                temp_array.sort((a, b) => (a.fixture_margin < b.fixture_margin) ? 1 : -1)
+                
+                $.each( temp_array, function(i) {
+                    
+                    if (i == 0) {
+                        rank = 1
+                    } else if ( this.fixture_margin == temp_array[i-1].fixture_margin) {
+                        rank = temp_array[i-1].rank
+                    } else {
+                        rank = i+1
+                    }
+                        
+                    this["rank"] = rank
+                    
+                })
+                
+                datasets["winning_margins"] = temp_array
+            }                
+            function create_dataset__overall_score() {
+    
+                console.log("create_datasets__overall_score() called")
+                
+                // Overall Score
+                var temp_array = []
+                $.each( database, function() {
+                    
+                    var temp_obj = {}
+                    
+                    var team_name = this["team name"];
+                    var player_name = this["first name"] + " " + this["surname"];
+                    var score = this["overall points"]
+                    
+                    temp_obj["team_name"] = team_name
+                    temp_obj["player_name"] = player_name
+                    temp_obj["score"] = score
+                    
+                    temp_array.push(temp_obj)
+                    
+                })
+                
+                temp_array.sort((a, b) => (a.score < b.score) ? 1 : -1)
+                
+                $.each( temp_array, function(i) {
+                    
+                    if (i == 0) {
+                        rank = 1
+                    } else if ( this.score == temp_array[i-1].score ) {
+                        rank = temp_array[i-1].rank
+                    } else {
+                        rank = i+1
+                    }
+                        
+                    this["rank"] = rank
+                    
+                })
+                
+                datasets["overall_score"] = temp_array
+            }                
+            function create_dataset__fixture_scores() {
+                
+                console.log("create_datasets__fixture_scores() called")
+
+                // Fixture Scores
+                var temp_array = []
+                $.each( database, function() {
+                    
+                    var team_name = this["team name"];
+                    var player_name = this["first name"] + " " + this["surname"];
+                        
+                    $.each( this["gw data"], function(key) {
+                                        
+                        var temp_obj = {}
+                        
+                        var gameweek = key;
+                        var score = this["fixture total"];
+                        
+                        temp_obj["team_name"] = team_name
+                        temp_obj["player_name"] = player_name
+                        temp_obj["score"] = score
+                        temp_obj["gameweek"] = gameweek
+                        
+                        temp_array.push(temp_obj)
+                        
+                    })
+                })
+                
+                temp_array.sort((a, b) => (a.score < b.score) ? 1 : -1)
+                
+                $.each( temp_array, function(i) {
+                    
+                    if (i == 0) {
+                        rank = 1
+                    } else if ( this.score == temp_array[i-1].score ) {
+                        rank = temp_array[i-1].rank
+                    } else {
+                        rank = i+1
+                    }
+                        
+                    this["rank"] = rank
+                    
+                })
+                
+                datasets["fixture_scores"] = temp_array
+            }
+            
+            function build_dataviz__winning_margins() {
+                console.log("build_datavis__winning_margins() called")
+                
+                var data = datasets.winning_margins;
+                
+                var config = {
+                    
+                    viz: {
+                        width: 1000,
+                        height: 500,
+                        data_limit: 10,
+                        title: "Winning Margins",
+                        data_point: {
+                            radius: 5
+                        },
+                        data_line: {
+                            stroke_width: 2,
+                            stroke_colour: "black"
+                        }
+                    },
+                    
+                    scales: {}
+                    
+                }
+                config.scales.y =  {
+                        
+                        domain: (function() {
+                            var temp_array = []
+                    
+                            $.each( data, function() {
+                                if ( this.rank <= config.viz.data_limit ) {
+                                    console.log(this.id)
+                                    temp_array.push(this.id)
+                                }
+                            })
+
+                            return temp_array
+                
+                        }) (),
+                        
+                        paddingInner: .1,
+                        paddingOuter: 0,
+                        round: true,
+                        align: 0,
+                        range: [0, config.viz.height]
+                    }
+                config.scales.x = {
+                    domain: (function() {
+                        var temp_array = []
+                        
+                        $.each( data, function() {
+                            temp_array.push(this.score)
+                        })
+                        
+                        console.log(temp_array)
+                        temp_array = d3.extent(temp_array)
+                        console.log(temp_array)
+                        
+                        if ( temp_array[0] > 0 ) { 
+                            temp_array[0] = 0 
+                        }
+                        
+                        return temp_array
+                        
+                    }) (),
+                    range: [300, config.viz.width]
+                }
+                
+                var viz_section = d3.select("body")
+                .append("section").classed("viz-section", true);
+                
+                var viz_title_container = viz_section.append("div")
+                .classed("viz-title-container", true);
+                
+                var viz_title = viz_title_container.append("div")
+                .classed("title", true).text( function() { return config.viz.title;})
+            
+                var viz_subtitle = viz_title_container.append("div")
+                .classed("subtitle", true).text( function() { return "Top " + config.viz.data_limit;})
+            
+                var viz_container = viz_section.append("div").classed("viz-container", true);
+            
+                var svg = viz_container.append("svg")
+                    .style('overflow', 'visible');
+                
+                svg.attr("width", config.viz.width)
+                    .attr("height", config.viz.height);
+                
+                var yScale = d3.scaleBand()
+                    .domain(config.scales.y.domain)
+                    .range(config.scales.y.range)
+                    .paddingInner(config.scales.y.paddingInner)
+                    .paddingOuter(config.scales.y.paddingOuter)
+                    .align(config.scales.y.align)
+                    .round(config.scales.y.round)
+                
+                xScale = d3.scaleLinear()
+                    .domain(config.scales.x.domain)
+                    .range(config.scales.x.range);
+                
+                var xAxis = d3.axisBottom(xScale);
+                
+                svg.append("g").call(xAxis)
+                    .attr('transform', function(d) {
+                    return 'translate(0 ' + config.viz.height + ')';
+                })
+                
+                var xAxisGrid = xAxis
+                    .tickSize(config.viz.height)
+                    .tickFormat("");
+                
+                svg.append("g")
+                    .call(xAxisGrid)
+                                    
+                var row_group = svg.append('g');
+                
+                var rows = row_group.selectAll('g')
+                .data(data)
+                .enter()
+                .filter(function(d) { return d.rank <= config.viz.data_limit })
+                .append('g')
+                .attr('height', yScale.bandwidth())
+                .attr('width', config.viz.width)
+                .attr('transform', function(d) {
+                    return 'translate(0 ' + yScale(d.id) + ')';
+                });
+                
+                var labels = rows.append('g')
+                    .attr('transform', function(d) {
+                        return 'translate(0 ' + ((yScale.bandwidth()/2)+10) + ')';
+                    });
+                
+                labels.append('text')
+                    .classed('label_main', true)
+                    .attr('dy', -10)
+                    .attr('dx', 0)
+                    .attr('y', 0)
+                    .attr('x', 0)
+                    .text( function(d, i) {
+                    
+                        console.log(i)
+                    
+                        if (d.fixture_margin > 0 ) {
+                            margin = "+"+d.fixture_margin
+                        } else {
+                            margin = d.fixture_margin
+                        }
+                    
+                        if ( d.rank != i+1 ) {
+                            rank = "="
+                        } else {
+                            rank = d.rank + "."
+                        }
+                        return rank + " " + d.player_name + ", " + margin
+                    });
+                
+                labels.append('text')
+                    .classed('label_secondary', true)
+                    .attr('dy', 5)
+                    .attr('dx', 0)
+                    .attr('y', 0)
+                    .attr('x', 0)
+                    .text( function(d) {
+                        return d.team_name + " " + d.score + ' // ' + d.opponent_score + " "
+ + d.opponent_team + ", GW" + d.gameweek
+                    });
+                
+                var margin_line = rows.append('line')
+                    .attr('x1', function(d) { return xScale(d.opponent_score) })
+                    .attr('x2', function(d) { return xScale(d.score) })
+                    .attr('y1', function(d) { return yScale.bandwidth()/2 })
+                    .attr('y2', function(d) { return yScale.bandwidth()/2 })
+                    .style('stroke-width', config.viz.data_line.stroke_width)
+                    .style('stroke', config.viz.data_line.stroke_colour);
+                    
+                var score_circles = rows.append('circle')
+                    .attr('cx', function(d) { return xScale(d.score) })
+                    .attr('cy', function(d) { return yScale.bandwidth()/2 })
+                    .attr('r', config.viz.data_point.radius)
+                    .style('stroke-width', config.viz.data_line.stroke_width)
+                    .style('stroke', config.viz.data_line.stroke_colour)
+                    .style('fill', 'black');
+                
+                var opp_score_circles = rows.append('circle')
+                    .attr('cx', function(d) { return xScale(d.opponent_score) })
+                    .attr('cy', function(d) { return yScale.bandwidth()/2 })
+                    .attr('r', config.viz.data_point.radius)
+                    .style('stroke-width', config.viz.data_line.stroke_width)
+                    .style('stroke', config.viz.data_line.stroke_colour)
+                    .style('fill', 'white');
+                
+                
+                
+                
+                
+            }
+        
+        </script>        
+    </body> 
+</html>
