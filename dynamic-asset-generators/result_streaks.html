@@ -1,0 +1,132 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"> 
+
+<html lang="en">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <title>Chumpionship Streaks</title>
+        
+        
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://d3js.org/d3.v5.min.js"></script>
+        
+        <style>
+            
+            @import url('https://fonts.googleapis.com/css?family=Roboto+Slab:100,200,300,400,500,600,700,800,900&display=swap');
+        
+            body {
+                font-family: 'Roboto Slab', serif;
+            }
+            
+            body div {
+                margin: 0 auto;
+            }
+            
+            div.viz-container text.label_main {
+                font-weight: 500;
+                
+            }
+        
+            div.viz-container text.label_secondary {
+                text-transform: uppercase;
+                font-weight: 400;
+                font-size: 0.7em;
+            }
+        
+        </style>
+        
+    </head> 
+    
+    <body> 
+        <script>
+        
+            const database_url = "https://raw.githubusercontent.com/jrmychrstphr/Chumpionship/master/json/2020_database.json"
+            var database, datasets = {};
+            
+            $.getJSON(database_url, function(json) {                                
+                database = json;
+                init()
+            });
+            
+            function init() {
+                console.log("database loaded")
+                calculate_streaks()                
+                
+            }
+            
+            function calculate_streaks() {
+                
+                var temp_obj = {}
+                var result_streaks = {}
+                
+                $.each(database, function(key,val) {
+                    
+                    var temp_array = []
+                    //console.log(key)
+                    
+                    for (i = 1; i <= Object.keys(this["gw data"]).length; i++) {
+                        var result = this["gw data"][i]["fixture result"]
+                        if (result != "") {
+                            temp_array.push(result)                            
+                        }
+                    }
+                    
+                    //console.log(temp_array)
+                    temp_obj[key] = temp_array
+                    
+                })
+                
+                $.each(temp_obj, function(key, val) {
+                    console.log(key)
+                    
+                    var prev_result = "";
+                    var streak_count = 0;
+                    var result_code = "";
+                    
+                    var longest_streaks = {"W": 0, "D":0, "L":0}
+                    
+                    for (i = 0; i < this.length; i++){
+                        //console.log(this[i])
+                        
+                        //if the result is not the same as the previous result, reset streak to 1
+                        if (this[i]!== prev_result) {
+                            streak_count = 1;
+                        } else {
+                            streak_count++
+                        }
+                        
+                        //define result code
+                        result_code = this[i][0].toUpperCase()
+                        
+                        //update longest_streaks
+                        if (longest_streaks[result_code] < streak_count) {
+                            longest_streaks[result_code] = streak_count
+                        }
+                        
+                        
+                        console.log('GW'+(i+1)+': '+result_code+streak_count)
+                        
+                        
+                        //set prev_result to this result nd move to the next GW
+                        prev_result = this[i];                        
+                    }
+                    
+                    console.log(longest_streaks)
+                    
+                    result_streaks[key] = {}
+                    result_streaks[key]['results_array'] = val;
+                    result_streaks[key]['longest_streaks'] = longest_streaks;
+                    result_streaks[key]['current_streak'] = result_code+streak_count;
+                    
+                })
+                
+                
+                
+                console.log(result_streaks)
+                
+            }
+            
+            
+                        
+        </script>        
+    </body> 
+</html>
