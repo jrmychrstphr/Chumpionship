@@ -1,0 +1,86 @@
+Python scripts
+
+1   Prepares a fresh .json file for a new season
+    
+
+2   Adds players to the .json file
+
+    - Reads the league page on the fpl website and scrapes each team's:
+        * Team Name
+        * Player (Manager) name
+        * FPL code
+        
+
+2   - Creates a fixture list for each player in the league based on the FPL league's generated fixture list
+    
+
+
+
+Database heirachy:
+
+[XXXX]_season_data.json:
+
+- league_data:
+
+    - fpl_league_code (*)
+    - fpl_league_URL (*)
+
+– player_data:
+
+    – [manager_code]:
+
+        – manager_info:
+
+            – manager_fullname (*)
+            – manager_firstname (*)
+            – manager_surname (*)
+            – team_name (*)
+            – fpl_code (*)
+
+
+        - fixtures:
+            - [gw]: 
+                - opponent_manager_fullname (*)
+                - opponent_team_name (*)
+                - opponent_manager_fpl_code (*)
+                - fixture_class (*)
+
+
+        - gw_performance:
+            – [gw]:
+                - total_score
+                - fixture_score
+                - fixture_result
+                - fixture_opponent_manager_name
+                - fixture_opponent_team_name
+                - transfers_made
+                - transfer_cost
+                - chip_played
+
+                - squad:
+
+
+        - season_performance:
+        
+            - transfers_made_array
+            - transfers_made_total
+            
+            - result_array                          // array of results     e.g: W, W, D, L, W ...
+            - result_count: {W:0, D:0, L:0}         // object with season total counts of results
+            
+            - fixture_score_array                   // array of scores
+            - fixture_score_total                   // total points scored
+            
+            - opponent_score_array                  // array of scores by fixture opponent each week
+            - opponent_score_total                  // total of points against
+            
+            - league_points_array
+            - league_points_total
+            
+            - league_position_array                 // array of position in the league
+            - league_position_max
+            - league_position_min
+            - league_position_now
+
+            - squad:
+                    
