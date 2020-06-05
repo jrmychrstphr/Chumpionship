@@ -1,21 +1,3 @@
-Python scripts
-
-1   Prepares a fresh .json file for a new season
-    
-
-2   Adds players to the .json file
-
-    - Reads the league page on the fpl website and scrapes each team's:
-        * Team Name
-        * Player (Manager) name
-        * FPL code
-        
-
-2   - Creates a fixture list for each player in the league based on the FPL league's generated fixture list
-    
-
-
-
 Database heirachy:
 
 [XXXX]_season_data.json:
@@ -48,14 +30,19 @@ Database heirachy:
 
         - gw_performance:
             – [gw]:
-                - total_score
+                - points_scored
+                - points_on_bench
+                - points_spent
                 - fixture_score
+
+                - transfers_made
+                - squad_value
+
+                - chip_played [TC, BB, FH, WC, None]
+
                 - fixture_result
                 - fixture_opponent_manager_name
                 - fixture_opponent_team_name
-                - transfers_made
-                - transfer_cost
-                - chip_played
 
                 - squad:
 
@@ -65,22 +52,39 @@ Database heirachy:
             - transfers_made_array
             - transfers_made_total
             
-            - result_array                          // array of results     e.g: W, W, D, L, W ...
-            - result_count: {W:0, D:0, L:0}         // object with season total counts of results
-            
             - fixture_score_array                   // array of scores
+            - fixture_score_running_total_array     // array of total score
             - fixture_score_total                   // total points scored
+
+            - points_scored_array                   // array of total points scored (before deductions)
+            - points_scored_total
+
+            - points_spent_array                    // array of points spent on transfers
+            - points_spent_total
+
+            - points_on_bench_array
+            - points_on_bench_total
             
-            - opponent_score_array                  // array of scores by fixture opponent each week
+            - opponent_score_array                  // array of scores by opponents
             - opponent_score_total                  // total of points against
             
+            - result_array                          // array of results 
+            - result_count: {W:0, D:0, L:0}         // total counts of results
+            
             - league_points_array
+            - league_points_running_total_array
             - league_points_total
             
             - league_position_array                 // array of position in the league
-            - league_position_max
-            - league_position_min
             - league_position_now
+
+            - league_position_high:                  // highest league position held
+                - position
+                - gameweeks_at_position
+
+            - league_position_low:                  // lowest league position held
+                - position
+                - gameweeks_at_position
 
             - squad:
                     
