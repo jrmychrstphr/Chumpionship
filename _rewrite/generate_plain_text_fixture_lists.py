@@ -86,7 +86,7 @@ def write_fixture_list(gw_data):
 		line += home_team_name
 		line += ' ' * home_team_indent
 		line += ' ' * score_block_length
-		line += '//'
+		line += ' // '
 		line += ' ' * score_block_length
 		line += ' ' * away_team_indent
 		line += away_team_name
@@ -124,7 +124,6 @@ def execute():
 	database = return_load_json_file('2020_season_data.json')
 
 	for x in database['fixture_list'].items():
-
 		write_fixture_list(x)
 
 execute()
