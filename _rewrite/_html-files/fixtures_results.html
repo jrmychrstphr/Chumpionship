@@ -59,17 +59,25 @@
             #fixtures {
                 background-image: linear-gradient(-90deg, #00FF00, #0000FF);
                 //background-image: linear-gradient(-90deg, rgb(57,255,0), rgb(42,0,142));
-                width: 500px;
                 margin: 0 auto;
+                width: 800px;
+            }
+
+            div.wrapper {
+
+            }
+
+            div.container {
                 padding: 2em;
             }
             
             div.title-block {
                 width: calc(100%-2em);
                 background: black;
-                padding: 1em 1em 0.5em;
+                //padding: 1em 1em 0.5em;
                 color: white;
                 text-align: center;
+                border: 20px solid black;
             }
             
             h1 {
@@ -79,11 +87,21 @@
                 margin: 0;
                 line-height: 1em;
             }
+
+            div.fixture-block {
+                padding: 10px 20px;
+                border-right: 20px solid black;
+                border-left: 20px solid black;
+                border-bottom: 20px solid black;
+            }
             
             div.fixture-container {
                 width: 100%;
                 margin: 0 auto;
                 text-align: center;
+            }
+
+            div.fixture-container:not(:last-child) {
                 border-bottom: 10px solid black;
             }
             
@@ -105,6 +123,15 @@
             div.win {
                 color: white;
             }
+
+            div.divider {
+                background-image: url('https://github.com/jrmychrstphr/Chumpionship/blob/master/_rewrite/assets/design-assets/chumpionship_divider@2x-8.png?raw=true');
+                background-size: cover;
+                background-position: center;
+                height: 2em;
+                width: 100%;
+            }
+
         
             
         </style>
@@ -302,6 +329,7 @@
 
                 // Update the title
                 $( "#gw" ).text(parseInt(gameweek))
+                $( "#listings-type" ).text(type)
                 $(document).prop('title', function(){ return $(".title-block h1").text() });
 
             };
@@ -362,11 +390,16 @@
     </head> 
     
     <body> 
+        <main>
             <section id="fixtures">
-                <div class="container">
-                    <div class="title-block"><h1>&#62;&#62; Gameweek <span id="gw"></span> &#60;&#60;</h1></div>
-                    <div class="fixture-block"></div>
+                <div class="divider"></div>
+                <div class="wrapper">
+                    <div class="container">
+                        <div class="title-block"><h1>&#62;&#62; Gameweek <span id="gw"></span> <span id="listings-type"></span> &#60;&#60;</h1></div>
+                        <div class="fixture-block"></div>
+                    </div>
                 </div>
+                <div class="divider"></div>
             </section>
         </main>
     </body> 

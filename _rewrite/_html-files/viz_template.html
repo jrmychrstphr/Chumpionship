@@ -1,0 +1,222 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"> 
+
+<html lang="en">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <title>Title Goes Here</title>
+        
+        <style>
+            @font-face {
+                font-family: 'Champion';
+                src: url('fonts/Champion HTFFlyweight Regular.otf');
+                font-weight: 200;
+            }
+        
+            @font-face {
+                font-family: 'Champion';
+                src: url('fonts/Champion HTFFeatherweight Regular.otf');
+                font-weight: 400;
+            }
+        
+            @font-face {
+                font-family: 'Champion';
+                src: url('fonts/Champion HTFMiddleweight Regular.otf');
+                font-weight: 600;
+            }
+        
+            @font-face {
+                font-family: 'Champion';
+                src: url('fonts/Champion HTFHeavyweight Regular.otf');
+                font-weight: 800;
+            }
+            
+            main {
+                font-family: 'Champion'
+            }
+            
+            .fly {
+                font-weight: 200;
+            }
+            
+            .feather {
+                font-weight: 400;
+            }
+            
+            .middle {
+                font-weight: 600;
+            }
+            
+            .heavy {
+                font-weight: 800;
+            }
+            
+            main {}
+            
+            #league_table {
+                background-image: linear-gradient(-90deg, #00FF00, #0000FF);
+                width: 800px;
+                margin: 0 auto;
+                text-transform: uppercase;
+
+            }
+
+            div.wrapper {
+                padding: 2em;
+            }
+
+            div.logo {
+                background-image: url('https://github.com/jrmychrstphr/Chumpionship/blob/master/_rewrite/assets/design-assets/chumpionship_logo---01@2x-8.png?raw=true');
+                background-size: contain;
+                background-position: right;
+                height: 2em;
+                width: 100%;
+            }
+
+            div.divider {
+                background-image: url('https://github.com/jrmychrstphr/Chumpionship/blob/master/_rewrite/assets/design-assets/chumpionship_divider@2x-8.png?raw=true');
+                background-size: cover;
+                background-position: center;
+                height: 2em;
+                width: 100%;
+            }
+
+            div.title-container {
+                width: calc(100%-2em);
+                background: black;
+                padding: 1em 1em 0.5em;
+                color: white;
+                text-align: center;
+            }
+            
+            h1 {
+                text-transform: uppercase;
+                font-weight: 400;
+                font-size: 5em;
+                margin: 0;
+                line-height: 1em;
+            }
+            
+            div.table-group {
+                padding-left: 100px;
+                position: relative;
+            }
+            
+            div.group-title {
+                position: absolute;
+                color: white;
+                top: 50%;
+                left: -40px;
+            }
+            
+            div.table-group.top div.group-title {
+                font-size: 160px;
+                transform: translate(-50%, -48%);
+            }
+            
+            div.table-group.bottom div.group-title {
+                transform: translate(-50%, -50%) rotate(-90deg);
+                font-size: 100px;
+            }
+
+
+            
+            
+            div.table-group.top, div.table-group.bottom {
+                border: 10px solid black;
+                border-left: 110px solid black;
+                padding: 0 20px 0 20px;
+                background-color: black;
+                color: white;
+            }
+            
+            div.table-group.middle {
+                margin: 0;
+                padding: 0 10px 0 110px;
+                border-left: 20px solid black;
+                border-right: 20px solid black;
+            }
+            div.table-group.bottom {}
+            
+            div.table-row {
+                width: 100%;
+                margin: 0 auto;
+                text-align: left;
+            }
+            
+            div.table-row:not(:last-child) {
+                border-bottom: 5px solid;
+            }
+            
+            div.table-group:not(.middle) div.table-row {
+                //border-color: white;
+            }
+            
+            div.table-row {
+                font-weight: 600;
+                font-size: 1.7rem;
+            }
+            
+            div.table-row.large {
+                font-weight: 200;
+                font-size: 4.5rem;
+            }
+            
+            div.fixture-content {
+                //width: inherit;
+            }
+            
+            div.team {
+                display: inline-block;
+                text-transform: uppercase;
+            }
+            
+            div.table-column {
+                margin: 0 0 -0.15em 0;
+                padding: 0.5rem 0;
+                line-height: 1em;
+                
+                display: inline-block;
+            }
+            
+            div.table-column:not(:first-child) {
+                margin-left: 1rem;
+            }
+
+            div.table-column:not(:last-child) {
+                margin-right: 1rem;
+            }
+            
+            div.overall_points, div.total_league_points {
+                text-align: right;
+            }
+            
+            div.win {
+                color: white;
+            }
+
+        
+            
+        </style>
+        
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="fitty.min.js"></script>
+        
+    </head> 
+    
+    <body> 
+        <main>
+            <section id="content">
+                <div class="divider"></div>
+                <div class="wrapper">
+                    <div class="container"></div>
+                </div>
+                <div class="divider"></div>
+            </section>
+        </main>
+    </body> 
+
+    <script>
+
+    </script>
+    
+</html>

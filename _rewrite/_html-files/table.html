@@ -64,6 +64,14 @@
                 padding: 2em;
             }
 
+            div.logo {
+                background-image: url('https://github.com/jrmychrstphr/Chumpionship/blob/master/_rewrite/assets/design-assets/chumpionship_logo---01@2x-8.png?raw=true');
+                background-size: contain;
+                background-position: right;
+                height: 2em;
+                width: 100%;
+            }
+
             div.divider {
                 background-image: url('https://github.com/jrmychrstphr/Chumpionship/blob/master/_rewrite/assets/design-assets/chumpionship_divider@2x-8.png?raw=true');
                 background-size: cover;
@@ -96,20 +104,21 @@
             div.group-title {
                 position: absolute;
                 color: white;
+                top: 50%;
+                left: -40px;
             }
             
             div.table-group.top div.group-title {
-                top: -16px;
-                left: -92px;
                 font-size: 160px;
+                transform: translate(-50%, -48%);
             }
             
             div.table-group.bottom div.group-title {
-                transform: rotate(-90deg);
-                top: -2px;
-                left: -102px;
+                transform: translate(-50%, -50%) rotate(-90deg);
                 font-size: 100px;
             }
+
+
             
             
             div.table-group.top, div.table-group.bottom {
@@ -200,7 +209,9 @@
                 <div class="divider"></div>
                 <div class="wrapper">
                     <div class="container"></div>
+                    <!--<div class="footer">GW29</div>-->
                 </div>
+                <!--<div class="logo"></div>-->
                 <div class="divider"></div>
             </section>
         </main>
@@ -359,6 +370,20 @@
             var table_group_bottom = $("<div />").addClass('table-group bottom')
                 .appendTo(table_container);
 
+            if (table_settings['to_win_prizes'] > 0) {
+
+                var group_top_title = $("<div />").addClass('group-title').text("£")
+                    .appendTo(table_group_top);
+
+            }
+
+            if (table_settings['to_be_relegated'] > 0) {
+
+                var group_bottom_title = $("<div />").addClass('group-title').text("<<<")
+                    .appendTo(table_group_bottom);
+
+            }
+
             // add elements to the table
             $.each(table_data_array, function(idx) {
 
@@ -399,6 +424,9 @@
                 .appendTo(table_row);
 
             })
+
+            // Update the title
+            $(document).prop('title', function(){ return "Table: GW" + gameweek });
 
         }
 
