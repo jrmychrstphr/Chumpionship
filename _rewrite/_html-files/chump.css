@@ -1,0 +1,119 @@
+@font-face {
+    font-family: 'Champion';
+    src: url('fonts/Champion HTFFlyweight Regular.otf');
+    font-weight: 200;
+}
+
+@font-face {
+    font-family: 'Champion';
+    src: url('fonts/Champion HTFFeatherweight Regular.otf');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Champion';
+    src: url('fonts/Champion HTFMiddleweight Regular.otf');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'Champion';
+    src: url('fonts/Champion HTFHeavyweight Regular.otf');
+    font-weight: 800;
+}
+
+@font-face {
+    font-family: 'Helvetical Neue';
+    src: url('fonts/HelveticaNeueLTStd-Roman.otf');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Helvetical Neue';
+    src: url('fonts/HelveticaNeueLTStd-Bd.otf');
+    font-weight: 800;
+}
+
+@font-face {
+    font-family: 'Helvetical Neue';
+    src: url('fonts/HelveticaNeueLTStd-Lt.otf');
+    font-weight: 200;
+}
+
+main {
+    
+}
+
+.fly {
+    font-weight: 200;
+}
+
+.feather {
+    font-weight: 400;
+}
+
+.middle {
+    font-weight: 600;
+}
+
+.heavy {
+    font-weight: 800;
+}
+
+h1 {
+    font-family: 'Champion';
+    font-weight: 800;
+    font-size: 2em;
+    line-height: 1.4em;
+    margin-bottom: 1.4em;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-family: 'Helvetical Neue';
+    font-weight: 800;
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    margin-bottom: 0.7rem;
+    //text-transform: uppercase;
+}
+
+p {
+    font-family: 'Helvetical Neue';
+    font-size: 1em;
+    line-height: 1.4em;
+    font-weight: 200;
+}
+
+p:not(:last-child) {
+    margin-bottom: 2.8em;
+}
+
+section {
+    background-image: linear-gradient(-90deg, #00FF00, #0000FF);
+    width: 800px;
+    margin: 0 auto;
+    //text-transform: uppercase;
+
+}
+
+div.wrapper {
+    padding: 2em;
+}
+
+div.wrapper.dark{
+    background-color: black;
+    color: white;
+}
+
+div.divider {
+    background-image: url('https://github.com/jrmychrstphr/Chumpionship/blob/master/_rewrite/assets/design-assets/chumpionship_divider@2x-8.png?raw=true');
+    background-size: cover;
+    background-position: center;
+    height: 2.5em;
+    width: 100%;
+}
+
+div.divider.alt {
+    background-image: url('https://github.com/jrmychrstphr/Chumpionship/blob/master/_rewrite/assets/design-assets/chumpionship_divider---alt@2x-8.png?raw=true');
+}
