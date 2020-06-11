@@ -2,9 +2,19 @@
 }
 
 #viz {
-    height: 14rem;
     margin-bottom: 2.8rem;
-    //background-color: #111;
+}
+
+#viz.small {
+    height: 14rem;
+}
+
+#viz.large {
+    height: 28rem;
+}
+
+#viz.wip {
+    background-color: #111;
 }
 
 svg text {
@@ -14,14 +24,20 @@ svg text {
 
 svg text.label {
     fill: white;
+}
+
+svg text.label.centre-align {
     text-anchor: middle;
+}
+svg text.label.left-align {
+    text-anchor: start;
 }
 
 svg .axis line, svg .axis-grid line {
-    stroke: #4a4a4a;
+    stroke: rgb(74, 74, 74);
 }
 svg .axis text {
-    fill: #4a4a4a;
+    fill: rgb(74, 74, 74);
 }
 
 .table-wrapper {
@@ -30,12 +46,15 @@ svg .axis text {
 
 #rankings .table-container {
     font-family: 'Helvetica Neue';
+    margin: 0;
+}
+
+#rankings .table-container.cols-2 {
     column-rule-style: solid;
     column-rule-width: 1px;
     column-rule-color: white;
     column-gap: 2rem;
     column-count: 2;
-    margin: 0;
 }
 
 .table-row {

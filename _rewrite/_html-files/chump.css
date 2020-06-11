@@ -107,7 +107,7 @@ div.wrapper.dark{
 }
 
 div.divider {
-    background-image: url('https://github.com/jrmychrstphr/Chumpionship/blob/master/_rewrite/assets/design-assets/chumpionship_divider@2x-8.png?raw=true');
+    background-image: url('https://github.com/jrmychrstphr/Chumpionship/blob/master/assets/design-assets/chumpionship_divider@2x-8.png?raw=true');
     background-size: cover;
     background-position: center;
     height: 2.5em;
@@ -115,5 +115,5 @@ div.divider {
 }
 
 div.divider.alt {
-    background-image: url('https://github.com/jrmychrstphr/Chumpionship/blob/master/_rewrite/assets/design-assets/chumpionship_divider---alt@2x-8.png?raw=true');
+    background-image: url('https://github.com/jrmychrstphr/Chumpionship/blob/master/assets/design-assets/chumpionship_divider---alt@2x-8.png?raw=true');
 }
