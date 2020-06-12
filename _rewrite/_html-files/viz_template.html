@@ -128,6 +128,7 @@
             }
 
             var viz_div = $("<div />").attr("id", "viz")
+            .addClass('small')
             .appendTo(container_div);
 
             var rankings_div = $("<div />").attr("id", "rankings")
@@ -276,6 +277,7 @@
             .appendTo(rankings_wrapper);
 
             var table_container = $("<div />").addClass('table-container')
+            .addClass('cols-2')
             .appendTo(rankings_wrapper);
 
 
@@ -317,7 +319,7 @@
                         text = val['manager_name'] + ' (£)'
                     } else { text = val['manager_name'] }
 
-                    return text
+                    return val['manager_name']
                     
                 })
                 .appendTo(row)
