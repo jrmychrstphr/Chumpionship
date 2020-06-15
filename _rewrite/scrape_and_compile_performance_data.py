@@ -1,5 +1,6 @@
 import json
 from pathlib import Path
+import datetime
 
 from bs4 import BeautifulSoup
 from selenium import webdriver
@@ -124,9 +125,12 @@ def return_scrape_and_compile_gw_performance_data():
 		print('Database contains existing gw_performance data')
 		user_input = input('Update existing data? (Y/N): ')
 
-		if str(user_input.upper()) == "Y":
-			for key, val in database['player_data'][manager_code_list[0]].items():
+		if str(user_input.upper()) == "N":
+			for key, val in database['player_data'][manager_code_list[0]]['gw_performance'].items():
 				exclude_list.append(key)
+
+		print(exclude_list)
+
 	else:
 		print('database does not contain existing gw_performance data')
 
@@ -188,7 +192,7 @@ def return_scrape_and_compile_gw_performance_data():
 
 					points_scored = float(row_contents_array[1].get_text())
 					points_on_bench = float(row_contents_array[2].get_text())
-					transfers_made = float(row_contents_array[4].get_text())
+					#transfers_made = float(row_contents_array[4].get_text())
 					points_spent = float(row_contents_array[5].get_text())
 					overall_total_points = float(row_contents_array[6].get_text())
 					squad_value = float(row_contents_array[8].get_text())
@@ -203,7 +207,7 @@ def return_scrape_and_compile_gw_performance_data():
 					scraped_data[gw]['points_on_bench'] = points_on_bench
 					scraped_data[gw]['points_spent'] = points_spent
 					scraped_data[gw]['fixture_score'] = fixture_score
-					scraped_data[gw]['transfers_made'] = transfers_made
+					#scraped_data[gw]['transfers_made'] = transfers_made
 					scraped_data[gw]['squad_value'] = squad_value
 					scraped_data[gw]['overall_total_points'] = overall_total_points
 
@@ -251,8 +255,97 @@ def return_scrape_and_compile_gw_performance_data():
 
 						scraped_data[key]['chip_played'] = chip
 
-		
+
 		performance_data[manager_code] = scraped_data
+
+
+	## scrape tranfer data
+	# declare dict to store data in 
+	transfer_data = {}
+
+	for manager_code in manager_code_list:
+
+		#declare dict to store data in 
+		scraped_data = {}
+
+		# Build the url
+		#url = "https://fantasy.premierleague.com/entry/"+manager_code+"/event/"+gameweek
+		url = "https://fantasy.premierleague.com/entry/"+manager_code+"/transfers"
+
+		try:
+			print("Loading transfers page for: ", manager_code)
+
+			#open the page
+			driver.get(url)
+			
+			#wait for the gameweek-by-gameweek data table container to appear
+			element = WebDriverWait(driver, 10).until(
+				EC.presence_of_element_located((By.CSS_SELECTOR, "table.Table-ziussd-1.fVnGhl tbody tr"))
+			)
+
+		except:
+			#if the table is not found, display an error message
+			print("Error: Data table not found")
+		
+		else:
+			print("Success! Let's scrape some transfer data")
+
+			#create soup of DOM
+			soup = BeautifulSoup(driver.page_source, 'lxml')
+
+			#locate Transfers title
+			element = soup.find("h2", text="Transfers")
+
+			#move up the soup DOM until the table is found
+			while len(element.select('.Table-ziussd-1.fVnGhl')) == 0:
+				element = element.parent
+			else:
+				table_rows = element.select('.Table-ziussd-1.fVnGhl tbody tr')
+
+			#print(table_rows)
+
+			for row in table_rows:
+
+				#print (row)
+
+				row_contents_array = row.contents
+				row_gameweek_string = row_contents_array[3].get_text()
+				gw = str("{0:0=2d}".format(int(row_gameweek_string.lower().replace('gw', ''))))
+
+				# if the gameweek is not in the scraped data dict, 
+				# add the gameweek to the dict and set the val to 1
+				if gw not in scraped_data:
+					scraped_data[gw] = 1
+
+				# else, +1 to the value
+				else:
+					scraped_data[gw] = scraped_data[gw]+1
+
+
+		transfer_data[manager_code] = scraped_data
+
+
+	# push transfers made to performance data
+	for manager_code in manager_code_list:
+
+		for key, val in performance_data[manager_code].items():
+
+			# if gw is on the exclusion_list, push data from database to performance data temp dict
+			if key not in exclude_list:
+
+				if key not in transfer_data[manager_code]:
+					transfers_made = 0
+				else:
+					transfers_made = transfer_data[manager_code][key]
+
+				#print( 'Transfers in gw' + str(key) + ': ' + str(transfers_made))
+				performance_data[manager_code][key]['transfers_made'] = transfers_made
+
+			else:
+
+				print(key + ' in exclusion list')
+				performance_data[manager_code][key]['transfers_made'] = database['player_data'][manager_code]['gw_performance'][key]['transfers_made']
+				print('Data copied from database')
 
 	#print(performance_data)
 
@@ -560,6 +653,19 @@ def covid_fix(input_data):
 
 	return output_data
 
+def return_create_date_stamp():
+	now = datetime.datetime.now()
+
+	year = now.strftime("%Y")
+	month = now.strftime("%m")
+	day = now.strftime("%d")
+	hour = now.strftime("%H")
+	minute = now.strftime("%M")
+
+	datestamp = year + month + day + "_" + hour + minute
+	return datestamp
+
+
 
 def execute():
 	global database
@@ -577,8 +683,8 @@ def execute():
 	push_to_database_season_performance_data(season_performance_data)
 
 
-	#print(database)
-	write_to_json_file('2020_season_data - u', database)
+	datestamp = return_create_date_stamp()
+	write_to_json_file('2020_season_data---'+datestamp, database)
 
 	close_browser()
 
