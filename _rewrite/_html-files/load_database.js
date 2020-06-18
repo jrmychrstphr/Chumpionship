@@ -1,4 +1,5 @@
-var database_url = "https://raw.githubusercontent.com/jrmychrstphr/Chumpionship/master/_rewrite/2020_season_data%20-%20u.json"
+var filename = '2020_season_data---20200618_0952.json'
+var database_url = "https://raw.githubusercontent.com/jrmychrstphr/Chumpionship/master/_rewrite/"+filename
 
 var database;
     

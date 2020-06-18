@@ -65,17 +65,32 @@ h1 {
     font-weight: 800;
     font-size: 2em;
     line-height: 1.4em;
-    margin-bottom: 1.4em;
     text-transform: uppercase;
+    margin: 0;
 }
 
 h2 {
     font-family: 'Helvetical Neue';
     font-weight: 800;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
+    line-height: 1.75rem;
+    margin: 0;
+}
+
+h3 {
+    font-family: 'Helvetical Neue';
+    font-weight: 400;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    margin: 0;
+}
+
+h4 {
+    font-family: 'Helvetical Neue';
+    font-weight: 800;
+    font-size: 1rem;
     line-height: 1.4rem;
-    margin-bottom: 0.7rem;
-    //text-transform: uppercase;
+    margin: 0;
 }
 
 p {
@@ -93,7 +108,6 @@ section {
     background-image: linear-gradient(-90deg, #00FF00, #0000FF);
     width: 800px;
     margin: 0 auto;
-    //text-transform: uppercase;
 
 }
 
@@ -116,4 +130,8 @@ div.divider {
 
 div.divider.alt {
     background-image: url('https://github.com/jrmychrstphr/Chumpionship/blob/master/assets/design-assets/chumpionship_divider---alt@2x-8.png?raw=true');
+}
+
+#input_controls {
+    position: absolute;
 }

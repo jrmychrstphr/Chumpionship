@@ -1,19 +1,31 @@
 #rankings {
 }
 
-#viz {
+.viz-container {
+    margin-bottom: 1.4rem;
+}
+
+.page-section:not(:last-child) {
     margin-bottom: 2.8rem;
 }
 
-#viz.small {
+.viz-container.small {
     height: 14rem;
 }
 
-#viz.large {
+.viz-container.regular {
+    height: 21rem;
+}
+
+.viz-container.large {
     height: 28rem;
 }
 
-#viz.wip {
+.viz-container.xlarge {
+    height: 36rem;
+}
+
+#viz-container.wip {
     background-color: #111;
 }
 
@@ -38,6 +50,19 @@ svg .axis line, svg .axis-grid line {
 }
 svg .axis text {
     fill: rgb(74, 74, 74);
+}
+
+#rankings div.cols-2 {
+    display: inline-block;
+    margin: 0 -1rem;
+    width: calc( 100% + 2rem );
+}
+
+#rankings div.cols-2 div.column-container {
+    width: calc( (100% - 2rem)/2 - 1rem );
+    float: left;
+    padding: 0 1rem;
+    
 }
 
 .table-wrapper {
@@ -87,7 +112,7 @@ div.title-block {
     margin-bottom: 2.8rem;
 }
 
-div.title-block h1 {
+div.title-block h1, div.title-block h2   {
     margin: 0;
     
 }
