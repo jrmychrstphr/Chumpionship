@@ -13,7 +13,8 @@
         <script src="https://d3js.org/d3.v5.min.js"></script>
        
         <script src="load_database.js"></script>
-        
+        <script src="chump_colours.js"></script>
+
     </head> 
     
     <body> 
@@ -44,6 +45,40 @@
         function viz_gw_scores() {
 
 
+            // Add container divs to DOM
+            var container_div = $( "#content div.container" ).empty();
+
+
+            var title_block = $("<div />").attr("id", "page_title")
+            .addClass('title-block')
+            .appendTo(container_div);
+
+            var vis_title = $("<h1 />").text("Single scores")
+            .appendTo(title_block);
+
+
+            var viz_section = $("<div />").attr("id", "single_scores")
+            .addClass("page-section")
+            .appendTo(container_div);
+
+            var viz_title_block = $("<div />").addClass('title-block')
+            .appendTo(viz_section);
+
+            var viz_heading = $("<h2 />")
+            .text("")
+            .appendTo(viz_title_block);
+
+            var viz_subhead = $("<h3 />")
+            .text("")
+            .appendTo(viz_title_block);
+
+            var viz_div = $("<div />")
+            .addClass('viz-container')
+            .addClass('large')
+            //.addClass('wip')
+            .appendTo(viz_section);
+
+
             // Compile a dataset from the database
             dataset = []
 
@@ -64,6 +99,7 @@
                     console.log(gw_performance[(("0" + gw).slice(-2))])
                         
                     opponent = gw_performance[(("0" + gw).slice(-2))]['fixture_opponent_manager_fullname']
+                    chip_played = gw_performance[(("0" + gw).slice(-2))]['chip_played']
 
                     temp_obj = {
                         'manager_code': manager_code,
@@ -71,6 +107,7 @@
                         'team_name': team_name,
                         'fixture_score': val,
                         'opponent': opponent,
+                        'chip_played': chip_played,
                         'gameweek': gw
                     }
 
@@ -102,37 +139,14 @@
 
             console.log(sorted_dataset)
 
-
-            // Add container divs to DOM
-            var container_div = $( "#content div.container" );
-
-            var title_block = $("<div />").addClass('title-block')
-            .appendTo(container_div);
-
-            var vis_title = $("<h1 />").text("Single scores")
-            .appendTo(title_block);
-
-            var vis_subline = $("<p />")
-            .appendTo(title_block);
-
-
-            var viz_div = $("<div />").attr("id", "viz")
-            .addClass('large')
-            //.addClass('wip')
-            .appendTo(container_div);
-
-            var rankings_div = $("<div />").attr("id", "rankings")
-            .appendTo(container_div);
-
-
             //Build dataviz
             dataviz_config = {
-                'viz_height': $( "#viz" ).height(),
-                'viz_width': $( "#viz" ).width(),
+                'viz_height': viz_div.height(),
+                'viz_width': viz_div.width(),
                 'canvas_padding': {
                     'top': 20,
                     'right': 20,
-                    'bottom': 25,
+                    'bottom': 35,
                     'left': 25,
                     'inner_top': 20,
                     'inner_right': 0,
@@ -204,14 +218,7 @@
 
                     }) ();
 
-            /*
-            var colours_scale = d3.scaleLinear()
-            .domain([1, top_scores_dataset.length])
-            .range(['#00ff00', '#0000ff'])
-            .interpolate(d3.interpolateRgb);
-            */
-
-            var viz_container = d3.select("#viz")
+            var viz_container = d3.select("#single_scores .viz-container")
 
             var svg = viz_container.append("svg")
             .attr('height', dataviz_config.viz_height)
@@ -226,7 +233,7 @@
 
             var xAxisGenerator = d3.axisBottom(xScale)
             .tickSizeOuter(0)
-            .tickSize(0)
+            .tickSize(10)
             .tickPadding(10)
             .tickValues(dataviz_config.xScale.tick_values)
             .tickFormat(d => ("GW"+ d));
@@ -257,8 +264,7 @@
 
             var yAxisGenerator = d3.axisLeft(yScale)
             .tickSizeOuter(0)
-            //.tickSize(0)
-            .tickPadding(-dataviz_config.canvas_padding.inner_left)
+            .tickSize(0)
             .tickValues(dataviz_config.yScale.tick_values)
             .tickFormat( function(d) {
                 if (d === d3.max(dataviz_config.yScale.tick_values)) {
@@ -279,7 +285,10 @@
             yAxis.select(".domain").remove();
 
 
-            yAxis.selectAll(".tick text").attr('dy', '-0.4em');
+            yAxis.selectAll(".tick text")
+            .attr('dy', '-0.4em')
+            .attr('dx', '0.25em')
+            .style("text-anchor", "start");
 
 
             var yAxisGridGenerator = yAxisGenerator
@@ -353,19 +362,26 @@
             });
 
 
-            // Build tabulated rankings on page
 
-            var rankings_wrapper = $("<div />")
-            .addClass('table-wrapper')
+            // Build tabulated rankings on page
+            var rankings_div = $("<div />").attr("id", "rankings")
+            .appendTo(viz_section);
+
+            var columns_wrapper = $("<div />")
+            .addClass('column-wrapper')
             .appendTo(rankings_div);
 
-            var table_title = $("<h2 />").text('Top 5')
-            .appendTo(rankings_wrapper);
+            var rankings_container = $("<div />")
+            .addClass('column-container')
+            .appendTo(columns_wrapper);
+
+            var table_title = $("<h4 />").text('Top five')
+            .appendTo(rankings_container);
 
             var table_container = $("<div />")
             .addClass('table-container')
             //.addClass('cols-2')
-            .appendTo(rankings_wrapper);
+            .appendTo(rankings_container);
 
 
             $.each( sorted_dataset, function(idx, val) {
@@ -418,22 +434,32 @@
                     var manager_name_column = $("<div />").addClass('table-column')
                     .text( function() {
 
-                        text = val['manager_name'] + ', GW' + val['gameweek']
+                        text = val['manager_name']
 
                         return text
                         
                     })
                     .appendTo(row)
 
-/*
                     var gameweek_column = $("<div />").addClass('table-column')
                     .text('GW' + val['gameweek'])
                     .appendTo(row)
 
-                    var opponent_column = $("<div />").addClass('table-column')
-                    .text('( vs ' + val['opponent'] + ')')
+                    var chip_column = $("<div />").addClass('table-column')
+                    .text( function () {
+
+                        if ( val['chip_played'].toLowerCase() != 'none' ) {
+                            text =  val['chip_played'] + ' chip played'
+                        } else { text = "" }
+
+                        return text
+
+                    }())
                     .appendTo(row)
-*/
+
+
+
+
                     var score_column = $("<div />")
                     .addClass('table-column')
                     .addClass('right-align')

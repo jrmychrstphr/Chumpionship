@@ -138,12 +138,10 @@
         
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="fitty.min.js"></script>
-        
+
+        <script src="load_database.js"></script>
+
         <script>
-            
-            var database_url = "https://raw.githubusercontent.com/jrmychrstphr/Chumpionship/master/_rewrite/2020_season_data%20-%20u.json"
-            
-            var database;
             
             function build_controls() {
                                 
@@ -247,7 +245,9 @@
 
                 score = database['player_data'][manager_code]['gw_performance'][gameweek]['fixture_score']
 
-                if (score) {
+                //console.log(score)
+
+                if (score || score === 0) {
 
                     return score
                 } else {
@@ -306,8 +306,8 @@
 
                     } else if (type == 'Results') {
 
-                        home_score = return_fixture_score(home_manager_code, gameweek).toString()
-                        away_score = return_fixture_score(away_manager_code, gameweek).toString()
+                        home_score = return_fixture_score(home_manager_code, gameweek)
+                        away_score = return_fixture_score(away_manager_code, gameweek)
 
                         string = " " + home_score + " // " + away_score + " "
 

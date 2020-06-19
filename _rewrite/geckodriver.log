@@ -2137,3 +2137,4 @@ JavaScript error: https://platform.twitter.com/widgets/widget_iframe.86df6234483
 1592472079007	Marionette	INFO	Listening on port 52243
 1592472079095	Marionette	WARN	TLS certificate errors will be ignored for this session
 1592472130592	Marionette	INFO	Stopped listening on port 52243
+1592506738738	Marionette	INFO	Stopped listening on port 51369

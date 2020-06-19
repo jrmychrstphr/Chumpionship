@@ -146,81 +146,11 @@
                 return input_array            
             }
 
-            
-            // Compile a dataset from the database
-            // Total transfers made by gameweek
-            dataset = []
-
-            temp_dataset = {}
-            var temp_gw_count = []
-
-            //for each player in the database
-            $.each( database['player_data'], function(idx, val) {
-
-                manager_code = val['manager_info']['fpl_code'] 
-
-                // take the array of transfers made each week
-                transfers_made_array = val['season_performance']['transfers_made_array']
-                temp_dataset[manager_code] = transfers_made_array;
-
-                temp_gw_count.push(transfers_made_array.length)
-
-
-            })
-
-
-            for (idx=0; idx<d3.max(temp_gw_count); idx++) {
-
-                gw = idx+1
-                gameweek = (("0" + gw).slice(-2))
-
-                temp_obj = {
-                    'gameweek': parseInt(gameweek),
-                    'total': 0
-                }
-
-                $.each( temp_dataset, function(key, val) {
-
-                    temp_obj[key] = val[idx]
-                    temp_obj['total'] += val[idx]
-
-
-                })
-
-                dataset.push(temp_obj)
-
-            }
-
             manager_list = return_manager_code_array(database)
 
             if (!(manager_list.includes(input_key))) {
                 input_key = 'total'
             }
-
-            //console.log(manager_list)
-            //console.log(input_key)
-
-            // sort the dataset by score
-            dataset = dataset.slice().sort((a, b) => d3.descending(a[input_key], b[input_key]))
-
-            // Add rank to the dataset
-            $.each( dataset, function(idx, val) {
-
-                if ( idx > 0 ) {
-                    if ( dataset[idx-1][input_key] === val[input_key]) {
-                        rank = dataset[idx-1]['rank']
-                    } else {
-                        rank = idx+1
-                    }
-                } else {
-                    rank = 1
-                }
-
-                this['rank'] = rank
-
-            });
-
-            //console.log(dataset)
 
 
 
@@ -265,6 +195,76 @@
             //.addClass('wip')
             .appendTo(viz_section);
 
+
+            // Compile a dataset from the database
+            // Total transfers made by gameweek
+            dataset = []            
+
+            temp_dataset = {}
+            var temp_gw_count = []
+
+            //for each player in the database
+            $.each( database['player_data'], function(idx, val) {
+
+                manager_code = val['manager_info']['fpl_code'] 
+
+                // take the array of transfers made each week
+                transfers_made_array = val['season_performance']['transfers_made_array']
+                temp_dataset[manager_code] = transfers_made_array;
+
+                temp_gw_count.push(transfers_made_array.length)
+
+
+            })
+
+
+            for (idx=0; idx<d3.max(temp_gw_count); idx++) {
+
+                gw = idx+1
+                gameweek = (("0" + gw).slice(-2))
+
+                temp_obj = {
+                    'gameweek': parseInt(gameweek),
+                    'total': 0
+                }
+
+                $.each( temp_dataset, function(key, val) {
+
+                    temp_obj[key] = val[idx]
+                    temp_obj['total'] += val[idx]
+
+
+                })
+
+                dataset.push(temp_obj)
+
+            }
+
+            //console.log(manager_list)
+            //console.log(input_key)
+
+            // sort the dataset by score
+            dataset = dataset.slice().sort((a, b) => d3.descending(a[input_key], b[input_key]))
+
+            // Add rank to the dataset
+            $.each( dataset, function(idx, val) {
+
+                if ( idx > 0 ) {
+                    if ( dataset[idx-1][input_key] === val[input_key]) {
+                        rank = dataset[idx-1]['rank']
+                    } else {
+                        rank = idx+1
+                    }
+                } else {
+                    rank = 1
+                }
+
+                this['rank'] = rank
+
+            });
+
+            //console.log(dataset)
+
             //Build dataviz
             dataviz_config = {
                 'viz_height': $( "#tranfers_by_gameweek .viz-container" ).height(),
@@ -281,6 +281,15 @@
                 }
             }
 
+            var viz_container = d3.select("#tranfers_by_gameweek .viz-container")
+
+            var svg = viz_container.append("svg")
+            .attr('height', dataviz_config.viz_height)
+            .attr('width', dataviz_config.viz_width);
+
+            //add axes
+
+            //xAxis
             var xDomain = function(){
 
                 var temp_array = return_as_array(dataset, 'gameweek');
@@ -295,17 +304,6 @@
 
             } ()        
 
-
-
-            var viz_container = d3.select("#tranfers_by_gameweek .viz-container")
-
-            var svg = viz_container.append("svg")
-            .attr('height', dataviz_config.viz_height)
-            .attr('width', dataviz_config.viz_width);
-
-            //add axes
-
-            //xAxis
             var xScale = d3.scaleBand()
             .domain(xDomain)
             .range([dataviz_config.canvas_padding.left+dataviz_config.canvas_padding.inner_left, (dataviz_config.viz_width - dataviz_config.canvas_padding.right)])
@@ -358,36 +356,56 @@
 
 
             //yAxis
+            var yDomain = function(){
+
+                temp_array = []
+
+                $.each( dataset, function(key, val) {
+                    $.each( val, function(k, v) {
+                        if ( input_key !== 'total' && k !== 'gameweek' && k !== 'rank' && k !== 'total' ) { 
+                            temp_array.push(v)
+                        } else if ( input_key === 'total' && k === 'total') {
+                            temp_array.push(v)
+                        }
+                    })
+                })
+
+                domain = d3.extent(temp_array)
+
+                var domain = d3.extent(temp_array);
+
+                //round up to nearest 50
+                domain[1] = Math.ceil(domain[1] / 25) * 25
+
+
+                return domain
+
+            } ()
+
+            var yTicks = function(){
+
+                array = []
+
+                for ( i = yDomain[0]; i <= yDomain[1]; i++) {
+                    if (i % 25 === 0) {
+                        array.push(i)
+                    }
+                }
+
+                console.log(array)
+                return array
+
+            } ()
+
             var yScale = d3.scaleLinear()
-            .domain(function(){
-
-                        temp_array = []
-
-                        $.each( dataset, function(key, val) {
-                            $.each( val, function(k, v) {
-                                if ( input_key !== 'total' && k !== 'gameweek' && k !== 'rank' && k !== 'total' ) { 
-                                    temp_array.push(v)
-                                } else if ( input_key === 'total' && k === 'total') {
-                                    temp_array.push(v)
-                                }
-                            })
-                        })
-
-                        domain = d3.extent(temp_array)
-
-                        var domain = d3.extent(temp_array);
-
-                        return domain
-
-                        } ())
-            .range([(dataviz_config.viz_height - dataviz_config.canvas_padding.bottom), dataviz_config.canvas_padding.top])
-            .nice();
+            .domain(yDomain)   
+            .range([(dataviz_config.viz_height - dataviz_config.canvas_padding.bottom), dataviz_config.canvas_padding.top]);
 
             var yAxisGenerator = d3.axisLeft(yScale)
             .tickSizeOuter(0)
             //.tickSize(0)
             .tickPadding(-dataviz_config.canvas_padding.inner_left)
-            //.tickValues(dataviz_config.yScale.tick_values);
+            .tickValues(yTicks);
 
 
 
@@ -459,7 +477,6 @@
             // Build tabulated rankings on page
             var rankings_div = $("<div />").attr("id", "rankings")
             .appendTo(viz_section);
-
 
             var columns_wrapper = $("<div />")
             .addClass('column-wrapper')
@@ -570,213 +587,220 @@
             })
 
             resize_rows("#rankings")
+/*
+            if (input_key === 'total') {
+            
+                // Show most recent GW transfers per team
+                var viz_section = $("<div />").attr("id", "tranfers_by_team")
+                .addClass("page-section")
+                .appendTo(container_div);
 
-            // Show most recent GW transfers per team       
+                var viz_title_block = $("<div />").addClass('title-block')
+                .appendTo(viz_section);
 
-            var viz_section = $("<div />").attr("id", "tranfers_by_team")
+                var viz_heading = $("<h2 />")
+                .text("Transfers by team")
+                .appendTo(viz_title_block);
+
+                var viz_subhead = $("<h3 />")
+                .appendTo(viz_title_block);
+
+                if (input_key === 'total') {
+
+                    viz_subhead.text("Season total");
+
+                } else {
+                    manager_fullname = return_manager_fullname(database, input_key)
+                    viz_subhead.text(manager_fullname);
+
+                }
+
+                var viz_div = $("<div />")
+                .addClass('viz-container')
+                .addClass('large')
+                //.addClass('wip')
+                .appendTo(viz_section);
+
+
+                //Build dataviz
+
+                dataviz_config = { 
+                    'viz_height': $( "#tranfers_by_team .viz-container" ).height(),
+                    'viz_width': $( "#tranfers_by_team .viz-container" ).width(),
+                    'canvas_padding': {
+                        'top': 10,
+                        'right': 20,
+                        'bottom': 35,
+                        'left': 120 // to allow for yAxis labels
+                    }
+                }
+
+                // dataset
+                var totals_dataset = (function(){
+
+                    temp_array = []
+                    temp_obj = {}
+
+                    $.each ( dataset, function(key, val) {
+
+                        keys = d3.keys(this).filter( function(d) { return d != 'total' && d != 'gameweek' && d != 'rank'})
+
+                        $.each( val, function(k,v) {
+                            if (keys.includes(k)) {
+
+                                if (!(d3.keys(temp_obj).includes(k))) {
+                                    temp_obj[k] = {
+                                        'manager_code': k,
+                                        'transfers': 0
+                                    }
+                                }
+
+                                temp_obj[k]['transfers'] += v
+
+                            }
+                        })
+
+                    })
+
+                    $.each( temp_obj, function(){ temp_array.push(this)} )
+
+                    return temp_array
+
+
+                } ())
+
+                console.log(totals_dataset)
+
+                var viz_container = d3.select("#tranfers_by_team .viz-container")
+
+                var svg = viz_container.append("svg")
+                .attr('height', dataviz_config.viz_height)
+                .attr('width', dataviz_config.viz_width);
+
+                //add axes
+
+                //xAxis
+                var xScale = d3.scaleLinear()
+                .domain([0, d3.max(totals_dataset, d => d.transfers) ])
+                .range([dataviz_config.canvas_padding.left, (dataviz_config.viz_width - dataviz_config.canvas_padding.right)])
+                .nice();
+
+
+                var xAxisGenerator = d3.axisBottom(xScale)
+                .tickSizeOuter(0)
+                .tickSize(10)
+                .tickPadding(10);
+
+                var xAxis = svg.append("g")
+                .classed("x axis", true)
+                .call(xAxisGenerator);
+
+                xAxis.select(".domain").remove();
+
+                xAxis.attr('transform', function(d) {
+                        return 'translate(0 ' + (dataviz_config.viz_height - dataviz_config.canvas_padding.bottom) + ')';
+                    });
+                
+                var xAxisGrid = xAxisGenerator
+                .tickSize(dataviz_config.viz_height - dataviz_config.canvas_padding.bottom)
+                .tickSizeOuter(0)
+                .tickFormat("");
+
+                svg.append("g")
+                .attr("class", "axis-grid")
+                .call(xAxisGrid)
+                .select(".domain").remove();
+
+                yDomain = (function(d) {
+
+                    var temp_array = []
+                    //console.log(totals_dataset)
+
+                    $.each( totals_dataset.slice().sort((a, b) => d3.descending(a.transfers, b.transfers)), function(){
+                        temp_array.push(this.manager_code)
+                    })
+
+                    var domain = temp_array
+
+
+                    //console.log('x domain')
+                    //console.log(domain)
+
+                    return domain
+
+                }) ()
+
+                //yAxis
+                var yScale = d3.scaleBand()
+                .domain(yDomain)
+                .range([dataviz_config.canvas_padding.top, (dataviz_config.viz_height - dataviz_config.canvas_padding.bottom)])
+                .paddingInner(0.25);
+
+                var yAxisGenerator = d3.axisLeft(yScale)
+                .tickSizeOuter(0)
+                .tickSize(10)
+                .tickPadding(10)
+                .tickFormat(d => return_manager_fullname(database, d))
+                //.tickValues(dataviz_config.yScale.tick_values);
+
+
+
+                var yAxis = svg.append("g")
+                .classed("y axis", true)
+                .call(yAxisGenerator);
+
+                yAxis.style('transform', 'translateX('+xScale(0)+'px)')
+
+                yAxis.select(".domain").remove();
+                //yAxis.selectAll(".tick text").attr('dy', '-0.4em');
+
+
+                var yAxisGridGenerator = yAxisGenerator
+                .tickSize(-dataviz_config.viz_width)
+                .tickSizeOuter(0)
+                .tickFormat("");
+
+                //add data
+                var data_layer = svg.append('g')
+                .classed('data-layer', true)
+
+                var bars = data_layer.selectAll('.bar')
+                .data(totals_dataset)
+                .enter()
+                .append('rect')
+                .classed('bar', true)
+                .attr("x", function(d) { return xScale(0); })
+                .attr("width", function(d) { return xScale(d.transfers) - xScale(0); })
+                .attr("y", function(d) { return yScale(d.manager_code); })
+                .attr("height", yScale.bandwidth())
+                .style('fill', function(d) {
+
+                    if (d.transfers === (d3.max(totals_dataset, d => d.transfers)) ) {
+                        fill = chump_colours.green
+                    } else if (d.transfers === (d3.min(totals_dataset, d => d.transfers)) ) {
+                        fill = chump_colours.blue
+                    } else {
+                        fill = chump_colours.grey
+                    }
+
+                    return fill
+
+                });
+
+            }
+
+*/
+
+
+            // Add a footnote
+            var viz_section = $("<div />").attr("id", "footnote")
             .addClass("page-section")
             .appendTo(container_div);
 
-            var viz_title_block = $("<div />").addClass('title-block')
+            var viz_heading = $("<p />")
+            .addClass("footnote")
+            .text("Note: GW30 includes all changes made between GW29 and 30")
             .appendTo(viz_section);
-
-            var viz_heading = $("<h2 />")
-            .text("Transfers by team")
-            .appendTo(viz_title_block);
-
-            var viz_subhead = $("<h3 />")
-            .appendTo(viz_title_block);
-
-            if (input_key === 'total') {
-
-                viz_subhead.text("Season total");
-
-            } else {
-                manager_fullname = return_manager_fullname(database, input_key)
-                viz_subhead.text(manager_fullname);
-
-            }
-
-            var viz_div = $("<div />")
-            .addClass('viz-container')
-            .addClass('large')
-            //.addClass('wip')
-            .appendTo(viz_section);
-
-
-            //Build dataviz
-
-            dataviz_config = { 
-                'viz_height': $( "#tranfers_by_team .viz-container" ).height(),
-                'viz_width': $( "#tranfers_by_team .viz-container" ).width(),
-                'canvas_padding': {
-                    'top': 10,
-                    'right': 20,
-                    'bottom': 35,
-                    'left': 120 // to allow for yAxis labels
-                }
-            }
-
-            // dataset
-            var totals_dataset = (function(){
-
-                temp_array = []
-                temp_obj = {}
-
-                $.each ( dataset, function(key, val) {
-
-                    keys = d3.keys(this).filter( function(d) { return d != 'total' && d != 'gameweek' && d != 'rank'})
-
-                    $.each( val, function(k,v) {
-                        if (keys.includes(k)) {
-
-                            if (!(d3.keys(temp_obj).includes(k))) {
-                                temp_obj[k] = {
-                                    'manager_code': k,
-                                    'transfers': 0
-                                }
-                            }
-
-                            temp_obj[k]['transfers'] += v
-
-                        }
-                    })
-
-                })
-
-                $.each( temp_obj, function(){ temp_array.push(this)} )
-
-                return temp_array
-
-
-            } ())
-
-            console.log(totals_dataset)
-
-            var viz_container = d3.select("#tranfers_by_team .viz-container")
-
-            var svg = viz_container.append("svg")
-            .attr('height', dataviz_config.viz_height)
-            .attr('width', dataviz_config.viz_width);
-
-            //add axes
-
-            //xAxis
-            var xScale = d3.scaleLinear()
-            .domain([0, d3.max(totals_dataset, d => d.transfers) ])
-            .range([dataviz_config.canvas_padding.left, (dataviz_config.viz_width - dataviz_config.canvas_padding.right)])
-            .nice();
-
-
-            var xAxisGenerator = d3.axisBottom(xScale)
-            .tickSizeOuter(0)
-            .tickSize(10)
-            .tickPadding(10);
-
-            var xAxis = svg.append("g")
-            .classed("x axis", true)
-            .call(xAxisGenerator);
-
-            xAxis.select(".domain").remove();
-
-            xAxis.attr('transform', function(d) {
-                    return 'translate(0 ' + (dataviz_config.viz_height - dataviz_config.canvas_padding.bottom) + ')';
-                });
-            
-            var xAxisGrid = xAxisGenerator
-            .tickSize(dataviz_config.viz_height - dataviz_config.canvas_padding.bottom)
-            .tickSizeOuter(0)
-            .tickFormat("");
-
-            svg.append("g")
-            .attr("class", "axis-grid")
-            .call(xAxisGrid)
-            .select(".domain").remove();
-
-            yDomain = (function(d) {
-
-                var temp_array = []
-                //console.log(totals_dataset)
-
-                $.each( totals_dataset.slice().sort((a, b) => d3.descending(a.transfers, b.transfers)), function(){
-                    temp_array.push(this.manager_code)
-                })
-
-                var domain = temp_array
-
-
-                //console.log('x domain')
-                //console.log(domain)
-
-                return domain
-
-            }) ()
-
-            //yAxis
-            var yScale = d3.scaleBand()
-            .domain(yDomain)
-            .range([dataviz_config.canvas_padding.top, (dataviz_config.viz_height - dataviz_config.canvas_padding.bottom)])
-            .paddingInner(0.25);
-
-            var yAxisGenerator = d3.axisLeft(yScale)
-            .tickSizeOuter(0)
-            .tickSize(10)
-            .tickPadding(10)
-            .tickFormat(d => return_manager_fullname(database, d))
-            //.tickValues(dataviz_config.yScale.tick_values);
-
-
-
-            var yAxis = svg.append("g")
-            .classed("y axis", true)
-            .call(yAxisGenerator);
-
-            yAxis.style('transform', 'translateX('+xScale(0)+'px)')
-
-            yAxis.select(".domain").remove();
-            //yAxis.selectAll(".tick text").attr('dy', '-0.4em');
-
-
-            var yAxisGridGenerator = yAxisGenerator
-            .tickSize(-dataviz_config.viz_width)
-            .tickSizeOuter(0)
-            .tickFormat("");
-
-            /*
-            yAxisGrid = svg.append("g")
-            .attr("class", "axis-grid")
-            .call(yAxisGridGenerator);
-
-            yAxisGrid
-            .select(".domain").remove();
-            */
-
-            //add data
-            var data_layer = svg.append('g')
-            .classed('data-layer', true)
-
-            var bars = data_layer.selectAll('.bar')
-            .data(totals_dataset)
-            .enter()
-            .append('rect')
-            .classed('bar', true)
-            .attr("x", function(d) { return xScale(0); })
-            .attr("width", function(d) { return xScale(d.transfers) - xScale(0); })
-            .attr("y", function(d) { return yScale(d.manager_code); })
-            .attr("height", yScale.bandwidth())
-            .style('fill', function(d) {
-
-                if (d.transfers === (d3.max(totals_dataset, d => d.transfers)) ) {
-                    fill = chump_colours.green
-                } else if (d.transfers === (d3.min(totals_dataset, d => d.transfers)) ) {
-                    fill = chump_colours.blue
-                } else {
-                    fill = chump_colours.grey
-                }
-
-                return fill
-
-            });
 
 
 
