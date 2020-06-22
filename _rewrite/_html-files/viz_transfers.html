@@ -13,6 +13,7 @@
         <script src="https://d3js.org/d3.v5.min.js"></script>
        
         <script src="load_database.js"></script>
+        <script src="common_functions.js"></script>
         <script src="chump_colours.js"></script>
         
     </head> 
@@ -31,10 +32,6 @@
 
     <script>
 
-        function return_comma_formatted_number(x) {
-            return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-        }
-    
         $( function(){
                 
             //console.log(database)
@@ -96,27 +93,6 @@
                 
             }
 
-        function return_manager_code_array(database) {
-                
-            array = [];
-
-            player_data = database['player_data']
-
-            Object.keys(player_data).forEach(function(k){
-                array.push(k);
-            });
-
-            // document.write(array);
-
-            return array
-        }
-
-        function return_manager_fullname(database, manager_code) {
-            fullname = database.player_data[manager_code].manager_info.manager_fullname
-            return fullname
-        }
-
-
 
         function viz_gw_transfers(input_key) {
 
@@ -125,25 +101,11 @@
 
                 temp_array = [];
 
-                //console.log(source_data)
-                //console.log(key)
-
                 $.each(source_data, function(idx, val) {
                     temp_array.push(val[key])
                 })
 
                 return temp_array
-            }
-
-            function return_rounded_extent(input_array) {
-
-                //round-down the min
-                input_array[0] = 25 * Math.floor(input_array[0]/25) - 0
-
-                //round-down the min
-                input_array[1] = 25 * Math.ceil(input_array[1]/25) + 0
-
-                return input_array            
             }
 
             manager_list = return_manager_code_array(database)
@@ -294,7 +256,6 @@
 
                 var temp_array = return_as_array(dataset, 'gameweek');
 
-                //var domain = return_rounded_extent(d3.extent(temp_array));
                 var domain = temp_array.slice().sort((a, b) => d3.ascending(a, b))
 
                 //console.log('x domain')
@@ -805,52 +766,6 @@
 
 
         }
-
-        function resize_rows(selector) {
-
-                //console.log(selector)
-
-            $( selector ).each( function() {
-
-                //console.log(this)
-
-                cell_width_array = []
-
-                $(this).find( "div.table-row" ).each(function() {
-
-                    $( this ).children().each(  function( idx ) {
-                        $(this).removeAttr('width')
-
-                        // if this is the first loop, the array will be shorter than idx+1
-                        if (cell_width_array.length < idx+1 ) {
-                            // if so, add an array to hold the width vals of 
-                            // *all* cells in that idx (same col) across all rowws
-                            cell_width_array[idx] = []
-                        }
-
-                        // push the width of this cell to the array for this column
-                        cell_width = Number($( this ).width())
-                        cell_width_array[idx].push(cell_width)
-
-                    })
-
-                });
-
-                //console.log(cell_width_array[1])
-
-                // set each cell's width to the longest in that column
-                $(this).find( "div.table-row" ).each(function() {
-                    $( this ).children().each(  function(idx) {
-                        $(this).width(Math.max(...cell_width_array[idx]));
-                    })
-                });
-
-            })
-
-        }
-
-            
-
 
     </script>
     

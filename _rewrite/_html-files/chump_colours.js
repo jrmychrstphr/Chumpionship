@@ -13,3 +13,4 @@ chump_colours.teal = d3.rgb( function() {
 		
 	} () );
 chump_colours.grey = d3.rgb("#4a4a4a");
+chump_colours.dark_grey = d3.rgb("#111111");

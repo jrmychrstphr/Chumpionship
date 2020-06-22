@@ -13,6 +13,7 @@
         <script src="https://d3js.org/d3.v5.min.js"></script>
        
         <script src="load_database.js"></script>
+        <script src="common_functions.js"></script>
         <script src="chump_colours.js"></script>
 
     </head> 
@@ -30,10 +31,6 @@
     </body> 
 
     <script>
-
-        function return_comma_formatted_number(x) {
-            return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-        }
     
         $( function(){
                 
@@ -41,32 +38,6 @@
             viz_total_scores()
                 
         });
-
-        function return_manager_code_array(database) {
-                
-                array = [];
-
-                player_data = database['player_data']
-
-                Object.keys(player_data).forEach(function(k){
-                    array.push(k);
-                });
-
-                // document.write(array);
-
-                return array
-            }
-
-        function return_gameweeks_played(database) {
-
-            m = return_manager_code_array(database)
-            console.log(m[0])
-            console.log(database)
-            console.log(Object.keys(database['player_data'][m[0]]['gw_performance']).length)
-
-            return parseInt(Object.keys(database['player_data'][m[0]]['gw_performance']).length)
-
-        }
 
         function viz_total_scores(gameweek) {
 
@@ -492,80 +463,8 @@
 
             })
 
-            function return_as_array(source_data, key) {
-
-                temp_array = [];
-
-                //console.log(source_data)
-                //console.log(key)
-
-                $.each(source_data, function(idx, val) {
-                    temp_array.push(val[key])
-                })
-
-                return temp_array
-            }
-
-            function return_rounded_extent(input_array) {
-
-                //round-down the min
-                input_array[0] = 100 * Math.floor(input_array[0]/100) - 0
-
-                //round-down the min
-                input_array[1] = 100 * Math.ceil(input_array[1]/100) + 0
-
-                return input_array            
-                    }
-
-
-            //console.log(top_scores_dataset)
             resize_rows("#rankings")
         }
-
-        function resize_rows(selector) {
-
-                //console.log(selector)
-
-            $( selector ).each( function() {
-
-                //console.log(this)
-
-                cell_width_array = []
-
-                $(this).find( "div.table-row" ).each(function() {
-
-                    $( this ).children().each(  function( idx ) {
-                        $(this).removeAttr('width')
-
-                        // if this is the first loop, the array will be shorter than idx+1
-                        if (cell_width_array.length < idx+1 ) {
-                            // if so, add an array to hold the width vals of 
-                            // *all* cells in that idx (same col) across all rowws
-                            cell_width_array[idx] = []
-                        }
-
-                        // push the width of this cell to the array for this column
-                        cell_width = Number($( this ).width())
-                        cell_width_array[idx].push(cell_width)
-
-                    })
-
-                });
-
-                //console.log(cell_width_array[1])
-
-                // set each cell's width to the longest in that column
-                $(this).find( "div.table-row" ).each(function() {
-                    $( this ).children().each(  function(idx) {
-                        $(this).width(Math.max(...cell_width_array[idx]));
-                    })
-                });
-
-            })
-
-        }
-
-
 
     </script>
     

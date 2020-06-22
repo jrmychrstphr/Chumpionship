@@ -13,6 +13,7 @@
         <script src="https://d3js.org/d3.v5.min.js"></script>
        
         <script src="load_database.js"></script>
+        <script src="common_functions.js"></script>
         <script src="chump_colours.js"></script>
 
     </head> 
@@ -31,10 +32,6 @@
 
     <script>
 
-        function return_comma_formatted_number(x) {
-            return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-        }
-    
         $( function(){
                 
             //console.log(database)
@@ -158,7 +155,6 @@
 
                         var temp_array = return_as_array(sorted_dataset, 'gameweek');
 
-                        //var domain = return_rounded_extent(d3.extent(temp_array));
                         var domain = d3.extent(temp_array);
 
                         console.log('x domain')
@@ -502,50 +498,6 @@
             //console.log(top_scores_dataset)
             resize_rows("#rankings")
         }
-
-        function resize_rows(selector) {
-
-                //console.log(selector)
-
-            $( selector ).each( function() {
-
-                //console.log(this)
-
-                cell_width_array = []
-
-                $(this).find( "div.table-row" ).each(function() {
-
-                    $( this ).children().each(  function( idx ) {
-                        $(this).removeAttr('width')
-
-                        // if this is the first loop, the array will be shorter than idx+1
-                        if (cell_width_array.length < idx+1 ) {
-                            // if so, add an array to hold the width vals of 
-                            // *all* cells in that idx (same col) across all rowws
-                            cell_width_array[idx] = []
-                        }
-
-                        // push the width of this cell to the array for this column
-                        cell_width = Number($( this ).width())
-                        cell_width_array[idx].push(cell_width)
-
-                    })
-
-                });
-
-                //console.log(cell_width_array[1])
-
-                // set each cell's width to the longest in that column
-                $(this).find( "div.table-row" ).each(function() {
-                    $( this ).children().each(  function(idx) {
-                        $(this).width(Math.max(...cell_width_array[idx]));
-                    })
-                });
-
-            })
-
-        }
-
 
 
     </script>
