@@ -4519,6 +4519,20 @@
                     "points_spent": 0.0,
                     "squad_value": 102.5,
                     "transfers_made": 10
+                },
+                "30": {
+                    "chip_played": "None",
+                    "fixture_opponent_manager_code": "2473683",
+                    "fixture_opponent_manager_fullname": "Kester Mollahan",
+                    "fixture_opponent_team_name": "FC Hammer",
+                    "fixture_result": "L",
+                    "fixture_score": 82.0,
+                    "overall_total_points": 1664.0,
+                    "points_on_bench": 2.0,
+                    "points_scored": 82.0,
+                    "points_spent": 0.0,
+                    "squad_value": 103.1,
+                    "transfers_made": 0
                 }
             },
             "manager_info": {
@@ -4558,7 +4572,8 @@
                     41.0,
                     49.0,
                     44.0,
-                    58.0
+                    58.0,
+                    82.0
                 ],
                 "fixture_score_running_total_array": [
                     93.0,
@@ -4589,9 +4604,10 @@
                     1431.0,
                     1480.0,
                     1524.0,
-                    1582.0
+                    1582.0,
+                    1664.0
                 ],
-                "fixture_score_total": 1582.0,
+                "fixture_score_total": 1664.0,
                 "league_points_array": [
                     3,
                     3,
@@ -4621,7 +4637,8 @@
                     0,
                     0,
                     1,
-                    3
+                    3,
+                    0
                 ],
                 "league_points_running_total_array": [
                     3,
@@ -4652,6 +4669,7 @@
                     39,
                     39,
                     40,
+                    43,
                     43
                 ],
                 "league_points_total": 43,
@@ -4684,7 +4702,8 @@
                     10,
                     11,
                     13,
-                    11
+                    11,
+                    13
                 ],
                 "league_position_high": {
                     "gameweeks_at_position": [
@@ -4698,7 +4717,7 @@
                     ],
                     "position": 15
                 },
-                "league_position_now": 11,
+                "league_position_now": 13,
                 "opponent_score_array": [
                     53.0,
                     45.0,
@@ -4728,9 +4747,10 @@
                     77.0,
                     56.0,
                     44.0,
-                    56.0
+                    56.0,
+                    97.0
                 ],
-                "opponent_score_total": 1563.0,
+                "opponent_score_total": 1660.0,
                 "points_on_bench_array": [
                     9.0,
                     4.0,
@@ -4760,9 +4780,10 @@
                     17.0,
                     5.0,
                     6.0,
+                    2.0,
                     2.0
                 ],
-                "points_on_bench_total": 196.0,
+                "points_on_bench_total": 198.0,
                 "points_scored_array": [
                     93.0,
                     58.0,
@@ -4792,9 +4813,10 @@
                     41.0,
                     53.0,
                     44.0,
-                    58.0
+                    58.0,
+                    82.0
                 ],
-                "points_scored_total": 1642.0,
+                "points_scored_total": 1724.0,
                 "points_spent_array": [
                     0.0,
                     0.0,
@@ -4823,6 +4845,7 @@
                     8.0,
                     0.0,
                     4.0,
+                    0.0,
                     0.0,
                     0.0
                 ],
@@ -4856,11 +4879,12 @@
                     "L",
                     "L",
                     "D",
-                    "W"
+                    "W",
+                    "L"
                 ],
                 "result_count": {
                     "D": 1,
-                    "L": 14,
+                    "L": 15,
                     "W": 14
                 },
                 "transfers_made_array": [
@@ -4892,7 +4916,8 @@
                     0,
                     3,
                     0,
-                    10
+                    10,
+                    0
                 ],
                 "transfers_made_total": 76
             }
@@ -5534,6 +5559,20 @@
                     "points_spent": 4.0,
                     "squad_value": 103.4,
                     "transfers_made": 3
+                },
+                "30": {
+                    "chip_played": "None",
+                    "fixture_opponent_manager_code": "340144",
+                    "fixture_opponent_manager_fullname": "Dale Halls",
+                    "fixture_opponent_team_name": "Bottom Place Again",
+                    "fixture_result": "D",
+                    "fixture_score": 62.0,
+                    "overall_total_points": 1599.0,
+                    "points_on_bench": 2.0,
+                    "points_scored": 62.0,
+                    "points_spent": 0.0,
+                    "squad_value": 103.1,
+                    "transfers_made": 12
                 }
             },
             "manager_info": {
@@ -5573,7 +5612,8 @@
                     64.0,
                     62.0,
                     36.0,
-                    45.0
+                    45.0,
+                    62.0
                 ],
                 "fixture_score_running_total_array": [
                     89.0,
@@ -5604,9 +5644,10 @@
                     1394.0,
                     1456.0,
                     1492.0,
-                    1537.0
+                    1537.0,
+                    1599.0
                 ],
-                "fixture_score_total": 1537.0,
+                "fixture_score_total": 1599.0,
                 "league_points_array": [
                     3,
                     3,
@@ -5636,7 +5677,8 @@
                     3,
                     3,
                     3,
-                    3
+                    3,
+                    1
                 ],
                 "league_points_running_total_array": [
                     3,
@@ -5667,9 +5709,10 @@
                     45,
                     48,
                     51,
-                    54
+                    54,
+                    55
                 ],
-                "league_points_total": 54,
+                "league_points_total": 55,
                 "league_position_array": [
                     4,
                     3,
@@ -5699,7 +5742,8 @@
                     8,
                     6,
                     6,
-                    4
+                    4,
+                    6
                 ],
                 "league_position_high": {
                     "gameweeks_at_position": [
@@ -5716,7 +5760,7 @@
                     ],
                     "position": 9
                 },
-                "league_position_now": 4,
+                "league_position_now": 6,
                 "opponent_score_array": [
                     82.0,
                     22.0,
@@ -5746,9 +5790,10 @@
                     63.0,
                     59.0,
                     25.0,
-                    39.0
+                    39.0,
+                    62.0
                 ],
-                "opponent_score_total": 1457.0,
+                "opponent_score_total": 1519.0,
                 "points_on_bench_array": [
                     4.0,
                     2.0,
@@ -5778,9 +5823,10 @@
                     7.0,
                     2.0,
                     0.0,
-                    0.0
+                    0.0,
+                    2.0
                 ],
-                "points_on_bench_total": 189.0,
+                "points_on_bench_total": 191.0,
                 "points_scored_array": [
                     89.0,
                     59.0,
@@ -5810,9 +5856,10 @@
                     76.0,
                     66.0,
                     36.0,
-                    49.0
+                    49.0,
+                    62.0
                 ],
-                "points_scored_total": 1585.0,
+                "points_scored_total": 1647.0,
                 "points_spent_array": [
                     0.0,
                     0.0,
@@ -5842,7 +5889,8 @@
                     12.0,
                     4.0,
                     0.0,
-                    4.0
+                    4.0,
+                    0.0
                 ],
                 "points_spent_total": 48.0,
                 "result_array": [
@@ -5874,10 +5922,11 @@
                     "W",
                     "W",
                     "W",
-                    "W"
+                    "W",
+                    "D"
                 ],
                 "result_count": {
-                    "D": 0,
+                    "D": 1,
                     "L": 11,
                     "W": 18
                 },
@@ -5910,9 +5959,10 @@
                     4,
                     2,
                     0,
-                    3
+                    3,
+                    12
                 ],
-                "transfers_made_total": 57
+                "transfers_made_total": 69
             }
         },
         "1152687": {
@@ -6552,6 +6602,20 @@
                     "points_spent": 0.0,
                     "squad_value": 99.9,
                     "transfers_made": 2
+                },
+                "30": {
+                    "chip_played": "None",
+                    "fixture_opponent_manager_code": "1903138",
+                    "fixture_opponent_manager_fullname": "Sammy Murphy",
+                    "fixture_opponent_team_name": "West Sam",
+                    "fixture_result": "W",
+                    "fixture_score": 70.0,
+                    "overall_total_points": 1504.0,
+                    "points_on_bench": 11.0,
+                    "points_scored": 70.0,
+                    "points_spent": 0.0,
+                    "squad_value": 100.1,
+                    "transfers_made": 1
                 }
             },
             "manager_info": {
@@ -6591,7 +6655,8 @@
                     63.0,
                     50.0,
                     29.0,
-                    45.0
+                    45.0,
+                    70.0
                 ],
                 "fixture_score_running_total_array": [
                     82.0,
@@ -6622,9 +6687,10 @@
                     1310.0,
                     1360.0,
                     1389.0,
-                    1434.0
+                    1434.0,
+                    1504.0
                 ],
-                "fixture_score_total": 1434.0,
+                "fixture_score_total": 1504.0,
                 "league_points_array": [
                     0,
                     0,
@@ -6654,6 +6720,7 @@
                     3,
                     0,
                     0,
+                    3,
                     3
                 ],
                 "league_points_running_total_array": [
@@ -6685,9 +6752,10 @@
                     34,
                     34,
                     34,
-                    37
+                    37,
+                    40
                 ],
-                "league_points_total": 37,
+                "league_points_total": 40,
                 "league_position_array": [
                     12,
                     16,
@@ -6717,7 +6785,8 @@
                     16,
                     17,
                     17,
-                    16
+                    16,
+                    15
                 ],
                 "league_position_high": {
                     "gameweeks_at_position": [
@@ -6731,7 +6800,7 @@
                     ],
                     "position": 18
                 },
-                "league_position_now": 16,
+                "league_position_now": 15,
                 "opponent_score_array": [
                     89.0,
                     51.0,
@@ -6761,9 +6830,10 @@
                     55.0,
                     59.0,
                     32.0,
-                    44.0
+                    44.0,
+                    60.0
                 ],
-                "opponent_score_total": 1540.0,
+                "opponent_score_total": 1600.0,
                 "points_on_bench_array": [
                     -2.0,
                     4.0,
@@ -6793,9 +6863,10 @@
                     4.0,
                     2.0,
                     0.0,
-                    5.0
+                    5.0,
+                    11.0
                 ],
-                "points_on_bench_total": 162.0,
+                "points_on_bench_total": 173.0,
                 "points_scored_array": [
                     82.0,
                     44.0,
@@ -6825,9 +6896,10 @@
                     63.0,
                     50.0,
                     29.0,
-                    45.0
+                    45.0,
+                    70.0
                 ],
-                "points_scored_total": 1454.0,
+                "points_scored_total": 1524.0,
                 "points_spent_array": [
                     0.0,
                     0.0,
@@ -6854,6 +6926,7 @@
                     0.0,
                     0.0,
                     4.0,
+                    0.0,
                     0.0,
                     0.0,
                     0.0,
@@ -6889,12 +6962,13 @@
                     "W",
                     "L",
                     "L",
+                    "W",
                     "W"
                 ],
                 "result_count": {
                     "D": 1,
                     "L": 16,
-                    "W": 12
+                    "W": 13
                 },
                 "transfers_made_array": [
                     0,
@@ -6925,9 +6999,10 @@
                     1,
                     1,
                     0,
-                    2
+                    2,
+                    1
                 ],
-                "transfers_made_total": 52
+                "transfers_made_total": 53
             }
         },
         "148241": {
@@ -7567,6 +7642,20 @@
                     "points_spent": 0.0,
                     "squad_value": 103.4,
                     "transfers_made": 2
+                },
+                "30": {
+                    "chip_played": "Free Hit",
+                    "fixture_opponent_manager_code": "66787",
+                    "fixture_opponent_manager_fullname": "Liam Kelly",
+                    "fixture_opponent_team_name": "Neville Wears Prada",
+                    "fixture_result": "D",
+                    "fixture_score": 97.0,
+                    "overall_total_points": 1663.0,
+                    "points_on_bench": 10.0,
+                    "points_scored": 97.0,
+                    "points_spent": 0.0,
+                    "squad_value": 103.7,
+                    "transfers_made": 13
                 }
             },
             "manager_info": {
@@ -7606,7 +7695,8 @@
                     63.0,
                     61.0,
                     36.0,
-                    54.0
+                    54.0,
+                    97.0
                 ],
                 "fixture_score_running_total_array": [
                     90.0,
@@ -7637,9 +7727,10 @@
                     1415.0,
                     1476.0,
                     1512.0,
-                    1566.0
+                    1566.0,
+                    1663.0
                 ],
-                "fixture_score_total": 1566.0,
+                "fixture_score_total": 1663.0,
                 "league_points_array": [
                     3,
                     1,
@@ -7669,7 +7760,8 @@
                     0,
                     3,
                     0,
-                    0
+                    0,
+                    1
                 ],
                 "league_points_running_total_array": [
                     3,
@@ -7700,9 +7792,10 @@
                     40,
                     43,
                     43,
-                    43
+                    43,
+                    44
                 ],
-                "league_points_total": 43,
+                "league_points_total": 44,
                 "league_position_array": [
                     3,
                     5,
@@ -7732,6 +7825,7 @@
                     9,
                     9,
                     9,
+                    12,
                     12
                 ],
                 "league_position_high": {
@@ -7776,9 +7870,10 @@
                     64.0,
                     47.0,
                     46.0,
-                    98.0
+                    98.0,
+                    97.0
                 ],
-                "opponent_score_total": 1503.0,
+                "opponent_score_total": 1600.0,
                 "points_on_bench_array": [
                     5.0,
                     5.0,
@@ -7808,9 +7903,10 @@
                     4.0,
                     3.0,
                     1.0,
-                    9.0
+                    9.0,
+                    10.0
                 ],
-                "points_on_bench_total": 229.0,
+                "points_on_bench_total": 239.0,
                 "points_scored_array": [
                     90.0,
                     39.0,
@@ -7840,9 +7936,10 @@
                     63.0,
                     61.0,
                     36.0,
-                    54.0
+                    54.0,
+                    97.0
                 ],
-                "points_scored_total": 1574.0,
+                "points_scored_total": 1671.0,
                 "points_spent_array": [
                     0.0,
                     0.0,
@@ -7866,6 +7963,7 @@
                     0.0,
                     0.0,
                     4.0,
+                    0.0,
                     0.0,
                     0.0,
                     0.0,
@@ -7904,10 +8002,11 @@
                     "L",
                     "W",
                     "L",
-                    "L"
+                    "L",
+                    "D"
                 ],
                 "result_count": {
-                    "D": 1,
+                    "D": 2,
                     "L": 14,
                     "W": 14
                 },
@@ -7940,9 +8039,10 @@
                     0,
                     2,
                     0,
-                    2
+                    2,
+                    13
                 ],
-                "transfers_made_total": 35
+                "transfers_made_total": 48
             }
         },
         "151155": {
@@ -8582,6 +8682,20 @@
                     "points_spent": 4.0,
                     "squad_value": 102.1,
                     "transfers_made": 2
+                },
+                "30": {
+                    "chip_played": "Bench Boost",
+                    "fixture_opponent_manager_code": "732321",
+                    "fixture_opponent_manager_fullname": "Ed Clarke",
+                    "fixture_opponent_team_name": "Bednarek Ladies FC",
+                    "fixture_result": "W",
+                    "fixture_score": 101.0,
+                    "overall_total_points": 1466.0,
+                    "points_on_bench": 0.0,
+                    "points_scored": 101.0,
+                    "points_spent": 0.0,
+                    "squad_value": 101.3,
+                    "transfers_made": 17
                 }
             },
             "manager_info": {
@@ -8621,7 +8735,8 @@
                     81.0,
                     48.0,
                     33.0,
-                    64.0
+                    64.0,
+                    101.0
                 ],
                 "fixture_score_running_total_array": [
                     84.0,
@@ -8652,9 +8767,10 @@
                     1220.0,
                     1268.0,
                     1301.0,
-                    1365.0
+                    1365.0,
+                    1466.0
                 ],
-                "fixture_score_total": 1365.0,
+                "fixture_score_total": 1466.0,
                 "league_points_array": [
                     1,
                     3,
@@ -8684,6 +8800,7 @@
                     3,
                     3,
                     0,
+                    3,
                     3
                 ],
                 "league_points_running_total_array": [
@@ -8715,9 +8832,10 @@
                     32,
                     35,
                     35,
-                    38
+                    38,
+                    41
                 ],
-                "league_points_total": 38,
+                "league_points_total": 41,
                 "league_position_array": [
                     10,
                     6,
@@ -8747,7 +8865,8 @@
                     17,
                     16,
                     16,
-                    15
+                    15,
+                    14
                 ],
                 "league_position_high": {
                     "gameweeks_at_position": [
@@ -8764,7 +8883,7 @@
                     ],
                     "position": 18
                 },
-                "league_position_now": 15,
+                "league_position_now": 14,
                 "opponent_score_array": [
                     84.0,
                     33.0,
@@ -8794,9 +8913,10 @@
                     59.0,
                     31.0,
                     42.0,
-                    56.0
+                    56.0,
+                    76.0
                 ],
-                "opponent_score_total": 1459.0,
+                "opponent_score_total": 1535.0,
                 "points_on_bench_array": [
                     6.0,
                     5.0,
@@ -8826,7 +8946,8 @@
                     4.0,
                     2.0,
                     0.0,
-                    10.0
+                    10.0,
+                    0.0
                 ],
                 "points_on_bench_total": 209.0,
                 "points_scored_array": [
@@ -8858,9 +8979,10 @@
                     81.0,
                     60.0,
                     37.0,
-                    68.0
+                    68.0,
+                    101.0
                 ],
-                "points_scored_total": 1525.0,
+                "points_scored_total": 1626.0,
                 "points_spent_array": [
                     0.0,
                     8.0,
@@ -8890,7 +9012,8 @@
                     0.0,
                     12.0,
                     4.0,
-                    4.0
+                    4.0,
+                    0.0
                 ],
                 "points_spent_total": 160.0,
                 "result_array": [
@@ -8922,12 +9045,13 @@
                     "W",
                     "W",
                     "L",
+                    "W",
                     "W"
                 ],
                 "result_count": {
                     "D": 2,
                     "L": 15,
-                    "W": 12
+                    "W": 13
                 },
                 "transfers_made_array": [
                     0,
@@ -8958,9 +9082,10 @@
                     1,
                     4,
                     2,
-                    2
+                    2,
+                    17
                 ],
-                "transfers_made_total": 81
+                "transfers_made_total": 98
             }
         },
         "1767323": {
@@ -9600,6 +9725,20 @@
                     "points_spent": 4.0,
                     "squad_value": 105.4,
                     "transfers_made": 2
+                },
+                "30": {
+                    "chip_played": "None",
+                    "fixture_opponent_manager_code": "1975239",
+                    "fixture_opponent_manager_fullname": "Chris Johnson",
+                    "fixture_opponent_team_name": "Ndombelieve It",
+                    "fixture_result": "W",
+                    "fixture_score": 76.0,
+                    "overall_total_points": 1742.0,
+                    "points_on_bench": 10.0,
+                    "points_scored": 76.0,
+                    "points_spent": 0.0,
+                    "squad_value": 105.3,
+                    "transfers_made": 4
                 }
             },
             "manager_info": {
@@ -9639,7 +9778,8 @@
                     52.0,
                     48.0,
                     46.0,
-                    64.0
+                    64.0,
+                    76.0
                 ],
                 "fixture_score_running_total_array": [
                     38.0,
@@ -9670,9 +9810,10 @@
                     1508.0,
                     1556.0,
                     1602.0,
-                    1666.0
+                    1666.0,
+                    1742.0
                 ],
-                "fixture_score_total": 1666.0,
+                "fixture_score_total": 1742.0,
                 "league_points_array": [
                     0,
                     0,
@@ -9700,6 +9841,7 @@
                     3,
                     3,
                     0,
+                    3,
                     3,
                     3,
                     3
@@ -9733,9 +9875,10 @@
                     36,
                     39,
                     42,
-                    45
+                    45,
+                    48
                 ],
-                "league_points_total": 45,
+                "league_points_total": 48,
                 "league_position_array": [
                     20,
                     19,
@@ -9765,6 +9908,7 @@
                     12,
                     10,
                     10,
+                    9,
                     9
                 ],
                 "league_position_high": {
@@ -9809,9 +9953,10 @@
                     63.0,
                     40.0,
                     36.0,
-                    43.0
+                    43.0,
+                    47.0
                 ],
-                "opponent_score_total": 1502.0,
+                "opponent_score_total": 1549.0,
                 "points_on_bench_array": [
                     10.0,
                     3.0,
@@ -9841,9 +9986,10 @@
                     19.0,
                     17.0,
                     3.0,
-                    13.0
+                    13.0,
+                    10.0
                 ],
-                "points_on_bench_total": 311.0,
+                "points_on_bench_total": 321.0,
                 "points_scored_array": [
                     38.0,
                     45.0,
@@ -9873,9 +10019,10 @@
                     52.0,
                     48.0,
                     46.0,
-                    68.0
+                    68.0,
+                    76.0
                 ],
-                "points_scored_total": 1682.0,
+                "points_scored_total": 1758.0,
                 "points_spent_array": [
                     0.0,
                     0.0,
@@ -9905,7 +10052,8 @@
                     0.0,
                     0.0,
                     0.0,
-                    4.0
+                    4.0,
+                    0.0
                 ],
                 "points_spent_total": 16.0,
                 "result_array": [
@@ -9937,12 +10085,13 @@
                     "L",
                     "W",
                     "W",
+                    "W",
                     "W"
                 ],
                 "result_count": {
                     "D": 0,
                     "L": 14,
-                    "W": 15
+                    "W": 16
                 },
                 "transfers_made_array": [
                     0,
@@ -9973,9 +10122,10 @@
                     1,
                     1,
                     5,
-                    2
+                    2,
+                    4
                 ],
-                "transfers_made_total": 40
+                "transfers_made_total": 44
             }
         },
         "1794174": {
@@ -10615,6 +10765,20 @@
                     "points_spent": 0.0,
                     "squad_value": 99.7,
                     "transfers_made": 0
+                },
+                "30": {
+                    "chip_played": "None",
+                    "fixture_opponent_manager_code": "2487239",
+                    "fixture_opponent_manager_fullname": "Dan Bambridge",
+                    "fixture_opponent_team_name": "Bambridge Town FC",
+                    "fixture_result": "W",
+                    "fixture_score": 75.0,
+                    "overall_total_points": 1518.0,
+                    "points_on_bench": 14.0,
+                    "points_scored": 75.0,
+                    "points_spent": 0.0,
+                    "squad_value": 99.9,
+                    "transfers_made": 11
                 }
             },
             "manager_info": {
@@ -10654,7 +10818,8 @@
                     56.0,
                     38.0,
                     44.0,
-                    56.0
+                    56.0,
+                    75.0
                 ],
                 "fixture_score_running_total_array": [
                     46.0,
@@ -10685,9 +10850,10 @@
                     1305.0,
                     1343.0,
                     1387.0,
-                    1443.0
+                    1443.0,
+                    1518.0
                 ],
-                "fixture_score_total": 1443.0,
+                "fixture_score_total": 1518.0,
                 "league_points_array": [
                     0,
                     0,
@@ -10717,7 +10883,8 @@
                     0,
                     0,
                     1,
-                    0
+                    0,
+                    3
                 ],
                 "league_points_running_total_array": [
                     0,
@@ -10748,9 +10915,10 @@
                     52,
                     52,
                     53,
-                    53
+                    53,
+                    56
                 ],
-                "league_points_total": 53,
+                "league_points_total": 56,
                 "league_position_array": [
                     19,
                     17,
@@ -10780,7 +10948,8 @@
                     1,
                     3,
                     3,
-                    6
+                    6,
+                    3
                 ],
                 "league_position_high": {
                     "gameweeks_at_position": [
@@ -10803,7 +10972,7 @@
                     ],
                     "position": 19
                 },
-                "league_position_now": 6,
+                "league_position_now": 3,
                 "opponent_score_array": [
                     80.0,
                     48.0,
@@ -10833,9 +11002,10 @@
                     60.0,
                     47.0,
                     44.0,
-                    64.0
+                    64.0,
+                    54.0
                 ],
-                "opponent_score_total": 1392.0,
+                "opponent_score_total": 1446.0,
                 "points_on_bench_array": [
                     12.0,
                     2.0,
@@ -10865,9 +11035,10 @@
                     2.0,
                     16.0,
                     0.0,
-                    3.0
+                    3.0,
+                    14.0
                 ],
-                "points_on_bench_total": 173.0,
+                "points_on_bench_total": 187.0,
                 "points_scored_array": [
                     46.0,
                     40.0,
@@ -10897,10 +11068,12 @@
                     56.0,
                     38.0,
                     44.0,
-                    56.0
+                    56.0,
+                    75.0
                 ],
-                "points_scored_total": 1443.0,
+                "points_scored_total": 1518.0,
                 "points_spent_array": [
+                    0.0,
                     0.0,
                     0.0,
                     0.0,
@@ -10961,12 +11134,13 @@
                     "L",
                     "L",
                     "D",
-                    "L"
+                    "L",
+                    "W"
                 ],
                 "result_count": {
                     "D": 2,
                     "L": 10,
-                    "W": 17
+                    "W": 18
                 },
                 "transfers_made_array": [
                     0,
@@ -10997,9 +11171,10 @@
                     1,
                     1,
                     11,
-                    0
+                    0,
+                    11
                 ],
-                "transfers_made_total": 42
+                "transfers_made_total": 53
             }
         },
         "1903138": {
@@ -11639,6 +11814,20 @@
                     "points_spent": 0.0,
                     "squad_value": 101.4,
                     "transfers_made": 1
+                },
+                "30": {
+                    "chip_played": "None",
+                    "fixture_opponent_manager_code": "1152687",
+                    "fixture_opponent_manager_fullname": "Mike Yeboah",
+                    "fixture_opponent_team_name": "Powerstars",
+                    "fixture_result": "L",
+                    "fixture_score": 60.0,
+                    "overall_total_points": 1415.0,
+                    "points_on_bench": 2.0,
+                    "points_scored": 60.0,
+                    "points_spent": 0.0,
+                    "squad_value": 101.3,
+                    "transfers_made": 0
                 }
             },
             "manager_info": {
@@ -11678,7 +11867,8 @@
                     54.0,
                     59.0,
                     20.0,
-                    43.0
+                    43.0,
+                    60.0
                 ],
                 "fixture_score_running_total_array": [
                     84.0,
@@ -11709,9 +11899,10 @@
                     1233.0,
                     1292.0,
                     1312.0,
-                    1355.0
+                    1355.0,
+                    1415.0
                 ],
-                "fixture_score_total": 1355.0,
+                "fixture_score_total": 1415.0,
                 "league_points_array": [
                     3,
                     0,
@@ -11739,6 +11930,7 @@
                     3,
                     3,
                     1,
+                    0,
                     0,
                     0,
                     0
@@ -11772,6 +11964,7 @@
                     22,
                     22,
                     22,
+                    22,
                     22
                 ],
                 "league_points_total": 22,
@@ -11799,6 +11992,7 @@
                     20,
                     20,
                     20,
+                    19,
                     19,
                     19,
                     19,
@@ -11857,9 +12051,10 @@
                     54.0,
                     62.0,
                     29.0,
-                    64.0
+                    64.0,
+                    70.0
                 ],
-                "opponent_score_total": 1573.0,
+                "opponent_score_total": 1643.0,
                 "points_on_bench_array": [
                     9.0,
                     5.0,
@@ -11889,9 +12084,10 @@
                     4.0,
                     5.0,
                     6.0,
-                    29.0
+                    29.0,
+                    2.0
                 ],
-                "points_on_bench_total": 249.0,
+                "points_on_bench_total": 251.0,
                 "points_scored_array": [
                     84.0,
                     45.0,
@@ -11921,9 +12117,10 @@
                     54.0,
                     59.0,
                     20.0,
-                    43.0
+                    43.0,
+                    60.0
                 ],
-                "points_scored_total": 1363.0,
+                "points_scored_total": 1423.0,
                 "points_spent_array": [
                     0.0,
                     0.0,
@@ -11942,6 +12139,7 @@
                     0.0,
                     0.0,
                     4.0,
+                    0.0,
                     0.0,
                     0.0,
                     0.0,
@@ -11985,11 +12183,12 @@
                     "D",
                     "L",
                     "L",
+                    "L",
                     "L"
                 ],
                 "result_count": {
                     "D": 1,
-                    "L": 21,
+                    "L": 22,
                     "W": 7
                 },
                 "transfers_made_array": [
@@ -12021,7 +12220,8 @@
                     0,
                     2,
                     1,
-                    1
+                    1,
+                    0
                 ],
                 "transfers_made_total": 42
             }
@@ -12663,6 +12863,20 @@
                     "points_spent": 0.0,
                     "squad_value": 98.7,
                     "transfers_made": 0
+                },
+                "30": {
+                    "chip_played": "None",
+                    "fixture_opponent_manager_code": "1767323",
+                    "fixture_opponent_manager_fullname": "Pete Baker",
+                    "fixture_opponent_team_name": "Public Enema",
+                    "fixture_result": "L",
+                    "fixture_score": 47.0,
+                    "overall_total_points": 1370.0,
+                    "points_on_bench": 0.0,
+                    "points_scored": 47.0,
+                    "points_spent": 0.0,
+                    "squad_value": 98.1,
+                    "transfers_made": 0
                 }
             },
             "manager_info": {
@@ -12702,7 +12916,8 @@
                     40.0,
                     56.0,
                     25.0,
-                    61.0
+                    61.0,
+                    47.0
                 ],
                 "fixture_score_running_total_array": [
                     80.0,
@@ -12733,9 +12948,10 @@
                     1181.0,
                     1237.0,
                     1262.0,
-                    1323.0
+                    1323.0,
+                    1370.0
                 ],
-                "fixture_score_total": 1323.0,
+                "fixture_score_total": 1370.0,
                 "league_points_array": [
                     3,
                     0,
@@ -12764,6 +12980,7 @@
                     0,
                     0,
                     3,
+                    0,
                     0,
                     0
                 ],
@@ -12794,6 +13011,7 @@
                     16,
                     16,
                     16,
+                    19,
                     19,
                     19,
                     19
@@ -12828,6 +13046,7 @@
                     20,
                     20,
                     20,
+                    20,
                     20
                 ],
                 "league_position_high": {
@@ -12845,7 +13064,8 @@
                         26,
                         27,
                         28,
-                        29
+                        29,
+                        30
                     ],
                     "position": 20
                 },
@@ -12879,9 +13099,10 @@
                     50.0,
                     49.0,
                     36.0,
-                    68.0
+                    68.0,
+                    76.0
                 ],
-                "opponent_score_total": 1611.0,
+                "opponent_score_total": 1687.0,
                 "points_on_bench_array": [
                     0.0,
                     1.0,
@@ -12910,6 +13131,7 @@
                     0.0,
                     1.0,
                     1.0,
+                    0.0,
                     0.0,
                     0.0
                 ],
@@ -12943,9 +13165,10 @@
                     40.0,
                     56.0,
                     25.0,
-                    61.0
+                    61.0,
+                    47.0
                 ],
-                "points_scored_total": 1327.0,
+                "points_scored_total": 1374.0,
                 "points_spent_array": [
                     0.0,
                     0.0,
@@ -12954,6 +13177,7 @@
                     0.0,
                     0.0,
                     4.0,
+                    0.0,
                     0.0,
                     0.0,
                     0.0,
@@ -13007,11 +13231,12 @@
                     "L",
                     "W",
                     "L",
+                    "L",
                     "L"
                 ],
                 "result_count": {
                     "D": 1,
-                    "L": 22,
+                    "L": 23,
                     "W": 6
                 },
                 "transfers_made_array": [
@@ -13041,6 +13266,7 @@
                     0,
                     0,
                     1,
+                    0,
                     0,
                     0,
                     0
@@ -13685,6 +13911,20 @@
                     "points_spent": 0.0,
                     "squad_value": 101.7,
                     "transfers_made": 0
+                },
+                "30": {
+                    "chip_played": "None",
+                    "fixture_opponent_manager_code": "55259",
+                    "fixture_opponent_manager_fullname": "Jeremy Harding",
+                    "fixture_opponent_team_name": "Costabomb Athletico",
+                    "fixture_result": "L",
+                    "fixture_score": 57.0,
+                    "overall_total_points": 1514.0,
+                    "points_on_bench": 10.0,
+                    "points_scored": 57.0,
+                    "points_spent": 0.0,
+                    "squad_value": 101.4,
+                    "transfers_made": 2
                 }
             },
             "manager_info": {
@@ -13724,7 +13964,8 @@
                     55.0,
                     40.0,
                     29.0,
-                    59.0
+                    59.0,
+                    57.0
                 ],
                 "fixture_score_running_total_array": [
                     53.0,
@@ -13755,9 +13996,10 @@
                     1329.0,
                     1369.0,
                     1398.0,
-                    1457.0
+                    1457.0,
+                    1514.0
                 ],
-                "fixture_score_total": 1457.0,
+                "fixture_score_total": 1514.0,
                 "league_points_array": [
                     0,
                     0,
@@ -13787,6 +14029,7 @@
                     0,
                     0,
                     3,
+                    0,
                     0
                 ],
                 "league_points_running_total_array": [
@@ -13817,6 +14060,7 @@
                     36,
                     36,
                     36,
+                    39,
                     39,
                     39
                 ],
@@ -13850,7 +14094,8 @@
                     14,
                     15,
                     14,
-                    14
+                    14,
+                    16
                 ],
                 "league_position_high": {
                     "gameweeks_at_position": [
@@ -13870,7 +14115,7 @@
                     ],
                     "position": 20
                 },
-                "league_position_now": 14,
+                "league_position_now": 16,
                 "opponent_score_array": [
                     93.0,
                     42.0,
@@ -13900,9 +14145,10 @@
                     63.0,
                     48.0,
                     20.0,
-                    69.0
+                    69.0,
+                    109.0
                 ],
-                "opponent_score_total": 1445.0,
+                "opponent_score_total": 1554.0,
                 "points_on_bench_array": [
                     18.0,
                     19.0,
@@ -13932,9 +14178,10 @@
                     9.0,
                     16.0,
                     2.0,
-                    6.0
+                    6.0,
+                    10.0
                 ],
-                "points_on_bench_total": 273.0,
+                "points_on_bench_total": 283.0,
                 "points_scored_array": [
                     53.0,
                     33.0,
@@ -13964,10 +14211,12 @@
                     55.0,
                     40.0,
                     29.0,
-                    59.0
+                    59.0,
+                    57.0
                 ],
-                "points_scored_total": 1457.0,
+                "points_scored_total": 1514.0,
                 "points_spent_array": [
+                    0.0,
                     0.0,
                     0.0,
                     0.0,
@@ -14028,11 +14277,12 @@
                     "L",
                     "L",
                     "W",
+                    "L",
                     "L"
                 ],
                 "result_count": {
                     "D": 0,
-                    "L": 16,
+                    "L": 17,
                     "W": 13
                 },
                 "transfers_made_array": [
@@ -14064,9 +14314,10 @@
                     1,
                     0,
                     0,
-                    0
+                    0,
+                    2
                 ],
-                "transfers_made_total": 26
+                "transfers_made_total": 28
             }
         },
         "2473683": {
@@ -14706,6 +14957,20 @@
                     "points_spent": 8.0,
                     "squad_value": 99.6,
                     "transfers_made": 3
+                },
+                "30": {
+                    "chip_played": "Bench Boost",
+                    "fixture_opponent_manager_code": "1048255",
+                    "fixture_opponent_manager_fullname": "Ned Read",
+                    "fixture_opponent_team_name": "Da Blue Boyz",
+                    "fixture_result": "W",
+                    "fixture_score": 97.0,
+                    "overall_total_points": 1602.0,
+                    "points_on_bench": 0.0,
+                    "points_scored": 97.0,
+                    "points_spent": 0.0,
+                    "squad_value": 98.6,
+                    "transfers_made": 24
                 }
             },
             "manager_info": {
@@ -14745,7 +15010,8 @@
                     62.0,
                     47.0,
                     38.0,
-                    44.0
+                    44.0,
+                    97.0
                 ],
                 "fixture_score_running_total_array": [
                     70.0,
@@ -14776,9 +15042,10 @@
                     1376.0,
                     1423.0,
                     1461.0,
-                    1505.0
+                    1505.0,
+                    1602.0
                 ],
-                "fixture_score_total": 1505.0,
+                "fixture_score_total": 1602.0,
                 "league_points_array": [
                     0,
                     3,
@@ -14808,7 +15075,8 @@
                     3,
                     3,
                     3,
-                    0
+                    0,
+                    3
                 ],
                 "league_points_running_total_array": [
                     0,
@@ -14839,9 +15107,10 @@
                     48,
                     51,
                     54,
-                    54
+                    54,
+                    57
                 ],
-                "league_points_total": 54,
+                "league_points_total": 57,
                 "league_position_array": [
                     14,
                     11,
@@ -14871,11 +15140,13 @@
                     4,
                     4,
                     2,
-                    5
+                    5,
+                    1
                 ],
                 "league_position_high": {
                     "gameweeks_at_position": [
-                        4
+                        4,
+                        30
                     ],
                     "position": 1
                 },
@@ -14885,7 +15156,7 @@
                     ],
                     "position": 17
                 },
-                "league_position_now": 5,
+                "league_position_now": 1,
                 "opponent_score_array": [
                     90.0,
                     45.0,
@@ -14915,9 +15186,10 @@
                     52.0,
                     38.0,
                     35.0,
-                    45.0
+                    45.0,
+                    82.0
                 ],
-                "opponent_score_total": 1492.0,
+                "opponent_score_total": 1574.0,
                 "points_on_bench_array": [
                     21.0,
                     7.0,
@@ -14947,7 +15219,8 @@
                     2.0,
                     4.0,
                     13.0,
-                    10.0
+                    10.0,
+                    0.0
                 ],
                 "points_on_bench_total": 195.0,
                 "points_scored_array": [
@@ -14979,9 +15252,10 @@
                     66.0,
                     47.0,
                     42.0,
-                    52.0
+                    52.0,
+                    97.0
                 ],
-                "points_scored_total": 1549.0,
+                "points_scored_total": 1646.0,
                 "points_spent_array": [
                     0.0,
                     0.0,
@@ -15011,7 +15285,8 @@
                     4.0,
                     0.0,
                     4.0,
-                    8.0
+                    8.0,
+                    0.0
                 ],
                 "points_spent_total": 44.0,
                 "result_array": [
@@ -15043,12 +15318,13 @@
                     "W",
                     "W",
                     "W",
-                    "L"
+                    "L",
+                    "W"
                 ],
                 "result_count": {
                     "D": 0,
                     "L": 11,
-                    "W": 18
+                    "W": 19
                 },
                 "transfers_made_array": [
                     0,
@@ -15079,9 +15355,10 @@
                     2,
                     0,
                     3,
-                    3
+                    3,
+                    24
                 ],
-                "transfers_made_total": 43
+                "transfers_made_total": 67
             }
         },
         "2487239": {
@@ -15721,6 +15998,20 @@
                     "points_spent": 0.0,
                     "squad_value": 100.0,
                     "transfers_made": 0
+                },
+                "30": {
+                    "chip_played": "None",
+                    "fixture_opponent_manager_code": "1794174",
+                    "fixture_opponent_manager_fullname": "David Grice",
+                    "fixture_opponent_team_name": "Renford Rejects",
+                    "fixture_result": "L",
+                    "fixture_score": 54.0,
+                    "overall_total_points": 1461.0,
+                    "points_on_bench": 10.0,
+                    "points_scored": 54.0,
+                    "points_spent": 0.0,
+                    "squad_value": 99.8,
+                    "transfers_made": 0
                 }
             },
             "manager_info": {
@@ -15760,7 +16051,8 @@
                     62.0,
                     47.0,
                     25.0,
-                    68.0
+                    68.0,
+                    54.0
                 ],
                 "fixture_score_running_total_array": [
                     58.0,
@@ -15791,9 +16083,10 @@
                     1267.0,
                     1314.0,
                     1339.0,
-                    1407.0
+                    1407.0,
+                    1461.0
                 ],
-                "fixture_score_total": 1407.0,
+                "fixture_score_total": 1461.0,
                 "league_points_array": [
                     0,
                     0,
@@ -15823,7 +16116,8 @@
                     1,
                     0,
                     0,
-                    3
+                    3,
+                    0
                 ],
                 "league_points_running_total_array": [
                     0,
@@ -15854,6 +16148,7 @@
                     26,
                     26,
                     26,
+                    29,
                     29
                 ],
                 "league_points_total": 29,
@@ -15881,6 +16176,7 @@
                     17,
                     17,
                     17,
+                    18,
                     18,
                     18,
                     18,
@@ -15932,9 +16228,10 @@
                     62.0,
                     61.0,
                     26.0,
-                    61.0
+                    61.0,
+                    75.0
                 ],
-                "opponent_score_total": 1497.0,
+                "opponent_score_total": 1572.0,
                 "points_on_bench_array": [
                     20.0,
                     4.0,
@@ -15964,9 +16261,10 @@
                     2.0,
                     2.0,
                     0.0,
-                    5.0
+                    5.0,
+                    10.0
                 ],
-                "points_on_bench_total": 123.0,
+                "points_on_bench_total": 133.0,
                 "points_scored_array": [
                     58.0,
                     22.0,
@@ -15996,9 +16294,10 @@
                     62.0,
                     47.0,
                     25.0,
-                    68.0
+                    68.0,
+                    54.0
                 ],
-                "points_scored_total": 1411.0,
+                "points_scored_total": 1465.0,
                 "points_spent_array": [
                     0.0,
                     0.0,
@@ -16022,6 +16321,7 @@
                     0.0,
                     0.0,
                     4.0,
+                    0.0,
                     0.0,
                     0.0,
                     0.0,
@@ -16060,11 +16360,12 @@
                     "D",
                     "L",
                     "L",
-                    "W"
+                    "W",
+                    "L"
                 ],
                 "result_count": {
                     "D": 2,
-                    "L": 18,
+                    "L": 19,
                     "W": 9
                 },
                 "transfers_made_array": [
@@ -16095,6 +16396,7 @@
                     0,
                     2,
                     1,
+                    0,
                     0,
                     0
                 ],
@@ -16738,6 +17040,20 @@
                     "points_spent": 0.0,
                     "squad_value": 101.2,
                     "transfers_made": 10
+                },
+                "30": {
+                    "chip_played": "None",
+                    "fixture_opponent_manager_code": "420605",
+                    "fixture_opponent_manager_fullname": "Richard Walker",
+                    "fixture_opponent_team_name": "Bethnal Green Utd",
+                    "fixture_result": "L",
+                    "fixture_score": 49.0,
+                    "overall_total_points": 1625.0,
+                    "points_on_bench": 5.0,
+                    "points_scored": 49.0,
+                    "points_spent": 0.0,
+                    "squad_value": 101.6,
+                    "transfers_made": 0
                 }
             },
             "manager_info": {
@@ -16777,7 +17093,8 @@
                     54.0,
                     53.0,
                     41.0,
-                    98.0
+                    98.0,
+                    49.0
                 ],
                 "fixture_score_running_total_array": [
                     68.0,
@@ -16808,9 +17125,10 @@
                     1384.0,
                     1437.0,
                     1478.0,
-                    1576.0
+                    1576.0,
+                    1625.0
                 ],
-                "fixture_score_total": 1576.0,
+                "fixture_score_total": 1625.0,
                 "league_points_array": [
                     3,
                     0,
@@ -16840,7 +17158,8 @@
                     1,
                     0,
                     0,
-                    3
+                    3,
+                    0
                 ],
                 "league_points_running_total_array": [
                     3,
@@ -16871,6 +17190,7 @@
                     46,
                     46,
                     46,
+                    49,
                     49
                 ],
                 "league_points_total": 49,
@@ -16903,7 +17223,8 @@
                     6,
                     8,
                     8,
-                    7
+                    7,
+                    8
                 ],
                 "league_position_high": {
                     "gameweeks_at_position": [
@@ -16917,7 +17238,7 @@
                     ],
                     "position": 13
                 },
-                "league_position_now": 7,
+                "league_position_now": 8,
                 "opponent_score_array": [
                     58.0,
                     64.0,
@@ -16947,9 +17268,10 @@
                     54.0,
                     54.0,
                     46.0,
-                    54.0
+                    54.0,
+                    102.0
                 ],
-                "opponent_score_total": 1540.0,
+                "opponent_score_total": 1642.0,
                 "points_on_bench_array": [
                     2.0,
                     11.0,
@@ -16979,9 +17301,10 @@
                     2.0,
                     10.0,
                     2.0,
+                    5.0,
                     5.0
                 ],
-                "points_on_bench_total": 215.0,
+                "points_on_bench_total": 220.0,
                 "points_scored_array": [
                     68.0,
                     40.0,
@@ -17011,9 +17334,10 @@
                     54.0,
                     57.0,
                     41.0,
-                    98.0
+                    98.0,
+                    49.0
                 ],
-                "points_scored_total": 1604.0,
+                "points_scored_total": 1653.0,
                 "points_spent_array": [
                     0.0,
                     4.0,
@@ -17042,6 +17366,7 @@
                     0.0,
                     0.0,
                     4.0,
+                    0.0,
                     0.0,
                     0.0
                 ],
@@ -17075,11 +17400,12 @@
                     "D",
                     "L",
                     "L",
-                    "W"
+                    "W",
+                    "L"
                 ],
                 "result_count": {
                     "D": 1,
-                    "L": 12,
+                    "L": 13,
                     "W": 16
                 },
                 "transfers_made_array": [
@@ -17111,7 +17437,8 @@
                     1,
                     2,
                     0,
-                    10
+                    10,
+                    0
                 ],
                 "transfers_made_total": 50
             }
@@ -17753,6 +18080,20 @@
                     "points_spent": 4.0,
                     "squad_value": 99.8,
                     "transfers_made": 2
+                },
+                "30": {
+                    "chip_played": "None",
+                    "fixture_opponent_manager_code": "1071598",
+                    "fixture_opponent_manager_fullname": "Lee Guthrie",
+                    "fixture_opponent_team_name": "Pepe in Our Step",
+                    "fixture_result": "D",
+                    "fixture_score": 62.0,
+                    "overall_total_points": 1529.0,
+                    "points_on_bench": 0.0,
+                    "points_scored": 62.0,
+                    "points_spent": 0.0,
+                    "squad_value": 100.2,
+                    "transfers_made": 6
                 }
             },
             "manager_info": {
@@ -17792,7 +18133,8 @@
                     59.0,
                     44.0,
                     34.0,
-                    56.0
+                    56.0,
+                    62.0
                 ],
                 "fixture_score_running_total_array": [
                     80.0,
@@ -17823,9 +18165,10 @@
                     1333.0,
                     1377.0,
                     1411.0,
-                    1467.0
+                    1467.0,
+                    1529.0
                 ],
-                "fixture_score_total": 1467.0,
+                "fixture_score_total": 1529.0,
                 "league_points_array": [
                     0,
                     3,
@@ -17855,7 +18198,8 @@
                     0,
                     0,
                     0,
-                    0
+                    0,
+                    1
                 ],
                 "league_points_running_total_array": [
                     0,
@@ -17886,9 +18230,10 @@
                     36,
                     36,
                     36,
-                    36
+                    36,
+                    37
                 ],
-                "league_points_total": 36,
+                "league_points_total": 37,
                 "league_position_array": [
                     13,
                     8,
@@ -17918,6 +18263,7 @@
                     13,
                     14,
                     15,
+                    17,
                     17
                 ],
                 "league_position_high": {
@@ -17928,7 +18274,8 @@
                 },
                 "league_position_low": {
                     "gameweeks_at_position": [
-                        29
+                        29,
+                        30
                     ],
                     "position": 17
                 },
@@ -17962,9 +18309,10 @@
                     81.0,
                     46.0,
                     35.0,
-                    58.0
+                    58.0,
+                    62.0
                 ],
-                "opponent_score_total": 1558.0,
+                "opponent_score_total": 1620.0,
                 "points_on_bench_array": [
                     2.0,
                     4.0,
@@ -17994,7 +18342,8 @@
                     5.0,
                     9.0,
                     10.0,
-                    4.0
+                    4.0,
+                    0.0
                 ],
                 "points_on_bench_total": 188.0,
                 "points_scored_array": [
@@ -18026,9 +18375,10 @@
                     59.0,
                     48.0,
                     38.0,
-                    60.0
+                    60.0,
+                    62.0
                 ],
-                "points_scored_total": 1499.0,
+                "points_scored_total": 1561.0,
                 "points_spent_array": [
                     0.0,
                     4.0,
@@ -18058,7 +18408,8 @@
                     0.0,
                     4.0,
                     4.0,
-                    4.0
+                    4.0,
+                    0.0
                 ],
                 "points_spent_total": 32.0,
                 "result_array": [
@@ -18090,10 +18441,11 @@
                     "L",
                     "L",
                     "L",
-                    "L"
+                    "L",
+                    "D"
                 ],
                 "result_count": {
-                    "D": 0,
+                    "D": 1,
                     "L": 17,
                     "W": 12
                 },
@@ -18126,9 +18478,10 @@
                     2,
                     2,
                     2,
-                    2
+                    2,
+                    6
                 ],
-                "transfers_made_total": 64
+                "transfers_made_total": 70
             }
         },
         "420605": {
@@ -18768,6 +19121,20 @@
                     "points_spent": 0.0,
                     "squad_value": 103.9,
                     "transfers_made": 6
+                },
+                "30": {
+                    "chip_played": "Bench Boost",
+                    "fixture_opponent_manager_code": "3303404",
+                    "fixture_opponent_manager_fullname": "James Stillwell",
+                    "fixture_opponent_team_name": "FC George",
+                    "fixture_result": "W",
+                    "fixture_score": 102.0,
+                    "overall_total_points": 1677.0,
+                    "points_on_bench": 0.0,
+                    "points_scored": 102.0,
+                    "points_spent": 0.0,
+                    "squad_value": 103.3,
+                    "transfers_made": 8
                 }
             },
             "manager_info": {
@@ -18807,7 +19174,8 @@
                     77.0,
                     31.0,
                     26.0,
-                    45.0
+                    45.0,
+                    102.0
                 ],
                 "fixture_score_running_total_array": [
                     100.0,
@@ -18838,9 +19206,10 @@
                     1473.0,
                     1504.0,
                     1530.0,
-                    1575.0
+                    1575.0,
+                    1677.0
                 ],
-                "fixture_score_total": 1575.0,
+                "fixture_score_total": 1677.0,
                 "league_points_array": [
                     3,
                     3,
@@ -18870,7 +19239,8 @@
                     3,
                     0,
                     3,
-                    0
+                    0,
+                    3
                 ],
                 "league_points_running_total_array": [
                     3,
@@ -18901,9 +19271,10 @@
                     46,
                     46,
                     49,
-                    49
+                    49,
+                    52
                 ],
-                "league_points_total": 49,
+                "league_points_total": 52,
                 "league_position_array": [
                     1,
                     1,
@@ -18933,7 +19304,8 @@
                     5,
                     7,
                     7,
-                    8
+                    8,
+                    7
                 ],
                 "league_position_high": {
                     "gameweeks_at_position": [
@@ -18949,7 +19321,7 @@
                     ],
                     "position": 10
                 },
-                "league_position_now": 8,
+                "league_position_now": 7,
                 "opponent_score_array": [
                     80.0,
                     44.0,
@@ -18979,9 +19351,10 @@
                     41.0,
                     48.0,
                     25.0,
-                    48.0
+                    48.0,
+                    49.0
                 ],
-                "opponent_score_total": 1439.0,
+                "opponent_score_total": 1488.0,
                 "points_on_bench_array": [
                     6.0,
                     18.0,
@@ -19011,7 +19384,8 @@
                     2.0,
                     2.0,
                     0.0,
-                    3.0
+                    3.0,
+                    0.0
                 ],
                 "points_on_bench_total": 167.0,
                 "points_scored_array": [
@@ -19043,9 +19417,10 @@
                     77.0,
                     35.0,
                     26.0,
-                    45.0
+                    45.0,
+                    102.0
                 ],
-                "points_scored_total": 1591.0,
+                "points_scored_total": 1693.0,
                 "points_spent_array": [
                     0.0,
                     0.0,
@@ -19074,6 +19449,7 @@
                     0.0,
                     0.0,
                     4.0,
+                    0.0,
                     0.0,
                     0.0
                 ],
@@ -19107,12 +19483,13 @@
                     "W",
                     "L",
                     "W",
-                    "L"
+                    "L",
+                    "W"
                 ],
                 "result_count": {
                     "D": 1,
                     "L": 12,
-                    "W": 16
+                    "W": 17
                 },
                 "transfers_made_array": [
                     0,
@@ -19143,9 +19520,10 @@
                     0,
                     3,
                     1,
-                    6
+                    6,
+                    8
                 ],
-                "transfers_made_total": 46
+                "transfers_made_total": 54
             }
         },
         "55259": {
@@ -19785,6 +20163,20 @@
                     "points_spent": 0.0,
                     "squad_value": 102.4,
                     "transfers_made": 10
+                },
+                "30": {
+                    "chip_played": "Triple Captain",
+                    "fixture_opponent_manager_code": "2176107",
+                    "fixture_opponent_manager_fullname": "Adeel Iqbal",
+                    "fixture_opponent_team_name": "The Real Adeel",
+                    "fixture_result": "W",
+                    "fixture_score": 109.0,
+                    "overall_total_points": 1687.0,
+                    "points_on_bench": 8.0,
+                    "points_scored": 109.0,
+                    "points_spent": 0.0,
+                    "squad_value": 102.8,
+                    "transfers_made": 9
                 }
             },
             "manager_info": {
@@ -19824,7 +20216,8 @@
                     62.0,
                     49.0,
                     46.0,
-                    39.0
+                    39.0,
+                    109.0
                 ],
                 "fixture_score_running_total_array": [
                     54.0,
@@ -19855,9 +20248,10 @@
                     1444.0,
                     1493.0,
                     1539.0,
-                    1578.0
+                    1578.0,
+                    1687.0
                 ],
-                "fixture_score_total": 1578.0,
+                "fixture_score_total": 1687.0,
                 "league_points_array": [
                     0,
                     3,
@@ -19887,7 +20281,8 @@
                     1,
                     3,
                     3,
-                    0
+                    0,
+                    3
                 ],
                 "league_points_running_total_array": [
                     0,
@@ -19918,9 +20313,10 @@
                     35,
                     38,
                     41,
-                    41
+                    41,
+                    44
                 ],
-                "league_points_total": 41,
+                "league_points_total": 44,
                 "league_position_array": [
                     17,
                     14,
@@ -19950,7 +20346,8 @@
                     15,
                     13,
                     12,
-                    13
+                    13,
+                    11
                 ],
                 "league_position_high": {
                     "gameweeks_at_position": [
@@ -19964,7 +20361,7 @@
                     ],
                     "position": 19
                 },
-                "league_position_now": 13,
+                "league_position_now": 11,
                 "opponent_score_array": [
                     65.0,
                     40.0,
@@ -19994,9 +20391,10 @@
                     62.0,
                     41.0,
                     41.0,
-                    45.0
+                    45.0,
+                    57.0
                 ],
-                "opponent_score_total": 1545.0,
+                "opponent_score_total": 1602.0,
                 "points_on_bench_array": [
                     16.0,
                     7.0,
@@ -20026,9 +20424,10 @@
                     10.0,
                     8.0,
                     0.0,
-                    11.0
+                    11.0,
+                    8.0
                 ],
-                "points_on_bench_total": 319.0,
+                "points_on_bench_total": 327.0,
                 "points_scored_array": [
                     54.0,
                     48.0,
@@ -20058,9 +20457,10 @@
                     62.0,
                     53.0,
                     46.0,
-                    39.0
+                    39.0,
+                    109.0
                 ],
-                "points_scored_total": 1622.0,
+                "points_scored_total": 1731.0,
                 "points_spent_array": [
                     0.0,
                     0.0,
@@ -20089,6 +20489,7 @@
                     4.0,
                     0.0,
                     4.0,
+                    0.0,
                     0.0,
                     0.0
                 ],
@@ -20122,12 +20523,13 @@
                     "D",
                     "W",
                     "W",
-                    "L"
+                    "L",
+                    "W"
                 ],
                 "result_count": {
                     "D": 2,
                     "L": 14,
-                    "W": 13
+                    "W": 14
                 },
                 "transfers_made_array": [
                     0,
@@ -20158,9 +20560,10 @@
                     1,
                     2,
                     1,
-                    10
+                    10,
+                    9
                 ],
-                "transfers_made_total": 49
+                "transfers_made_total": 58
             }
         },
         "66787": {
@@ -20800,6 +21203,20 @@
                     "points_spent": 0.0,
                     "squad_value": 100.8,
                     "transfers_made": 0
+                },
+                "30": {
+                    "chip_played": "Bench Boost",
+                    "fixture_opponent_manager_code": "148241",
+                    "fixture_opponent_manager_fullname": "James Hunter",
+                    "fixture_opponent_team_name": "Clarendon Drovers",
+                    "fixture_result": "D",
+                    "fixture_score": 97.0,
+                    "overall_total_points": 1631.0,
+                    "points_on_bench": 0.0,
+                    "points_scored": 97.0,
+                    "points_spent": 0.0,
+                    "squad_value": 100.3,
+                    "transfers_made": 12
                 }
             },
             "manager_info": {
@@ -20839,7 +21256,8 @@
                     63.0,
                     54.0,
                     32.0,
-                    69.0
+                    69.0,
+                    97.0
                 ],
                 "fixture_score_running_total_array": [
                     84.0,
@@ -20870,9 +21288,10 @@
                     1379.0,
                     1433.0,
                     1465.0,
-                    1534.0
+                    1534.0,
+                    1631.0
                 ],
-                "fixture_score_total": 1534.0,
+                "fixture_score_total": 1631.0,
                 "league_points_array": [
                     1,
                     0,
@@ -20902,7 +21321,8 @@
                     3,
                     3,
                     3,
-                    3
+                    3,
+                    1
                 ],
                 "league_points_running_total_array": [
                     1,
@@ -20933,9 +21353,10 @@
                     46,
                     49,
                     52,
-                    55
+                    55,
+                    56
                 ],
-                "league_points_total": 55,
+                "league_points_total": 56,
                 "league_position_array": [
                     10,
                     15,
@@ -20965,11 +21386,13 @@
                     7,
                     5,
                     5,
+                    2,
                     2
                 ],
                 "league_position_high": {
                     "gameweeks_at_position": [
-                        29
+                        29,
+                        30
                     ],
                     "position": 2
                 },
@@ -21009,9 +21432,10 @@
                     52.0,
                     53.0,
                     29.0,
-                    59.0
+                    59.0,
+                    97.0
                 ],
-                "opponent_score_total": 1513.0,
+                "opponent_score_total": 1610.0,
                 "points_on_bench_array": [
                     26.0,
                     8.0,
@@ -21041,7 +21465,8 @@
                     4.0,
                     5.0,
                     8.0,
-                    9.0
+                    9.0,
+                    0.0
                 ],
                 "points_on_bench_total": 211.0,
                 "points_scored_array": [
@@ -21073,9 +21498,10 @@
                     63.0,
                     54.0,
                     32.0,
-                    69.0
+                    69.0,
+                    97.0
                 ],
-                "points_scored_total": 1542.0,
+                "points_scored_total": 1639.0,
                 "points_spent_array": [
                     0.0,
                     0.0,
@@ -21090,6 +21516,7 @@
                     0.0,
                     0.0,
                     4.0,
+                    0.0,
                     0.0,
                     0.0,
                     0.0,
@@ -21137,10 +21564,11 @@
                     "W",
                     "W",
                     "W",
-                    "W"
+                    "W",
+                    "D"
                 ],
                 "result_count": {
-                    "D": 1,
+                    "D": 2,
                     "L": 10,
                     "W": 18
                 },
@@ -21173,9 +21601,10 @@
                     2,
                     0,
                     0,
-                    0
+                    0,
+                    12
                 ],
-                "transfers_made_total": 29
+                "transfers_made_total": 41
             }
         },
         "732321": {
@@ -21815,6 +22244,20 @@
                     "points_spent": 0.0,
                     "squad_value": 101.6,
                     "transfers_made": 16
+                },
+                "30": {
+                    "chip_played": "None",
+                    "fixture_opponent_manager_code": "151155",
+                    "fixture_opponent_manager_fullname": "Darren Baker",
+                    "fixture_opponent_team_name": "Suarezident Evil",
+                    "fixture_result": "L",
+                    "fixture_score": 76.0,
+                    "overall_total_points": 1606.0,
+                    "points_on_bench": 7.0,
+                    "points_scored": 76.0,
+                    "points_spent": 0.0,
+                    "squad_value": 102.1,
+                    "transfers_made": 0
                 }
             },
             "manager_info": {
@@ -21854,7 +22297,8 @@
                     60.0,
                     46.0,
                     35.0,
-                    59.0
+                    59.0,
+                    76.0
                 ],
                 "fixture_score_running_total_array": [
                     62.0,
@@ -21885,9 +22329,10 @@
                     1390.0,
                     1436.0,
                     1471.0,
-                    1530.0
+                    1530.0,
+                    1606.0
                 ],
-                "fixture_score_total": 1530.0,
+                "fixture_score_total": 1606.0,
                 "league_points_array": [
                     0,
                     3,
@@ -21917,7 +22362,8 @@
                     3,
                     3,
                     0,
-                    3
+                    3,
+                    0
                 ],
                 "league_points_running_total_array": [
                     0,
@@ -21948,6 +22394,7 @@
                     49,
                     52,
                     52,
+                    55,
                     55
                 ],
                 "league_points_total": 55,
@@ -21980,7 +22427,8 @@
                     3,
                     2,
                     4,
-                    3
+                    3,
+                    5
                 ],
                 "league_position_high": {
                     "gameweeks_at_position": [
@@ -22001,7 +22449,7 @@
                     ],
                     "position": 15
                 },
-                "league_position_now": 3,
+                "league_position_now": 5,
                 "opponent_score_array": [
                     84.0,
                     46.0,
@@ -22031,9 +22479,10 @@
                     56.0,
                     44.0,
                     38.0,
-                    48.0
+                    48.0,
+                    101.0
                 ],
-                "opponent_score_total": 1437.0,
+                "opponent_score_total": 1538.0,
                 "points_on_bench_array": [
                     9.0,
                     5.0,
@@ -22063,9 +22512,10 @@
                     2.0,
                     5.0,
                     1.0,
-                    2.0
+                    2.0,
+                    7.0
                 ],
-                "points_on_bench_total": 139.0,
+                "points_on_bench_total": 146.0,
                 "points_scored_array": [
                     62.0,
                     67.0,
@@ -22095,9 +22545,10 @@
                     60.0,
                     46.0,
                     35.0,
-                    59.0
+                    59.0,
+                    76.0
                 ],
-                "points_scored_total": 1550.0,
+                "points_scored_total": 1626.0,
                 "points_spent_array": [
                     0.0,
                     4.0,
@@ -22124,6 +22575,7 @@
                     0.0,
                     0.0,
                     4.0,
+                    0.0,
                     0.0,
                     0.0,
                     0.0,
@@ -22159,11 +22611,12 @@
                     "W",
                     "W",
                     "L",
-                    "W"
+                    "W",
+                    "L"
                 ],
                 "result_count": {
                     "D": 1,
-                    "L": 10,
+                    "L": 11,
                     "W": 18
                 },
                 "transfers_made_array": [
@@ -22195,7 +22648,8 @@
                     0,
                     2,
                     1,
-                    16
+                    16,
+                    0
                 ],
                 "transfers_made_total": 59
             }
@@ -22837,6 +23291,20 @@
                     "points_spent": 0.0,
                     "squad_value": 103.1,
                     "transfers_made": 1
+                },
+                "30": {
+                    "chip_played": "Free Hit",
+                    "fixture_opponent_manager_code": "831280",
+                    "fixture_opponent_manager_fullname": "Jon Lescott",
+                    "fixture_opponent_team_name": "I Open at the Close",
+                    "fixture_result": "L",
+                    "fixture_score": 90.0,
+                    "overall_total_points": 1687.0,
+                    "points_on_bench": 0.0,
+                    "points_scored": 90.0,
+                    "points_spent": 0.0,
+                    "squad_value": 103.2,
+                    "transfers_made": 8
                 }
             },
             "manager_info": {
@@ -22876,7 +23344,8 @@
                     52.0,
                     59.0,
                     42.0,
-                    48.0
+                    48.0,
+                    90.0
                 ],
                 "fixture_score_running_total_array": [
                     65.0,
@@ -22907,9 +23376,10 @@
                     1448.0,
                     1507.0,
                     1549.0,
-                    1597.0
+                    1597.0,
+                    1687.0
                 ],
-                "fixture_score_total": 1597.0,
+                "fixture_score_total": 1687.0,
                 "league_points_array": [
                     3,
                     1,
@@ -22939,6 +23409,7 @@
                     0,
                     3,
                     3,
+                    0,
                     0
                 ],
                 "league_points_running_total_array": [
@@ -22969,6 +23440,7 @@
                     49,
                     49,
                     52,
+                    55,
                     55,
                     55
                 ],
@@ -23002,7 +23474,8 @@
                     2,
                     1,
                     1,
-                    1
+                    1,
+                    4
                 ],
                 "league_position_high": {
                     "gameweeks_at_position": [
@@ -23027,7 +23500,7 @@
                     ],
                     "position": 9
                 },
-                "league_position_now": 1,
+                "league_position_now": 4,
                 "opponent_score_array": [
                     54.0,
                     39.0,
@@ -23057,9 +23530,10 @@
                     62.0,
                     50.0,
                     33.0,
-                    59.0
+                    59.0,
+                    99.0
                 ],
-                "opponent_score_total": 1419.0,
+                "opponent_score_total": 1518.0,
                 "points_on_bench_array": [
                     11.0,
                     3.0,
@@ -23089,7 +23563,8 @@
                     12.0,
                     17.0,
                     5.0,
-                    7.0
+                    7.0,
+                    0.0
                 ],
                 "points_on_bench_total": 239.0,
                 "points_scored_array": [
@@ -23121,9 +23596,10 @@
                     52.0,
                     59.0,
                     42.0,
-                    48.0
+                    48.0,
+                    90.0
                 ],
-                "points_scored_total": 1609.0,
+                "points_scored_total": 1699.0,
                 "points_spent_array": [
                     0.0,
                     0.0,
@@ -23150,6 +23626,7 @@
                     4.0,
                     0.0,
                     4.0,
+                    0.0,
                     0.0,
                     0.0,
                     0.0,
@@ -23185,11 +23662,12 @@
                     "L",
                     "W",
                     "W",
+                    "L",
                     "L"
                 ],
                 "result_count": {
                     "D": 1,
-                    "L": 10,
+                    "L": 11,
                     "W": 18
                 },
                 "transfers_made_array": [
@@ -23221,9 +23699,10 @@
                     0,
                     2,
                     8,
-                    1
+                    1,
+                    8
                 ],
-                "transfers_made_total": 45
+                "transfers_made_total": 53
             }
         },
         "831280": {
@@ -23863,6 +24342,20 @@
                     "points_spent": 4.0,
                     "squad_value": 103.1,
                     "transfers_made": 2
+                },
+                "30": {
+                    "chip_played": "Triple Captain",
+                    "fixture_opponent_manager_code": "75107",
+                    "fixture_opponent_manager_fullname": "Gareth Mytton",
+                    "fixture_opponent_team_name": "1/2 Hamann 1/2 Biscuit",
+                    "fixture_result": "W",
+                    "fixture_score": 99.0,
+                    "overall_total_points": 1604.0,
+                    "points_on_bench": 9.0,
+                    "points_scored": 99.0,
+                    "points_spent": 0.0,
+                    "squad_value": 102.3,
+                    "transfers_made": 7
                 }
             },
             "manager_info": {
@@ -23902,7 +24395,8 @@
                     50.0,
                     41.0,
                     35.0,
-                    48.0
+                    48.0,
+                    99.0
                 ],
                 "fixture_score_running_total_array": [
                     40.0,
@@ -23933,9 +24427,10 @@
                     1381.0,
                     1422.0,
                     1457.0,
-                    1505.0
+                    1505.0,
+                    1604.0
                 ],
-                "fixture_score_total": 1505.0,
+                "fixture_score_total": 1604.0,
                 "league_points_array": [
                     3,
                     3,
@@ -23964,6 +24459,7 @@
                     0,
                     3,
                     0,
+                    3,
                     3,
                     3
                 ],
@@ -23996,9 +24492,10 @@
                     39,
                     39,
                     42,
-                    45
+                    45,
+                    48
                 ],
-                "league_points_total": 45,
+                "league_points_total": 48,
                 "league_position_array": [
                     9,
                     4,
@@ -24028,6 +24525,7 @@
                     11,
                     12,
                     11,
+                    10,
                     10
                 ],
                 "league_position_high": {
@@ -24074,9 +24572,10 @@
                     40.0,
                     49.0,
                     34.0,
-                    45.0
+                    45.0,
+                    90.0
                 ],
-                "opponent_score_total": 1517.0,
+                "opponent_score_total": 1607.0,
                 "points_on_bench_array": [
                     4.0,
                     3.0,
@@ -24106,9 +24605,10 @@
                     8.0,
                     10.0,
                     0.0,
-                    15.0
+                    15.0,
+                    9.0
                 ],
-                "points_on_bench_total": 172.0,
+                "points_on_bench_total": 181.0,
                 "points_scored_array": [
                     40.0,
                     64.0,
@@ -24138,9 +24638,10 @@
                     54.0,
                     41.0,
                     39.0,
-                    52.0
+                    52.0,
+                    99.0
                 ],
-                "points_scored_total": 1549.0,
+                "points_scored_total": 1648.0,
                 "points_spent_array": [
                     0.0,
                     0.0,
@@ -24170,7 +24671,8 @@
                     4.0,
                     0.0,
                     4.0,
-                    4.0
+                    4.0,
+                    0.0
                 ],
                 "points_spent_total": 44.0,
                 "result_array": [
@@ -24202,12 +24704,13 @@
                     "W",
                     "L",
                     "W",
+                    "W",
                     "W"
                 ],
                 "result_count": {
                     "D": 0,
                     "L": 14,
-                    "W": 15
+                    "W": 16
                 },
                 "transfers_made_array": [
                     0,
@@ -24238,9 +24741,10 @@
                     2,
                     1,
                     2,
-                    2
+                    2,
+                    7
                 ],
-                "transfers_made_total": 45
+                "transfers_made_total": 52
             }
         }
     }
