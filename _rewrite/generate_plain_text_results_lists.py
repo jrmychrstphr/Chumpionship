@@ -95,7 +95,7 @@ def write_results():
 			# print(gameweek, ' is in the list')
 
 			# define the name for the file
-			filename = 'plain_text_assets/' + gameweek + '---results.txt'
+			filename = 'assets/plain_text_assets/' + gameweek + '---results.txt'
 
 			# create a new .txt file
 			f = open(filename,'w+')
@@ -229,7 +229,7 @@ def write_results():
 def execute():
 
 	global database
-	database = return_load_json_file('2020_season_data - u.json')
+	database = return_load_json_file('2020_season_data.json')
 
 	write_results()
 
