@@ -41,8 +41,13 @@ svg text.label {
 svg text.label.centre-align {
     text-anchor: middle;
 }
+
 svg text.label.left-align {
     text-anchor: start;
+}
+
+svg text.label.right-align {
+    text-anchor: end;
 }
 
 svg .axis line, svg .axis-grid line {

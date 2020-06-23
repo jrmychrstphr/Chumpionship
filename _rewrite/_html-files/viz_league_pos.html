@@ -109,10 +109,10 @@
                 'viz_height': viz_div.height(),
                 'viz_width': viz_div.width(),
                 'canvas_padding': {
-                    'top': 20,
+                    'top': 1,
                     'right': 20,
                     'bottom': 35,
-                    'left': 20
+                    'left': 50
                 }
             }
 
@@ -147,24 +147,30 @@
 
             var yScale = d3.scaleBand()
             .domain(yDomain)   
-            .range([0, (dataviz_config.viz_height - dataviz_config.canvas_padding.bottom)]);
+            .range([dataviz_config.canvas_padding.top, (dataviz_config.viz_height - dataviz_config.canvas_padding.bottom)]);
 
 
             // Add table shading and lines
             regions_data = [
-                {'start': 1, 'end': 1, 'fill': chump_colours.dark_grey },
-                {'start': 2, 'end': 4, 'fill': chump_colours.dark_grey },
+                {'start': 1, 'end': 4, 'fill': chump_colours.dark_grey },
                 {'start': 18, 'end': 20, 'fill': chump_colours.dark_grey }
             ]
 
-            var regions = svg.append('g')
-            .classed('regions', true);
+            lines_data = [
+                //{'position': 1, 'type': 'dashed'},
+                {'position': 4, 'type': 'solid'},
+                {'position': 17, 'type': 'solid'}
+            ]
 
-            regions.selectAll('.region')
+            var axisRegions = svg.append('g')
+            .classed('axisRegions', true);
+
+            axisRegions.selectAll('.axisRegion')
             .data(regions_data)
             .enter()
             .append('rect')
-            .attr('width', dataviz_config.viz_width)
+            .classed('.axisRegion', true)
+            .attr('width', dataviz_config.viz_width )
             .attr('height', function(d) {
                 p = d.end - d.start
                 h = yScale.bandwidth() * (p+1)
@@ -178,8 +184,29 @@
             .style('fill', d => d.fill )
             .style('stroke', 'black')
 
-            // add dotted line at half-way
-            var the_fold = regions.append('line')
+            var axisLines = svg.append('g')
+            .classed('axisLines', true);
+
+            axisLines.selectAll('.axisLine')
+            .data(lines_data)
+            .enter()
+            .append('line')
+            .attr('x1', 0)
+            .attr('x2', dataviz_config.viz_width)
+            .attr('y1', d => yScale( d.position ) + (yScale.bandwidth()) )
+            .attr('y2', d => yScale( d.position ) + (yScale.bandwidth()) )
+            .style('stroke', chump_colours.grey)
+            .style('stroke-width', '1px')
+            .style('stroke-dasharray', function(d) {
+                if ( d.type == 'dashed' )
+                    return "5,5"
+            })
+
+
+
+
+            // add dotted line at the fold
+            var the_fold = axisLines.append('line')
             .attr('x1', 0)
             .attr('x2', dataviz_config.viz_width)
             .attr('y1', function(d) { return yScale( d3.max(yDomain)/2 ) + yScale.step() })
@@ -188,11 +215,27 @@
             .style('stroke-width', '1px')
             .style('stroke-dasharray',"5,5")
 
+            // add line at the top
+            axisLines.append('line')
+            .attr('x1', 0)
+            .attr('x2', dataviz_config.viz_width)
+            .attr('y1', dataviz_config.canvas_padding.top )
+            .attr('y2', dataviz_config.canvas_padding.top )
+            .style('stroke', chump_colours.grey)
+            .style('stroke-width', '1px')
+
+            // add line at the bottom
+            axisLines.append('line')
+            .attr('x1', 0)
+            .attr('x2', dataviz_config.viz_width)
+            .attr('y1', dataviz_config.viz_height - dataviz_config.canvas_padding.bottom )
+            .attr('y2', dataviz_config.viz_height - dataviz_config.canvas_padding.bottom )
+            .style('stroke', chump_colours.grey)
+            .style('stroke-width', '1px')
+
             //add axes
 
             //xAxis
-
-
             var xAxisGenerator = d3.axisBottom(xScale)
             .tickSizeOuter(0)
             .tickSize(10)
@@ -238,63 +281,83 @@
 
             //yAxis
             var yAxisGenerator = d3.axisLeft(yScale)
-            .tickSizeOuter(0);
+            .tickSizeOuter(0)
+            .tickSize(0)
 
             var yAxis = svg.append("g")
             .classed("y axis", true)
             .call(yAxisGenerator);
 
             yAxis.select(".domain").remove();
-            yAxis.selectAll(".tick text").attr('dy', '0.25em');
+            yAxis.selectAll(".tick text").attr('dy', '0.3em');
+            yAxis.style('transform', 'translateX(25px)');
 
 
+            //colors
 
-            yAxis.style('transform', 'translateX(' + xScale(xDomain[0]) + 'px)');
+            var defs = svg.append("defs")
 
-/*
-            //add data
+
+            var colours_scale = d3.scaleLinear()
+            .domain(d3.extent(yDomain))
+            .range([chump_colours.green, chump_colours.blue])
+            .interpolate(d3.interpolateRgb);
+
+
+            // data
             var data_layer = svg.append('g')
             .classed('data-layer', true)
 
-            var bars = data_layer.selectAll('.bar')
-            .data(dataset)
+
+            var data_path = data_layer.append('path')
+            .datum(dataset.filter(function(d) { return d.manager_code === '2473683' }))
+            .attr("d", d3.line()
+                .x( d => xScale( d.gameweek ))
+                .y( d => yScale (d.league_position) + (yScale.bandwidth()/2) )
+            )
+            .attr('stroke', 
+                function(d) {
+
+                    var gradient = defs.append("linearGradient")
+                    .attr("id", "gradient")
+                    .attr("x1", "0%")
+                    .attr("y1", "0%")
+                    .attr("x2", "0%")
+                    .attr("y2", "100%")
+
+                    gradient.append("stop")
+                    .attr("offset", "0%")
+                    .style("stop-color", colours_scale( d3.min( database['player_data']['2473683']['season_performance']['league_position_array'] )))
+
+                    gradient.append("stop")
+                    .attr("offset", "100%")
+                    .style("stop-color", colours_scale( d3.max( database['player_data']['2473683']['season_performance']['league_position_array'] )) )
+
+                    return 'url(#gradient)'
+
+
+                })
+            .style('stroke-width', 1)
+            .attr('fill', 'transparent');
+
+
+            var data_group = data_layer.selectAll('g')
+            .data(dataset.filter(function(d) { return d.manager_code === '2473683' }))
             .enter()
-            .append('rect')
-            .classed('bar', true)
-            .attr("y", function(d) { return yScale(d[input_key]); })
-            .attr("height", function(d) { return yScale(0) - yScale(d[input_key]); })
-            .attr("x", function(d) { return xScale(d.gameweek); })
-            .attr("width", xScale.bandwidth())
-            .style('fill', function(d) {
+            .append('g')
 
-                filtered_dataset = dataset.filter(function(d) { return d[input_key] > 0 })
+            data_group.each( function(d) {
 
-                if (input_key === 'total') {
 
-                    if (d['rank'] === d3.min(filtered_dataset, d => d['rank']) ) {
-                        fill = chump_colours.green
-                    } else if (d['rank'] === d3.max(filtered_dataset, d => d['rank']) ) {
-                        fill = chump_colours.blue
-                    }  else {
-                        fill = chump_colours.grey
-                    }
+                d3.select(this).append('circle')
+                .attr('cy', d => yScale(d.league_position) + (yScale.bandwidth()/2))
+                .attr('cx', d => xScale(d.gameweek))
+                .attr('r', 4)
+                .style('fill', d => colours_scale(d.league_position))
+                .style('stroke', 'black')
 
-                } else {
 
-                    if (d['rank'] <= d3.min(filtered_dataset, d => d['rank']) ) {
-
-                        fill = chump_colours.green
-
-                    } else {
-                        fill = chump_colours.grey
-                    }
-
-                }
-
-                return fill
-
-            });
-*/
+            })
 
 
 

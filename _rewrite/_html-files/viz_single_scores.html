@@ -93,7 +93,7 @@
                 $.each(fixture_score_array, function(idx, val) {
 
                     gw = idx+1
-                    console.log(gw_performance[(("0" + gw).slice(-2))])
+                    //console.log(gw_performance[(("0" + gw).slice(-2))])
                         
                     opponent = gw_performance[(("0" + gw).slice(-2))]['fixture_opponent_manager_fullname']
                     chip_played = gw_performance[(("0" + gw).slice(-2))]['chip_played']
@@ -157,26 +157,31 @@
 
                         var domain = d3.extent(temp_array);
 
-                        console.log('x domain')
-                        console.log(domain)
+                        //console.log('x domain')
+                        //console.log(domain)
 
                         return domain
 
                         }) ()
                 },
                 'yScale': {
-                    'domain': (function(){
+                    'domain': (function() {
 
-                        var temp_array = return_as_array(sorted_dataset, 'fixture_score');
+                        temp_array = []
+                        domain = d3.extent( dataset, d => d.fixture_score )
 
-                        var domain = return_rounded_extent(d3.extent(temp_array));
+                        //round up to nearest 50
+                        domain[1] = Math.ceil(domain[1] / 25) * 25
 
-                        console.log('y domain')
-                        console.log(domain)
+                        if ( domain[0] > 0 ) {
+                            domain[0] = 0
+                        } else {
+                            domain[0] = Math.floor(domain[0] / 25) * 25
+                        }
 
                         return domain
 
-                        }) ()
+                    }) ()
                 }
             }
 
@@ -341,10 +346,10 @@
             .enter()
             .filter(function(d) { return d.rank === 1 })
             .append('text')
-            .classed('label left-align', true)
+            .classed('label right-align', true)
             .attr('x', function(d) { return xScale(d.gameweek) })
             .attr('y', function(d) { return yScale(d.fixture_score) })
-            .attr('dx', '1em')
+            .attr('dx', '-1em')
             .attr('dy', '-0.5em')
             .text( function(d) { 
 

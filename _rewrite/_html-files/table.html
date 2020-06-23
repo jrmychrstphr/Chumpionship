@@ -199,7 +199,12 @@
         
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="fitty.min.js"></script>
+
+        <script src="load_database.js"></script>
+        <script src="common_functions.js"></script>
+        <script src="chump_colours.js"></script>
         
+
     </head> 
     
     <body> 
@@ -222,16 +227,6 @@
             'to_win_prizes': 4,
             'to_be_relegated': 0
         }
-        
-        var database_url = "https://raw.githubusercontent.com/jrmychrstphr/Chumpionship/master/_rewrite/2020_season_data%20-%20u.json"
-        
-        function return_formatted_number_with_commas(x) {
-            return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-        }
-
-        $.getJSON(database_url, function(json) {                                
-            database = json;    // >> store database in variable
-        });
         
         
         $( function(){
@@ -414,8 +409,9 @@
 
                 var overall_points_column = $("<div />").addClass('table-column')
                 .addClass('overall_points')
-                .text(return_formatted_number_with_commas((Number(this['total_points'])).toString()))
+                .text(return_comma_formatted_number((Number(this['total_points'])).toString()))
                 .appendTo(table_row);
+
 
                 var total_league_points_column = $("<div />").addClass('table-column')
                 .addClass('total_league_points')
