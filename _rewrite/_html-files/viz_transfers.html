@@ -284,7 +284,7 @@
                         //console.log('domain.length ' + domain.length)
 
                         for (i = domain[0]; i <= domain.length; i++ ){
-                            if (i === domain[0] || i === domain[(parseInt(domain.length)-1)] || i % 10 === 0) { 
+                            if (i === domain[0] || i === domain[(parseInt(domain.length)-1)] && (domain[(parseInt(domain.length)-1)] % 10) > 2 || i % 10 === 0) { 
                                 //console.log(i)
                                 temp_array.push(i)
                              }

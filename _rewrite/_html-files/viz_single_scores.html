@@ -191,7 +191,7 @@
                         var domain = dataviz_config.xScale.domain;
 
                         for (i = domain[0]; i <= domain[1]; i++ ){
-                            if (i === domain[0] || i === domain[1] || i % 10 === 0) { 
+                            if (i === domain[0] || i === domain[1] && (domain[1] % 10) > 2 || i % 10 === 0) { 
                                 //console.log(i)
                                 temp_array.push(i)
                              }
@@ -246,6 +246,8 @@
             xAxis.attr('transform', function(d) {
                     return 'translate(0 ' + (dataviz_config.viz_height - dataviz_config.canvas_padding.bottom) + ')';
                 });
+
+            xAxis.select(".domain").remove();
             
             var xAxisGrid = xAxisGenerator
             .tickSize(dataviz_config.viz_height - dataviz_config.canvas_padding.bottom)
