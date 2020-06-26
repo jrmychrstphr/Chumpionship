@@ -34,47 +34,64 @@
 
         $( function(){
         
-                viz_gw_transfers()
-                    
+            controls_league_pos()
+            dataset = dataset_league_pos()
+            viz_league_pos()
+                
             });
 
+        function controls_league_pos() {
 
-        function viz_gw_transfers(input_key) {
+            var DOM_Body = $( "body" );
+            
+            var input_container =  $("<div />").attr("id", "input_controls")
+            .prependTo(DOM_Body);
+            
+            var input_element = $("<div />")
+            .appendTo(input_container);
+            
+            
+            var input_select = $("<select />").attr("name", "listing_type")
+            .attr("id", "manager_input")
+            .appendTo(input_element);
+            
+            //define options
+            options_array = return_manager_code_array(database)
+            options_array.unshift("Pick a team")
 
-
-            // Add container divs to DOM
-            var container_div = $( "#content div.container" ).empty();
-
-            var title_block = $("<div />").attr("id", "page_title")
-            .addClass('title-block')
-            .appendTo(container_div);
-
-            var page_title = $("<h1 />").text("League position")
-            .appendTo(title_block);
-
-
-            var viz_section = $("<div />").attr("id", "league_positon_by_gameweek")
-            .addClass("page-section")
-            .appendTo(container_div);
-
-            var viz_title_block = $("<div />").addClass('title-block')
-            .appendTo(viz_section);
-
-            var viz_h2 = $("<h2 />")
-            .text("League position by gameweek")
-            .appendTo(viz_title_block);
-
-            var viz_h4 = $("<h4 />")
-            .text('Player name here')
-            .appendTo(viz_title_block);
-
-            var viz_div = $("<div />")
-            .addClass('viz-container')
-            .addClass('large')
-            //.addClass('wip')
-            .appendTo(viz_section);
+            //console.log(options_array)
 
 
+            for (i = 0, len = options_array.length, text = ""; i < len; i++) {
+                $("<option />").attr("value", options_array[i])
+                .text( function() {
+
+                    manager_list = return_manager_code_array(database)
+                    if (manager_list.includes(options_array[i])) {
+                        msg = return_manager_fullname(database, options_array[i]) + " (" + options_array[i] + ")"
+                    } else {
+                        msg = options_array[i]
+                    }
+
+                    return msg
+                } ())
+                .appendTo(input_select);
+            }
+            
+            var generate_button = $("<button />").attr("type", "button")
+            .text("Generate fixtures")
+            .click(function(){
+                //function
+                console.log("Button clicked!")
+                
+                var input_key = $("#manager_input").val()    // grab gw input from select
+                viz_league_pos(input_key)                   // trigger generate_fixtures funtion
+            })
+            .appendTo(input_container);
+
+        }
+
+        function dataset_league_pos() {
             // Compile a dataset from the database
             // Total transfers made by gameweek
             dataset = []            
@@ -102,7 +119,50 @@
                 }
             })
 
-            console.log(dataset)
+            return dataset
+        }
+
+
+        function viz_league_pos(input_key) {
+
+            manager_list = return_manager_code_array(database)
+
+            if (!(manager_list.includes(input_key))) {
+                input_key = '55259' // jeremy
+            }
+
+            // Add container divs to DOM
+            var container_div = $( "#content div.container" ).empty();
+
+            var title_block = $("<div />").attr("id", "page_title")
+            .addClass('title-block')
+            .appendTo(container_div);
+
+            var page_title = $("<h1 />").text("League position")
+            .appendTo(title_block);
+
+
+            var viz_section = $("<div />").attr("id", "league_positon_by_gameweek")
+            .addClass("page-section")
+            .appendTo(container_div);
+
+            var viz_title_block = $("<div />").addClass('title-block')
+            .appendTo(viz_section);
+
+            var viz_h2 = $("<h2 />")
+            .text("League position by gameweek")
+            .appendTo(viz_title_block);
+
+            var viz_h4 = $("<h4 />")
+            .text(return_manager_fullname(database, input_key))
+            .appendTo(viz_title_block);
+
+            var viz_div = $("<div />")
+            .addClass('viz-container')
+            .addClass('large')
+            //.addClass('wip')
+            .appendTo(viz_section);
+
 
             //Build dataviz
             dataviz_config = {
@@ -248,8 +308,8 @@
                 //console.log('domain.length ' + domain.length)
 
                 for (i = domain[0]; i <= domain[1]; i++ ){
-                    if (i === domain[0] || i === domain[1] || i % 10 === 0) { 
-                        //console.log(i)
+
+                    if (i === domain[0] || i === domain[1] && (domain[1] % 10) > 2 || i % 10 === 0) { 
                         temp_array.push(i)
                      }
                 }
@@ -310,7 +370,7 @@
 
 
             var data_path = data_layer.append('path')
-            .datum(dataset.filter(function(d) { return d.manager_code === '2473683' }))
+            .datum(dataset.filter(function(d) { return d.manager_code === input_key }))
             .attr("d", d3.line()
                 .x( d => xScale( d.gameweek ))
                 .y( d => yScale (d.league_position) + (yScale.bandwidth()/2) )
@@ -327,22 +387,22 @@
 
                     gradient.append("stop")
                     .attr("offset", "0%")
-                    .style("stop-color", colours_scale( d3.min( database['player_data']['2473683']['season_performance']['league_position_array'] )))
+                    .style("stop-color", colours_scale( d3.min( database['player_data'][input_key]['season_performance']['league_position_array'] )))
 
                     gradient.append("stop")
                     .attr("offset", "100%")
-                    .style("stop-color", colours_scale( d3.max( database['player_data']['2473683']['season_performance']['league_position_array'] )) )
+                    .style("stop-color", colours_scale( d3.max( database['player_data'][input_key]['season_performance']['league_position_array'] )) )
 
                     return 'url(#gradient)'
 
 
                 })
-            .style('stroke-width', 1)
+            .style('stroke-width', 2)
             .attr('fill', 'transparent');
 
 
             var data_group = data_layer.selectAll('g')
-            .data(dataset.filter(function(d) { return d.manager_code === '2473683' }))
+            .data(dataset.filter(function(d) { return d.manager_code === input_key }))
             .enter()
             .append('g')
 
@@ -352,15 +412,12 @@
                 d3.select(this).append('circle')
                 .attr('cy', d => yScale(d.league_position) + (yScale.bandwidth()/2))
                 .attr('cx', d => xScale(d.gameweek))
-                .attr('r', 4)
+                .attr('r', 6)
                 .style('fill', d => colours_scale(d.league_position))
-                .style('stroke', 'black')
+                //.style('stroke', 'black')
 
 
             })
-
-
-
         }
 
 

@@ -28,8 +28,13 @@ function return_manager_code_array(input_database) {
 }
 
 function return_manager_fullname(input_database, manager_code) {
-    fullname = input_database.player_data[manager_code].manager_info.manager_fullname
-    return fullname
+    n = input_database.player_data[manager_code].manager_info.manager_fullname
+    return n
+}
+
+function return_team_name(input_database, manager_code) {
+    t = input_database.player_data[manager_code].manager_info.team_name
+    return t
 }
 
 function resize_rows(selector) {
@@ -76,6 +81,17 @@ function return_gameweeks_played(input_database) {
     m = return_manager_code_array(input_database)
     return parseInt(Object.keys(database['player_data'][m[0]]['gw_performance']).length)
 
+}
+
+function return_fixture_score(input_database, manager_code, gameweek) {
+    s = input_database.player_data[manager_code].gw_performance[return_gameweek_string(gameweek)].fixture_score
+
+    return s
+}
+
+function return_gameweek_string(gameweek) {
+    g = (("0" + parseInt(gameweek)).slice(-2) ).toString();
+    return g
 }
 
 

@@ -1,0 +1,198 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"> 
+
+<html lang="en">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <title>Title Goes Here</title>
+        
+        <link rel="stylesheet" type="text/css" href="chump.css">   
+        <link rel="stylesheet" type="text/css" href="chump-viz_styles.css">   
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <!--<script src="fitty.min.js"></script>-->
+        <script src="https://d3js.org/d3.v5.min.js"></script>
+       
+        <script src="load_database.js"></script>
+        <script src="common_functions.js"></script>
+        <script src="chump_colours.js"></script>
+        
+    </head> 
+    
+    <body> 
+        <main>
+            <section id="content">
+                <div class="divider alt"></div>
+                <div class="wrapper dark">
+                    <div class="container"></div>
+                </div>
+                <div class="divider alt"></div>
+            </section>
+        </main>
+    </body> 
+
+    <script>
+
+        $( function(){
+        
+            //controls_league_pos()
+            dataset = dataset_result_streaks()
+            viz_league_pos()
+                
+            });
+
+        function controls_league_pos() {
+        }
+
+        function dataset_result_streaks() {
+
+
+            dataset = []       
+
+            //for each player in the database
+            $.each( database['player_data'], function(key, val) {
+
+
+                manager_code = key
+                gameweeks_played = return_gameweeks_played(database)
+                temp_results = []
+                temp_streaks = []
+
+                // for each gameweek
+                for ( idx = 0; idx < gameweeks_played; idx++ ) {
+                    var gameweek = idx+1
+                    var result = val['season_performance']['result_array'][idx]
+    
+                    temp_obj = {
+                        'gameweek': gameweek,
+                        'result': result
+                    }
+
+                    temp_results.push(temp_obj)
+                }
+
+                //console.log(temp_results)
+
+
+                $.each ( temp_results.slice().sort((a, b) => d3.ascending(a.gameweek, b.gameweek)), function(idx, val) {
+
+                    console.log(val)
+
+                    if ( val.result === 'W' ) {
+                        streak_type = 'win'
+                    } else {
+                        streak_type = 'winless'
+                    }
+
+                    function create_new() {
+                        new_obj = {}
+                        new_obj.streak_start = val.gameweek
+                        new_obj.streak_type = streak_type
+                        new_obj.current_streak = true
+                        new_obj.manager_code = manager_code
+                        new_obj.manager_name = return_manager_fullname(database, manager_code)
+
+                        return new_obj
+                    }
+
+
+                    // if it's the first result...
+                    if (temp_streaks.length === 0 ) {
+
+                        //... push a new streak obj to the array
+                        temp_streaks.push(create_new())
+
+                    } else {
+
+                        // copy the latest streak obj to compare
+                        prev_obj = temp_streaks[temp_streaks.length-1]
+
+                        // if the current streak ends...
+                        if ( prev_obj.streak_type != streak_type ) {
+                            //... mark the current streak status to false
+                            temp_streaks[temp_streaks.length-1].current_streak = false
+                            //... end the previous streak in previous gameweek
+                            temp_streaks[temp_streaks.length-1].streak_end = val.gameweek-1
+
+                            //... and add a new streak object
+                            temp_streaks.push(create_new())
+
+                        // if this is the final fixture...    
+                        } else if ( idx === temp_streaks.length-1 ) {
+                            //... end the previous streak in previous gameweek
+                            temp_streaks[temp_streaks.length-1].streak_end = val.gameweek                      
+                        }
+                    }
+
+                })
+
+                $.each( temp_streaks, function() { dataset.push(this) } );
+                
+            })
+
+            console.log(dataset)
+            return dataset
+        }
+
+
+        function viz_league_pos(input_key) {
+
+            // Add container divs to DOM
+            var container_div = $( "#content div.container" ).empty();
+
+            var title_block = $("<div />").attr("id", "page_title")
+            .addClass('title-block')
+            .appendTo(container_div);
+
+            var page_title = $("<h1 />").text("Result streaks")
+            .appendTo(title_block);
+
+            var viz_section = $("<div />").attr("id", "current_winning_streaks")
+            .addClass("page-section")
+            .appendTo(container_div);
+
+            var viz_title_block = $("<div />").addClass('title-block')
+            .appendTo(viz_section);
+
+            var viz_h2 = $("<h2 />")
+            .text("Longest current winning streaks")
+            .appendTo(viz_title_block);
+
+            var viz_h4 = $("<h4 />")
+            .appendTo(viz_title_block);
+
+            var viz_div = $("<div />")
+            .addClass('viz-container')
+            .addClass('dynamic')
+            .appendTo(viz_section);
+
+
+            //dataset
+
+            current_streaks = dataset.filter(function(d) { return d.streak_end === return_gameweeks_played(database) })
+
+            current_win_streaks = current_streaks.filter(function(d) { return d.streak_type === "win" }).slice().sort((a, b) => d3.descending(a.streak_length, b.streak_length))
+            current_winless_streaks = current_streaks.filter(function(d) { return d.streak_type === "winless" }).slice().sort((a, b) => d3.descending(a.streak_length, b.streak_length))
+
+            console.log(current_win_streaks)
+            console.log(current_winless_streaks)
+
+            // xScale -- based on max streak
+            var xDomain = d3.extent(dataset.filter( ), d => d.gameweek)
+            console.log(xDomain)        
+
+            var xScale = d3.scaleLinear()
+            .domain(xDomain)
+            .range([dataviz_config.canvas_padding.left, (dataviz_config.viz_width - dataviz_config.canvas_padding.right)]);
+
+
+
+
+        }
+
+
+            
+
+
+    </script>
+    
+</html>
