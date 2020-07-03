@@ -41,7 +41,8 @@
 }
 
 main {
-    
+    width: 800px;
+    margin: 0 auto;    
 }
 
 .fly {
@@ -111,9 +112,6 @@ p.footnote {
 
 section {
     background-image: linear-gradient(-90deg, #00FF00, #0000FF);
-    width: 800px;
-    margin: 0 auto;
-
 }
 
 div.wrapper {

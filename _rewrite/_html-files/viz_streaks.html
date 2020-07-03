@@ -75,7 +75,7 @@
 
                 $.each ( temp_results.slice().sort((a, b) => d3.ascending(a.gameweek, b.gameweek)), function(idx, val) {
 
-                    console.log(val)
+                    //console.log(val)
 
                     if ( val.result === 'W' ) {
                         streak_type = 'win'
@@ -129,7 +129,7 @@
                 
             })
 
-            console.log(dataset)
+            //console.log(dataset)
             return dataset
         }
 
@@ -168,7 +168,8 @@
 
             //dataset
 
-            current_streaks = dataset.filter(function(d) { return d.streak_end === return_gameweeks_played(database) })
+            current_streaks = dataset.filter(function(d) { return d.current_streak === true })
+            console.log(current_streaks)
 
             current_win_streaks = current_streaks.filter(function(d) { return d.streak_type === "win" }).slice().sort((a, b) => d3.descending(a.streak_length, b.streak_length))
             current_winless_streaks = current_streaks.filter(function(d) { return d.streak_type === "winless" }).slice().sort((a, b) => d3.descending(a.streak_length, b.streak_length))
