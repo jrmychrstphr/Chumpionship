@@ -8,6 +8,14 @@
     height: 24.5rem;
 }
 
+#transfers-by-gameweek .dynamic-content {
+    height: 12.5rem;
+}
+
+#score-by-gameweek .dynamic-content {
+    height: 12.5rem;
+}
+
 
 
 /* vis styling */

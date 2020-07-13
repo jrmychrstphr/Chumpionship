@@ -23,6 +23,7 @@
                 //resize_rows("#fixture-results .dynamic-content")
                 league_position()
                 points_scored()
+                transfers_made()
                 
             });
         </script>
@@ -150,8 +151,8 @@
                                     <div class="dynamic-content"></div>
                                 </div>
 
-                                <div id="" class="sub-section">
-                                    <div class="title"><h4>Points scored</h4></div>
+                                <div id="score-by-gameweek" class="sub-section">
+                                    <div class="title"><h4>Points scored by gameweek</h4></div>
                                     <div class="dynamic-content"></div>
                                 </div>
 
@@ -161,9 +162,23 @@
 
                                 <div class="section-title"><h2>Transfers</h2></div>
 
-                                <div id="" class="sub-section">
-                                    <div class="title"><h4>Score over time</h4></div>
+                                <div id="transfers-by-gameweek" class="sub-section">
+                                    <div class="title"><h4>Tranfers made by gameweek</h4></div>
                                     <div class="dynamic-content"></div>
+                                </div>
+
+                                <div class="grid-container two-cols">
+
+                                    <div id="total-transfers" class="sub-section grid-item col-1">
+                                        <div class="title"><h4>Total transfers made</h4></div>
+                                        <div class="dynamic-content big-number">00</div>
+                                    </div>
+
+                                    <div id="total-points-spent" class="sub-section grid-item col-2">
+                                        <div class="title"><h4>Points spent on transfers</h4></div>
+                                        <div class="dynamic-content big-number">00</div>
+                                    </div>
+
                                 </div>
 
                             </div>
@@ -183,5 +198,6 @@
     <script src="fixture-results.js"></script>
     <script src="league_position.js"></script>
     <script src="points_scored.js"></script>
+    <script src="transfers_made.js"></script>
 
 </html>

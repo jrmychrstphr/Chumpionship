@@ -40,7 +40,8 @@ function points_scored(manager_code) {
     })
 
     dataset = dataset.slice().sort((a, b) => d3.ascending(a.gameweek, b.gameweek))
-    console.log(dataset)
+    //console.log('points scored')
+    //console.log(dataset)
 
     //Build dataviz -- score over time
     viz_div = $("#score-over-time .dynamic-content")
@@ -73,7 +74,18 @@ function points_scored(manager_code) {
     .range([dataviz_config.canvas_padding.left, (dataviz_config.viz_width - dataviz_config.canvas_padding.right)]);
 
     //yScale
-    var yDomain = d3.extent(dataset, d => d.total_overall_score)
+    var yDomain = function() {
+        e = d3.extent(dataset, d => d.total_overall_score)
+
+        //zero the axis
+        if (e[0] > 0) {
+            e[0] = 0
+        }
+
+        //
+
+        return e
+    } ()
 
     var yScale = d3.scaleLinear()
     .domain(yDomain)   
@@ -98,9 +110,9 @@ function points_scored(manager_code) {
 
         //console.log('domain.length ' + domain.length)
 
-        for (i = domain[0]; i <= domain[1]; i++ ){
+        for (i = domain[0]; i <= domain[domain.length-1]; i++ ){
 
-            if (i === domain[0] || i === domain[1] && (domain[1] % 10) > 2 || i % 10 === 0) { 
+            if (i === domain[0] || i === domain[domain.length-1] && (domain[domain.length-1] % 10) > 2 || i % 10 === 0) { 
                 temp_array.push(i)
              }
         }
@@ -159,7 +171,7 @@ function points_scored(manager_code) {
     //create dataset for fill
     minmax_dataset = []
     for ( i = d3.min(dataset, d => d.gameweek); i <= d3.max(dataset, d => d.gameweek); i++ ) {
-    	console.log(i)
+    	//console.log(i)
 
     	temp_obj = {
     		'gameweek': i,
@@ -170,7 +182,7 @@ function points_scored(manager_code) {
     	minmax_dataset.push(temp_obj)
     }
 
-    console.log(minmax_dataset)
+    //console.log(minmax_dataset)
 
 
 	// Add the area
@@ -234,6 +246,190 @@ function points_scored(manager_code) {
 
 
 
+    /* Points per gameweek */
+    viz_div = $("#score-by-gameweek .dynamic-content")
 
+    dataviz_config = {
+        'viz_height': viz_div.height(),
+        'viz_width': viz_div.width(),
+        'canvas_padding': {
+            'top': 10,
+            'right': 20,
+            'bottom': 35,
+            'left': 50
+        }
+    }
+
+    var viz_container = d3.select("#score-by-gameweek .dynamic-content")
+
+    var svg = viz_container.append("svg")
+    .attr('height', dataviz_config.viz_height)
+    .attr('width', dataviz_config.viz_width);
+
+    // define scales
+
+    // xScale
+    var xDomain = function(){
+
+        function onlyUnique(value, index, self) { 
+            return self.indexOf(value) === index;
+        }
+
+        temp_array = []
+
+        $.each(dataset, function(){
+            temp_array.push( this.gameweek )
+        })
+
+        var g = temp_array.filter( onlyUnique )
+
+        //console.log(g)
+        return g
+
+
+    } ()
+
+    var xScale = d3.scaleBand()
+    .domain(xDomain)
+    .range([dataviz_config.canvas_padding.left, (dataviz_config.viz_width - dataviz_config.canvas_padding.right)])
+    .paddingInner(0.25)
+
+    //yScale
+    var yDomain = function() {
+        e = d3.extent(dataset, d => d.fixture_score)
+
+        //zero the axis
+        if (e[0] > 0) {
+            e[0] = 0
+        }
+
+        console.log(e)
+        return e
+    } ()
+
+    var yScale = d3.scaleLinear()
+    .domain(yDomain)   
+    .range([(dataviz_config.viz_height - dataviz_config.canvas_padding.bottom), dataviz_config.canvas_padding.top]);
+
+    //def
+    var defs = svg.append("defs")
+
+    var colours_scale = d3.scaleLinear()
+    .domain(d3.extent(yDomain))
+    .range([chump_colours.blue, chump_colours.green])
+    .interpolate(d3.interpolateRgb);
+
+    //add 'max score' in background
+    var background = svg.append('g')
+    .classed('background', true)
+
+    max_dataset = function() {
+
+        temp_array = []
+
+        $.each( xDomain, function(idx, val){
+
+            //console.log(val)
+            max = d3.max(dataset.filter( function(d) { return d.gameweek === val }), d => d.fixture_score)
+            //console.log(max)
+
+            temp_obj = {
+                'gameweek': val,
+                'max_score': max
+            }
+
+            temp_array.push(temp_obj)
+
+        } )
+
+        //console.log(temp_array)
+        return temp_array
+
+    } ()
+
+    var max_score_bars = background.selectAll('.bar')
+    .data(max_dataset)
+    .enter()
+    .append('rect')
+    .classed('bar', true)
+    .attr("y", function(d) { return yScale(d.max_score) })
+    .attr("height", function(d) { return yScale(0) - yScale(d.max_score) })
+    .attr("x", function(d) { return xScale(d.gameweek); })
+    .attr("width", xScale.bandwidth())
+    .style("fill", chump_colours.dark_grey)
+
+    //add axes
+    //xAxis
+    var xAxisGenerator = d3.axisBottom(xScale)
+    .tickSizeOuter(0)
+    .tickSize(10)
+    .tickPadding(10)
+    .tickValues(function() {
+        // 1, max and every 10
+        var temp_array = [];
+        var domain = xDomain
+
+        //console.log('domain.length ' + domain.length)
+
+        for (i = domain[0]; i <= domain[domain.length-1]; i++ ){
+
+            if (i === domain[0] || i === domain[domain.length-1] && (domain[domain.length-1] % 10) > 2 || i % 10 === 0) { 
+                temp_array.push(i)
+             }
+        }
+
+        return temp_array
+
+    } ())
+    .tickFormat(d => ("GW" + d));
+    
+    var xAxis = svg.append("g")
+    .classed("x axis", true)
+    .call(xAxisGenerator);
+
+    xAxis.select(".domain").remove();
+    xAxis.attr('transform', function(d) {
+            return 'translate(0 ' + (dataviz_config.viz_height - dataviz_config.canvas_padding.bottom) + ')';
+        });
+
+    //yAxis
+    var yAxisGenerator = d3.axisLeft(yScale)
+    .tickSizeOuter(0)
+    .tickSize(0)
+
+    var yAxis = svg.append("g")
+    .classed("y axis", true)
+    .call(yAxisGenerator);
+
+    var yAxisGridGenerator = yAxisGenerator
+    .tickSize(-dataviz_config.viz_width)
+    .tickSizeOuter(0)
+    .tickFormat("");
+
+    var yAxisGrid = svg.append("g")
+    .attr("class", "y axis-grid")
+    .call(yAxisGridGenerator)
+    .select(".domain").remove();
+
+
+    yAxis.select(".domain").remove();
+    yAxis.selectAll(".tick text").attr('dy', '0.3em');
+    yAxis.style('transform', 'translateX(35px)');
+
+
+    //add data
+    var data_layer = svg.append('g')
+    .classed('data_layer', true)
+
+    var data_bars = data_layer.selectAll('.bar')
+    .data(dataset.filter(function(d) { return d.manager_code === manager_code }))
+    .enter()
+    .append('rect')
+    .classed('bar', true)
+    .attr("y", function(d) { return yScale(d.fixture_score) })
+    .attr("height", function(d) { return yScale(0) - yScale(d.fixture_score) })
+    .attr("x", function(d) { return xScale(d.gameweek); })
+    .attr("width", xScale.bandwidth())
+    .style("fill", chump_colours.grey)
 
 }
