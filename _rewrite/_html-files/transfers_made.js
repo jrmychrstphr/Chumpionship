@@ -35,8 +35,6 @@ function transfers_made(manager_code) {
     dataset = dataset.slice().sort((a, b) => d3.ascending(a.gameweek, b.gameweek))
     console.log(dataset)
 
-    console.log(d3.max(dataset, d => d.transfers_made))
-
     // add big numbers
     d3.select('#total-transfers div.dynamic-content')
     .text(d3.sum(dataset.filter(function(d) { return d.manager_code === manager_code }), d => d.transfers_made) )
@@ -45,11 +43,14 @@ function transfers_made(manager_code) {
     .text(d3.sum(dataset.filter(function(d) { return d.manager_code === manager_code }), d => d.points_spent) )
 
 
+
+
+
     //Build dataviz -- score over time
     viz_div = $("#transfers-by-gameweek .dynamic-content")
 
     viz_div.css("height", function() {
-        h = 10+35+(d3.max(dataset.filter(function(d) { return d.manager_code === manager_code }), d => d.transfers_made)*5)
+        h = 10+35+(d3.max(dataset, d => d.transfers_made)*9)
         return h
     })
 
@@ -58,9 +59,9 @@ function transfers_made(manager_code) {
         'viz_width': viz_div.width(),
         'canvas_padding': {
             'top': 10,
-            'right': 20,
+            'right': 15,
             'bottom': 35,
-            'left': 50
+            'left': 15
         }
     }
 
@@ -101,7 +102,7 @@ function transfers_made(manager_code) {
 
     //yScale
     var yDomain = function() {
-        e = d3.extent(dataset.filter(function(d) { return d.manager_code === manager_code }), d => d.transfers_made)
+        e = d3.extent(dataset, d => d.transfers_made)
 
         //zero the axis
         if (e[0] > 0) {
@@ -117,9 +118,70 @@ function transfers_made(manager_code) {
     .domain(yDomain)   
     .range([(dataviz_config.viz_height - dataviz_config.canvas_padding.bottom), dataviz_config.canvas_padding.top]);
 
+
+    // colour scales
+    var colours_scale_x = d3.scaleLinear()
+    .domain(d3.extent(xDomain))
+    .range([chump_colours.blue, chump_colours.green])
+    .interpolate(d3.interpolateRgb);
+
+    var colours_scale_y = d3.scaleLinear()
+    .domain(d3.extent(yDomain))
+    .range([chump_colours.blue, chump_colours.green])
+    .interpolate(d3.interpolateRgb);
+
+
+    var colours_scale_data = d3.scaleLinear()
+    .domain(d3.extent(dataset.filter(function(d) { return d.manager_code === manager_code && d.transfers_made > 0 }), d => d.transfers_made))
+    .range([chump_colours.blue, chump_colours.green])
+    .interpolate(d3.interpolateRgb);
+
+
     // background
     var background = svg.append('g')
     .classed('background', true)
+
+    max_dataset = function() {
+
+        temp_array = []
+
+        $.each( xDomain, function(idx, val){
+
+            max = d3.max(dataset.filter( function(d) { return d.gameweek === val }), d => d.transfers_made)
+
+            temp_obj = {
+                'gameweek': val,
+                'max': max
+            }
+
+            temp_array.push(temp_obj)
+
+        } )
+
+        //console.log(temp_array)
+        return temp_array
+
+    } ()
+
+    var max_group = background.selectAll('g')
+    .data(max_dataset)
+    .enter()
+    .append('g')
+
+    max_group.each( function(d) {
+
+        for (i = 0; i < d.max; i++) {
+
+            d3.select(this).append('circle')
+            .attr('cy', d => yScale(i+1) )
+            .attr('cx', d => xScale(d.gameweek) + xScale.bandwidth()*0.5 )
+            .attr('r', 3.5)
+            .style('fill', chump_colours.dark_grey)
+
+        }
+
+
+    })
 
 
     //add axes
@@ -161,6 +223,7 @@ function transfers_made(manager_code) {
     var yAxisGenerator = d3.axisLeft(yScale)
     .tickSizeOuter(0)
     .tickSize(0)
+    .tickValues([]);
 
     var yAxis = svg.append("g")
     .classed("y axis", true)
@@ -169,6 +232,18 @@ function transfers_made(manager_code) {
     yAxis.select(".domain").remove();
     yAxis.selectAll(".tick text").attr('dy', '0.3em');
     yAxis.style('transform', 'translateX(35px)');
+
+    var yAxisGridGenerator = yAxisGenerator
+    .tickSize(-dataviz_config.viz_width)
+    .tickSizeOuter(0)
+    .tickFormat("")
+    .tickValues([0]);
+
+    var yAxisGrid = svg.append("g")
+    .attr("class", "y axis-grid")
+    .call(yAxisGridGenerator)
+    .select(".domain").remove();
+
 
     //add data
     var data_layer = svg.append('g')
@@ -185,9 +260,20 @@ function transfers_made(manager_code) {
 
             d3.select(this).append('circle')
             .attr('cy', d => yScale(i+1) )
-            .attr('cx', d => xScale(d.gameweek) )
-            .attr('r', 2.5)
-            .style('fill', 'white')
+            .attr('cx', d => xScale(d.gameweek) + xScale.bandwidth()*0.5 )
+            .attr('r', 3.5)
+            .style("fill", function(d) {
+                e = d3.extent(dataset.filter(function(d) { return d.manager_code === manager_code && d.transfers_made > 0 }), d => d.transfers_made)
+
+                if ( d.transfers_made === e[0] || d.transfers_made === e[1] ) {
+                    f = colours_scale_data(d.transfers_made)
+                } else {
+                    f = chump_colours.grey
+                }
+
+                return f
+            })
+
 
         }
 

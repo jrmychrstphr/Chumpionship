@@ -91,10 +91,28 @@ function points_scored(manager_code) {
     .domain(yDomain)   
     .range([(dataviz_config.viz_height - dataviz_config.canvas_padding.bottom), dataviz_config.canvas_padding.top]);
 
+
+    // colour scales
+    var colours_scale_x = d3.scaleLinear()
+    .domain(d3.extent(xDomain))
+    .range([chump_colours.blue, chump_colours.green])
+    .interpolate(d3.interpolateRgb);
+
+    var colours_scale_y = d3.scaleLinear()
+    .domain(d3.extent(yDomain))
+    .range([chump_colours.blue, chump_colours.green])
+    .interpolate(d3.interpolateRgb);
+
+
+    var colours_scale_data = d3.scaleLinear()
+    .domain(d3.extent(dataset.filter(function(d) { return d.manager_code === manager_code && d.total_overall_score > 0 }), d => d.total_overall_score))
+    .range([chump_colours.blue, chump_colours.green])
+    .interpolate(d3.interpolateRgb);
+
+
     // background
     var background = svg.append('g')
     .classed('background', true)
-
 
     //add axes
 
@@ -146,23 +164,42 @@ function points_scored(manager_code) {
     var yAxisGenerator = d3.axisLeft(yScale)
     .tickSizeOuter(0)
     .tickSize(0)
+    .tickValues(function() {
+        // Every 500
+        var temp_array = [];
+        var domain = yDomain
+
+        for (i = domain[0]; i <= domain[domain.length-1]; i++ ){
+
+            if ( i % 500 === 0) { 
+                temp_array.push(i)
+             }
+        }
+
+        return temp_array
+
+    } ())
 
     var yAxis = svg.append("g")
     .classed("y axis", true)
     .call(yAxisGenerator);
 
     yAxis.select(".domain").remove();
-    yAxis.selectAll(".tick text").attr('dy', '0.3em');
+    yAxis.selectAll(".tick text").attr('dy', '-0.5em');
     yAxis.style('transform', 'translateX(35px)');
+
+    var yAxisGridGenerator = yAxisGenerator
+    .tickSize(-dataviz_config.viz_width)
+    .tickSizeOuter(0)
+    .tickFormat("");
+
+    var yAxisGrid = svg.append("g")
+    .attr("class", "y axis-grid")
+    .call(yAxisGridGenerator)
+    .select(".domain").remove();
 
     //def
     var defs = svg.append("defs")
-
-    var colours_scale = d3.scaleLinear()
-    .domain(d3.extent(xDomain))
-    .range([chump_colours.blue, chump_colours.green])
-    .interpolate(d3.interpolateRgb);
-
 
     // data layer
     var data_layer = svg.append('g')
@@ -214,11 +251,11 @@ function points_scored(manager_code) {
 
         gradient.append("stop")
         .attr("offset", "0%")
-        .style("stop-color", colours_scale( d3.max( dataset, d => d.gameweek )))
+        .style("stop-color", colours_scale_y( d3.max( dataset, d => d.total_overall_score )))
 
         gradient.append("stop")
         .attr("offset", "100%")
-        .style("stop-color", colours_scale( d3.min( dataset, d => d.gameweek )) )
+        .style("stop-color", colours_scale_y( d3.min( dataset, d => d.total_overall_score )) )
 
         f = 'url(#points_scored_gradient)'
 
@@ -240,7 +277,7 @@ function points_scored(manager_code) {
         .attr('cy', d => yScale(d.total_overall_score))
         .attr('cx', d => xScale(d.gameweek))
         .attr('r', 6)
-        .style('fill', d => colours_scale(d.gameweek))
+        .style('fill', d => colours_scale_y(d.total_overall_score))
 
     })
 
@@ -311,13 +348,23 @@ function points_scored(manager_code) {
     .domain(yDomain)   
     .range([(dataviz_config.viz_height - dataviz_config.canvas_padding.bottom), dataviz_config.canvas_padding.top]);
 
-    //def
-    var defs = svg.append("defs")
 
-    var colours_scale = d3.scaleLinear()
+    // colour scales
+    var colours_scale_x = d3.scaleLinear()
+    .domain(d3.extent(xDomain))
+    .range([chump_colours.blue, chump_colours.green])
+    .interpolate(d3.interpolateRgb);
+
+    var colours_scale_y = d3.scaleLinear()
     .domain(d3.extent(yDomain))
     .range([chump_colours.blue, chump_colours.green])
     .interpolate(d3.interpolateRgb);
+
+    var colours_scale_data = d3.scaleLinear()
+    .domain(d3.extent(dataset.filter(function(d) { return d.manager_code === manager_code}), d => d.fixture_score))
+    .range([chump_colours.blue, chump_colours.green])
+    .interpolate(d3.interpolateRgb);
+
 
     //add 'max score' in background
     var background = svg.append('g')
@@ -396,6 +443,21 @@ function points_scored(manager_code) {
     var yAxisGenerator = d3.axisLeft(yScale)
     .tickSizeOuter(0)
     .tickSize(0)
+    .tickValues(function() {
+        // every 25
+        var temp_array = [];
+        var domain = yDomain
+
+        for (i = domain[0]; i <= domain[domain.length-1]; i++ ){
+
+            if ( i % 25 === 0) { 
+                temp_array.push(i)
+             }
+        }
+
+        return temp_array
+
+    } ())
 
     var yAxis = svg.append("g")
     .classed("y axis", true)
@@ -413,7 +475,7 @@ function points_scored(manager_code) {
 
 
     yAxis.select(".domain").remove();
-    yAxis.selectAll(".tick text").attr('dy', '0.3em');
+    yAxis.selectAll(".tick text").attr('dy', '-0.5em');
     yAxis.style('transform', 'translateX(35px)');
 
 
@@ -430,6 +492,184 @@ function points_scored(manager_code) {
     .attr("height", function(d) { return yScale(0) - yScale(d.fixture_score) })
     .attr("x", function(d) { return xScale(d.gameweek); })
     .attr("width", xScale.bandwidth())
-    .style("fill", chump_colours.grey)
+    //.style("fill", function(d) { return colours_scale_x(d.gameweek); })
+    .style("fill", function(d) {
+        e = d3.extent(dataset.filter(function(d) { return d.manager_code === manager_code }), d => d.fixture_score)
+
+        if ( d.fixture_score === e[0] || d.fixture_score === e[1] ) {
+            f = colours_scale_data(d.fixture_score)
+        } else {
+            f = chump_colours.grey
+        }
+
+        return f
+    })
+
+
+    /* Points on bench */
+    /* (Same scale as above) */
+
+    viz_div = $("#bench-by-gameweek .dynamic-content")
+
+    // calculate height needed to fit data
+    viz_div.css('height', function(d) {
+
+        max = d3.max(dataset, d => d.points_on_bench)
+        return (yScale(0) - yScale(d3.max(dataset, d => d.points_on_bench))) + 45
+
+    })
+
+    dataviz_config = {
+        'viz_height': viz_div.height(),
+        'viz_width': viz_div.width(),
+        'canvas_padding': {
+            'top': 10,
+            'right': 20,
+            'bottom': 35,
+            'left': 50
+        }
+    }
+
+    console.log(dataviz_config.viz_height)
+
+    var viz_container = d3.select("#bench-by-gameweek .dynamic-content")
+
+    var svg = viz_container.append("svg")
+    .attr('height', dataviz_config.viz_height)
+    .attr('width', dataviz_config.viz_width);
+
+    yScale2 = yScale.copy()
+
+    yScale2.domain([0, d3.max(dataset, d => d.points_on_bench)])
+    yScale2.range([ dataviz_config.canvas_padding.top + (yScale(0) - yScale(d3.max(dataset, d => d.points_on_bench))), dataviz_config.canvas_padding.top]);
+
+    //add 'max score' in background
+    var background = svg.append('g')
+    .classed('background', true)
+
+    max_dataset = function() {
+
+        temp_array = []
+
+        $.each( xDomain, function(idx, val){
+
+            //console.log(val)
+            max = d3.max(dataset.filter( function(d) { return d.gameweek === val }), d => d.points_on_bench)
+            //console.log(max)
+
+            temp_obj = {
+                'gameweek': val,
+                'max_bench': max
+            }
+
+            temp_array.push(temp_obj)
+
+        } )
+
+        console.log(temp_array)
+        return temp_array
+
+    } ()
+
+    var max_score_bars = background.selectAll('.bar')
+    .data(max_dataset)
+    .enter()
+    .append('rect')
+    .classed('bar', true)
+    .attr("y", function(d) { return yScale2(d.max_bench) })
+    .attr("height", function(d) { return yScale2(0) - yScale2(d.max_bench) })
+    .attr("x", function(d) { return xScale(d.gameweek); })
+    .attr("width", xScale.bandwidth())
+    .style("fill", chump_colours.dark_grey)
+
+    //add axes
+    //xAxis
+    var xAxisGenerator = d3.axisBottom(xScale)
+    .tickSizeOuter(0)
+    .tickSize(10)
+    .tickPadding(10)
+    .tickValues(function() {
+        // 1, max and every 10
+        var temp_array = [];
+        var domain = xDomain
+
+        //console.log('domain.length ' + domain.length)
+
+        for (i = domain[0]; i <= domain[domain.length-1]; i++ ){
+
+            if (i === domain[0] || i === domain[domain.length-1] && (domain[domain.length-1] % 10) > 2 || i % 10 === 0) { 
+                temp_array.push(i)
+             }
+        }
+
+        return temp_array
+
+    } ())
+    .tickFormat(d => ("GW" + d));
+    
+    var xAxis = svg.append("g")
+    .classed("x axis", true)
+    .call(xAxisGenerator);
+
+    xAxis.select(".domain").remove();
+    xAxis.attr('transform', function(d) {
+            return 'translate(0 ' + (dataviz_config.viz_height - dataviz_config.canvas_padding.bottom) + ')';
+        });
+
+    //yAxis
+    var yAxisGenerator = d3.axisLeft(yScale2)
+    .tickSizeOuter(0)
+    .tickSize(0)
+    .tickValues(function() {
+        // every 25
+        var temp_array = [];
+        var domain = yDomain
+
+        for (i = domain[0]; i <= domain[domain.length-1]; i++ ){
+
+            if ( i % 25 === 0) { 
+                temp_array.push(i)
+             }
+        }
+
+        return temp_array
+
+    } ())
+
+    var yAxis = svg.append("g")
+    .classed("y axis", true)
+    .call(yAxisGenerator);
+
+    var yAxisGridGenerator = yAxisGenerator
+    .tickSize(-dataviz_config.viz_width)
+    .tickSizeOuter(0)
+    .tickFormat("");
+
+    var yAxisGrid = svg.append("g")
+    .attr("class", "y axis-grid")
+    .call(yAxisGridGenerator)
+    .select(".domain").remove();
+
+    yAxis.select(".domain").remove();
+    yAxis.selectAll(".tick text").attr('dy', '-0.5em');
+    yAxis.style('transform', 'translateX(35px)');
+
+    //add data
+    var data_layer = svg.append('g')
+    .classed('data_layer', true)
+
+    var data_bars = data_layer.selectAll('.bar')
+    .data(dataset.filter(function(d) { return d.manager_code === manager_code }))
+    .enter()
+    .append('rect')
+    .classed('bar', true)
+    .attr("y", function(d) { return yScale2(d.points_on_bench) })
+    .attr("height", function(d) { return yScale2(0) - yScale2(d.points_on_bench) })
+    .attr("x", function(d) { return xScale(d.gameweek); })
+    .attr("width", xScale.bandwidth())
+    //.style("fill", function(d) { return colours_scale_x(d.gameweek); })
+    .style("fill", chump_colours.grey )
+
+
 
 }

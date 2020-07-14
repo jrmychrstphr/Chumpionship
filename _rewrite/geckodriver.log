@@ -2175,3 +2175,8 @@ JavaScript error: https://platform.twitter.com/widgets/widget_iframe.86df6234483
 1594654429800	Marionette	INFO	Listening on port 59379
 1594654429824	Marionette	WARN	TLS certificate errors will be ignored for this session
 1594654487843	Marionette	INFO	Stopped listening on port 59379
+1594671674407	Marionette	INFO	Stopped listening on port 59343
+1594716476877	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/dj/r_d53pv97qn6cb7zp_63kxxh0000gn/T/rust_mozprofile.8vBmItzrNLuY"
+1594716479283	Marionette	INFO	Listening on port 61812
+1594716479329	Marionette	WARN	TLS certificate errors will be ignored for this session
+1594716543034	Marionette	INFO	Stopped listening on port 61812

@@ -92,74 +92,46 @@ function league_position(manager_code) {
 
     var yScale = d3.scaleBand()
     .domain(yDomain)   
-    .range([dataviz_config.canvas_padding.top, (dataviz_config.viz_height - dataviz_config.canvas_padding.bottom)]);
+    .range([dataviz_config.canvas_padding.top, (dataviz_config.viz_height - dataviz_config.canvas_padding.bottom)])
 
 
-    // Add table shading and lines
-    regions_data = [
-        {'start': 1, 'end': 4, 'fill': chump_colours.dark_grey },
-        {'start': 18, 'end': 20, 'fill': chump_colours.dark_grey }
-    ]
+    // background
+    var background = svg.append('g')
+    .classed('background', true)
 
-    lines_data = [
-        //{'position': 1, 'type': 'dashed'},
-        {'position': 4, 'type': 'solid'},
-        {'position': 17, 'type': 'solid'}
-    ]
-
-    var axisRegions = svg.append('g')
-    .classed('axisRegions', true);
-
-    axisRegions.selectAll('.axisRegion')
-    .data(regions_data)
+    // add position shading
+    var shading = background.selectAll('.shading')
+    .data(yDomain)
     .enter()
     .append('rect')
-    .classed('.axisRegion', true)
-    .attr('width', dataviz_config.viz_width )
-    .attr('height', function(d) {
-        p = d.end - d.start
-        h = yScale.bandwidth() * (p+1)
+    .classed('shading', true)
+    .attr("y", function(d) { return yScale(d) })
+    .attr("height", function(d) { return yScale.bandwidth() })
+    .attr("x", function(d) { return xScale(0); })
+    .attr("width", dataviz_config.viz_width)
+    .style("fill", function(d) {
+        console.log(d)
+        highlight_array = [1,2,3,4,18,19,20]
+        if ( highlight_array.includes(d) ) {
+            f = chump_colours.dark_grey
+        } else {
+            f = chump_colours.darker_grey
+        }
 
-        return h
+        return f
     })
-    .style('transform', function(d) {
-        t = 'translateY(' + yScale( d.start ) + 'px)'
-        return t
-        })
-    .style('fill', d => d.fill )
-    .style('stroke', 'black')
+    .style("stroke-width", 1)
+    .style("stroke", 'black')
 
-    var axisLines = svg.append('g')
-    .classed('axisLines', true);
-
-    // add dotted line at the fold
-    var the_fold = axisLines.append('line')
-    .attr('x1', 0)
-    .attr('x2', dataviz_config.viz_width)
-    .attr('y1', function(d) { return yScale( d3.max(yDomain)/2 ) + yScale.step() })
-    .attr('y2', function(d) { return yScale( d3.max(yDomain)/2  ) + yScale.step() })
-    .style('stroke', chump_colours.grey)
-    .style('stroke-width', '1px')
+    var the_fold = background.append("line")
+    .attr("y1", function(d) { return yScale(11) })
+    .attr("x1", function(d) { return xScale(0); })
+    .attr("y2", function(d) { return yScale(11) })
+    .attr("x2",dataviz_config.viz_width)
+    .style("stroke", chump_colours.grey)
     .style('stroke-dasharray',"5,5")
 
-    // add line at the top
-    axisLines.append('line')
-    .attr('x1', 0)
-    .attr('x2', dataviz_config.viz_width)
-    .attr('y1', dataviz_config.canvas_padding.top )
-    .attr('y2', dataviz_config.canvas_padding.top )
-    .style('stroke', chump_colours.dark_grey)
-    .style('stroke-width', '1px')
-
-    // add line at the bottom
-    axisLines.append('line')
-    .attr('x1', 0)
-    .attr('x2', dataviz_config.viz_width)
-    .attr('y1', dataviz_config.viz_height - dataviz_config.canvas_padding.bottom )
-    .attr('y2', dataviz_config.viz_height - dataviz_config.canvas_padding.bottom )
-    .style('stroke', chump_colours.dark_grey)
-    .style('stroke-width', '1px')
-
+    
     //add axes
 
     //xAxis
