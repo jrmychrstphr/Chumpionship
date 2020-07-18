@@ -40,11 +40,32 @@ function points_scored(manager_code) {
     })
 
     dataset = dataset.slice().sort((a, b) => d3.ascending(a.gameweek, b.gameweek))
-    //console.log('points scored')
-    //console.log(dataset)
+
+    // add big numbers
+    d3.select('#overall-points-scored-1 div.dynamic-content')
+    .text(return_comma_formatted_number(d3.sum(dataset.filter(function(d) { return d.manager_code === manager_code }), d => d.fixture_score) ) )
+
+    d3.select('#overall-points-scored-2 div.dynamic-content')
+    .text(return_comma_formatted_number(d3.sum(dataset.filter(function(d) { return d.manager_code === manager_code }), d => d.fixture_score) ) )
+
+    d3.select('#highest-score-1 div.dynamic-content')
+    .text(return_comma_formatted_number(d3.max(dataset.filter(function(d) { return d.manager_code === manager_code }), d => d.fixture_score) ) )
+
+    d3.select('#highest-score-2 div.dynamic-content')
+    .text(return_comma_formatted_number(d3.max(dataset.filter(function(d) { return d.manager_code === manager_code }), d => d.fixture_score) ) )
+
+    d3.select('#lowest-score div.dynamic-content')
+    .text(return_comma_formatted_number(d3.min(dataset.filter(function(d) { return d.manager_code === manager_code }), d => d.fixture_score) ) )
+
+    d3.select('#lowest-score div.dynamic-content')
+    .text(return_comma_formatted_number(d3.min(dataset.filter(function(d) { return d.manager_code === manager_code }), d => d.fixture_score) ) )
+
+    d3.select('#points-on-bench div.dynamic-content')
+    .text(return_comma_formatted_number(d3.sum(dataset.filter(function(d) { return d.manager_code === manager_code }), d => d.points_on_bench) ) )
+
 
     //Build dataviz -- score over time
-    viz_div = $("#score-over-time .dynamic-content")
+    viz_div = $("#score-over-time .dynamic-content").empty()
 
     dataviz_config = {
         'viz_height': viz_div.height(),
@@ -65,7 +86,6 @@ function points_scored(manager_code) {
     .attr('width', dataviz_config.viz_width);
 
     // define scales
-
     // xScale
     var xDomain = d3.extent(dataset, d => d.gameweek)
 
@@ -284,7 +304,7 @@ function points_scored(manager_code) {
 
 
     /* Points per gameweek */
-    viz_div = $("#score-by-gameweek .dynamic-content")
+    viz_div = $("#score-by-gameweek .dynamic-content").empty()
 
     dataviz_config = {
         'viz_height': viz_div.height(),
@@ -340,7 +360,7 @@ function points_scored(manager_code) {
             e[0] = 0
         }
 
-        console.log(e)
+        //console.log(e)
         return e
     } ()
 
@@ -509,7 +529,7 @@ function points_scored(manager_code) {
     /* Points on bench */
     /* (Same scale as above) */
 
-    viz_div = $("#bench-by-gameweek .dynamic-content")
+    viz_div = $("#bench-by-gameweek .dynamic-content").empty()
 
     // calculate height needed to fit data
     viz_div.css('height', function(d) {
@@ -530,7 +550,7 @@ function points_scored(manager_code) {
         }
     }
 
-    console.log(dataviz_config.viz_height)
+    //console.log(dataviz_config.viz_height)
 
     var viz_container = d3.select("#bench-by-gameweek .dynamic-content")
 
@@ -566,7 +586,7 @@ function points_scored(manager_code) {
 
         } )
 
-        console.log(temp_array)
+        //console.log(temp_array)
         return temp_array
 
     } ()

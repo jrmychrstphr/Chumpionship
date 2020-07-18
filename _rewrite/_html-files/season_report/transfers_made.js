@@ -33,7 +33,7 @@ function transfers_made(manager_code) {
     })
 
     dataset = dataset.slice().sort((a, b) => d3.ascending(a.gameweek, b.gameweek))
-    console.log(dataset)
+    //console.log(dataset)
 
     // add big numbers
     d3.select('#total-transfers div.dynamic-content')
@@ -47,7 +47,7 @@ function transfers_made(manager_code) {
 
 
     //Build dataviz -- score over time
-    viz_div = $("#transfers-by-gameweek .dynamic-content")
+    viz_div = $("#transfers-by-gameweek .dynamic-content").empty()
 
     viz_div.css("height", function() {
         h = 10+35+(d3.max(dataset, d => d.transfers_made)*9)
@@ -261,7 +261,8 @@ function transfers_made(manager_code) {
             d3.select(this).append('circle')
             .attr('cy', d => yScale(i+1) )
             .attr('cx', d => xScale(d.gameweek) + xScale.bandwidth()*0.5 )
-            .attr('r', 3.5)
+            .attr('r', 4)
+            .style('stroke', 'black')
             .style("fill", function(d) {
                 e = d3.extent(dataset.filter(function(d) { return d.manager_code === manager_code && d.transfers_made > 0 }), d => d.transfers_made)
 
@@ -279,19 +280,4 @@ function transfers_made(manager_code) {
 
 
     })
-
-/*
-
-    var data_bars = data_layer.selectAll('.bar')
-    .data(dataset.filter(function(d) { return d.manager_code === manager_code }))
-    .enter()
-    .append('rect')
-    .classed('bar', true)
-    .attr("y", function(d) { return yScale(d.transfers_made) })
-    .attr("height", function(d) { return yScale(0) - yScale(d.transfers_made) })
-    .attr("x", function(d) { return xScale(d.gameweek); })
-    .attr("width", xScale.bandwidth())
-    .style("fill", chump_colours.grey)
-
-*/
 }

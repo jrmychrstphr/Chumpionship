@@ -18,11 +18,13 @@ function league_position(manager_code) {
 	        for ( idx = 0; idx < gameweeks_played; idx++ ) {
 	            var gameweek = idx+1
 	            var position = val['season_performance']['league_position_array'][idx]
+                var final = val['season_performance']['league_position_now']
 
 	            temp_obj = {
 	                'manager_code': key,
 	                'gameweek': gameweek,
-	                'league_position': position
+	                'league_position': position,
+                    'final_position': final
 	            }
 
 	            dataset.push(temp_obj)
@@ -31,9 +33,12 @@ function league_position(manager_code) {
 
     })
 
-    console.log(dataset)
+    //console.log(dataset)
 
     // add big numbers
+    d3.select('#final-league-position div.dynamic-content')
+    .text(return_ordinal_suffix_of(d3.min(dataset.filter(function(d) { return d.manager_code === manager_code }), d => d.final_position) ) )
+
     d3.select('#highest-league-position div.dynamic-content')
     .text(return_ordinal_suffix_of(d3.min(dataset.filter(function(d) { return d.manager_code === manager_code }), d => d.league_position) ) )
 
@@ -46,7 +51,7 @@ function league_position(manager_code) {
     
 
     //Build dataviz -- position over time
-    viz_div = $("#league-position-over-time .dynamic-content")
+    viz_div = $("#league-position-over-time .dynamic-content").empty()
 
     dataviz_config = {
         'viz_height': viz_div.height(),
@@ -70,7 +75,7 @@ function league_position(manager_code) {
 
     // xScale
     var xDomain = d3.extent(dataset, d => d.gameweek)
-    console.log(xDomain)        
+    //console.log(xDomain)        
 
     var xScale = d3.scaleLinear()
     .domain(xDomain)
@@ -81,7 +86,7 @@ function league_position(manager_code) {
         temp_array = []
         e = d3.extent( dataset, d => d.league_position )
 
-        console.log(e)
+        //console.log(e)
 
         for ( i = e[0]; i <= e[1]; i++ ) {
             temp_array.push(i)
@@ -110,7 +115,7 @@ function league_position(manager_code) {
     .attr("x", function(d) { return xScale(0); })
     .attr("width", dataviz_config.viz_width)
     .style("fill", function(d) {
-        console.log(d)
+        //console.log(d)
         highlight_array = [1,2,3,4,18,19,20]
         if ( highlight_array.includes(d) ) {
             f = chump_colours.dark_grey

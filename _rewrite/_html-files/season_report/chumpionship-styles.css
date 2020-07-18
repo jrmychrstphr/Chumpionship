@@ -1,20 +1,17 @@
 /* viz coanvas sizes */
 
-#league-position-over-time .dynamic-content {
-    height: 24.5rem;
+div.dynamic-content.viz-large {
+    height: 28.4rem;
 }
 
-#score-over-time .dynamic-content {
-    height: 24.5rem;
+div.dynamic-content.viz-med {
+    height: 16.8rem
 }
 
-#transfers-by-gameweek .dynamic-content {
-    height: 12.5rem;
+div.dynamic-content.viz-small {
+    height: 7.2rem
 }
 
-#score-by-gameweek .dynamic-content {
-    height: 12.5rem;
-}
 
 
 
@@ -40,6 +37,12 @@ div.table-row {
 
 div.table-column {
     display: inline-block;
+}
+
+div.table-column.result {
+    padding: 13px 0 7px 10px;
+    line-height: 0;
+    border-left: 4px solid;
 }
 
 div.table-column:not(.indicator) {
@@ -109,6 +112,10 @@ div.grid-container.three-cols {
         grid-template-columns: repeat(3, 1fr);
 }
 
+div.grid-container.four-cols {
+        grid-template-columns: repeat(4, 1fr);
+}
+
 div.grid-container .grid-item.col-1 {
     grid-column: 1;
 }
@@ -150,7 +157,7 @@ div.grid-container .grid-item.col-span-5 {
 /**/
 
 main {
-    width: 1200px;
+    width: 900px;
     margin: 0 auto;    
 }
 
@@ -294,13 +301,14 @@ p {
     font-weight: 200;
 }
 
-p.footnote {
+.footnote {
     font-size: 0.8rem;
+    margin-top: 1rem;
 }
 
 .big-number {
     font-family: 'Champion';
     font-weight: 400;
     line-height: 1em;
-    font-size: 6em;
+    font-size: 5em;
 }
