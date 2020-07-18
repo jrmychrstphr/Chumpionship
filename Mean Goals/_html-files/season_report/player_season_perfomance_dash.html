@@ -1,0 +1,311 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"> 
+
+<html lang="en">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <title>Player Dashboard</title>
+        
+        <link rel="stylesheet" type="text/css" href="chumpionship-styles.css">   
+        <link rel="stylesheet" type="text/css" href="controls.css">   
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://d3js.org/d3.v5.min.js"></script>
+       
+        <script src="load_database.js"></script>
+        <script src="common_functions.js"></script>
+        <script src="chump_colours.js"></script>
+
+        <script>
+            $( function(){
+
+                var DOM_Body = $( "body" );
+                
+                var input_container =  $("<div />").attr("id", "input_controls")
+                .prependTo(DOM_Body);
+                
+                var input_element = $("<div />")
+                .appendTo(input_container);
+                
+                
+                var input_select = $("<select />").attr("name", "listing_type")
+                .attr("id", "manager_input")
+                .appendTo(input_element);
+                
+                //define options
+                options_array = return_manager_code_array(database)
+                options_array.unshift("Pick a team")
+
+                //console.log(options_array)
+
+
+                for (i = 0, len = options_array.length, text = ""; i < len; i++) {
+                    $("<option />").attr("value", options_array[i])
+                    .text( function() {
+
+                        manager_list = return_manager_code_array(database)
+                        if (manager_list.includes(options_array[i])) {
+                            msg = return_manager_fullname(database, options_array[i]) + " (" + options_array[i] + ")"
+                        } else {
+                            msg = options_array[i]
+                        }
+
+                        return msg
+                    } ())
+                    .appendTo(input_select);
+                }
+                
+                var generate_button = $("<button />").attr("type", "button")
+                .text("Generate")
+                .click(function(){
+                    //function
+                    //console.log("Button clicked!")
+                    
+                    var input_key = $("#manager_input").val()    // grab gw input from select
+                    
+                    fixture_results(input_key)
+                    league_position(input_key)
+                    points_scored(input_key)
+                    transfers_made(input_key)
+                    add_ranks(input_key)   
+
+                })
+                .appendTo(input_container);
+                
+                var resize_tables = $("<button />").attr("type", "button")
+                .text("Resize table rows")
+                .click(function(){
+                    //function
+                    resize_rows("#fixture-results .dynamic-content")                                     
+                })
+                .appendTo(input_container);
+                
+            });
+
+        </script>
+        
+    </head> 
+    
+    <body> 
+        <main>
+            <section><div class="divider alt"></div></section>
+
+            <section id="page-title" class="dark">
+                <div class="wrapper">
+                    <div class="page-title-block">
+                        <div class="title"><h1>Season report card</h1></div>
+                        <div class="subtitle"><h3 class="dynamic-content">Jeremy Harding – Costabomb Athletico</h3></div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="summary" class="dark">
+                <div class="wrapper">
+                    <div class="container">
+
+                        <div class="section-title"><h2>Season summary</h2></div>
+
+                        <div class="grid-container four-cols">
+
+                            <div id="final-league-position" class="sub-section summary-block grid-item col-1 col-span-1">
+                                <div class="title"><h4>Final league position</h4></div>
+                                <div class="dynamic-content big-number">00</div>
+                            </div>
+
+                            <div id="overall-points-scored-1" class="sub-section summary-block grid-item col-2 col-span-1">
+                                <div class="title"><h4>Overall points scored</h4></div>
+                                <div class="dynamic-content big-number">0,000</div>
+                            </div>
+
+                            <div id="highest-score-1" class="sub-section summary-block grid-item col-3 col-span-1">
+                                <div class="title"><h4>Highest single score</h4></div>
+                                <div class="dynamic-content big-number">000</div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </section>
+
+            <section id="league-position" class="dark">
+                <div class="wrapper">
+                    <div class="container">
+                        <div class="section-title"><h2>League performance</h2></div>
+                        <div class="grid-container four-cols">
+
+
+                            <div id="league-position-over-time" class="sub-section grid-item col-1 col-span-3">
+                                <div class="title"><h4>League position over time</h4></div>
+                                <div class="dynamic-content viz-large"></div>
+                            </div>
+
+
+                            <div class="grid-item col-4 col-span-1">
+
+                                    <div id="highest-league-position" class="sub-section grid-item col-1">
+                                        <div class="title"><h4>Highest position held</h4></div>
+                                        <div class="dynamic-content big-number">00</div>
+                                    </div>
+
+                                    <div id="average-league-position" class="sub-section grid-item col-2">
+                                        <div class="title"><h4>Average position held</h4></div>
+                                        <div class="dynamic-content big-number">00</div>
+                                    </div>
+
+                                    <div id="lowest-league-position" class="sub-section grid-item col-3">
+                                        <div class="title"><h4>Lowest position held</h4></div>
+                                        <div class="dynamic-content big-number">00</div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="dark">
+                <div class="wrapper">
+                    <div class="container">
+                        <div class="section-title"><h2>Score</h2></div>
+                        <div class="grid-container four-cols">
+
+                            <div id="score-over-time" class="sub-section grid-item col-1 col-span-3">
+                                <div class="title"><h4>Total score over time</h4></div>
+                                <div class="dynamic-content viz-med"></div>
+                            </div>
+
+                            <div id="overall-points-scored-2" class="sub-section grid-item col-4">
+                                <div class="title"><h4>Overall points scored</h4></div>
+                                <div class="dynamic-content big-number">0,000</div>
+                            </div>
+
+
+                            <div id="score-by-gameweek" class="sub-section grid-item col-1 col-span-3">
+                                <div class="title"><h4>Points scored by gameweek</h4></div>
+                                <div class="dynamic-content viz-med"></div>
+                            </div>
+
+                            <div class="grid-item col-4">
+                                <div id="highest-score-2" class="sub-section">
+                                    <div class="title"><h4>Highest score</h4></div>
+                                    <div class="dynamic-content big-number">00</div>
+                                </div>
+
+                                <div id="lowest-score" class="sub-section">
+                                    <div class="title"><h4>Lowest score</h4></div>
+                                    <div class="dynamic-content big-number">00</div>
+                                </div>
+                            </div>
+
+
+                            <div id="bench-by-gameweek" class="sub-section grid-item col-1 col-span-3">
+                                <div class="title"><h4>Points on bench by gameweek</h4></div>
+                                <div class="dynamic-content"></div>
+                            </div>
+
+                            <div id="points-on-bench" class="sub-section grid-item col-4">
+                                <div class="title"><h4>Points on bench</h4></div>
+                                <div class="dynamic-content big-number">00</div>
+                            </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="dark">
+                <div class="wrapper">
+                    <div class="container">
+                        <div class="section-title"><h2>Transfers</h2></div>
+                        <div class="grid-container four-cols">
+
+                            <div id="transfers-by-gameweek" class="sub-section grid-item col-1 col-span-3">
+                                <div class="title"><h4>Transfers made by gameweek</h4></div>
+                                <div class="dynamic-content viz-med"></div>
+                                <div class="footnote">Note: GW30 includes all changes made between GW29 and 30</div>
+                            </div>
+
+                            <div class="grid-item col-4">
+                                <div id="total-transfers" class="sub-section">
+                                    <div class="title"><h4>Total transfers made</h4></div>
+                                    <div class="dynamic-content big-number">00</div>
+                                </div>
+
+                                <div id="total-points-spent" class="sub-section">
+                                    <div class="title"><h4>Points spent</h4></div>
+                                    <div class="dynamic-content big-number">00</div>
+                                </div>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="dark">
+                <div class="wrapper">
+                    <div class="container">
+                        <div class="grid-container four-cols">
+
+                            <div id="results" class="grid-item col-1 col-span-4">
+
+                                <div class="section-title"><h2>Results</h2></div>
+
+
+                                <div id="largest-win" class="sub-section">
+                                    <div class="title"><h4>Largest win</h4></div>
+                                    <div class="dynamic-content"></div>
+                                </div>
+
+                                <div id="largest-defeat" class="sub-section">
+                                    <div class="title"><h4>Largest defeat</h4></div>
+                                    <div class="dynamic-content"></div>
+                                </div>
+
+
+                                <div id="longest-win-streak" class="sub-section">
+                                    <div class="title"><h4>Longest win streak</h4></div>
+                                    <div class="dynamic-content viz-small"></div>
+                                </div>
+
+                                <div id="longest-winless-streak" class="sub-section">
+                                    <div class="title"><h4>Longest winless streak</h4></div>
+                                    <div class="dynamic-content viz-small"></div> 
+                                </div>
+
+                                <div id="fixture-results" class="sub-section">
+                                    <div class="title"><h4>Fixture results</h4></div>
+                                    <div class="dynamic-content"></div>
+                                </div>
+
+                            </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+                            
+
+
+
+            <section><div class="divider alt"></div></section>
+
+        </main>
+    </body>
+
+    <script src="fixture-results.js"></script>
+    <script src="league_position.js"></script>
+    <script src="points_scored.js"></script>
+    <script src="transfers_made.js"></script>
+    <script src="add_ranks.js"></script>
+
+</html>

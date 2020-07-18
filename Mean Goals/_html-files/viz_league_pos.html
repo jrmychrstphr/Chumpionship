@@ -1,0 +1,429 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"> 
+
+<html lang="en">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <title>Title Goes Here</title>
+        
+        <link rel="stylesheet" type="text/css" href="chump.css">   
+        <link rel="stylesheet" type="text/css" href="chump-viz_styles.css">   
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <!--<script src="fitty.min.js"></script>-->
+        <script src="https://d3js.org/d3.v5.min.js"></script>
+       
+        <script src="load_database.js"></script>
+        <script src="common_functions.js"></script>
+        <script src="chump_colours.js"></script>
+        
+    </head> 
+    
+    <body> 
+        <main>
+            <section id="content">
+                <div class="divider alt"></div>
+                <div class="wrapper dark">
+                    <div class="container"></div>
+                </div>
+                <div class="divider alt"></div>
+            </section>
+        </main>
+    </body> 
+
+    <script>
+
+        $( function(){
+        
+            controls_league_pos()
+            dataset = dataset_league_pos()
+            viz_league_pos()
+                
+            });
+
+        function controls_league_pos() {
+
+            var DOM_Body = $( "body" );
+            
+            var input_container =  $("<div />").attr("id", "input_controls")
+            .prependTo(DOM_Body);
+            
+            var input_element = $("<div />")
+            .appendTo(input_container);
+            
+            
+            var input_select = $("<select />").attr("name", "listing_type")
+            .attr("id", "manager_input")
+            .appendTo(input_element);
+            
+            //define options
+            options_array = return_manager_code_array(database)
+            options_array.unshift("Pick a team")
+
+            //console.log(options_array)
+
+
+            for (i = 0, len = options_array.length, text = ""; i < len; i++) {
+                $("<option />").attr("value", options_array[i])
+                .text( function() {
+
+                    manager_list = return_manager_code_array(database)
+                    if (manager_list.includes(options_array[i])) {
+                        msg = return_manager_fullname(database, options_array[i]) + " (" + options_array[i] + ")"
+                    } else {
+                        msg = options_array[i]
+                    }
+
+                    return msg
+                } ())
+                .appendTo(input_select);
+            }
+            
+            var generate_button = $("<button />").attr("type", "button")
+            .text("Generate fixtures")
+            .click(function(){
+                //function
+                console.log("Button clicked!")
+                
+                var input_key = $("#manager_input").val()    // grab gw input from select
+                viz_league_pos(input_key)                   // trigger generate_fixtures funtion
+            })
+            .appendTo(input_container);
+
+        }
+
+        function dataset_league_pos() {
+            // Compile a dataset from the database
+            // Total transfers made by gameweek
+            dataset = []            
+
+            //for each player in the database
+            $.each( database['player_data'], function(idx, val) {
+
+                manager_code = val['manager_info']['fpl_code']
+                var gameweeks_played = return_gameweeks_played(database)
+
+                // for each gameweek
+                for ( idx = 0; idx < gameweeks_played; idx++ ) {
+                    var gameweek = idx+1
+                    var position = val['season_performance']['league_position_array'][idx]
+                    var position_now = val['season_performance']['league_position_now'][idx]
+    
+                    temp_obj = {
+                        'manager_code': manager_code,
+                        'gameweek': gameweek,
+                        'league_position': position,
+                        'league_position_now': position_now
+                    }
+
+                    dataset.push(temp_obj)
+                }
+            })
+
+            return dataset
+        }
+
+
+        function viz_league_pos(input_key) {
+
+            manager_list = return_manager_code_array(database)
+
+            if (!(manager_list.includes(input_key))) {
+                input_key = '55259' // jeremy
+            }
+
+            // Add container divs to DOM
+            var container_div = $( "#content div.container" ).empty();
+
+            var title_block = $("<div />").attr("id", "page_title")
+            .addClass('title-block')
+            .appendTo(container_div);
+
+            var page_title = $("<h1 />").text("League position")
+            .appendTo(title_block);
+
+
+            var viz_section = $("<div />").attr("id", "league_positon_by_gameweek")
+            .addClass("page-section")
+            .appendTo(container_div);
+
+            var viz_title_block = $("<div />").addClass('title-block')
+            .appendTo(viz_section);
+
+            var viz_h2 = $("<h2 />")
+            .text("League position by gameweek")
+            .appendTo(viz_title_block);
+
+            var viz_h4 = $("<h4 />")
+            .text(return_manager_fullname(database, input_key))
+            .appendTo(viz_title_block);
+
+            var viz_div = $("<div />")
+            .addClass('viz-container')
+            .addClass('large')
+            //.addClass('wip')
+            .appendTo(viz_section);
+
+
+            //Build dataviz
+            dataviz_config = {
+                'viz_height': viz_div.height(),
+                'viz_width': viz_div.width(),
+                'canvas_padding': {
+                    'top': 1,
+                    'right': 20,
+                    'bottom': 35,
+                    'left': 50
+                }
+            }
+
+            var viz_container = d3.select("#league_positon_by_gameweek .viz-container")
+
+            var svg = viz_container.append("svg")
+            .attr('height', dataviz_config.viz_height)
+            .attr('width', dataviz_config.viz_width);
+
+            // define scales
+            // xScale
+            var xDomain = d3.extent(dataset, d => d.gameweek)
+            console.log(xDomain)        
+
+            var xScale = d3.scaleLinear()
+            .domain(xDomain)
+            .range([dataviz_config.canvas_padding.left, (dataviz_config.viz_width - dataviz_config.canvas_padding.right)]);
+
+            //yScale
+            var yDomain = function() {
+                temp_array = []
+                e = d3.extent( dataset, d => d.league_position )
+
+                console.log(e)
+
+                for ( i = e[0]; i <= e[1]; i++ ) {
+                    temp_array.push(i)
+                }
+
+                return temp_array
+            } ()
+
+            var yScale = d3.scaleBand()
+            .domain(yDomain)   
+            .range([dataviz_config.canvas_padding.top, (dataviz_config.viz_height - dataviz_config.canvas_padding.bottom)]);
+
+
+            // Add table shading and lines
+            regions_data = [
+                {'start': 1, 'end': 4, 'fill': chump_colours.dark_grey },
+                {'start': 18, 'end': 20, 'fill': chump_colours.dark_grey }
+            ]
+
+            lines_data = [
+                //{'position': 1, 'type': 'dashed'},
+                {'position': 4, 'type': 'solid'},
+                {'position': 17, 'type': 'solid'}
+            ]
+
+            var axisRegions = svg.append('g')
+            .classed('axisRegions', true);
+
+            axisRegions.selectAll('.axisRegion')
+            .data(regions_data)
+            .enter()
+            .append('rect')
+            .classed('.axisRegion', true)
+            .attr('width', dataviz_config.viz_width )
+            .attr('height', function(d) {
+                p = d.end - d.start
+                h = yScale.bandwidth() * (p+1)
+
+                return h
+            })
+            .style('transform', function(d) {
+                t = 'translateY(' + yScale( d.start ) + 'px)'
+                return t
+                })
+            .style('fill', d => d.fill )
+            .style('stroke', 'black')
+
+            var axisLines = svg.append('g')
+            .classed('axisLines', true);
+
+            axisLines.selectAll('.axisLine')
+            .data(lines_data)
+            .enter()
+            .append('line')
+            .attr('x1', 0)
+            .attr('x2', dataviz_config.viz_width)
+            .attr('y1', d => yScale( d.position ) + (yScale.bandwidth()) )
+            .attr('y2', d => yScale( d.position ) + (yScale.bandwidth()) )
+            .style('stroke', chump_colours.grey)
+            .style('stroke-width', '1px')
+            .style('stroke-dasharray', function(d) {
+                if ( d.type == 'dashed' )
+                    return "5,5"
+            })
+
+
+
+
+            // add dotted line at the fold
+            var the_fold = axisLines.append('line')
+            .attr('x1', 0)
+            .attr('x2', dataviz_config.viz_width)
+            .attr('y1', function(d) { return yScale( d3.max(yDomain)/2 ) + yScale.step() })
+            .attr('y2', function(d) { return yScale( d3.max(yDomain)/2  ) + yScale.step() })
+            .style('stroke', chump_colours.grey)
+            .style('stroke-width', '1px')
+            .style('stroke-dasharray',"5,5")
+
+            // add line at the top
+            axisLines.append('line')
+            .attr('x1', 0)
+            .attr('x2', dataviz_config.viz_width)
+            .attr('y1', dataviz_config.canvas_padding.top )
+            .attr('y2', dataviz_config.canvas_padding.top )
+            .style('stroke', chump_colours.grey)
+            .style('stroke-width', '1px')
+
+            // add line at the bottom
+            axisLines.append('line')
+            .attr('x1', 0)
+            .attr('x2', dataviz_config.viz_width)
+            .attr('y1', dataviz_config.viz_height - dataviz_config.canvas_padding.bottom )
+            .attr('y2', dataviz_config.viz_height - dataviz_config.canvas_padding.bottom )
+            .style('stroke', chump_colours.grey)
+            .style('stroke-width', '1px')
+
+            //add axes
+
+            //xAxis
+            var xAxisGenerator = d3.axisBottom(xScale)
+            .tickSizeOuter(0)
+            .tickSize(10)
+            .tickPadding(10)
+            .tickValues(function() {
+                // 1, max and every 10
+                var temp_array = [];
+                var domain = xDomain
+
+                //console.log('domain.length ' + domain.length)
+
+                for (i = domain[0]; i <= domain[1]; i++ ){
+
+                    if (i === domain[0] || i === domain[1] && (domain[1] % 10) > 2 || i % 10 === 0) { 
+                        temp_array.push(i)
+                     }
+                }
+
+                return temp_array
+
+            } ())
+            .tickFormat(d => ("GW"+ d));
+
+            var xAxis = svg.append("g")
+            .classed("x axis", true)
+            .call(xAxisGenerator);
+
+            xAxis.select(".domain").remove();
+            xAxis.attr('transform', function(d) {
+                    return 'translate(0 ' + (dataviz_config.viz_height - dataviz_config.canvas_padding.bottom) + ')';
+                });
+            
+            var xAxisGrid = xAxisGenerator
+            .tickSize(dataviz_config.viz_height - dataviz_config.canvas_padding.bottom)
+            .tickSizeOuter(0)
+            .tickFormat("");
+
+            svg.append("g")
+            .attr("class", "x axis-grid")
+            .call(xAxisGrid)
+            .select(".domain").remove();
+
+
+            //yAxis
+            var yAxisGenerator = d3.axisLeft(yScale)
+            .tickSizeOuter(0)
+            .tickSize(0)
+
+            var yAxis = svg.append("g")
+            .classed("y axis", true)
+            .call(yAxisGenerator);
+
+            yAxis.select(".domain").remove();
+            yAxis.selectAll(".tick text").attr('dy', '0.3em');
+            yAxis.style('transform', 'translateX(25px)');
+
+
+            //colors
+
+            var defs = svg.append("defs")
+
+
+            var colours_scale = d3.scaleLinear()
+            .domain(d3.extent(yDomain))
+            .range([chump_colours.green, chump_colours.blue])
+            .interpolate(d3.interpolateRgb);
+
+
+            // data
+            var data_layer = svg.append('g')
+            .classed('data-layer', true)
+
+
+            var data_path = data_layer.append('path')
+            .datum(dataset.filter(function(d) { return d.manager_code === input_key }))
+            .attr("d", d3.line()
+                .x( d => xScale( d.gameweek ))
+                .y( d => yScale (d.league_position) + (yScale.bandwidth()/2) )
+            )
+            .attr('stroke', 
+                function(d) {
+
+                    var gradient = defs.append("linearGradient")
+                    .attr("id", "gradient")
+                    .attr("x1", "0%")
+                    .attr("y1", "0%")
+                    .attr("x2", "0%")
+                    .attr("y2", "100%")
+
+                    gradient.append("stop")
+                    .attr("offset", "0%")
+                    .style("stop-color", colours_scale( d3.min( database['player_data'][input_key]['season_performance']['league_position_array'] )))
+
+                    gradient.append("stop")
+                    .attr("offset", "100%")
+                    .style("stop-color", colours_scale( d3.max( database['player_data'][input_key]['season_performance']['league_position_array'] )) )
+
+                    return 'url(#gradient)'
+
+
+                })
+            .style('stroke-width', 2)
+            .attr('fill', 'transparent');
+
+
+            var data_group = data_layer.selectAll('g')
+            .data(dataset.filter(function(d) { return d.manager_code === input_key }))
+            .enter()
+            .append('g')
+
+            data_group.each( function(d) {
+
+
+                d3.select(this).append('circle')
+                .attr('cy', d => yScale(d.league_position) + (yScale.bandwidth()/2))
+                .attr('cx', d => xScale(d.gameweek))
+                .attr('r', 6)
+                .style('fill', d => colours_scale(d.league_position))
+                //.style('stroke', 'black')
+
+
+            })
+        }
+
+
+            
+
+
+    </script>
+    
+</html>

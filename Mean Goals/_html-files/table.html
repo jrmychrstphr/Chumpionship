@@ -1,0 +1,472 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"> 
+
+<html lang="en">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <title>Title Goes Here</title>
+        
+        <style>
+            @font-face {
+                font-family: 'Champion';
+                src: url('fonts/Champion HTFFlyweight Regular.otf');
+                font-weight: 200;
+            }
+        
+            @font-face {
+                font-family: 'Champion';
+                src: url('fonts/Champion HTFFeatherweight Regular.otf');
+                font-weight: 400;
+            }
+        
+            @font-face {
+                font-family: 'Champion';
+                src: url('fonts/Champion HTFMiddleweight Regular.otf');
+                font-weight: 600;
+            }
+        
+            @font-face {
+                font-family: 'Champion';
+                src: url('fonts/Champion HTFHeavyweight Regular.otf');
+                font-weight: 800;
+            }
+            
+            main {
+                font-family: 'Champion'
+            }
+            
+            .fly {
+                font-weight: 200;
+            }
+            
+            .feather {
+                font-weight: 400;
+            }
+            
+            .middle {
+                font-weight: 600;
+            }
+            
+            .heavy {
+                font-weight: 800;
+            }
+            
+            main {}
+            
+            #league_table {
+                background-image: linear-gradient(-90deg, #00FF00, #0000FF);
+                width: 800px;
+                margin: 0 auto;
+                text-transform: uppercase;
+
+            }
+
+            div.wrapper {
+                padding: 2em;
+            }
+
+            div.logo {
+                background-image: url('https://github.com/jrmychrstphr/Chumpionship/blob/master/_rewrite/assets/design-assets/chumpionship_logo---01@2x-8.png?raw=true');
+                background-size: contain;
+                background-position: right;
+                height: 2em;
+                width: 100%;
+            }
+
+            div.divider {
+                background-image: url('https://github.com/jrmychrstphr/Chumpionship/blob/master/_rewrite/assets/design-assets/chumpionship_divider@2x-8.png?raw=true');
+                background-size: cover;
+                background-position: center;
+                height: 2em;
+                width: 100%;
+            }
+
+            div.title-container {
+                width: calc(100%-2em);
+                background: black;
+                padding: 1em 1em 0.5em;
+                color: white;
+                text-align: center;
+            }
+            
+            h1 {
+                text-transform: uppercase;
+                font-weight: 400;
+                font-size: 5em;
+                margin: 0;
+                line-height: 1em;
+            }
+            
+            div.table-group {
+                padding-left: 100px;
+                position: relative;
+            }
+            
+            div.group-title {
+                position: absolute;
+                color: white;
+                top: 50%;
+                left: -40px;
+            }
+            
+            div.table-group.top div.group-title {
+                font-size: 160px;
+                transform: translate(-50%, -48%);
+            }
+            
+            div.table-group.bottom div.group-title {
+                transform: translate(-50%, -50%) rotate(-90deg);
+                font-size: 100px;
+            }
+
+
+            
+            
+            div.table-group.top, div.table-group.bottom {
+                border: 10px solid black;
+                border-left: 110px solid black;
+                padding: 0 20px 0 20px;
+                background-color: black;
+                color: white;
+            }
+            
+            div.table-group.middle {
+                margin: 0;
+                padding: 0 10px 0 110px;
+                border-left: 20px solid black;
+                border-right: 20px solid black;
+            }
+            div.table-group.bottom {}
+            
+            div.table-row {
+                width: 100%;
+                margin: 0 auto;
+                text-align: left;
+            }
+            
+            div.table-row:not(:last-child) {
+                border-bottom: 5px solid;
+            }
+            
+            div.table-group:not(.middle) div.table-row {
+                //border-color: white;
+            }
+            
+            div.table-row {
+                font-weight: 600;
+                font-size: 1.7rem;
+            }
+            
+            div.table-row.large {
+                font-weight: 200;
+                font-size: 4.5rem;
+            }
+            
+            div.fixture-content {
+                //width: inherit;
+            }
+            
+            div.team {
+                display: inline-block;
+                text-transform: uppercase;
+            }
+            
+            div.table-column {
+                margin: 0 0 -0.15em 0;
+                padding: 0.5rem 0;
+                line-height: 1em;                
+                display: inline-block;
+            }
+            
+            div.table-column:not(:first-child) {
+                margin-left: 1rem;
+            }
+
+            div.table-column:not(:last-child) {
+                margin-right: 1rem;
+            }
+            
+            div.overall_points, div.total_league_points {
+                text-align: right;
+            }
+            
+            div.win {
+                color: white;
+            }
+
+        
+            
+        </style>
+        
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="fitty.min.js"></script>
+
+        <script src="load_database.js"></script>
+        <script src="common_functions.js"></script>
+        <script src="chump_colours.js"></script>
+        
+
+    </head> 
+    
+    <body> 
+        <main>
+            <section id="league_table">
+                <div class="divider"></div>
+                <div class="wrapper">
+                    <div class="container"></div>
+                    <!--<div class="footer">GW29</div>-->
+                </div>
+                <!--<div class="logo"></div>-->
+                <div class="divider"></div>
+            </section>
+        </main>
+    </body> 
+
+    <script>
+
+        var table_settings = {
+            'to_win_prizes': 4,
+            'to_be_relegated': 0
+        }
+        
+        
+        $( function(){
+            
+            // execute code here
+            build_controls()
+            //build_league_table()
+            
+        });
+
+
+        function return_manager_code_array(database) {
+            
+            array = [];
+
+            player_data = database['player_data']
+
+            Object.keys(player_data).forEach(function(k){
+                array.push(k);
+            });
+
+            return array
+        }
+
+        function build_controls() {
+                                
+                gameweeks_list = [];
+                
+                for (i = 0, len = 38, text = ""; i < len+1; i++) {
+                    if ( i == 0 ) {
+                        //gameweeks_list.push("Overall")
+                    } else {
+                        gameweeks_list.push(i.toString())
+                    }
+                }
+                
+                var DOM_Body = $( "body" );
+                
+                var input_container =  $("<div />").attr("id", "input")
+                .prependTo(DOM_Body);
+                
+                var gameweek_input_element = $("<div />")
+                .appendTo(input_container);
+                
+                var gameweek_input_title = $("<p />").text("gameweek:")
+                .appendTo(gameweek_input_element);
+                
+                var gameweek_input_select = $("<select />").attr("name", "listing_type")
+                .attr("id", "gameweek_input")
+                .appendTo(gameweek_input_element);
+                
+                for (i = 0, len = gameweeks_list.length, text = ""; i < len; i++) {
+                    $("<option />").attr("value", gameweeks_list[i])
+                    .text(gameweeks_list[i])
+                    .appendTo(gameweek_input_select);
+                }
+                
+                var gameweek_input_element = $("<div />")
+                .appendTo(input_container);
+
+                var generate_button = $("<button />").attr("type", "button")
+                .text("Generate table")
+                .click(function(){
+                    //function
+                    console.log("Button clicked!")
+                    
+                    var gw_val = $("#gameweek_input").val()    // grab gw input from select
+                    build_league_table(gw_val)                    // trigger generate_fixtures funtion
+                })
+                .appendTo(input_container);                
+                var resize_button = $("<button />").attr("type", "button")
+                .text("Resize text")
+                .click(function(){
+                    //function
+                    resize_rows()
+                })
+                .appendTo(input_container);
+                           
+                
+            }
+
+        function build_league_table(gameweek) {
+
+            if(gameweek) {
+                val = gameweek
+                gameweek = gameweek.toString();
+                if (val <10) { gameweek = '0' + gameweek}
+            } else {
+                gameweek = "29";
+            }
+
+            gw_idx = parseInt(gameweek)-1
+
+
+            // generate an array of data
+            table_data_array = []
+
+            manager_codes_list = return_manager_code_array(database)
+            console.log(manager_codes_list)
+
+            for ( i = 0; i < manager_codes_list.length; i++) {
+
+                manager_code = manager_codes_list[i]
+                console.log(manager_code)
+                team_name = database['player_data'][manager_code]['manager_info']['team_name']
+                league_position = database['player_data'][manager_code]['season_performance']['league_position_array'][gw_idx]
+                league_points = database['player_data'][manager_code]['season_performance']['league_points_running_total_array'][gw_idx]
+                total_points = database['player_data'][manager_code]['season_performance']['fixture_score_running_total_array'][gw_idx]
+
+                temp_obj = {}
+                temp_obj['league_position'] = league_position
+                temp_obj['manager_code'] = manager_code
+                temp_obj['team_name'] = team_name
+                temp_obj['league_points'] = league_points
+                temp_obj['total_points'] = total_points
+
+                table_data_array.push(temp_obj)
+            }
+
+            // sort that array by league_pos
+            table_data_array.sort(function(a, b){ 
+                return a.league_position - b.league_position 
+            })
+
+
+            var table_container = $( "#league_table div.container" );
+            table_container.empty();
+
+            var table_group_top = $("<div />").addClass('table-group top')
+                .appendTo(table_container);
+
+            var table_group_middle = $("<div />").addClass('table-group middle')
+                .appendTo(table_container);
+
+            var table_group_bottom = $("<div />").addClass('table-group bottom')
+                .appendTo(table_container);
+
+            if (table_settings['to_win_prizes'] > 0) {
+
+                var group_top_title = $("<div />").addClass('group-title').text("£")
+                    .appendTo(table_group_top);
+
+            }
+
+            if (table_settings['to_be_relegated'] > 0) {
+
+                var group_bottom_title = $("<div />").addClass('group-title').text("<<<")
+                    .appendTo(table_group_bottom);
+
+            }
+
+            // add elements to the table
+            $.each(table_data_array, function(idx) {
+
+                var prize_zone_size = table_settings['to_win_prizes']
+                var drop_zone_size = table_settings['to_be_relegated']
+
+                if (idx < prize_zone_size ) {
+                    table_group = table_group_top
+                } else if ( idx > (table_data_array.length - 1) - drop_zone_size ) {
+                    table_group = table_group_bottom
+                } else { 
+                    table_group = table_group_middle 
+                }
+
+
+                var table_row = $("<div />").addClass('table-row')
+                .data( "league_position", league_position )
+                .appendTo(table_group);
+
+                var position_column = $("<div />").addClass('table-column')
+                .addClass('position')
+                .text(this['league_position'])
+                .appendTo(table_row);
+
+                var team_name_column = $("<div />").addClass('table-column')
+                .addClass('team_name')
+                .text(this['team_name'])
+                .appendTo(table_row);
+
+                var overall_points_column = $("<div />").addClass('table-column')
+                .addClass('overall_points')
+                .text(return_comma_formatted_number((Number(this['total_points'])).toString()))
+                .appendTo(table_row);
+
+
+                var total_league_points_column = $("<div />").addClass('table-column')
+                .addClass('total_league_points')
+                .text(this['league_points'] + 'pts')
+                .appendTo(table_row);
+
+            })
+
+            // Update the title
+            $(document).prop('title', function(){ return "Table: GW" + gameweek });
+
+        }
+
+        function resize_rows() {
+
+            cell_width_array = []
+
+            $( "#league_table div.table-row" ).each(function() {
+
+
+                $( this ).children().each(  function( idx ) {
+
+                    $(this).removeAttr('width')
+
+                    // if this is the first loop, the array will be shorter than idx+1
+                    if (cell_width_array.length < idx+1 ) {
+                        // if so, add an array to hold the width vals of 
+                        // *all* cells in that idx (same col) across all rowws
+                        cell_width_array[idx] = []
+                    }
+
+                    // push the width of this cell to the array for this column
+                    cell_width = Number($( this ).width())
+                    cell_width_array[idx].push(cell_width)
+
+                })
+
+            });
+
+            console.log(cell_width_array[1])
+
+
+            // set each cell's width to the longest in that column
+            $( "#league_table div.table-row" ).each(function() {
+                $( this ).children().each(  function(idx) {
+                    $(this).width(Math.max(...cell_width_array[idx]));
+                })
+            });
+
+
+
+        }
+
+        
+    
+    </script>
+    
+</html>

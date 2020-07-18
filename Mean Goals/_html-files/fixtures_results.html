@@ -1,0 +1,406 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"> 
+
+<html lang="en">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <title>Title Goes Here</title>
+        
+        <style>
+            @font-face {
+                font-family: 'Champion';
+                src: url('fonts/Champion HTFFlyweight Regular.otf');
+                font-weight: 200;
+            }
+        
+            @font-face {
+                font-family: 'Champion';
+                src: url('fonts/Champion HTFFeatherweight Regular.otf');
+                font-weight: 400;
+            }
+        
+            @font-face {
+                font-family: 'Champion';
+                src: url('fonts/Champion HTFMiddleweight Regular.otf');
+                font-weight: 600;
+            }
+        
+            @font-face {
+                font-family: 'Champion';
+                src: url('fonts/Champion HTFHeavyweight Regular.otf');
+                font-weight: 800;
+            }
+            
+            body {
+                font-family: sans-serif;
+            }
+            
+            #fixtures {
+                font-family: 'Champion'
+            }
+            
+            .fly {
+                font-weight: 200;
+            }
+            
+            .feather {
+                font-weight: 400;
+            }
+            
+            .middle {
+                font-weight: 600;
+            }
+            
+            .heavy {
+                font-weight: 800;
+            }
+            
+            main {}
+            
+            #fixtures {
+                background-image: linear-gradient(-90deg, #00FF00, #0000FF);
+                //background-image: linear-gradient(-90deg, rgb(57,255,0), rgb(42,0,142));
+                margin: 0 auto;
+                width: 800px;
+            }
+
+            div.wrapper {
+
+            }
+
+            div.container {
+                padding: 2em;
+            }
+            
+            div.title-block {
+                width: calc(100%-2em);
+                background: black;
+                //padding: 1em 1em 0.5em;
+                color: white;
+                text-align: center;
+                border: 20px solid black;
+            }
+            
+            h1 {
+                text-transform: uppercase;
+                font-weight: 400;
+                font-size: 5em;
+                margin: 0;
+                line-height: 1em;
+            }
+
+            div.fixture-block {
+                padding: 10px 20px;
+                border-right: 20px solid black;
+                border-left: 20px solid black;
+                border-bottom: 20px solid black;
+            }
+            
+            div.fixture-container {
+                width: 100%;
+                margin: 0 auto;
+                text-align: center;
+            }
+
+            div.fixture-container:not(:last-child) {
+                border-bottom: 10px solid black;
+            }
+            
+            div.fixture-content {
+                //width: inherit;
+            }
+            
+            div.team {
+                display: inline-block;
+                text-transform: uppercase;
+            }
+            
+            div.fixture-content {
+                margin: 0 0 -0.15em 0;
+                padding: 0.5rem 0;
+                line-height: 1em;   
+            }
+            
+            div.win {
+                color: white;
+            }
+
+            div.divider {
+                background-image: url('https://github.com/jrmychrstphr/Chumpionship/blob/master/_rewrite/assets/design-assets/chumpionship_divider@2x-8.png?raw=true');
+                background-size: cover;
+                background-position: center;
+                height: 2em;
+                width: 100%;
+            }
+
+        
+            
+        </style>
+        
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="fitty.min.js"></script>
+
+        <script src="load_database.js"></script>
+
+        <script>
+            
+            function build_controls() {
+                                
+                gameweeks_list = [];
+                type_list = ['Fixtures', 'Results']
+                
+                for (i = 0, len = 38, text = ""; i < len+1; i++) {
+                    if ( i == 0 ) {
+                        //gameweeks_list.push("Overall")
+                    } else {
+                        gameweeks_list.push(i.toString())
+                    }
+                }
+                
+                var DOM_Body = $( "body" );
+                
+                var input_container =  $("<section />").attr("id", "input")
+                .prependTo(DOM_Body);
+                
+                var type_input_element = $("<div />")
+                .appendTo(input_container);
+                
+                var type_input_title = $("<p />").text("Type:")
+                .appendTo(type_input_element);
+                
+                var type_input_select = $("<select />").attr("name", "listing_type")
+                .attr("id", "type_input")
+                .appendTo(type_input_element);
+                
+                for (i = 0, len = type_list.length, text = ""; i < len; i++) {
+                    $("<option />").attr("value", type_list[i])
+                    .text(type_list[i])
+                    .appendTo(type_input_select);
+                }
+                
+                var gameweek_input_element = $("<div />")
+                .appendTo(input_container);
+                
+                var gameweek_input_title = $("<p />").text("Gameweek:")
+                .appendTo(gameweek_input_element);
+                
+                var gameweek_input_select = $("<select />").attr("name", "gameweek")
+                .attr("id", "gameweek_input")
+                .appendTo(gameweek_input_element);
+                
+                for (i = 0, len = gameweeks_list.length, text = ""; i < len; i++) {
+                    $("<option />").attr("value", gameweeks_list[i])
+                    .text(gameweeks_list[i])
+                    .appendTo(gameweek_input_select);
+                }
+                
+                var generate_button = $("<button />").attr("type", "button")
+                .text("Generate fixtures")
+                .click(function(){
+                    //function
+                    console.log("Button clicked!")
+                    
+                    var type_val = $("#type_input").val()    // grab type input from select
+                    var gw_val = $("#gameweek_input").val()    // grab gw input from select
+                    generate_content(gw_val, type_val)                    // trigger generate_fixtures funtion
+                })
+                .appendTo(input_container);
+                
+                var randomise_button = $("<button />").attr("type", "button")
+                .text("Randomise typography")
+                .click(function(){
+                    //function
+                    randomise_typography()
+                })
+                .appendTo(input_container);
+                
+                var resize_button = $("<button />").attr("type", "button")
+                .text("Resize text")
+                .click(function(){
+                    //function
+                    resize_text()                    // trigger generate_fixtures funtion
+                })
+                .appendTo(input_container);
+                
+                
+                
+            }
+
+
+            function return_manager_code_array(database) {
+                
+                array = [];
+
+                player_data = database['player_data']
+
+                Object.keys(player_data).forEach(function(k){
+                    array.push(k);
+                });
+
+                // document.write(array);
+
+                return array
+            }
+
+            function return_fixture_score(manager_code, gameweek) {
+
+                score = database['player_data'][manager_code]['gw_performance'][gameweek]['fixture_score']
+
+                //console.log(score)
+
+                if (score || score === 0) {
+
+                    return score
+                } else {
+                    return 'Err'
+                }
+
+            }
+
+                    
+            function generate_content(gameweek, type) {
+
+                
+                if(gameweek) {
+                    val = gameweek
+                    gameweek = gameweek.toString();
+                    if (val <10) { gameweek = '0' + gameweek}
+                } else {
+                    gameweek = "01";
+                }
+                
+
+                var fixture_list = database['fixture_list'][gameweek]
+
+
+                var fixture_container = $( "#fixtures div.fixture-block" );
+                fixture_container.empty();
+
+
+                $.each(fixture_list, function(){
+
+                    home_team_name = this['H']['team_name']
+                    home_manager_code = this['H']['manager_code']
+
+                    away_team_name = this['A']['team_name']
+                    away_manager_code = this['A']['manager_code']
+                    //console.log(home_team_name)
+
+
+                    var fixture_container_div = $("<div />").addClass('fixture-container')
+                    .appendTo(fixture_container);
+
+                    var fixture_contents_div = $("<div />").addClass('fixture-content')
+                    .appendTo(fixture_container_div);
+
+                    var home_div = $("<div />").addClass('team home')
+                    .appendTo(fixture_contents_div);
+
+                    var home_name = $("<span />").addClass('name')
+                    .text(home_team_name)
+                    .appendTo(home_div);
+
+                    if (type == "Fixtures") {
+
+                        var fixture_divider = $("<span />").text(' vs ')
+                        .appendTo(fixture_contents_div);
+
+                    } else if (type == 'Results') {
+
+                        home_score = return_fixture_score(home_manager_code, gameweek)
+                        away_score = return_fixture_score(away_manager_code, gameweek)
+
+                        string = " " + home_score + " // " + away_score + " "
+
+                        var fixture_divider = $("<span />").text(string)
+                        .appendTo(fixture_contents_div);
+
+
+                    }
+
+
+                    var away_div = $("<div />").addClass('team away')
+                    .appendTo(fixture_contents_div);
+
+                    var away_name = $("<span />").addClass('name')
+                    .text(away_team_name)
+                    .appendTo(away_div);                    
+
+                })
+
+                // Update the title
+                $( "#gw" ).text(parseInt(gameweek))
+                $( "#listings-type" ).text(type)
+                $(document).prop('title', function(){ return $(".title-block h1").text() });
+
+            };
+            
+            
+            function resize_text() {
+                $("#fixtures div.container div.fixture-content").each( function() {
+                    fitty(this);
+                })
+            }
+
+            function randomise_typography() {
+
+                var font_styles = ["fly", "feather", "middle", "heavy"]
+
+                var used_styles = []
+
+
+                //set style class based on character count
+                $("#fixtures div.fixture-content").each( function(idx, val) {
+
+                    var style_options = font_styles
+
+                    if (idx > 0) {
+                        style_options = font_styles.filter(e => e !== used_styles[idx-1]);
+                    }
+
+                    $(val).attr( 'class', 'fixture-content')        
+
+                    $(val).addClass( function() {
+
+                        var x = style_options[Math.floor(Math.random()*style_options.length)]
+                        used_styles.push(x)
+                        return x
+
+                    })
+                })
+
+                resize_text()
+            }
+            
+            
+            $.getJSON(database_url, function(json) {                                
+                database = json;    // >> store database in variable
+            });
+            
+            
+            $( function(){
+                
+                build_controls()
+                
+            });
+
+            
+        
+        </script>
+        
+    </head> 
+    
+    <body> 
+        <main>
+            <section id="fixtures">
+                <div class="divider"></div>
+                <div class="wrapper">
+                    <div class="container">
+                        <div class="title-block"><h1>&#62;&#62; Gameweek <span id="gw"></span> <span id="listings-type"></span> &#60;&#60;</h1></div>
+                        <div class="fixture-block"></div>
+                    </div>
+                </div>
+                <div class="divider"></div>
+            </section>
+        </main>
+    </body> 
+</html>

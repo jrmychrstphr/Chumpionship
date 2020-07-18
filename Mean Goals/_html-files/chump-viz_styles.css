@@ -1,0 +1,132 @@
+#rankings {
+}
+
+.viz-container:not(:last-child) {
+    margin-bottom: 2.8rem;
+}
+
+.page-section:not(:last-child) {
+    margin-bottom: 2.8rem;
+}
+
+.viz-container.small {
+    height: 14rem;
+}
+
+.viz-container.regular {
+    height: 21rem;
+}
+
+.viz-container.large {
+    height: 28rem;
+}
+
+.viz-container.xlarge {
+    height: 36rem;
+}
+
+.viz-container.wip {
+    background-color: #111;
+}
+
+svg text {
+    font-size: 0.8rem;
+    font-family: 'Helvetica Neue'
+}
+
+svg text.label {
+    fill: white;
+}
+
+svg text.label.centre-align {
+    text-anchor: middle;
+}
+
+svg text.label.left-align {
+    text-anchor: start;
+}
+
+svg text.label.right-align {
+    text-anchor: end;
+}
+
+svg .axis line, svg .axis-grid line {
+    stroke: rgb(74, 74, 74);
+}
+svg .axis text {
+    fill: rgb(74, 74, 74);
+}
+
+div.column-wrapper.cols-2 {
+    display: inline-block;
+    margin: 0 -1rem;
+    //width: calc( 100% + 2rem );
+}
+
+#rankings div.cols-2 div.column-container {
+    width: calc( (100% - 2rem)/2 - 1rem );
+    float: left;
+    padding: 0 1rem;
+    
+}
+
+.table-wrapper {
+    width: 100%;
+}
+
+#rankings .table-container {
+    font-family: 'Helvetica Neue';
+    margin: 0;
+}
+
+#rankings .table-container.cols-2 {
+    column-rule-style: none;
+    column-rule-width: 1px;
+    column-rule-color: white;
+    column-gap: 2rem;
+    column-count: 2;
+}
+
+.table-row {
+    width: 100%;
+    //margin: 0 -1em;
+    display: inline-block;
+
+    border-top: 1px solid white;
+    padding: 0.7rem 0;
+}
+
+.table-column {
+    display: block;
+    float: left;
+    padding: 0 1rem;
+    line-height: 1rem;
+}
+
+.right-align {
+    text-align: right;
+}
+
+.table-column.key {
+    font-size: 2.8rem;
+    overflow: hidden;
+    //padding-left: 0.35rem;
+}
+
+.table-column:last-child {
+    float: right;
+}
+
+div.title-block {
+    margin-bottom: 2.8rem;
+}
+
+div.title-block h1, div.title-block h2   {
+    margin: 0;
+    
+}
+
+div.title-block p {
+    margin: 0;
+    
+}

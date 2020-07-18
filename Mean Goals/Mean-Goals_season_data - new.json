@@ -1,0 +1,4376 @@
+{
+    "fixture_list": {
+        "01": [
+            {
+                "A": {
+                    "manager_code": "2363025",
+                    "team_name": "Multiple Scoregasms"
+                },
+                "H": {
+                    "manager_code": "420605",
+                    "team_name": "Bethnal Green United"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "2052490",
+                    "team_name": "SMITHYS XI"
+                },
+                "H": {
+                    "manager_code": "55259",
+                    "team_name": "Costabomb Athletico"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "494633",
+                    "team_name": "MC Hammer"
+                },
+                "H": {
+                    "manager_code": "781653",
+                    "team_name": "Fenny FC"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "1975239",
+                    "team_name": "Ndombelieve it"
+                },
+                "H": {
+                    "manager_code": "2383929",
+                    "team_name": "Nodramallama"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "2392307",
+                    "team_name": "Pukki Blinders"
+                },
+                "H": {
+                    "manager_code": "1903138",
+                    "team_name": "West Sam"
+                }
+            }
+        ],
+        "02": [
+            {
+                "A": {
+                    "manager_code": "2392307",
+                    "team_name": "Pukki Blinders"
+                },
+                "H": {
+                    "manager_code": "420605",
+                    "team_name": "Bethnal Green United"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "2363025",
+                    "team_name": "Multiple Scoregasms"
+                },
+                "H": {
+                    "manager_code": "781653",
+                    "team_name": "Fenny FC"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "1975239",
+                    "team_name": "Ndombelieve it"
+                },
+                "H": {
+                    "manager_code": "494633",
+                    "team_name": "MC Hammer"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "2383929",
+                    "team_name": "Nodramallama"
+                },
+                "H": {
+                    "manager_code": "2052490",
+                    "team_name": "SMITHYS XI"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "55259",
+                    "team_name": "Costabomb Athletico"
+                },
+                "H": {
+                    "manager_code": "1903138",
+                    "team_name": "West Sam"
+                }
+            }
+        ],
+        "03": [
+            {
+                "A": {
+                    "manager_code": "781653",
+                    "team_name": "Fenny FC"
+                },
+                "H": {
+                    "manager_code": "55259",
+                    "team_name": "Costabomb Athletico"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "2363025",
+                    "team_name": "Multiple Scoregasms"
+                },
+                "H": {
+                    "manager_code": "494633",
+                    "team_name": "MC Hammer"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "420605",
+                    "team_name": "Bethnal Green United"
+                },
+                "H": {
+                    "manager_code": "2383929",
+                    "team_name": "Nodramallama"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "2052490",
+                    "team_name": "SMITHYS XI"
+                },
+                "H": {
+                    "manager_code": "2392307",
+                    "team_name": "Pukki Blinders"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "1975239",
+                    "team_name": "Ndombelieve it"
+                },
+                "H": {
+                    "manager_code": "1903138",
+                    "team_name": "West Sam"
+                }
+            }
+        ],
+        "04": [
+            {
+                "A": {
+                    "manager_code": "494633",
+                    "team_name": "MC Hammer"
+                },
+                "H": {
+                    "manager_code": "420605",
+                    "team_name": "Bethnal Green United"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "1975239",
+                    "team_name": "Ndombelieve it"
+                },
+                "H": {
+                    "manager_code": "55259",
+                    "team_name": "Costabomb Athletico"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "2383929",
+                    "team_name": "Nodramallama"
+                },
+                "H": {
+                    "manager_code": "781653",
+                    "team_name": "Fenny FC"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "2392307",
+                    "team_name": "Pukki Blinders"
+                },
+                "H": {
+                    "manager_code": "2363025",
+                    "team_name": "Multiple Scoregasms"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "1903138",
+                    "team_name": "West Sam"
+                },
+                "H": {
+                    "manager_code": "2052490",
+                    "team_name": "SMITHYS XI"
+                }
+            }
+        ],
+        "05": [
+            {
+                "A": {
+                    "manager_code": "2363025",
+                    "team_name": "Multiple Scoregasms"
+                },
+                "H": {
+                    "manager_code": "55259",
+                    "team_name": "Costabomb Athletico"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "2383929",
+                    "team_name": "Nodramallama"
+                },
+                "H": {
+                    "manager_code": "494633",
+                    "team_name": "MC Hammer"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "1975239",
+                    "team_name": "Ndombelieve it"
+                },
+                "H": {
+                    "manager_code": "2392307",
+                    "team_name": "Pukki Blinders"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "781653",
+                    "team_name": "Fenny FC"
+                },
+                "H": {
+                    "manager_code": "2052490",
+                    "team_name": "SMITHYS XI"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "420605",
+                    "team_name": "Bethnal Green United"
+                },
+                "H": {
+                    "manager_code": "1903138",
+                    "team_name": "West Sam"
+                }
+            }
+        ],
+        "06": [
+            {
+                "A": {
+                    "manager_code": "420605",
+                    "team_name": "Bethnal Green United"
+                },
+                "H": {
+                    "manager_code": "55259",
+                    "team_name": "Costabomb Athletico"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "1903138",
+                    "team_name": "West Sam"
+                },
+                "H": {
+                    "manager_code": "781653",
+                    "team_name": "Fenny FC"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "2392307",
+                    "team_name": "Pukki Blinders"
+                },
+                "H": {
+                    "manager_code": "494633",
+                    "team_name": "MC Hammer"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "2052490",
+                    "team_name": "SMITHYS XI"
+                },
+                "H": {
+                    "manager_code": "1975239",
+                    "team_name": "Ndombelieve it"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "2363025",
+                    "team_name": "Multiple Scoregasms"
+                },
+                "H": {
+                    "manager_code": "2383929",
+                    "team_name": "Nodramallama"
+                }
+            }
+        ],
+        "07": [
+            {
+                "A": {
+                    "manager_code": "1903138",
+                    "team_name": "West Sam"
+                },
+                "H": {
+                    "manager_code": "494633",
+                    "team_name": "MC Hammer"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "420605",
+                    "team_name": "Bethnal Green United"
+                },
+                "H": {
+                    "manager_code": "1975239",
+                    "team_name": "Ndombelieve it"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "55259",
+                    "team_name": "Costabomb Athletico"
+                },
+                "H": {
+                    "manager_code": "2383929",
+                    "team_name": "Nodramallama"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "781653",
+                    "team_name": "Fenny FC"
+                },
+                "H": {
+                    "manager_code": "2392307",
+                    "team_name": "Pukki Blinders"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "2363025",
+                    "team_name": "Multiple Scoregasms"
+                },
+                "H": {
+                    "manager_code": "2052490",
+                    "team_name": "SMITHYS XI"
+                }
+            }
+        ],
+        "08": [
+            {
+                "A": {
+                    "manager_code": "55259",
+                    "team_name": "Costabomb Athletico"
+                },
+                "H": {
+                    "manager_code": "494633",
+                    "team_name": "MC Hammer"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "781653",
+                    "team_name": "Fenny FC"
+                },
+                "H": {
+                    "manager_code": "1975239",
+                    "team_name": "Ndombelieve it"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "2392307",
+                    "team_name": "Pukki Blinders"
+                },
+                "H": {
+                    "manager_code": "2383929",
+                    "team_name": "Nodramallama"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "420605",
+                    "team_name": "Bethnal Green United"
+                },
+                "H": {
+                    "manager_code": "2052490",
+                    "team_name": "SMITHYS XI"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "2363025",
+                    "team_name": "Multiple Scoregasms"
+                },
+                "H": {
+                    "manager_code": "1903138",
+                    "team_name": "West Sam"
+                }
+            }
+        ],
+        "09": [
+            {
+                "A": {
+                    "manager_code": "781653",
+                    "team_name": "Fenny FC"
+                },
+                "H": {
+                    "manager_code": "420605",
+                    "team_name": "Bethnal Green United"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "2392307",
+                    "team_name": "Pukki Blinders"
+                },
+                "H": {
+                    "manager_code": "55259",
+                    "team_name": "Costabomb Athletico"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "2052490",
+                    "team_name": "SMITHYS XI"
+                },
+                "H": {
+                    "manager_code": "494633",
+                    "team_name": "MC Hammer"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "2363025",
+                    "team_name": "Multiple Scoregasms"
+                },
+                "H": {
+                    "manager_code": "1975239",
+                    "team_name": "Ndombelieve it"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "2383929",
+                    "team_name": "Nodramallama"
+                },
+                "H": {
+                    "manager_code": "1903138",
+                    "team_name": "West Sam"
+                }
+            }
+        ],
+        "10": [
+            {
+                "A": {
+                    "manager_code": "781653",
+                    "team_name": "Fenny FC"
+                },
+                "H": {
+                    "manager_code": "494633",
+                    "team_name": "MC Hammer"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "420605",
+                    "team_name": "Bethnal Green United"
+                },
+                "H": {
+                    "manager_code": "2363025",
+                    "team_name": "Multiple Scoregasms"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "2383929",
+                    "team_name": "Nodramallama"
+                },
+                "H": {
+                    "manager_code": "1975239",
+                    "team_name": "Ndombelieve it"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "1903138",
+                    "team_name": "West Sam"
+                },
+                "H": {
+                    "manager_code": "2392307",
+                    "team_name": "Pukki Blinders"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "55259",
+                    "team_name": "Costabomb Athletico"
+                },
+                "H": {
+                    "manager_code": "2052490",
+                    "team_name": "SMITHYS XI"
+                }
+            }
+        ],
+        "11": [
+            {
+                "A": {
+                    "manager_code": "1903138",
+                    "team_name": "West Sam"
+                },
+                "H": {
+                    "manager_code": "55259",
+                    "team_name": "Costabomb Athletico"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "781653",
+                    "team_name": "Fenny FC"
+                },
+                "H": {
+                    "manager_code": "2363025",
+                    "team_name": "Multiple Scoregasms"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "494633",
+                    "team_name": "MC Hammer"
+                },
+                "H": {
+                    "manager_code": "1975239",
+                    "team_name": "Ndombelieve it"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "2052490",
+                    "team_name": "SMITHYS XI"
+                },
+                "H": {
+                    "manager_code": "2383929",
+                    "team_name": "Nodramallama"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "420605",
+                    "team_name": "Bethnal Green United"
+                },
+                "H": {
+                    "manager_code": "2392307",
+                    "team_name": "Pukki Blinders"
+                }
+            }
+        ],
+        "12": [
+            {
+                "A": {
+                    "manager_code": "2383929",
+                    "team_name": "Nodramallama"
+                },
+                "H": {
+                    "manager_code": "420605",
+                    "team_name": "Bethnal Green United"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "55259",
+                    "team_name": "Costabomb Athletico"
+                },
+                "H": {
+                    "manager_code": "781653",
+                    "team_name": "Fenny FC"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "494633",
+                    "team_name": "MC Hammer"
+                },
+                "H": {
+                    "manager_code": "2363025",
+                    "team_name": "Multiple Scoregasms"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "1903138",
+                    "team_name": "West Sam"
+                },
+                "H": {
+                    "manager_code": "1975239",
+                    "team_name": "Ndombelieve it"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "2392307",
+                    "team_name": "Pukki Blinders"
+                },
+                "H": {
+                    "manager_code": "2052490",
+                    "team_name": "SMITHYS XI"
+                }
+            }
+        ],
+        "13": [
+            {
+                "A": {
+                    "manager_code": "420605",
+                    "team_name": "Bethnal Green United"
+                },
+                "H": {
+                    "manager_code": "494633",
+                    "team_name": "MC Hammer"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "55259",
+                    "team_name": "Costabomb Athletico"
+                },
+                "H": {
+                    "manager_code": "1975239",
+                    "team_name": "Ndombelieve it"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "781653",
+                    "team_name": "Fenny FC"
+                },
+                "H": {
+                    "manager_code": "2383929",
+                    "team_name": "Nodramallama"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "2363025",
+                    "team_name": "Multiple Scoregasms"
+                },
+                "H": {
+                    "manager_code": "2392307",
+                    "team_name": "Pukki Blinders"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "2052490",
+                    "team_name": "SMITHYS XI"
+                },
+                "H": {
+                    "manager_code": "1903138",
+                    "team_name": "West Sam"
+                }
+            }
+        ],
+        "14": [
+            {
+                "A": {
+                    "manager_code": "1903138",
+                    "team_name": "West Sam"
+                },
+                "H": {
+                    "manager_code": "420605",
+                    "team_name": "Bethnal Green United"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "2052490",
+                    "team_name": "SMITHYS XI"
+                },
+                "H": {
+                    "manager_code": "781653",
+                    "team_name": "Fenny FC"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "55259",
+                    "team_name": "Costabomb Athletico"
+                },
+                "H": {
+                    "manager_code": "2363025",
+                    "team_name": "Multiple Scoregasms"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "2392307",
+                    "team_name": "Pukki Blinders"
+                },
+                "H": {
+                    "manager_code": "1975239",
+                    "team_name": "Ndombelieve it"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "494633",
+                    "team_name": "MC Hammer"
+                },
+                "H": {
+                    "manager_code": "2383929",
+                    "team_name": "Nodramallama"
+                }
+            }
+        ],
+        "15": [
+            {
+                "A": {
+                    "manager_code": "55259",
+                    "team_name": "Costabomb Athletico"
+                },
+                "H": {
+                    "manager_code": "420605",
+                    "team_name": "Bethnal Green United"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "2383929",
+                    "team_name": "Nodramallama"
+                },
+                "H": {
+                    "manager_code": "2363025",
+                    "team_name": "Multiple Scoregasms"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "494633",
+                    "team_name": "MC Hammer"
+                },
+                "H": {
+                    "manager_code": "2392307",
+                    "team_name": "Pukki Blinders"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "1975239",
+                    "team_name": "Ndombelieve it"
+                },
+                "H": {
+                    "manager_code": "2052490",
+                    "team_name": "SMITHYS XI"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "781653",
+                    "team_name": "Fenny FC"
+                },
+                "H": {
+                    "manager_code": "1903138",
+                    "team_name": "West Sam"
+                }
+            }
+        ],
+        "16": [
+            {
+                "A": {
+                    "manager_code": "1975239",
+                    "team_name": "Ndombelieve it"
+                },
+                "H": {
+                    "manager_code": "420605",
+                    "team_name": "Bethnal Green United"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "2383929",
+                    "team_name": "Nodramallama"
+                },
+                "H": {
+                    "manager_code": "55259",
+                    "team_name": "Costabomb Athletico"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "2392307",
+                    "team_name": "Pukki Blinders"
+                },
+                "H": {
+                    "manager_code": "781653",
+                    "team_name": "Fenny FC"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "2052490",
+                    "team_name": "SMITHYS XI"
+                },
+                "H": {
+                    "manager_code": "2363025",
+                    "team_name": "Multiple Scoregasms"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "494633",
+                    "team_name": "MC Hammer"
+                },
+                "H": {
+                    "manager_code": "1903138",
+                    "team_name": "West Sam"
+                }
+            }
+        ],
+        "17": [
+            {
+                "A": {
+                    "manager_code": "2052490",
+                    "team_name": "SMITHYS XI"
+                },
+                "H": {
+                    "manager_code": "420605",
+                    "team_name": "Bethnal Green United"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "494633",
+                    "team_name": "MC Hammer"
+                },
+                "H": {
+                    "manager_code": "55259",
+                    "team_name": "Costabomb Athletico"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "1975239",
+                    "team_name": "Ndombelieve it"
+                },
+                "H": {
+                    "manager_code": "781653",
+                    "team_name": "Fenny FC"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "1903138",
+                    "team_name": "West Sam"
+                },
+                "H": {
+                    "manager_code": "2363025",
+                    "team_name": "Multiple Scoregasms"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "2383929",
+                    "team_name": "Nodramallama"
+                },
+                "H": {
+                    "manager_code": "2392307",
+                    "team_name": "Pukki Blinders"
+                }
+            }
+        ],
+        "18": [
+            {
+                "A": {
+                    "manager_code": "420605",
+                    "team_name": "Bethnal Green United"
+                },
+                "H": {
+                    "manager_code": "781653",
+                    "team_name": "Fenny FC"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "1975239",
+                    "team_name": "Ndombelieve it"
+                },
+                "H": {
+                    "manager_code": "2363025",
+                    "team_name": "Multiple Scoregasms"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "1903138",
+                    "team_name": "West Sam"
+                },
+                "H": {
+                    "manager_code": "2383929",
+                    "team_name": "Nodramallama"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "55259",
+                    "team_name": "Costabomb Athletico"
+                },
+                "H": {
+                    "manager_code": "2392307",
+                    "team_name": "Pukki Blinders"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "494633",
+                    "team_name": "MC Hammer"
+                },
+                "H": {
+                    "manager_code": "2052490",
+                    "team_name": "SMITHYS XI"
+                }
+            }
+        ],
+        "19": [
+            {
+                "A": {
+                    "manager_code": "2363025",
+                    "team_name": "Multiple Scoregasms"
+                },
+                "H": {
+                    "manager_code": "420605",
+                    "team_name": "Bethnal Green United"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "2052490",
+                    "team_name": "SMITHYS XI"
+                },
+                "H": {
+                    "manager_code": "55259",
+                    "team_name": "Costabomb Athletico"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "494633",
+                    "team_name": "MC Hammer"
+                },
+                "H": {
+                    "manager_code": "781653",
+                    "team_name": "Fenny FC"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "1975239",
+                    "team_name": "Ndombelieve it"
+                },
+                "H": {
+                    "manager_code": "2383929",
+                    "team_name": "Nodramallama"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "2392307",
+                    "team_name": "Pukki Blinders"
+                },
+                "H": {
+                    "manager_code": "1903138",
+                    "team_name": "West Sam"
+                }
+            }
+        ],
+        "20": [
+            {
+                "A": {
+                    "manager_code": "2392307",
+                    "team_name": "Pukki Blinders"
+                },
+                "H": {
+                    "manager_code": "420605",
+                    "team_name": "Bethnal Green United"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "2363025",
+                    "team_name": "Multiple Scoregasms"
+                },
+                "H": {
+                    "manager_code": "781653",
+                    "team_name": "Fenny FC"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "1975239",
+                    "team_name": "Ndombelieve it"
+                },
+                "H": {
+                    "manager_code": "494633",
+                    "team_name": "MC Hammer"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "2383929",
+                    "team_name": "Nodramallama"
+                },
+                "H": {
+                    "manager_code": "2052490",
+                    "team_name": "SMITHYS XI"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "55259",
+                    "team_name": "Costabomb Athletico"
+                },
+                "H": {
+                    "manager_code": "1903138",
+                    "team_name": "West Sam"
+                }
+            }
+        ],
+        "21": [
+            {
+                "A": {
+                    "manager_code": "781653",
+                    "team_name": "Fenny FC"
+                },
+                "H": {
+                    "manager_code": "55259",
+                    "team_name": "Costabomb Athletico"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "2363025",
+                    "team_name": "Multiple Scoregasms"
+                },
+                "H": {
+                    "manager_code": "494633",
+                    "team_name": "MC Hammer"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "420605",
+                    "team_name": "Bethnal Green United"
+                },
+                "H": {
+                    "manager_code": "2383929",
+                    "team_name": "Nodramallama"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "2052490",
+                    "team_name": "SMITHYS XI"
+                },
+                "H": {
+                    "manager_code": "2392307",
+                    "team_name": "Pukki Blinders"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "1975239",
+                    "team_name": "Ndombelieve it"
+                },
+                "H": {
+                    "manager_code": "1903138",
+                    "team_name": "West Sam"
+                }
+            }
+        ],
+        "22": [
+            {
+                "A": {
+                    "manager_code": "494633",
+                    "team_name": "MC Hammer"
+                },
+                "H": {
+                    "manager_code": "420605",
+                    "team_name": "Bethnal Green United"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "1975239",
+                    "team_name": "Ndombelieve it"
+                },
+                "H": {
+                    "manager_code": "55259",
+                    "team_name": "Costabomb Athletico"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "2383929",
+                    "team_name": "Nodramallama"
+                },
+                "H": {
+                    "manager_code": "781653",
+                    "team_name": "Fenny FC"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "2392307",
+                    "team_name": "Pukki Blinders"
+                },
+                "H": {
+                    "manager_code": "2363025",
+                    "team_name": "Multiple Scoregasms"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "1903138",
+                    "team_name": "West Sam"
+                },
+                "H": {
+                    "manager_code": "2052490",
+                    "team_name": "SMITHYS XI"
+                }
+            }
+        ],
+        "23": [
+            {
+                "A": {
+                    "manager_code": "2363025",
+                    "team_name": "Multiple Scoregasms"
+                },
+                "H": {
+                    "manager_code": "55259",
+                    "team_name": "Costabomb Athletico"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "2383929",
+                    "team_name": "Nodramallama"
+                },
+                "H": {
+                    "manager_code": "494633",
+                    "team_name": "MC Hammer"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "1975239",
+                    "team_name": "Ndombelieve it"
+                },
+                "H": {
+                    "manager_code": "2392307",
+                    "team_name": "Pukki Blinders"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "781653",
+                    "team_name": "Fenny FC"
+                },
+                "H": {
+                    "manager_code": "2052490",
+                    "team_name": "SMITHYS XI"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "420605",
+                    "team_name": "Bethnal Green United"
+                },
+                "H": {
+                    "manager_code": "1903138",
+                    "team_name": "West Sam"
+                }
+            }
+        ],
+        "24": [
+            {
+                "A": {
+                    "manager_code": "420605",
+                    "team_name": "Bethnal Green United"
+                },
+                "H": {
+                    "manager_code": "55259",
+                    "team_name": "Costabomb Athletico"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "1903138",
+                    "team_name": "West Sam"
+                },
+                "H": {
+                    "manager_code": "781653",
+                    "team_name": "Fenny FC"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "2392307",
+                    "team_name": "Pukki Blinders"
+                },
+                "H": {
+                    "manager_code": "494633",
+                    "team_name": "MC Hammer"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "2052490",
+                    "team_name": "SMITHYS XI"
+                },
+                "H": {
+                    "manager_code": "1975239",
+                    "team_name": "Ndombelieve it"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "2363025",
+                    "team_name": "Multiple Scoregasms"
+                },
+                "H": {
+                    "manager_code": "2383929",
+                    "team_name": "Nodramallama"
+                }
+            }
+        ],
+        "25": [
+            {
+                "A": {
+                    "manager_code": "1903138",
+                    "team_name": "West Sam"
+                },
+                "H": {
+                    "manager_code": "494633",
+                    "team_name": "MC Hammer"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "420605",
+                    "team_name": "Bethnal Green United"
+                },
+                "H": {
+                    "manager_code": "1975239",
+                    "team_name": "Ndombelieve it"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "55259",
+                    "team_name": "Costabomb Athletico"
+                },
+                "H": {
+                    "manager_code": "2383929",
+                    "team_name": "Nodramallama"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "781653",
+                    "team_name": "Fenny FC"
+                },
+                "H": {
+                    "manager_code": "2392307",
+                    "team_name": "Pukki Blinders"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "2363025",
+                    "team_name": "Multiple Scoregasms"
+                },
+                "H": {
+                    "manager_code": "2052490",
+                    "team_name": "SMITHYS XI"
+                }
+            }
+        ],
+        "26": [
+            {
+                "A": {
+                    "manager_code": "55259",
+                    "team_name": "Costabomb Athletico"
+                },
+                "H": {
+                    "manager_code": "494633",
+                    "team_name": "MC Hammer"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "781653",
+                    "team_name": "Fenny FC"
+                },
+                "H": {
+                    "manager_code": "1975239",
+                    "team_name": "Ndombelieve it"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "2392307",
+                    "team_name": "Pukki Blinders"
+                },
+                "H": {
+                    "manager_code": "2383929",
+                    "team_name": "Nodramallama"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "420605",
+                    "team_name": "Bethnal Green United"
+                },
+                "H": {
+                    "manager_code": "2052490",
+                    "team_name": "SMITHYS XI"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "2363025",
+                    "team_name": "Multiple Scoregasms"
+                },
+                "H": {
+                    "manager_code": "1903138",
+                    "team_name": "West Sam"
+                }
+            }
+        ],
+        "27": [
+            {
+                "A": {
+                    "manager_code": "781653",
+                    "team_name": "Fenny FC"
+                },
+                "H": {
+                    "manager_code": "420605",
+                    "team_name": "Bethnal Green United"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "2392307",
+                    "team_name": "Pukki Blinders"
+                },
+                "H": {
+                    "manager_code": "55259",
+                    "team_name": "Costabomb Athletico"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "2052490",
+                    "team_name": "SMITHYS XI"
+                },
+                "H": {
+                    "manager_code": "494633",
+                    "team_name": "MC Hammer"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "2363025",
+                    "team_name": "Multiple Scoregasms"
+                },
+                "H": {
+                    "manager_code": "1975239",
+                    "team_name": "Ndombelieve it"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "2383929",
+                    "team_name": "Nodramallama"
+                },
+                "H": {
+                    "manager_code": "1903138",
+                    "team_name": "West Sam"
+                }
+            }
+        ],
+        "28": [
+            {
+                "A": {
+                    "manager_code": "781653",
+                    "team_name": "Fenny FC"
+                },
+                "H": {
+                    "manager_code": "494633",
+                    "team_name": "MC Hammer"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "420605",
+                    "team_name": "Bethnal Green United"
+                },
+                "H": {
+                    "manager_code": "2363025",
+                    "team_name": "Multiple Scoregasms"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "2383929",
+                    "team_name": "Nodramallama"
+                },
+                "H": {
+                    "manager_code": "1975239",
+                    "team_name": "Ndombelieve it"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "1903138",
+                    "team_name": "West Sam"
+                },
+                "H": {
+                    "manager_code": "2392307",
+                    "team_name": "Pukki Blinders"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "55259",
+                    "team_name": "Costabomb Athletico"
+                },
+                "H": {
+                    "manager_code": "2052490",
+                    "team_name": "SMITHYS XI"
+                }
+            }
+        ],
+        "29": [
+            {
+                "A": {
+                    "manager_code": "1903138",
+                    "team_name": "West Sam"
+                },
+                "H": {
+                    "manager_code": "55259",
+                    "team_name": "Costabomb Athletico"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "781653",
+                    "team_name": "Fenny FC"
+                },
+                "H": {
+                    "manager_code": "2363025",
+                    "team_name": "Multiple Scoregasms"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "494633",
+                    "team_name": "MC Hammer"
+                },
+                "H": {
+                    "manager_code": "1975239",
+                    "team_name": "Ndombelieve it"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "2052490",
+                    "team_name": "SMITHYS XI"
+                },
+                "H": {
+                    "manager_code": "2383929",
+                    "team_name": "Nodramallama"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "420605",
+                    "team_name": "Bethnal Green United"
+                },
+                "H": {
+                    "manager_code": "2392307",
+                    "team_name": "Pukki Blinders"
+                }
+            }
+        ],
+        "30": [
+            {
+                "A": {
+                    "manager_code": "2383929",
+                    "team_name": "Nodramallama"
+                },
+                "H": {
+                    "manager_code": "420605",
+                    "team_name": "Bethnal Green United"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "55259",
+                    "team_name": "Costabomb Athletico"
+                },
+                "H": {
+                    "manager_code": "781653",
+                    "team_name": "Fenny FC"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "494633",
+                    "team_name": "MC Hammer"
+                },
+                "H": {
+                    "manager_code": "2363025",
+                    "team_name": "Multiple Scoregasms"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "1903138",
+                    "team_name": "West Sam"
+                },
+                "H": {
+                    "manager_code": "1975239",
+                    "team_name": "Ndombelieve it"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "2392307",
+                    "team_name": "Pukki Blinders"
+                },
+                "H": {
+                    "manager_code": "2052490",
+                    "team_name": "SMITHYS XI"
+                }
+            }
+        ],
+        "31": [
+            {
+                "A": {
+                    "manager_code": "420605",
+                    "team_name": "Bethnal Green United"
+                },
+                "H": {
+                    "manager_code": "494633",
+                    "team_name": "MC Hammer"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "55259",
+                    "team_name": "Costabomb Athletico"
+                },
+                "H": {
+                    "manager_code": "1975239",
+                    "team_name": "Ndombelieve it"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "781653",
+                    "team_name": "Fenny FC"
+                },
+                "H": {
+                    "manager_code": "2383929",
+                    "team_name": "Nodramallama"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "2363025",
+                    "team_name": "Multiple Scoregasms"
+                },
+                "H": {
+                    "manager_code": "2392307",
+                    "team_name": "Pukki Blinders"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "2052490",
+                    "team_name": "SMITHYS XI"
+                },
+                "H": {
+                    "manager_code": "1903138",
+                    "team_name": "West Sam"
+                }
+            }
+        ],
+        "32": [
+            {
+                "A": {
+                    "manager_code": "1903138",
+                    "team_name": "West Sam"
+                },
+                "H": {
+                    "manager_code": "420605",
+                    "team_name": "Bethnal Green United"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "2052490",
+                    "team_name": "SMITHYS XI"
+                },
+                "H": {
+                    "manager_code": "781653",
+                    "team_name": "Fenny FC"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "55259",
+                    "team_name": "Costabomb Athletico"
+                },
+                "H": {
+                    "manager_code": "2363025",
+                    "team_name": "Multiple Scoregasms"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "2392307",
+                    "team_name": "Pukki Blinders"
+                },
+                "H": {
+                    "manager_code": "1975239",
+                    "team_name": "Ndombelieve it"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "494633",
+                    "team_name": "MC Hammer"
+                },
+                "H": {
+                    "manager_code": "2383929",
+                    "team_name": "Nodramallama"
+                }
+            }
+        ],
+        "33": [
+            {
+                "A": {
+                    "manager_code": "55259",
+                    "team_name": "Costabomb Athletico"
+                },
+                "H": {
+                    "manager_code": "420605",
+                    "team_name": "Bethnal Green United"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "2383929",
+                    "team_name": "Nodramallama"
+                },
+                "H": {
+                    "manager_code": "2363025",
+                    "team_name": "Multiple Scoregasms"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "494633",
+                    "team_name": "MC Hammer"
+                },
+                "H": {
+                    "manager_code": "2392307",
+                    "team_name": "Pukki Blinders"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "1975239",
+                    "team_name": "Ndombelieve it"
+                },
+                "H": {
+                    "manager_code": "2052490",
+                    "team_name": "SMITHYS XI"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "781653",
+                    "team_name": "Fenny FC"
+                },
+                "H": {
+                    "manager_code": "1903138",
+                    "team_name": "West Sam"
+                }
+            }
+        ],
+        "34": [
+            {
+                "A": {
+                    "manager_code": "1975239",
+                    "team_name": "Ndombelieve it"
+                },
+                "H": {
+                    "manager_code": "420605",
+                    "team_name": "Bethnal Green United"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "2383929",
+                    "team_name": "Nodramallama"
+                },
+                "H": {
+                    "manager_code": "55259",
+                    "team_name": "Costabomb Athletico"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "2392307",
+                    "team_name": "Pukki Blinders"
+                },
+                "H": {
+                    "manager_code": "781653",
+                    "team_name": "Fenny FC"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "2052490",
+                    "team_name": "SMITHYS XI"
+                },
+                "H": {
+                    "manager_code": "2363025",
+                    "team_name": "Multiple Scoregasms"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "494633",
+                    "team_name": "MC Hammer"
+                },
+                "H": {
+                    "manager_code": "1903138",
+                    "team_name": "West Sam"
+                }
+            }
+        ],
+        "35": [
+            {
+                "A": {
+                    "manager_code": "2052490",
+                    "team_name": "SMITHYS XI"
+                },
+                "H": {
+                    "manager_code": "420605",
+                    "team_name": "Bethnal Green United"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "494633",
+                    "team_name": "MC Hammer"
+                },
+                "H": {
+                    "manager_code": "55259",
+                    "team_name": "Costabomb Athletico"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "1975239",
+                    "team_name": "Ndombelieve it"
+                },
+                "H": {
+                    "manager_code": "781653",
+                    "team_name": "Fenny FC"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "1903138",
+                    "team_name": "West Sam"
+                },
+                "H": {
+                    "manager_code": "2363025",
+                    "team_name": "Multiple Scoregasms"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "2383929",
+                    "team_name": "Nodramallama"
+                },
+                "H": {
+                    "manager_code": "2392307",
+                    "team_name": "Pukki Blinders"
+                }
+            }
+        ],
+        "36": [
+            {
+                "A": {
+                    "manager_code": "420605",
+                    "team_name": "Bethnal Green United"
+                },
+                "H": {
+                    "manager_code": "781653",
+                    "team_name": "Fenny FC"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "1975239",
+                    "team_name": "Ndombelieve it"
+                },
+                "H": {
+                    "manager_code": "2363025",
+                    "team_name": "Multiple Scoregasms"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "1903138",
+                    "team_name": "West Sam"
+                },
+                "H": {
+                    "manager_code": "2383929",
+                    "team_name": "Nodramallama"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "55259",
+                    "team_name": "Costabomb Athletico"
+                },
+                "H": {
+                    "manager_code": "2392307",
+                    "team_name": "Pukki Blinders"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "494633",
+                    "team_name": "MC Hammer"
+                },
+                "H": {
+                    "manager_code": "2052490",
+                    "team_name": "SMITHYS XI"
+                }
+            }
+        ],
+        "37": [
+            {
+                "A": {
+                    "manager_code": "494633",
+                    "team_name": "MC Hammer"
+                },
+                "H": {
+                    "manager_code": "420605",
+                    "team_name": "Bethnal Green United"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "1975239",
+                    "team_name": "Ndombelieve it"
+                },
+                "H": {
+                    "manager_code": "55259",
+                    "team_name": "Costabomb Athletico"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "2383929",
+                    "team_name": "Nodramallama"
+                },
+                "H": {
+                    "manager_code": "781653",
+                    "team_name": "Fenny FC"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "2392307",
+                    "team_name": "Pukki Blinders"
+                },
+                "H": {
+                    "manager_code": "2363025",
+                    "team_name": "Multiple Scoregasms"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "1903138",
+                    "team_name": "West Sam"
+                },
+                "H": {
+                    "manager_code": "2052490",
+                    "team_name": "SMITHYS XI"
+                }
+            }
+        ],
+        "38": [
+            {
+                "A": {
+                    "manager_code": "2363025",
+                    "team_name": "Multiple Scoregasms"
+                },
+                "H": {
+                    "manager_code": "420605",
+                    "team_name": "Bethnal Green United"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "2052490",
+                    "team_name": "SMITHYS XI"
+                },
+                "H": {
+                    "manager_code": "55259",
+                    "team_name": "Costabomb Athletico"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "494633",
+                    "team_name": "MC Hammer"
+                },
+                "H": {
+                    "manager_code": "781653",
+                    "team_name": "Fenny FC"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "1975239",
+                    "team_name": "Ndombelieve it"
+                },
+                "H": {
+                    "manager_code": "2383929",
+                    "team_name": "Nodramallama"
+                }
+            },
+            {
+                "A": {
+                    "manager_code": "2392307",
+                    "team_name": "Pukki Blinders"
+                },
+                "H": {
+                    "manager_code": "1903138",
+                    "team_name": "West Sam"
+                }
+            }
+        ]
+    },
+    "league_data": {
+        "fpl_league_code": "463046",
+        "fpl_league_url": "https://fantasy.premierleague.com/leagues/463046/standings/h"
+    },
+    "player_data": {
+        "1903138": {
+            "fixtures": {
+                "01": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "2392307",
+                    "opponent_manager_fullname": "Lisa Murphy",
+                    "opponent_team_name": "Pukki Blinders"
+                },
+                "02": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "55259",
+                    "opponent_manager_fullname": "Jeremy Harding",
+                    "opponent_team_name": "Costabomb Athletico"
+                },
+                "03": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "1975239",
+                    "opponent_manager_fullname": "Chris Johnson",
+                    "opponent_team_name": "Ndombelieve it"
+                },
+                "04": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "2052490",
+                    "opponent_manager_fullname": "Ben Smith",
+                    "opponent_team_name": "SMITHYS XI"
+                },
+                "05": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "420605",
+                    "opponent_manager_fullname": "Richard Walker",
+                    "opponent_team_name": "Bethnal Green United"
+                },
+                "06": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "781653",
+                    "opponent_manager_fullname": "Taylor Fenn",
+                    "opponent_team_name": "Fenny FC"
+                },
+                "07": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "494633",
+                    "opponent_manager_fullname": "Hugh Robertson",
+                    "opponent_team_name": "MC Hammer"
+                },
+                "08": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "2363025",
+                    "opponent_manager_fullname": "James Murphy",
+                    "opponent_team_name": "Multiple Scoregasms"
+                },
+                "09": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "2383929",
+                    "opponent_manager_fullname": "Sean Murphy",
+                    "opponent_team_name": "Nodramallama"
+                },
+                "10": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "2392307",
+                    "opponent_manager_fullname": "Lisa Murphy",
+                    "opponent_team_name": "Pukki Blinders"
+                },
+                "11": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "55259",
+                    "opponent_manager_fullname": "Jeremy Harding",
+                    "opponent_team_name": "Costabomb Athletico"
+                },
+                "12": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "1975239",
+                    "opponent_manager_fullname": "Chris Johnson",
+                    "opponent_team_name": "Ndombelieve it"
+                },
+                "13": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "2052490",
+                    "opponent_manager_fullname": "Ben Smith",
+                    "opponent_team_name": "SMITHYS XI"
+                },
+                "14": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "420605",
+                    "opponent_manager_fullname": "Richard Walker",
+                    "opponent_team_name": "Bethnal Green United"
+                },
+                "15": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "781653",
+                    "opponent_manager_fullname": "Taylor Fenn",
+                    "opponent_team_name": "Fenny FC"
+                },
+                "16": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "494633",
+                    "opponent_manager_fullname": "Hugh Robertson",
+                    "opponent_team_name": "MC Hammer"
+                },
+                "17": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "2363025",
+                    "opponent_manager_fullname": "James Murphy",
+                    "opponent_team_name": "Multiple Scoregasms"
+                },
+                "18": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "2383929",
+                    "opponent_manager_fullname": "Sean Murphy",
+                    "opponent_team_name": "Nodramallama"
+                },
+                "19": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "2392307",
+                    "opponent_manager_fullname": "Lisa Murphy",
+                    "opponent_team_name": "Pukki Blinders"
+                },
+                "20": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "55259",
+                    "opponent_manager_fullname": "Jeremy Harding",
+                    "opponent_team_name": "Costabomb Athletico"
+                },
+                "21": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "1975239",
+                    "opponent_manager_fullname": "Chris Johnson",
+                    "opponent_team_name": "Ndombelieve it"
+                },
+                "22": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "2052490",
+                    "opponent_manager_fullname": "Ben Smith",
+                    "opponent_team_name": "SMITHYS XI"
+                },
+                "23": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "420605",
+                    "opponent_manager_fullname": "Richard Walker",
+                    "opponent_team_name": "Bethnal Green United"
+                },
+                "24": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "781653",
+                    "opponent_manager_fullname": "Taylor Fenn",
+                    "opponent_team_name": "Fenny FC"
+                },
+                "25": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "494633",
+                    "opponent_manager_fullname": "Hugh Robertson",
+                    "opponent_team_name": "MC Hammer"
+                },
+                "26": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "2363025",
+                    "opponent_manager_fullname": "James Murphy",
+                    "opponent_team_name": "Multiple Scoregasms"
+                },
+                "27": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "2383929",
+                    "opponent_manager_fullname": "Sean Murphy",
+                    "opponent_team_name": "Nodramallama"
+                },
+                "28": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "2392307",
+                    "opponent_manager_fullname": "Lisa Murphy",
+                    "opponent_team_name": "Pukki Blinders"
+                },
+                "29": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "55259",
+                    "opponent_manager_fullname": "Jeremy Harding",
+                    "opponent_team_name": "Costabomb Athletico"
+                },
+                "30": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "1975239",
+                    "opponent_manager_fullname": "Chris Johnson",
+                    "opponent_team_name": "Ndombelieve it"
+                },
+                "31": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "2052490",
+                    "opponent_manager_fullname": "Ben Smith",
+                    "opponent_team_name": "SMITHYS XI"
+                },
+                "32": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "420605",
+                    "opponent_manager_fullname": "Richard Walker",
+                    "opponent_team_name": "Bethnal Green United"
+                },
+                "33": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "781653",
+                    "opponent_manager_fullname": "Taylor Fenn",
+                    "opponent_team_name": "Fenny FC"
+                },
+                "34": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "494633",
+                    "opponent_manager_fullname": "Hugh Robertson",
+                    "opponent_team_name": "MC Hammer"
+                },
+                "35": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "2363025",
+                    "opponent_manager_fullname": "James Murphy",
+                    "opponent_team_name": "Multiple Scoregasms"
+                },
+                "36": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "2383929",
+                    "opponent_manager_fullname": "Sean Murphy",
+                    "opponent_team_name": "Nodramallama"
+                },
+                "37": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "2052490",
+                    "opponent_manager_fullname": "Ben Smith",
+                    "opponent_team_name": "SMITHYS XI"
+                },
+                "38": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "2392307",
+                    "opponent_manager_fullname": "Lisa Murphy",
+                    "opponent_team_name": "Pukki Blinders"
+                }
+            },
+            "manager_info": {
+                "fpl_code": "1903138",
+                "manager_firstname": "Sammy",
+                "manager_fullname": "Sammy Murphy",
+                "manager_surname": "Murphy",
+                "team_name": "West Sam"
+            }
+        },
+        "1975239": {
+            "fixtures": {
+                "01": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "2383929",
+                    "opponent_manager_fullname": "Sean Murphy",
+                    "opponent_team_name": "Nodramallama"
+                },
+                "02": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "494633",
+                    "opponent_manager_fullname": "Hugh Robertson",
+                    "opponent_team_name": "MC Hammer"
+                },
+                "03": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "1903138",
+                    "opponent_manager_fullname": "Sammy Murphy",
+                    "opponent_team_name": "West Sam"
+                },
+                "04": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "55259",
+                    "opponent_manager_fullname": "Jeremy Harding",
+                    "opponent_team_name": "Costabomb Athletico"
+                },
+                "05": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "2392307",
+                    "opponent_manager_fullname": "Lisa Murphy",
+                    "opponent_team_name": "Pukki Blinders"
+                },
+                "06": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "2052490",
+                    "opponent_manager_fullname": "Ben Smith",
+                    "opponent_team_name": "SMITHYS XI"
+                },
+                "07": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "420605",
+                    "opponent_manager_fullname": "Richard Walker",
+                    "opponent_team_name": "Bethnal Green United"
+                },
+                "08": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "781653",
+                    "opponent_manager_fullname": "Taylor Fenn",
+                    "opponent_team_name": "Fenny FC"
+                },
+                "09": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "2363025",
+                    "opponent_manager_fullname": "James Murphy",
+                    "opponent_team_name": "Multiple Scoregasms"
+                },
+                "10": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "2383929",
+                    "opponent_manager_fullname": "Sean Murphy",
+                    "opponent_team_name": "Nodramallama"
+                },
+                "11": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "494633",
+                    "opponent_manager_fullname": "Hugh Robertson",
+                    "opponent_team_name": "MC Hammer"
+                },
+                "12": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "1903138",
+                    "opponent_manager_fullname": "Sammy Murphy",
+                    "opponent_team_name": "West Sam"
+                },
+                "13": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "55259",
+                    "opponent_manager_fullname": "Jeremy Harding",
+                    "opponent_team_name": "Costabomb Athletico"
+                },
+                "14": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "2392307",
+                    "opponent_manager_fullname": "Lisa Murphy",
+                    "opponent_team_name": "Pukki Blinders"
+                },
+                "15": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "2052490",
+                    "opponent_manager_fullname": "Ben Smith",
+                    "opponent_team_name": "SMITHYS XI"
+                },
+                "16": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "420605",
+                    "opponent_manager_fullname": "Richard Walker",
+                    "opponent_team_name": "Bethnal Green United"
+                },
+                "17": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "781653",
+                    "opponent_manager_fullname": "Taylor Fenn",
+                    "opponent_team_name": "Fenny FC"
+                },
+                "18": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "2363025",
+                    "opponent_manager_fullname": "James Murphy",
+                    "opponent_team_name": "Multiple Scoregasms"
+                },
+                "19": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "2383929",
+                    "opponent_manager_fullname": "Sean Murphy",
+                    "opponent_team_name": "Nodramallama"
+                },
+                "20": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "494633",
+                    "opponent_manager_fullname": "Hugh Robertson",
+                    "opponent_team_name": "MC Hammer"
+                },
+                "21": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "1903138",
+                    "opponent_manager_fullname": "Sammy Murphy",
+                    "opponent_team_name": "West Sam"
+                },
+                "22": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "55259",
+                    "opponent_manager_fullname": "Jeremy Harding",
+                    "opponent_team_name": "Costabomb Athletico"
+                },
+                "23": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "2392307",
+                    "opponent_manager_fullname": "Lisa Murphy",
+                    "opponent_team_name": "Pukki Blinders"
+                },
+                "24": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "2052490",
+                    "opponent_manager_fullname": "Ben Smith",
+                    "opponent_team_name": "SMITHYS XI"
+                },
+                "25": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "420605",
+                    "opponent_manager_fullname": "Richard Walker",
+                    "opponent_team_name": "Bethnal Green United"
+                },
+                "26": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "781653",
+                    "opponent_manager_fullname": "Taylor Fenn",
+                    "opponent_team_name": "Fenny FC"
+                },
+                "27": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "2363025",
+                    "opponent_manager_fullname": "James Murphy",
+                    "opponent_team_name": "Multiple Scoregasms"
+                },
+                "28": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "2383929",
+                    "opponent_manager_fullname": "Sean Murphy",
+                    "opponent_team_name": "Nodramallama"
+                },
+                "29": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "494633",
+                    "opponent_manager_fullname": "Hugh Robertson",
+                    "opponent_team_name": "MC Hammer"
+                },
+                "30": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "1903138",
+                    "opponent_manager_fullname": "Sammy Murphy",
+                    "opponent_team_name": "West Sam"
+                },
+                "31": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "55259",
+                    "opponent_manager_fullname": "Jeremy Harding",
+                    "opponent_team_name": "Costabomb Athletico"
+                },
+                "32": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "2392307",
+                    "opponent_manager_fullname": "Lisa Murphy",
+                    "opponent_team_name": "Pukki Blinders"
+                },
+                "33": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "2052490",
+                    "opponent_manager_fullname": "Ben Smith",
+                    "opponent_team_name": "SMITHYS XI"
+                },
+                "34": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "420605",
+                    "opponent_manager_fullname": "Richard Walker",
+                    "opponent_team_name": "Bethnal Green United"
+                },
+                "35": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "781653",
+                    "opponent_manager_fullname": "Taylor Fenn",
+                    "opponent_team_name": "Fenny FC"
+                },
+                "36": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "2363025",
+                    "opponent_manager_fullname": "James Murphy",
+                    "opponent_team_name": "Multiple Scoregasms"
+                },
+                "37": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "55259",
+                    "opponent_manager_fullname": "Jeremy Harding",
+                    "opponent_team_name": "Costabomb Athletico"
+                },
+                "38": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "2383929",
+                    "opponent_manager_fullname": "Sean Murphy",
+                    "opponent_team_name": "Nodramallama"
+                }
+            },
+            "manager_info": {
+                "fpl_code": "1975239",
+                "manager_firstname": "Chris",
+                "manager_fullname": "Chris Johnson",
+                "manager_surname": "Johnson",
+                "team_name": "Ndombelieve it"
+            }
+        },
+        "2052490": {
+            "fixtures": {
+                "01": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "55259",
+                    "opponent_manager_fullname": "Jeremy Harding",
+                    "opponent_team_name": "Costabomb Athletico"
+                },
+                "02": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "2383929",
+                    "opponent_manager_fullname": "Sean Murphy",
+                    "opponent_team_name": "Nodramallama"
+                },
+                "03": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "2392307",
+                    "opponent_manager_fullname": "Lisa Murphy",
+                    "opponent_team_name": "Pukki Blinders"
+                },
+                "04": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "1903138",
+                    "opponent_manager_fullname": "Sammy Murphy",
+                    "opponent_team_name": "West Sam"
+                },
+                "05": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "781653",
+                    "opponent_manager_fullname": "Taylor Fenn",
+                    "opponent_team_name": "Fenny FC"
+                },
+                "06": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "1975239",
+                    "opponent_manager_fullname": "Chris Johnson",
+                    "opponent_team_name": "Ndombelieve it"
+                },
+                "07": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "2363025",
+                    "opponent_manager_fullname": "James Murphy",
+                    "opponent_team_name": "Multiple Scoregasms"
+                },
+                "08": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "420605",
+                    "opponent_manager_fullname": "Richard Walker",
+                    "opponent_team_name": "Bethnal Green United"
+                },
+                "09": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "494633",
+                    "opponent_manager_fullname": "Hugh Robertson",
+                    "opponent_team_name": "MC Hammer"
+                },
+                "10": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "55259",
+                    "opponent_manager_fullname": "Jeremy Harding",
+                    "opponent_team_name": "Costabomb Athletico"
+                },
+                "11": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "2383929",
+                    "opponent_manager_fullname": "Sean Murphy",
+                    "opponent_team_name": "Nodramallama"
+                },
+                "12": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "2392307",
+                    "opponent_manager_fullname": "Lisa Murphy",
+                    "opponent_team_name": "Pukki Blinders"
+                },
+                "13": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "1903138",
+                    "opponent_manager_fullname": "Sammy Murphy",
+                    "opponent_team_name": "West Sam"
+                },
+                "14": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "781653",
+                    "opponent_manager_fullname": "Taylor Fenn",
+                    "opponent_team_name": "Fenny FC"
+                },
+                "15": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "1975239",
+                    "opponent_manager_fullname": "Chris Johnson",
+                    "opponent_team_name": "Ndombelieve it"
+                },
+                "16": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "2363025",
+                    "opponent_manager_fullname": "James Murphy",
+                    "opponent_team_name": "Multiple Scoregasms"
+                },
+                "17": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "420605",
+                    "opponent_manager_fullname": "Richard Walker",
+                    "opponent_team_name": "Bethnal Green United"
+                },
+                "18": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "494633",
+                    "opponent_manager_fullname": "Hugh Robertson",
+                    "opponent_team_name": "MC Hammer"
+                },
+                "19": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "55259",
+                    "opponent_manager_fullname": "Jeremy Harding",
+                    "opponent_team_name": "Costabomb Athletico"
+                },
+                "20": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "2383929",
+                    "opponent_manager_fullname": "Sean Murphy",
+                    "opponent_team_name": "Nodramallama"
+                },
+                "21": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "2392307",
+                    "opponent_manager_fullname": "Lisa Murphy",
+                    "opponent_team_name": "Pukki Blinders"
+                },
+                "22": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "1903138",
+                    "opponent_manager_fullname": "Sammy Murphy",
+                    "opponent_team_name": "West Sam"
+                },
+                "23": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "781653",
+                    "opponent_manager_fullname": "Taylor Fenn",
+                    "opponent_team_name": "Fenny FC"
+                },
+                "24": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "1975239",
+                    "opponent_manager_fullname": "Chris Johnson",
+                    "opponent_team_name": "Ndombelieve it"
+                },
+                "25": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "2363025",
+                    "opponent_manager_fullname": "James Murphy",
+                    "opponent_team_name": "Multiple Scoregasms"
+                },
+                "26": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "420605",
+                    "opponent_manager_fullname": "Richard Walker",
+                    "opponent_team_name": "Bethnal Green United"
+                },
+                "27": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "494633",
+                    "opponent_manager_fullname": "Hugh Robertson",
+                    "opponent_team_name": "MC Hammer"
+                },
+                "28": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "55259",
+                    "opponent_manager_fullname": "Jeremy Harding",
+                    "opponent_team_name": "Costabomb Athletico"
+                },
+                "29": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "2383929",
+                    "opponent_manager_fullname": "Sean Murphy",
+                    "opponent_team_name": "Nodramallama"
+                },
+                "30": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "2392307",
+                    "opponent_manager_fullname": "Lisa Murphy",
+                    "opponent_team_name": "Pukki Blinders"
+                },
+                "31": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "1903138",
+                    "opponent_manager_fullname": "Sammy Murphy",
+                    "opponent_team_name": "West Sam"
+                },
+                "32": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "781653",
+                    "opponent_manager_fullname": "Taylor Fenn",
+                    "opponent_team_name": "Fenny FC"
+                },
+                "33": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "1975239",
+                    "opponent_manager_fullname": "Chris Johnson",
+                    "opponent_team_name": "Ndombelieve it"
+                },
+                "34": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "2363025",
+                    "opponent_manager_fullname": "James Murphy",
+                    "opponent_team_name": "Multiple Scoregasms"
+                },
+                "35": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "420605",
+                    "opponent_manager_fullname": "Richard Walker",
+                    "opponent_team_name": "Bethnal Green United"
+                },
+                "36": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "494633",
+                    "opponent_manager_fullname": "Hugh Robertson",
+                    "opponent_team_name": "MC Hammer"
+                },
+                "37": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "1903138",
+                    "opponent_manager_fullname": "Sammy Murphy",
+                    "opponent_team_name": "West Sam"
+                },
+                "38": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "55259",
+                    "opponent_manager_fullname": "Jeremy Harding",
+                    "opponent_team_name": "Costabomb Athletico"
+                }
+            },
+            "manager_info": {
+                "fpl_code": "2052490",
+                "manager_firstname": "Ben",
+                "manager_fullname": "Ben Smith",
+                "manager_surname": "Smith",
+                "team_name": "SMITHYS XI"
+            }
+        },
+        "2363025": {
+            "fixtures": {
+                "01": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "420605",
+                    "opponent_manager_fullname": "Richard Walker",
+                    "opponent_team_name": "Bethnal Green United"
+                },
+                "02": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "781653",
+                    "opponent_manager_fullname": "Taylor Fenn",
+                    "opponent_team_name": "Fenny FC"
+                },
+                "03": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "494633",
+                    "opponent_manager_fullname": "Hugh Robertson",
+                    "opponent_team_name": "MC Hammer"
+                },
+                "04": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "2392307",
+                    "opponent_manager_fullname": "Lisa Murphy",
+                    "opponent_team_name": "Pukki Blinders"
+                },
+                "05": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "55259",
+                    "opponent_manager_fullname": "Jeremy Harding",
+                    "opponent_team_name": "Costabomb Athletico"
+                },
+                "06": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "2383929",
+                    "opponent_manager_fullname": "Sean Murphy",
+                    "opponent_team_name": "Nodramallama"
+                },
+                "07": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "2052490",
+                    "opponent_manager_fullname": "Ben Smith",
+                    "opponent_team_name": "SMITHYS XI"
+                },
+                "08": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "1903138",
+                    "opponent_manager_fullname": "Sammy Murphy",
+                    "opponent_team_name": "West Sam"
+                },
+                "09": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "1975239",
+                    "opponent_manager_fullname": "Chris Johnson",
+                    "opponent_team_name": "Ndombelieve it"
+                },
+                "10": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "420605",
+                    "opponent_manager_fullname": "Richard Walker",
+                    "opponent_team_name": "Bethnal Green United"
+                },
+                "11": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "781653",
+                    "opponent_manager_fullname": "Taylor Fenn",
+                    "opponent_team_name": "Fenny FC"
+                },
+                "12": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "494633",
+                    "opponent_manager_fullname": "Hugh Robertson",
+                    "opponent_team_name": "MC Hammer"
+                },
+                "13": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "2392307",
+                    "opponent_manager_fullname": "Lisa Murphy",
+                    "opponent_team_name": "Pukki Blinders"
+                },
+                "14": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "55259",
+                    "opponent_manager_fullname": "Jeremy Harding",
+                    "opponent_team_name": "Costabomb Athletico"
+                },
+                "15": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "2383929",
+                    "opponent_manager_fullname": "Sean Murphy",
+                    "opponent_team_name": "Nodramallama"
+                },
+                "16": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "2052490",
+                    "opponent_manager_fullname": "Ben Smith",
+                    "opponent_team_name": "SMITHYS XI"
+                },
+                "17": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "1903138",
+                    "opponent_manager_fullname": "Sammy Murphy",
+                    "opponent_team_name": "West Sam"
+                },
+                "18": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "1975239",
+                    "opponent_manager_fullname": "Chris Johnson",
+                    "opponent_team_name": "Ndombelieve it"
+                },
+                "19": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "420605",
+                    "opponent_manager_fullname": "Richard Walker",
+                    "opponent_team_name": "Bethnal Green United"
+                },
+                "20": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "781653",
+                    "opponent_manager_fullname": "Taylor Fenn",
+                    "opponent_team_name": "Fenny FC"
+                },
+                "21": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "494633",
+                    "opponent_manager_fullname": "Hugh Robertson",
+                    "opponent_team_name": "MC Hammer"
+                },
+                "22": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "2392307",
+                    "opponent_manager_fullname": "Lisa Murphy",
+                    "opponent_team_name": "Pukki Blinders"
+                },
+                "23": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "55259",
+                    "opponent_manager_fullname": "Jeremy Harding",
+                    "opponent_team_name": "Costabomb Athletico"
+                },
+                "24": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "2383929",
+                    "opponent_manager_fullname": "Sean Murphy",
+                    "opponent_team_name": "Nodramallama"
+                },
+                "25": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "2052490",
+                    "opponent_manager_fullname": "Ben Smith",
+                    "opponent_team_name": "SMITHYS XI"
+                },
+                "26": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "1903138",
+                    "opponent_manager_fullname": "Sammy Murphy",
+                    "opponent_team_name": "West Sam"
+                },
+                "27": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "1975239",
+                    "opponent_manager_fullname": "Chris Johnson",
+                    "opponent_team_name": "Ndombelieve it"
+                },
+                "28": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "420605",
+                    "opponent_manager_fullname": "Richard Walker",
+                    "opponent_team_name": "Bethnal Green United"
+                },
+                "29": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "781653",
+                    "opponent_manager_fullname": "Taylor Fenn",
+                    "opponent_team_name": "Fenny FC"
+                },
+                "30": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "494633",
+                    "opponent_manager_fullname": "Hugh Robertson",
+                    "opponent_team_name": "MC Hammer"
+                },
+                "31": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "2392307",
+                    "opponent_manager_fullname": "Lisa Murphy",
+                    "opponent_team_name": "Pukki Blinders"
+                },
+                "32": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "55259",
+                    "opponent_manager_fullname": "Jeremy Harding",
+                    "opponent_team_name": "Costabomb Athletico"
+                },
+                "33": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "2383929",
+                    "opponent_manager_fullname": "Sean Murphy",
+                    "opponent_team_name": "Nodramallama"
+                },
+                "34": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "2052490",
+                    "opponent_manager_fullname": "Ben Smith",
+                    "opponent_team_name": "SMITHYS XI"
+                },
+                "35": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "1903138",
+                    "opponent_manager_fullname": "Sammy Murphy",
+                    "opponent_team_name": "West Sam"
+                },
+                "36": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "1975239",
+                    "opponent_manager_fullname": "Chris Johnson",
+                    "opponent_team_name": "Ndombelieve it"
+                },
+                "37": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "2392307",
+                    "opponent_manager_fullname": "Lisa Murphy",
+                    "opponent_team_name": "Pukki Blinders"
+                },
+                "38": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "420605",
+                    "opponent_manager_fullname": "Richard Walker",
+                    "opponent_team_name": "Bethnal Green United"
+                }
+            },
+            "manager_info": {
+                "fpl_code": "2363025",
+                "manager_firstname": "James",
+                "manager_fullname": "James Murphy",
+                "manager_surname": "Murphy",
+                "team_name": "Multiple Scoregasms"
+            }
+        },
+        "2383929": {
+            "fixtures": {
+                "01": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "1975239",
+                    "opponent_manager_fullname": "Chris Johnson",
+                    "opponent_team_name": "Ndombelieve it"
+                },
+                "02": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "2052490",
+                    "opponent_manager_fullname": "Ben Smith",
+                    "opponent_team_name": "SMITHYS XI"
+                },
+                "03": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "420605",
+                    "opponent_manager_fullname": "Richard Walker",
+                    "opponent_team_name": "Bethnal Green United"
+                },
+                "04": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "781653",
+                    "opponent_manager_fullname": "Taylor Fenn",
+                    "opponent_team_name": "Fenny FC"
+                },
+                "05": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "494633",
+                    "opponent_manager_fullname": "Hugh Robertson",
+                    "opponent_team_name": "MC Hammer"
+                },
+                "06": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "2363025",
+                    "opponent_manager_fullname": "James Murphy",
+                    "opponent_team_name": "Multiple Scoregasms"
+                },
+                "07": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "55259",
+                    "opponent_manager_fullname": "Jeremy Harding",
+                    "opponent_team_name": "Costabomb Athletico"
+                },
+                "08": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "2392307",
+                    "opponent_manager_fullname": "Lisa Murphy",
+                    "opponent_team_name": "Pukki Blinders"
+                },
+                "09": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "1903138",
+                    "opponent_manager_fullname": "Sammy Murphy",
+                    "opponent_team_name": "West Sam"
+                },
+                "10": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "1975239",
+                    "opponent_manager_fullname": "Chris Johnson",
+                    "opponent_team_name": "Ndombelieve it"
+                },
+                "11": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "2052490",
+                    "opponent_manager_fullname": "Ben Smith",
+                    "opponent_team_name": "SMITHYS XI"
+                },
+                "12": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "420605",
+                    "opponent_manager_fullname": "Richard Walker",
+                    "opponent_team_name": "Bethnal Green United"
+                },
+                "13": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "781653",
+                    "opponent_manager_fullname": "Taylor Fenn",
+                    "opponent_team_name": "Fenny FC"
+                },
+                "14": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "494633",
+                    "opponent_manager_fullname": "Hugh Robertson",
+                    "opponent_team_name": "MC Hammer"
+                },
+                "15": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "2363025",
+                    "opponent_manager_fullname": "James Murphy",
+                    "opponent_team_name": "Multiple Scoregasms"
+                },
+                "16": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "55259",
+                    "opponent_manager_fullname": "Jeremy Harding",
+                    "opponent_team_name": "Costabomb Athletico"
+                },
+                "17": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "2392307",
+                    "opponent_manager_fullname": "Lisa Murphy",
+                    "opponent_team_name": "Pukki Blinders"
+                },
+                "18": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "1903138",
+                    "opponent_manager_fullname": "Sammy Murphy",
+                    "opponent_team_name": "West Sam"
+                },
+                "19": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "1975239",
+                    "opponent_manager_fullname": "Chris Johnson",
+                    "opponent_team_name": "Ndombelieve it"
+                },
+                "20": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "2052490",
+                    "opponent_manager_fullname": "Ben Smith",
+                    "opponent_team_name": "SMITHYS XI"
+                },
+                "21": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "420605",
+                    "opponent_manager_fullname": "Richard Walker",
+                    "opponent_team_name": "Bethnal Green United"
+                },
+                "22": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "781653",
+                    "opponent_manager_fullname": "Taylor Fenn",
+                    "opponent_team_name": "Fenny FC"
+                },
+                "23": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "494633",
+                    "opponent_manager_fullname": "Hugh Robertson",
+                    "opponent_team_name": "MC Hammer"
+                },
+                "24": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "2363025",
+                    "opponent_manager_fullname": "James Murphy",
+                    "opponent_team_name": "Multiple Scoregasms"
+                },
+                "25": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "55259",
+                    "opponent_manager_fullname": "Jeremy Harding",
+                    "opponent_team_name": "Costabomb Athletico"
+                },
+                "26": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "2392307",
+                    "opponent_manager_fullname": "Lisa Murphy",
+                    "opponent_team_name": "Pukki Blinders"
+                },
+                "27": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "1903138",
+                    "opponent_manager_fullname": "Sammy Murphy",
+                    "opponent_team_name": "West Sam"
+                },
+                "28": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "1975239",
+                    "opponent_manager_fullname": "Chris Johnson",
+                    "opponent_team_name": "Ndombelieve it"
+                },
+                "29": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "2052490",
+                    "opponent_manager_fullname": "Ben Smith",
+                    "opponent_team_name": "SMITHYS XI"
+                },
+                "30": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "420605",
+                    "opponent_manager_fullname": "Richard Walker",
+                    "opponent_team_name": "Bethnal Green United"
+                },
+                "31": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "781653",
+                    "opponent_manager_fullname": "Taylor Fenn",
+                    "opponent_team_name": "Fenny FC"
+                },
+                "32": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "494633",
+                    "opponent_manager_fullname": "Hugh Robertson",
+                    "opponent_team_name": "MC Hammer"
+                },
+                "33": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "2363025",
+                    "opponent_manager_fullname": "James Murphy",
+                    "opponent_team_name": "Multiple Scoregasms"
+                },
+                "34": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "55259",
+                    "opponent_manager_fullname": "Jeremy Harding",
+                    "opponent_team_name": "Costabomb Athletico"
+                },
+                "35": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "2392307",
+                    "opponent_manager_fullname": "Lisa Murphy",
+                    "opponent_team_name": "Pukki Blinders"
+                },
+                "36": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "1903138",
+                    "opponent_manager_fullname": "Sammy Murphy",
+                    "opponent_team_name": "West Sam"
+                },
+                "37": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "781653",
+                    "opponent_manager_fullname": "Taylor Fenn",
+                    "opponent_team_name": "Fenny FC"
+                },
+                "38": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "1975239",
+                    "opponent_manager_fullname": "Chris Johnson",
+                    "opponent_team_name": "Ndombelieve it"
+                }
+            },
+            "manager_info": {
+                "fpl_code": "2383929",
+                "manager_firstname": "Sean",
+                "manager_fullname": "Sean Murphy",
+                "manager_surname": "Murphy",
+                "team_name": "Nodramallama"
+            }
+        },
+        "2392307": {
+            "fixtures": {
+                "01": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "1903138",
+                    "opponent_manager_fullname": "Sammy Murphy",
+                    "opponent_team_name": "West Sam"
+                },
+                "02": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "420605",
+                    "opponent_manager_fullname": "Richard Walker",
+                    "opponent_team_name": "Bethnal Green United"
+                },
+                "03": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "2052490",
+                    "opponent_manager_fullname": "Ben Smith",
+                    "opponent_team_name": "SMITHYS XI"
+                },
+                "04": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "2363025",
+                    "opponent_manager_fullname": "James Murphy",
+                    "opponent_team_name": "Multiple Scoregasms"
+                },
+                "05": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "1975239",
+                    "opponent_manager_fullname": "Chris Johnson",
+                    "opponent_team_name": "Ndombelieve it"
+                },
+                "06": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "494633",
+                    "opponent_manager_fullname": "Hugh Robertson",
+                    "opponent_team_name": "MC Hammer"
+                },
+                "07": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "781653",
+                    "opponent_manager_fullname": "Taylor Fenn",
+                    "opponent_team_name": "Fenny FC"
+                },
+                "08": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "2383929",
+                    "opponent_manager_fullname": "Sean Murphy",
+                    "opponent_team_name": "Nodramallama"
+                },
+                "09": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "55259",
+                    "opponent_manager_fullname": "Jeremy Harding",
+                    "opponent_team_name": "Costabomb Athletico"
+                },
+                "10": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "1903138",
+                    "opponent_manager_fullname": "Sammy Murphy",
+                    "opponent_team_name": "West Sam"
+                },
+                "11": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "420605",
+                    "opponent_manager_fullname": "Richard Walker",
+                    "opponent_team_name": "Bethnal Green United"
+                },
+                "12": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "2052490",
+                    "opponent_manager_fullname": "Ben Smith",
+                    "opponent_team_name": "SMITHYS XI"
+                },
+                "13": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "2363025",
+                    "opponent_manager_fullname": "James Murphy",
+                    "opponent_team_name": "Multiple Scoregasms"
+                },
+                "14": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "1975239",
+                    "opponent_manager_fullname": "Chris Johnson",
+                    "opponent_team_name": "Ndombelieve it"
+                },
+                "15": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "494633",
+                    "opponent_manager_fullname": "Hugh Robertson",
+                    "opponent_team_name": "MC Hammer"
+                },
+                "16": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "781653",
+                    "opponent_manager_fullname": "Taylor Fenn",
+                    "opponent_team_name": "Fenny FC"
+                },
+                "17": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "2383929",
+                    "opponent_manager_fullname": "Sean Murphy",
+                    "opponent_team_name": "Nodramallama"
+                },
+                "18": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "55259",
+                    "opponent_manager_fullname": "Jeremy Harding",
+                    "opponent_team_name": "Costabomb Athletico"
+                },
+                "19": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "1903138",
+                    "opponent_manager_fullname": "Sammy Murphy",
+                    "opponent_team_name": "West Sam"
+                },
+                "20": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "420605",
+                    "opponent_manager_fullname": "Richard Walker",
+                    "opponent_team_name": "Bethnal Green United"
+                },
+                "21": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "2052490",
+                    "opponent_manager_fullname": "Ben Smith",
+                    "opponent_team_name": "SMITHYS XI"
+                },
+                "22": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "2363025",
+                    "opponent_manager_fullname": "James Murphy",
+                    "opponent_team_name": "Multiple Scoregasms"
+                },
+                "23": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "1975239",
+                    "opponent_manager_fullname": "Chris Johnson",
+                    "opponent_team_name": "Ndombelieve it"
+                },
+                "24": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "494633",
+                    "opponent_manager_fullname": "Hugh Robertson",
+                    "opponent_team_name": "MC Hammer"
+                },
+                "25": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "781653",
+                    "opponent_manager_fullname": "Taylor Fenn",
+                    "opponent_team_name": "Fenny FC"
+                },
+                "26": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "2383929",
+                    "opponent_manager_fullname": "Sean Murphy",
+                    "opponent_team_name": "Nodramallama"
+                },
+                "27": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "55259",
+                    "opponent_manager_fullname": "Jeremy Harding",
+                    "opponent_team_name": "Costabomb Athletico"
+                },
+                "28": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "1903138",
+                    "opponent_manager_fullname": "Sammy Murphy",
+                    "opponent_team_name": "West Sam"
+                },
+                "29": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "420605",
+                    "opponent_manager_fullname": "Richard Walker",
+                    "opponent_team_name": "Bethnal Green United"
+                },
+                "30": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "2052490",
+                    "opponent_manager_fullname": "Ben Smith",
+                    "opponent_team_name": "SMITHYS XI"
+                },
+                "31": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "2363025",
+                    "opponent_manager_fullname": "James Murphy",
+                    "opponent_team_name": "Multiple Scoregasms"
+                },
+                "32": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "1975239",
+                    "opponent_manager_fullname": "Chris Johnson",
+                    "opponent_team_name": "Ndombelieve it"
+                },
+                "33": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "494633",
+                    "opponent_manager_fullname": "Hugh Robertson",
+                    "opponent_team_name": "MC Hammer"
+                },
+                "34": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "781653",
+                    "opponent_manager_fullname": "Taylor Fenn",
+                    "opponent_team_name": "Fenny FC"
+                },
+                "35": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "2383929",
+                    "opponent_manager_fullname": "Sean Murphy",
+                    "opponent_team_name": "Nodramallama"
+                },
+                "36": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "55259",
+                    "opponent_manager_fullname": "Jeremy Harding",
+                    "opponent_team_name": "Costabomb Athletico"
+                },
+                "37": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "2363025",
+                    "opponent_manager_fullname": "James Murphy",
+                    "opponent_team_name": "Multiple Scoregasms"
+                },
+                "38": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "1903138",
+                    "opponent_manager_fullname": "Sammy Murphy",
+                    "opponent_team_name": "West Sam"
+                }
+            },
+            "manager_info": {
+                "fpl_code": "2392307",
+                "manager_firstname": "Lisa",
+                "manager_fullname": "Lisa Murphy",
+                "manager_surname": "Murphy",
+                "team_name": "Pukki Blinders"
+            }
+        },
+        "420605": {
+            "fixtures": {
+                "01": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "2363025",
+                    "opponent_manager_fullname": "James Murphy",
+                    "opponent_team_name": "Multiple Scoregasms"
+                },
+                "02": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "2392307",
+                    "opponent_manager_fullname": "Lisa Murphy",
+                    "opponent_team_name": "Pukki Blinders"
+                },
+                "03": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "2383929",
+                    "opponent_manager_fullname": "Sean Murphy",
+                    "opponent_team_name": "Nodramallama"
+                },
+                "04": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "494633",
+                    "opponent_manager_fullname": "Hugh Robertson",
+                    "opponent_team_name": "MC Hammer"
+                },
+                "05": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "1903138",
+                    "opponent_manager_fullname": "Sammy Murphy",
+                    "opponent_team_name": "West Sam"
+                },
+                "06": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "55259",
+                    "opponent_manager_fullname": "Jeremy Harding",
+                    "opponent_team_name": "Costabomb Athletico"
+                },
+                "07": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "1975239",
+                    "opponent_manager_fullname": "Chris Johnson",
+                    "opponent_team_name": "Ndombelieve it"
+                },
+                "08": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "2052490",
+                    "opponent_manager_fullname": "Ben Smith",
+                    "opponent_team_name": "SMITHYS XI"
+                },
+                "09": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "781653",
+                    "opponent_manager_fullname": "Taylor Fenn",
+                    "opponent_team_name": "Fenny FC"
+                },
+                "10": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "2363025",
+                    "opponent_manager_fullname": "James Murphy",
+                    "opponent_team_name": "Multiple Scoregasms"
+                },
+                "11": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "2392307",
+                    "opponent_manager_fullname": "Lisa Murphy",
+                    "opponent_team_name": "Pukki Blinders"
+                },
+                "12": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "2383929",
+                    "opponent_manager_fullname": "Sean Murphy",
+                    "opponent_team_name": "Nodramallama"
+                },
+                "13": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "494633",
+                    "opponent_manager_fullname": "Hugh Robertson",
+                    "opponent_team_name": "MC Hammer"
+                },
+                "14": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "1903138",
+                    "opponent_manager_fullname": "Sammy Murphy",
+                    "opponent_team_name": "West Sam"
+                },
+                "15": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "55259",
+                    "opponent_manager_fullname": "Jeremy Harding",
+                    "opponent_team_name": "Costabomb Athletico"
+                },
+                "16": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "1975239",
+                    "opponent_manager_fullname": "Chris Johnson",
+                    "opponent_team_name": "Ndombelieve it"
+                },
+                "17": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "2052490",
+                    "opponent_manager_fullname": "Ben Smith",
+                    "opponent_team_name": "SMITHYS XI"
+                },
+                "18": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "781653",
+                    "opponent_manager_fullname": "Taylor Fenn",
+                    "opponent_team_name": "Fenny FC"
+                },
+                "19": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "2363025",
+                    "opponent_manager_fullname": "James Murphy",
+                    "opponent_team_name": "Multiple Scoregasms"
+                },
+                "20": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "2392307",
+                    "opponent_manager_fullname": "Lisa Murphy",
+                    "opponent_team_name": "Pukki Blinders"
+                },
+                "21": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "2383929",
+                    "opponent_manager_fullname": "Sean Murphy",
+                    "opponent_team_name": "Nodramallama"
+                },
+                "22": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "494633",
+                    "opponent_manager_fullname": "Hugh Robertson",
+                    "opponent_team_name": "MC Hammer"
+                },
+                "23": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "1903138",
+                    "opponent_manager_fullname": "Sammy Murphy",
+                    "opponent_team_name": "West Sam"
+                },
+                "24": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "55259",
+                    "opponent_manager_fullname": "Jeremy Harding",
+                    "opponent_team_name": "Costabomb Athletico"
+                },
+                "25": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "1975239",
+                    "opponent_manager_fullname": "Chris Johnson",
+                    "opponent_team_name": "Ndombelieve it"
+                },
+                "26": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "2052490",
+                    "opponent_manager_fullname": "Ben Smith",
+                    "opponent_team_name": "SMITHYS XI"
+                },
+                "27": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "781653",
+                    "opponent_manager_fullname": "Taylor Fenn",
+                    "opponent_team_name": "Fenny FC"
+                },
+                "28": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "2363025",
+                    "opponent_manager_fullname": "James Murphy",
+                    "opponent_team_name": "Multiple Scoregasms"
+                },
+                "29": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "2392307",
+                    "opponent_manager_fullname": "Lisa Murphy",
+                    "opponent_team_name": "Pukki Blinders"
+                },
+                "30": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "2383929",
+                    "opponent_manager_fullname": "Sean Murphy",
+                    "opponent_team_name": "Nodramallama"
+                },
+                "31": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "494633",
+                    "opponent_manager_fullname": "Hugh Robertson",
+                    "opponent_team_name": "MC Hammer"
+                },
+                "32": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "1903138",
+                    "opponent_manager_fullname": "Sammy Murphy",
+                    "opponent_team_name": "West Sam"
+                },
+                "33": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "55259",
+                    "opponent_manager_fullname": "Jeremy Harding",
+                    "opponent_team_name": "Costabomb Athletico"
+                },
+                "34": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "1975239",
+                    "opponent_manager_fullname": "Chris Johnson",
+                    "opponent_team_name": "Ndombelieve it"
+                },
+                "35": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "2052490",
+                    "opponent_manager_fullname": "Ben Smith",
+                    "opponent_team_name": "SMITHYS XI"
+                },
+                "36": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "781653",
+                    "opponent_manager_fullname": "Taylor Fenn",
+                    "opponent_team_name": "Fenny FC"
+                },
+                "37": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "494633",
+                    "opponent_manager_fullname": "Hugh Robertson",
+                    "opponent_team_name": "MC Hammer"
+                },
+                "38": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "2363025",
+                    "opponent_manager_fullname": "James Murphy",
+                    "opponent_team_name": "Multiple Scoregasms"
+                }
+            },
+            "manager_info": {
+                "fpl_code": "420605",
+                "manager_firstname": "Richard",
+                "manager_fullname": "Richard Walker",
+                "manager_surname": "Walker",
+                "team_name": "Bethnal Green United"
+            }
+        },
+        "494633": {
+            "fixtures": {
+                "01": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "781653",
+                    "opponent_manager_fullname": "Taylor Fenn",
+                    "opponent_team_name": "Fenny FC"
+                },
+                "02": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "1975239",
+                    "opponent_manager_fullname": "Chris Johnson",
+                    "opponent_team_name": "Ndombelieve it"
+                },
+                "03": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "2363025",
+                    "opponent_manager_fullname": "James Murphy",
+                    "opponent_team_name": "Multiple Scoregasms"
+                },
+                "04": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "420605",
+                    "opponent_manager_fullname": "Richard Walker",
+                    "opponent_team_name": "Bethnal Green United"
+                },
+                "05": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "2383929",
+                    "opponent_manager_fullname": "Sean Murphy",
+                    "opponent_team_name": "Nodramallama"
+                },
+                "06": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "2392307",
+                    "opponent_manager_fullname": "Lisa Murphy",
+                    "opponent_team_name": "Pukki Blinders"
+                },
+                "07": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "1903138",
+                    "opponent_manager_fullname": "Sammy Murphy",
+                    "opponent_team_name": "West Sam"
+                },
+                "08": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "55259",
+                    "opponent_manager_fullname": "Jeremy Harding",
+                    "opponent_team_name": "Costabomb Athletico"
+                },
+                "09": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "2052490",
+                    "opponent_manager_fullname": "Ben Smith",
+                    "opponent_team_name": "SMITHYS XI"
+                },
+                "10": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "781653",
+                    "opponent_manager_fullname": "Taylor Fenn",
+                    "opponent_team_name": "Fenny FC"
+                },
+                "11": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "1975239",
+                    "opponent_manager_fullname": "Chris Johnson",
+                    "opponent_team_name": "Ndombelieve it"
+                },
+                "12": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "2363025",
+                    "opponent_manager_fullname": "James Murphy",
+                    "opponent_team_name": "Multiple Scoregasms"
+                },
+                "13": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "420605",
+                    "opponent_manager_fullname": "Richard Walker",
+                    "opponent_team_name": "Bethnal Green United"
+                },
+                "14": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "2383929",
+                    "opponent_manager_fullname": "Sean Murphy",
+                    "opponent_team_name": "Nodramallama"
+                },
+                "15": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "2392307",
+                    "opponent_manager_fullname": "Lisa Murphy",
+                    "opponent_team_name": "Pukki Blinders"
+                },
+                "16": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "1903138",
+                    "opponent_manager_fullname": "Sammy Murphy",
+                    "opponent_team_name": "West Sam"
+                },
+                "17": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "55259",
+                    "opponent_manager_fullname": "Jeremy Harding",
+                    "opponent_team_name": "Costabomb Athletico"
+                },
+                "18": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "2052490",
+                    "opponent_manager_fullname": "Ben Smith",
+                    "opponent_team_name": "SMITHYS XI"
+                },
+                "19": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "781653",
+                    "opponent_manager_fullname": "Taylor Fenn",
+                    "opponent_team_name": "Fenny FC"
+                },
+                "20": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "1975239",
+                    "opponent_manager_fullname": "Chris Johnson",
+                    "opponent_team_name": "Ndombelieve it"
+                },
+                "21": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "2363025",
+                    "opponent_manager_fullname": "James Murphy",
+                    "opponent_team_name": "Multiple Scoregasms"
+                },
+                "22": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "420605",
+                    "opponent_manager_fullname": "Richard Walker",
+                    "opponent_team_name": "Bethnal Green United"
+                },
+                "23": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "2383929",
+                    "opponent_manager_fullname": "Sean Murphy",
+                    "opponent_team_name": "Nodramallama"
+                },
+                "24": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "2392307",
+                    "opponent_manager_fullname": "Lisa Murphy",
+                    "opponent_team_name": "Pukki Blinders"
+                },
+                "25": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "1903138",
+                    "opponent_manager_fullname": "Sammy Murphy",
+                    "opponent_team_name": "West Sam"
+                },
+                "26": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "55259",
+                    "opponent_manager_fullname": "Jeremy Harding",
+                    "opponent_team_name": "Costabomb Athletico"
+                },
+                "27": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "2052490",
+                    "opponent_manager_fullname": "Ben Smith",
+                    "opponent_team_name": "SMITHYS XI"
+                },
+                "28": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "781653",
+                    "opponent_manager_fullname": "Taylor Fenn",
+                    "opponent_team_name": "Fenny FC"
+                },
+                "29": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "1975239",
+                    "opponent_manager_fullname": "Chris Johnson",
+                    "opponent_team_name": "Ndombelieve it"
+                },
+                "30": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "2363025",
+                    "opponent_manager_fullname": "James Murphy",
+                    "opponent_team_name": "Multiple Scoregasms"
+                },
+                "31": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "420605",
+                    "opponent_manager_fullname": "Richard Walker",
+                    "opponent_team_name": "Bethnal Green United"
+                },
+                "32": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "2383929",
+                    "opponent_manager_fullname": "Sean Murphy",
+                    "opponent_team_name": "Nodramallama"
+                },
+                "33": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "2392307",
+                    "opponent_manager_fullname": "Lisa Murphy",
+                    "opponent_team_name": "Pukki Blinders"
+                },
+                "34": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "1903138",
+                    "opponent_manager_fullname": "Sammy Murphy",
+                    "opponent_team_name": "West Sam"
+                },
+                "35": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "55259",
+                    "opponent_manager_fullname": "Jeremy Harding",
+                    "opponent_team_name": "Costabomb Athletico"
+                },
+                "36": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "2052490",
+                    "opponent_manager_fullname": "Ben Smith",
+                    "opponent_team_name": "SMITHYS XI"
+                },
+                "37": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "420605",
+                    "opponent_manager_fullname": "Richard Walker",
+                    "opponent_team_name": "Bethnal Green United"
+                },
+                "38": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "781653",
+                    "opponent_manager_fullname": "Taylor Fenn",
+                    "opponent_team_name": "Fenny FC"
+                }
+            },
+            "manager_info": {
+                "fpl_code": "494633",
+                "manager_firstname": "Hugh",
+                "manager_fullname": "Hugh Robertson",
+                "manager_surname": "Robertson",
+                "team_name": "MC Hammer"
+            }
+        },
+        "55259": {
+            "fixtures": {
+                "01": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "2052490",
+                    "opponent_manager_fullname": "Ben Smith",
+                    "opponent_team_name": "SMITHYS XI"
+                },
+                "02": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "1903138",
+                    "opponent_manager_fullname": "Sammy Murphy",
+                    "opponent_team_name": "West Sam"
+                },
+                "03": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "781653",
+                    "opponent_manager_fullname": "Taylor Fenn",
+                    "opponent_team_name": "Fenny FC"
+                },
+                "04": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "1975239",
+                    "opponent_manager_fullname": "Chris Johnson",
+                    "opponent_team_name": "Ndombelieve it"
+                },
+                "05": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "2363025",
+                    "opponent_manager_fullname": "James Murphy",
+                    "opponent_team_name": "Multiple Scoregasms"
+                },
+                "06": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "420605",
+                    "opponent_manager_fullname": "Richard Walker",
+                    "opponent_team_name": "Bethnal Green United"
+                },
+                "07": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "2383929",
+                    "opponent_manager_fullname": "Sean Murphy",
+                    "opponent_team_name": "Nodramallama"
+                },
+                "08": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "494633",
+                    "opponent_manager_fullname": "Hugh Robertson",
+                    "opponent_team_name": "MC Hammer"
+                },
+                "09": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "2392307",
+                    "opponent_manager_fullname": "Lisa Murphy",
+                    "opponent_team_name": "Pukki Blinders"
+                },
+                "10": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "2052490",
+                    "opponent_manager_fullname": "Ben Smith",
+                    "opponent_team_name": "SMITHYS XI"
+                },
+                "11": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "1903138",
+                    "opponent_manager_fullname": "Sammy Murphy",
+                    "opponent_team_name": "West Sam"
+                },
+                "12": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "781653",
+                    "opponent_manager_fullname": "Taylor Fenn",
+                    "opponent_team_name": "Fenny FC"
+                },
+                "13": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "1975239",
+                    "opponent_manager_fullname": "Chris Johnson",
+                    "opponent_team_name": "Ndombelieve it"
+                },
+                "14": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "2363025",
+                    "opponent_manager_fullname": "James Murphy",
+                    "opponent_team_name": "Multiple Scoregasms"
+                },
+                "15": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "420605",
+                    "opponent_manager_fullname": "Richard Walker",
+                    "opponent_team_name": "Bethnal Green United"
+                },
+                "16": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "2383929",
+                    "opponent_manager_fullname": "Sean Murphy",
+                    "opponent_team_name": "Nodramallama"
+                },
+                "17": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "494633",
+                    "opponent_manager_fullname": "Hugh Robertson",
+                    "opponent_team_name": "MC Hammer"
+                },
+                "18": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "2392307",
+                    "opponent_manager_fullname": "Lisa Murphy",
+                    "opponent_team_name": "Pukki Blinders"
+                },
+                "19": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "2052490",
+                    "opponent_manager_fullname": "Ben Smith",
+                    "opponent_team_name": "SMITHYS XI"
+                },
+                "20": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "1903138",
+                    "opponent_manager_fullname": "Sammy Murphy",
+                    "opponent_team_name": "West Sam"
+                },
+                "21": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "781653",
+                    "opponent_manager_fullname": "Taylor Fenn",
+                    "opponent_team_name": "Fenny FC"
+                },
+                "22": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "1975239",
+                    "opponent_manager_fullname": "Chris Johnson",
+                    "opponent_team_name": "Ndombelieve it"
+                },
+                "23": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "2363025",
+                    "opponent_manager_fullname": "James Murphy",
+                    "opponent_team_name": "Multiple Scoregasms"
+                },
+                "24": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "420605",
+                    "opponent_manager_fullname": "Richard Walker",
+                    "opponent_team_name": "Bethnal Green United"
+                },
+                "25": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "2383929",
+                    "opponent_manager_fullname": "Sean Murphy",
+                    "opponent_team_name": "Nodramallama"
+                },
+                "26": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "494633",
+                    "opponent_manager_fullname": "Hugh Robertson",
+                    "opponent_team_name": "MC Hammer"
+                },
+                "27": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "2392307",
+                    "opponent_manager_fullname": "Lisa Murphy",
+                    "opponent_team_name": "Pukki Blinders"
+                },
+                "28": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "2052490",
+                    "opponent_manager_fullname": "Ben Smith",
+                    "opponent_team_name": "SMITHYS XI"
+                },
+                "29": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "1903138",
+                    "opponent_manager_fullname": "Sammy Murphy",
+                    "opponent_team_name": "West Sam"
+                },
+                "30": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "781653",
+                    "opponent_manager_fullname": "Taylor Fenn",
+                    "opponent_team_name": "Fenny FC"
+                },
+                "31": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "1975239",
+                    "opponent_manager_fullname": "Chris Johnson",
+                    "opponent_team_name": "Ndombelieve it"
+                },
+                "32": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "2363025",
+                    "opponent_manager_fullname": "James Murphy",
+                    "opponent_team_name": "Multiple Scoregasms"
+                },
+                "33": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "420605",
+                    "opponent_manager_fullname": "Richard Walker",
+                    "opponent_team_name": "Bethnal Green United"
+                },
+                "34": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "2383929",
+                    "opponent_manager_fullname": "Sean Murphy",
+                    "opponent_team_name": "Nodramallama"
+                },
+                "35": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "494633",
+                    "opponent_manager_fullname": "Hugh Robertson",
+                    "opponent_team_name": "MC Hammer"
+                },
+                "36": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "2392307",
+                    "opponent_manager_fullname": "Lisa Murphy",
+                    "opponent_team_name": "Pukki Blinders"
+                },
+                "37": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "1975239",
+                    "opponent_manager_fullname": "Chris Johnson",
+                    "opponent_team_name": "Ndombelieve it"
+                },
+                "38": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "2052490",
+                    "opponent_manager_fullname": "Ben Smith",
+                    "opponent_team_name": "SMITHYS XI"
+                }
+            },
+            "manager_info": {
+                "fpl_code": "55259",
+                "manager_firstname": "Jeremy",
+                "manager_fullname": "Jeremy Harding",
+                "manager_surname": "Harding",
+                "team_name": "Costabomb Athletico"
+            }
+        },
+        "781653": {
+            "fixtures": {
+                "01": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "494633",
+                    "opponent_manager_fullname": "Hugh Robertson",
+                    "opponent_team_name": "MC Hammer"
+                },
+                "02": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "2363025",
+                    "opponent_manager_fullname": "James Murphy",
+                    "opponent_team_name": "Multiple Scoregasms"
+                },
+                "03": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "55259",
+                    "opponent_manager_fullname": "Jeremy Harding",
+                    "opponent_team_name": "Costabomb Athletico"
+                },
+                "04": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "2383929",
+                    "opponent_manager_fullname": "Sean Murphy",
+                    "opponent_team_name": "Nodramallama"
+                },
+                "05": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "2052490",
+                    "opponent_manager_fullname": "Ben Smith",
+                    "opponent_team_name": "SMITHYS XI"
+                },
+                "06": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "1903138",
+                    "opponent_manager_fullname": "Sammy Murphy",
+                    "opponent_team_name": "West Sam"
+                },
+                "07": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "2392307",
+                    "opponent_manager_fullname": "Lisa Murphy",
+                    "opponent_team_name": "Pukki Blinders"
+                },
+                "08": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "1975239",
+                    "opponent_manager_fullname": "Chris Johnson",
+                    "opponent_team_name": "Ndombelieve it"
+                },
+                "09": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "420605",
+                    "opponent_manager_fullname": "Richard Walker",
+                    "opponent_team_name": "Bethnal Green United"
+                },
+                "10": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "494633",
+                    "opponent_manager_fullname": "Hugh Robertson",
+                    "opponent_team_name": "MC Hammer"
+                },
+                "11": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "2363025",
+                    "opponent_manager_fullname": "James Murphy",
+                    "opponent_team_name": "Multiple Scoregasms"
+                },
+                "12": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "55259",
+                    "opponent_manager_fullname": "Jeremy Harding",
+                    "opponent_team_name": "Costabomb Athletico"
+                },
+                "13": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "2383929",
+                    "opponent_manager_fullname": "Sean Murphy",
+                    "opponent_team_name": "Nodramallama"
+                },
+                "14": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "2052490",
+                    "opponent_manager_fullname": "Ben Smith",
+                    "opponent_team_name": "SMITHYS XI"
+                },
+                "15": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "1903138",
+                    "opponent_manager_fullname": "Sammy Murphy",
+                    "opponent_team_name": "West Sam"
+                },
+                "16": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "2392307",
+                    "opponent_manager_fullname": "Lisa Murphy",
+                    "opponent_team_name": "Pukki Blinders"
+                },
+                "17": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "1975239",
+                    "opponent_manager_fullname": "Chris Johnson",
+                    "opponent_team_name": "Ndombelieve it"
+                },
+                "18": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "420605",
+                    "opponent_manager_fullname": "Richard Walker",
+                    "opponent_team_name": "Bethnal Green United"
+                },
+                "19": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "494633",
+                    "opponent_manager_fullname": "Hugh Robertson",
+                    "opponent_team_name": "MC Hammer"
+                },
+                "20": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "2363025",
+                    "opponent_manager_fullname": "James Murphy",
+                    "opponent_team_name": "Multiple Scoregasms"
+                },
+                "21": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "55259",
+                    "opponent_manager_fullname": "Jeremy Harding",
+                    "opponent_team_name": "Costabomb Athletico"
+                },
+                "22": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "2383929",
+                    "opponent_manager_fullname": "Sean Murphy",
+                    "opponent_team_name": "Nodramallama"
+                },
+                "23": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "2052490",
+                    "opponent_manager_fullname": "Ben Smith",
+                    "opponent_team_name": "SMITHYS XI"
+                },
+                "24": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "1903138",
+                    "opponent_manager_fullname": "Sammy Murphy",
+                    "opponent_team_name": "West Sam"
+                },
+                "25": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "2392307",
+                    "opponent_manager_fullname": "Lisa Murphy",
+                    "opponent_team_name": "Pukki Blinders"
+                },
+                "26": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "1975239",
+                    "opponent_manager_fullname": "Chris Johnson",
+                    "opponent_team_name": "Ndombelieve it"
+                },
+                "27": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "420605",
+                    "opponent_manager_fullname": "Richard Walker",
+                    "opponent_team_name": "Bethnal Green United"
+                },
+                "28": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "494633",
+                    "opponent_manager_fullname": "Hugh Robertson",
+                    "opponent_team_name": "MC Hammer"
+                },
+                "29": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "2363025",
+                    "opponent_manager_fullname": "James Murphy",
+                    "opponent_team_name": "Multiple Scoregasms"
+                },
+                "30": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "55259",
+                    "opponent_manager_fullname": "Jeremy Harding",
+                    "opponent_team_name": "Costabomb Athletico"
+                },
+                "31": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "2383929",
+                    "opponent_manager_fullname": "Sean Murphy",
+                    "opponent_team_name": "Nodramallama"
+                },
+                "32": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "2052490",
+                    "opponent_manager_fullname": "Ben Smith",
+                    "opponent_team_name": "SMITHYS XI"
+                },
+                "33": {
+                    "fixture_class": "A",
+                    "opponent_manager_fpl_code": "1903138",
+                    "opponent_manager_fullname": "Sammy Murphy",
+                    "opponent_team_name": "West Sam"
+                },
+                "34": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "2392307",
+                    "opponent_manager_fullname": "Lisa Murphy",
+                    "opponent_team_name": "Pukki Blinders"
+                },
+                "35": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "1975239",
+                    "opponent_manager_fullname": "Chris Johnson",
+                    "opponent_team_name": "Ndombelieve it"
+                },
+                "36": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "420605",
+                    "opponent_manager_fullname": "Richard Walker",
+                    "opponent_team_name": "Bethnal Green United"
+                },
+                "37": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "2383929",
+                    "opponent_manager_fullname": "Sean Murphy",
+                    "opponent_team_name": "Nodramallama"
+                },
+                "38": {
+                    "fixture_class": "H",
+                    "opponent_manager_fpl_code": "494633",
+                    "opponent_manager_fullname": "Hugh Robertson",
+                    "opponent_team_name": "MC Hammer"
+                }
+            },
+            "manager_info": {
+                "fpl_code": "781653",
+                "manager_firstname": "Taylor",
+                "manager_fullname": "Taylor Fenn",
+                "manager_surname": "Fenn",
+                "team_name": "Fenny FC"
+            }
+        }
+    }
+}
