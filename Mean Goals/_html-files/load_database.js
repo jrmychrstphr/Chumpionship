@@ -1,6 +1,5 @@
 //var filename = '2020_season_data---20200618_1022.json'
-var filename = '2020_season_data.json'
-var database_url = "https://raw.githubusercontent.com/jrmychrstphr/Chumpionship/master/_rewrite/"+filename
+var database_url = "https://raw.githubusercontent.com/jrmychrstphr/Chumpionship/master/Mean%20Goals/2020_season_data---20200719_0026.json"
 
 var database;
     
