@@ -158,6 +158,7 @@ function fixture_results(manager_code) {
 
         $.each ( temp_results.slice().sort((a, b) => d3.ascending(a.gameweek, b.gameweek)), function(idx, val) {
 
+            console.log("idx:"+idx)
             //console.log(val)
 
             if ( val.result === 'W' ) {
@@ -200,8 +201,8 @@ function fixture_results(manager_code) {
                     temp_streaks.push(create_new())
 
                 // if this is the final fixture...    
-                } else if ( idx === temp_streaks.length-1 ) {
-                    //... end the previous streak in previous gameweek
+                } else if ( idx === gameweeks_played-1 ) {
+                    //... end the streak
                     temp_streaks[temp_streaks.length-1].streak_end = val.gameweek                      
                 }
             }
@@ -215,6 +216,8 @@ function fixture_results(manager_code) {
         } );
         
     })
+
+    console.log(streaks_dataset)
 
     //Build dataviz -- longest win streaks
     viz_div = $("#longest-win-streak .dynamic-content").empty()
