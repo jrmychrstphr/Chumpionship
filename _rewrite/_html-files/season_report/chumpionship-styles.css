@@ -294,6 +294,25 @@ body {
     margin-bottom: 0.7rem;
 }
 
+span.rank {
+    font-family: 'Helvetical Neue';
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.4rem;
+    margin: 0;
+    margin-bottom: 0.7rem;
+    margin-left: 0.7rem;
+}
+
+span.rank::before {
+    content: "("
+}
+
+span.rank::after {
+    content: ")"
+}
+
+
 p {
     font-family: 'Helvetical Neue';
     font-size: 1rem;

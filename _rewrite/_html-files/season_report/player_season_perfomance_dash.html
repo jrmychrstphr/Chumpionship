@@ -60,13 +60,10 @@
                     //function
                     //console.log("Button clicked!")
                     
-                    var input_key = $("#manager_input").val()    // grab gw input from select
+                    var input_key = $("#manager_input").val()
+
+                    update_player_data(input_key)
                     
-                    fixture_results(input_key)
-                    league_position(input_key)
-                    points_scored(input_key)
-                    transfers_made(input_key)
-                    add_ranks(input_key)   
 
                 })
                 .appendTo(input_container);
@@ -78,6 +75,25 @@
                     resize_rows("#fixture-results .dynamic-content")                                     
                 })
                 .appendTo(input_container);
+
+                function update_player_data(manager_code) {
+
+                    d3.select('#manager_name')
+                    .text(return_manager_fullname(database, manager_code))
+
+                    d3.select('#team_name')
+                    .text(return_team_name(database, manager_code))
+
+
+
+                    fixture_results(manager_code)
+                    league_position(manager_code)
+                    points_scored(manager_code)
+                    transfers_made(manager_code)
+
+                    ranks(manager_code)
+
+                }
                 
             });
 
@@ -93,7 +109,7 @@
                 <div class="wrapper">
                     <div class="page-title-block">
                         <div class="title"><h1>Season report card</h1></div>
-                        <div class="subtitle"><h3 class="dynamic-content">Jeremy Harding – Costabomb Athletico</h3></div>
+                        <div class="subtitle"><h3><span id="manager_name" class="dynamic-content">Player Name</span> – <span id="team_name" class="dynamic-content">Team Name</span></h3></div>
                     </div>
                 </div>
             </section>
@@ -306,6 +322,6 @@
     <script src="league_position.js"></script>
     <script src="points_scored.js"></script>
     <script src="transfers_made.js"></script>
-    <script src="add_ranks.js"></script>
+    <script src="rankings.js"></script>
 
 </html>
