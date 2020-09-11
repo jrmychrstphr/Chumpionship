@@ -1,0 +1,269 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"> 
+
+<html lang="en">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <title>Last season :: Chumpionship</title>
+        
+        <link rel="stylesheet" type="text/css" href="chumpionship-styles.css">  
+
+        <style>
+            /* League Table */
+
+            div.scores-table-wrapper {
+                margin-bottom: 2rem;
+            }
+
+            div.scores-table-container {
+                width: 100%;
+                margin: 0;
+                display: inline-block;
+            }
+
+            div.scores-table-container div.table-row-wrapper {
+            }
+
+            div.scores-table-container div.table-row-container {
+                margin: 0 -0.15rem;
+                display: inline-block;
+                width: 100%;
+            }
+
+            div.table-row-container div.table-column {
+                margin: 0.15rem;
+                display: inline-block;
+                float: left;
+                text-align: center;
+            }
+
+
+            div.table-row-container div.position-change-wrapper {
+                float: left;
+                height: 0rem;
+                width: 0rem;
+
+            }
+
+            div.table-row-container div.position-change-container {
+                position: relative;
+                width: 2.2rem;
+                height: 2.2rem;
+                margin: 0.15rem;
+                left: -2.5rem;
+            }
+
+            div.table-row-container div.table-column.position {
+                width: 2.2rem;
+                padding-left: 0rem;
+                padding-right: 0rem;
+                padding-top: 0.6rem;
+                padding-bottom: 0.6rem;
+                background-color: white;
+            }
+
+            div.table-row-container div.table-column.manager-name {
+                padding-left: 1rem;
+                padding-right: 1rem;
+                padding-top: 0.6rem;
+                padding-bottom: 0.6rem;
+                width: 12rem;
+                text-align: left;
+                background-color: white;
+            }
+
+            div.table-row-container div.table-column.score {
+                padding-left: 1rem;
+                padding-right: 1rem;
+                padding-top: 0.6rem;
+                padding-bottom: 0.6rem;
+                width: 3.5rem;
+                background-color: white;
+            }
+
+            div.table-row-container div.table-column.viz {
+                padding-left: 0rem;
+                padding-right: 0rem;
+                width: 19rem;
+                height: 2.2rem;
+            }
+
+        </style> 
+        
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://d3js.org/d3.v5.min.js"></script>
+
+        <script>
+            const database_url = "https://raw.githubusercontent.com/jrmychrstphr/Chumpionship/master/seasons/2021/database/_versions/chumpionship_2021_database-new-history.json"
+            let database;
+            $.getJSON(database_url, function(json) { database = json });            
+        </script>
+
+        <script src="common_functions.js"></script>
+        <script src="database_queries.js"></script>
+
+        <script>
+
+        function build_season_scores(season) {
+
+            //define gameweek
+            if (!(season)) {
+                season = "2019_20"
+            }
+
+            //build title block
+            var title_container = d3.select("#title-block")
+            .append("div")
+            .classed("title-wrapper", true)
+            .append("div")
+            .classed("title-container", true)
+
+            var title = title_container.append("div")
+            .classed("text display large", true)
+            .text("Overall score")
+
+            var subtitle = title_container.append("div")
+            .classed("text display regular", true)
+            .text(season.replace("_", "/") + " season");
+
+            /*
+            //build logo
+            logo = d3.select("#logo")
+            .append("div")
+            .classed("logo-wrapper", true)
+            .append("div")
+            .classed("logo-container", true)
+            */
+
+
+            //build dataset
+            dataset = []
+            scores = []
+
+            $.each( database["player_data"], function(k, v) {
+
+                temp_obj = {}
+                temp_obj.manager_code = k
+                temp_obj.score = parseInt(v.manager_info.fpl_history[season])
+
+                dataset.push(temp_obj)
+                scores.push(temp_obj.score)
+
+            } )
+
+            dataset = dataset.slice().sort((a, b) => d3.descending(a.score, b.score))
+
+
+            //build content
+            var viz_container = d3.select("#content-block")
+            .append("div")
+            .classed("scores-table-wrapper", true)
+            .append("div")
+            .classed("scores-table-container", true)
+
+            var rows = viz_container.selectAll("div.table-row-wrapper")
+            .data(dataset).enter()
+            .append("div")
+            .classed("table-row-wrapper", true)
+            .append("div")
+            .classed("table-row-container", true)
+            .each( function(d, i){
+
+                color = d3.piecewise(d3.interpolateRgb.gamma(2), [chump.colours.green, chump.colours.light_blue, chump.colours.blue, chump.colours.purple, chump.colours.pink])(i/20)
+
+                d3.select(this)
+                .append("div")
+                .classed("table-column position text display regular", true)
+                .text(function(d) {
+                    i = scores.sort(d3.descending).indexOf(d.score)
+                    s = i+1
+
+                    return s
+                })
+                .style('background-color', color)
+
+                d3.select(this)
+                .append("div")
+                .classed("table-column manager-name text display regular", true)
+                .text(db_return_manager_fullname(database, d.manager_code))
+
+                d3.select(this)
+                .append("div")
+                .classed("table-column score text display regular", true)
+                .text(return_comma_formatted_number(d.score))
+                //.style('background-color', color)
+
+                var viz_container = d3.select(this)
+                .append("div")
+                .classed("table-column viz", true)
+
+                config = {
+                    "width": $(this).find(".viz").width(),
+                    "height": $(this).find(".viz").height()
+                }
+
+                svg = viz_container.append("svg")
+                .attr("height", config.height)
+                .attr("width", config.width)
+
+                if (d3.min(scores) < 0) {
+                    xDomain = d3.extent(scores)
+                } else {
+                    xDomain = [0, d3.max(scores)]
+                }
+
+                xScale = d3.scaleLinear()
+                .domain(xDomain)
+                .range([0, config.width])
+
+                data = svg.append("rect")
+                .attr("width", xScale(d.score))
+                .attr("height", config.height )
+                .style("fill", color)
+
+            })
+
+            var footnote = d3.select("#content-block")
+            .append("div")
+            .classed("footnote text small", true)
+            .text("(*) = New league entry")
+
+        }            
+
+        </script>
+
+        <script src="chumpionship_colours.js"></script>
+        <script src="svg.js"></script>
+        <script src="dynamic_styles.js"></script>
+
+        <script>
+            
+            
+            $( function(){
+
+                build_season_scores()
+                apply_dynamic_styles()
+
+            });
+
+            
+        
+        </script>
+        
+    </head> 
+    
+    <body> 
+        <main>
+            <section>
+                <div id="logo"></div>
+                <div class="wrapper">
+                    <div class="container">
+                        <div id="title-block"></div>
+                        <div id="content-block"></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </body> 
+
+
+</html>
