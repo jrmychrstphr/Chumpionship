@@ -1,0 +1,357 @@
+/* League Table */
+
+div.league-table-wrapper {
+}
+
+div.league-table-container {
+	width: 100%;
+	margin: 0;
+	display: inline-block;
+}
+
+div.league-table-container div.table-row-wrapper {
+}
+
+div.league-table-container div.table-row-container {
+	margin: 0 -0.15rem;
+	display: inline-block;
+	width: 100%;
+}
+
+div.table-row-container div.table-column {
+	margin: 0.15rem;
+	display: inline-block;
+	float: left;
+	text-align: center;
+}
+
+
+div.table-row-container div.position-change-wrapper {
+	float: left;
+	height: 0rem;
+	width: 0rem;
+
+}
+
+div.table-row-container div.position-change-container {
+	position: relative;
+	width: 2.2rem;
+	height: 2.2rem;
+	margin: 0.15rem;
+	left: -2.5rem;
+}
+
+div.table-row-container div.position-change-container.arrow-down {
+	transform: rotate(180deg);
+}
+
+
+div.table-row-container div.position-change-container svg {
+	width: 1rem;
+	height: 1rem;
+	margin: 0.6rem;
+}
+
+div.table-row-container div.table-column.position {
+	width: 2.2rem;
+	padding-left: 0rem;
+	padding-right: 0rem;
+	padding-top: 0.6rem;
+	padding-bottom: 0.6rem;
+	background-color: white;
+}
+
+div.table-row-container div.table-column.team-name {
+	padding-left: 1rem;
+	padding-right: 1rem;
+	padding-top: 0.6rem;
+	padding-bottom: 0.6rem;
+	width: 20rem;
+	text-align: left;
+	background-color: white;
+}
+
+div.table-row-container div.table-column.score {
+	padding-left: 1rem;
+	padding-right: 1rem;
+	padding-top: 0.6rem;
+	padding-bottom: 0.6rem;
+	width: 3.5rem;
+	background-color: white;
+}
+
+div.table-row-container div.table-column.league-points {
+	padding-left: 1rem;
+	padding-right: 1rem;
+	padding-top: 0.6rem;
+	padding-bottom: 0.6rem;
+	width: 3.5rem;
+	background-color: white;
+}
+
+div.table-row-container div.table-column.form.viz {
+	padding-left: 0rem;
+	padding-right: 0rem;
+	width: 5rem;
+	height: 2.2rem;
+}
+
+
+
+
+
+/* Results */
+
+div.result-list-container {
+	margin: 0 -1rem;
+	display: inline-block;
+}
+
+div.result-list-container div.result-wrapper {
+	margin-bottom: 2rem;
+}
+
+div.result-list-container div.result-container {
+	margin: -0.15rem;
+	display: inline-block;
+	padding: 0 1rem;
+	width: calc(100% - 2rem);
+}
+
+div.result-list-container div.result-container div.result-row {
+	width: 100%;
+	float: left;
+}
+
+div.result-list-container div.result-container div.result-row div {
+	margin: 0.15rem;
+	display: inline-block;
+	float: left;
+	text-align: center;
+}
+
+div.result-list-container div.result-container div.result-row div.team {
+	background: white;
+	padding-top: 0.6rem;
+	padding-bottom: 0.6rem;
+}
+
+div.result-list-container div.result-container div.result-row div.score {
+	background: white;
+	padding-top: 0.6rem;
+	padding-bottom: 0.6rem;
+
+}
+
+div.result-list-container div.result-container div.result-row div.score span {
+	vertical-align: top;
+	padding-left: 0.15rem;
+	font-weight: 600;
+}
+
+div.result-list-container div.team {
+	width: 15.2rem;
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
+
+div.result-list-container div.score {
+	width: 5rem;
+	padding-left: 0rem;
+	padding-right: 0rem;
+}
+
+div.result-list-container div.indicator {
+	width: 0.75rem;
+	height: 1rem;
+	padding-top: 0.6rem;
+	padding-bottom: 0.6rem;
+	padding-left: 0rem;
+	padding-right: 0rem;
+}
+
+div.result-list-container div.viz {
+	width: 17.85rem;
+	height: 2.2rem;
+	padding-left: 0rem;
+	padding-right: 0rem;
+}
+
+div.footnote {
+	color: white;
+}
+
+
+/* Fixtures */
+
+div.fixture-list-container {
+	margin: 0 -1rem;
+	display: inline-block;
+}
+
+div.fixture-list-container div.fixture-wrapper {
+	width: 50%;
+	float: left;
+}
+
+div.fixture-list-container div.fixture-wrapper:nth-child(2n) {
+	padding-top: 2.5rem;
+}
+
+div.fixture-list-container div.fixture-container {
+	margin: -0.15rem;
+	display: inline-block;
+	padding: 0 1rem;
+	width: calc(100% - 2rem);
+}
+
+div.fixture-list-container div.fixture-container div {
+
+	background: white;
+	margin: 0.15rem;
+	display: inline-block;
+	float: left;
+	text-align: center;
+	padding-top: 0.6rem;
+	padding-bottom: 0.6rem;
+
+}
+
+div.fixture-list-container div.team {
+	width: 15.2rem;
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
+
+div.fixture-list-container div.vs-block {
+	width: 2.2rem;
+	padding-left: 0rem;
+	padding-right: 0rem;
+	clear: left;
+
+}
+
+div.fixture-list-container div.team.home {
+
+}
+
+div.fixture-list-container div.team.away {
+
+}
+
+/* title block */
+div.title-wrapper {
+	color: white;
+	margin-bottom: 2rem;
+}
+
+div.title-container {
+}
+
+/* Logo */
+div.logo-wrapper {
+	position: relative;
+}
+
+div.logo-container {
+	background-image: url("assets/Logo---Crest@4x-8.png");
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+
+	position: absolute;
+	top: 2rem;
+	right: 4rem;
+	height: 5rem;
+	width: 5rem;
+}
+
+
+
+/* General */
+html {
+	font-size: 18px;
+}
+
+main {
+	width: 50rem;
+}
+
+div.page.border {
+	width: 100%;
+	height: 1rem;
+}
+
+.wrapper{
+	padding: 2rem 4rem;
+}
+
+.text {
+	font-family: 'Helvetical Neue';
+	font-weight: 400;
+}
+
+.text.display {
+	font-family: 'Champion';
+	font-weight: 800;
+}
+
+.text.large {
+	font-size: 1.5rem;
+	line-height: 1.5rem;
+	text-transform: uppercase;
+}
+
+.text.regular {
+	font-size: 1rem;
+	line-height: 1rem;
+}
+
+.text.small {
+	font-size: 0.8rem;
+	line-height: 0.8rem;
+}
+
+
+/* Fonts */
+@font-face {
+    font-family: 'Champion';
+    src: url('fonts/Champion HTFFlyweight Regular.otf');
+    font-weight: 200;
+}
+
+@font-face {
+    font-family: 'Champion';
+    src: url('fonts/Champion HTFFeatherweight Regular.otf');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Champion';
+    src: url('fonts/Champion HTFMiddleweight Regular.otf');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'Champion';
+    src: url('fonts/Champion HTFHeavyweight Regular.otf');
+    font-weight: 800;
+}
+
+@font-face {
+    font-family: 'Helvetical Neue';
+    src: url('fonts/HelveticaNeueLTStd-Roman.otf');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Helvetical Neue';
+    src: url('fonts/HelveticaNeueLTStd-Bd.otf');
+    font-weight: 800;
+}
+
+@font-face {
+    font-family: 'Helvetical Neue';
+    src: url('fonts/HelveticaNeueLTStd-Lt.otf');
+    font-weight: 200;
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"> 
+
+<html lang="en">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <title>Fixtures :: Chumpionship</title>
+        
+        <link rel="stylesheet" type="text/css" href="chumpionship-styles.css">   
+        
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://d3js.org/d3.v5.min.js"></script>
+
+        <script src="load_database.js"></script>
+
+        <script src="common_functions.js"></script>
+
+        <script src="database_queries.js"></script>
+        <script src="content-builders.js"></script>
+
+        <script src="chumpionship_colours.js"></script>
+        <script src="svg.js"></script>
+        <script src="dynamic_styles.js"></script>
+
+        <script>
+            
+            
+            $( function(){
+
+                //build_fixtures()
+                //build_results()
+                build_table(38)
+
+                apply_dynamic_styles()
+
+            });
+
+            
+        
+        </script>
+        
+    </head> 
+    
+    <body> 
+        <main>
+            <section>
+                <div id="logo"></div>
+                <div class="wrapper">
+                    <div class="container">
+                        <div id="title-block"></div>
+                        <div id="content-block"></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </body> 
+
+
+</html>

@@ -50,7 +50,7 @@ def define_season():
 
 
 		#Define season name
-		season_name = input('Define a name for the season (e.g. 2020): ')
+		season_name = input('Define a name for the season (e.g. Chumpionship 2020): ').replace(" ", "_").lower()
 
 		#check
 		input_check = input('Are you sure? (Y/N): ')
@@ -62,7 +62,7 @@ def define_season():
 			continue
 
 
-	season_name = season_name + '_season_data'
+	season_name = season_name + '_database'
 
 
 ###############
@@ -129,25 +129,40 @@ def scrape_manager_data_from_league_page():
 		soup = BeautifulSoup(driver.page_source, 'lxml')
 		
 		#filter to just league table
-		league_tables = soup.find_all('table' , class_='Table-ziussd-1')
+		league_table = soup.find_all('table' , class_='Table-ziussd-1')
 		#print(league_table)
 
 		#find <a> tags in the league table
-		anchors = league_tables[1].find_all('a')
+		anchors = league_table[1].find_all('a')
 
 		global temp_players
 		temp_players = []
 
-		for item in anchors:
+		for anchor in anchors:
 
+			team_name = anchor.parent.parent.contents[0].get_text()	#team_name
+			manager_fullname = anchor.get_text()	#manager_fullname
+			fpl_code = anchor.get('href').split('/')[2]	#fpl_code
+
+			entry = [fpl_code, team_name, manager_fullname]
+
+			print(entry)
+			temp_players.append(entry)
+
+
+		"""
+		Does this work in-season?
+
+
+		for item in anchors:
 
 			team_name = item.get_text()	#Team name
 			manager_fullname = item.parent.contents[2]	#Manager full name
 			fpl_code = item.get('href').split('/')[2]	#fpl_code
 
 			item_data = [fpl_code, team_name, manager_fullname]
-			print(item_data)
 			temp_players.append(item_data)
+		"""
 
 	except:
 		print('Error, unable to scrape page')
@@ -297,10 +312,6 @@ def push_manager_data_to_database(input_array):
 		manager_info['fpl_code'] = x[0]
 		manager_info['team_name'] = x[1]
 		manager_info['manager_fullname'] = x[2]
-
-		name = x[2].split()
-		manager_info['manager_firstname'] = name[0]
-		manager_info['manager_surname'] = name[1]
 
 		database['player_data'][manager_info['fpl_code']] = {}
 		database['player_data'][manager_info['fpl_code']]['manager_info'] = manager_info
