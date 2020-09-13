@@ -271,7 +271,7 @@ def push_fixtures_to_database(fixtures):
 ###############
 # write data to json file
 def write_to_json_file(filename, input_data):
-    with open(filename + '.json', 'w') as json_file:
+    with open(filename, 'w') as json_file:
         json.dump(input_data, json_file, sort_keys=True, indent=4, separators=(',', ': '))
 
 
