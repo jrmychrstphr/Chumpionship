@@ -281,12 +281,14 @@ function build_fixtures(gw) {
 
     $.each( database["fixture_list"][gameweek], function(k, v) {
         temp_obj = {}
-        temp_obj.home = v.H.manager_code    // update
-        temp_obj.away = v.A.manager_code    // update
+        temp_obj.home = v.home_team    // update
+        temp_obj.away = v.away_team    // update
 
         dataset.push(temp_obj)
 
     } )
+
+    dataset.sort((a,b) => (db_return_team_name(database, a.home) > db_return_team_name(database, b.home)));
 
     //build content
     var viz_container = d3.select("#content-block")
@@ -361,12 +363,12 @@ function build_results(gw) {
 
     $.each( database["fixture_list"][gameweek], function(k, v) {
         temp_obj = {}
-        temp_obj.home = v.H.manager_code    // update
-        temp_obj.away = v.A.manager_code    // update
+        temp_obj.home = v.home_team    // update
+        temp_obj.away = v.away_team    // update
 
         //check for fixture scores, if fixture scores exist, fixture_played = true
 
-        temp_obj.fixture_played = Boolean(db_return_fixture_score(database, v.H.manager_code, gameweek))
+        temp_obj.fixture_played = Boolean(db_return_fixture_score(database, v.home_team, gameweek))
 
         //if fixture_played = true, add scores
         if (temp_obj.fixture_played) {
