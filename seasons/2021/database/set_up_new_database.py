@@ -295,10 +295,59 @@ def check_and_change(input_array):
 	return output
 
 
+##############
+# Scrapes pervious season scores #
+# stores them to player_data > fpl_history #
+def scrape_and_return_fpl_history(manager_code):
+
+	manager_URL = 'https://fantasy.premierleague.com/entry/'+manager_code+'/history'
+
+	try:
+		#open the webpage
+		driver.get(manager_URL)
+		
+		#wait for the league table to appear in DOM
+		element = WebDriverWait(driver, 10).until(
+			EC.presence_of_element_located((By.CSS_SELECTOR, "table.Table-ziussd-1.fVnGhl"))
+		)
+		
+	except:
+		#if the table is not found, display an error message
+		print("Error: Table element not found :(")
+	
+	else:
+		#if the table is found, display successs message
+		print("Success: Table element found :D")
+
+		#create soup of page DOM
+		soup = BeautifulSoup(driver.page_source, 'lxml')
+
+		#locate 'Previous seasons' table
+		element = soup.find("h3", text="Previous Seasons")
+
+		#move up the soup DOM until the table is found
+		while len(element.select('.Table-ziussd-1.fVnGhl')) == 0:
+			element = element.parent
+		else:
+			prev_seasons_rows = element.select('.Table-ziussd-1.fVnGhl tbody tr')
+
+			fpl_history = {}
+
+			for row in prev_seasons_rows:
+				row_contents_array = row.contents
+
+				season = row_contents_array[0].get_text().replace("/", "_")
+				score = row_contents_array[1].get_text()
+
+				fpl_history[season] = score
+
+			return fpl_history
+
+
 ###############
 # push player info to database
 
-def push_manager_data_to_database(input_array):
+def initialise_player_data(input_array):
 
 	database['player_data'] = {}
 
@@ -310,11 +359,17 @@ def push_manager_data_to_database(input_array):
 		manager_info = {}
 
 		manager_info['fpl_code'] = x[0]
+		manager_code = manager_info['fpl_code']
+
 		manager_info['team_name'] = x[1]
 		manager_info['manager_fullname'] = x[2]
+		manager_info['fpl_history'] = scrape_and_return_fpl_history(manager_code)
 
-		database['player_data'][manager_info['fpl_code']] = {}
-		database['player_data'][manager_info['fpl_code']]['manager_info'] = manager_info
+		database['player_data'][manager_code] = {}	
+		database['player_data'][manager_code]['manager_info'] = manager_info
+
+		database['player_data'][manager_code]['gw_performance'] = {}
+		database['player_data'][manager_code]['fixtures'] = {}
 
 
 ###############
@@ -341,7 +396,7 @@ def execute():
 
 	load_league_page()
 
-	push_manager_data_to_database(scrape_manager_data_from_league_page())
+	initialise_player_data(scrape_manager_data_from_league_page())
 	#print(database)
 
 	close_browser()

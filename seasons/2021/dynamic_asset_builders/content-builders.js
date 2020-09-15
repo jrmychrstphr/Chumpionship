@@ -50,7 +50,7 @@ function build_table(gw) {
 
             if (gw - i > 0) {
                 //console.log(gw-(i+1))
-                temp_obj.form.unshift(v.season_performance.result_array[gw-(i+1)])
+                temp_obj.form.unshift(v.season_performance.fixture_result_array[gw-(i+1)])
             } else {
                 temp_obj.form.unshift("None")
             }

@@ -1,0 +1,5023 @@
+{
+    "fixture_list": {
+        "01": [
+            {
+                "away_team": "4872589",
+                "home_team": "2120821"
+            },
+            {
+                "away_team": "2557931",
+                "home_team": "2167270"
+            },
+            {
+                "away_team": "1177142",
+                "home_team": "2291681"
+            },
+            {
+                "away_team": "2434704",
+                "home_team": "2172588"
+            },
+            {
+                "away_team": "1575824",
+                "home_team": "255846"
+            },
+            {
+                "away_team": "780525",
+                "home_team": "1192876"
+            },
+            {
+                "away_team": "452180",
+                "home_team": "544163"
+            },
+            {
+                "away_team": "3328568",
+                "home_team": "3004339"
+            },
+            {
+                "away_team": "580531",
+                "home_team": "3238760"
+            },
+            {
+                "away_team": "1266186",
+                "home_team": "1400511"
+            }
+        ],
+        "02": [
+            {
+                "away_team": "580531",
+                "home_team": "255846"
+            },
+            {
+                "away_team": "2167270",
+                "home_team": "544163"
+            },
+            {
+                "away_team": "1400511",
+                "home_team": "2557931"
+            },
+            {
+                "away_team": "2120821",
+                "home_team": "1177142"
+            },
+            {
+                "away_team": "2172588",
+                "home_team": "1192876"
+            },
+            {
+                "away_team": "3004339",
+                "home_team": "2434704"
+            },
+            {
+                "away_team": "4872589",
+                "home_team": "3238760"
+            },
+            {
+                "away_team": "1575824",
+                "home_team": "3328568"
+            },
+            {
+                "away_team": "780525",
+                "home_team": "1266186"
+            },
+            {
+                "away_team": "452180",
+                "home_team": "2291681"
+            }
+        ],
+        "03": [
+            {
+                "away_team": "3004339",
+                "home_team": "3238760"
+            },
+            {
+                "away_team": "1400511",
+                "home_team": "2434704"
+            },
+            {
+                "away_team": "544163",
+                "home_team": "2557931"
+            },
+            {
+                "away_team": "1177142",
+                "home_team": "580531"
+            },
+            {
+                "away_team": "4872589",
+                "home_team": "2291681"
+            },
+            {
+                "away_team": "1192876",
+                "home_team": "2167270"
+            },
+            {
+                "away_team": "1575824",
+                "home_team": "2120821"
+            },
+            {
+                "away_team": "780525",
+                "home_team": "3328568"
+            },
+            {
+                "away_team": "255846",
+                "home_team": "2172588"
+            },
+            {
+                "away_team": "1266186",
+                "home_team": "452180"
+            }
+        ],
+        "04": [
+            {
+                "away_team": "3004339",
+                "home_team": "255846"
+            },
+            {
+                "away_team": "2434704",
+                "home_team": "780525"
+            },
+            {
+                "away_team": "2172588",
+                "home_team": "3328568"
+            },
+            {
+                "away_team": "1400511",
+                "home_team": "1192876"
+            },
+            {
+                "away_team": "3238760",
+                "home_team": "1575824"
+            },
+            {
+                "away_team": "4872589",
+                "home_team": "1177142"
+            },
+            {
+                "away_team": "544163",
+                "home_team": "2291681"
+            },
+            {
+                "away_team": "452180",
+                "home_team": "2557931"
+            },
+            {
+                "away_team": "2167270",
+                "home_team": "1266186"
+            },
+            {
+                "away_team": "2120821",
+                "home_team": "580531"
+            }
+        ],
+        "05": [
+            {
+                "away_team": "2167270",
+                "home_team": "3328568"
+            },
+            {
+                "away_team": "1575824",
+                "home_team": "4872589"
+            },
+            {
+                "away_team": "255846",
+                "home_team": "1400511"
+            },
+            {
+                "away_team": "452180",
+                "home_team": "2434704"
+            },
+            {
+                "away_team": "2291681",
+                "home_team": "580531"
+            },
+            {
+                "away_team": "3238760",
+                "home_team": "780525"
+            },
+            {
+                "away_team": "2172588",
+                "home_team": "2120821"
+            },
+            {
+                "away_team": "1266186",
+                "home_team": "2557931"
+            },
+            {
+                "away_team": "1177142",
+                "home_team": "3004339"
+            },
+            {
+                "away_team": "1192876",
+                "home_team": "544163"
+            }
+        ],
+        "06": [
+            {
+                "away_team": "2557931",
+                "home_team": "2291681"
+            },
+            {
+                "away_team": "2167270",
+                "home_team": "2434704"
+            },
+            {
+                "away_team": "3004339",
+                "home_team": "2120821"
+            },
+            {
+                "away_team": "780525",
+                "home_team": "255846"
+            },
+            {
+                "away_team": "452180",
+                "home_team": "1192876"
+            },
+            {
+                "away_team": "4872589",
+                "home_team": "580531"
+            },
+            {
+                "away_team": "1400511",
+                "home_team": "3328568"
+            },
+            {
+                "away_team": "544163",
+                "home_team": "1266186"
+            },
+            {
+                "away_team": "2172588",
+                "home_team": "3238760"
+            },
+            {
+                "away_team": "1177142",
+                "home_team": "1575824"
+            }
+        ],
+        "07": [
+            {
+                "away_team": "1192876",
+                "home_team": "1266186"
+            },
+            {
+                "away_team": "3004339",
+                "home_team": "580531"
+            },
+            {
+                "away_team": "1400511",
+                "home_team": "2120821"
+            },
+            {
+                "away_team": "452180",
+                "home_team": "255846"
+            },
+            {
+                "away_team": "2557931",
+                "home_team": "2434704"
+            },
+            {
+                "away_team": "1575824",
+                "home_team": "2291681"
+            },
+            {
+                "away_team": "780525",
+                "home_team": "1177142"
+            },
+            {
+                "away_team": "2172588",
+                "home_team": "4872589"
+            },
+            {
+                "away_team": "3328568",
+                "home_team": "544163"
+            },
+            {
+                "away_team": "2167270",
+                "home_team": "3238760"
+            }
+        ],
+        "08": [
+            {
+                "away_team": "4872589",
+                "home_team": "3004339"
+            },
+            {
+                "away_team": "2434704",
+                "home_team": "544163"
+            },
+            {
+                "away_team": "3328568",
+                "home_team": "452180"
+            },
+            {
+                "away_team": "780525",
+                "home_team": "2120821"
+            },
+            {
+                "away_team": "255846",
+                "home_team": "2167270"
+            },
+            {
+                "away_team": "2172588",
+                "home_team": "1177142"
+            },
+            {
+                "away_team": "1192876",
+                "home_team": "2557931"
+            },
+            {
+                "away_team": "3238760",
+                "home_team": "1400511"
+            },
+            {
+                "away_team": "580531",
+                "home_team": "1575824"
+            },
+            {
+                "away_team": "1266186",
+                "home_team": "2291681"
+            }
+        ],
+        "09": [
+            {
+                "away_team": "452180",
+                "home_team": "2120821"
+            },
+            {
+                "away_team": "1177142",
+                "home_team": "2167270"
+            },
+            {
+                "away_team": "1192876",
+                "home_team": "2434704"
+            },
+            {
+                "away_team": "780525",
+                "home_team": "580531"
+            },
+            {
+                "away_team": "3328568",
+                "home_team": "1266186"
+            },
+            {
+                "away_team": "255846",
+                "home_team": "2557931"
+            },
+            {
+                "away_team": "2172588",
+                "home_team": "1575824"
+            },
+            {
+                "away_team": "3004339",
+                "home_team": "2291681"
+            },
+            {
+                "away_team": "1400511",
+                "home_team": "4872589"
+            },
+            {
+                "away_team": "544163",
+                "home_team": "3238760"
+            }
+        ],
+        "10": [
+            {
+                "away_team": "780525",
+                "home_team": "4872589"
+            },
+            {
+                "away_team": "2291681",
+                "home_team": "1192876"
+            },
+            {
+                "away_team": "2172588",
+                "home_team": "580531"
+            },
+            {
+                "away_team": "2557931",
+                "home_team": "3328568"
+            },
+            {
+                "away_team": "2167270",
+                "home_team": "2120821"
+            },
+            {
+                "away_team": "1575824",
+                "home_team": "3004339"
+            },
+            {
+                "away_team": "1400511",
+                "home_team": "1177142"
+            },
+            {
+                "away_team": "1266186",
+                "home_team": "2434704"
+            },
+            {
+                "away_team": "255846",
+                "home_team": "544163"
+            },
+            {
+                "away_team": "452180",
+                "home_team": "3238760"
+            }
+        ],
+        "11": [
+            {
+                "away_team": "1400511",
+                "home_team": "1575824"
+            },
+            {
+                "away_team": "2167270",
+                "home_team": "580531"
+            },
+            {
+                "away_team": "3238760",
+                "home_team": "1266186"
+            },
+            {
+                "away_team": "544163",
+                "home_team": "1177142"
+            },
+            {
+                "away_team": "780525",
+                "home_team": "3004339"
+            },
+            {
+                "away_team": "2557931",
+                "home_team": "2120821"
+            },
+            {
+                "away_team": "1192876",
+                "home_team": "255846"
+            },
+            {
+                "away_team": "3328568",
+                "home_team": "2434704"
+            },
+            {
+                "away_team": "452180",
+                "home_team": "4872589"
+            },
+            {
+                "away_team": "2172588",
+                "home_team": "2291681"
+            }
+        ],
+        "12": [
+            {
+                "away_team": "1400511",
+                "home_team": "580531"
+            },
+            {
+                "away_team": "4872589",
+                "home_team": "2167270"
+            },
+            {
+                "away_team": "3328568",
+                "home_team": "1192876"
+            },
+            {
+                "away_team": "1177142",
+                "home_team": "452180"
+            },
+            {
+                "away_team": "1575824",
+                "home_team": "780525"
+            },
+            {
+                "away_team": "2291681",
+                "home_team": "2434704"
+            },
+            {
+                "away_team": "544163",
+                "home_team": "2120821"
+            },
+            {
+                "away_team": "3238760",
+                "home_team": "2557931"
+            },
+            {
+                "away_team": "3004339",
+                "home_team": "2172588"
+            },
+            {
+                "away_team": "1266186",
+                "home_team": "255846"
+            }
+        ],
+        "13": [
+            {
+                "away_team": "544163",
+                "home_team": "580531"
+            },
+            {
+                "away_team": "2291681",
+                "home_team": "780525"
+            },
+            {
+                "away_team": "3004339",
+                "home_team": "2167270"
+            },
+            {
+                "away_team": "1192876",
+                "home_team": "2120821"
+            },
+            {
+                "away_team": "452180",
+                "home_team": "1575824"
+            },
+            {
+                "away_team": "2172588",
+                "home_team": "1400511"
+            },
+            {
+                "away_team": "3328568",
+                "home_team": "255846"
+            },
+            {
+                "away_team": "4872589",
+                "home_team": "2557931"
+            },
+            {
+                "away_team": "1177142",
+                "home_team": "1266186"
+            },
+            {
+                "away_team": "2434704",
+                "home_team": "3238760"
+            }
+        ],
+        "14": [
+            {
+                "away_team": "580531",
+                "home_team": "452180"
+            },
+            {
+                "away_team": "255846",
+                "home_team": "2434704"
+            },
+            {
+                "away_team": "544163",
+                "home_team": "4872589"
+            },
+            {
+                "away_team": "780525",
+                "home_team": "2172588"
+            },
+            {
+                "away_team": "3328568",
+                "home_team": "2291681"
+            },
+            {
+                "away_team": "2120821",
+                "home_team": "1266186"
+            },
+            {
+                "away_team": "2557931",
+                "home_team": "1177142"
+            },
+            {
+                "away_team": "1400511",
+                "home_team": "3004339"
+            },
+            {
+                "away_team": "3238760",
+                "home_team": "1192876"
+            },
+            {
+                "away_team": "2167270",
+                "home_team": "1575824"
+            }
+        ],
+        "15": [
+            {
+                "away_team": "1400511",
+                "home_team": "2291681"
+            },
+            {
+                "away_team": "780525",
+                "home_team": "2167270"
+            },
+            {
+                "away_team": "452180",
+                "home_team": "2172588"
+            },
+            {
+                "away_team": "1266186",
+                "home_team": "580531"
+            },
+            {
+                "away_team": "3004339",
+                "home_team": "544163"
+            },
+            {
+                "away_team": "3238760",
+                "home_team": "255846"
+            },
+            {
+                "away_team": "1575824",
+                "home_team": "2557931"
+            },
+            {
+                "away_team": "2120821",
+                "home_team": "3328568"
+            },
+            {
+                "away_team": "2434704",
+                "home_team": "1177142"
+            },
+            {
+                "away_team": "1192876",
+                "home_team": "4872589"
+            }
+        ],
+        "16": [
+            {
+                "away_team": "2120821",
+                "home_team": "2434704"
+            },
+            {
+                "away_team": "3004339",
+                "home_team": "452180"
+            },
+            {
+                "away_team": "2557931",
+                "home_team": "580531"
+            },
+            {
+                "away_team": "544163",
+                "home_team": "1575824"
+            },
+            {
+                "away_team": "1192876",
+                "home_team": "1177142"
+            },
+            {
+                "away_team": "780525",
+                "home_team": "1400511"
+            },
+            {
+                "away_team": "1266186",
+                "home_team": "4872589"
+            },
+            {
+                "away_team": "2167270",
+                "home_team": "2172588"
+            },
+            {
+                "away_team": "3328568",
+                "home_team": "3238760"
+            },
+            {
+                "away_team": "2291681",
+                "home_team": "255846"
+            }
+        ],
+        "17": [
+            {
+                "away_team": "2167270",
+                "home_team": "2291681"
+            },
+            {
+                "away_team": "2557931",
+                "home_team": "2172588"
+            },
+            {
+                "away_team": "544163",
+                "home_team": "780525"
+            },
+            {
+                "away_team": "2434704",
+                "home_team": "580531"
+            },
+            {
+                "away_team": "4872589",
+                "home_team": "3328568"
+            },
+            {
+                "away_team": "1266186",
+                "home_team": "3004339"
+            },
+            {
+                "away_team": "452180",
+                "home_team": "1400511"
+            },
+            {
+                "away_team": "3238760",
+                "home_team": "2120821"
+            },
+            {
+                "away_team": "1177142",
+                "home_team": "255846"
+            },
+            {
+                "away_team": "1192876",
+                "home_team": "1575824"
+            }
+        ],
+        "18": [
+            {
+                "away_team": "3004339",
+                "home_team": "2557931"
+            },
+            {
+                "away_team": "780525",
+                "home_team": "452180"
+            },
+            {
+                "away_team": "4872589",
+                "home_team": "2434704"
+            },
+            {
+                "away_team": "255846",
+                "home_team": "2120821"
+            },
+            {
+                "away_team": "1192876",
+                "home_team": "580531"
+            },
+            {
+                "away_team": "2291681",
+                "home_team": "3238760"
+            },
+            {
+                "away_team": "1177142",
+                "home_team": "3328568"
+            },
+            {
+                "away_team": "544163",
+                "home_team": "2172588"
+            },
+            {
+                "away_team": "1575824",
+                "home_team": "1266186"
+            },
+            {
+                "away_team": "1400511",
+                "home_team": "2167270"
+            }
+        ],
+        "19": [
+            {
+                "away_team": "2172588",
+                "home_team": "1266186"
+            },
+            {
+                "away_team": "2120821",
+                "home_team": "2291681"
+            },
+            {
+                "away_team": "1177142",
+                "home_team": "3238760"
+            },
+            {
+                "away_team": "3004339",
+                "home_team": "1192876"
+            },
+            {
+                "away_team": "4872589",
+                "home_team": "255846"
+            },
+            {
+                "away_team": "1400511",
+                "home_team": "544163"
+            },
+            {
+                "away_team": "580531",
+                "home_team": "3328568"
+            },
+            {
+                "away_team": "780525",
+                "home_team": "2557931"
+            },
+            {
+                "away_team": "452180",
+                "home_team": "2167270"
+            },
+            {
+                "away_team": "1575824",
+                "home_team": "2434704"
+            }
+        ],
+        "20": [
+            {
+                "away_team": "452180",
+                "home_team": "544163"
+            },
+            {
+                "away_team": "1400511",
+                "home_team": "1266186"
+            },
+            {
+                "away_team": "2557931",
+                "home_team": "2167270"
+            },
+            {
+                "away_team": "2291681",
+                "home_team": "1177142"
+            },
+            {
+                "away_team": "4872589",
+                "home_team": "2120821"
+            },
+            {
+                "away_team": "3328568",
+                "home_team": "3004339"
+            },
+            {
+                "away_team": "255846",
+                "home_team": "1575824"
+            },
+            {
+                "away_team": "580531",
+                "home_team": "3238760"
+            },
+            {
+                "away_team": "780525",
+                "home_team": "1192876"
+            },
+            {
+                "away_team": "2434704",
+                "home_team": "2172588"
+            }
+        ],
+        "21": [
+            {
+                "away_team": "3004339",
+                "home_team": "2434704"
+            },
+            {
+                "away_team": "1177142",
+                "home_team": "2120821"
+            },
+            {
+                "away_team": "2557931",
+                "home_team": "1400511"
+            },
+            {
+                "away_team": "3328568",
+                "home_team": "1575824"
+            },
+            {
+                "away_team": "780525",
+                "home_team": "1266186"
+            },
+            {
+                "away_team": "3238760",
+                "home_team": "4872589"
+            },
+            {
+                "away_team": "452180",
+                "home_team": "2291681"
+            },
+            {
+                "away_team": "580531",
+                "home_team": "255846"
+            },
+            {
+                "away_team": "2167270",
+                "home_team": "544163"
+            },
+            {
+                "away_team": "1192876",
+                "home_team": "2172588"
+            }
+        ],
+        "22": [
+            {
+                "away_team": "780525",
+                "home_team": "3328568"
+            },
+            {
+                "away_team": "1400511",
+                "home_team": "2434704"
+            },
+            {
+                "away_team": "4872589",
+                "home_team": "2291681"
+            },
+            {
+                "away_team": "3004339",
+                "home_team": "3238760"
+            },
+            {
+                "away_team": "1192876",
+                "home_team": "2167270"
+            },
+            {
+                "away_team": "580531",
+                "home_team": "1177142"
+            },
+            {
+                "away_team": "2557931",
+                "home_team": "544163"
+            },
+            {
+                "away_team": "2172588",
+                "home_team": "255846"
+            },
+            {
+                "away_team": "1575824",
+                "home_team": "2120821"
+            },
+            {
+                "away_team": "1266186",
+                "home_team": "452180"
+            }
+        ],
+        "23": [
+            {
+                "away_team": "3004339",
+                "home_team": "255846"
+            },
+            {
+                "away_team": "2557931",
+                "home_team": "452180"
+            },
+            {
+                "away_team": "3238760",
+                "home_team": "1575824"
+            },
+            {
+                "away_team": "2434704",
+                "home_team": "780525"
+            },
+            {
+                "away_team": "2120821",
+                "home_team": "580531"
+            },
+            {
+                "away_team": "1192876",
+                "home_team": "1400511"
+            },
+            {
+                "away_team": "4872589",
+                "home_team": "1177142"
+            },
+            {
+                "away_team": "3328568",
+                "home_team": "2172588"
+            },
+            {
+                "away_team": "2291681",
+                "home_team": "544163"
+            },
+            {
+                "away_team": "2167270",
+                "home_team": "1266186"
+            }
+        ],
+        "24": [
+            {
+                "away_team": "1266186",
+                "home_team": "2557931"
+            },
+            {
+                "away_team": "2120821",
+                "home_team": "2172588"
+            },
+            {
+                "away_team": "255846",
+                "home_team": "1400511"
+            },
+            {
+                "away_team": "1575824",
+                "home_team": "4872589"
+            },
+            {
+                "away_team": "3238760",
+                "home_team": "780525"
+            },
+            {
+                "away_team": "2434704",
+                "home_team": "452180"
+            },
+            {
+                "away_team": "580531",
+                "home_team": "2291681"
+            },
+            {
+                "away_team": "3004339",
+                "home_team": "1177142"
+            },
+            {
+                "away_team": "544163",
+                "home_team": "1192876"
+            },
+            {
+                "away_team": "3328568",
+                "home_team": "2167270"
+            }
+        ],
+        "25": [
+            {
+                "away_team": "2120821",
+                "home_team": "3004339"
+            },
+            {
+                "away_team": "1400511",
+                "home_team": "3328568"
+            },
+            {
+                "away_team": "544163",
+                "home_team": "1266186"
+            },
+            {
+                "away_team": "780525",
+                "home_team": "255846"
+            },
+            {
+                "away_team": "2434704",
+                "home_team": "2167270"
+            },
+            {
+                "away_team": "1575824",
+                "home_team": "1177142"
+            },
+            {
+                "away_team": "3238760",
+                "home_team": "2172588"
+            },
+            {
+                "away_team": "2291681",
+                "home_team": "2557931"
+            },
+            {
+                "away_team": "4872589",
+                "home_team": "580531"
+            },
+            {
+                "away_team": "1192876",
+                "home_team": "452180"
+            }
+        ],
+        "26": [
+            {
+                "away_team": "1575824",
+                "home_team": "2291681"
+            },
+            {
+                "away_team": "3328568",
+                "home_team": "544163"
+            },
+            {
+                "away_team": "1400511",
+                "home_team": "2120821"
+            },
+            {
+                "away_team": "255846",
+                "home_team": "452180"
+            },
+            {
+                "away_team": "2557931",
+                "home_team": "2434704"
+            },
+            {
+                "away_team": "4872589",
+                "home_team": "2172588"
+            },
+            {
+                "away_team": "780525",
+                "home_team": "1177142"
+            },
+            {
+                "away_team": "1192876",
+                "home_team": "1266186"
+            },
+            {
+                "away_team": "3238760",
+                "home_team": "2167270"
+            },
+            {
+                "away_team": "580531",
+                "home_team": "3004339"
+            }
+        ],
+        "27": [
+            {
+                "away_team": "452180",
+                "home_team": "3328568"
+            },
+            {
+                "away_team": "544163",
+                "home_team": "2434704"
+            },
+            {
+                "away_team": "2557931",
+                "home_team": "1192876"
+            },
+            {
+                "away_team": "2167270",
+                "home_team": "255846"
+            },
+            {
+                "away_team": "3238760",
+                "home_team": "1400511"
+            },
+            {
+                "away_team": "2172588",
+                "home_team": "1177142"
+            },
+            {
+                "away_team": "4872589",
+                "home_team": "3004339"
+            },
+            {
+                "away_team": "780525",
+                "home_team": "2120821"
+            },
+            {
+                "away_team": "1266186",
+                "home_team": "2291681"
+            },
+            {
+                "away_team": "1575824",
+                "home_team": "580531"
+            }
+        ],
+        "28": [
+            {
+                "away_team": "1400511",
+                "home_team": "4872589"
+            },
+            {
+                "away_team": "2167270",
+                "home_team": "1177142"
+            },
+            {
+                "away_team": "255846",
+                "home_team": "2557931"
+            },
+            {
+                "away_team": "3238760",
+                "home_team": "544163"
+            },
+            {
+                "away_team": "2434704",
+                "home_team": "1192876"
+            },
+            {
+                "away_team": "780525",
+                "home_team": "580531"
+            },
+            {
+                "away_team": "2172588",
+                "home_team": "1575824"
+            },
+            {
+                "away_team": "452180",
+                "home_team": "2120821"
+            },
+            {
+                "away_team": "3328568",
+                "home_team": "1266186"
+            },
+            {
+                "away_team": "3004339",
+                "home_team": "2291681"
+            }
+        ],
+        "29": [
+            {
+                "away_team": "580531",
+                "home_team": "2172588"
+            },
+            {
+                "away_team": "255846",
+                "home_team": "544163"
+            },
+            {
+                "away_team": "1192876",
+                "home_team": "2291681"
+            },
+            {
+                "away_team": "2120821",
+                "home_team": "2167270"
+            },
+            {
+                "away_team": "1177142",
+                "home_team": "1400511"
+            },
+            {
+                "away_team": "1266186",
+                "home_team": "2434704"
+            },
+            {
+                "away_team": "780525",
+                "home_team": "4872589"
+            },
+            {
+                "away_team": "3328568",
+                "home_team": "2557931"
+            },
+            {
+                "away_team": "3238760",
+                "home_team": "452180"
+            },
+            {
+                "away_team": "1575824",
+                "home_team": "3004339"
+            }
+        ],
+        "30": [
+            {
+                "away_team": "2434704",
+                "home_team": "3328568"
+            },
+            {
+                "away_team": "1192876",
+                "home_team": "255846"
+            },
+            {
+                "away_team": "2172588",
+                "home_team": "2291681"
+            },
+            {
+                "away_team": "1575824",
+                "home_team": "1400511"
+            },
+            {
+                "away_team": "2557931",
+                "home_team": "2120821"
+            },
+            {
+                "away_team": "780525",
+                "home_team": "3004339"
+            },
+            {
+                "away_team": "452180",
+                "home_team": "4872589"
+            },
+            {
+                "away_team": "544163",
+                "home_team": "1177142"
+            },
+            {
+                "away_team": "2167270",
+                "home_team": "580531"
+            },
+            {
+                "away_team": "1266186",
+                "home_team": "3238760"
+            }
+        ],
+        "31": [
+            {
+                "away_team": "452180",
+                "home_team": "1177142"
+            },
+            {
+                "away_team": "780525",
+                "home_team": "1575824"
+            },
+            {
+                "away_team": "2120821",
+                "home_team": "544163"
+            },
+            {
+                "away_team": "2291681",
+                "home_team": "2434704"
+            },
+            {
+                "away_team": "2167270",
+                "home_team": "4872589"
+            },
+            {
+                "away_team": "580531",
+                "home_team": "1400511"
+            },
+            {
+                "away_team": "3004339",
+                "home_team": "2172588"
+            },
+            {
+                "away_team": "1266186",
+                "home_team": "255846"
+            },
+            {
+                "away_team": "2557931",
+                "home_team": "3238760"
+            },
+            {
+                "away_team": "3328568",
+                "home_team": "1192876"
+            }
+        ],
+        "32": [
+            {
+                "away_team": "4872589",
+                "home_team": "2557931"
+            },
+            {
+                "away_team": "1177142",
+                "home_team": "1266186"
+            },
+            {
+                "away_team": "2291681",
+                "home_team": "780525"
+            },
+            {
+                "away_team": "2434704",
+                "home_team": "3238760"
+            },
+            {
+                "away_team": "580531",
+                "home_team": "544163"
+            },
+            {
+                "away_team": "452180",
+                "home_team": "1575824"
+            },
+            {
+                "away_team": "3004339",
+                "home_team": "2167270"
+            },
+            {
+                "away_team": "1400511",
+                "home_team": "2172588"
+            },
+            {
+                "away_team": "1192876",
+                "home_team": "2120821"
+            },
+            {
+                "away_team": "255846",
+                "home_team": "3328568"
+            }
+        ],
+        "33": [
+            {
+                "away_team": "2167270",
+                "home_team": "1575824"
+            },
+            {
+                "away_team": "2557931",
+                "home_team": "1177142"
+            },
+            {
+                "away_team": "580531",
+                "home_team": "452180"
+            },
+            {
+                "away_team": "2434704",
+                "home_team": "255846"
+            },
+            {
+                "away_team": "780525",
+                "home_team": "2172588"
+            },
+            {
+                "away_team": "1192876",
+                "home_team": "3238760"
+            },
+            {
+                "away_team": "1400511",
+                "home_team": "3004339"
+            },
+            {
+                "away_team": "544163",
+                "home_team": "4872589"
+            },
+            {
+                "away_team": "3328568",
+                "home_team": "2291681"
+            },
+            {
+                "away_team": "1266186",
+                "home_team": "2120821"
+            }
+        ],
+        "34": [
+            {
+                "away_team": "4872589",
+                "home_team": "1192876"
+            },
+            {
+                "away_team": "3238760",
+                "home_team": "255846"
+            },
+            {
+                "away_team": "2167270",
+                "home_team": "780525"
+            },
+            {
+                "away_team": "3004339",
+                "home_team": "544163"
+            },
+            {
+                "away_team": "2434704",
+                "home_team": "1177142"
+            },
+            {
+                "away_team": "3328568",
+                "home_team": "2120821"
+            },
+            {
+                "away_team": "580531",
+                "home_team": "1266186"
+            },
+            {
+                "away_team": "2557931",
+                "home_team": "1575824"
+            },
+            {
+                "away_team": "2172588",
+                "home_team": "452180"
+            },
+            {
+                "away_team": "1400511",
+                "home_team": "2291681"
+            }
+        ],
+        "35": [
+            {
+                "away_team": "3004339",
+                "home_team": "452180"
+            },
+            {
+                "away_team": "2120821",
+                "home_team": "2434704"
+            },
+            {
+                "away_team": "780525",
+                "home_team": "1400511"
+            },
+            {
+                "away_team": "3238760",
+                "home_team": "3328568"
+            },
+            {
+                "away_team": "4872589",
+                "home_team": "1266186"
+            },
+            {
+                "away_team": "2557931",
+                "home_team": "580531"
+            },
+            {
+                "away_team": "2172588",
+                "home_team": "2167270"
+            },
+            {
+                "away_team": "544163",
+                "home_team": "1575824"
+            },
+            {
+                "away_team": "2291681",
+                "home_team": "255846"
+            },
+            {
+                "away_team": "1177142",
+                "home_team": "1192876"
+            }
+        ],
+        "36": [
+            {
+                "away_team": "452180",
+                "home_team": "1400511"
+            },
+            {
+                "away_team": "3328568",
+                "home_team": "4872589"
+            },
+            {
+                "away_team": "2434704",
+                "home_team": "580531"
+            },
+            {
+                "away_team": "3238760",
+                "home_team": "2120821"
+            },
+            {
+                "away_team": "1192876",
+                "home_team": "1575824"
+            },
+            {
+                "away_team": "544163",
+                "home_team": "780525"
+            },
+            {
+                "away_team": "2291681",
+                "home_team": "2167270"
+            },
+            {
+                "away_team": "2172588",
+                "home_team": "2557931"
+            },
+            {
+                "away_team": "1266186",
+                "home_team": "3004339"
+            },
+            {
+                "away_team": "255846",
+                "home_team": "1177142"
+            }
+        ],
+        "37": [
+            {
+                "away_team": "1266186",
+                "home_team": "1575824"
+            },
+            {
+                "away_team": "1400511",
+                "home_team": "2167270"
+            },
+            {
+                "away_team": "255846",
+                "home_team": "2120821"
+            },
+            {
+                "away_team": "2434704",
+                "home_team": "4872589"
+            },
+            {
+                "away_team": "780525",
+                "home_team": "452180"
+            },
+            {
+                "away_team": "2291681",
+                "home_team": "3238760"
+            },
+            {
+                "away_team": "544163",
+                "home_team": "2172588"
+            },
+            {
+                "away_team": "3004339",
+                "home_team": "2557931"
+            },
+            {
+                "away_team": "3328568",
+                "home_team": "1177142"
+            },
+            {
+                "away_team": "1192876",
+                "home_team": "580531"
+            }
+        ],
+        "38": [
+            {
+                "away_team": "2434704",
+                "home_team": "1575824"
+            },
+            {
+                "away_team": "3328568",
+                "home_team": "580531"
+            },
+            {
+                "away_team": "1266186",
+                "home_team": "2172588"
+            },
+            {
+                "away_team": "3238760",
+                "home_team": "1177142"
+            },
+            {
+                "away_team": "780525",
+                "home_team": "2557931"
+            },
+            {
+                "away_team": "1192876",
+                "home_team": "3004339"
+            },
+            {
+                "away_team": "255846",
+                "home_team": "4872589"
+            },
+            {
+                "away_team": "2120821",
+                "home_team": "2291681"
+            },
+            {
+                "away_team": "544163",
+                "home_team": "1400511"
+            },
+            {
+                "away_team": "2167270",
+                "home_team": "452180"
+            }
+        ]
+    },
+    "league_data": {
+        "fpl_league_code": "252848",
+        "fpl_league_url": "https://fantasy.premierleague.com/leagues/252848/standings/h"
+    },
+    "player_data": {
+        "1177142": {
+            "fixtures": {
+                "01": {
+                    "class": "away",
+                    "opponent_code": "2291681"
+                },
+                "02": {
+                    "class": "home",
+                    "opponent_code": "2120821"
+                },
+                "03": {
+                    "class": "away",
+                    "opponent_code": "580531"
+                },
+                "04": {
+                    "class": "home",
+                    "opponent_code": "4872589"
+                },
+                "05": {
+                    "class": "away",
+                    "opponent_code": "3004339"
+                },
+                "06": {
+                    "class": "away",
+                    "opponent_code": "1575824"
+                },
+                "07": {
+                    "class": "home",
+                    "opponent_code": "780525"
+                },
+                "08": {
+                    "class": "home",
+                    "opponent_code": "2172588"
+                },
+                "09": {
+                    "class": "away",
+                    "opponent_code": "2167270"
+                },
+                "10": {
+                    "class": "home",
+                    "opponent_code": "1400511"
+                },
+                "11": {
+                    "class": "home",
+                    "opponent_code": "544163"
+                },
+                "12": {
+                    "class": "away",
+                    "opponent_code": "452180"
+                },
+                "13": {
+                    "class": "away",
+                    "opponent_code": "1266186"
+                },
+                "14": {
+                    "class": "home",
+                    "opponent_code": "2557931"
+                },
+                "15": {
+                    "class": "home",
+                    "opponent_code": "2434704"
+                },
+                "16": {
+                    "class": "home",
+                    "opponent_code": "1192876"
+                },
+                "17": {
+                    "class": "away",
+                    "opponent_code": "255846"
+                },
+                "18": {
+                    "class": "away",
+                    "opponent_code": "3328568"
+                },
+                "19": {
+                    "class": "away",
+                    "opponent_code": "3238760"
+                },
+                "20": {
+                    "class": "home",
+                    "opponent_code": "2291681"
+                },
+                "21": {
+                    "class": "away",
+                    "opponent_code": "2120821"
+                },
+                "22": {
+                    "class": "home",
+                    "opponent_code": "580531"
+                },
+                "23": {
+                    "class": "home",
+                    "opponent_code": "4872589"
+                },
+                "24": {
+                    "class": "home",
+                    "opponent_code": "3004339"
+                },
+                "25": {
+                    "class": "home",
+                    "opponent_code": "1575824"
+                },
+                "26": {
+                    "class": "home",
+                    "opponent_code": "780525"
+                },
+                "27": {
+                    "class": "home",
+                    "opponent_code": "2172588"
+                },
+                "28": {
+                    "class": "home",
+                    "opponent_code": "2167270"
+                },
+                "29": {
+                    "class": "away",
+                    "opponent_code": "1400511"
+                },
+                "30": {
+                    "class": "home",
+                    "opponent_code": "544163"
+                },
+                "31": {
+                    "class": "home",
+                    "opponent_code": "452180"
+                },
+                "32": {
+                    "class": "away",
+                    "opponent_code": "1266186"
+                },
+                "33": {
+                    "class": "home",
+                    "opponent_code": "2557931"
+                },
+                "34": {
+                    "class": "home",
+                    "opponent_code": "2434704"
+                },
+                "35": {
+                    "class": "away",
+                    "opponent_code": "1192876"
+                },
+                "36": {
+                    "class": "home",
+                    "opponent_code": "255846"
+                },
+                "37": {
+                    "class": "home",
+                    "opponent_code": "3328568"
+                },
+                "38": {
+                    "class": "home",
+                    "opponent_code": "3238760"
+                }
+            },
+            "gw_performance": {},
+            "manager_info": {
+                "fpl_code": "1177142",
+                "fpl_history": {
+                    "2010_11": "1763",
+                    "2011_12": "1631",
+                    "2012_13": "1906",
+                    "2013_14": "2033",
+                    "2014_15": "1933",
+                    "2015_16": "2092",
+                    "2016_17": "2147",
+                    "2017_18": "2193",
+                    "2018_19": "2093",
+                    "2019_20": "2174"
+                },
+                "manager_fullname": "Jeremy Harding",
+                "team_name": "Costabomb Athletico"
+            }
+        },
+        "1192876": {
+            "fixtures": {
+                "01": {
+                    "class": "home",
+                    "opponent_code": "780525"
+                },
+                "02": {
+                    "class": "home",
+                    "opponent_code": "2172588"
+                },
+                "03": {
+                    "class": "away",
+                    "opponent_code": "2167270"
+                },
+                "04": {
+                    "class": "home",
+                    "opponent_code": "1400511"
+                },
+                "05": {
+                    "class": "away",
+                    "opponent_code": "544163"
+                },
+                "06": {
+                    "class": "home",
+                    "opponent_code": "452180"
+                },
+                "07": {
+                    "class": "away",
+                    "opponent_code": "1266186"
+                },
+                "08": {
+                    "class": "away",
+                    "opponent_code": "2557931"
+                },
+                "09": {
+                    "class": "away",
+                    "opponent_code": "2434704"
+                },
+                "10": {
+                    "class": "home",
+                    "opponent_code": "2291681"
+                },
+                "11": {
+                    "class": "away",
+                    "opponent_code": "255846"
+                },
+                "12": {
+                    "class": "home",
+                    "opponent_code": "3328568"
+                },
+                "13": {
+                    "class": "away",
+                    "opponent_code": "2120821"
+                },
+                "14": {
+                    "class": "home",
+                    "opponent_code": "3238760"
+                },
+                "15": {
+                    "class": "away",
+                    "opponent_code": "4872589"
+                },
+                "16": {
+                    "class": "away",
+                    "opponent_code": "1177142"
+                },
+                "17": {
+                    "class": "away",
+                    "opponent_code": "1575824"
+                },
+                "18": {
+                    "class": "away",
+                    "opponent_code": "580531"
+                },
+                "19": {
+                    "class": "home",
+                    "opponent_code": "3004339"
+                },
+                "20": {
+                    "class": "home",
+                    "opponent_code": "780525"
+                },
+                "21": {
+                    "class": "away",
+                    "opponent_code": "2172588"
+                },
+                "22": {
+                    "class": "away",
+                    "opponent_code": "2167270"
+                },
+                "23": {
+                    "class": "away",
+                    "opponent_code": "1400511"
+                },
+                "24": {
+                    "class": "home",
+                    "opponent_code": "544163"
+                },
+                "25": {
+                    "class": "away",
+                    "opponent_code": "452180"
+                },
+                "26": {
+                    "class": "away",
+                    "opponent_code": "1266186"
+                },
+                "27": {
+                    "class": "home",
+                    "opponent_code": "2557931"
+                },
+                "28": {
+                    "class": "home",
+                    "opponent_code": "2434704"
+                },
+                "29": {
+                    "class": "away",
+                    "opponent_code": "2291681"
+                },
+                "30": {
+                    "class": "away",
+                    "opponent_code": "255846"
+                },
+                "31": {
+                    "class": "home",
+                    "opponent_code": "3328568"
+                },
+                "32": {
+                    "class": "away",
+                    "opponent_code": "2120821"
+                },
+                "33": {
+                    "class": "away",
+                    "opponent_code": "3238760"
+                },
+                "34": {
+                    "class": "home",
+                    "opponent_code": "4872589"
+                },
+                "35": {
+                    "class": "home",
+                    "opponent_code": "1177142"
+                },
+                "36": {
+                    "class": "away",
+                    "opponent_code": "1575824"
+                },
+                "37": {
+                    "class": "away",
+                    "opponent_code": "580531"
+                },
+                "38": {
+                    "class": "away",
+                    "opponent_code": "3004339"
+                }
+            },
+            "gw_performance": {},
+            "manager_info": {
+                "fpl_code": "1192876",
+                "fpl_history": {
+                    "2010_11": "1385",
+                    "2011_12": "1827",
+                    "2012_13": "1789",
+                    "2013_14": "2265",
+                    "2014_15": "1589",
+                    "2015_16": "1951",
+                    "2016_17": "1579",
+                    "2017_18": "2063",
+                    "2018_19": "2147",
+                    "2019_20": "2129"
+                },
+                "manager_fullname": "Liam Kelly",
+                "team_name": "Farcelona"
+            }
+        },
+        "1266186": {
+            "fixtures": {
+                "01": {
+                    "class": "away",
+                    "opponent_code": "1400511"
+                },
+                "02": {
+                    "class": "home",
+                    "opponent_code": "780525"
+                },
+                "03": {
+                    "class": "away",
+                    "opponent_code": "452180"
+                },
+                "04": {
+                    "class": "home",
+                    "opponent_code": "2167270"
+                },
+                "05": {
+                    "class": "away",
+                    "opponent_code": "2557931"
+                },
+                "06": {
+                    "class": "home",
+                    "opponent_code": "544163"
+                },
+                "07": {
+                    "class": "home",
+                    "opponent_code": "1192876"
+                },
+                "08": {
+                    "class": "away",
+                    "opponent_code": "2291681"
+                },
+                "09": {
+                    "class": "home",
+                    "opponent_code": "3328568"
+                },
+                "10": {
+                    "class": "away",
+                    "opponent_code": "2434704"
+                },
+                "11": {
+                    "class": "home",
+                    "opponent_code": "3238760"
+                },
+                "12": {
+                    "class": "away",
+                    "opponent_code": "255846"
+                },
+                "13": {
+                    "class": "home",
+                    "opponent_code": "1177142"
+                },
+                "14": {
+                    "class": "home",
+                    "opponent_code": "2120821"
+                },
+                "15": {
+                    "class": "away",
+                    "opponent_code": "580531"
+                },
+                "16": {
+                    "class": "away",
+                    "opponent_code": "4872589"
+                },
+                "17": {
+                    "class": "away",
+                    "opponent_code": "3004339"
+                },
+                "18": {
+                    "class": "home",
+                    "opponent_code": "1575824"
+                },
+                "19": {
+                    "class": "home",
+                    "opponent_code": "2172588"
+                },
+                "20": {
+                    "class": "home",
+                    "opponent_code": "1400511"
+                },
+                "21": {
+                    "class": "home",
+                    "opponent_code": "780525"
+                },
+                "22": {
+                    "class": "away",
+                    "opponent_code": "452180"
+                },
+                "23": {
+                    "class": "home",
+                    "opponent_code": "2167270"
+                },
+                "24": {
+                    "class": "away",
+                    "opponent_code": "2557931"
+                },
+                "25": {
+                    "class": "home",
+                    "opponent_code": "544163"
+                },
+                "26": {
+                    "class": "home",
+                    "opponent_code": "1192876"
+                },
+                "27": {
+                    "class": "away",
+                    "opponent_code": "2291681"
+                },
+                "28": {
+                    "class": "home",
+                    "opponent_code": "3328568"
+                },
+                "29": {
+                    "class": "away",
+                    "opponent_code": "2434704"
+                },
+                "30": {
+                    "class": "away",
+                    "opponent_code": "3238760"
+                },
+                "31": {
+                    "class": "away",
+                    "opponent_code": "255846"
+                },
+                "32": {
+                    "class": "home",
+                    "opponent_code": "1177142"
+                },
+                "33": {
+                    "class": "away",
+                    "opponent_code": "2120821"
+                },
+                "34": {
+                    "class": "home",
+                    "opponent_code": "580531"
+                },
+                "35": {
+                    "class": "home",
+                    "opponent_code": "4872589"
+                },
+                "36": {
+                    "class": "away",
+                    "opponent_code": "3004339"
+                },
+                "37": {
+                    "class": "away",
+                    "opponent_code": "1575824"
+                },
+                "38": {
+                    "class": "away",
+                    "opponent_code": "2172588"
+                }
+            },
+            "gw_performance": {},
+            "manager_info": {
+                "fpl_code": "1266186",
+                "fpl_history": {
+                    "2012_13": "1960",
+                    "2013_14": "1932",
+                    "2014_15": "1455",
+                    "2015_16": "1795",
+                    "2016_17": "1874",
+                    "2017_18": "1919",
+                    "2018_19": "2135",
+                    "2019_20": "2059"
+                },
+                "manager_fullname": "Josh Christie",
+                "team_name": "Sensible Soccer"
+            }
+        },
+        "1400511": {
+            "fixtures": {
+                "01": {
+                    "class": "home",
+                    "opponent_code": "1266186"
+                },
+                "02": {
+                    "class": "away",
+                    "opponent_code": "2557931"
+                },
+                "03": {
+                    "class": "away",
+                    "opponent_code": "2434704"
+                },
+                "04": {
+                    "class": "away",
+                    "opponent_code": "1192876"
+                },
+                "05": {
+                    "class": "home",
+                    "opponent_code": "255846"
+                },
+                "06": {
+                    "class": "away",
+                    "opponent_code": "3328568"
+                },
+                "07": {
+                    "class": "away",
+                    "opponent_code": "2120821"
+                },
+                "08": {
+                    "class": "home",
+                    "opponent_code": "3238760"
+                },
+                "09": {
+                    "class": "away",
+                    "opponent_code": "4872589"
+                },
+                "10": {
+                    "class": "away",
+                    "opponent_code": "1177142"
+                },
+                "11": {
+                    "class": "away",
+                    "opponent_code": "1575824"
+                },
+                "12": {
+                    "class": "away",
+                    "opponent_code": "580531"
+                },
+                "13": {
+                    "class": "home",
+                    "opponent_code": "2172588"
+                },
+                "14": {
+                    "class": "away",
+                    "opponent_code": "3004339"
+                },
+                "15": {
+                    "class": "away",
+                    "opponent_code": "2291681"
+                },
+                "16": {
+                    "class": "home",
+                    "opponent_code": "780525"
+                },
+                "17": {
+                    "class": "home",
+                    "opponent_code": "452180"
+                },
+                "18": {
+                    "class": "away",
+                    "opponent_code": "2167270"
+                },
+                "19": {
+                    "class": "away",
+                    "opponent_code": "544163"
+                },
+                "20": {
+                    "class": "away",
+                    "opponent_code": "1266186"
+                },
+                "21": {
+                    "class": "home",
+                    "opponent_code": "2557931"
+                },
+                "22": {
+                    "class": "away",
+                    "opponent_code": "2434704"
+                },
+                "23": {
+                    "class": "home",
+                    "opponent_code": "1192876"
+                },
+                "24": {
+                    "class": "home",
+                    "opponent_code": "255846"
+                },
+                "25": {
+                    "class": "away",
+                    "opponent_code": "3328568"
+                },
+                "26": {
+                    "class": "away",
+                    "opponent_code": "2120821"
+                },
+                "27": {
+                    "class": "home",
+                    "opponent_code": "3238760"
+                },
+                "28": {
+                    "class": "away",
+                    "opponent_code": "4872589"
+                },
+                "29": {
+                    "class": "home",
+                    "opponent_code": "1177142"
+                },
+                "30": {
+                    "class": "home",
+                    "opponent_code": "1575824"
+                },
+                "31": {
+                    "class": "home",
+                    "opponent_code": "580531"
+                },
+                "32": {
+                    "class": "away",
+                    "opponent_code": "2172588"
+                },
+                "33": {
+                    "class": "away",
+                    "opponent_code": "3004339"
+                },
+                "34": {
+                    "class": "away",
+                    "opponent_code": "2291681"
+                },
+                "35": {
+                    "class": "home",
+                    "opponent_code": "780525"
+                },
+                "36": {
+                    "class": "home",
+                    "opponent_code": "452180"
+                },
+                "37": {
+                    "class": "away",
+                    "opponent_code": "2167270"
+                },
+                "38": {
+                    "class": "home",
+                    "opponent_code": "544163"
+                }
+            },
+            "gw_performance": {},
+            "manager_info": {
+                "fpl_code": "1400511",
+                "fpl_history": {
+                    "2017_18": "1845",
+                    "2018_19": "2074",
+                    "2019_20": "2005"
+                },
+                "manager_fullname": "Matt Clark",
+                "team_name": "Cloggsville"
+            }
+        },
+        "1575824": {
+            "fixtures": {
+                "01": {
+                    "class": "away",
+                    "opponent_code": "255846"
+                },
+                "02": {
+                    "class": "away",
+                    "opponent_code": "3328568"
+                },
+                "03": {
+                    "class": "away",
+                    "opponent_code": "2120821"
+                },
+                "04": {
+                    "class": "home",
+                    "opponent_code": "3238760"
+                },
+                "05": {
+                    "class": "away",
+                    "opponent_code": "4872589"
+                },
+                "06": {
+                    "class": "home",
+                    "opponent_code": "1177142"
+                },
+                "07": {
+                    "class": "away",
+                    "opponent_code": "2291681"
+                },
+                "08": {
+                    "class": "home",
+                    "opponent_code": "580531"
+                },
+                "09": {
+                    "class": "home",
+                    "opponent_code": "2172588"
+                },
+                "10": {
+                    "class": "away",
+                    "opponent_code": "3004339"
+                },
+                "11": {
+                    "class": "home",
+                    "opponent_code": "1400511"
+                },
+                "12": {
+                    "class": "away",
+                    "opponent_code": "780525"
+                },
+                "13": {
+                    "class": "home",
+                    "opponent_code": "452180"
+                },
+                "14": {
+                    "class": "home",
+                    "opponent_code": "2167270"
+                },
+                "15": {
+                    "class": "away",
+                    "opponent_code": "2557931"
+                },
+                "16": {
+                    "class": "home",
+                    "opponent_code": "544163"
+                },
+                "17": {
+                    "class": "home",
+                    "opponent_code": "1192876"
+                },
+                "18": {
+                    "class": "away",
+                    "opponent_code": "1266186"
+                },
+                "19": {
+                    "class": "away",
+                    "opponent_code": "2434704"
+                },
+                "20": {
+                    "class": "home",
+                    "opponent_code": "255846"
+                },
+                "21": {
+                    "class": "home",
+                    "opponent_code": "3328568"
+                },
+                "22": {
+                    "class": "away",
+                    "opponent_code": "2120821"
+                },
+                "23": {
+                    "class": "home",
+                    "opponent_code": "3238760"
+                },
+                "24": {
+                    "class": "away",
+                    "opponent_code": "4872589"
+                },
+                "25": {
+                    "class": "away",
+                    "opponent_code": "1177142"
+                },
+                "26": {
+                    "class": "away",
+                    "opponent_code": "2291681"
+                },
+                "27": {
+                    "class": "away",
+                    "opponent_code": "580531"
+                },
+                "28": {
+                    "class": "home",
+                    "opponent_code": "2172588"
+                },
+                "29": {
+                    "class": "away",
+                    "opponent_code": "3004339"
+                },
+                "30": {
+                    "class": "away",
+                    "opponent_code": "1400511"
+                },
+                "31": {
+                    "class": "home",
+                    "opponent_code": "780525"
+                },
+                "32": {
+                    "class": "home",
+                    "opponent_code": "452180"
+                },
+                "33": {
+                    "class": "home",
+                    "opponent_code": "2167270"
+                },
+                "34": {
+                    "class": "home",
+                    "opponent_code": "2557931"
+                },
+                "35": {
+                    "class": "home",
+                    "opponent_code": "544163"
+                },
+                "36": {
+                    "class": "home",
+                    "opponent_code": "1192876"
+                },
+                "37": {
+                    "class": "home",
+                    "opponent_code": "1266186"
+                },
+                "38": {
+                    "class": "home",
+                    "opponent_code": "2434704"
+                }
+            },
+            "gw_performance": {},
+            "manager_info": {
+                "fpl_code": "1575824",
+                "fpl_history": {
+                    "2016_17": "1875",
+                    "2018_19": "1966",
+                    "2019_20": "2091"
+                },
+                "manager_fullname": "Ed Clarke",
+                "team_name": "The Vinagre Strokes"
+            }
+        },
+        "2120821": {
+            "fixtures": {
+                "01": {
+                    "class": "home",
+                    "opponent_code": "4872589"
+                },
+                "02": {
+                    "class": "away",
+                    "opponent_code": "1177142"
+                },
+                "03": {
+                    "class": "home",
+                    "opponent_code": "1575824"
+                },
+                "04": {
+                    "class": "away",
+                    "opponent_code": "580531"
+                },
+                "05": {
+                    "class": "home",
+                    "opponent_code": "2172588"
+                },
+                "06": {
+                    "class": "home",
+                    "opponent_code": "3004339"
+                },
+                "07": {
+                    "class": "home",
+                    "opponent_code": "1400511"
+                },
+                "08": {
+                    "class": "home",
+                    "opponent_code": "780525"
+                },
+                "09": {
+                    "class": "home",
+                    "opponent_code": "452180"
+                },
+                "10": {
+                    "class": "home",
+                    "opponent_code": "2167270"
+                },
+                "11": {
+                    "class": "home",
+                    "opponent_code": "2557931"
+                },
+                "12": {
+                    "class": "home",
+                    "opponent_code": "544163"
+                },
+                "13": {
+                    "class": "home",
+                    "opponent_code": "1192876"
+                },
+                "14": {
+                    "class": "away",
+                    "opponent_code": "1266186"
+                },
+                "15": {
+                    "class": "away",
+                    "opponent_code": "3328568"
+                },
+                "16": {
+                    "class": "away",
+                    "opponent_code": "2434704"
+                },
+                "17": {
+                    "class": "home",
+                    "opponent_code": "3238760"
+                },
+                "18": {
+                    "class": "home",
+                    "opponent_code": "255846"
+                },
+                "19": {
+                    "class": "away",
+                    "opponent_code": "2291681"
+                },
+                "20": {
+                    "class": "home",
+                    "opponent_code": "4872589"
+                },
+                "21": {
+                    "class": "home",
+                    "opponent_code": "1177142"
+                },
+                "22": {
+                    "class": "home",
+                    "opponent_code": "1575824"
+                },
+                "23": {
+                    "class": "away",
+                    "opponent_code": "580531"
+                },
+                "24": {
+                    "class": "away",
+                    "opponent_code": "2172588"
+                },
+                "25": {
+                    "class": "away",
+                    "opponent_code": "3004339"
+                },
+                "26": {
+                    "class": "home",
+                    "opponent_code": "1400511"
+                },
+                "27": {
+                    "class": "home",
+                    "opponent_code": "780525"
+                },
+                "28": {
+                    "class": "home",
+                    "opponent_code": "452180"
+                },
+                "29": {
+                    "class": "away",
+                    "opponent_code": "2167270"
+                },
+                "30": {
+                    "class": "home",
+                    "opponent_code": "2557931"
+                },
+                "31": {
+                    "class": "away",
+                    "opponent_code": "544163"
+                },
+                "32": {
+                    "class": "home",
+                    "opponent_code": "1192876"
+                },
+                "33": {
+                    "class": "home",
+                    "opponent_code": "1266186"
+                },
+                "34": {
+                    "class": "home",
+                    "opponent_code": "3328568"
+                },
+                "35": {
+                    "class": "away",
+                    "opponent_code": "2434704"
+                },
+                "36": {
+                    "class": "home",
+                    "opponent_code": "3238760"
+                },
+                "37": {
+                    "class": "home",
+                    "opponent_code": "255846"
+                },
+                "38": {
+                    "class": "away",
+                    "opponent_code": "2291681"
+                }
+            },
+            "gw_performance": {},
+            "manager_info": {
+                "fpl_code": "2120821",
+                "fpl_history": {
+                    "2009_10": "1913",
+                    "2010_11": "1865",
+                    "2011_12": "1573",
+                    "2013_14": "2193",
+                    "2014_15": "1883",
+                    "2015_16": "1960",
+                    "2016_17": "2083",
+                    "2017_18": "1663",
+                    "2018_19": "2067",
+                    "2019_20": "1838"
+                },
+                "manager_fullname": "Joe Harris",
+                "team_name": "Sir Roy of Hodgson"
+            }
+        },
+        "2167270": {
+            "fixtures": {
+                "01": {
+                    "class": "home",
+                    "opponent_code": "2557931"
+                },
+                "02": {
+                    "class": "away",
+                    "opponent_code": "544163"
+                },
+                "03": {
+                    "class": "home",
+                    "opponent_code": "1192876"
+                },
+                "04": {
+                    "class": "away",
+                    "opponent_code": "1266186"
+                },
+                "05": {
+                    "class": "away",
+                    "opponent_code": "3328568"
+                },
+                "06": {
+                    "class": "away",
+                    "opponent_code": "2434704"
+                },
+                "07": {
+                    "class": "away",
+                    "opponent_code": "3238760"
+                },
+                "08": {
+                    "class": "home",
+                    "opponent_code": "255846"
+                },
+                "09": {
+                    "class": "home",
+                    "opponent_code": "1177142"
+                },
+                "10": {
+                    "class": "away",
+                    "opponent_code": "2120821"
+                },
+                "11": {
+                    "class": "away",
+                    "opponent_code": "580531"
+                },
+                "12": {
+                    "class": "home",
+                    "opponent_code": "4872589"
+                },
+                "13": {
+                    "class": "home",
+                    "opponent_code": "3004339"
+                },
+                "14": {
+                    "class": "away",
+                    "opponent_code": "1575824"
+                },
+                "15": {
+                    "class": "home",
+                    "opponent_code": "780525"
+                },
+                "16": {
+                    "class": "away",
+                    "opponent_code": "2172588"
+                },
+                "17": {
+                    "class": "away",
+                    "opponent_code": "2291681"
+                },
+                "18": {
+                    "class": "home",
+                    "opponent_code": "1400511"
+                },
+                "19": {
+                    "class": "home",
+                    "opponent_code": "452180"
+                },
+                "20": {
+                    "class": "home",
+                    "opponent_code": "2557931"
+                },
+                "21": {
+                    "class": "away",
+                    "opponent_code": "544163"
+                },
+                "22": {
+                    "class": "home",
+                    "opponent_code": "1192876"
+                },
+                "23": {
+                    "class": "away",
+                    "opponent_code": "1266186"
+                },
+                "24": {
+                    "class": "home",
+                    "opponent_code": "3328568"
+                },
+                "25": {
+                    "class": "home",
+                    "opponent_code": "2434704"
+                },
+                "26": {
+                    "class": "home",
+                    "opponent_code": "3238760"
+                },
+                "27": {
+                    "class": "away",
+                    "opponent_code": "255846"
+                },
+                "28": {
+                    "class": "away",
+                    "opponent_code": "1177142"
+                },
+                "29": {
+                    "class": "home",
+                    "opponent_code": "2120821"
+                },
+                "30": {
+                    "class": "away",
+                    "opponent_code": "580531"
+                },
+                "31": {
+                    "class": "away",
+                    "opponent_code": "4872589"
+                },
+                "32": {
+                    "class": "home",
+                    "opponent_code": "3004339"
+                },
+                "33": {
+                    "class": "away",
+                    "opponent_code": "1575824"
+                },
+                "34": {
+                    "class": "away",
+                    "opponent_code": "780525"
+                },
+                "35": {
+                    "class": "home",
+                    "opponent_code": "2172588"
+                },
+                "36": {
+                    "class": "home",
+                    "opponent_code": "2291681"
+                },
+                "37": {
+                    "class": "home",
+                    "opponent_code": "1400511"
+                },
+                "38": {
+                    "class": "away",
+                    "opponent_code": "452180"
+                }
+            },
+            "gw_performance": {},
+            "manager_info": {
+                "fpl_code": "2167270",
+                "fpl_history": {
+                    "2013_14": "2201",
+                    "2014_15": "1942",
+                    "2015_16": "2115",
+                    "2016_17": "1963",
+                    "2017_18": "2194",
+                    "2018_19": "2320",
+                    "2019_20": "2177"
+                },
+                "manager_fullname": "Ben Carroll",
+                "team_name": "Pretty Pretty United"
+            }
+        },
+        "2172588": {
+            "fixtures": {
+                "01": {
+                    "class": "home",
+                    "opponent_code": "2434704"
+                },
+                "02": {
+                    "class": "away",
+                    "opponent_code": "1192876"
+                },
+                "03": {
+                    "class": "home",
+                    "opponent_code": "255846"
+                },
+                "04": {
+                    "class": "away",
+                    "opponent_code": "3328568"
+                },
+                "05": {
+                    "class": "away",
+                    "opponent_code": "2120821"
+                },
+                "06": {
+                    "class": "away",
+                    "opponent_code": "3238760"
+                },
+                "07": {
+                    "class": "away",
+                    "opponent_code": "4872589"
+                },
+                "08": {
+                    "class": "away",
+                    "opponent_code": "1177142"
+                },
+                "09": {
+                    "class": "away",
+                    "opponent_code": "1575824"
+                },
+                "10": {
+                    "class": "away",
+                    "opponent_code": "580531"
+                },
+                "11": {
+                    "class": "away",
+                    "opponent_code": "2291681"
+                },
+                "12": {
+                    "class": "home",
+                    "opponent_code": "3004339"
+                },
+                "13": {
+                    "class": "away",
+                    "opponent_code": "1400511"
+                },
+                "14": {
+                    "class": "home",
+                    "opponent_code": "780525"
+                },
+                "15": {
+                    "class": "home",
+                    "opponent_code": "452180"
+                },
+                "16": {
+                    "class": "home",
+                    "opponent_code": "2167270"
+                },
+                "17": {
+                    "class": "home",
+                    "opponent_code": "2557931"
+                },
+                "18": {
+                    "class": "home",
+                    "opponent_code": "544163"
+                },
+                "19": {
+                    "class": "away",
+                    "opponent_code": "1266186"
+                },
+                "20": {
+                    "class": "home",
+                    "opponent_code": "2434704"
+                },
+                "21": {
+                    "class": "home",
+                    "opponent_code": "1192876"
+                },
+                "22": {
+                    "class": "away",
+                    "opponent_code": "255846"
+                },
+                "23": {
+                    "class": "home",
+                    "opponent_code": "3328568"
+                },
+                "24": {
+                    "class": "home",
+                    "opponent_code": "2120821"
+                },
+                "25": {
+                    "class": "home",
+                    "opponent_code": "3238760"
+                },
+                "26": {
+                    "class": "home",
+                    "opponent_code": "4872589"
+                },
+                "27": {
+                    "class": "away",
+                    "opponent_code": "1177142"
+                },
+                "28": {
+                    "class": "away",
+                    "opponent_code": "1575824"
+                },
+                "29": {
+                    "class": "home",
+                    "opponent_code": "580531"
+                },
+                "30": {
+                    "class": "away",
+                    "opponent_code": "2291681"
+                },
+                "31": {
+                    "class": "home",
+                    "opponent_code": "3004339"
+                },
+                "32": {
+                    "class": "home",
+                    "opponent_code": "1400511"
+                },
+                "33": {
+                    "class": "home",
+                    "opponent_code": "780525"
+                },
+                "34": {
+                    "class": "away",
+                    "opponent_code": "452180"
+                },
+                "35": {
+                    "class": "away",
+                    "opponent_code": "2167270"
+                },
+                "36": {
+                    "class": "away",
+                    "opponent_code": "2557931"
+                },
+                "37": {
+                    "class": "home",
+                    "opponent_code": "544163"
+                },
+                "38": {
+                    "class": "home",
+                    "opponent_code": "1266186"
+                }
+            },
+            "gw_performance": {},
+            "manager_info": {
+                "fpl_code": "2172588",
+                "fpl_history": {
+                    "2016_17": "1944",
+                    "2017_18": "2032",
+                    "2018_19": "2084",
+                    "2019_20": "1991"
+                },
+                "manager_fullname": "Mike Yeboah",
+                "team_name": "PowerStars"
+            }
+        },
+        "2291681": {
+            "fixtures": {
+                "01": {
+                    "class": "home",
+                    "opponent_code": "1177142"
+                },
+                "02": {
+                    "class": "home",
+                    "opponent_code": "452180"
+                },
+                "03": {
+                    "class": "home",
+                    "opponent_code": "4872589"
+                },
+                "04": {
+                    "class": "home",
+                    "opponent_code": "544163"
+                },
+                "05": {
+                    "class": "away",
+                    "opponent_code": "580531"
+                },
+                "06": {
+                    "class": "home",
+                    "opponent_code": "2557931"
+                },
+                "07": {
+                    "class": "home",
+                    "opponent_code": "1575824"
+                },
+                "08": {
+                    "class": "home",
+                    "opponent_code": "1266186"
+                },
+                "09": {
+                    "class": "home",
+                    "opponent_code": "3004339"
+                },
+                "10": {
+                    "class": "away",
+                    "opponent_code": "1192876"
+                },
+                "11": {
+                    "class": "home",
+                    "opponent_code": "2172588"
+                },
+                "12": {
+                    "class": "away",
+                    "opponent_code": "2434704"
+                },
+                "13": {
+                    "class": "away",
+                    "opponent_code": "780525"
+                },
+                "14": {
+                    "class": "home",
+                    "opponent_code": "3328568"
+                },
+                "15": {
+                    "class": "home",
+                    "opponent_code": "1400511"
+                },
+                "16": {
+                    "class": "away",
+                    "opponent_code": "255846"
+                },
+                "17": {
+                    "class": "home",
+                    "opponent_code": "2167270"
+                },
+                "18": {
+                    "class": "away",
+                    "opponent_code": "3238760"
+                },
+                "19": {
+                    "class": "home",
+                    "opponent_code": "2120821"
+                },
+                "20": {
+                    "class": "away",
+                    "opponent_code": "1177142"
+                },
+                "21": {
+                    "class": "home",
+                    "opponent_code": "452180"
+                },
+                "22": {
+                    "class": "home",
+                    "opponent_code": "4872589"
+                },
+                "23": {
+                    "class": "away",
+                    "opponent_code": "544163"
+                },
+                "24": {
+                    "class": "home",
+                    "opponent_code": "580531"
+                },
+                "25": {
+                    "class": "away",
+                    "opponent_code": "2557931"
+                },
+                "26": {
+                    "class": "home",
+                    "opponent_code": "1575824"
+                },
+                "27": {
+                    "class": "home",
+                    "opponent_code": "1266186"
+                },
+                "28": {
+                    "class": "home",
+                    "opponent_code": "3004339"
+                },
+                "29": {
+                    "class": "home",
+                    "opponent_code": "1192876"
+                },
+                "30": {
+                    "class": "home",
+                    "opponent_code": "2172588"
+                },
+                "31": {
+                    "class": "away",
+                    "opponent_code": "2434704"
+                },
+                "32": {
+                    "class": "away",
+                    "opponent_code": "780525"
+                },
+                "33": {
+                    "class": "home",
+                    "opponent_code": "3328568"
+                },
+                "34": {
+                    "class": "home",
+                    "opponent_code": "1400511"
+                },
+                "35": {
+                    "class": "away",
+                    "opponent_code": "255846"
+                },
+                "36": {
+                    "class": "away",
+                    "opponent_code": "2167270"
+                },
+                "37": {
+                    "class": "away",
+                    "opponent_code": "3238760"
+                },
+                "38": {
+                    "class": "home",
+                    "opponent_code": "2120821"
+                }
+            },
+            "gw_performance": {},
+            "manager_info": {
+                "fpl_code": "2291681",
+                "fpl_history": {
+                    "2011_12": "1910",
+                    "2012_13": "1813",
+                    "2015_16": "1582",
+                    "2016_17": "1776",
+                    "2017_18": "2001",
+                    "2018_19": "2036",
+                    "2019_20": "2092"
+                },
+                "manager_fullname": "Jon Lescott",
+                "team_name": "West Shambles"
+            }
+        },
+        "2434704": {
+            "fixtures": {
+                "01": {
+                    "class": "away",
+                    "opponent_code": "2172588"
+                },
+                "02": {
+                    "class": "home",
+                    "opponent_code": "3004339"
+                },
+                "03": {
+                    "class": "home",
+                    "opponent_code": "1400511"
+                },
+                "04": {
+                    "class": "away",
+                    "opponent_code": "780525"
+                },
+                "05": {
+                    "class": "home",
+                    "opponent_code": "452180"
+                },
+                "06": {
+                    "class": "home",
+                    "opponent_code": "2167270"
+                },
+                "07": {
+                    "class": "home",
+                    "opponent_code": "2557931"
+                },
+                "08": {
+                    "class": "away",
+                    "opponent_code": "544163"
+                },
+                "09": {
+                    "class": "home",
+                    "opponent_code": "1192876"
+                },
+                "10": {
+                    "class": "home",
+                    "opponent_code": "1266186"
+                },
+                "11": {
+                    "class": "home",
+                    "opponent_code": "3328568"
+                },
+                "12": {
+                    "class": "home",
+                    "opponent_code": "2291681"
+                },
+                "13": {
+                    "class": "away",
+                    "opponent_code": "3238760"
+                },
+                "14": {
+                    "class": "home",
+                    "opponent_code": "255846"
+                },
+                "15": {
+                    "class": "away",
+                    "opponent_code": "1177142"
+                },
+                "16": {
+                    "class": "home",
+                    "opponent_code": "2120821"
+                },
+                "17": {
+                    "class": "away",
+                    "opponent_code": "580531"
+                },
+                "18": {
+                    "class": "home",
+                    "opponent_code": "4872589"
+                },
+                "19": {
+                    "class": "home",
+                    "opponent_code": "1575824"
+                },
+                "20": {
+                    "class": "away",
+                    "opponent_code": "2172588"
+                },
+                "21": {
+                    "class": "home",
+                    "opponent_code": "3004339"
+                },
+                "22": {
+                    "class": "home",
+                    "opponent_code": "1400511"
+                },
+                "23": {
+                    "class": "away",
+                    "opponent_code": "780525"
+                },
+                "24": {
+                    "class": "away",
+                    "opponent_code": "452180"
+                },
+                "25": {
+                    "class": "away",
+                    "opponent_code": "2167270"
+                },
+                "26": {
+                    "class": "home",
+                    "opponent_code": "2557931"
+                },
+                "27": {
+                    "class": "home",
+                    "opponent_code": "544163"
+                },
+                "28": {
+                    "class": "away",
+                    "opponent_code": "1192876"
+                },
+                "29": {
+                    "class": "home",
+                    "opponent_code": "1266186"
+                },
+                "30": {
+                    "class": "away",
+                    "opponent_code": "3328568"
+                },
+                "31": {
+                    "class": "home",
+                    "opponent_code": "2291681"
+                },
+                "32": {
+                    "class": "away",
+                    "opponent_code": "3238760"
+                },
+                "33": {
+                    "class": "away",
+                    "opponent_code": "255846"
+                },
+                "34": {
+                    "class": "away",
+                    "opponent_code": "1177142"
+                },
+                "35": {
+                    "class": "home",
+                    "opponent_code": "2120821"
+                },
+                "36": {
+                    "class": "away",
+                    "opponent_code": "580531"
+                },
+                "37": {
+                    "class": "away",
+                    "opponent_code": "4872589"
+                },
+                "38": {
+                    "class": "away",
+                    "opponent_code": "1575824"
+                }
+            },
+            "gw_performance": {},
+            "manager_info": {
+                "fpl_code": "2434704",
+                "fpl_history": {
+                    "2013_14": "2097",
+                    "2014_15": "1843",
+                    "2015_16": "1885",
+                    "2016_17": "2036",
+                    "2017_18": "1993",
+                    "2018_19": "2230",
+                    "2019_20": "1952"
+                },
+                "manager_fullname": "Richard Meggison",
+                "team_name": "Ramblerfarians"
+            }
+        },
+        "2557931": {
+            "fixtures": {
+                "01": {
+                    "class": "away",
+                    "opponent_code": "2167270"
+                },
+                "02": {
+                    "class": "home",
+                    "opponent_code": "1400511"
+                },
+                "03": {
+                    "class": "home",
+                    "opponent_code": "544163"
+                },
+                "04": {
+                    "class": "home",
+                    "opponent_code": "452180"
+                },
+                "05": {
+                    "class": "home",
+                    "opponent_code": "1266186"
+                },
+                "06": {
+                    "class": "away",
+                    "opponent_code": "2291681"
+                },
+                "07": {
+                    "class": "away",
+                    "opponent_code": "2434704"
+                },
+                "08": {
+                    "class": "home",
+                    "opponent_code": "1192876"
+                },
+                "09": {
+                    "class": "home",
+                    "opponent_code": "255846"
+                },
+                "10": {
+                    "class": "away",
+                    "opponent_code": "3328568"
+                },
+                "11": {
+                    "class": "away",
+                    "opponent_code": "2120821"
+                },
+                "12": {
+                    "class": "home",
+                    "opponent_code": "3238760"
+                },
+                "13": {
+                    "class": "home",
+                    "opponent_code": "4872589"
+                },
+                "14": {
+                    "class": "away",
+                    "opponent_code": "1177142"
+                },
+                "15": {
+                    "class": "home",
+                    "opponent_code": "1575824"
+                },
+                "16": {
+                    "class": "away",
+                    "opponent_code": "580531"
+                },
+                "17": {
+                    "class": "away",
+                    "opponent_code": "2172588"
+                },
+                "18": {
+                    "class": "home",
+                    "opponent_code": "3004339"
+                },
+                "19": {
+                    "class": "home",
+                    "opponent_code": "780525"
+                },
+                "20": {
+                    "class": "away",
+                    "opponent_code": "2167270"
+                },
+                "21": {
+                    "class": "away",
+                    "opponent_code": "1400511"
+                },
+                "22": {
+                    "class": "away",
+                    "opponent_code": "544163"
+                },
+                "23": {
+                    "class": "away",
+                    "opponent_code": "452180"
+                },
+                "24": {
+                    "class": "home",
+                    "opponent_code": "1266186"
+                },
+                "25": {
+                    "class": "home",
+                    "opponent_code": "2291681"
+                },
+                "26": {
+                    "class": "away",
+                    "opponent_code": "2434704"
+                },
+                "27": {
+                    "class": "away",
+                    "opponent_code": "1192876"
+                },
+                "28": {
+                    "class": "home",
+                    "opponent_code": "255846"
+                },
+                "29": {
+                    "class": "home",
+                    "opponent_code": "3328568"
+                },
+                "30": {
+                    "class": "away",
+                    "opponent_code": "2120821"
+                },
+                "31": {
+                    "class": "away",
+                    "opponent_code": "3238760"
+                },
+                "32": {
+                    "class": "home",
+                    "opponent_code": "4872589"
+                },
+                "33": {
+                    "class": "away",
+                    "opponent_code": "1177142"
+                },
+                "34": {
+                    "class": "away",
+                    "opponent_code": "1575824"
+                },
+                "35": {
+                    "class": "away",
+                    "opponent_code": "580531"
+                },
+                "36": {
+                    "class": "home",
+                    "opponent_code": "2172588"
+                },
+                "37": {
+                    "class": "home",
+                    "opponent_code": "3004339"
+                },
+                "38": {
+                    "class": "home",
+                    "opponent_code": "780525"
+                }
+            },
+            "gw_performance": {},
+            "manager_info": {
+                "fpl_code": "2557931",
+                "fpl_history": {
+                    "2013_14": "2260",
+                    "2014_15": "1953",
+                    "2015_16": "1755",
+                    "2016_17": "2085",
+                    "2017_18": "1697",
+                    "2018_19": "1892",
+                    "2019_20": "1919"
+                },
+                "manager_fullname": "Chris Marsh",
+                "team_name": "Klich Bait"
+            }
+        },
+        "255846": {
+            "fixtures": {
+                "01": {
+                    "class": "home",
+                    "opponent_code": "1575824"
+                },
+                "02": {
+                    "class": "home",
+                    "opponent_code": "580531"
+                },
+                "03": {
+                    "class": "away",
+                    "opponent_code": "2172588"
+                },
+                "04": {
+                    "class": "home",
+                    "opponent_code": "3004339"
+                },
+                "05": {
+                    "class": "away",
+                    "opponent_code": "1400511"
+                },
+                "06": {
+                    "class": "home",
+                    "opponent_code": "780525"
+                },
+                "07": {
+                    "class": "home",
+                    "opponent_code": "452180"
+                },
+                "08": {
+                    "class": "away",
+                    "opponent_code": "2167270"
+                },
+                "09": {
+                    "class": "away",
+                    "opponent_code": "2557931"
+                },
+                "10": {
+                    "class": "away",
+                    "opponent_code": "544163"
+                },
+                "11": {
+                    "class": "home",
+                    "opponent_code": "1192876"
+                },
+                "12": {
+                    "class": "home",
+                    "opponent_code": "1266186"
+                },
+                "13": {
+                    "class": "home",
+                    "opponent_code": "3328568"
+                },
+                "14": {
+                    "class": "away",
+                    "opponent_code": "2434704"
+                },
+                "15": {
+                    "class": "home",
+                    "opponent_code": "3238760"
+                },
+                "16": {
+                    "class": "home",
+                    "opponent_code": "2291681"
+                },
+                "17": {
+                    "class": "home",
+                    "opponent_code": "1177142"
+                },
+                "18": {
+                    "class": "away",
+                    "opponent_code": "2120821"
+                },
+                "19": {
+                    "class": "home",
+                    "opponent_code": "4872589"
+                },
+                "20": {
+                    "class": "away",
+                    "opponent_code": "1575824"
+                },
+                "21": {
+                    "class": "home",
+                    "opponent_code": "580531"
+                },
+                "22": {
+                    "class": "home",
+                    "opponent_code": "2172588"
+                },
+                "23": {
+                    "class": "home",
+                    "opponent_code": "3004339"
+                },
+                "24": {
+                    "class": "away",
+                    "opponent_code": "1400511"
+                },
+                "25": {
+                    "class": "home",
+                    "opponent_code": "780525"
+                },
+                "26": {
+                    "class": "away",
+                    "opponent_code": "452180"
+                },
+                "27": {
+                    "class": "home",
+                    "opponent_code": "2167270"
+                },
+                "28": {
+                    "class": "away",
+                    "opponent_code": "2557931"
+                },
+                "29": {
+                    "class": "away",
+                    "opponent_code": "544163"
+                },
+                "30": {
+                    "class": "home",
+                    "opponent_code": "1192876"
+                },
+                "31": {
+                    "class": "home",
+                    "opponent_code": "1266186"
+                },
+                "32": {
+                    "class": "away",
+                    "opponent_code": "3328568"
+                },
+                "33": {
+                    "class": "home",
+                    "opponent_code": "2434704"
+                },
+                "34": {
+                    "class": "home",
+                    "opponent_code": "3238760"
+                },
+                "35": {
+                    "class": "home",
+                    "opponent_code": "2291681"
+                },
+                "36": {
+                    "class": "away",
+                    "opponent_code": "1177142"
+                },
+                "37": {
+                    "class": "away",
+                    "opponent_code": "2120821"
+                },
+                "38": {
+                    "class": "away",
+                    "opponent_code": "4872589"
+                }
+            },
+            "gw_performance": {},
+            "manager_info": {
+                "fpl_code": "255846",
+                "fpl_history": {
+                    "2011_12": "1678",
+                    "2015_16": "1695",
+                    "2016_17": "1439",
+                    "2017_18": "1664",
+                    "2018_19": "1990",
+                    "2019_20": "1900"
+                },
+                "manager_fullname": "Darren Baker",
+                "team_name": "The Cockney Rebels"
+            }
+        },
+        "3004339": {
+            "fixtures": {
+                "01": {
+                    "class": "home",
+                    "opponent_code": "3328568"
+                },
+                "02": {
+                    "class": "away",
+                    "opponent_code": "2434704"
+                },
+                "03": {
+                    "class": "away",
+                    "opponent_code": "3238760"
+                },
+                "04": {
+                    "class": "away",
+                    "opponent_code": "255846"
+                },
+                "05": {
+                    "class": "home",
+                    "opponent_code": "1177142"
+                },
+                "06": {
+                    "class": "away",
+                    "opponent_code": "2120821"
+                },
+                "07": {
+                    "class": "away",
+                    "opponent_code": "580531"
+                },
+                "08": {
+                    "class": "home",
+                    "opponent_code": "4872589"
+                },
+                "09": {
+                    "class": "away",
+                    "opponent_code": "2291681"
+                },
+                "10": {
+                    "class": "home",
+                    "opponent_code": "1575824"
+                },
+                "11": {
+                    "class": "home",
+                    "opponent_code": "780525"
+                },
+                "12": {
+                    "class": "away",
+                    "opponent_code": "2172588"
+                },
+                "13": {
+                    "class": "away",
+                    "opponent_code": "2167270"
+                },
+                "14": {
+                    "class": "home",
+                    "opponent_code": "1400511"
+                },
+                "15": {
+                    "class": "away",
+                    "opponent_code": "544163"
+                },
+                "16": {
+                    "class": "away",
+                    "opponent_code": "452180"
+                },
+                "17": {
+                    "class": "home",
+                    "opponent_code": "1266186"
+                },
+                "18": {
+                    "class": "away",
+                    "opponent_code": "2557931"
+                },
+                "19": {
+                    "class": "away",
+                    "opponent_code": "1192876"
+                },
+                "20": {
+                    "class": "home",
+                    "opponent_code": "3328568"
+                },
+                "21": {
+                    "class": "away",
+                    "opponent_code": "2434704"
+                },
+                "22": {
+                    "class": "away",
+                    "opponent_code": "3238760"
+                },
+                "23": {
+                    "class": "away",
+                    "opponent_code": "255846"
+                },
+                "24": {
+                    "class": "away",
+                    "opponent_code": "1177142"
+                },
+                "25": {
+                    "class": "home",
+                    "opponent_code": "2120821"
+                },
+                "26": {
+                    "class": "home",
+                    "opponent_code": "580531"
+                },
+                "27": {
+                    "class": "home",
+                    "opponent_code": "4872589"
+                },
+                "28": {
+                    "class": "away",
+                    "opponent_code": "2291681"
+                },
+                "29": {
+                    "class": "home",
+                    "opponent_code": "1575824"
+                },
+                "30": {
+                    "class": "home",
+                    "opponent_code": "780525"
+                },
+                "31": {
+                    "class": "away",
+                    "opponent_code": "2172588"
+                },
+                "32": {
+                    "class": "away",
+                    "opponent_code": "2167270"
+                },
+                "33": {
+                    "class": "home",
+                    "opponent_code": "1400511"
+                },
+                "34": {
+                    "class": "away",
+                    "opponent_code": "544163"
+                },
+                "35": {
+                    "class": "away",
+                    "opponent_code": "452180"
+                },
+                "36": {
+                    "class": "home",
+                    "opponent_code": "1266186"
+                },
+                "37": {
+                    "class": "away",
+                    "opponent_code": "2557931"
+                },
+                "38": {
+                    "class": "home",
+                    "opponent_code": "1192876"
+                }
+            },
+            "gw_performance": {},
+            "manager_info": {
+                "fpl_code": "3004339",
+                "fpl_history": {
+                    "2019_20": "1969"
+                },
+                "manager_fullname": "David Grice",
+                "team_name": "Renford Rejects"
+            }
+        },
+        "3238760": {
+            "fixtures": {
+                "01": {
+                    "class": "home",
+                    "opponent_code": "580531"
+                },
+                "02": {
+                    "class": "home",
+                    "opponent_code": "4872589"
+                },
+                "03": {
+                    "class": "home",
+                    "opponent_code": "3004339"
+                },
+                "04": {
+                    "class": "away",
+                    "opponent_code": "1575824"
+                },
+                "05": {
+                    "class": "away",
+                    "opponent_code": "780525"
+                },
+                "06": {
+                    "class": "home",
+                    "opponent_code": "2172588"
+                },
+                "07": {
+                    "class": "home",
+                    "opponent_code": "2167270"
+                },
+                "08": {
+                    "class": "away",
+                    "opponent_code": "1400511"
+                },
+                "09": {
+                    "class": "home",
+                    "opponent_code": "544163"
+                },
+                "10": {
+                    "class": "home",
+                    "opponent_code": "452180"
+                },
+                "11": {
+                    "class": "away",
+                    "opponent_code": "1266186"
+                },
+                "12": {
+                    "class": "away",
+                    "opponent_code": "2557931"
+                },
+                "13": {
+                    "class": "home",
+                    "opponent_code": "2434704"
+                },
+                "14": {
+                    "class": "away",
+                    "opponent_code": "1192876"
+                },
+                "15": {
+                    "class": "away",
+                    "opponent_code": "255846"
+                },
+                "16": {
+                    "class": "home",
+                    "opponent_code": "3328568"
+                },
+                "17": {
+                    "class": "away",
+                    "opponent_code": "2120821"
+                },
+                "18": {
+                    "class": "home",
+                    "opponent_code": "2291681"
+                },
+                "19": {
+                    "class": "home",
+                    "opponent_code": "1177142"
+                },
+                "20": {
+                    "class": "home",
+                    "opponent_code": "580531"
+                },
+                "21": {
+                    "class": "away",
+                    "opponent_code": "4872589"
+                },
+                "22": {
+                    "class": "home",
+                    "opponent_code": "3004339"
+                },
+                "23": {
+                    "class": "away",
+                    "opponent_code": "1575824"
+                },
+                "24": {
+                    "class": "away",
+                    "opponent_code": "780525"
+                },
+                "25": {
+                    "class": "away",
+                    "opponent_code": "2172588"
+                },
+                "26": {
+                    "class": "away",
+                    "opponent_code": "2167270"
+                },
+                "27": {
+                    "class": "away",
+                    "opponent_code": "1400511"
+                },
+                "28": {
+                    "class": "away",
+                    "opponent_code": "544163"
+                },
+                "29": {
+                    "class": "away",
+                    "opponent_code": "452180"
+                },
+                "30": {
+                    "class": "home",
+                    "opponent_code": "1266186"
+                },
+                "31": {
+                    "class": "home",
+                    "opponent_code": "2557931"
+                },
+                "32": {
+                    "class": "home",
+                    "opponent_code": "2434704"
+                },
+                "33": {
+                    "class": "home",
+                    "opponent_code": "1192876"
+                },
+                "34": {
+                    "class": "away",
+                    "opponent_code": "255846"
+                },
+                "35": {
+                    "class": "away",
+                    "opponent_code": "3328568"
+                },
+                "36": {
+                    "class": "away",
+                    "opponent_code": "2120821"
+                },
+                "37": {
+                    "class": "home",
+                    "opponent_code": "2291681"
+                },
+                "38": {
+                    "class": "away",
+                    "opponent_code": "1177142"
+                }
+            },
+            "gw_performance": {},
+            "manager_info": {
+                "fpl_code": "3238760",
+                "fpl_history": {
+                    "2010_11": "1885",
+                    "2011_12": "1864",
+                    "2012_13": "1653",
+                    "2013_14": "1908",
+                    "2014_15": "1834",
+                    "2015_16": "2166",
+                    "2016_17": "1914",
+                    "2017_18": "2091",
+                    "2018_19": "2062",
+                    "2019_20": "2283"
+                },
+                "manager_fullname": "Pete Baker",
+                "team_name": "The Fun Sponges"
+            }
+        },
+        "3328568": {
+            "fixtures": {
+                "01": {
+                    "class": "away",
+                    "opponent_code": "3004339"
+                },
+                "02": {
+                    "class": "home",
+                    "opponent_code": "1575824"
+                },
+                "03": {
+                    "class": "home",
+                    "opponent_code": "780525"
+                },
+                "04": {
+                    "class": "home",
+                    "opponent_code": "2172588"
+                },
+                "05": {
+                    "class": "home",
+                    "opponent_code": "2167270"
+                },
+                "06": {
+                    "class": "home",
+                    "opponent_code": "1400511"
+                },
+                "07": {
+                    "class": "away",
+                    "opponent_code": "544163"
+                },
+                "08": {
+                    "class": "away",
+                    "opponent_code": "452180"
+                },
+                "09": {
+                    "class": "away",
+                    "opponent_code": "1266186"
+                },
+                "10": {
+                    "class": "home",
+                    "opponent_code": "2557931"
+                },
+                "11": {
+                    "class": "away",
+                    "opponent_code": "2434704"
+                },
+                "12": {
+                    "class": "away",
+                    "opponent_code": "1192876"
+                },
+                "13": {
+                    "class": "away",
+                    "opponent_code": "255846"
+                },
+                "14": {
+                    "class": "away",
+                    "opponent_code": "2291681"
+                },
+                "15": {
+                    "class": "home",
+                    "opponent_code": "2120821"
+                },
+                "16": {
+                    "class": "away",
+                    "opponent_code": "3238760"
+                },
+                "17": {
+                    "class": "home",
+                    "opponent_code": "4872589"
+                },
+                "18": {
+                    "class": "home",
+                    "opponent_code": "1177142"
+                },
+                "19": {
+                    "class": "home",
+                    "opponent_code": "580531"
+                },
+                "20": {
+                    "class": "away",
+                    "opponent_code": "3004339"
+                },
+                "21": {
+                    "class": "away",
+                    "opponent_code": "1575824"
+                },
+                "22": {
+                    "class": "home",
+                    "opponent_code": "780525"
+                },
+                "23": {
+                    "class": "away",
+                    "opponent_code": "2172588"
+                },
+                "24": {
+                    "class": "away",
+                    "opponent_code": "2167270"
+                },
+                "25": {
+                    "class": "home",
+                    "opponent_code": "1400511"
+                },
+                "26": {
+                    "class": "away",
+                    "opponent_code": "544163"
+                },
+                "27": {
+                    "class": "home",
+                    "opponent_code": "452180"
+                },
+                "28": {
+                    "class": "away",
+                    "opponent_code": "1266186"
+                },
+                "29": {
+                    "class": "away",
+                    "opponent_code": "2557931"
+                },
+                "30": {
+                    "class": "home",
+                    "opponent_code": "2434704"
+                },
+                "31": {
+                    "class": "away",
+                    "opponent_code": "1192876"
+                },
+                "32": {
+                    "class": "home",
+                    "opponent_code": "255846"
+                },
+                "33": {
+                    "class": "away",
+                    "opponent_code": "2291681"
+                },
+                "34": {
+                    "class": "away",
+                    "opponent_code": "2120821"
+                },
+                "35": {
+                    "class": "home",
+                    "opponent_code": "3238760"
+                },
+                "36": {
+                    "class": "away",
+                    "opponent_code": "4872589"
+                },
+                "37": {
+                    "class": "away",
+                    "opponent_code": "1177142"
+                },
+                "38": {
+                    "class": "away",
+                    "opponent_code": "580531"
+                }
+            },
+            "gw_performance": {},
+            "manager_info": {
+                "fpl_code": "3328568",
+                "fpl_history": {
+                    "2007_08": "1132",
+                    "2011_12": "1695",
+                    "2012_13": "1836",
+                    "2013_14": "1758",
+                    "2014_15": "1819",
+                    "2015_16": "1791",
+                    "2016_17": "1922",
+                    "2017_18": "2132",
+                    "2018_19": "1793",
+                    "2019_20": "2018"
+                },
+                "manager_fullname": "Dan Browne",
+                "team_name": "Lingardium Leviosa"
+            }
+        },
+        "452180": {
+            "fixtures": {
+                "01": {
+                    "class": "away",
+                    "opponent_code": "544163"
+                },
+                "02": {
+                    "class": "away",
+                    "opponent_code": "2291681"
+                },
+                "03": {
+                    "class": "home",
+                    "opponent_code": "1266186"
+                },
+                "04": {
+                    "class": "away",
+                    "opponent_code": "2557931"
+                },
+                "05": {
+                    "class": "away",
+                    "opponent_code": "2434704"
+                },
+                "06": {
+                    "class": "away",
+                    "opponent_code": "1192876"
+                },
+                "07": {
+                    "class": "away",
+                    "opponent_code": "255846"
+                },
+                "08": {
+                    "class": "home",
+                    "opponent_code": "3328568"
+                },
+                "09": {
+                    "class": "away",
+                    "opponent_code": "2120821"
+                },
+                "10": {
+                    "class": "away",
+                    "opponent_code": "3238760"
+                },
+                "11": {
+                    "class": "away",
+                    "opponent_code": "4872589"
+                },
+                "12": {
+                    "class": "home",
+                    "opponent_code": "1177142"
+                },
+                "13": {
+                    "class": "away",
+                    "opponent_code": "1575824"
+                },
+                "14": {
+                    "class": "home",
+                    "opponent_code": "580531"
+                },
+                "15": {
+                    "class": "away",
+                    "opponent_code": "2172588"
+                },
+                "16": {
+                    "class": "home",
+                    "opponent_code": "3004339"
+                },
+                "17": {
+                    "class": "away",
+                    "opponent_code": "1400511"
+                },
+                "18": {
+                    "class": "home",
+                    "opponent_code": "780525"
+                },
+                "19": {
+                    "class": "away",
+                    "opponent_code": "2167270"
+                },
+                "20": {
+                    "class": "away",
+                    "opponent_code": "544163"
+                },
+                "21": {
+                    "class": "away",
+                    "opponent_code": "2291681"
+                },
+                "22": {
+                    "class": "home",
+                    "opponent_code": "1266186"
+                },
+                "23": {
+                    "class": "home",
+                    "opponent_code": "2557931"
+                },
+                "24": {
+                    "class": "home",
+                    "opponent_code": "2434704"
+                },
+                "25": {
+                    "class": "home",
+                    "opponent_code": "1192876"
+                },
+                "26": {
+                    "class": "home",
+                    "opponent_code": "255846"
+                },
+                "27": {
+                    "class": "away",
+                    "opponent_code": "3328568"
+                },
+                "28": {
+                    "class": "away",
+                    "opponent_code": "2120821"
+                },
+                "29": {
+                    "class": "home",
+                    "opponent_code": "3238760"
+                },
+                "30": {
+                    "class": "away",
+                    "opponent_code": "4872589"
+                },
+                "31": {
+                    "class": "away",
+                    "opponent_code": "1177142"
+                },
+                "32": {
+                    "class": "away",
+                    "opponent_code": "1575824"
+                },
+                "33": {
+                    "class": "home",
+                    "opponent_code": "580531"
+                },
+                "34": {
+                    "class": "home",
+                    "opponent_code": "2172588"
+                },
+                "35": {
+                    "class": "home",
+                    "opponent_code": "3004339"
+                },
+                "36": {
+                    "class": "away",
+                    "opponent_code": "1400511"
+                },
+                "37": {
+                    "class": "home",
+                    "opponent_code": "780525"
+                },
+                "38": {
+                    "class": "home",
+                    "opponent_code": "2167270"
+                }
+            },
+            "gw_performance": {},
+            "manager_info": {
+                "fpl_code": "452180",
+                "fpl_history": {
+                    "2013_14": "1827",
+                    "2014_15": "1956",
+                    "2015_16": "1964",
+                    "2016_17": "1966",
+                    "2017_18": "1878",
+                    "2018_19": "1968",
+                    "2019_20": "1950"
+                },
+                "manager_fullname": "Dale Halls",
+                "team_name": "Average X1"
+            }
+        },
+        "4872589": {
+            "fixtures": {
+                "01": {
+                    "class": "away",
+                    "opponent_code": "2120821"
+                },
+                "02": {
+                    "class": "away",
+                    "opponent_code": "3238760"
+                },
+                "03": {
+                    "class": "away",
+                    "opponent_code": "2291681"
+                },
+                "04": {
+                    "class": "away",
+                    "opponent_code": "1177142"
+                },
+                "05": {
+                    "class": "home",
+                    "opponent_code": "1575824"
+                },
+                "06": {
+                    "class": "away",
+                    "opponent_code": "580531"
+                },
+                "07": {
+                    "class": "home",
+                    "opponent_code": "2172588"
+                },
+                "08": {
+                    "class": "away",
+                    "opponent_code": "3004339"
+                },
+                "09": {
+                    "class": "home",
+                    "opponent_code": "1400511"
+                },
+                "10": {
+                    "class": "home",
+                    "opponent_code": "780525"
+                },
+                "11": {
+                    "class": "home",
+                    "opponent_code": "452180"
+                },
+                "12": {
+                    "class": "away",
+                    "opponent_code": "2167270"
+                },
+                "13": {
+                    "class": "away",
+                    "opponent_code": "2557931"
+                },
+                "14": {
+                    "class": "home",
+                    "opponent_code": "544163"
+                },
+                "15": {
+                    "class": "home",
+                    "opponent_code": "1192876"
+                },
+                "16": {
+                    "class": "home",
+                    "opponent_code": "1266186"
+                },
+                "17": {
+                    "class": "away",
+                    "opponent_code": "3328568"
+                },
+                "18": {
+                    "class": "away",
+                    "opponent_code": "2434704"
+                },
+                "19": {
+                    "class": "away",
+                    "opponent_code": "255846"
+                },
+                "20": {
+                    "class": "away",
+                    "opponent_code": "2120821"
+                },
+                "21": {
+                    "class": "home",
+                    "opponent_code": "3238760"
+                },
+                "22": {
+                    "class": "away",
+                    "opponent_code": "2291681"
+                },
+                "23": {
+                    "class": "away",
+                    "opponent_code": "1177142"
+                },
+                "24": {
+                    "class": "home",
+                    "opponent_code": "1575824"
+                },
+                "25": {
+                    "class": "away",
+                    "opponent_code": "580531"
+                },
+                "26": {
+                    "class": "away",
+                    "opponent_code": "2172588"
+                },
+                "27": {
+                    "class": "away",
+                    "opponent_code": "3004339"
+                },
+                "28": {
+                    "class": "home",
+                    "opponent_code": "1400511"
+                },
+                "29": {
+                    "class": "home",
+                    "opponent_code": "780525"
+                },
+                "30": {
+                    "class": "home",
+                    "opponent_code": "452180"
+                },
+                "31": {
+                    "class": "home",
+                    "opponent_code": "2167270"
+                },
+                "32": {
+                    "class": "away",
+                    "opponent_code": "2557931"
+                },
+                "33": {
+                    "class": "home",
+                    "opponent_code": "544163"
+                },
+                "34": {
+                    "class": "away",
+                    "opponent_code": "1192876"
+                },
+                "35": {
+                    "class": "away",
+                    "opponent_code": "1266186"
+                },
+                "36": {
+                    "class": "home",
+                    "opponent_code": "3328568"
+                },
+                "37": {
+                    "class": "home",
+                    "opponent_code": "2434704"
+                },
+                "38": {
+                    "class": "home",
+                    "opponent_code": "255846"
+                }
+            },
+            "gw_performance": {},
+            "manager_info": {
+                "fpl_code": "4872589",
+                "fpl_history": {
+                    "2010_11": "1239",
+                    "2011_12": "1938",
+                    "2012_13": "1993",
+                    "2013_14": "2042",
+                    "2014_15": "1907",
+                    "2015_16": "2029",
+                    "2016_17": "1892",
+                    "2017_18": "2196",
+                    "2018_19": "1925",
+                    "2019_20": "1961"
+                },
+                "manager_fullname": "Kester Mollahan",
+                "team_name": "FC Hammer"
+            }
+        },
+        "544163": {
+            "fixtures": {
+                "01": {
+                    "class": "home",
+                    "opponent_code": "452180"
+                },
+                "02": {
+                    "class": "home",
+                    "opponent_code": "2167270"
+                },
+                "03": {
+                    "class": "away",
+                    "opponent_code": "2557931"
+                },
+                "04": {
+                    "class": "away",
+                    "opponent_code": "2291681"
+                },
+                "05": {
+                    "class": "home",
+                    "opponent_code": "1192876"
+                },
+                "06": {
+                    "class": "away",
+                    "opponent_code": "1266186"
+                },
+                "07": {
+                    "class": "home",
+                    "opponent_code": "3328568"
+                },
+                "08": {
+                    "class": "home",
+                    "opponent_code": "2434704"
+                },
+                "09": {
+                    "class": "away",
+                    "opponent_code": "3238760"
+                },
+                "10": {
+                    "class": "home",
+                    "opponent_code": "255846"
+                },
+                "11": {
+                    "class": "away",
+                    "opponent_code": "1177142"
+                },
+                "12": {
+                    "class": "away",
+                    "opponent_code": "2120821"
+                },
+                "13": {
+                    "class": "away",
+                    "opponent_code": "580531"
+                },
+                "14": {
+                    "class": "away",
+                    "opponent_code": "4872589"
+                },
+                "15": {
+                    "class": "home",
+                    "opponent_code": "3004339"
+                },
+                "16": {
+                    "class": "away",
+                    "opponent_code": "1575824"
+                },
+                "17": {
+                    "class": "away",
+                    "opponent_code": "780525"
+                },
+                "18": {
+                    "class": "away",
+                    "opponent_code": "2172588"
+                },
+                "19": {
+                    "class": "home",
+                    "opponent_code": "1400511"
+                },
+                "20": {
+                    "class": "home",
+                    "opponent_code": "452180"
+                },
+                "21": {
+                    "class": "home",
+                    "opponent_code": "2167270"
+                },
+                "22": {
+                    "class": "home",
+                    "opponent_code": "2557931"
+                },
+                "23": {
+                    "class": "home",
+                    "opponent_code": "2291681"
+                },
+                "24": {
+                    "class": "away",
+                    "opponent_code": "1192876"
+                },
+                "25": {
+                    "class": "away",
+                    "opponent_code": "1266186"
+                },
+                "26": {
+                    "class": "home",
+                    "opponent_code": "3328568"
+                },
+                "27": {
+                    "class": "away",
+                    "opponent_code": "2434704"
+                },
+                "28": {
+                    "class": "home",
+                    "opponent_code": "3238760"
+                },
+                "29": {
+                    "class": "home",
+                    "opponent_code": "255846"
+                },
+                "30": {
+                    "class": "away",
+                    "opponent_code": "1177142"
+                },
+                "31": {
+                    "class": "home",
+                    "opponent_code": "2120821"
+                },
+                "32": {
+                    "class": "home",
+                    "opponent_code": "580531"
+                },
+                "33": {
+                    "class": "away",
+                    "opponent_code": "4872589"
+                },
+                "34": {
+                    "class": "home",
+                    "opponent_code": "3004339"
+                },
+                "35": {
+                    "class": "away",
+                    "opponent_code": "1575824"
+                },
+                "36": {
+                    "class": "away",
+                    "opponent_code": "780525"
+                },
+                "37": {
+                    "class": "away",
+                    "opponent_code": "2172588"
+                },
+                "38": {
+                    "class": "away",
+                    "opponent_code": "1400511"
+                }
+            },
+            "gw_performance": {},
+            "manager_info": {
+                "fpl_code": "544163",
+                "fpl_history": {
+                    "2009_10": "1903",
+                    "2010_11": "1803",
+                    "2016_17": "1986",
+                    "2017_18": "2305",
+                    "2018_19": "2062",
+                    "2019_20": "2208"
+                },
+                "manager_fullname": "Gareth Mytton",
+                "team_name": "The A**erisks"
+            }
+        },
+        "580531": {
+            "fixtures": {
+                "01": {
+                    "class": "away",
+                    "opponent_code": "3238760"
+                },
+                "02": {
+                    "class": "away",
+                    "opponent_code": "255846"
+                },
+                "03": {
+                    "class": "home",
+                    "opponent_code": "1177142"
+                },
+                "04": {
+                    "class": "home",
+                    "opponent_code": "2120821"
+                },
+                "05": {
+                    "class": "home",
+                    "opponent_code": "2291681"
+                },
+                "06": {
+                    "class": "home",
+                    "opponent_code": "4872589"
+                },
+                "07": {
+                    "class": "home",
+                    "opponent_code": "3004339"
+                },
+                "08": {
+                    "class": "away",
+                    "opponent_code": "1575824"
+                },
+                "09": {
+                    "class": "home",
+                    "opponent_code": "780525"
+                },
+                "10": {
+                    "class": "home",
+                    "opponent_code": "2172588"
+                },
+                "11": {
+                    "class": "home",
+                    "opponent_code": "2167270"
+                },
+                "12": {
+                    "class": "home",
+                    "opponent_code": "1400511"
+                },
+                "13": {
+                    "class": "home",
+                    "opponent_code": "544163"
+                },
+                "14": {
+                    "class": "away",
+                    "opponent_code": "452180"
+                },
+                "15": {
+                    "class": "home",
+                    "opponent_code": "1266186"
+                },
+                "16": {
+                    "class": "home",
+                    "opponent_code": "2557931"
+                },
+                "17": {
+                    "class": "home",
+                    "opponent_code": "2434704"
+                },
+                "18": {
+                    "class": "home",
+                    "opponent_code": "1192876"
+                },
+                "19": {
+                    "class": "away",
+                    "opponent_code": "3328568"
+                },
+                "20": {
+                    "class": "away",
+                    "opponent_code": "3238760"
+                },
+                "21": {
+                    "class": "away",
+                    "opponent_code": "255846"
+                },
+                "22": {
+                    "class": "away",
+                    "opponent_code": "1177142"
+                },
+                "23": {
+                    "class": "home",
+                    "opponent_code": "2120821"
+                },
+                "24": {
+                    "class": "away",
+                    "opponent_code": "2291681"
+                },
+                "25": {
+                    "class": "home",
+                    "opponent_code": "4872589"
+                },
+                "26": {
+                    "class": "away",
+                    "opponent_code": "3004339"
+                },
+                "27": {
+                    "class": "home",
+                    "opponent_code": "1575824"
+                },
+                "28": {
+                    "class": "home",
+                    "opponent_code": "780525"
+                },
+                "29": {
+                    "class": "away",
+                    "opponent_code": "2172588"
+                },
+                "30": {
+                    "class": "home",
+                    "opponent_code": "2167270"
+                },
+                "31": {
+                    "class": "away",
+                    "opponent_code": "1400511"
+                },
+                "32": {
+                    "class": "away",
+                    "opponent_code": "544163"
+                },
+                "33": {
+                    "class": "away",
+                    "opponent_code": "452180"
+                },
+                "34": {
+                    "class": "away",
+                    "opponent_code": "1266186"
+                },
+                "35": {
+                    "class": "home",
+                    "opponent_code": "2557931"
+                },
+                "36": {
+                    "class": "home",
+                    "opponent_code": "2434704"
+                },
+                "37": {
+                    "class": "home",
+                    "opponent_code": "1192876"
+                },
+                "38": {
+                    "class": "home",
+                    "opponent_code": "3328568"
+                }
+            },
+            "gw_performance": {},
+            "manager_info": {
+                "fpl_code": "580531",
+                "fpl_history": {
+                    "2018_19": "2268",
+                    "2019_20": "2267"
+                },
+                "manager_fullname": "Richard Walker",
+                "team_name": "RB Shadwell Basin"
+            }
+        },
+        "780525": {
+            "fixtures": {
+                "01": {
+                    "class": "away",
+                    "opponent_code": "1192876"
+                },
+                "02": {
+                    "class": "away",
+                    "opponent_code": "1266186"
+                },
+                "03": {
+                    "class": "away",
+                    "opponent_code": "3328568"
+                },
+                "04": {
+                    "class": "home",
+                    "opponent_code": "2434704"
+                },
+                "05": {
+                    "class": "home",
+                    "opponent_code": "3238760"
+                },
+                "06": {
+                    "class": "away",
+                    "opponent_code": "255846"
+                },
+                "07": {
+                    "class": "away",
+                    "opponent_code": "1177142"
+                },
+                "08": {
+                    "class": "away",
+                    "opponent_code": "2120821"
+                },
+                "09": {
+                    "class": "away",
+                    "opponent_code": "580531"
+                },
+                "10": {
+                    "class": "away",
+                    "opponent_code": "4872589"
+                },
+                "11": {
+                    "class": "away",
+                    "opponent_code": "3004339"
+                },
+                "12": {
+                    "class": "home",
+                    "opponent_code": "1575824"
+                },
+                "13": {
+                    "class": "home",
+                    "opponent_code": "2291681"
+                },
+                "14": {
+                    "class": "away",
+                    "opponent_code": "2172588"
+                },
+                "15": {
+                    "class": "away",
+                    "opponent_code": "2167270"
+                },
+                "16": {
+                    "class": "away",
+                    "opponent_code": "1400511"
+                },
+                "17": {
+                    "class": "home",
+                    "opponent_code": "544163"
+                },
+                "18": {
+                    "class": "away",
+                    "opponent_code": "452180"
+                },
+                "19": {
+                    "class": "away",
+                    "opponent_code": "2557931"
+                },
+                "20": {
+                    "class": "away",
+                    "opponent_code": "1192876"
+                },
+                "21": {
+                    "class": "away",
+                    "opponent_code": "1266186"
+                },
+                "22": {
+                    "class": "away",
+                    "opponent_code": "3328568"
+                },
+                "23": {
+                    "class": "home",
+                    "opponent_code": "2434704"
+                },
+                "24": {
+                    "class": "home",
+                    "opponent_code": "3238760"
+                },
+                "25": {
+                    "class": "away",
+                    "opponent_code": "255846"
+                },
+                "26": {
+                    "class": "away",
+                    "opponent_code": "1177142"
+                },
+                "27": {
+                    "class": "away",
+                    "opponent_code": "2120821"
+                },
+                "28": {
+                    "class": "away",
+                    "opponent_code": "580531"
+                },
+                "29": {
+                    "class": "away",
+                    "opponent_code": "4872589"
+                },
+                "30": {
+                    "class": "away",
+                    "opponent_code": "3004339"
+                },
+                "31": {
+                    "class": "away",
+                    "opponent_code": "1575824"
+                },
+                "32": {
+                    "class": "home",
+                    "opponent_code": "2291681"
+                },
+                "33": {
+                    "class": "away",
+                    "opponent_code": "2172588"
+                },
+                "34": {
+                    "class": "home",
+                    "opponent_code": "2167270"
+                },
+                "35": {
+                    "class": "away",
+                    "opponent_code": "1400511"
+                },
+                "36": {
+                    "class": "home",
+                    "opponent_code": "544163"
+                },
+                "37": {
+                    "class": "away",
+                    "opponent_code": "452180"
+                },
+                "38": {
+                    "class": "away",
+                    "opponent_code": "2557931"
+                }
+            },
+            "gw_performance": {},
+            "manager_info": {
+                "fpl_code": "780525",
+                "fpl_history": {
+                    "2011_12": "1753",
+                    "2012_13": "1843",
+                    "2013_14": "2145",
+                    "2014_15": "1810",
+                    "2015_16": "1911",
+                    "2016_17": "2171",
+                    "2017_18": "2130",
+                    "2018_19": "1963",
+                    "2019_20": "2133"
+                },
+                "manager_fullname": "Lee Guthrie",
+                "team_name": "Arts Dodgers"
+            }
+        }
+    }
+}

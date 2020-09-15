@@ -11,22 +11,16 @@ Database heirachy:
 
     – [manager_code]:
 
-        – manager_info:
+        – manager_info: (*)
 
             – manager_fullname (*)
-            – manager_firstname (*)
-            – manager_surname (*)
             – team_name (*)
             – fpl_code (*)
 
-
         - fixtures:
-            - [gw]: 
-                - opponent_manager_fullname (*)
-                - opponent_team_name (*)
-                - opponent_manager_fpl_code (*)
-                - fixture_class (*)
-
+            - [gw]:
+                - opponent_code
+                - class
 
         - gw_performance:
             – [gw]:
@@ -41,8 +35,7 @@ Database heirachy:
                 - chip_played [TC, BB, FH, WC, None]
 
                 - fixture_result
-                - fixture_opponent_manager_name
-                - fixture_opponent_team_name
+                - fixture_opponent_code
 
                 - squad:
 
