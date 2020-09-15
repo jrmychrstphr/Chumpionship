@@ -19,7 +19,7 @@ function db_return_fixture_result(input_database, manager_code, gameweek) {
 	o = input_database.player_data[manager_code].gw_performance
 	k = return_gameweek_string(gameweek).toString()
 	if (!(k in o)) { s = false } else { 
-		if (o[k].fixture_result === "W") { s = "win" } else if (o[k].fixture_result === "L") { s = "loss" } else if (o[k].fixture_result === "D") { s = "draw" } 
+		if (o[k].fixture_result.toUpperCase() === "W") { s = "win" } else if (o[k].fixture_result.toUpperCase() === "L") { s = "loss" } else if (o[k].fixture_result.toUpperCase() === "D") { s = "draw" } 
 	}
     return s
 }

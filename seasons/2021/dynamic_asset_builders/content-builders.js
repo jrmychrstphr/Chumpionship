@@ -125,6 +125,9 @@ function build_table(gw) {
         .append("div")
         .classed("table-column team-name text display regular", true)
         .text(db_return_team_name(database, d.manager_code))
+        .append("span")
+        .classed("rank text small", true)
+        .text(db_return_manager_fullname(database, d.manager_code))
         
         d3.select(this)
         .append("div")
@@ -184,11 +187,11 @@ function build_table(gw) {
             .attr("cy", config.height/2 - 9)
             .attr("r", 5 )
             .style("fill", function(d) {
-                if ( d === "W" ) {
+                if ( d.toUpperCase() === "W" ) {
                     f = chump.colours.green
-                } else if ( d === "L" ) {
+                } else if ( d.toUpperCase() === "L" ) {
                     f = chump.colours.pink
-                } else if ( d === "D" ) {
+                } else if ( d.toUpperCase() === "D" ) {
                     f = chump.colours.light_blue
                 } else {
                     f = "Black"
@@ -202,11 +205,11 @@ function build_table(gw) {
             .attr("cy", config.height/2 + 9)
             .attr("r", 5 )
             .style("fill", function(d) {
-                if ( d === "W" ) {
+                if ( d.toUpperCase() === "W" ) {
                     f = chump.colours.green
-                } else if ( d === "L" ) {
+                } else if ( d.toUpperCase() === "L" ) {
                     f = chump.colours.pink
-                } else if ( d === "D" ) {
+                } else if ( d.toUpperCase() === "D" ) {
                     f = chump.colours.light_blue
                 } else {
                     f = "Black"
@@ -222,11 +225,11 @@ function build_table(gw) {
             .attr("y2", config.height/2 - 9 ) 
             .style("stroke-width", 10)
             .style("stroke", function(d) {
-                if ( d === "W" ) {
+                if ( d.toUpperCase() === "W" ) {
                     f = chump.colours.green
-                } else if ( d === "L" ) {
+                } else if ( d.toUpperCase() === "L" ) {
                     f = chump.colours.pink
-                } else if ( d === "D" ) {
+                } else if ( d.toUpperCase() === "D" ) {
                     f = chump.colours.light_blue
                 } else {
                     f = "Black"
@@ -386,6 +389,8 @@ function build_results(gw) {
         dataset.push(temp_obj)
 
     } )
+
+    dataset.sort((a,b) => (db_return_team_name(database, a.home) > db_return_team_name(database, b.home)));
 
 
     //build content

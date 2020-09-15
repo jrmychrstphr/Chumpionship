@@ -71,6 +71,12 @@ div.table-row-container div.table-column.team-name {
 	background-color: white;
 }
 
+div.table-row-container div.table-column.team-name span {
+	vertical-align: baseline;
+	padding-left: 0.4rem;
+	line-height: 0;
+}
+
 div.table-row-container div.table-column.score {
 	padding-left: 1rem;
 	padding-right: 1rem;

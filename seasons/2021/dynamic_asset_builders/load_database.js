@@ -1,5 +1,5 @@
 //var filename = '2020_season_data---20200618_1022.json'
-var database_url = "https://raw.githubusercontent.com/jrmychrstphr/Chumpionship/master/seasons/2021/database/_versions/chumpionship_2021_database-new-history-fixtures.json"
+var database_url = "https://raw.githubusercontent.com/jrmychrstphr/Chumpionship/master/seasons/2021/database/chumpionship_2021_database.json"
 
 var database;
     
