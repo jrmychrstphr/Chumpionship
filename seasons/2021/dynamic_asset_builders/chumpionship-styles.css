@@ -30,7 +30,6 @@ div.table-row-container div.position-change-wrapper {
 	float: left;
 	height: 0rem;
 	width: 0rem;
-
 }
 
 div.table-row-container div.position-change-container {
@@ -101,8 +100,6 @@ div.table-row-container div.table-column.form.viz {
 	width: 5rem;
 	height: 2.2rem;
 }
-
-
 
 
 
@@ -190,6 +187,10 @@ div.footnote {
 
 /* Fixtures */
 
+div.fixture-list-wrapper:not(:last-child) {
+	margin-bottom:2rem;
+}
+
 div.fixture-list-container {
 	margin: 0 -1rem;
 	display: inline-block;
@@ -228,6 +229,12 @@ div.fixture-list-container div.team {
 	padding-left: 1rem;
 	padding-right: 1rem;
 }
+
+div.fixture-list-container div.team span {
+	vertical-align: top;
+	padding-left: 0.15rem;
+}
+
 
 div.fixture-list-container div.vs-block {
 	width: 2.2rem;

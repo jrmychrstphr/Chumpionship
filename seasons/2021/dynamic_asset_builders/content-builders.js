@@ -287,6 +287,9 @@ function build_fixtures(gw) {
         temp_obj.home = v.home_team    // update
         temp_obj.away = v.away_team    // update
 
+        temp_obj.home_rank = database["player_data"][v.home_team]["season_performance"]["league_position_array"][gw-2]
+        temp_obj.away_rank = database["player_data"][v.away_team]["season_performance"]["league_position_array"][gw-2]
+
         dataset.push(temp_obj)
 
     } )
@@ -308,7 +311,7 @@ function build_fixtures(gw) {
     .classed("fixture-container", true)
     .each( function(d, i){
 
-        d3.select(this)
+        let home = d3.select(this)
         .append("div")
         .classed("home team text display regular", true)
         .text(db_return_team_name(database, d.home))
@@ -327,13 +330,38 @@ function build_fixtures(gw) {
         })
 
         
-        d3.select(this)
+        let away = d3.select(this)
         .append("div")
         .classed("away team text display regular", true)
         .text(db_return_team_name(database, d.away))
 
+        if ( d.home_rank && d.away_rank ) {
+
+            home.append("span")
+            .classed("rank text small", true)
+            .text("("+d.home_rank+")")
+
+            away.append("span")
+            .classed("rank text small", true)
+            .text("("+d.away_rank+")")
+            
+        }
 
     })
+
+    if ( gw > 1 ) {
+
+        var footnote = d3.select("#content-block")
+        .append("div")
+        .classed("footnote text small", true)
+        .text("Figures in brackets indicate league rank ahead of GW"+gw)
+
+    }
+
+
+
+
+
 
 }
 
