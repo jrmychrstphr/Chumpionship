@@ -140,3 +140,9 @@ JavaScript error: https://platform.twitter.com/widgets/widget_iframe.2d7d9a6d045
 1600173197330	Marionette	INFO	Stopped listening on port 57257
 1600173218564	Marionette	INFO	Stopped listening on port 57172
 1600173220002	Marionette	INFO	Stopped listening on port 57087
+1600771824171	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/dj/r_d53pv97qn6cb7zp_63kxxh0000gn/T/rust_mozprofile.ugJ4brWjbXkU"
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1600771827972	Marionette	INFO	Listening on port 49990
+1600771828010	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.2d7d9a6d04538bf11c7b23641e75738c.html?origin=https%3A%2F%2Ffantasy.premierleague.com, line 12: Error: Network error.
+1600771847713	Marionette	INFO	Stopped listening on port 49990

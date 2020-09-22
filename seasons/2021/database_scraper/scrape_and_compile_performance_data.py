@@ -581,7 +581,7 @@ def execute():
 
 	#load the clean database file
 	global database
-	database = return_load_json_file('_versions/chumpionship_2021_database---new')
+	database = return_load_json_file('../database/_versions/chumpionship_2021_database---new')
 
 	open_browser()
 
@@ -601,9 +601,9 @@ def execute():
 
 	datestamp = return_create_date_stamp()
 	#save a version in the version folder
-	write_to_json_file('_versions/chumpionship_2021_database---' + datestamp, database)
+	write_to_json_file('../database/_versions/chumpionship_2021_database---' + datestamp, database)
 	#overwrite the core database file
-	write_to_json_file('chumpionship_2021_database', database)
+	write_to_json_file('../database/chumpionship_2021_database', database)
 
 	close_browser()
 
