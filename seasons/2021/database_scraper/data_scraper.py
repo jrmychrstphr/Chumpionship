@@ -122,7 +122,6 @@ def scrape_gw_performance_data():
 			database['player_data'][manager_code]['gw_performance'] = {}
 
 		# Build the url
-		#url = "https://fantasy.premierleague.com/entry/"+manager_code+"/event/"+gameweek
 		url = "https://fantasy.premierleague.com/entry/"+manager_code+"/history"
 
 		try:
@@ -132,11 +131,10 @@ def scrape_gw_performance_data():
 			driver.get(url)
 			
 			#wait for the gameweek-by-gameweek data table container to appear
-			element = WebDriverWait(driver, 10).until(
+			WebDriverWait(driver, 5).until(
 				EC.presence_of_element_located((By.CSS_SELECTOR, ".Table__ScrollTable-ziussd-0.canFyp"))
 				# Table__ScrollTable-ziussd-0 canFyp
 			)
-
 
 		except:
 			#if the table is not found, display an error message
@@ -146,19 +144,20 @@ def scrape_gw_performance_data():
 			print("Success! Lets scrape some data")
 
 			#create soup of DOM
-			soup = BeautifulSoup(driver.page_source, 'lxml')
+			history_page_soup = BeautifulSoup(driver.page_source, 'lxml')
 
 			#locate 'This Season' table
-			element = soup.find("h3", text="This Season")
+			season_history = history_page_soup.find("h3", text="This Season")
 
 			#move up the soup DOM until the table is found
-			while len(element.select('.Table-ziussd-1.fVnGhl')) == 0:
-				element = element.parent
+			while len(season_history.select('.Table-ziussd-1.fVnGhl')) == 0:
+				season_history = season_history.parent
 			else:
+				season_history = season_history
 
-				table_rows = element.select('.Table-ziussd-1.fVnGhl tbody tr')
+			season_history_table_rows = season_history.select('.Table-ziussd-1.fVnGhl tbody tr')
 
-			for row in table_rows:
+			for row in season_history_table_rows:
 
 				row_contents_array = row.contents
 				row_gameweek = row_contents_array[0].find('a').get('href').split('/')[4]
@@ -195,13 +194,13 @@ def scrape_gw_performance_data():
 
 
 				#locate Chips played table
-				element = soup.find("h3", text="Chips")
+				chips_history = history_page_soup.find("h3", text="Chips")
 
 				#move up the soup DOM until the table is found
-				while len(element.select('.Table-ziussd-1.fVnGhl')) == 0:
-					element = element.parent
+				while len(chips_history.select('.Table-ziussd-1.fVnGhl')) == 0:
+					chips_history = chips_history.parent
 				else:
-					table_rows = element.select('.Table-ziussd-1.fVnGhl tbody tr')
+					table_rows = chips_history.select('.Table-ziussd-1.fVnGhl tbody tr')
 
 				chips_played = {}
 
@@ -229,10 +228,177 @@ def scrape_gw_performance_data():
 					database['player_data'][manager_code]['gw_performance'][key]['chip_played'] = chip
 
 
-		# ADD PLAYER SCRAPE SCRIPT HERE #
+			# ADD PLAYER SCRAPE SCRIPT HERE #
+			gameweek_anchors = season_history.find_all('a')
+
+			for anchor in gameweek_anchors:
+
+				href = anchor.get('href')
+				gameweek = str("{0:0=2d}".format(int(href.split('/')[4])))
+
+				try:
+					print("Loading GW", gameweek, "for", return_lookup_manager_fullname(manager_code))
+
+					driver.get("https://fantasy.premierleague.com" + href)
+
+					#wait for the data table container to appear
+					WebDriverWait(driver, 5).until(
+						EC.presence_of_element_located((By.CSS_SELECTOR, "a.Tab__Link-sc-19t48gi-1.dSNXUO"))
+					)
+
+				except:
+					print("Page failed to load")
+				else:
+					print("Page loaded")
+
+					# "Click" the list view toggle to reveal the data table
+					driver.find_element_by_link_text('List View').click()
+					print("Button clicked")
+
+					try:
+						print("Waiting for data tables to appear...")
+
+						#wait for the gameweek-by-gameweek data table container to appear
+						WebDriverWait(driver, 5).until(
+							EC.presence_of_element_located((By.CSS_SELECTOR, ".sc-AykKC.fbHWCH table.Table-ziussd-1.EntryEventTable__StatsTable-sc-1d2xgo1-1.dbevix"))
+						)
+
+					except:
+						print("Table failed to appear")
+					else:
+						print("Table found")
+
+
+						if 'squad' not in database['player_data'][manager_code]['gw_performance'][gameweek]:
+							database['player_data'][manager_code]['gw_performance'][gameweek]['squad'] = []
+
+						#create a new soup of DOM
+						gameweek_page_soup = BeautifulSoup(driver.page_source, 'lxml')
+
+						player_data_tables = gameweek_page_soup.select(".sc-AykKC.fbHWCH table.Table-ziussd-1.EntryEventTable__StatsTable-sc-1d2xgo1-1.dbevix")
+						#print(player_data_tables)
+
+						for idx, table in enumerate(player_data_tables):
+
+							if idx == 0: 
+								squad_status = "in_play"
+							elif idx == 1:
+								squad_status = "on_bench"
+
+							table_rows = table.select("tbody tr")
+							for row in table_rows:
+								row_cells = row.select("td")
+								temp_player_obj = {}
+
+								temp_player_obj['squad_status'] = squad_status
+
+								#row_cells[0] # information button
+
+								#row_cells[1] # Captain / VC icon
+								if len(row_cells[1].select("svg.TableCaptains__StyledCaptain-sc-1ub910p-0")) > 0:
+									#print("* Captain *")
+									temp_player_obj['captain_status'] = "captain"
+								elif len(row_cells[1].select("svg.TableCaptains__StyledViceCaptain-sc-1ub910p-1")) > 0:
+									#print("* Vice Captain *")
+									temp_player_obj['captain_status'] = "vice_captain"
+								else:
+									temp_player_obj['captain_status'] = "none"
+
+								#row_cells[2] # Name / Team / Position info
+								player_information_container = row_cells[2].select("div.Media__Body-sc-94ghy9-2")
+
+								temp_player_obj['player_name'] = player_information_container[0].select(".ElementInTable__Name-y9xi40-1")[0].get_text()
+								temp_player_obj['player_team'] = player_information_container[0].select(".ElementInTable__Team-y9xi40-2")[0].get_text()
+								temp_player_obj['player_position'] = player_information_container[0].select(".ElementInTable__Team-y9xi40-2")[0].parent.contents[1].get_text()
+
+								#row_cells[3] # Points scored
+								temp_player_obj['points_scored'] = row_cells[3].get_text()
+
+								#row_cells[4] # Minutes played
+								#row_cells[5] # Goals scored
+								#row_cells[6] # Assists
+								#row_cells[7] # Clean sheets
+								#row_cells[8] # Goals conceded
+								#row_cells[9] # Own goals
+								#row_cells[10] # Penalties saved
+								#row_cells[11] # Penalties missed
+								#row_cells[12] # Yellow cards
+								#row_cells[13] # Red Cards
+								#row_cells[14] # Saves
+								#row_cells[15] # Bonus points
+								#row_cells[16] # Bonus system score
+								#row_cells[17] # Influence score (I)
+								#row_cells[18] # Creativity score (C)
+								#row_cells[19] # Threat score (T)
+								#row_cells[20] # ITC index
+
+								database['player_data'][manager_code]['gw_performance'][gameweek]['squad'].append(temp_player_obj)
+
+		
 
 		# ADD TRANSFER SCRAPE SCRIPT IN HERE #
 
+		# Build the url
+		transfers_url = "https://fantasy.premierleague.com/entry/"+manager_code+"/transfers"
+
+		try:
+			#open the page
+			driver.get(transfers_url)
+			
+			#wait for the gameweek-by-gameweek data table container to appear
+			WebDriverWait(driver, 5).until(
+				EC.presence_of_element_located((By.CSS_SELECTOR, ".Table-ziussd-1.fVnGhl"))
+			)
+
+
+		except:
+			#if the table is *not* found...
+			try:
+				#Look for the page placeholder instead
+				element = WebDriverWait(driver, 5).until(
+					EC.text_to_be_present_in_element((By.CSS_SELECTOR, ".Layout__Main-eg6k6r-1"), "No transfers have been made yet for this team.")
+				)
+
+			except:
+				print("Err – unable to scrape transfer data")
+			else:
+				transfers_obj = False
+		
+		else:
+			#if the table is found...
+
+			transfers_obj = {}
+
+			transfers_page_soup = BeautifulSoup(driver.page_source, 'lxml')
+
+			#locate 'This Season' table
+			transfers_history = transfers_page_soup.find("h2", text="Transfers")
+
+			#move up the soup DOM until a table is found
+			while len(transfers_history.select('.Table-ziussd-1.fVnGhl')) == 0:
+				transfers_history = transfers_history.parent
+			else:
+				transfers_history = transfers_history
+
+			transfers_history_table_rows = transfers_history.select('.Table-ziussd-1.fVnGhl tbody tr')
+
+			for row in transfers_history_table_rows:
+
+				row_contents_array = row.contents
+				gameweek = str("{0:0=2d}".format(int(row_contents_array[3].get_text().lower().replace('gw', ''))))
+
+				if gameweek not in transfers_obj:
+					transfers_obj[gameweek] = 1
+				else:
+					transfers_obj[gameweek] = transfers_obj[gameweek] + 1
+
+			for gameweek in database['player_data'][manager_code]['gw_performance']:
+				if (transfers_obj == False) or (gameweek not in transfers_obj):
+					t = int(0)
+				else:
+					t = int(transfers_obj[gameweek])
+
+				database['player_data'][manager_code]['gw_performance'][gameweek]['transfers_made'] = t
 
 
 
@@ -603,7 +769,7 @@ def execute():
 	#save a version in the version folder
 	write_to_json_file('../database/_versions/chumpionship_2021_database---' + datestamp, database)
 	#overwrite the core database file
-	write_to_json_file('../database/chumpionship_2021_database', database)
+	#write_to_json_file('../database/chumpionship_2021_database', database)
 
 	close_browser()
 

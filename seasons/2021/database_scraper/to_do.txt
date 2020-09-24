@@ -1,1 +1,0 @@
-* fixture generator -- change 'H' and 'A' to 'home' and 'away'
