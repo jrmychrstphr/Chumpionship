@@ -769,7 +769,7 @@ def execute():
 	#save a version in the version folder
 	write_to_json_file('../database/_versions/chumpionship_2021_database---' + datestamp, database)
 	#overwrite the core database file
-	#write_to_json_file('../database/chumpionship_2021_database', database)
+	write_to_json_file('../database/chumpionship_2021_database', database)
 
 	close_browser()
 

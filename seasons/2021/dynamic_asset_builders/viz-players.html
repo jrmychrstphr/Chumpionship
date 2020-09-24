@@ -1,0 +1,150 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"> 
+
+<html lang="en">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <title>Chumpionship</title>
+        
+        <link rel="stylesheet" type="text/css" href="chumpionship-styles.css">   
+        
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://d3js.org/d3.v5.min.js"></script>
+
+        <script src="load_database.js"></script>
+
+        <script src="common_functions.js"></script>
+
+        <script src="database_queries.js"></script>
+        <script src="content-builders-library.js"></script>
+
+        <script src="chumpionship_colours.js"></script>
+        <script src="svg.js"></script>
+        <script src="dynamic_styles.js"></script>
+
+        <style>
+            
+            #controls {
+                margin: 1rem;
+                padding: 1rem;
+                border: 1px solid;
+                position: fixed;
+                top: 0;
+                right: 0;
+                width: 8rem;
+                font-size: 0.8rem;
+                font-family: 'Helvetica Neue';
+                background: white;
+            }
+
+            #controls div.group {
+                margin-bottom: 1rem;
+            }
+
+            #controls div.label {
+                margin-bottom: 0.5rem;
+            }
+
+        </style>
+
+        <script>
+            
+            
+            $( function(){
+
+                styles.core()
+
+                //set gameweek
+                let gameweek = "02"
+
+                //build dataset
+                let dataset = {
+                    "name": "root",
+                    "children": []
+                }
+
+                // for each player in the database
+                $.each( database["player_data"], function(k, v) {
+                    let manager_code = k;
+                    console.log(db_return_team_name(database, manager_code))
+                    //for each player in the gameweek squad
+                    $.each( v["gw_performance"][gameweek]["squad"], function(k,v) {
+
+                        console.log(v.player_name)
+                        console.log(v.squad_status)
+
+                    })
+
+
+                });
+
+
+                //build viz
+                const packLayout = d3.pack()
+                .size([300, 300])
+                .padding(1)
+
+                const rootNode = d3.hierarchy(dataset)
+
+                rootNode.sum(function(d) {
+                return d.points_scored;
+                });
+
+                packLayout(rootNode);
+
+                //build content
+                const viz_container = d3.select("#content-block")
+                .append("div")
+                .classed("viz-wrapper", true)
+                .append("div")
+                .classed("viz-container", true)
+
+
+                const config = {
+                    "width": 100,
+                    "height": 100
+
+                    /*
+                    "width": $(this).find(".viz").width(),
+                    "height": $(this).find(".viz").height()
+                    */
+
+                }
+
+                const svg = viz_container.append("svg")
+                .attr("height", config.height)
+                .attr("width", config.width)
+                .attr("viewBox","0 0 " + config.width + " " + config.height)
+
+                svg.selectAll('circle')
+                .data(rootNode.descendants())
+                .enter()
+                .append('circle')
+                .attr('cx', function(d) { return d.x; })
+                .attr('cy', function(d) { return d.y; })
+                .attr('r', function(d) { return d.r; })
+
+
+            });
+
+            
+        
+        </script>
+        
+    </head> 
+    
+    <body> 
+        <main>
+            <section>
+                <div id="logo"></div>
+                <div class="wrapper">
+                    <div class="container">
+                        <div id="title-block"></div>
+                        <div id="content-block"></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </body> 
+
+
+</html>
