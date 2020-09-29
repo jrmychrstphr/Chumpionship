@@ -676,3 +676,8 @@ JavaScript error: resource://activity-stream/lib/PersonalityProvider/Personality
 console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
 1601368100284	Marionette	INFO	Listening on port 59391
 1601368100303	Marionette	WARN	TLS certificate errors will be ignored for this session
+1601369806297	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/dj/r_d53pv97qn6cb7zp_63kxxh0000gn/T/rust_mozprofile.oNLVhbuA6vsI"
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601369808607	Marionette	INFO	Listening on port 59782
+1601369808651	Marionette	WARN	TLS certificate errors will be ignored for this session
+1601369954433	Marionette	INFO	Stopped listening on port 59782
