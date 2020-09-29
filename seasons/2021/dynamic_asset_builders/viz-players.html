@@ -53,8 +53,29 @@
 
                 styles.core()
 
-                //set gameweek
-                let gameweek = "02"
+                let gw;
+
+                //define gameweek
+                if (!(gw)) {
+                    gw = 2
+                }
+
+                gameweek = return_gameweek_string(gw)
+
+                //build title block
+                var title_container = d3.select("#title-block")
+                .append("div")
+                .classed("title-wrapper", true)
+                .append("div")
+                .classed("title-container", true)
+
+                var title = title_container.append("div")
+                .classed("text display large", true)
+                .text("Points scored per player")
+
+                var subtitle = title_container.append("div")
+                .classed("text display regular", true)
+                .text("GW" + gw)
 
                 //build dataset
                 let dataset = {
@@ -65,50 +86,96 @@
                 // for each player in the database
                 $.each( database["player_data"], function(k, v) {
                     let manager_code = k;
-                    console.log(db_return_team_name(database, manager_code))
                     //for each player in the gameweek squad
                     $.each( v["gw_performance"][gameweek]["squad"], function(k,v) {
 
-                        console.log(v.player_name)
-                        console.log(v.squad_status)
+                        if ( v.squad_status === 'in_play' ) {
+                            let found = false
+                            // search the existing dataset
+                            for ( i = 0; i < dataset.children.length; i++) {
 
+                                let current_item = dataset.children[i]
+
+                                // if the player is already in the dataset...
+                                if (current_item.player_name === v.player_name && current_item.player_position === v.player_position && current_item.player_team === v.player_team) {
+
+                                    //... add points and manager code to the dataset item
+                                    dataset.children[i].points_scored += parseInt(v.points_scored)
+                                    dataset.children[i].teams_selected_by.push(manager_code)
+
+                                    //.. and break this loop
+                                    found = true;
+                                    break;
+                                }
+                            }
+                            //if the player is not yet in the dataset...
+                            if (!found){
+                                //... add them to the dataset
+                                temp_obj = {
+                                    "player_name": v.player_name,
+                                    "player_position": v.player_position,
+                                    "player_team": v.player_team,
+                                    "points_scored": parseInt(v.points_scored),
+                                    "teams_selected_by": [manager_code]
+                                }
+
+                                dataset.children.push(temp_obj)
+
+                            }
+                        }
                     })
 
-
                 });
 
+                dataset.children.sort((a, b) => d3.descending(a.points_scored, b.points_scored))
 
                 //build viz
-                const packLayout = d3.pack()
-                .size([300, 300])
-                .padding(1)
-
-                const rootNode = d3.hierarchy(dataset)
-
-                rootNode.sum(function(d) {
-                return d.points_scored;
-                });
-
-                packLayout(rootNode);
 
                 //build content
                 const viz_container = d3.select("#content-block")
+                .append("div")
+                .classed("viz bubble-pack", true)
                 .append("div")
                 .classed("viz-wrapper", true)
                 .append("div")
                 .classed("viz-container", true)
 
+                /*
+                const viz_title = viz_container.append("div")
+                .classed("text regular bold", true)
+                .text("Points by player")
+                .style("font-weight", 800)
+                .style("color", "white")
+                */
+
 
                 const config = {
-                    "width": 100,
-                    "height": 100
-
-                    /*
-                    "width": $(this).find(".viz").width(),
-                    "height": $(this).find(".viz").height()
-                    */
-
+                    "width": viz_container.node().getBoundingClientRect().width,
+                    "height": viz_container.node().getBoundingClientRect().width
                 }
+
+                const packLayout = d3.pack()
+                .size([config.width, config.height])
+                .padding(12)
+
+                let root = d3.hierarchy(dataset)
+                .sum(d => d.points_scored)
+
+                packLayout(root);
+
+                let root_sum = root.copy().sum(d => d.points_scored)
+                let root_count = root.copy().count()
+
+                console.log(root_sum.value)
+                console.log(root_count.value)
+                console.log(dataset)
+
+                viz_container.append("div")
+                .classed("text small colour-white", true)
+                .text( function(d) {
+                    t = "A combined total of " + return_comma_formatted_number(root_sum.value) + " Chumpionship points were scored by " + root_count.value + " different players in GW" + gw
+                    return t
+                })
 
                 const svg = viz_container.append("svg")
                 .attr("height", config.height)
@@ -116,13 +183,74 @@
                 .attr("viewBox","0 0 " + config.width + " " + config.height)
 
                 svg.selectAll('circle')
-                .data(rootNode.descendants())
+                .data(root.leaves())
                 .enter()
-                .append('circle')
-                .attr('cx', function(d) { return d.x; })
-                .attr('cy', function(d) { return d.y; })
-                .attr('r', function(d) { return d.r; })
+                .append("g")
+                .attr('transform', function(d) {return 'translate(' + [d.x, d.y] + ')'})
+                .each( function(d,i) {
 
+                    //console.log(d)
+
+                    let circle = d3.select(this)
+                    .append('circle')
+                    .attr('r', function(d) { return d.r; })
+                    .classed( "colour-gkp" , function(d){ return d.data.player_position.toLowerCase() === 'gkp'})
+                    .classed( "colour-def" , function(d){ return d.data.player_position.toLowerCase() === 'def'})
+                    .classed( "colour-mid" , function(d){ return d.data.player_position.toLowerCase() === 'mid'})
+                    .classed( "colour-fwd" , function(d){ return d.data.player_position.toLowerCase() === 'fwd'})
+
+                    let label = d3.select(this)
+                    .append("text")
+                    .style("text-anchor", "middle")
+                    //.style("font-family", "Helvetical Neue")
+                    //.style("font-size", "0.8rem")
+                    .classed("text small", true)
+
+                    let name = label.append("tspan")
+                    .text( function(d) {
+                        let t = return_replace_diacritics(d.data.player_name)
+                        return t
+                    })
+                    .attr("x", 0)
+                    .attr("y", -3)
+                    //.style("font-weight", 400)
+                    //.style("fill", chump.colours.midnight_blue)
+
+                    let teams = name.append("tspan")
+                    .classed("text small superscript", true)
+                    .text( function(d) {
+                        let t = " (" + d.data.teams_selected_by.length + ")"
+                        return t
+                    })
+                    //.style("baseline-shift", "super")
+
+                    let score = label.append("tspan")
+                    .text( function(d) {
+                        let t = d.data.points_scored + "pts"
+                        return t
+                    })
+                    .attr("x", 0)
+                    .attr("y", 12)
+                    .classed("text bold", true)
+                    //.style("font-weight", 800)
+
+                    let circle_width = circle.node().getBBox().width
+                    let label_width = label.node().getBBox().width
+
+                    if ( label_width > circle_width - 20 ) {
+                        label.attr("display", "none")
+                    }
+
+                })
+
+                viz_container.append("div")
+                .classed("text small colour-white", true)
+                .text( function(d) {
+                    t = "Figures in brackets indicate number of Chumpionship teams that player scored points for in GW"+gw
+                    return t
+                })
+
+                styles.add()
 
             });
 
@@ -135,7 +263,6 @@
     <body> 
         <main>
             <section>
-                <div id="logo"></div>
                 <div class="wrapper">
                     <div class="container">
                         <div id="title-block"></div>

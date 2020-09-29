@@ -1,3 +1,23 @@
+/* Bubble charts */
+
+div.viz.bubble-pack {
+
+}
+
+div.viz.bubble-pack .viz-wrapper {
+
+}
+
+div.viz.bubble-pack .viz-wrapper .viz-container {
+
+}
+
+div.viz.bubble-pack svg .text.small.superscript {
+	font-size: 0.6rem;
+	baseline-shift: super;
+}
+
+
 /* League Table */
 
 div.league-table-wrapper {
@@ -304,6 +324,10 @@ div.page.border {
 	font-weight: 400;
 }
 
+.text.bold {
+	font-weight: 800;
+}
+
 .text.display {
 	font-family: 'Champion';
 	font-weight: 800;
@@ -323,6 +347,10 @@ div.page.border {
 .text.small {
 	font-size: 0.8rem;
 	line-height: 0.8rem;
+}
+
+.text.colour-white {
+	color: white;
 }
 
 

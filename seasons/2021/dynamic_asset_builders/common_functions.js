@@ -14,3 +14,9 @@ function return_ordinal(num) {
 function return_comma_formatted_number(num) {
     return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
+
+function return_replace_diacritics(s) {
+
+    s = s.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+    return s;
+}
