@@ -1,18 +1,19 @@
 /* Bubble charts */
 
-div.viz.bubble-pack {
-
+div.viz:not(:last-child) {
+	margin-bottom: 2rem;
 }
 
-div.viz.bubble-pack .viz-wrapper {
-
+div.viz div.caption {
+	max-width: 36ch;
+	margin-bottom: 1rem;
 }
 
-div.viz.bubble-pack .viz-wrapper .viz-container {
-
+div.viz div.caption div.subtitle {
+	margin-bottom: 0.3rem;
 }
 
-div.viz.bubble-pack svg .text.small.superscript {
+div.viz svg .text.small.superscript {
 	font-size: 0.6rem;
 	baseline-shift: super;
 }
@@ -346,7 +347,7 @@ div.page.border {
 
 .text.small {
 	font-size: 0.8rem;
-	line-height: 0.8rem;
+	line-height: 1rem;
 }
 
 .text.colour-white {

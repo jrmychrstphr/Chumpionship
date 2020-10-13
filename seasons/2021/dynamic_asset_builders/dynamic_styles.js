@@ -31,12 +31,13 @@ styles = {
         d3.selectAll("div.league-table-container div.table-row-container.position-relegation .table-column:not(.form").style("background", chump.colours.pink)
 
         //bubble-pack viz
-        d3.selectAll("div.viz.bubble-pack svg .colour-gkp").style("fill", chump.colours.purple)
-        d3.selectAll("div.viz.bubble-pack svg .colour-def").style("fill", chump.colours.green)
-        d3.selectAll("div.viz.bubble-pack svg .colour-mid").style("fill", chump.colours.light_blue)
-        d3.selectAll("div.viz.bubble-pack svg .colour-fwd").style("fill", chump.colours.pink)
+        d3.selectAll("div.viz svg .colour-gkp").style("fill", chump.colours.purple)
+        d3.selectAll("div.viz svg .colour-def").style("fill", chump.colours.green)
+        d3.selectAll("div.viz svg .colour-mid").style("fill", chump.colours.light_blue)
+        d3.selectAll("div.viz svg .colour-fwd").style("fill", chump.colours.pink)
+        d3.selectAll("div.viz svg .colour-white").style("fill", "white")
 
-        d3.selectAll("div.viz.bubble-pack svg text").style("fill", chump.colours.midnight_blue)
+        d3.selectAll("div.viz.bubble-pack svg text:not(.colour-gkp):not(.colour-def):not(.colour-mid):not(.colour-fwd):not(.colour-white)").style("fill", chump.colours.midnight_blue)
 
     }
     
