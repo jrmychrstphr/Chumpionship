@@ -239,7 +239,7 @@
                             t_gw = "Err"
                         }
 
-                        t = return_comma_formatted_number(root_count.value) + " Premier League players were used by Chumpionship teams " + t_gw + ". Together they scored a total of " + return_comma_formatted_number(root_sum.value) + " points."
+                        t = return_comma_formatted_number(root_count.value) + " Premier League players were used by Chumpionship teams " + t_gw + ". Together they scored a combined total of " + return_comma_formatted_number(root_sum.value) + " points."
                         return t
                     })
 
@@ -300,14 +300,6 @@
                                 let t = " (" + d.data.teams_selected_by.length + ")"
                                 return t
                             })
-                            
-                            viz_container.append("div")
-                            .classed("text small colour-white", true)
-                            .text( function(d) {
-                                t = "Figures in brackets indicate number of Chumpionship teams that player scored points for in GW"
-                                return t
-                            })
-
                         }
 
 
@@ -319,6 +311,21 @@
                         }
 
                     })
+
+                    /*
+
+                    if (gw_array.length === 1) {
+
+                        v1_viz_container.append("div")
+                        .classed("text small colour-white", true)
+                        .text( function(d) {
+                            t = "Figures in brackets indicate number of Chumpionship teams that player scored points for in GW"
+                            return t
+                        })
+
+                    }
+
+                    */
 
                     //build content
                     const v2_viz_container = d3.select("#content-block")
@@ -456,7 +463,7 @@
 
                 }
 
-                player_scores(1,4)
+                player_scores(5)
 
                 
 
