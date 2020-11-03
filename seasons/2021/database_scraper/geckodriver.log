@@ -754,3 +754,9 @@ console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Err
 1603788164748	Marionette	INFO	Listening on port 58625
 1603788164892	Marionette	WARN	TLS certificate errors will be ignored for this session
 1603788438511	Marionette	INFO	Stopped listening on port 58625
+1604394191488	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/dj/r_d53pv97qn6cb7zp_63kxxh0000gn/T/rust_mozprofile.01hFqiYerc5w"
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1604394195382	Marionette	INFO	Listening on port 49434
+1604394195471	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.96fd96193cc66c3e11d4c5e4c7c7ec97.html?origin=https%3A%2F%2Ffantasy.premierleague.com, line 12: Error: Network error.
+1604394472264	Marionette	INFO	Stopped listening on port 49434
