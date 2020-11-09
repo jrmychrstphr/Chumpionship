@@ -760,3 +760,9 @@ console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Err
 1604394195471	Marionette	WARN	TLS certificate errors will be ignored for this session
 JavaScript error: https://platform.twitter.com/widgets/widget_iframe.96fd96193cc66c3e11d4c5e4c7c7ec97.html?origin=https%3A%2F%2Ffantasy.premierleague.com, line 12: Error: Network error.
 1604394472264	Marionette	INFO	Stopped listening on port 49434
+1604915838937	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/dj/r_d53pv97qn6cb7zp_63kxxh0000gn/T/rust_mozprofile.38JIMk5VYJ1r"
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1604915841656	Marionette	INFO	Listening on port 49910
+1604915841706	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://activity-stream/lib/PersonalityProvider/PersonalityProvider.jsm, line 92: TypeError: http://%(server)s/dummy/blocklist// is not a valid URL.
+1604916181482	Marionette	INFO	Stopped listening on port 49910
