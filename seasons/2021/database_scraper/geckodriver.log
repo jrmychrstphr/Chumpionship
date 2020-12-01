@@ -855,3 +855,12 @@ console.error: "Failed to fetch undefinedmain-workspace/personality-provider-mod
 console.error: "Failed to fetch undefinedmain-workspace/personality-provider-models/0685a1b5-34eb-4c13-8c90-bc82735e527f.json: "
 console.error: "Failed to fetch undefinedmain-workspace/personality-provider-models/0685a1b5-34eb-4c13-8c90-bc82735e527f.json: "
 1606218515038	Marionette	INFO	Stopped listening on port 61818
+1606854534536	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/dj/r_d53pv97qn6cb7zp_63kxxh0000gn/T/rust_mozprofile.tKuyB7ug7dZ0"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1606854538745	Marionette	INFO	Listening on port 64254
+1606854544555	Marionette	INFO	Stopped listening on port 64254
+1606854565289	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/dj/r_d53pv97qn6cb7zp_63kxxh0000gn/T/rust_mozprofile.in6t3eSRkvaK"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1606854567524	Marionette	INFO	Listening on port 64293
+1606854567553	Marionette	WARN	TLS certificate errors will be ignored for this session
+1606855049020	Marionette	INFO	Stopped listening on port 64293
