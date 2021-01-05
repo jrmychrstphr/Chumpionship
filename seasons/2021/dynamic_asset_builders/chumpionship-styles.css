@@ -1,3 +1,29 @@
+/* Viz legends */
+div.viz-wrapper {
+	//background-color: rgba(255,255,255,0.1)
+}
+
+div.legend-wrapper {
+	margin-bottom: 2rem;
+}
+
+div.legend-container {
+	margin: -0.15rem;
+}
+
+div.legend-item:not(.vs) {
+	margin: 0.15rem;
+	padding: 0.3rem 0.6rem 0.15rem;
+}
+
+div.legend-item {
+	margin: 0.15rem 0;
+	padding: 0 0.3rem;
+	border-radius: 0.2rem;
+	display: inline-block;
+}
+
+
 /* Bubble charts */
 
 div.viz:not(:last-child) {

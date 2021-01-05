@@ -13,7 +13,7 @@ styles = {
 
     add : function() {
 
-        d3.selectAll(".fixture-list-wrapper, .result-list-wrapper, .league-table-wrapper").style("color", chump.colours.midnight_blue)
+        d3.selectAll(".fixture-list-wrapper, .result-list-wrapper, .league-table-wrapper, .legend-item").style("color", chump.colours.midnight_blue)
 
         d3.selectAll(".result-row.win div.indicator, .result-row.win div.score").style("background", chump.colours.green)
         d3.selectAll(".result-row.loss div.indicator, .result-row.loss div.score").style("background", chump.colours.pink)
