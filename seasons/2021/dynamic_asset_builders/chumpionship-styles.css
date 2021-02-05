@@ -308,6 +308,10 @@ div.title-wrapper {
 div.title-container {
 }
 
+div.title-container .explainer {
+	margin-top: 2rem;
+}
+
 /* Logo */
 div.logo-wrapper {
 	position: relative;
