@@ -97,7 +97,7 @@
                 function draw_viz(gw_end, span) {
 
                     if(!(gw_end)) { gw_end = 21; }
-                    if(!(span)) { gw_start = gw_end-1; } else { gw_start = gw_end-span}
+                    if(!(span)) { gw_start = gw_end-1; } else { gw_start = gw_end-parseInt(span)}
 
                     console.log(gw_start)
                     console.log(gw_end)
@@ -358,7 +358,6 @@
                 .classed( 'controls-container' , true )
 
                 /* gameweek select */
-
                 const gameweek_select_group = controls.append( 'div' ).classed( 'group' , true )
                 gameweek_select_group.append( 'div' ).classed( 'label' , true ).text( 'Gameweek: ' )
 
@@ -367,9 +366,22 @@
                 .attr("name", "gameweek_select")
                 .attr("id", "gameweek_select")
 
+                /* span select */
+                const span_select_group = controls.append( 'div' ).classed( 'group' , true )
+                span_select_group.append( 'div' ).classed( 'label' , true ).text( 'Span: ' )
+
+                const span_select = span_select_group
+                .append( 'input' )
+                .attr("type", "number")
+                .attr("name", "span_select")
+                .attr("id", "span_select")
+                .attr("min", "1")
+                .attr("max", "10")
+                .attr("value", "1")
+
                 let gw_array = []
 
-                // create a list of functions
+                // create a list of gameweeks
                 $.each( database[ 'fixture_list' ], function(k, v) {    
                     gw_array.push(k)
                 })
@@ -386,8 +398,9 @@
                 .on("click", function() {
 
                     var input_gw = $("#gameweek_select").val() // grab type input from select
+                    var input_span = $("#span_select").val() // grab type input from select
 
-                    draw_viz(input_gw)
+                    draw_viz(input_gw, input_span)
 
                 })
 
