@@ -108,11 +108,22 @@
 
                 function draw_viz() {
 
-                    title.text("Fixture scores")
+                    title.text("Single scores")
 
                     subtitle.text(function(d) {
-                        //let msg = "2021 season"
-                        //return msg
+
+                        let a = dataset[0].fixture_score_array.length;
+                        let msg;
+
+                        if ( a===1 ) {
+                            msg = "GW"+parseInt(a)
+                        } else if ( a > 1 ) {
+                            msg = "GWs 1-"+parseInt(a)
+                        } else {
+                            msg = "Err"
+                        }
+
+                        return msg
                     })
 
                     $( "#content-block" ).empty()
@@ -391,11 +402,13 @@
 
                     })
 
+                    /*
                     var footnote = d3.select("#content-block")
                     .append("div")
                     .classed("footnote text small", true)
                     .text("The season's top single score will win £15. In the event of a tie, this prize will be shared evenly across all =1st scores.")
                     .style("margin-top", "2rem")
+                    */
 
                 }
 
