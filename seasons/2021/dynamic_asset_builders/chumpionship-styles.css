@@ -1,3 +1,7 @@
+div.viz-wrapper svg {
+	overflow: visible;
+}
+
 /* Viz legends */
 div.viz-wrapper {
 	//background-color: rgba(255,255,255,0.1)
@@ -378,6 +382,11 @@ div.page.border {
 .text.small {
 	font-size: 0.8rem;
 	line-height: 1rem;
+}
+
+.text.tiny {
+	font-size: 0.65rem;
+	line-height: 0.8rem;
 }
 
 .text.colour-white {
