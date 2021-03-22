@@ -1,0 +1,462 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"> 
+
+<html lang="en">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <title>Chumpionship</title>
+        
+        <link rel="stylesheet" type="text/css" href="chumpionship-styles.css">   
+        
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://d3js.org/d3.v5.min.js"></script>
+
+        <script src="load_database.js"></script>
+
+        <script src="common_functions.js"></script>
+
+        <script src="database_queries.js"></script>
+        <script src="content-builders-library.js"></script>
+
+        <script src="chumpionship_colours.js"></script>
+        <script src="svg.js"></script>
+        <script src="dynamic_styles.js"></script>
+
+        <style>
+            
+            #controls {
+                margin: 1rem;
+                padding: 1rem;
+                border: 1px solid;
+                position: fixed;
+                top: 0;
+                right: 0;
+                //width: 8rem;
+                font-size: 0.8rem;
+                font-family: "Helvetica Neue";
+                background: white;
+            }
+
+            #controls div.group {
+                margin-bottom: 1rem;
+            }
+
+            #controls div.label {
+                margin-bottom: 0.5rem;
+            }
+
+            #controls fieldset {
+                margin: 0px;
+                padding: 0px;
+                border: 0px;
+            }
+
+        </style>
+
+        <script>
+            
+            
+            $( function(){
+
+                styles.core()
+
+                //build title block
+                const title_container = d3.select("#title-block")
+                .append("div")
+                .classed("title-wrapper", true)
+                .append("div")
+                .classed("title-container", true)
+
+                const title = title_container.append("div")
+                .classed("text display large", true)
+
+                //create dataset
+                function create_dataset() {
+
+                    let d = [];
+
+                    // for each player in the database
+                    $.each( database["player_data"], function(k, v) {
+                        let manager_code = k;
+
+                        let temp_obj = {}
+
+                        temp_obj.manager_code =   manager_code
+
+                        // array of single scores
+                        temp_obj.fixture_scores = v["season_performance"]["fixture_score_array"]
+
+                        // array of running total
+                        temp_obj.overall_scores = v["season_performance"]["fixture_score_running_total_array"]
+
+                        // array of league position
+                        temp_obj.league_ranks = v["season_performance"]["league_position_array"]
+
+                        d.push(temp_obj)
+
+                    });
+
+                    return d;
+
+                };
+
+                const dataset = create_dataset();
+                console.log(dataset)
+
+
+                // build controls
+                const controls = d3.select('body')
+                .append('div')
+                .attr("id", "controls")
+                .classed('controls-wrapper',true)
+                .append('div')
+                .classed('controls-container',true)
+
+                const mode_select_group = controls.append( 'div' ).classed( 'group' , true )
+                mode_select_group.append( 'div' ).classed( 'label' , true ).text( 'Mode: ' )
+
+                const mode_select = mode_select_group.append( 'select' )
+                .attr("name", "mode_select")
+                .attr("id", "mode_select")
+
+                let mode_list = ["League rank", "Overall score", "Fixture scores"]
+
+                $.each( mode_list.sort(d3.ascending), function(i,v){
+                    mode_select.append("option").attr("value", v.toLowerCase().split(' ').join('_')).text(v)
+                })
+
+                const player_select_group = controls.append( 'div' ).attr("id", "player_select_group").classed( 'group' , true )
+                player_select_group.append( 'div' ).classed( 'label' , true ).text( 'Players:')
+
+                $.each( dataset, function(i,v){
+
+                    let id = "player_select_"+i
+
+                    player_select_group.append("input")
+                    .attr("type", "checkbox")
+                    .attr("id", id)
+                    .attr("name", "player_select")
+                    .attr("value", v.manager_code)
+                    .style("margin-right", "0.5rem")
+                    .style("margin-bottom", "0.25rem")
+
+                    player_select_group.append("label")
+                    .attr("for", id)
+                    .text(function() {
+                        let msg = db_return_manager_fullname(database, v.manager_code)
+                        return msg
+                    })
+
+                    player_select_group.append("br")
+
+                    
+                })
+
+
+                const btn = controls.append( "button" )
+                .attr("type", "button")
+                .text( " Generate" )
+                .on("click", function() {
+
+                    let input_mode = $("#mode_select").val()
+                    let input_players = []
+
+                    $("#player_select_group input[type=checkbox]:checked").each(function(){
+                        input_players.push(this.value)
+                    })
+
+                    draw_viz(input_mode, input_players)
+
+                })
+
+
+                function draw_viz(viz_mode, player_array) {
+
+                    // check input -- if player list is empty
+                    if (player_array.length === 0) {
+                        //generate a random number between 0-19
+                        var r = Math.floor(Math.random() * 20)
+
+                        //add a random player to the player list
+                        player_array.push(dataset[r].manager_code)
+                    }
+
+                    // check input -- define data key
+                    let data_key;
+                    if (viz_mode.toLowerCase() === "fixture_scores" ) { data_key = "fixture_scores" }
+                    else if (viz_mode.toLowerCase() === "overall_score" ) { data_key = "overall_scores" }
+                    else if (viz_mode.toLowerCase() === "league_rank" ) { data_key = "league_ranks" }
+                    else { data_key = "" }
+
+                    console.log(data_key)
+                    console.log(player_array)
+
+                    // clear the artboard
+                    $( "#content-block" ).empty()
+
+                    // add a title
+                    title.text( function() {
+                        msg = viz_mode.split('_').join(' ')
+                        return msg
+                    })
+
+                    //build viz container
+                    const viz_container = d3.select("#content-block")
+                    .append("div")
+                    .classed("viz-wrapper", true)
+                    .append("div")
+                    .classed("viz-container", true)
+
+                    // configure viz
+                    const viz_config = {
+                        "width": viz_container.node().getBoundingClientRect().width,
+                        "height": 540,
+                        "margin": {
+                            "top": 20,
+                            "right": 0,
+                            "bottom": 28,
+                            "left": 20
+                        }
+                    }
+
+                    // add svg canvas to artboard
+                    const svg = viz_container.append("svg")
+                        .attr("height", viz_config.height)
+                        .attr("width", viz_config.width)
+                        .attr("viewBox","0 0 " + viz_config.width + " " + viz_config.height)
+
+
+                    //set scales -- xAxis will be GWs
+                    let xDomain = function() {
+
+                        // array to store all unique gws (i.e. length of season so far)
+                        let x = []
+
+                        //for each entry (player) in the dataset
+                        $.each(dataset, function(i,v) {
+
+                            // for the length of the data array
+                            $.each(v[data_key], function(idx, val){
+                                // use the array index as a proxy for a gw
+                                let gw = idx+1
+                                // if that gw value is not in the array(x), add it to the array
+                                if (!(x.includes(gw))) { x.push(gw)}
+                            })
+
+                        })
+
+                        return x
+
+                    } ();
+
+                    let yDomain = function() {
+
+                        // array to store all data values
+                        let y = []
+
+                        //for each entry (player) in the dataset
+                        $.each(dataset, function(i,v) {
+                            //append the dataset to the array
+                            y = y.concat(v[data_key])
+                        })
+
+                        y = d3.extent(y)
+
+                        if ( data_key === "league_ranks" ) {
+                            // if the viz is showing league rank
+                            // add the missing ranks
+
+                            let a = y[0], b = y[1];
+
+                            for ( i = a; i <= b; i++ ) {
+                                if (!(y.includes(i))) { y.push(i) }
+                            }
+
+                            y = y.sort(d3.ascending)
+
+                            viz_config.yAxisValues = y
+
+                        } else {
+
+                            let increments_array = [1, 2.5, 5], max = y[1];
+                            let interval, divisions;
+
+                            do {
+
+                                $.each(increments_array, function(idx,val) {
+                                    //test if max divided by val is less than 4 or 5
+                                    if (max/val < 5) {
+                                        divisions = 5
+                                        interval = val
+                                        return false;
+                                    } else if (max/val < 4) {
+                                        divisions = 4
+                                        interval = val
+                                        return false;
+                                    }
+                                })
+
+                                // multiply the array by 10 and restart the loop
+                                $.each(increments_array, function(idx,val) {                                    increments_array[idx] = 10*val                                    
+                                })
+
+
+
+                            } while (!(interval))
+
+                            //viz_config.yAxisDivisions = divisions
+                            //viz_config.yAxisInterval = interval
+                            viz_config.yAxisValues = []
+
+                            y[1] = divisions*interval
+
+                            console.log(divisions)
+                            console.log(interval)
+
+                            if (y[0] > 0) { 
+                                y[0]=0 
+                            } else {
+                                y[0] = Math.floor((y[0]/interval))*interval
+                            }
+
+                            //populate an array of values
+                            for ( i=y[0]; i<=y[1]; i=i+interval) {
+                                viz_config.yAxisValues.push(i)
+                            }
+
+                        }
+
+                        return y
+
+                    } ();
+
+                    console.log(yDomain)
+                    console.log(xDomain)
+
+                    xScale = d3.scaleBand()
+                    .domain(xDomain)
+                    .range([viz_config.margin.left, viz_config.width-viz_config.margin.right])
+
+                    // ranking = Band scale!!!
+                    yScale = d3.scaleLinear()
+                    .domain(yDomain)
+                    .range([viz_config.height-viz_config.margin.bottom, viz_config.margin.top])
+
+
+                    //build axes
+                    let xAxisGenerator = d3.axisBottom(xScale)
+                    .tickFormat(function(d) {
+                        if (d%5==0 || d3.extent(xDomain).includes(d)) {
+                            return "GW" + d 
+                        }
+                    })
+
+                    let = xAxis = svg.append("g")
+                    .attr("transform", "translate(0," + (viz_config.height - viz_config.margin.bottom) + ")")
+                    .call(xAxisGenerator)
+
+                    xAxis.selectAll(".tick text")
+                    .attr("x", 0)
+                    .attr("dy", 15)
+                    .classed("text small colour-white", true)
+
+                    xAxis.selectAll("line")
+                    .style("stroke", "white")
+
+                    xAxis.select(".domain").remove()
+                    
+
+                    let yAxisGenerator = d3.axisRight(yScale)
+                    .tickPadding(0)
+                    .tickSizeOuter(0)
+                    .tickSizeInner(viz_config.width)
+                    .tickValues(viz_config.yAxisValues)
+                    .tickFormat(function(d) {
+                        // ranking adds ordinals, other adds 'pts' to top label
+                        if ( data_key === "league_ranks" ) {
+                            return return_ordinal(d)
+                        } else {
+
+                            if (d==d3.max(yAxisGenerator.tickValues())) { 
+                                return return_comma_formatted_number(d)+ "pts"}
+                            else { return return_comma_formatted_number(d) } 
+
+                        }
+                    })
+
+                    let = yAxis = svg.append("g")
+                    .call(yAxisGenerator)
+
+                    yAxis.selectAll(".tick text")
+                    .attr("x", 0)
+                    .attr("dy", -8)
+                    .classed("text small colour-white", true)
+
+                    yAxis.selectAll("line")
+                    .style("stroke", "white")
+
+                    yAxis.select(".domain").remove()
+
+
+                    //add data lines
+                    let lineGenerator = d3.line()
+                    .defined(d => !isNaN(d.score))
+                    .x(d => xScale(d.gameweek) + xScale.bandwidth()/2)
+                    .y(d => yScale(d.score))
+                    //.curve(d3.curveMonotoneX)
+
+                    const line_group = svg.append("g").classed("data-lines", true)
+
+                    $.each(player_array, function(idx, val) {
+
+                        line_group.append("path")
+                        .datum(dataset[val])
+                        .attr("d", lineGenerator)
+                        .style("stroke", viz_colours[idx])
+                        .style("stroke-width", 3)
+                        .style("fill", "none")
+
+                    })
+
+                    //add data points
+                    const data_points = svg.append("g").classed("data-points", true)
+
+                    $.each(player_array, function(idx, val) {
+
+                        let data_points_group = data_points.append("g")
+
+                        data_points_group.selectAll("circle")
+                        .data(dataset[val])
+                        .enter()
+                        .append("circle")
+                        .attr("r", 6)
+                        .attr("cx", d => xScale(d.gameweek) + xScale.bandwidth()/2)
+                        .attr("cy", d => yScale(d.score))
+                        .style("fill", viz_colours[idx])
+                        .style("stroke", "none")
+
+                    })
+
+                }
+            });
+
+            
+        
+        </script>
+        
+    </head> 
+    
+    <body> 
+        <main>
+            <section>
+                <div class="wrapper">
+                    <div class="container">
+                        <div id="title-block"></div>
+                        <div id="content-block"></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </body> 
+
+
+</html>
