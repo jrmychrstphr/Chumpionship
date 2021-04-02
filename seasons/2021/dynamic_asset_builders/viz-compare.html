@@ -69,6 +69,10 @@
                 const title = title_container.append("div")
                 .classed("text display large", true)
 
+                const subtitle = title_container.append("div")
+                .classed("text display regular", true)
+
+
                 //create dataset
                 function create_dataset() {
 
@@ -127,6 +131,8 @@
                 const player_select_group = controls.append( 'div' ).attr("id", "player_select_group").classed( 'group' , true )
                 player_select_group.append( 'div' ).classed( 'label' , true ).text( 'Players:')
 
+                const checkbox_limit = 5;   //limit how many boxes can be ticked
+
                 $.each( dataset, function(i,v){
 
                     let id = "player_select_"+i
@@ -138,6 +144,11 @@
                     .attr("value", v.manager_code)
                     .style("margin-right", "0.5rem")
                     .style("margin-bottom", "0.25rem")
+                    .on('change', function(evt) {
+                       if($(this).siblings(':checked').length >= checkbox_limit) {
+                           this.checked = false;
+                       }
+                    });
 
                     player_select_group.append("label")
                     .attr("for", id)
@@ -199,6 +210,52 @@
                         return msg
                     })
 
+                    //define a colour scale
+                    const colours_array = [chump.colours.green, chump.colours.light_blue, chump.colours.blue, chump.colours.purple, chump.colours.pink]
+
+                    //link the colours to the players
+                    let data_colours = {}
+                    $.each(player_array, function(idx, val) {
+
+                        data_colours[val] = colours_array[idx]
+
+                    })
+
+
+
+
+                    //add a subtitle or key
+                    if (player_array.length === 1) {
+                        subtitle.text(db_return_team_name(database, player_array[0]))
+                    } else{
+
+                        subtitle.text("")
+
+                        //build key/legend
+                        const viz_legend_container = d3.select("#content-block")
+                        .append("div")
+                        .classed("legend-wrapper", true)
+                        .append("div")
+                        .classed("legend-container", true)
+
+                        $.each(player_array, function(idx, val) {
+
+                            if (idx > 0 && player_array.length < 4 ) {
+                                viz_legend_container.append("div")
+                                .classed( "text small  colour-white legend-item vs", true )
+                                .text( "vs" )
+
+                            }
+
+                            viz_legend_container.append("div")
+                            .classed( "text small bold colour-purple legend-item", true )
+                            .style( "background-color", data_colours[val] )
+                            .style( "color", chump.colours.midnight_blue )
+                            .text( db_return_team_name(database, val) )
+
+                        })
+                    }
+
                     //build viz container
                     const viz_container = d3.select("#content-block")
                     .append("div")
@@ -209,14 +266,23 @@
                     // configure viz
                     const viz_config = {
                         "width": viz_container.node().getBoundingClientRect().width,
-                        "height": 420,
                         "margin": {
-                            "top": 20,
                             "right": 0,
-                            "bottom": 28,
-                            "left": 20
+                            "bottom": 28
                         }
                     }
+
+                    //dynamically set margins
+                    if ( data_key === "league_ranks" ) {
+                        viz_config.margin.top = 0
+                        viz_config.margin.left = 40
+                        viz_config.height = 520
+                    } else {
+                        viz_config.margin.top = 20
+                        viz_config.margin.left = 20
+                        viz_config.height = 420
+                    }
+
 
                     // add svg canvas to artboard
                     const svg = viz_container.append("svg")
@@ -329,24 +395,32 @@
 
                     } ();
 
-                    console.log(yDomain)
-                    console.log(xDomain)
 
                     xScale = d3.scaleBand()
                     .domain(xDomain)
                     .range([viz_config.margin.left, viz_config.width-viz_config.margin.right])
 
-                    // ranking = Band scale!!!
-                    yScale = d3.scaleLinear()
-                    .domain(yDomain)
-                    .range([viz_config.height-viz_config.margin.bottom, viz_config.margin.top])
+                    if ( data_key === "league_ranks" ) {
+
+                        yScale = d3.scaleBand()
+                        .domain(yDomain.reverse())
+                        .range([viz_config.height-viz_config.margin.bottom, viz_config.margin.top])
+
+                    } else {
+
+                        yScale = d3.scaleLinear()
+                        .domain(yDomain)
+                        .range([viz_config.height-viz_config.margin.bottom, viz_config.margin.top])
+
+                    }
+
 
 
                     //build axes
                     let xAxisGenerator = d3.axisBottom(xScale)
                     .tickFormat(function(d) {
                         if (d%5==0 || d3.extent(xDomain).includes(d)) {
-                            return "GW" + d 
+                            return "GW"+d 
                         }
                     })
 
@@ -360,79 +434,184 @@
                     .classed("text small colour-white", true)
 
                     xAxis.selectAll("line")
-                    .style("stroke", "white")
+                    .style("stroke", chump.colours.axis_lines)
 
                     xAxis.select(".domain").remove()
-                    
 
-                    let yAxisGenerator = d3.axisRight(yScale)
-                    .tickPadding(0)
-                    .tickSizeOuter(0)
-                    .tickSizeInner(viz_config.width)
-                    .tickValues(viz_config.yAxisValues)
-                    .tickFormat(function(d) {
-                        // ranking adds ordinals, other adds 'pts' to top label
-                        if ( data_key === "league_ranks" ) {
+
+                    let yAxisGenerator, yAxis;
+
+                    if ( data_key === "league_ranks" ) {
+
+                        yAxisGenerator = d3.axisLeft(yScale)
+                        .tickPadding(0)
+                        .tickSizeOuter(0)
+                        .tickSizeInner(viz_config.width)
+                        .tickValues(viz_config.yAxisValues)
+                        .tickFormat(function(d) {
                             return return_ordinal(d)
-                        } else {
+                        })
 
+                    } else {
+
+                        yAxisGenerator = d3.axisRight(yScale)
+                        .tickPadding(0)
+                        .tickSizeOuter(0)
+                        .tickSizeInner(viz_config.width)
+                        .tickValues(viz_config.yAxisValues)
+                        .tickFormat(function(d) {
                             if (d==d3.max(yAxisGenerator.tickValues())) { 
                                 return return_comma_formatted_number(d)+ "pts"}
                             else { return return_comma_formatted_number(d) } 
+                        })
 
-                        }
-                    })
+                    }
 
-                    let = yAxis = svg.append("g")
+                    yAxis = svg.append("g")
                     .call(yAxisGenerator)
 
-                    yAxis.selectAll(".tick text")
-                    .attr("x", 0)
-                    .attr("dy", -8)
-                    .classed("text small colour-white", true)
+                    if ( data_key === "league_ranks" ) {
 
-                    yAxis.selectAll("line")
-                    .style("stroke", "white")
+                        yAxis.selectAll(".tick text")
+                        .attr("x", viz_config.margin.left - 10)
+                        .attr("dy", 5)
+                        .classed("text small colour-white", true)
+
+                        yAxis.selectAll("line")
+                        .style("stroke", chump.colours.axis_lines)
+                        .remove()
+
+                        let league_table_group = svg.append("g").classed("leaue-table", true)
+
+                        //build league table
+                        $.each(viz_config.yAxisValues, function(i,v){
+
+                            console.log(v)
+                            console.log(yScale.bandwidth())
+
+                            league_table_group.append("rect")
+                            .attr("width", viz_config.width - (viz_config.margin.left+viz_config.margin.right))
+                            .attr("height", yScale.bandwidth())
+                            .attr("y", yScale(v))
+                            .attr("x", viz_config.margin.left)
+                            .style("fill", function(d) {
+
+                                if (v%2===0) {
+                                    c = "rgba(255,255,255,0.0)"
+                                } else {
+                                    c = "rgba(255,255,255,0.02)"
+                                }
+
+                                return c
+                            })
+                            //.style("stroke", chump.colours.midnight_blue)
+
+                            let a = [1,2,5,11,18,20]
+
+                            if (a.includes(v)) {
+
+                                let line = league_table_group.append("line")
+                                .attr("x1", 0)
+                                .attr("y1", yScale(v))
+                                .attr("x2", viz_config.width - (viz_config.margin.right))
+                                .attr("y2", yScale(v))
+                                .style("stroke", chump.colours.axis_lines)
+                                .style("stroke-width", 1)
+
+                                let dashed = [ 11]
+
+                                if (dashed.includes(v)) {
+                                    line.style("stroke-dasharray", "5,5")
+                                }
+
+                                if (v === 20 ) {
+                                    line.attr("y1", yScale(v)+yScale.bandwidth())
+                                    line.attr("y2", yScale(v)+yScale.bandwidth())
+                                }
+
+                            }
+
+                        })
+
+                    } else {
+
+                        yAxis.selectAll(".tick text")
+                        .attr("x", 0)
+                        .attr("dy", -8)
+                        .classed("text small colour-white", true)
+                        
+                        yAxis.selectAll("line")
+                        .style("stroke", chump.colours.axis_lines)
+
+                    }
+
 
                     yAxis.select(".domain").remove()
 
 
                     //add data lines
-                    let lineGenerator = d3.line()
-                    .defined(d => !isNaN(d.score))
-                    .x(d => xScale(d.gameweek) + xScale.bandwidth()/2)
-                    .y(d => yScale(d.score))
-                    //.curve(d3.curveMonotoneX)
+                    const lineGenerator = d3.line()
+                    .defined(d => !isNaN(d.value))
+                    .x(d => xScale(d.gameweek)+xScale.bandwidth()/2)
+                    .y(function(d) {
+                         let y;
 
-                    const line_group = svg.append("g").classed("data-lines", true)
+                         if ( data_key === "league_ranks" ) {
+                            y = yScale(d.value)+yScale.bandwidth()/2
+                         } else {
+                            y = yScale(d.value)
+                         }
 
-                    $.each(player_array, function(idx, val) {
-
-                        line_group.append("path")
-                        .datum(dataset[val])
-                        .attr("d", lineGenerator)
-                        .style("stroke", viz_colours[idx])
-                        .style("stroke-width", 3)
-                        .style("fill", "none")
-
+                         return y
                     })
 
-                    //add data points
-                    const data_points = svg.append("g").classed("data-points", true)
+                    const data_group = svg.append("g").classed("data-group", true)
 
-                    $.each(player_array, function(idx, val) {
+                    $.each(dataset, function(idx, val) {
 
-                        let data_points_group = data_points.append("g")
+                        if (player_array.includes(val.manager_code)) {
 
-                        data_points_group.selectAll("circle")
-                        .data(dataset[val])
-                        .enter()
-                        .append("circle")
-                        .attr("r", 6)
-                        .attr("cx", d => xScale(d.gameweek) + xScale.bandwidth()/2)
-                        .attr("cy", d => yScale(d.score))
-                        .style("fill", viz_colours[idx])
-                        .style("stroke", "none")
+                            let data = []
+
+                            $.each(val[data_key], function(i,v){
+                                temp_obj = {}
+                                temp_obj.gameweek = i+1
+                                temp_obj.value  = v
+
+                                data.push(temp_obj)
+                            })
+
+                            let player_group = data_group.append("g")
+
+                            player_group.append("path")
+                            .datum(data)
+                            .attr("d", lineGenerator)
+                            .style("stroke", data_colours[val.manager_code])
+                            .style("stroke-width", 3)
+                            .style("fill", "none")
+
+                            player_group.selectAll("circle")
+                            .data(data)
+                            .enter()
+                            .append("circle")
+                            .attr("r", 6)
+                            .attr("cx", d => xScale(d.gameweek) + xScale.bandwidth()/2)
+                            .attr("cy", function(d) {
+                                 let y;
+
+                                 if ( data_key === "league_ranks" ) {
+                                    y = yScale(d.value)+yScale.bandwidth()/2
+                                 } else {
+                                    y = yScale(d.value)
+                                 }
+
+                                 return y
+                            })
+                            .style("fill", data_colours[val.manager_code])
+                            .style("stroke", "none")
+
+                        }
+
 
                     })
 

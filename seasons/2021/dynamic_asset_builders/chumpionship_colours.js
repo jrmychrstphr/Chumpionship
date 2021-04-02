@@ -7,6 +7,7 @@ chump.colours.blue = d3.rgb("rgb(0,120,250)");
 chump.colours.purple = d3.rgb("rgb(130,80,230)");
 chump.colours.pink = d3.rgb("rgb(255,50,180)");
 chump.colours.midnight_blue = d3.rgb("rgb(10,10,50)");
+chump.colours.axis_lines = d3.rgb("rgb(90,90,115)");
 
 chump.gradients = {};
 chump.gradients.css = {};
