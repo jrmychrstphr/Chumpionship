@@ -210,30 +210,27 @@
                         return msg
                     })
 
-                    //define a colour scale
+
+                    //define an array of colours
                     const colours_array = [chump.colours.green, chump.colours.light_blue, chump.colours.blue, chump.colours.purple, chump.colours.pink]
 
                     //link the colours to the players
                     let data_colours = {}
+
                     $.each(player_array, function(idx, val) {
-
-                        data_colours[val] = colours_array[idx]
-
+                            data_colours[val] = colours_array[idx]
                     })
-
-
-
 
                     //add a subtitle or key
                     if (player_array.length === 1) {
                         subtitle.text(db_return_team_name(database, player_array[0]))
-                    } else{
+                    } else {
 
                         subtitle.text("")
 
                         //build key/legend
                         const viz_legend_container = d3.select("#content-block")
-                        .append("div")
+                        .append("div")  
                         .classed("legend-wrapper", true)
                         .append("div")
                         .classed("legend-container", true)
@@ -255,6 +252,8 @@
 
                         })
                     }
+
+                    
 
                     //build viz container
                     const viz_container = d3.select("#content-block")
@@ -289,6 +288,8 @@
                         .attr("height", viz_config.height)
                         .attr("width", viz_config.width)
                         .attr("viewBox","0 0 " + viz_config.width + " " + viz_config.height)
+
+
 
 
                     //set scales -- xAxis will be GWs
@@ -350,12 +351,12 @@
 
                                 $.each(increments_array, function(idx,val) {
                                     //test if max divided by val is less than 4 or 5
-                                    if (max/val < 5) {
-                                        divisions = 5
+                                    if (max/val < 4) {
+                                        divisions = 4
                                         interval = val
                                         return false;
-                                    } else if (max/val < 4) {
-                                        divisions = 4
+                                    } else if (max/val < 5) {
+                                        divisions = 5
                                         interval = val
                                         return false;
                                     }
@@ -549,6 +550,7 @@
                     yAxis.select(".domain").remove()
 
 
+
                     //add data lines
                     const lineGenerator = d3.line()
                     .defined(d => !isNaN(d.value))
@@ -571,7 +573,7 @@
 
                         if (player_array.includes(val.manager_code)) {
 
-                            let data = []
+                            let data = [];
 
                             $.each(val[data_key], function(i,v){
                                 temp_obj = {}
@@ -581,12 +583,95 @@
                                 data.push(temp_obj)
                             })
 
+
+                            // if showing only 1 player, create a gradient
+                            if (player_array.length === 1) {
+
+                                const defs = svg.append("defs")
+
+                                //create an array of yAxis steps with the same number of items as colours in the colour array
+                                let steps_array = []
+                                let a = d3.interpolateNumber(d3.min(yDomain),d3.max(yDomain));
+                                let range = colours_array;
+
+                                if ( data_key !== "league_ranks" ) {
+                                    range = range.reverse();
+                                }
+
+                                //console.log(range.length)
+
+                                for (i = 0; i <= 1; i = i+1/(range.length-1)) {
+                                    //console.log(i)
+                                    //console.log(a(i))
+                                    steps_array.push(a(i))
+                                }
+
+                                console.log(steps_array)
+                                console.log(range)
+
+                                let b = d3.extent(data, d => d.value)
+
+                                var colours_scale = d3.scaleLinear()
+                                .domain(steps_array)
+                                .range(range)
+                                .interpolate(d3.interpolateRgb);
+
+                                let gradient = defs.append("linearGradient")
+                                .attr("id", "gradient")
+                                .attr("x1", "0%")
+                                .attr("y1", "0%")
+                                .attr("x2", "0%")
+                                .attr("y2", "100%")
+
+                                steps_array = steps_array.concat(b).filter(d => d <= b[1]).filter(d => d >= b[0])
+
+                                if ( data_key === "league_ranks" ) {
+                                    steps_array = steps_array.sort(d3.ascending)
+                                }else { 
+                                    steps_array = steps_array.sort(d3.descending)
+                                }
+                                //steps_array = steps_array.concat(b).sort(d3.ascending)
+
+                                console.log(steps_array)
+
+                                $.each(steps_array, function(i,v) {
+
+                                    let offset = ((v-b[0])/(b[1]-b[0])*100)
+
+                                    if ( data_key !== "league_ranks" ) {
+                                        offset = 100-offset;
+                                    }
+
+                                    offset = offset+"%"
+
+
+                                    console.log(offset)
+                                    console.log(v)
+                                    console.log(colours_scale(v))
+
+                                    gradient.append("stop")
+                                    .attr("offset", offset)
+                                    .style("stop-color", colours_scale(v) )
+
+
+                                })
+
+                            }
+
                             let player_group = data_group.append("g")
 
                             player_group.append("path")
                             .datum(data)
                             .attr("d", lineGenerator)
-                            .style("stroke", data_colours[val.manager_code])
+                            .style("stroke", function(d) { 
+                                let x;
+                                if (player_array.length === 1) {
+                                    x = "url(#gradient)"
+                                } else {
+                                    x = data_colours[val.manager_code]
+                                }
+                                return x;
+                            })
                             .style("stroke-width", 3)
                             .style("fill", "none")
 
@@ -607,7 +692,15 @@
 
                                  return y
                             })
-                            .style("fill", data_colours[val.manager_code])
+                            .style("fill", function(d) { 
+                                let x;
+                                if (player_array.length === 1) {
+                                    x = colours_scale(d.value)
+                                } else {
+                                    x = data_colours[val.manager_code]
+                                }
+                                return x;
+                            })
                             .style("stroke", "none")
 
                         }
