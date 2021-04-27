@@ -2666,3 +2666,7 @@ JavaScript error: resource:///actors/ContentMetaChild.jsm, line 179: InvalidStat
 
 ###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
 
+1619511992705	Marionette	INFO	Stopped listening on port 62663
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
