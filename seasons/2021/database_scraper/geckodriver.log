@@ -2964,3 +2964,21 @@ JavaScript error: resource:///actors/ContentMetaChild.jsm, line 179: InvalidStat
 
 ###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
 
+1621584286430	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/dj/r_d53pv97qn6cb7zp_63kxxh0000gn/T/rust_mozprofile.Y4fXRGRAvJ5W"
+2021-05-21 09:04:48.613 firefox-bin[22062:1416594] Warning: Expected min height of view: (<NSButton: 0x134b38000>) to be less than or equal to 30 but got a height of 32.000000. This error will be logged once per view in violation.
+2021-05-21 09:04:48.614 firefox-bin[22062:1416594] Warning: Expected min height of view: (<NSButton: 0x13fc32c00>) to be less than or equal to 30 but got a height of 32.000000. This error will be logged once per view in violation.
+2021-05-21 09:04:48.614 firefox-bin[22062:1416594] Warning: Expected min height of view: (<NSButton: 0x13fc36000>) to be less than or equal to 30 but got a height of 32.000000. This error will be logged once per view in violation.
+2021-05-21 09:04:48.615 firefox-bin[22062:1416594] Warning: Expected min height of view: (<NSButton: 0x13fc34800>) to be less than or equal to 30 but got a height of 32.000000. This error will be logged once per view in violation.
+2021-05-21 09:04:48.615 firefox-bin[22062:1416594] Warning: Expected min height of view: (<NSButton: 0x13fc31c00>) to be less than or equal to 30 but got a height of 32.000000. This error will be logged once per view in violation.
+2021-05-21 09:04:48.616 firefox-bin[22062:1416594] Warning: Expected min height of view: (<NSPopoverTouchBarItemButton: 0x13fc33800>) to be less than or equal to 30 but got a height of 32.000000. This error will be logged once per view in violation.
+2021-05-21 09:04:48.616 firefox-bin[22062:1416594] Warning: Expected min height of view: (<NSPopoverTouchBarItemButton: 0x13fe9b400>) to be less than or equal to 30 but got a height of 32.000000. This error will be logged once per view in violation.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1621584289870	Marionette	INFO	Listening on port 52237
+1621584289913	Marionette	WARN	TLS certificate errors will be ignored for this session
+console.log: WebExtensions: reset-default-search: No addons in our list are installed.
+JavaScript error: https://platform.twitter.com/widgets/widget_iframe.06c6ee58c3810956b7509218508c7b56.html?origin=https%3A%2F%2Ffantasy.premierleague.com, line 18: Error: Network error.
+JavaScript error: resource:///actors/ContentMetaChild.jsm, line 179: InvalidStateError: JSWindowActorChild.sendAsyncMessage: JSWindowActorChild cannot send at the moment
+1621585581481	Marionette	INFO	Stopped listening on port 52237
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
