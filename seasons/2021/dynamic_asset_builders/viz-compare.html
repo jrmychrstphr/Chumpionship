@@ -351,7 +351,11 @@
 
                                 $.each(increments_array, function(idx,val) {
                                     //test if max divided by val is less than 4 or 5
-                                    if (max/val < 4) {
+                                    if (max/val < 3) {
+                                        divisions = 3
+                                        interval = val
+                                        return false;
+                                    } else if (max/val < 4) {
                                         divisions = 4
                                         interval = val
                                         return false;
