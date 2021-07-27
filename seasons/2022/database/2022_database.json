@@ -1,0 +1,208 @@
+{
+    "league_data": {
+        "entrant_id_list": [
+            "1724562",
+            "1302433",
+            "241565",
+            "1103301",
+            "792981",
+            "260649",
+            "1300896",
+            "1035711",
+            "1103197",
+            "1058855",
+            "1300783",
+            "830408"
+        ],
+        "fpl_league_code": "190421",
+        "fpl_league_url": "https://fantasy.premierleague.com/leagues/190421/new-entries/h"
+    },
+    "player_data": {
+        "1035711": {
+            "manager_info": {
+                "fpl_code": "1035711",
+                "fpl_history": {
+                    "2010_11": "1763",
+                    "2011_12": "1631",
+                    "2012_13": "1906",
+                    "2013_14": "2033",
+                    "2014_15": "1933",
+                    "2015_16": "2092",
+                    "2016_17": "2147",
+                    "2017_18": "2193",
+                    "2018_19": "2093",
+                    "2019_20": "2174",
+                    "2020_21": "2126"
+                },
+                "manager_fullname": "Jeremy Harding",
+                "team_name": "Costabomb Athletico"
+            }
+        },
+        "1058855": {
+            "manager_info": {
+                "fpl_code": "1058855",
+                "fpl_history": {
+                    "2010_11": "1239",
+                    "2011_12": "1938",
+                    "2012_13": "1993",
+                    "2013_14": "2042",
+                    "2014_15": "1907",
+                    "2015_16": "2029",
+                    "2016_17": "1892",
+                    "2017_18": "2196",
+                    "2018_19": "1925",
+                    "2019_20": "1961",
+                    "2020_21": "2245"
+                },
+                "manager_fullname": "Kester Mollahan",
+                "team_name": "FC Hammer"
+            }
+        },
+        "1103197": {
+            "manager_info": {
+                "fpl_code": "1103197",
+                "fpl_history": {
+                    "2011_12": "1910",
+                    "2012_13": "1813",
+                    "2015_16": "1582",
+                    "2016_17": "1776",
+                    "2017_18": "2001",
+                    "2018_19": "2036",
+                    "2019_20": "2092",
+                    "2020_21": "2258"
+                },
+                "manager_fullname": "Jon Lescott",
+                "team_name": "lingardium leviosa"
+            }
+        },
+        "1103301": {
+            "manager_info": {
+                "fpl_code": "1103301",
+                "fpl_history": {
+                    "2019_20": "1969",
+                    "2020_21": "2235"
+                },
+                "manager_fullname": "David Grice",
+                "team_name": "Renford Rejects"
+            }
+        },
+        "1300783": {
+            "manager_info": {
+                "fpl_code": "1300783",
+                "fpl_history": {
+                    "2015_16": "2076",
+                    "2016_17": "2087",
+                    "2017_18": "2268",
+                    "2018_19": "2219",
+                    "2019_20": "1916",
+                    "2020_21": "1831"
+                },
+                "manager_fullname": "Mike Dove",
+                "team_name": "Inter Benfleet"
+            }
+        },
+        "1300896": {
+            "manager_info": {
+                "fpl_code": "1300896",
+                "fpl_history": {
+                    "2016_17": "1617",
+                    "2017_18": "1981",
+                    "2018_19": "2301",
+                    "2019_20": "2085",
+                    "2020_21": "2313"
+                },
+                "manager_fullname": "James Stillwell",
+                "team_name": "FC George"
+            }
+        },
+        "1302433": {
+            "manager_info": {
+                "fpl_code": "1302433",
+                "fpl_history": {
+                    "2011_12": "1917",
+                    "2012_13": "1786",
+                    "2016_17": "1926",
+                    "2017_18": "2001",
+                    "2018_19": "2024",
+                    "2020_21": "2144"
+                },
+                "manager_fullname": "Ben Rachell",
+                "team_name": "Benno Athletic 21-22"
+            }
+        },
+        "1724562": {
+            "manager_info": {
+                "fpl_code": "1724562",
+                "fpl_history": {
+                    "2013_14": "2201",
+                    "2014_15": "1942",
+                    "2015_16": "2115",
+                    "2016_17": "1963",
+                    "2017_18": "2194",
+                    "2018_19": "2320",
+                    "2019_20": "2177",
+                    "2020_21": "2323"
+                },
+                "manager_fullname": "Ben Carroll",
+                "team_name": "Pretty Pretty United"
+            }
+        },
+        "241565": {
+            "manager_info": {
+                "fpl_code": "241565",
+                "fpl_history": {
+                    "2011_12": "1678",
+                    "2015_16": "1695",
+                    "2016_17": "1439",
+                    "2017_18": "1664",
+                    "2018_19": "1990",
+                    "2019_20": "1900",
+                    "2020_21": "2251"
+                },
+                "manager_fullname": "Darren Baker",
+                "team_name": "The Cockney Rebel\u2019s"
+            }
+        },
+        "260649": {
+            "manager_info": {
+                "fpl_code": "260649",
+                "fpl_history": {
+                    "2009_10": "1903",
+                    "2010_11": "1803",
+                    "2016_17": "1986",
+                    "2017_18": "2305",
+                    "2018_19": "2062",
+                    "2019_20": "2208",
+                    "2020_21": "2281"
+                },
+                "manager_fullname": "Gareth M",
+                "team_name": "My Kimmichal Romance"
+            }
+        },
+        "792981": {
+            "manager_info": {
+                "fpl_code": "792981",
+                "fpl_history": {
+                    "2016_17": "1875",
+                    "2018_19": "1966",
+                    "2019_20": "2091",
+                    "2020_21": "2177"
+                },
+                "manager_fullname": "Ed Clarke",
+                "team_name": "Delta Force"
+            }
+        },
+        "830408": {
+            "manager_info": {
+                "fpl_code": "830408",
+                "fpl_history": {
+                    "2018_19": "2268",
+                    "2019_20": "2267",
+                    "2020_21": "2184"
+                },
+                "manager_fullname": "Richard Walker",
+                "team_name": "RB Shadwell Basin"
+            }
+        }
+    }
+}
