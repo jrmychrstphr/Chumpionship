@@ -84,7 +84,14 @@
 
                         let temp_obj = {}
                         temp_obj["manager_code"] = val
-                        temp_obj["main_score"] = a.manager_info.fpl_history[season]
+
+                        if ( a.manager_info.fpl_history[season] ) {
+                            temp_obj["main_score"] = a.manager_info.fpl_history[season]
+                        } else {
+                            temp_obj["main_score"] = "-"
+                        }
+
+
                         temp_obj["all_scores"] = []
 
                         $.each( a.manager_info.fpl_history, function(k,v) {
@@ -158,10 +165,10 @@
                         x = d3.extent(scores)
                         console.log(scores)
 
-                        x[0] = Math.floor(x[0]/200)*200
+                        x[0] = Math.floor(x[0]/500)*500
 
                         //x[1] = (Math.ceil(((x[1])/200)+0.5)*200)
-                        x[1] = (Math.ceil(((x[1])/200)+0)*200)
+                        x[1] = (Math.ceil(((x[1])/500)+0)*500)
                         console.log(x)
 
                         return x
@@ -197,14 +204,14 @@
                     //build axes
                     let xAxisGenerator = d3.axisBottom(xScale)
                     .tickFormat(function(d) {
-                        if (d%200==0 || d3.extent(xDomain).includes(d)) {
+                        if (d%500==0 || d3.extent(xDomain).includes(d)) {
                             return return_comma_formatted_number(d) + "pts"
                         }
                     })
                     .tickValues(function() {
                         a = [];
                         for (i = xDomain[0]; i <= xDomain[1]; i++) {
-                            if (i%200==0) { a.push(i); }
+                            if (i%500==0) { a.push(i); }
                         };
                         return a;
                     }())
@@ -272,14 +279,19 @@
 
                         })
 
-                        // plot last score
-                        data_group.append("circle")
-                        .attr("cx", xScale(val.main_score))
-                        .attr("cy", yScale(val.manager_code)+yScale.bandwidth()/2)
-                        .attr("r", circle_config.r_large)
-                        .attr("stroke-width", circle_config.stroke_width)
-                        .style("stroke", chump.colours.midnight_blue)
-                        .style("fill", colour)
+                        if ( val.main_score !== "-" ) {
+
+                            // plot last score
+                            data_group.append("circle")
+                            .attr("cx", xScale(val.main_score))
+                            .attr("cy", yScale(val.manager_code)+yScale.bandwidth()/2)
+                            .attr("r", circle_config.r_large)
+                            .attr("stroke-width", circle_config.stroke_width)
+                            .style("stroke", chump.colours.midnight_blue)
+                            .style("fill", colour)
+
+                        }
+
 
 
                         // plot names
@@ -295,62 +307,19 @@
                         // plot score
                         let score = data_group.append("text")
                         .classed("text small bold", true)
-                        .attr("x", 150)
+                        .attr("x", 180)
                         .attr("y", yScale(val.manager_code)+yScale.bandwidth()/2)
                         .attr("dy", 5.5)
                         //.attr("dx", 15)
-                        .style("fill", colour)
-                        .text(function(d) { return return_comma_formatted_number(val.main_score) })
-
-
-                        /*
-                        data_group.append("line")
-                        .attr("x1", xScale(primary_score)+(circle_config.r_large))
-                        .attr("x2", xScale(primary_score)+(circle_config.r_large)+85)
-                        .attr("y1", yScale(val.manager_code)+yScale.bandwidth()/2)
-                        .attr("y2", yScale(val.manager_code)+yScale.bandwidth()/2)
-                        .style("stroke", chump.colours.midnight_blue)
-                        .style("stroke-width", 20)
-                        //.style("stroke-dasharray", "5,5")
-                        .style("fill", "none")
-
-                        let label = data_group.append("text")
-                        .classed("text small bold", true)
-                        .attr("x", xScale(primary_score))
-                        .attr("y", yScale(val.manager_code)+yScale.bandwidth()/2)
-                        .attr("dy", 5.5)
-                        .attr("dx", 12)
+                        .style("text-anchor", "end")
                         .style("fill", colour)
                         .text(function(d) { 
-
-                            let diff = primary_score - comp_score
-
-                            if (diff > 0) { 
-                                diff = "+" + diff 
-                            } else if (diff < 0) { 
-                                diff = "-" + diff 
+                            if ( val.main_score ) {
+                                return return_comma_formatted_number(val.main_score) 
                             } else {
-                                diff = "nc"
+                                return "-"
                             }
-
-                            let msg = return_comma_formatted_number(primary_score) + " (" + diff + ")"
-
-                            return msg
-
-                          })
-
-                        //score now
-                        data_group.append("circle")
-                        .attr("cx", xScale(primary_score))
-                        .attr("cy", yScale(val.manager_code)+yScale.bandwidth()/2)
-                        .attr("r", circle_config.r_large)
-                        .attr("stroke-width", circle_config.stroke_width)
-                        .style("stroke", colour)
-                        .style("fill", colour)
-
-                        */
-
-
+                        })
 
 
                     })
@@ -358,68 +327,13 @@
                     var footnote = d3.select("#content-block")
                     .append("div")
                     .classed("footnote text small", true)
-                    .text("Figures in brackets indicate points scored since GW"+gw_start)
+                    .text("2021 scores compared. Grey circles indicate scores set in previous seasons. Sammy did not post a score in 2021.")
                     .style("margin-top", "2rem")
 
                 }
 
-
-                // build controls
-                const controls = d3.select( 'body' )
-                .append( 'div' )
-                .attr("id", "controls")
-                .classed( 'controls-wrapper' , true )
-                .append( 'div' )
-                .classed( 'controls-container' , true )
-
-                /* gameweek select */
-                const gameweek_select_group = controls.append( 'div' ).classed( 'group' , true )
-                gameweek_select_group.append( 'div' ).classed( 'label' , true ).text( 'Gameweek: ' )
-
-                const gameweek_select = gameweek_select_group
-                .append( 'select' )
-                .attr("name", "gameweek_select")
-                .attr("id", "gameweek_select")
-
-                /* span select */
-                const span_select_group = controls.append( 'div' ).classed( 'group' , true )
-                span_select_group.append( 'div' ).classed( 'label' , true ).text( 'Span: ' )
-
-                const span_select = span_select_group
-                .append( 'input' )
-                .attr("type", "number")
-                .attr("name", "span_select")
-                .attr("id", "span_select")
-                .attr("min", "1")
-                .attr("max", "10")
-                .attr("value", "1")
-
-                let gw_array = []
-
-                // create a list of gameweeks
-                $.each( database[ 'fixture_list' ], function(k, v) {    
-                    gw_array.push(k)
-                })
-
-                $.each( gw_array.sort(d3.ascending), function() {    
-                    gameweek_select.append( 'option' ).attr("value", parseInt(this)).text(this)
-                })
-
-                
-
-                const btn = controls.append( "button" )
-                .attr("type", "button")
-                .text( " Generate" )
-                .on("click", function() {
-
-                    var input_gw = $("#gameweek_select").val() // grab type input from select
-                    var input_span = $("#span_select").val() // grab type input from select
-
-                    draw_viz(input_gw, input_span)
-
-                })
-
                 styles.add()
+                draw_viz()
 
             });
 
