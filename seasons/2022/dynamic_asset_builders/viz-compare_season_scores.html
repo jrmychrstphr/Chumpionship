@@ -73,16 +73,23 @@
                     .classed("text display regular", true)
 
                 //create dataset
-                function create_dataset() {
+                function create_dataset(season) {
 
                     let d = [];
 
                     // for each player in the database
-                    $.each( database["player_data"], function(k, v) {
+                    $.each( database["league_data"]["entrant_id_list"], function(idx,val) {
+
+                        a = database["player_data"][this]
 
                         let temp_obj = {}
-                        temp_obj["manager_code"] = k
-                        temp_obj["overall_score_array"] = v['season_performance']['fixture_score_running_total_array']
+                        temp_obj["manager_code"] = val
+                        temp_obj["main_score"] = a.manager_info.fpl_history[season]
+                        temp_obj["all_scores"] = []
+
+                        $.each( a.manager_info.fpl_history, function(k,v) {
+                            temp_obj["all_scores"].push(v)
+                        })
 
                         d.push(temp_obj)
 
@@ -92,22 +99,19 @@
 
                 };
 
-                let dataset = create_dataset()
+                let dataset = create_dataset('2020_21')  //set the seasons here
+                console.log(dataset)
 
-                function draw_viz(gw_end, span) {
+                function draw_viz() {
 
-                    if(!(gw_end)) { gw_end = 21; }
-                    if(!(span)) { gw_start = gw_end-1; } else { gw_start = gw_end-parseInt(span)}
-
-                    console.log(gw_start)
-                    console.log(gw_end)
-
-                    title.text("Overall scores")
-
+                    title.text("Season scores")
+                    
+                    /*
                     subtitle.text(function(d) {
-                        let msg = "GW" + gw_end
+                        let msg = "GW"
                         return msg
                     })
+                    */
 
                     $( "#content-block" ).empty()
 
@@ -125,7 +129,7 @@
                             "top": 0,
                             "right": 30,
                             "bottom": 30,
-                            "left": 130
+                            "left": 200
                         }
                     }
 
@@ -135,7 +139,7 @@
                         .attr("viewBox","0 0 " + viz_config.width + " " + viz_config.height)
 
 
-                    dataset = dataset.slice().sort((a, b) => d3.ascending(a.overall_score_array[gw_end-1], b.overall_score_array[gw_end-1]) || d3.descending(db_return_manager_fullname(database, a.manager_code), db_return_manager_fullname(database, b.manager_code)))
+                    dataset = dataset.slice().sort((a, b) => d3.ascending(a.main_score, b.main_score) || d3.descending(db_return_manager_fullname(database, a.manager_code), db_return_manager_fullname(database, b.manager_code)))
 
 
 
@@ -148,21 +152,17 @@
 
                         //collect all the scores in an array and define the min max of the dataset
                         $.each( dataset, function(idx, val) {
-                            if (gw_start > 0) {
-                                scores.push(val['overall_score_array'][gw_start-1])
-                            } else {
-                                scores.push(0)
-                            }
-
-                            scores.push(val['overall_score_array'][gw_end-1])
+                            scores = scores.concat(val['all_scores'])
                         });
 
                         x = d3.extent(scores)
-                        //console.log(scores)
+                        console.log(scores)
 
                         x[0] = Math.floor(x[0]/200)*200
-                        x[1] = (Math.ceil(((x[1])/200)+0.5)*200)
-                        //console.log(x)
+
+                        //x[1] = (Math.ceil(((x[1])/200)+0.5)*200)
+                        x[1] = (Math.ceil(((x[1])/200)+0)*200)
+                        console.log(x)
 
                         return x
 
@@ -220,7 +220,8 @@
                     .classed("text small colour-white", true)
 
                     xAxis.selectAll("line")
-                    .style("stroke", "rgba(255,255,255,0.35)")
+                    .style("stroke", "#65657D")
+                    //.style("stroke", "rgba(255,255,255,0.35)")
                     .style("stroke-width", 1)
 
                     xAxis.select(".domain").remove()
@@ -236,78 +237,52 @@
                     const data_group = svg.append("g").classed("data-goup", true)
 
                     $.each(dataset.reverse(), function(idx, val) {
-
-                        let score_prev, score_now;
-                        score_now = val.overall_score_array[gw_end-1]
-                        if (!(val.overall_score_array[gw_start-1])) {
-                            score_prev = 0
-                        } else {
-                            score_prev = val.overall_score_array[gw_start-1]
-                        }
-
-
+                        
                         let colour = data_colours(idx+1)
 
                         let circle_config = {
-                            'r_small': 3.5,
+                            'r_small': 4,
                             'r_large': 7,
-                            'stroke_width': 2
+                            'stroke_width': 1
                         }
 
-                        /*
-
-                        data_group.append("line")
-                        .attr("x1", viz_config.margin.left)
-                        .attr("x2", viz_config.width - viz_config.margin.right)
-                        .attr("y1", yScale(val.manager_code))
-                        .attr("y2", yScale(val.manager_code))
-                        .style("stroke", chump.colours.midnight_blue)
-                        .style("stroke-width", circle_config.stroke_width)
-                        .style("fill", "none")
-
-                        */
-
-                        //blue line first
+                        //dashed white line 
                         data_group.append("line")
                         .attr("x1", xScale(xDomain[0]))
                         .attr("x2", xScale(xDomain[1]))
                         .attr("y1", yScale(val.manager_code)+yScale.bandwidth()/2)
                         .attr("y2", yScale(val.manager_code)+yScale.bandwidth()/2)
-                        .style("stroke", chump.colours.midnight_blue)
+                        //.style("stroke", "rgba(255,255,255,0.35)")
+                        .style("stroke", "#65657D")
                         .style("stroke-width", 1)
-                        .style("stroke-dasharray", "2,6")
+                        .style("stroke-dasharray", "3,6")
                         .style("fill", "none")
 
-                        //white line second
-                        data_group.append("line")
-                        .attr("x1", xScale(xDomain[0]))
-                        .attr("x2", xScale(xDomain[1]))
-                        .attr("y1", yScale(val.manager_code)+yScale.bandwidth()/2)
-                        .attr("y2", yScale(val.manager_code)+yScale.bandwidth()/2)
-                        .style("stroke", "rgba(255,255,255,0.35)")
-                        .style("stroke-width", 1)
-                        .style("stroke-dasharray", "1,5")
-                        .style("fill", "none")
+                        //plot previous scores
 
-                        data_group.append("line")
-                        .attr("x1", xScale(score_prev))
-                        .attr("x2", xScale(score_now))
-                        .attr("y1", yScale(val.manager_code)+yScale.bandwidth()/2)
-                        .attr("y2", yScale(val.manager_code)+yScale.bandwidth()/2)
-                        //.style("stroke", viz_colours[idx])
-                        .style("stroke", colour)
-                        .style("stroke-width", circle_config.stroke_width)
-                        .style("fill", "none")
+                        $.each (val.all_scores.sort(d3.ascending), function(i,v) {
 
-                        //score prev
+                            data_group.append("circle")
+                            .attr("cx", xScale(v))
+                            .attr("cy", yScale(val.manager_code)+yScale.bandwidth()/2)
+                            .attr("r", circle_config.r_small)
+                            .attr("stroke-width", circle_config.stroke_width)
+                            .style("stroke", chump.colours.midnight_blue)
+                            .style("fill", "#65657D")
+
+                        })
+
+                        // plot last score
                         data_group.append("circle")
-                        .attr("cx", xScale(score_prev))
+                        .attr("cx", xScale(val.main_score))
                         .attr("cy", yScale(val.manager_code)+yScale.bandwidth()/2)
-                        .attr("r", circle_config.r_small)
+                        .attr("r", circle_config.r_large)
                         .attr("stroke-width", circle_config.stroke_width)
-                        .style("stroke", colour)
-                        .style("fill", chump.colours.midnight_blue)
+                        .style("stroke", chump.colours.midnight_blue)
+                        .style("fill", colour)
 
+
+                        // plot names
                         let name = data_group.append("text")
                         .classed("text small", true)
                         .attr("x", 0)
@@ -317,9 +292,21 @@
                         .style("fill", "white")
                         .text(function(d) { return db_return_manager_fullname(database, val.manager_code) + "" })
 
+                        // plot score
+                        let score = data_group.append("text")
+                        .classed("text small bold", true)
+                        .attr("x", 150)
+                        .attr("y", yScale(val.manager_code)+yScale.bandwidth()/2)
+                        .attr("dy", 5.5)
+                        //.attr("dx", 15)
+                        .style("fill", colour)
+                        .text(function(d) { return return_comma_formatted_number(val.main_score) })
+
+
+                        /*
                         data_group.append("line")
-                        .attr("x1", xScale(score_now)+(circle_config.r_large))
-                        .attr("x2", xScale(score_now)+(circle_config.r_large)+85)
+                        .attr("x1", xScale(primary_score)+(circle_config.r_large))
+                        .attr("x2", xScale(primary_score)+(circle_config.r_large)+85)
                         .attr("y1", yScale(val.manager_code)+yScale.bandwidth()/2)
                         .attr("y2", yScale(val.manager_code)+yScale.bandwidth()/2)
                         .style("stroke", chump.colours.midnight_blue)
@@ -329,14 +316,14 @@
 
                         let label = data_group.append("text")
                         .classed("text small bold", true)
-                        .attr("x", xScale(score_now))
+                        .attr("x", xScale(primary_score))
                         .attr("y", yScale(val.manager_code)+yScale.bandwidth()/2)
                         .attr("dy", 5.5)
                         .attr("dx", 12)
                         .style("fill", colour)
                         .text(function(d) { 
 
-                            let diff = score_now - score_prev
+                            let diff = primary_score - comp_score
 
                             if (diff > 0) { 
                                 diff = "+" + diff 
@@ -346,7 +333,7 @@
                                 diff = "nc"
                             }
 
-                            let msg = return_comma_formatted_number(score_now) + " (" + diff + ")"
+                            let msg = return_comma_formatted_number(primary_score) + " (" + diff + ")"
 
                             return msg
 
@@ -354,12 +341,14 @@
 
                         //score now
                         data_group.append("circle")
-                        .attr("cx", xScale(score_now))
+                        .attr("cx", xScale(primary_score))
                         .attr("cy", yScale(val.manager_code)+yScale.bandwidth()/2)
                         .attr("r", circle_config.r_large)
                         .attr("stroke-width", circle_config.stroke_width)
                         .style("stroke", colour)
                         .style("fill", colour)
+
+                        */
 
 
 
