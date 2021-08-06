@@ -113,12 +113,10 @@
 
                     title.text("Season scores")
                     
-                    /*
                     subtitle.text(function(d) {
-                        let msg = "GW"
+                        let msg = "2021 vs previous seasons"
                         return msg
                     })
-                    */
 
                     $( "#content-block" ).empty()
 
@@ -146,7 +144,7 @@
                         .attr("viewBox","0 0 " + viz_config.width + " " + viz_config.height)
 
 
-                    dataset = dataset.slice().sort((a, b) => d3.ascending(a.main_score, b.main_score) || d3.descending(db_return_manager_fullname(database, a.manager_code), db_return_manager_fullname(database, b.manager_code)))
+                    dataset = dataset.slice().sort((a, b) => d3.ascending(a.main_score, b.main_score) || d3.ascending(a.all_scores.length, b.all_scores.length) || d3.descending(db_return_manager_fullname(database, a.manager_code), db_return_manager_fullname(database, b.manager_code)))
 
 
 
@@ -302,7 +300,14 @@
                         .attr("dy", 5.5)
                         //.attr("dx", 15)
                         .style("fill", "white")
-                        .text(function(d) { return db_return_manager_fullname(database, val.manager_code) + "" })
+                        .text(function(d) { 
+
+                            let name = db_return_manager_fullname(database, val.manager_code), seasons = val.all_scores.length;
+                            let msg = name + " (" + seasons + ")"
+
+                            return msg
+
+                        })
 
                         // plot score
                         let score = data_group.append("text")
@@ -327,7 +332,7 @@
                     var footnote = d3.select("#content-block")
                     .append("div")
                     .classed("footnote text small", true)
-                    .text("2021 scores compared. Grey circles indicate scores set in previous seasons. Sammy did not post a score in 2021.")
+                    .html("Sammy Murphy and David Steel did not post a 2021 score; Figures in brackets indicate total seasons played (as per each manager's FPL profile); Coloured circles indicate 2021 score, grey circles indicate scores set in previous seasons.")
                     .style("margin-top", "2rem")
 
                 }
