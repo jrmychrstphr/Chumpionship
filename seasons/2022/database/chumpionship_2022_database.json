@@ -3,9 +3,11 @@
         "entrant_id_list": [
             "1724562",
             "1302433",
+            "2313107",
             "2289698",
             "241565",
             "1103301",
+            "2783503",
             "792981",
             "260649",
             "1300896",
@@ -18,8 +20,7 @@
             "2359884",
             "2412218",
             "830408",
-            "2352782",
-            "2313107"
+            "2352782"
         ],
         "fpl_league_code": "190421",
         "fpl_league_url": "https://fantasy.premierleague.com/leagues/190421/new-entries/h"
@@ -79,7 +80,7 @@
                     "2020_21": "2258"
                 },
                 "manager_fullname": "Jon Lescott",
-                "team_name": "lingardium leviosa"
+                "team_name": "Lingardium Leviosa"
             }
         },
         "1103301": {
@@ -134,7 +135,7 @@
                     "2020_21": "2144"
                 },
                 "manager_fullname": "Ben Rachell",
-                "team_name": "Benno Athletic 21-22"
+                "team_name": "Benno Athletic"
             }
         },
         "1724562": {
@@ -151,7 +152,7 @@
                     "2020_21": "2323"
                 },
                 "manager_fullname": "Ben Carroll",
-                "team_name": "Pretty Pretty United"
+                "team_name": "Pretty Pretty Utd"
             }
         },
         "2289698": {
@@ -207,7 +208,7 @@
                     "2019_20": "1950",
                     "2020_21": "1723"
                 },
-                "manager_fullname": "dale halls",
+                "manager_fullname": "Dale Halls",
                 "team_name": "Average X1"
             }
         },
@@ -283,7 +284,7 @@
                     "2020_21": "2189"
                 },
                 "manager_fullname": "Pete Baker",
-                "team_name": "Sponges"
+                "team_name": "Chester Draws"
             }
         },
         "241565": {
@@ -299,7 +300,7 @@
                     "2020_21": "2251"
                 },
                 "manager_fullname": "Darren Baker",
-                "team_name": "The Cockney Rebel\u2019s"
+                "team_name": "The Cockney Rebels"
             }
         },
         "260649": {
@@ -316,6 +317,14 @@
                 },
                 "manager_fullname": "Gareth M",
                 "team_name": "My Kimmichal Romance"
+            }
+        },
+        "2783503": {
+            "manager_info": {
+                "fpl_code": "2783503",
+                "fpl_history": {},
+                "manager_fullname": "David Steel",
+                "team_name": "Steel-san XI"
             }
         },
         "792981": {
