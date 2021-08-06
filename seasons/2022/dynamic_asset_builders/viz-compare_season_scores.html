@@ -113,10 +113,12 @@
 
                     title.text("Season scores")
                     
+                    /*
                     subtitle.text(function(d) {
                         let msg = "2021 vs previous seasons"
                         return msg
                     })
+                    */
 
                     $( "#content-block" ).empty()
 
@@ -332,7 +334,7 @@
                     var footnote = d3.select("#content-block")
                     .append("div")
                     .classed("footnote text small", true)
-                    .html("Sammy Murphy and David Steel did not post a 2021 score; Figures in brackets indicate total seasons played (as per each manager's FPL profile); Coloured circles indicate 2021 score, grey circles indicate scores set in previous seasons.")
+                    .html("Figures in brackets indicate total number of FPL seasons played as recorded in each manager's FPL profile;<br/>Coloured circles show 2021 scores, grey circles show scores set in previous seasons.")
                     .style("margin-top", "2rem")
 
                 }
