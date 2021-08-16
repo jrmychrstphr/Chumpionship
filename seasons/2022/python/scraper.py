@@ -50,21 +50,10 @@ def return_load_json_file(filename):
 		return json_data
 
 
-##############
-# Searches 'player_data' in database #
-# Creates a list of all 'fpl_code' values #
-# Returns the result #
-
+############
 def return_manager_codes_as_list():
 
-	manager_codes = []
-
-	#create a list contaiing the FPL code of every manager in the database
-	for key, val in database['player_data'].items():
-
-		manager_fpl_code = val['manager_info']['fpl_code']
-		manager_codes.append(manager_fpl_code)
-
+	manager_codes = database['league_data']["entrant_id_list"].copy()
 	return manager_codes
 
 
@@ -125,15 +114,14 @@ def scrape_gw_performance_data():
 		url = "https://fantasy.premierleague.com/entry/"+manager_code+"/history"
 
 		try:
-			print("Loading season history page for ", return_lookup_manager_fullname(manager_code),"(", return_lookup_team_name(manager_code), ")")
+			print("Loading season history page for ", return_lookup_manager_fullname(manager_code))
 
 			#open the page
 			driver.get(url)
 			
 			#wait for the gameweek-by-gameweek data table container to appear
 			WebDriverWait(driver, 5).until(
-				EC.presence_of_element_located((By.CSS_SELECTOR, ".Table__ScrollTable-ziussd-0.canFyp"))
-				# Table__ScrollTable-ziussd-0 canFyp
+				EC.presence_of_element_located((By.CSS_SELECTOR, ".Table__ScrollTable-ziussd-0.itIXYu"))
 			)
 
 		except:
@@ -150,12 +138,12 @@ def scrape_gw_performance_data():
 			season_history = history_page_soup.find("h3", text="This Season")
 
 			#move up the soup DOM until the table is found
-			while len(season_history.select('.Table-ziussd-1.fVnGhl')) == 0:
+			while len(season_history.select('.Table-ziussd-1.fHBHIK')) == 0:
 				season_history = season_history.parent
 			else:
 				season_history = season_history
 
-			season_history_table_rows = season_history.select('.Table-ziussd-1.fVnGhl tbody tr')
+			season_history_table_rows = season_history.select('.Table-ziussd-1.fHBHIK tbody tr')
 
 			for row in season_history_table_rows:
 
@@ -173,7 +161,10 @@ def scrape_gw_performance_data():
 				global_overall_rank = int(float(row_contents_array[3].get_text().replace(",","")))
 				global_gameweek_rank= int(float(row_contents_array[7].get_text().replace(",","")))
 
-				fixture_score = points_scored - points_spent
+				fixture_score = int(points_scored) - int(points_spent)
+
+				if 'gw_performance' not in database['player_data'][manager_code]:
+					database['player_data'][manager_code]['gw_performance'] = {}
 
 				if gw not in database['player_data'][manager_code]['gw_performance']:
 					database['player_data'][manager_code]['gw_performance'][gw] = {}
@@ -189,31 +180,43 @@ def scrape_gw_performance_data():
 				database['player_data'][manager_code]['gw_performance'][gw]['global_gameweek_rank'] = global_gameweek_rank
 				
 
-				fixture_opponent_manager_code = database['player_data'][manager_code]['fixtures'][gw]['opponent_code']				
-				database['player_data'][manager_code]['gw_performance'][gw]['fixture_opponent_manager_code'] = fixture_opponent_manager_code
+
+				for fixture in database['fixture_list'][gw]:
+					if fixture['away_team'] == manager_code:
+						opp_code = fixture['home_team']
+					elif fixture['home_team'] == manager_code:
+						opp_code = fixture['away_team']
+
+				if opp_code:
+					print("Fixture opponent found")
+					database['player_data'][manager_code]['gw_performance'][gw]['fixture_opponent_manager_code'] = opp_code
+				else:
+					print("Error! Fixture opponentnot found")
+
 
 
 				#locate Chips played table
 				chips_history = history_page_soup.find("h3", text="Chips")
 
 				#move up the soup DOM until the table is found
-				while len(chips_history.select('.Table-ziussd-1.fVnGhl')) == 0:
+				while len(chips_history.select('.Table-ziussd-1.fHBHIK')) == 0:
 					chips_history = chips_history.parent
 				else:
-					table_rows = chips_history.select('.Table-ziussd-1.fVnGhl tbody tr')
+					table_rows = chips_history.select('.Table-ziussd-1.fHBHIK tbody tr')
 
 				chips_played = {}
 
-				for row in table_rows:
+				if len(table_rows) > 0:
+					for row in table_rows:
 
-					row_contents_array = row.contents
+						row_contents_array = row.contents
 
-					chip_name = row_contents_array[1].get_text()
-					chip_gameweek = row_contents_array[2].find('a').get('href').split('/')[4]
+						chip_name = row_contents_array[1].get_text()
+						chip_gameweek = row_contents_array[2].find('a').get('href').split('/')[4]
 
-					chip_gw = str("{0:0=2d}".format(int(chip_gameweek)))
+						chip_gw = str("{0:0=2d}".format(int(chip_gameweek)))
 
-					chips_played[chip_gw] = chip_name
+						chips_played[chip_gw] = chip_name
 
 
 				#cycle through scraped data and add the chips
@@ -243,7 +246,7 @@ def scrape_gw_performance_data():
 
 					#wait for the data table container to appear
 					WebDriverWait(driver, 5).until(
-						EC.presence_of_element_located((By.CSS_SELECTOR, "a.Tab__Link-sc-19t48gi-1.dSNXUO"))
+						EC.presence_of_element_located((By.CSS_SELECTOR, "a.Tab__Link-sc-19t48gi-1.dDKNAk"))
 					)
 
 				except:
@@ -260,7 +263,7 @@ def scrape_gw_performance_data():
 
 						#wait for the gameweek-by-gameweek data table container to appear
 						WebDriverWait(driver, 5).until(
-							EC.presence_of_element_located((By.CSS_SELECTOR, ".sc-AykKC.fbHWCH table.Table-ziussd-1.EntryEventTable__StatsTable-sc-1d2xgo1-1.dbevix"))
+							EC.presence_of_element_located((By.CSS_SELECTOR, ".sc-bdnxRM.denPjM table.Table-ziussd-1.EntryEventTable__StatsTable-sc-1d2xgo1-1.fHBHIK.jWFNPC"))
 						)
 
 					except:
@@ -275,15 +278,15 @@ def scrape_gw_performance_data():
 						#create a new soup of DOM
 						gameweek_page_soup = BeautifulSoup(driver.page_source, 'lxml')
 
-						player_data_tables = gameweek_page_soup.select(".sc-AykKC.fbHWCH table.Table-ziussd-1.EntryEventTable__StatsTable-sc-1d2xgo1-1.dbevix")
+						player_data_tables = gameweek_page_soup.select(".sc-bdnxRM.denPjM table.Table-ziussd-1.EntryEventTable__StatsTable-sc-1d2xgo1-1.fHBHIK.jWFNPC")
 						#print(player_data_tables)
 
 						for idx, table in enumerate(player_data_tables):
 
 							if idx == 0: 
-								squad_status = "in_play"
+								squad_status = "active"
 							elif idx == 1:
-								squad_status = "on_bench"
+								squad_status = "benched"
 
 							table_rows = table.select("tbody tr")
 							for row in table_rows:
@@ -356,7 +359,7 @@ def scrape_gw_performance_data():
 			try:
 				#Look for the page placeholder instead
 				element = WebDriverWait(driver, 5).until(
-					EC.text_to_be_present_in_element((By.CSS_SELECTOR, ".Layout__Main-eg6k6r-1"), "No transfers have been made yet for this team.")
+					EC.text_to_be_present_in_element((By.CSS_SELECTOR, ".Layout__Main-eg6k6r-1.wXYnc"), "No transfers have been made yet for this team.")
 				)
 
 			except:
@@ -391,14 +394,15 @@ def scrape_gw_performance_data():
 					transfers_obj[gameweek] = 1
 				else:
 					transfers_obj[gameweek] = transfers_obj[gameweek] + 1
+					
 
-			for gameweek in database['player_data'][manager_code]['gw_performance']:
-				if (transfers_obj == False) or (gameweek not in transfers_obj):
-					t = int(0)
-				else:
-					t = int(transfers_obj[gameweek])
+		for gameweek in database['player_data'][manager_code]['gw_performance']:
+			if (transfers_obj == False) or (gameweek not in transfers_obj):
+				t = int(0)
+			else:
+				t = int(transfers_obj[gameweek])
 
-				database['player_data'][manager_code]['gw_performance'][gameweek]['transfers_made'] = t
+			database['player_data'][manager_code]['gw_performance'][gameweek]['transfers_made'] = t
 
 
 
@@ -426,106 +430,6 @@ def scrape_gw_performance_data():
 
 			database['player_data'][manager_code]['gw_performance'][gw]['fixture_result'] = result
 
-
-
-		"""
-
-		# ~ TRANSFERS ~ #
-
-		url = "https://fantasy.premierleague.com/entry/"+manager_code+"/transfers"
-
-		try:
-			print("Loading transfers page for ", return_lookup_manager_fullname(manager_code),"(", return_lookup_team_name(manager_code), ")")
-
-			#open the page
-			driver.get(url)
-			
-			#wait for the gameweek-by-gameweek data table container to appear
-			element = WebDriverWait(driver, 10).until(
-				EC.presence_of_element_located((By.CSS_SELECTOR, "table.Table-ziussd-1.fVnGhl tbody tr"))
-			)
-
-		except:
-			#if the table is not found, display an error message
-			print("Error --- Data table not found")
-		
-		else:
-			print("Success! Lets scrape some transfer data")
-
-			#create soup of DOM
-			soup = BeautifulSoup(driver.page_source, 'lxml')
-
-			#locate Transfers title
-			element = soup.find("h2", text="Transfers")
-
-			#move up the soup DOM until the table is found
-			while len(element.select('.Table-ziussd-1.fVnGhl')) == 0:
-				element = element.parent
-			else:
-				table_rows = element.select('.Table-ziussd-1.fVnGhl tbody tr')
-
-			#print(table_rows)
-
-			for row in table_rows:
-
-				#print (row)
-
-				row_contents_array = row.contents
-				row_gameweek_string = row_contents_array[3].get_text()
-
-
-				### If the gameweek string contains a '+', add 9 to the gw value				
-
-				if '+' in row_gameweek_string:
-					gw = str("{0:0=2d}".format( int(row_gameweek_string.lower().replace('gw', '').replace('+', '')) + 9 ))
-
-				else:
-					gw = str("{0:0=2d}".format(int(row_gameweek_string.lower().replace('gw', ''))))
-
-
-				# if the gameweek is not in the scraped data dict, 
-				# add the gameweek to the dict and set the val to 1
-				if gw not in scraped_data:
-					scraped_data[gw] = 1
-
-				# else, +1 to the value
-				else:
-					scraped_data[gw] = scraped_data[gw]+1
-
-
-		transfer_data[manager_code] = scraped_data
-
-
-	# push transfers made to performance data
-	for manager_code in manager_code_list:
-
-		for key, val in performance_data[manager_code].items():
-
-			# if gw is on the exclusion_list, push data from database to performance data temp dict
-			if key not in exclude_list:
-
-				if key not in transfer_data[manager_code]:
-					transfers_made = 0
-				else:
-					transfers_made = transfer_data[manager_code][key]
-
-				#print( 'Transfers in gw' + str(key) + ': ' + str(transfers_made))
-				performance_data[manager_code][key]['transfers_made'] = transfers_made
-
-			else:
-
-				print(key + ' in exclusion list')
-				performance_data[manager_code][key]['transfers_made'] = database['player_data'][manager_code]['gw_performance'][key]['transfers_made']
-				print('Data copied from database')
-
-	#print(performance_data)
-
-
-
-
-	return performance_data
-
-	"""
 
 
 ###############
@@ -747,7 +651,7 @@ def execute():
 
 	#load the clean database file
 	global database
-	database = return_load_json_file('../database/_versions/chumpionship_2021_database---new')
+	database = return_load_json_file('../database/_versions/chumpionship_2022_database---new')
 
 	open_browser()
 
@@ -767,9 +671,9 @@ def execute():
 
 	datestamp = return_create_date_stamp()
 	#save a version in the version folder
-	write_to_json_file('../database/_versions/chumpionship_2021_database---' + datestamp, database)
+	write_to_json_file('../database/_versions/chumpionship_2022_database---' + datestamp, database)
 	#overwrite the core database file
-	write_to_json_file('../database/chumpionship_2021_database', database)
+	write_to_json_file('../database/chumpionship_2022_database', database)
 
 	close_browser()
 
