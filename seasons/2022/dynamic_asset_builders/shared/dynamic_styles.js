@@ -15,9 +15,9 @@ styles = {
 
         d3.selectAll(".fixture-list-wrapper, .result-list-wrapper, .league-table-wrapper, .legend-item").style("color", chump.colours.midnight_blue)
 
-        d3.selectAll(".result-row.win div.indicator, .result-row.win div.score").style("background", chump.colours.green)
-        d3.selectAll(".result-row.loss div.indicator, .result-row.loss div.score").style("background", chump.colours.pink)
-        d3.selectAll(".result-row.draw div.indicator, .result-row.draw div.score").style("background", chump.colours.light_blue)
+        d3.selectAll(".result-row .result-color.win").style("background", chump.colours.green)
+        d3.selectAll(".result-row .result-color.loss").style("background", chump.colours.pink)
+        d3.selectAll(".result-row .result-color.draw").style("background", chump.colours.light_blue)
 
         d3.selectAll(".result-row.win svg rect").style("fill", chump.colours.green)
         d3.selectAll(".result-row.loss svg rect").style("fill", chump.colours.pink)

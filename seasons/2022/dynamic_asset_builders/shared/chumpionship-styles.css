@@ -103,7 +103,7 @@ div.table-row-container div.position-change-container svg {
 }
 
 div.table-row-container div.table-column.position {
-	width: 2.2rem;
+	width: 2.3rem;
 	padding-left: 0rem;
 	padding-right: 0rem;
 	padding-top: 0.6rem;
@@ -112,11 +112,12 @@ div.table-row-container div.table-column.position {
 }
 
 div.table-row-container div.table-column.team-name {
-	padding-left: 1rem;
-	padding-right: 1rem;
+	padding-left: 0.5rem;
+	padding-right:0.5rem;
 	padding-top: 0.6rem;
 	padding-bottom: 0.6rem;
-	width: 20rem;
+	//width: 19.5rem;
+	width: 25.5rem;
 	text-align: left;
 	background-color: white;
 }
@@ -128,27 +129,29 @@ div.table-row-container div.table-column.team-name span {
 }
 
 div.table-row-container div.table-column.score {
-	padding-left: 1rem;
-	padding-right: 1rem;
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
 	padding-top: 0.6rem;
 	padding-bottom: 0.6rem;
-	width: 3.5rem;
+	//width: 3.5rem;
+	width: 5rem;
 	background-color: white;
 }
 
 div.table-row-container div.table-column.league-points {
-	padding-left: 1rem;
-	padding-right: 1rem;
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
 	padding-top: 0.6rem;
 	padding-bottom: 0.6rem;
-	width: 3.5rem;
+	//width: 3.5rem;
+	width: 5rem;
 	background-color: white;
 }
 
-div.table-row-container div.table-column.form.viz {
+div.table-row-container div.table-column.viz {
 	padding-left: 0rem;
 	padding-right: 0rem;
-	width: 5rem;
+	width: 8.7rem;
 	height: 2.2rem;
 }
 
@@ -157,12 +160,13 @@ div.table-row-container div.table-column.form.viz {
 /* Results */
 
 div.result-list-container {
-	margin: 0 -1rem;
+	margin: 0 -1rem 2rem;
 	display: inline-block;
+	width: calc(100% + 2rem);
 }
 
 div.result-list-container div.result-wrapper {
-	margin-bottom: 2rem;
+	margin-bottom: 0.5rem;
 }
 
 div.result-list-container div.result-container {
@@ -204,19 +208,29 @@ div.result-list-container div.result-container div.result-row div.score span {
 }
 
 div.result-list-container div.team {
-	width: 15.2rem;
-	padding-left: 1rem;
-	padding-right: 1rem;
+	width: 15.5rem;
+	padding-left: 0rem;
+	padding-right: 0rem;
 }
 
+/*
+div.result-list-container div.result-container div.result-row div.team.away {
+	text-align: left;
+}
+
+div.result-list-container div.result-container div.result-row div.team.home {
+	text-align: right;
+}
+*/
+
 div.result-list-container div.score {
-	width: 5rem;
+	width: 4.1rem;
 	padding-left: 0rem;
 	padding-right: 0rem;
 }
 
 div.result-list-container div.indicator {
-	width: 0.75rem;
+	width: 0.5rem;
 	height: 1rem;
 	padding-top: 0.6rem;
 	padding-bottom: 0.6rem;
@@ -276,9 +290,9 @@ div.fixture-list-container div.fixture-container div {
 }
 
 div.fixture-list-container div.team {
-	width: 15.2rem;
-	padding-left: 1rem;
-	padding-right: 1rem;
+	width: 16.2rem;
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
 }
 
 div.fixture-list-container div.team span {
@@ -322,7 +336,7 @@ div.logo-wrapper {
 }
 
 div.logo-container {
-	background-image: url("assets/Logo---Crest@4x-8.png");
+	background-image: url("assets/Logo@4x-8.png");
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-position: center;
@@ -375,17 +389,17 @@ div.page.border {
 }
 
 .text.regular {
-	font-size: 1rem;
+	font-size: 0.95rem;
 	line-height: 1rem;
 }
 
 .text.small {
-	font-size: 0.8rem;
+	font-size: 0.7rem;
 	line-height: 1rem;
 }
 
 .text.tiny {
-	font-size: 0.65rem;
+	font-size: 0.6rem;
 	line-height: 0.8rem;
 }
 

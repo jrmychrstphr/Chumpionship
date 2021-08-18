@@ -25,6 +25,7 @@ build = {
         .classed("text display regular", true)
         .text("GW" + gw)
 
+        //data
         dataset = []
 
         $.each( database.player_data, function(k, v) {
@@ -34,33 +35,44 @@ build = {
             temp_obj.manager_code = k
             temp_obj.position = parseInt(v.season_performance.league_position_array[parseInt(gw)-1])
 
-            if (gw === 1 ) {
+            if (parseInt(gw) === 1) {
                 temp_obj.change = 0
             } else {
                 temp_obj.change = parseInt(v.season_performance.league_position_array[parseInt(gw)-1]) - parseInt(v.season_performance.league_position_array[parseInt(gw)-2])
             }
 
-            temp_obj.score = v.season_performance.fixture_score_running_total_array[gw-1]
-            temp_obj.league_points = v.season_performance.league_points_running_total_array[gw-1]
+            temp_obj.score = v.season_performance.fixture_score_running_total_array[gw-1];
+            temp_obj.league_points = v.season_performance.league_points_running_total_array[gw-1];
 
-            temp_obj.form = []
+            temp_obj.streak = {};
+            temp_obj.streak.results = v.season_performance.fixture_result_array.reverse();
+            temp_obj.streak.len = 0;
 
-            for (i=0; i<5; i++) {
+            // set streak type
+            $.each(temp_obj.streak.results, function(idx, val) {
 
-                if (gw - i > 0) {
-                    //console.log(gw-(i+1))
-                    temp_obj.form.unshift(v.season_performance.fixture_result_array[gw-(i+1)])
-                } else {
-                    temp_obj.form.unshift("None")
+                if ( val != "d") {
+                    temp_obj.streak.type = val
+                    return false;
                 }
 
-            }
+            })
+
+            $.each(temp_obj.streak.results, function(idx, val) {
+                if (val != temp_obj.streak.type && val != "d") { return false; }
+                temp_obj.streak.len++;
+            })
+
 
             dataset.push(temp_obj)
 
         })
 
         dataset = dataset.slice().sort((a, b) => d3.descending(a.league_points, b.league_points) || d3.descending(a.score, b.score))
+
+
+        console.log(dataset)
+
 
         //build content
         var viz_container = d3.select("#content-block")
@@ -141,17 +153,22 @@ build = {
             points.append("span")
             .classed("display small", true)
             .text("pts")
-            
-            var form = d3.select(this)
-            .append("div")
-            .classed("table-column form viz", true)
 
-            //add viz
-            viz_container = form
+            /*
+
+            var viz_container = d3.select(this)
+            .append("div")
+            .classed("table-column viz", true)
 
             config = {
                 "width": $(this).find(".viz").width(),
-                "height": $(this).find(".viz").height()
+                "height": $(this).find(".viz").height(), 
+                "padding": {
+                    "top": 0,
+                    "right": 0,
+                    "bottom": 0,
+                    "left": 0
+                }
             }
 
             svg = viz_container.append("svg")
@@ -162,83 +179,30 @@ build = {
             // set scales
             var xDomain = function() {
                 a  = []
-                for (var i = 0; i < d.form.length; i++) {
-                    a.push(i);
-                }
-                return a
+                $.each( dataset, function(idx, val) {
+                    a.push(val.streak.len)
+                })
+                a = d3.max(a)
+                return [0,a]
             } ()
 
             xScale = d3.scaleBand()
             .domain(xDomain)
-            .range([0, config.width])
+            .range([config.padding.left, config.width-config.padding.right])
             .paddingInner(0)
 
             // add data
-            var data_groups = svg.selectAll("g")
-            .data(d.form)
-            .enter()
-            .append("g")
+            var data_group = svg.append("g").classed("data-goup", true)
 
-            data_groups.each( function(d,i) {
+            for (i = 0; i < d.streak.len; i++) {
+                console.log(d.streak)
 
-                d3.select(this).append("circle")
-                .attr("cx", xScale(i) + xScale.bandwidth()/2 )
-                .attr("cy", config.height/2 - 9)
-                .attr("r", 5 )
-                .style("fill", function(d) {
-                    if ( d.toUpperCase() === "W" ) {
-                        f = chump.colours.green
-                    } else if ( d.toUpperCase() === "L" ) {
-                        f = chump.colours.pink
-                    } else if ( d.toUpperCase() === "D" ) {
-                        f = chump.colours.light_blue
-                    } else {
-                        f = "Black"
-                    }
-
-                    return f
-                })
-
-                d3.select(this).append("circle")
-                .attr("cx", xScale(i) + xScale.bandwidth()/2 )
-                .attr("cy", config.height/2 + 9)
-                .attr("r", 5 )
-                .style("fill", function(d) {
-                    if ( d.toUpperCase() === "W" ) {
-                        f = chump.colours.green
-                    } else if ( d.toUpperCase() === "L" ) {
-                        f = chump.colours.pink
-                    } else if ( d.toUpperCase() === "D" ) {
-                        f = chump.colours.light_blue
-                    } else {
-                        f = "Black"
-                    }
-
-                    return f
-                })
-
-                d3.select(this).append("line")
-                .attr("x1", xScale(i) + xScale.bandwidth()/2 )         
-                .attr("x2", xScale(i) + xScale.bandwidth()/2 )  
-                .attr("y1", config.height/2 + 9 )       
-                .attr("y2", config.height/2 - 9 ) 
-                .style("stroke-width", 10)
-                .style("stroke", function(d) {
-                    if ( d.toUpperCase() === "W" ) {
-                        f = chump.colours.green
-                    } else if ( d.toUpperCase() === "L" ) {
-                        f = chump.colours.pink
-                    } else if ( d.toUpperCase() === "D" ) {
-                        f = chump.colours.light_blue
-                    } else {
-                        f = "Black"
-                    }
-
-                    return f
-                })       
-
-            })
-
+                data_group.append("circle")
+                .attr("cx", xScale(i))
+                .attr("cy", config.height/2)
+                .attr("r", 5)
+            }
+        */
         })
     },
 
@@ -357,7 +321,7 @@ build = {
 
         //define gameweek
         if (!(gw)) {
-            gw = 30
+            gw = 1
         }
 
         gameweek = return_gameweek_string(gw)
@@ -424,41 +388,36 @@ build = {
         .classed("result-container text display regular", true)
         .each( function(d, i){
 
-            var home_container = d3.select(this)
+            let result_row = d3.select(this)
             .append("div")
-            .classed("result-row home", true)
-            .classed(d.home_result, true);
+            .classed("result-row", true)
 
-            var away_container = d3.select(this)
-            .append("div")
-            .classed("result-row away", true)
-            .classed(d.away_result, true);
+            result_row.append("div")
+            .classed("indicator result-color", true)
+            .classed(d.home_result, true)
 
-            d3.select(this).selectAll(".result-row")
-            .each( function(d) {
-
-                d3.select(this).append("div")
-                .classed("indicator result-color", true)
-
-                d3.select(this).append("div")
-                .classed("team", true)
-
-                d3.select(this).append("div")
-                .classed("score result-color", true)
-
-                d3.select(this).append("div")
-                .classed("viz", true)
-
-            })
-
-            d3.select(this).selectAll(".result-row.home .team")
+            let home_team = result_row.append("div")
+            .classed("home team", true)
             .text(db_return_team_name(database, d.home))
 
-            d3.select(this).selectAll(".result-row.away .team")
+            let home_score = result_row.append("div")
+            .classed("home score result-color", true)
+            .classed(d.home_result, true)
+
+            let away_score = result_row.append("div")
+            .classed("away score result-color", true)
+            .classed(d.away_result, true)
+
+            let away_team = result_row.append("div")
+            .classed("away team", true)
             .text(db_return_team_name(database, d.away))
 
-            d3.select(this).selectAll(".result-row.home .score")
-            .text(d.home_score)
+            result_row.append("div")
+            .classed("indicator result-color", true)
+            .classed(d.away_result, true)
+
+
+            home_score.text(d.home_score)
             .append("span")
             .classed("rank text small", true)
             .text(function(d) {
@@ -468,8 +427,8 @@ build = {
                 return s
             })
 
-            d3.select(this).selectAll(".result-row.away .score")
-            .text(d.away_score)
+
+            away_score.text(d.away_score)
             .append("span")
             .classed("rank text small", true)
             .text(function(d) {
@@ -478,6 +437,8 @@ build = {
 
                 return s
             })
+
+            /*
 
             d3.select(this).selectAll(".result-row").each( function(d) {
 
@@ -521,6 +482,8 @@ build = {
                 .attr("height", config.height )
 
             })
+
+            */
         })
 
         var footnote = d3.select("#content-block")
