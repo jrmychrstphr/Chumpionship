@@ -63,10 +63,20 @@ div.league-table-container {
 div.league-table-container div.table-row-wrapper {
 }
 
-div.league-table-container div.table-row-container {
+div.league-table-container div.table-row-container, div.league-table-container div.table-header-container {
 	margin: 0 -0.15rem;
 	display: inline-block;
 	width: 100%;
+}
+
+div.table-header-container div.table-column {
+	margin: 0rem 0.15rem 0.2rem;
+	display: inline-block;
+	float: left;
+	text-align: center;
+	color: white;
+	border-bottom: solid 0.1rem white;
+	padding-bottom: 0.15rem;
 }
 
 div.table-row-container div.table-column {
@@ -102,23 +112,28 @@ div.table-row-container div.position-change-container svg {
 	margin: 0.6rem;
 }
 
-div.table-row-container div.table-column.position {
+div.table-row-container div.table-column.position, div.table-header-container div.table-column.position  {
 	width: 2.3rem;
 	padding-left: 0rem;
 	padding-right: 0rem;
+}
+
+div.table-row-container div.table-column.position {
 	padding-top: 0.6rem;
 	padding-bottom: 0.6rem;
 	background-color: white;
 }
 
-div.table-row-container div.table-column.team-name {
+div.table-row-container div.table-column.team-name , div.table-header-container div.table-column.team-name {
 	padding-left: 0.5rem;
 	padding-right:0.5rem;
+	width: 19.5rem;
+	text-align: left;
+}
+
+div.table-row-container div.table-column.team-name {
 	padding-top: 0.6rem;
 	padding-bottom: 0.6rem;
-	//width: 19.5rem;
-	width: 25.5rem;
-	text-align: left;
 	background-color: white;
 }
 
@@ -128,31 +143,42 @@ div.table-row-container div.table-column.team-name span {
 	line-height: 0;
 }
 
-div.table-row-container div.table-column.score {
+div.table-row-container div.table-column.score, div.table-header-container div.table-column.score {
 	padding-left: 0.5rem;
 	padding-right: 0.5rem;
+	width: 4.25rem;
+}
+
+div.table-row-container div.table-column.score {
 	padding-top: 0.6rem;
 	padding-bottom: 0.6rem;
-	//width: 3.5rem;
-	width: 5rem;
 	background-color: white;
+}
+
+div.table-row-container div.table-column.league-points, div.table-header-container div.table-column.league-points {
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
+	width: 4.25rem;
 }
 
 div.table-row-container div.table-column.league-points {
-	padding-left: 0.5rem;
-	padding-right: 0.5rem;
 	padding-top: 0.6rem;
 	padding-bottom: 0.6rem;
-	//width: 3.5rem;
-	width: 5rem;
 	background-color: white;
 }
 
-div.table-row-container div.table-column.viz {
+div.table-row-container div.table-column.viz, div.table-header-container div.table-column.viz {
 	padding-left: 0rem;
 	padding-right: 0rem;
-	width: 8.7rem;
+	width: 7.2rem;
+}
+
+div.table-row-container div.table-column.viz {
 	height: 2.2rem;
+}
+
+div.table-header-container div.table-column.viz {
+	text-align: left;
 }
 
 

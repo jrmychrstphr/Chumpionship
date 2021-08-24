@@ -45,26 +45,27 @@ build = {
             temp_obj.league_points = v.season_performance.league_points_running_total_array[gw-1];
 
             temp_obj.streak = {};
-            temp_obj.streak.results = v.season_performance.fixture_result_array.reverse();
+
+            temp_obj.streak.results = v.season_performance.fixture_result_array.slice(0,(gw)).reverse();
             temp_obj.streak.len = 0;
 
-            // set streak type
+            //console.log(temp_obj.streak.results)
+            //console.log(temp_obj.streak.results[0])
+
+            temp_obj.streak.type = temp_obj.streak.results[0]
+            //console.log(temp_obj.streak.type)
+
+
+
+
             $.each(temp_obj.streak.results, function(idx, val) {
-
-                if ( val != "d") {
-                    temp_obj.streak.type = val
-                    return false;
-                }
-
-            })
-
-            $.each(temp_obj.streak.results, function(idx, val) {
-                if (val != temp_obj.streak.type && val != "d") { return false; }
+                if (val != temp_obj.streak.type) { return false; }
                 temp_obj.streak.len++;
             })
 
 
             dataset.push(temp_obj)
+
 
         })
 
@@ -80,6 +81,28 @@ build = {
         .classed("league-table-wrapper", true)
         .append("div")
         .classed("league-table-container", true)
+
+        let table_header = viz_container.append("div")
+        .classed("table-header-wrapper", true)
+        .append("div")
+        .classed("table-header-container", true)
+
+        table_header.append("div").classed("table-column position text small", true)
+        .text("Pos.")
+
+        table_header.append("div").classed("table-column team-name text small", true)
+        .text("Team / Manager")
+        
+        table_header.append("div").classed("table-column score text small", true)
+        .text("Score")
+        
+        table_header.append("div").classed("table-column league-points text small", true)
+        .text("Points")
+        
+        table_header.append("div").classed("table-column viz text small", true)
+        .text("Streak")
+        
+
 
         var table_rows = viz_container.selectAll("div.table-row-wrapper")
         .data(dataset).enter()
@@ -154,8 +177,6 @@ build = {
             .classed("display small", true)
             .text("pts")
 
-            /*
-
             var viz_container = d3.select(this)
             .append("div")
             .classed("table-column viz", true)
@@ -167,7 +188,11 @@ build = {
                     "top": 0,
                     "right": 0,
                     "bottom": 0,
-                    "left": 0
+                    "left": 5
+                },
+                "circle": {
+                    "radius": 10,
+                    "stroke_width": 2
                 }
             }
 
@@ -176,33 +201,75 @@ build = {
             .attr("width", config.width)
             .attr("viewBox","0 0 " + config.width + " " + config.height)
 
-            // set scales
-            var xDomain = function() {
+            // define max streak length
+            var xMax = function() {
                 a  = []
                 $.each( dataset, function(idx, val) {
                     a.push(val.streak.len)
                 })
                 a = d3.max(a)
-                return [0,a]
+                return a
             } ()
 
-            xScale = d3.scaleBand()
-            .domain(xDomain)
-            .range([config.padding.left, config.width-config.padding.right])
-            .paddingInner(0)
+            let colour;
+
+            if (d.streak.type === "w") {
+                colour = chump.colours.green
+            } else if (d.streak.type === "l") {
+                colour = chump.colours.pink
+            } else if (d.streak.type === "d") {
+                colour = chump.colours.light_blue
+            } else {
+                colour = "white"
+            }
 
             // add data
             var data_group = svg.append("g").classed("data-goup", true)
 
-            for (i = 0; i < d.streak.len; i++) {
-                console.log(d.streak)
+            //calculate spacing
+            let s = function(){
 
+                let s, t = 35, r = config.circle.radius; // t = gap for text
+
+                //calculate how much space is available for circles
+                let gap = (config.width - (config.padding.left + config.padding.right) - (t+r));
+
+                if (gap/xMax > r) {
+                    s = r;
+                } else {
+                    s = gap/xMax                    
+                }
+
+                return s;
+
+            } ()
+
+            for (ii = 0; ii < d.streak.len; ii++) {
+                console.log(d.streak)
                 data_group.append("circle")
-                .attr("cx", xScale(i))
+                .attr("cx", config.circle.radius+(ii*s) + config.padding.left)
                 .attr("cy", config.height/2)
-                .attr("r", 5)
+                .attr("r", config.circle.radius)
+                .attr("stroke-width", config.circle.stroke_width)
+                .style("stroke", chump.colours.midnight_blue)
+                .style("fill", colour)
             }
-        */
+
+            let text = data_group.append("text")
+            .classed("text small bold", true)
+            .attr("x", config.circle.radius + (ii*s) + config.padding.left + 5)
+            .attr("y", config.height/2)
+            .attr("dy", 5.5)
+            .style("text-anchor", "start")
+            .style("fill", colour)
+            .text(function(d) {
+                let msg;
+
+                msg = d.streak.type + d.streak.len;
+
+                return msg.toUpperCase();
+            })
+
         })
     },
 

@@ -26,9 +26,9 @@ styles = {
         d3.selectAll(".arrow-down path").style("fill", chump.colours.pink)
         d3.selectAll(".arrow-up path").style("fill", chump.colours.green)
 
-        d3.selectAll("div.league-table-container div.table-row-container.position-first .table-column:not(.form)").style("background", chump.colours.green)
-        d3.selectAll("div.league-table-container div.table-row-container.position-prize .table-column:not(.form").style("background", chump.colours.light_blue)
-        d3.selectAll("div.league-table-container div.table-row-container.position-relegation .table-column:not(.form").style("background", chump.colours.pink)
+        d3.selectAll("div.league-table-container div.table-row-container.position-first .table-column:not(.viz)").style("background", chump.colours.green)
+        d3.selectAll("div.league-table-container div.table-row-container.position-prize .table-column:not(.viz").style("background", chump.colours.light_blue)
+        d3.selectAll("div.league-table-container div.table-row-container.position-relegation .table-column:not(.viz").style("background", chump.colours.pink)
 
         //bubble-pack viz
         d3.selectAll("div.viz svg .colour-gkp").style("fill", chump.colours.purple)
