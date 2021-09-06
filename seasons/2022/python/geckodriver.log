@@ -540,3 +540,10 @@ console.error: BackgroundUpdate:
 1630926849639	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
 1630927018784	Marionette	INFO	Stopped listening on port 59154
 JavaScript error: resource:///modules/Interactions.jsm, line 209: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIUserIdleService.removeIdleObserver]
+1630927139657	Marionette	INFO	Stopped listening on port 57799
+JavaScript error: resource:///modules/Interactions.jsm, line 209: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIUserIdleService.removeIdleObserver]
+1630927143550	Marionette	INFO	Stopped listening on port 59041
+JavaScript error: resource:///modules/Interactions.jsm, line 209: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIUserIdleService.removeIdleObserver]
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
