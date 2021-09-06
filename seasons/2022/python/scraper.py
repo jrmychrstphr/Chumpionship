@@ -350,7 +350,7 @@ def scrape_gw_performance_data():
 			
 			#wait for the gameweek-by-gameweek data table container to appear
 			WebDriverWait(driver, 5).until(
-				EC.presence_of_element_located((By.CSS_SELECTOR, ".Table-ziussd-1.fVnGhl"))
+				EC.presence_of_element_located((By.CSS_SELECTOR, ".Table-ziussd-1.fHBHIK"))
 			)
 
 
@@ -369,6 +369,7 @@ def scrape_gw_performance_data():
 		
 		else:
 			#if the table is found...
+			print("Success – transfer data table found")
 
 			transfers_obj = {}
 
@@ -378,12 +379,12 @@ def scrape_gw_performance_data():
 			transfers_history = transfers_page_soup.find("h2", text="Transfers")
 
 			#move up the soup DOM until a table is found
-			while len(transfers_history.select('.Table-ziussd-1.fVnGhl')) == 0:
+			while len(transfers_history.select('.Table-ziussd-1.fHBHIK')) == 0:
 				transfers_history = transfers_history.parent
 			else:
 				transfers_history = transfers_history
 
-			transfers_history_table_rows = transfers_history.select('.Table-ziussd-1.fVnGhl tbody tr')
+			transfers_history_table_rows = transfers_history.select('.Table-ziussd-1.fHBHIK tbody tr')
 
 			for row in transfers_history_table_rows:
 
