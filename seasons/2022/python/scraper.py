@@ -97,7 +97,6 @@ def return_lookup_opponent_code(manager_code, gameweek):
 			opponent_code = val['fixtures'][gameweek]['opponent_manager_fpl_code']
 			return opponent_code
 
-
 ###############
 # scrapes:
 # --- performance data from the history page
@@ -647,6 +646,35 @@ def return_create_date_stamp():
 	return datestamp
 
 
+##############
+# accept privacy settings #
+def accept_privacy():
+
+	# Build the url
+	url = "https://fantasy.premierleague.com/"
+
+	try:
+		print("Loading fpl homepage: ", url)
+
+		#open the page
+		driver.get(url)
+		
+		#wait for the gameweek-by-gameweek data table container to appear
+		WebDriverWait(driver, 10).until(
+			EC.element_to_be_clickable((By.CSS_SELECTOR, "button._2hTJ5th4dIYlveipSEMYHH.BfdVlAo_cgSVjDUegen0F.js-accept-all-close"))
+		)
+
+	except:
+		#if the table is not found, display an error message
+		print("Error - Data table not found")
+	
+	else:
+		print("Success! Lets scrape some data")
+
+		# "Click" the list view toggle to reveal the data table
+		driver.find_element_by_css_selector('button._2hTJ5th4dIYlveipSEMYHH.BfdVlAo_cgSVjDUegen0F.js-accept-all-close').click()
+		print("Button clicked")
+
 
 def execute():
 
@@ -655,6 +683,8 @@ def execute():
 	database = return_load_json_file('../database/_versions/chumpionship_2022_database---new')
 
 	open_browser()
+
+	accept_privacy()
 
 	scrape_gw_performance_data()
 	compile_season_performance()
