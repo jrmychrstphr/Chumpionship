@@ -1,0 +1,49 @@
+Current workflow
+
+- open browser
+- open FPL
+- Accept privacy popup
+
+- scrape_gw_performance_data()
+	- creates manager list from existing database file, for each manager:
+		- open season history page
+		- scrapes data (pts/transfres/value/etc) for each gw in the table (i.e. all gws played)
+		- scrapes chips played
+
+		- then, cycles through each gw using links in season history table
+			- scrapes squad and bench
+			- detects who was captain
+			- scrapes each player's score
+			*** AM I USING THIS? ***
+
+		- Then scrapes transfers page to determine number of transfers made in each gw (this method includes changes made in WC and FH weeks)
+
+	- cross-refs data to determine fixture results
+
+
+- compile_season_performance()
+	- takes data from database compiled from above and creates a 'season performance' obj for each team
+
+
+- adds a timestamp to the filename
+- save json to file
+- close browser
+
+
+New workflow:
+
+Scraper:
+- scrape and store data in files thus:
+	
+	[manager_code]:
+	>> gw01.json
+	>> gw02.json
+	>> [gw].json
+
+- check if data has already been stored
+- if not, scrape
+
+Compiler:
+- compiles a streamlined database file from json files
+- publishes as a .json file
+- commits and pushes to github
