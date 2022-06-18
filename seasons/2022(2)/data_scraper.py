@@ -11,8 +11,6 @@ import json
 from bs4 import BeautifulSoup
 
 
-
-
 ###############
 # Open browser #
 
@@ -32,7 +30,7 @@ def close_browser():
 
 def scrape():
 
-	database_dir = './database/'
+	database_dir = './database'
 
 	for dirpath, dirnames, files in os.walk(database_dir):
 		print(f'Found directory: {dirpath}')
