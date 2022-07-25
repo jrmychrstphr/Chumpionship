@@ -34,6 +34,7 @@ temp_league_pos_dict = {}
 
 # First pass (pulled from scraped data)
 database_dir = './database'
+database_path = database_dir + '/database.json'
 
 for dirpath, dirnames, files in os.walk(database_dir):
 
@@ -109,24 +110,29 @@ for manager_code in database:
 	# to write to database
 	database[manager_code]['fixture_result_array'] = []
 	database[manager_code]['league_points_array'] = []
+	database[manager_code]['fixture_margin_array'] = []
 
-	# temporary list
+	# temporary lists
 	fixture_points_array = []
+	fixture_margin_array = []
 
 	for count, value in enumerate(d[manager_code]['fixture_score_array']):
 
 		gameweek = "GW" + str("{0:0=2d}".format(int(count+1)))
 		score = d[manager_code]['fixture_score_array'][count]
 		opponent_score = database[d[manager_code]['fixture_opponent_array'][count]]['fixture_score_array'][count]
+		fixture_margin = int(score) - int(opponent_score)
+
+		fixture_margin_array.append(fixture_margin)
 
 		#calculate fixture result
-		if score > opponent_score:
+		if fixture_margin > 0:
 			database[manager_code]['fixture_result_array'].append('win')
 			fixture_points_array.append(3)
-		elif score < opponent_score:
+		elif fixture_margin < 0:
 			database[manager_code]['fixture_result_array'].append('loss')
 			fixture_points_array.append(0)
-		elif score == opponent_score:
+		elif fixture_margin == 0:
 			database[manager_code]['fixture_result_array'].append('draw')
 			fixture_points_array.append(1)
 		else:
@@ -135,6 +141,7 @@ for manager_code in database:
 			print(f'Error calculating result: {d[manager_code]["manager_name"]}, {gameweek}')
 
 		database[manager_code]['league_points_array'].append(sum(fixture_points_array))
+		database[manager_code]['fixture_margin_array'] = fixture_margin_array
 
 		# push data to temp_league_pos_dict for calculating league position later
 		if gameweek not in temp_league_pos_dict:
@@ -178,3 +185,8 @@ for gameweek, value in temp_league_pos_dict.items():
 
 
 print(database)
+
+#save temp json of player info
+with open(database_path, 'w') as f:
+	json.dump(database, f, sort_keys=True, indent=4, separators=(',', ': '))
+
