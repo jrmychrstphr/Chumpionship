@@ -402,19 +402,20 @@ def accept_cookies():
 		driver.get(url)
 		
 		print("Waiting to accept cookies")
-		#wait for the gameweek-by-gameweek data table container to appear
+		# wait for the 'accept all' button to be clickable
 		WebDriverWait(driver, 30).until(
 			EC.element_to_be_clickable((By.CSS_SELECTOR, "button._2hTJ5th4dIYlveipSEMYHH.BfdVlAo_cgSVjDUegen0F.js-accept-all-close"))
+
 		)
 
 	except:
-		#if the table is not found, display an error message
+
 		print("Error - button not found")
 	
 	else:
-		# "Click" the list view toggle to reveal the data table
+		# Click the button
 		driver.find_element_by_css_selector('button._2hTJ5th4dIYlveipSEMYHH.BfdVlAo_cgSVjDUegen0F.js-accept-all-close').click()
-		print("Button clicked")
+		print("Cookies accepted")
 
 
 """
