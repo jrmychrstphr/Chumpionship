@@ -1,0 +1,1598 @@
+{
+    "GW01": [
+        {
+            "away_team": "1035711",
+            "home_team": "1103197"
+        },
+        {
+            "away_team": "1058855",
+            "home_team": "241565"
+        },
+        {
+            "away_team": "2289698",
+            "home_team": "830408"
+        },
+        {
+            "away_team": "1300896",
+            "home_team": "2412218"
+        },
+        {
+            "away_team": "2352782",
+            "home_team": "2313107"
+        },
+        {
+            "away_team": "260649",
+            "home_team": "2783503"
+        },
+        {
+            "away_team": "2296230",
+            "home_team": "2359884"
+        },
+        {
+            "away_team": "1302433",
+            "home_team": "2354249"
+        },
+        {
+            "away_team": "1724562",
+            "home_team": "792981"
+        },
+        {
+            "away_team": "1103301",
+            "home_team": "1300783"
+        }
+    ],
+    "GW02": [
+        {
+            "away_team": "2783503",
+            "home_team": "2354249"
+        },
+        {
+            "away_team": "2289698",
+            "home_team": "1300783"
+        },
+        {
+            "away_team": "1035711",
+            "home_team": "1724562"
+        },
+        {
+            "away_team": "2359884",
+            "home_team": "830408"
+        },
+        {
+            "away_team": "2412218",
+            "home_team": "2313107"
+        },
+        {
+            "away_team": "2352782",
+            "home_team": "1103301"
+        },
+        {
+            "away_team": "1103197",
+            "home_team": "1058855"
+        },
+        {
+            "away_team": "792981",
+            "home_team": "1300896"
+        },
+        {
+            "away_team": "241565",
+            "home_team": "1302433"
+        },
+        {
+            "away_team": "2296230",
+            "home_team": "260649"
+        }
+    ],
+    "GW03": [
+        {
+            "away_team": "241565",
+            "home_team": "792981"
+        },
+        {
+            "away_team": "1724562",
+            "home_team": "1300896"
+        },
+        {
+            "away_team": "2359884",
+            "home_team": "1302433"
+        },
+        {
+            "away_team": "1035711",
+            "home_team": "2354249"
+        },
+        {
+            "away_team": "2289698",
+            "home_team": "2783503"
+        },
+        {
+            "away_team": "2352782",
+            "home_team": "830408"
+        },
+        {
+            "away_team": "1103197",
+            "home_team": "2412218"
+        },
+        {
+            "away_team": "260649",
+            "home_team": "1058855"
+        },
+        {
+            "away_team": "2313107",
+            "home_team": "1300783"
+        },
+        {
+            "away_team": "1103301",
+            "home_team": "2296230"
+        }
+    ],
+    "GW04": [
+        {
+            "away_team": "260649",
+            "home_team": "1302433"
+        },
+        {
+            "away_team": "1300896",
+            "home_team": "2313107"
+        },
+        {
+            "away_team": "2412218",
+            "home_team": "1724562"
+        },
+        {
+            "away_team": "792981",
+            "home_team": "1103197"
+        },
+        {
+            "away_team": "1103301",
+            "home_team": "830408"
+        },
+        {
+            "away_team": "2289698",
+            "home_team": "2296230"
+        },
+        {
+            "away_team": "2354249",
+            "home_team": "1058855"
+        },
+        {
+            "away_team": "2783503",
+            "home_team": "2359884"
+        },
+        {
+            "away_team": "241565",
+            "home_team": "1035711"
+        },
+        {
+            "away_team": "2352782",
+            "home_team": "1300783"
+        }
+    ],
+    "GW05": [
+        {
+            "away_team": "830408",
+            "home_team": "2313107"
+        },
+        {
+            "away_team": "792981",
+            "home_team": "260649"
+        },
+        {
+            "away_team": "1103197",
+            "home_team": "1724562"
+        },
+        {
+            "away_team": "2359884",
+            "home_team": "1035711"
+        },
+        {
+            "away_team": "1058855",
+            "home_team": "2289698"
+        },
+        {
+            "away_team": "2354249",
+            "home_team": "2412218"
+        },
+        {
+            "away_team": "1302433",
+            "home_team": "1103301"
+        },
+        {
+            "away_team": "241565",
+            "home_team": "1300896"
+        },
+        {
+            "away_team": "1300783",
+            "home_team": "2296230"
+        },
+        {
+            "away_team": "2783503",
+            "home_team": "2352782"
+        }
+    ],
+    "GW06": [
+        {
+            "away_team": "830408",
+            "home_team": "1300783"
+        },
+        {
+            "away_team": "2354249",
+            "home_team": "792981"
+        },
+        {
+            "away_team": "1103197",
+            "home_team": "1300896"
+        },
+        {
+            "away_team": "1724562",
+            "home_team": "2313107"
+        },
+        {
+            "away_team": "260649",
+            "home_team": "1035711"
+        },
+        {
+            "away_team": "2359884",
+            "home_team": "1058855"
+        },
+        {
+            "away_team": "241565",
+            "home_team": "2412218"
+        },
+        {
+            "away_team": "2296230",
+            "home_team": "2352782"
+        },
+        {
+            "away_team": "2289698",
+            "home_team": "1302433"
+        },
+        {
+            "away_team": "2783503",
+            "home_team": "1103301"
+        }
+    ],
+    "GW07": [
+        {
+            "away_team": "2352782",
+            "home_team": "1058855"
+        },
+        {
+            "away_team": "2289698",
+            "home_team": "792981"
+        },
+        {
+            "away_team": "1302433",
+            "home_team": "1300783"
+        },
+        {
+            "away_team": "260649",
+            "home_team": "1300896"
+        },
+        {
+            "away_team": "241565",
+            "home_team": "1103197"
+        },
+        {
+            "away_team": "830408",
+            "home_team": "2783503"
+        },
+        {
+            "away_team": "2313107",
+            "home_team": "2296230"
+        },
+        {
+            "away_team": "1103301",
+            "home_team": "1035711"
+        },
+        {
+            "away_team": "2359884",
+            "home_team": "2412218"
+        },
+        {
+            "away_team": "2354249",
+            "home_team": "1724562"
+        }
+    ],
+    "GW08": [
+        {
+            "away_team": "1300896",
+            "home_team": "2354249"
+        },
+        {
+            "away_team": "260649",
+            "home_team": "2412218"
+        },
+        {
+            "away_team": "1300783",
+            "home_team": "2783503"
+        },
+        {
+            "away_team": "1058855",
+            "home_team": "1103301"
+        },
+        {
+            "away_team": "241565",
+            "home_team": "1724562"
+        },
+        {
+            "away_team": "2289698",
+            "home_team": "1035711"
+        },
+        {
+            "away_team": "1302433",
+            "home_team": "2352782"
+        },
+        {
+            "away_team": "1103197",
+            "home_team": "2313107"
+        },
+        {
+            "away_team": "2359884",
+            "home_team": "792981"
+        },
+        {
+            "away_team": "2296230",
+            "home_team": "830408"
+        }
+    ],
+    "GW09": [
+        {
+            "away_team": "830408",
+            "home_team": "1058855"
+        },
+        {
+            "away_team": "1300783",
+            "home_team": "1035711"
+        },
+        {
+            "away_team": "2296230",
+            "home_team": "1302433"
+        },
+        {
+            "away_team": "2354249",
+            "home_team": "241565"
+        },
+        {
+            "away_team": "2352782",
+            "home_team": "792981"
+        },
+        {
+            "away_team": "2313107",
+            "home_team": "2783503"
+        },
+        {
+            "away_team": "1724562",
+            "home_team": "2359884"
+        },
+        {
+            "away_team": "2412218",
+            "home_team": "1103301"
+        },
+        {
+            "away_team": "260649",
+            "home_team": "1103197"
+        },
+        {
+            "away_team": "1300896",
+            "home_team": "2289698"
+        }
+    ],
+    "GW10": [
+        {
+            "away_team": "1300783",
+            "home_team": "1058855"
+        },
+        {
+            "away_team": "260649",
+            "home_team": "1724562"
+        },
+        {
+            "away_team": "2313107",
+            "home_team": "241565"
+        },
+        {
+            "away_team": "792981",
+            "home_team": "1103301"
+        },
+        {
+            "away_team": "1300896",
+            "home_team": "2359884"
+        },
+        {
+            "away_team": "2783503",
+            "home_team": "2296230"
+        },
+        {
+            "away_team": "2354249",
+            "home_team": "1103197"
+        },
+        {
+            "away_team": "1302433",
+            "home_team": "830408"
+        },
+        {
+            "away_team": "1035711",
+            "home_team": "2352782"
+        },
+        {
+            "away_team": "2289698",
+            "home_team": "2412218"
+        }
+    ],
+    "GW11": [
+        {
+            "away_team": "1724562",
+            "home_team": "1103301"
+        },
+        {
+            "away_team": "260649",
+            "home_team": "2354249"
+        },
+        {
+            "away_team": "1035711",
+            "home_team": "2296230"
+        },
+        {
+            "away_team": "2412218",
+            "home_team": "1300783"
+        },
+        {
+            "away_team": "2313107",
+            "home_team": "1302433"
+        },
+        {
+            "away_team": "2359884",
+            "home_team": "241565"
+        },
+        {
+            "away_team": "1058855",
+            "home_team": "2783503"
+        },
+        {
+            "away_team": "1103197",
+            "home_team": "2289698"
+        },
+        {
+            "away_team": "2352782",
+            "home_team": "1300896"
+        },
+        {
+            "away_team": "830408",
+            "home_team": "792981"
+        }
+    ],
+    "GW12": [
+        {
+            "away_team": "260649",
+            "home_team": "241565"
+        },
+        {
+            "away_team": "1302433",
+            "home_team": "2783503"
+        },
+        {
+            "away_team": "830408",
+            "home_team": "1035711"
+        },
+        {
+            "away_team": "2359884",
+            "home_team": "1103197"
+        },
+        {
+            "away_team": "1103301",
+            "home_team": "1300896"
+        },
+        {
+            "away_team": "2289698",
+            "home_team": "1724562"
+        },
+        {
+            "away_team": "1300783",
+            "home_team": "792981"
+        },
+        {
+            "away_team": "2354249",
+            "home_team": "2313107"
+        },
+        {
+            "away_team": "1058855",
+            "home_team": "2296230"
+        },
+        {
+            "away_team": "2352782",
+            "home_team": "2412218"
+        }
+    ],
+    "GW13": [
+        {
+            "away_team": "1035711",
+            "home_team": "1302433"
+        },
+        {
+            "away_team": "1103301",
+            "home_team": "241565"
+        },
+        {
+            "away_team": "2783503",
+            "home_team": "792981"
+        },
+        {
+            "away_team": "2296230",
+            "home_team": "2412218"
+        },
+        {
+            "away_team": "2313107",
+            "home_team": "1058855"
+        },
+        {
+            "away_team": "2352782",
+            "home_team": "1103197"
+        },
+        {
+            "away_team": "260649",
+            "home_team": "2359884"
+        },
+        {
+            "away_team": "1300896",
+            "home_team": "830408"
+        },
+        {
+            "away_team": "2289698",
+            "home_team": "2354249"
+        },
+        {
+            "away_team": "1300783",
+            "home_team": "1724562"
+        }
+    ],
+    "GW14": [
+        {
+            "away_team": "2313107",
+            "home_team": "260649"
+        },
+        {
+            "away_team": "2783503",
+            "home_team": "1035711"
+        },
+        {
+            "away_team": "2354249",
+            "home_team": "2359884"
+        },
+        {
+            "away_team": "2412218",
+            "home_team": "830408"
+        },
+        {
+            "away_team": "1724562",
+            "home_team": "2352782"
+        },
+        {
+            "away_team": "1058855",
+            "home_team": "1302433"
+        },
+        {
+            "away_team": "1103301",
+            "home_team": "1103197"
+        },
+        {
+            "away_team": "241565",
+            "home_team": "2289698"
+        },
+        {
+            "away_team": "792981",
+            "home_team": "2296230"
+        },
+        {
+            "away_team": "1300896",
+            "home_team": "1300783"
+        }
+    ],
+    "GW15": [
+        {
+            "away_team": "1103197",
+            "home_team": "830408"
+        },
+        {
+            "away_team": "2352782",
+            "home_team": "2354249"
+        },
+        {
+            "away_team": "2412218",
+            "home_team": "1302433"
+        },
+        {
+            "away_team": "2783503",
+            "home_team": "1300896"
+        },
+        {
+            "away_team": "1724562",
+            "home_team": "2296230"
+        },
+        {
+            "away_team": "1103301",
+            "home_team": "260649"
+        },
+        {
+            "away_team": "1035711",
+            "home_team": "2313107"
+        },
+        {
+            "away_team": "2359884",
+            "home_team": "2289698"
+        },
+        {
+            "away_team": "1300783",
+            "home_team": "241565"
+        },
+        {
+            "away_team": "792981",
+            "home_team": "1058855"
+        }
+    ],
+    "GW16": [
+        {
+            "away_team": "2313107",
+            "home_team": "2359884"
+        },
+        {
+            "away_team": "2783503",
+            "home_team": "2412218"
+        },
+        {
+            "away_team": "1103197",
+            "home_team": "1300783"
+        },
+        {
+            "away_team": "1302433",
+            "home_team": "792981"
+        },
+        {
+            "away_team": "2296230",
+            "home_team": "1300896"
+        },
+        {
+            "away_team": "260649",
+            "home_team": "2289698"
+        },
+        {
+            "away_team": "830408",
+            "home_team": "1724562"
+        },
+        {
+            "away_team": "1058855",
+            "home_team": "1035711"
+        },
+        {
+            "away_team": "2352782",
+            "home_team": "241565"
+        },
+        {
+            "away_team": "1103301",
+            "home_team": "2354249"
+        }
+    ],
+    "GW17": [
+        {
+            "away_team": "2354249",
+            "home_team": "830408"
+        },
+        {
+            "away_team": "2313107",
+            "home_team": "792981"
+        },
+        {
+            "away_team": "1724562",
+            "home_team": "1302433"
+        },
+        {
+            "away_team": "2359884",
+            "home_team": "2352782"
+        },
+        {
+            "away_team": "1035711",
+            "home_team": "2412218"
+        },
+        {
+            "away_team": "1058855",
+            "home_team": "1300896"
+        },
+        {
+            "away_team": "1300783",
+            "home_team": "260649"
+        },
+        {
+            "away_team": "241565",
+            "home_team": "2296230"
+        },
+        {
+            "away_team": "2783503",
+            "home_team": "1103197"
+        },
+        {
+            "away_team": "1103301",
+            "home_team": "2289698"
+        }
+    ],
+    "GW18": [
+        {
+            "away_team": "241565",
+            "home_team": "830408"
+        },
+        {
+            "away_team": "2354249",
+            "home_team": "1300783"
+        },
+        {
+            "away_team": "2359884",
+            "home_team": "1103301"
+        },
+        {
+            "away_team": "1103197",
+            "home_team": "2296230"
+        },
+        {
+            "away_team": "2783503",
+            "home_team": "1724562"
+        },
+        {
+            "away_team": "1035711",
+            "home_team": "792981"
+        },
+        {
+            "away_team": "1302433",
+            "home_team": "1300896"
+        },
+        {
+            "away_team": "2412218",
+            "home_team": "1058855"
+        },
+        {
+            "away_team": "260649",
+            "home_team": "2352782"
+        },
+        {
+            "away_team": "2289698",
+            "home_team": "2313107"
+        }
+    ],
+    "GW19": [
+        {
+            "away_team": "2313107",
+            "home_team": "1103301"
+        },
+        {
+            "away_team": "1058855",
+            "home_team": "1724562"
+        },
+        {
+            "away_team": "241565",
+            "home_team": "2783503"
+        },
+        {
+            "away_team": "1302433",
+            "home_team": "1103197"
+        },
+        {
+            "away_team": "792981",
+            "home_team": "2412218"
+        },
+        {
+            "away_team": "260649",
+            "home_team": "830408"
+        },
+        {
+            "away_team": "1035711",
+            "home_team": "1300896"
+        },
+        {
+            "away_team": "2289698",
+            "home_team": "2352782"
+        },
+        {
+            "away_team": "1300783",
+            "home_team": "2359884"
+        },
+        {
+            "away_team": "2354249",
+            "home_team": "2296230"
+        }
+    ],
+    "GW20": [
+        {
+            "away_team": "2313107",
+            "home_team": "2352782"
+        },
+        {
+            "away_team": "792981",
+            "home_team": "1724562"
+        },
+        {
+            "away_team": "2412218",
+            "home_team": "1300896"
+        },
+        {
+            "away_team": "1103197",
+            "home_team": "1035711"
+        },
+        {
+            "away_team": "1300783",
+            "home_team": "1103301"
+        },
+        {
+            "away_team": "2359884",
+            "home_team": "2296230"
+        },
+        {
+            "away_team": "2783503",
+            "home_team": "260649"
+        },
+        {
+            "away_team": "241565",
+            "home_team": "1058855"
+        },
+        {
+            "away_team": "2354249",
+            "home_team": "1302433"
+        },
+        {
+            "away_team": "830408",
+            "home_team": "2289698"
+        }
+    ],
+    "GW21": [
+        {
+            "away_team": "1300896",
+            "home_team": "792981"
+        },
+        {
+            "away_team": "1724562",
+            "home_team": "1035711"
+        },
+        {
+            "away_team": "1103301",
+            "home_team": "2352782"
+        },
+        {
+            "away_team": "1300783",
+            "home_team": "2289698"
+        },
+        {
+            "away_team": "830408",
+            "home_team": "2359884"
+        },
+        {
+            "away_team": "1302433",
+            "home_team": "241565"
+        },
+        {
+            "away_team": "2354249",
+            "home_team": "2783503"
+        },
+        {
+            "away_team": "2313107",
+            "home_team": "2412218"
+        },
+        {
+            "away_team": "1058855",
+            "home_team": "1103197"
+        },
+        {
+            "away_team": "260649",
+            "home_team": "2296230"
+        }
+    ],
+    "GW22": [
+        {
+            "away_team": "1300896",
+            "home_team": "1724562"
+        },
+        {
+            "away_team": "2296230",
+            "home_team": "1103301"
+        },
+        {
+            "away_team": "792981",
+            "home_team": "241565"
+        },
+        {
+            "away_team": "1302433",
+            "home_team": "2359884"
+        },
+        {
+            "away_team": "830408",
+            "home_team": "2352782"
+        },
+        {
+            "away_team": "1300783",
+            "home_team": "2313107"
+        },
+        {
+            "away_team": "2354249",
+            "home_team": "1035711"
+        },
+        {
+            "away_team": "1058855",
+            "home_team": "260649"
+        },
+        {
+            "away_team": "2412218",
+            "home_team": "1103197"
+        },
+        {
+            "away_team": "2783503",
+            "home_team": "2289698"
+        }
+    ],
+    "GW23": [
+        {
+            "away_team": "2359884",
+            "home_team": "2783503"
+        },
+        {
+            "away_team": "1035711",
+            "home_team": "241565"
+        },
+        {
+            "away_team": "2313107",
+            "home_team": "1300896"
+        },
+        {
+            "away_team": "1302433",
+            "home_team": "260649"
+        },
+        {
+            "away_team": "1724562",
+            "home_team": "2412218"
+        },
+        {
+            "away_team": "1300783",
+            "home_team": "2352782"
+        },
+        {
+            "away_team": "830408",
+            "home_team": "1103301"
+        },
+        {
+            "away_team": "2296230",
+            "home_team": "2289698"
+        },
+        {
+            "away_team": "1058855",
+            "home_team": "2354249"
+        },
+        {
+            "away_team": "1103197",
+            "home_team": "792981"
+        }
+    ],
+    "GW24": [
+        {
+            "away_team": "1300896",
+            "home_team": "241565"
+        },
+        {
+            "away_team": "2289698",
+            "home_team": "1058855"
+        },
+        {
+            "away_team": "1103301",
+            "home_team": "1302433"
+        },
+        {
+            "away_team": "1035711",
+            "home_team": "2359884"
+        },
+        {
+            "away_team": "1724562",
+            "home_team": "1103197"
+        },
+        {
+            "away_team": "2296230",
+            "home_team": "1300783"
+        },
+        {
+            "away_team": "260649",
+            "home_team": "792981"
+        },
+        {
+            "away_team": "2352782",
+            "home_team": "2783503"
+        },
+        {
+            "away_team": "2313107",
+            "home_team": "830408"
+        },
+        {
+            "away_team": "2412218",
+            "home_team": "2354249"
+        }
+    ],
+    "GW25": [
+        {
+            "away_team": "1302433",
+            "home_team": "2289698"
+        },
+        {
+            "away_team": "2352782",
+            "home_team": "2296230"
+        },
+        {
+            "away_team": "1300896",
+            "home_team": "1103197"
+        },
+        {
+            "away_team": "1103301",
+            "home_team": "2783503"
+        },
+        {
+            "away_team": "1058855",
+            "home_team": "2359884"
+        },
+        {
+            "away_team": "792981",
+            "home_team": "2354249"
+        },
+        {
+            "away_team": "1035711",
+            "home_team": "260649"
+        },
+        {
+            "away_team": "2313107",
+            "home_team": "1724562"
+        },
+        {
+            "away_team": "1300783",
+            "home_team": "830408"
+        },
+        {
+            "away_team": "2412218",
+            "home_team": "241565"
+        }
+    ],
+    "GW26": [
+        {
+            "away_team": "1724562",
+            "home_team": "2354249"
+        },
+        {
+            "away_team": "1103197",
+            "home_team": "241565"
+        },
+        {
+            "away_team": "1035711",
+            "home_team": "1103301"
+        },
+        {
+            "away_team": "1058855",
+            "home_team": "2352782"
+        },
+        {
+            "away_team": "1300896",
+            "home_team": "260649"
+        },
+        {
+            "away_team": "792981",
+            "home_team": "2289698"
+        },
+        {
+            "away_team": "1300783",
+            "home_team": "1302433"
+        },
+        {
+            "away_team": "2296230",
+            "home_team": "2313107"
+        },
+        {
+            "away_team": "2783503",
+            "home_team": "830408"
+        },
+        {
+            "away_team": "2412218",
+            "home_team": "2359884"
+        }
+    ],
+    "GW27": [
+        {
+            "away_team": "2313107",
+            "home_team": "1103197"
+        },
+        {
+            "away_team": "2354249",
+            "home_team": "1300896"
+        },
+        {
+            "away_team": "1724562",
+            "home_team": "241565"
+        },
+        {
+            "away_team": "2783503",
+            "home_team": "1300783"
+        },
+        {
+            "away_team": "1035711",
+            "home_team": "2289698"
+        },
+        {
+            "away_team": "1103301",
+            "home_team": "1058855"
+        },
+        {
+            "away_team": "792981",
+            "home_team": "2359884"
+        },
+        {
+            "away_team": "2352782",
+            "home_team": "1302433"
+        },
+        {
+            "away_team": "830408",
+            "home_team": "2296230"
+        },
+        {
+            "away_team": "2412218",
+            "home_team": "260649"
+        }
+    ],
+    "GW28": [
+        {
+            "away_team": "1058855",
+            "home_team": "830408"
+        },
+        {
+            "away_team": "2289698",
+            "home_team": "1300896"
+        },
+        {
+            "away_team": "1302433",
+            "home_team": "2296230"
+        },
+        {
+            "away_team": "1035711",
+            "home_team": "1300783"
+        },
+        {
+            "away_team": "2783503",
+            "home_team": "2313107"
+        },
+        {
+            "away_team": "1103301",
+            "home_team": "2412218"
+        },
+        {
+            "away_team": "241565",
+            "home_team": "2354249"
+        },
+        {
+            "away_team": "792981",
+            "home_team": "2352782"
+        },
+        {
+            "away_team": "2359884",
+            "home_team": "1724562"
+        },
+        {
+            "away_team": "1103197",
+            "home_team": "260649"
+        }
+    ],
+    "GW29": [
+        {
+            "away_team": "241565",
+            "home_team": "2313107"
+        },
+        {
+            "away_team": "2359884",
+            "home_team": "1300896"
+        },
+        {
+            "away_team": "1103301",
+            "home_team": "792981"
+        },
+        {
+            "away_team": "2352782",
+            "home_team": "1035711"
+        },
+        {
+            "away_team": "1058855",
+            "home_team": "1300783"
+        },
+        {
+            "away_team": "2296230",
+            "home_team": "2783503"
+        },
+        {
+            "away_team": "830408",
+            "home_team": "1302433"
+        },
+        {
+            "away_team": "1103197",
+            "home_team": "2354249"
+        },
+        {
+            "away_team": "1724562",
+            "home_team": "260649"
+        },
+        {
+            "away_team": "2412218",
+            "home_team": "2289698"
+        }
+    ],
+    "GW30": [
+        {
+            "away_team": "1103301",
+            "home_team": "1724562"
+        },
+        {
+            "away_team": "1300896",
+            "home_team": "2352782"
+        },
+        {
+            "away_team": "792981",
+            "home_team": "830408"
+        },
+        {
+            "away_team": "2783503",
+            "home_team": "1058855"
+        },
+        {
+            "away_team": "2296230",
+            "home_team": "1035711"
+        },
+        {
+            "away_team": "2354249",
+            "home_team": "260649"
+        },
+        {
+            "away_team": "241565",
+            "home_team": "2359884"
+        },
+        {
+            "away_team": "1302433",
+            "home_team": "2313107"
+        },
+        {
+            "away_team": "1300783",
+            "home_team": "2412218"
+        },
+        {
+            "away_team": "2289698",
+            "home_team": "1103197"
+        }
+    ],
+    "GW31": [
+        {
+            "away_team": "2783503",
+            "home_team": "1302433"
+        },
+        {
+            "away_team": "2296230",
+            "home_team": "1058855"
+        },
+        {
+            "away_team": "792981",
+            "home_team": "1300783"
+        },
+        {
+            "away_team": "2412218",
+            "home_team": "2352782"
+        },
+        {
+            "away_team": "241565",
+            "home_team": "260649"
+        },
+        {
+            "away_team": "1300896",
+            "home_team": "1103301"
+        },
+        {
+            "away_team": "1035711",
+            "home_team": "830408"
+        },
+        {
+            "away_team": "1724562",
+            "home_team": "2289698"
+        },
+        {
+            "away_team": "2313107",
+            "home_team": "2354249"
+        },
+        {
+            "away_team": "1103197",
+            "home_team": "2359884"
+        }
+    ],
+    "GW32": [
+        {
+            "away_team": "2412218",
+            "home_team": "2296230"
+        },
+        {
+            "away_team": "241565",
+            "home_team": "1103301"
+        },
+        {
+            "away_team": "1058855",
+            "home_team": "2313107"
+        },
+        {
+            "away_team": "2359884",
+            "home_team": "260649"
+        },
+        {
+            "away_team": "1724562",
+            "home_team": "1300783"
+        },
+        {
+            "away_team": "1302433",
+            "home_team": "1035711"
+        },
+        {
+            "away_team": "792981",
+            "home_team": "2783503"
+        },
+        {
+            "away_team": "830408",
+            "home_team": "1300896"
+        },
+        {
+            "away_team": "2354249",
+            "home_team": "2289698"
+        },
+        {
+            "away_team": "1103197",
+            "home_team": "2352782"
+        }
+    ],
+    "GW33": [
+        {
+            "away_team": "2289698",
+            "home_team": "241565"
+        },
+        {
+            "away_team": "2359884",
+            "home_team": "2354249"
+        },
+        {
+            "away_team": "1300783",
+            "home_team": "1300896"
+        },
+        {
+            "away_team": "260649",
+            "home_team": "2313107"
+        },
+        {
+            "away_team": "1035711",
+            "home_team": "2783503"
+        },
+        {
+            "away_team": "1103197",
+            "home_team": "1103301"
+        },
+        {
+            "away_team": "2352782",
+            "home_team": "1724562"
+        },
+        {
+            "away_team": "830408",
+            "home_team": "2412218"
+        },
+        {
+            "away_team": "1302433",
+            "home_team": "1058855"
+        },
+        {
+            "away_team": "2296230",
+            "home_team": "792981"
+        }
+    ],
+    "GW34": [
+        {
+            "away_team": "830408",
+            "home_team": "1103197"
+        },
+        {
+            "away_team": "2354249",
+            "home_team": "2352782"
+        },
+        {
+            "away_team": "2313107",
+            "home_team": "1035711"
+        },
+        {
+            "away_team": "2289698",
+            "home_team": "2359884"
+        },
+        {
+            "away_team": "241565",
+            "home_team": "1300783"
+        },
+        {
+            "away_team": "2296230",
+            "home_team": "1724562"
+        },
+        {
+            "away_team": "1300896",
+            "home_team": "2783503"
+        },
+        {
+            "away_team": "1302433",
+            "home_team": "2412218"
+        },
+        {
+            "away_team": "260649",
+            "home_team": "1103301"
+        },
+        {
+            "away_team": "1058855",
+            "home_team": "792981"
+        }
+    ],
+    "GW35": [
+        {
+            "away_team": "2412218",
+            "home_team": "2783503"
+        },
+        {
+            "away_team": "2354249",
+            "home_team": "1103301"
+        },
+        {
+            "away_team": "1300896",
+            "home_team": "2296230"
+        },
+        {
+            "away_team": "1035711",
+            "home_team": "1058855"
+        },
+        {
+            "away_team": "2289698",
+            "home_team": "260649"
+        },
+        {
+            "away_team": "792981",
+            "home_team": "1302433"
+        },
+        {
+            "away_team": "2359884",
+            "home_team": "2313107"
+        },
+        {
+            "away_team": "1300783",
+            "home_team": "1103197"
+        },
+        {
+            "away_team": "241565",
+            "home_team": "2352782"
+        },
+        {
+            "away_team": "1724562",
+            "home_team": "830408"
+        }
+    ],
+    "GW36": [
+        {
+            "away_team": "1300896",
+            "home_team": "1058855"
+        },
+        {
+            "away_team": "2412218",
+            "home_team": "1035711"
+        },
+        {
+            "away_team": "1103197",
+            "home_team": "2783503"
+        },
+        {
+            "away_team": "260649",
+            "home_team": "1300783"
+        },
+        {
+            "away_team": "830408",
+            "home_team": "2354249"
+        },
+        {
+            "away_team": "2352782",
+            "home_team": "2359884"
+        },
+        {
+            "away_team": "1302433",
+            "home_team": "1724562"
+        },
+        {
+            "away_team": "2289698",
+            "home_team": "1103301"
+        },
+        {
+            "away_team": "792981",
+            "home_team": "2313107"
+        },
+        {
+            "away_team": "2296230",
+            "home_team": "241565"
+        }
+    ],
+    "GW37": [
+        {
+            "away_team": "2296230",
+            "home_team": "1103197"
+        },
+        {
+            "away_team": "1300896",
+            "home_team": "1302433"
+        },
+        {
+            "away_team": "1300783",
+            "home_team": "2354249"
+        },
+        {
+            "away_team": "2352782",
+            "home_team": "260649"
+        },
+        {
+            "away_team": "1103301",
+            "home_team": "2359884"
+        },
+        {
+            "away_team": "1058855",
+            "home_team": "2412218"
+        },
+        {
+            "away_team": "1724562",
+            "home_team": "2783503"
+        },
+        {
+            "away_team": "2313107",
+            "home_team": "2289698"
+        },
+        {
+            "away_team": "830408",
+            "home_team": "241565"
+        },
+        {
+            "away_team": "792981",
+            "home_team": "1035711"
+        }
+    ],
+    "GW38": [
+        {
+            "away_team": "2783503",
+            "home_team": "241565"
+        },
+        {
+            "away_team": "1103197",
+            "home_team": "1302433"
+        },
+        {
+            "away_team": "1724562",
+            "home_team": "1058855"
+        },
+        {
+            "away_team": "830408",
+            "home_team": "260649"
+        },
+        {
+            "away_team": "1103301",
+            "home_team": "2313107"
+        },
+        {
+            "away_team": "2412218",
+            "home_team": "792981"
+        },
+        {
+            "away_team": "2352782",
+            "home_team": "2289698"
+        },
+        {
+            "away_team": "1300896",
+            "home_team": "1035711"
+        },
+        {
+            "away_team": "2296230",
+            "home_team": "2354249"
+        },
+        {
+            "away_team": "2359884",
+            "home_team": "1300783"
+        }
+    ]
+}

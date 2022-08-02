@@ -1,0 +1,242 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"> 
+
+<html lang="en">
+    <head>
+
+        <title>Chumpionship - Fixture list</title>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://d3js.org/d3.v5.min.js"></script>
+
+        <!-- to replace with python -->
+        **chumpionship-styles.css**  
+        **chumpionship-colours.js**
+        **dynamic-styles.js**
+
+        <script>
+            
+            
+            $( function(){
+
+                const data = {
+                    "database": **database.json**,
+                    "fixture_list": **fixture-list.json**
+                }
+
+                console.log(data)
+
+                styles.core()
+
+                // build controls
+                const controls = d3.select( 'body' )
+                .append( 'div' )
+                .attr("id", "controls")
+                .classed( 'controls-wrapper' , true )
+                .append( 'div' )
+                .classed( 'controls-container' , true )
+
+                /* gameweek select */
+
+                const gameweek_select_group = controls.append( 'div' ).classed( 'group' , true )
+                gameweek_select_group.append( 'div' ).classed( 'label' , true ).text( 'Gameweek: ' )
+
+                const gameweek_select = gameweek_select_group
+                .append( 'select' )
+                .attr("name", "gameweek_select")
+                .attr("id", "gameweek_select")
+
+                let gw_array = []
+
+                // create a list of functions
+                $.each( data.fixture_list, function(k, v) {    
+                    gw_array.push(k)
+                })
+
+                $.each( gw_array.sort(d3.ascending), function() {    
+                    gameweek_select.append( 'option' ).attr("value", this).text("GW"+parseInt(this.replace("GW","")))
+                })
+
+                /* generate button */
+
+                const generate_button = controls.append( 'button' )
+                .attr("type", "button")
+                .text( ' Generate' )
+                .on("click", function() {
+                    //function
+                    //console.log("Button clicked!")
+                    
+                    var input_gw = $("#gameweek_select").val()
+                    build_fixtures(input_gw)
+                    
+                    //console.log(input_gw)
+                })
+
+
+
+                function build_fixtures(gw) {
+
+                    $( '#logo' ).empty()
+                    $( '#title-block' ).empty()
+                    $( '#content-block' ).empty()
+
+                    //define gameweek
+                    if (!(gw)) { gw = 1 }
+
+                    //build title block
+                    var title_container = d3.select("#title-block")
+                    .append("div")
+                    .classed("title-wrapper", true)
+                    .append("div")
+                    .classed("title-container", true)
+
+                    var title = title_container.append("div")
+                    .classed("text display large", true)
+                    .text("Fixtures")
+
+                    var subtitle = title_container.append("div")
+                    .classed("text display regular", true)
+                    .text("GW" + parseInt(gw.replace("GW","")))
+
+                    //build logo
+                    logo = d3.select("#logo")
+                    .append("div")
+                    .classed("logo-wrapper", true)
+                    .append("div")
+                    .classed("logo-container", true)
+
+
+                    //build dataset
+                    dataset = []
+
+                    $.each( data.fixture_list[gw], function(k, v) {
+
+                        //console.log(v)
+
+                        temp_obj = {
+                            "home": {
+                                "manager_code": v.home_team,
+                                "manager_name": data.database[v.home_team].manager_name,
+                                "team_name": data.database[v.home_team].team_name,
+                                "previous_pos": (function(){
+                                    g = parseInt(gw.replace("GW",""))
+                                    if ( g > 1 ) {
+                                        return data.database[v.home_team].league_position_array[g-2]
+                                    } else {
+                                        return null
+                                    }
+                                })()
+                            },
+                            "away": {
+                                "manager_code": v.away_team,
+                                "manager_name": data.database[v.away_team].manager_name,
+                                "team_name": data.database[v.away_team].team_name,
+                                "previous_pos": (function(){
+                                    g = parseInt(gw.replace("GW",""))
+                                    if ( g > 1 ) {
+                                        return data.database[v.away_team].league_position_array[g-2]
+                                    } else {
+                                        return null
+                                    }
+                                })()
+                            }
+                        }
+
+                        dataset.push(temp_obj)
+
+
+                    } )
+
+                    //console.log(dataset)
+                    dataset = dataset.slice().sort((a, b) => d3.ascending(a.home.team_name, b.home.team_name))
+                    //console.log(dataset)
+
+                    //build content
+                    var viz_container = d3.select("#content-block")
+                    .append("div")
+                    .classed("fixture-list-wrapper", true)
+                    .append("div")
+                    .classed("fixture-list-container", true)
+
+                    var fixtures = viz_container.selectAll("div.fixture-wrapper")
+                    .data(dataset).enter()
+                    .append("div")
+                    .classed("fixture-wrapper", true)
+                    .append("div")
+                    .classed("fixture-container", true)
+                    .each( function(d, i){
+
+                        let home = d3.select(this)
+                        .append("div")
+                        .classed("home team text display regular", true)
+                        .text(d.home.team_name)
+
+                        d3.select(this)
+                        .append("div")
+                        .classed("vs-block text display regular", true)
+                        .text("v")
+                        .style("background-color", function(d) {
+                            //console.log(i)
+                            //console.log(dataset.length)
+
+                            c = [chump.colours.green, chump.colours.light_blue, chump.colours.blue, chump.colours.purple, chump.colours.pink]
+
+                            return c[Math.ceil((c.length/dataset.length)*(i+1)-1)]
+                        })
+
+                        
+                        let away = d3.select(this)
+                        .append("div")
+                        .classed("away team text display regular", true)
+                        .text(d.away.team_name)
+
+                        if ( d.home.previous_pos && d.away.previous_pos ) {
+
+                            footnote = true
+
+                            home.append("span")
+                            .classed("rank text small", true)
+                            .text("("+d.home.previous_pos+")")
+
+                            away.append("span")
+                            .classed("rank text small", true)
+                            .text("("+d.away.previous_pos+")")
+                            
+                        }
+
+                    })
+
+                    if ( footnote ) {
+
+                        var footnote = d3.select("#content-block")
+                        .append("div")
+                        .classed("footnote text small", true)
+                        .text("Figures in brackets indicate league rank ahead of GW"+parseInt(gw.replace("GW","")))
+
+                    }
+
+                    styles.add()
+
+                }
+            });
+
+            
+        
+        </script>
+        
+    </head> 
+    
+    <body> 
+        <main>
+            <section>
+                <div id="logo"></div>
+                <div class="wrapper">
+                    <div class="container">
+                        <div id="title-block"></div>
+                        <div id="content-block"></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </body> 
+
+
+</html>

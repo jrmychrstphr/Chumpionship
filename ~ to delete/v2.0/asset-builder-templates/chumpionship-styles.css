@@ -1,0 +1,504 @@
+<style type="text/css">
+
+	div.viz-wrapper svg {
+		overflow: visible;
+	}
+
+	/* Viz legends */
+	div.viz-wrapper {
+		//background-color: rgba(255,255,255,0.1);
+	}
+
+	div.legend-wrapper {
+		margin-bottom: 2rem;
+	}
+
+	div.legend-container {
+		margin: -0.15rem;
+	}
+
+	div.legend-item:not(.vs) {
+		margin: 0.15rem;
+		padding: 0.3rem 0.6rem 0.15rem;
+	}
+
+	div.legend-item {
+		margin: 0.15rem 0;
+		padding: 0 0.3rem;
+		border-radius: 0.2rem;
+		display: inline-block;
+	}
+
+
+	/* Bubble charts */
+
+	div.viz:not(:last-child) {
+		margin-bottom: 2rem;
+	}
+
+	div.viz div.caption {
+		max-width: 36ch;
+		margin-bottom: 1rem;
+	}
+
+	div.viz div.caption div.subtitle {
+		margin-bottom: 0.3rem;
+	}
+
+	div.viz svg .text.small.superscript {
+		font-size: 0.6rem;
+		baseline-shift: super;
+	}
+
+
+	/* League Table */
+
+	div.league-table-wrapper {
+	}
+
+	div.league-table-container {
+		width: 100%;
+		margin: 0;
+		display: inline-block;
+	}
+
+	div.league-table-container div.table-row-wrapper {
+	}
+
+	div.league-table-container div.table-row-container, div.league-table-container div.table-header-container {
+		margin: 0 -0.15rem;
+		display: inline-block;
+		width: 100%;
+	}
+
+	div.table-header-container div.table-column {
+		margin: 0rem 0.15rem 0.2rem;
+		display: inline-block;
+		float: left;
+		text-align: center;
+		color: white;
+		border-bottom: solid 0.1rem white;
+		padding-bottom: 0.15rem;
+	}
+
+	div.table-row-container div.table-column {
+		margin: 0.15rem;
+		display: inline-block;
+		float: left;
+		text-align: center;
+	}
+
+
+	div.table-row-container div.position-change-wrapper {
+		float: left;
+		height: 0rem;
+		width: 0rem;
+	}
+
+	div.table-row-container div.position-change-container {
+		position: relative;
+		width: 2.2rem;
+		height: 2.2rem;
+		margin: 0.15rem;
+		left: -2.5rem;
+	}
+
+	div.table-row-container div.position-change-container.arrow-down {
+		transform: rotate(180deg);
+	}
+
+
+	div.table-row-container div.position-change-container svg {
+		width: 1rem;
+		height: 1rem;
+		margin: 0.6rem;
+	}
+
+	div.table-row-container div.table-column.position, div.table-header-container div.table-column.position  {
+		width: 2.3rem;
+		padding-left: 0rem;
+		padding-right: 0rem;
+	}
+
+	div.table-row-container div.table-column.position {
+		padding-top: 0.6rem;
+		padding-bottom: 0.6rem;
+		background-color: white;
+	}
+
+	div.table-row-container div.table-column.team-name , div.table-header-container div.table-column.team-name {
+		padding-left: 0.5rem;
+		padding-right:0.5rem;
+		width: 19.5rem;
+		text-align: left;
+	}
+
+	div.table-row-container div.table-column.team-name {
+		padding-top: 0.6rem;
+		padding-bottom: 0.6rem;
+		background-color: white;
+	}
+
+	div.table-row-container div.table-column.team-name span {
+		vertical-align: baseline;
+		padding-left: 0.4rem;
+		line-height: 0;
+	}
+
+	div.table-row-container div.table-column.score, div.table-header-container div.table-column.score {
+		padding-left: 0.5rem;
+		padding-right: 0.5rem;
+		width: 4.25rem;
+	}
+
+	div.table-row-container div.table-column.score {
+		padding-top: 0.6rem;
+		padding-bottom: 0.6rem;
+		background-color: white;
+	}
+
+	div.table-row-container div.table-column.league-points, div.table-header-container div.table-column.league-points {
+		padding-left: 0.5rem;
+		padding-right: 0.5rem;
+		width: 4.25rem;
+	}
+
+	div.table-row-container div.table-column.league-points {
+		padding-top: 0.6rem;
+		padding-bottom: 0.6rem;
+		background-color: white;
+	}
+
+	div.table-row-container div.table-column.viz, div.table-header-container div.table-column.viz {
+		padding-left: 0rem;
+		padding-right: 0rem;
+		width: 7.2rem;
+	}
+
+	div.table-row-container div.table-column.viz {
+		height: 2.2rem;
+	}
+
+	div.table-header-container div.table-column.viz {
+		text-align: left;
+	}
+
+
+
+	/* Results */
+
+	div.result-list-container {
+		margin: 0 -1rem 2rem;
+		display: inline-block;
+		width: calc(100% + 2rem);
+	}
+
+	div.result-list-container div.result-wrapper {
+		margin-bottom: 0.5rem;
+	}
+
+	div.result-list-container div.result-container {
+		margin: -0.15rem;
+		display: inline-block;
+		padding: 0 1rem;
+		width: calc(100% - 2rem);
+	}
+
+	div.result-list-container div.result-container div.result-row {
+		width: 100%;
+		float: left;
+	}
+
+	div.result-list-container div.result-container div.result-row div {
+		margin: 0.15rem;
+		display: inline-block;
+		float: left;
+		text-align: center;
+	}
+
+	div.result-list-container div.result-container div.result-row div.team {
+		background: white;
+		padding-top: 0.6rem;
+		padding-bottom: 0.6rem;
+	}
+
+	div.result-list-container div.result-container div.result-row div.score {
+		background: white;
+		padding-top: 0.6rem;
+		padding-bottom: 0.6rem;
+
+	}
+
+	div.result-list-container div.result-container div.result-row div.score span {
+		vertical-align: top;
+		padding-left: 0.15rem;
+		font-weight: 600;
+	}
+
+	div.result-list-container div.team {
+		width: 15.5rem;
+		padding-left: 0rem;
+		padding-right: 0rem;
+	}
+
+	/*
+	div.result-list-container div.result-container div.result-row div.team.away {
+		text-align: left;
+	}
+
+	div.result-list-container div.result-container div.result-row div.team.home {
+		text-align: right;
+	}
+	*/
+
+	div.result-list-container div.score {
+		width: 4.1rem;
+		padding-left: 0rem;
+		padding-right: 0rem;
+	}
+
+	div.result-list-container div.indicator {
+		width: 0.5rem;
+		height: 1rem;
+		padding-top: 0.6rem;
+		padding-bottom: 0.6rem;
+		padding-left: 0rem;
+		padding-right: 0rem;
+	}
+
+	div.result-list-container div.viz {
+		width: 17.85rem;
+		height: 2.2rem;
+		padding-left: 0rem;
+		padding-right: 0rem;
+	}
+
+	div.footnote {
+		color: white;
+	}
+
+
+	/* Fixtures */
+
+	div.fixture-list-wrapper:not(:last-child) {
+		margin-bottom:2rem;
+	}
+
+	div.fixture-list-container {
+		margin: 0 -1rem;
+		display: inline-block;
+	}
+
+	div.fixture-list-container div.fixture-wrapper {
+		width: 50%;
+		float: left;
+	}
+
+	div.fixture-list-container div.fixture-wrapper:nth-child(2n) {
+		padding-top: 2.5rem;
+	}
+
+	div.fixture-list-container div.fixture-container {
+		margin: -0.15rem;
+		display: inline-block;
+		padding: 0 1rem;
+		width: calc(100% - 2rem);
+	}
+
+	div.fixture-list-container div.fixture-container div {
+
+		background: white;
+		margin: 0.15rem;
+		display: inline-block;
+		float: left;
+		text-align: center;
+		padding-top: 0.6rem;
+		padding-bottom: 0.6rem;
+
+	}
+
+	div.fixture-list-container div.team {
+		width: 16.2rem;
+		padding-left: 0.5rem;
+		padding-right: 0.5rem;
+	}
+
+	div.fixture-list-container div.team span {
+		vertical-align: top;
+		padding-left: 0.15rem;
+	}
+
+
+	div.fixture-list-container div.vs-block {
+		width: 2.2rem;
+		padding-left: 0rem;
+		padding-right: 0rem;
+		clear: left;
+
+	}
+
+	div.fixture-list-container div.team.home {
+
+	}
+
+	div.fixture-list-container div.team.away {
+
+	}
+
+	/* title block */
+	div.title-wrapper {
+		color: white;
+		margin-bottom: 2rem;
+	}
+
+	div.title-container {
+	}
+
+	div.title-container .explainer {
+		margin-top: 2rem;
+	}
+
+	/* Logo */
+	div.logo-wrapper {
+		position: relative;
+	}
+
+	div.logo-container {
+		background-image: url("assets/Logo.svg");
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: center;
+
+		position: absolute;
+		top: 2rem;
+		right: 4rem;
+		height: 5rem;
+		width: 5rem;
+	}
+
+
+
+	/* General */
+	html {
+		font-size: 18px;
+	}
+
+	main {
+		width: 50rem;
+	}
+
+	div.page.border {
+		width: 100%;
+		height: 1rem;
+	}
+
+	.wrapper{
+		padding: 2rem 4rem;
+	}
+
+	.text {
+		font-family: 'Helvetical Neue';
+		font-weight: 400;
+	}
+
+	.text.bold {
+		font-weight: 800;
+	}
+
+	.text.display {
+		font-family: 'Champion';
+		font-weight: 800;
+	}
+
+	.text.large {
+		font-size: 1.5rem;
+		line-height: 1.5rem;
+		text-transform: uppercase;
+	}
+
+	.text.regular {
+		font-size: 0.95rem;
+		line-height: 1rem;
+	}
+
+	.text.small {
+		font-size: 0.7rem;
+		line-height: 1rem;
+	}
+
+	.text.tiny {
+		font-size: 0.6rem;
+		line-height: 0.8rem;
+	}
+
+	.text.colour-white {
+		color: white;
+	}
+
+
+	/* Fonts */
+	@font-face {
+	    font-family: 'Champion';
+	    src: url('assets/Champion HTFFlyweight Regular.otf');
+	    font-weight: 200;
+	}
+
+	@font-face {
+	    font-family: 'Champion';
+	    src: url('assets/Champion HTFFeatherweight Regular.otf');
+	    font-weight: 400;
+	}
+
+	@font-face {
+	    font-family: 'Champion';
+	    src: url('assets/Champion HTFMiddleweight Regular.otf');
+	    font-weight: 600;
+	}
+
+	@font-face {
+	    font-family: 'Champion';
+	    src: url('assets/Champion HTFHeavyweight Regular.otf');
+	    font-weight: 800;
+	}
+
+	@font-face {
+	    font-family: 'Helvetical Neue';
+	    src: url('assets/HelveticaNeueLTStd-Roman.otf');
+	    font-weight: 400;
+	}
+
+	@font-face {
+	    font-family: 'Helvetical Neue';
+	    src: url('assets/HelveticaNeueLTStd-Bd.otf');
+	    font-weight: 800;
+	}
+
+	@font-face {
+	    font-family: 'Helvetical Neue';
+	    src: url('assets/HelveticaNeueLTStd-Lt.otf');
+	    font-weight: 200;
+	}
+
+
+    #controls {
+        margin: 1rem;
+        padding: 1rem;
+        border: 1px solid;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 8rem;
+        font-size: 0.8rem;
+        font-family: 'Helvetica Neue';
+        background: white;
+    }
+
+    #controls div.group {
+        margin-bottom: 1rem;
+    }
+
+    #controls div.label {
+        margin-bottom: 0.5rem;
+    }
+
+</style>
