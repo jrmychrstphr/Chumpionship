@@ -72,7 +72,7 @@ def scrape():
 
 				#wait for the gameweek-by-gameweek data table container to appear
 				WebDriverWait(driver, 5).until(
-				EC.presence_of_element_located((By.CSS_SELECTOR, ".Table__ScrollTable-ziussd-0.itIXYu"))
+				EC.presence_of_element_located((By.CSS_SELECTOR, ".Layout__Main-eg6k6r-1 table.Table-ziussd-1.dUELIG"))
 				)
 
 			except:
@@ -91,12 +91,12 @@ def scrape():
 				season_history_data_table = history_page_soup.find("h3", text="This Season")
 
 				# move up the soup DOM until the table is found
-				while len(season_history_data_table.select('.Table-ziussd-1.fHBHIK')) == 0:
+				while len(season_history_data_table.select('.Layout__Main-eg6k6r-1 table.Table-ziussd-1.dUELIG')) == 0:
 					season_history_data_table = season_history_data_table.parent
 				
 				else:
 					season_history_data_table = season_history_data_table
-					season_history_table_rows = season_history_data_table.select('.Table-ziussd-1.fHBHIK tbody tr')
+					season_history_table_rows = season_history_data_table.select('.Layout__Main-eg6k6r-1 table.Table-ziussd-1.dUELIG tbody tr')
 
 				for row in season_history_table_rows:
 
@@ -109,11 +109,25 @@ def scrape():
 
 					if gameweek not in existing_gameweeks:
 
-						points_scored = int(float(row_contents_array[1].get_text()))
-						points_on_bench = int(float(row_contents_array[2].get_text()))
-						points_spent = int(float(row_contents_array[5].get_text()))
-						overall_total_points = int(float(row_contents_array[6].get_text()))
-						squad_value = float(row_contents_array[8].get_text())
+						"""
+						0: gw
+						1: overall rank
+						2: 
+						3: overall points
+						4: gameweek rank
+						5: gameweek points
+						6: points on bench
+						7: transfers made
+						8: transfer cost
+						9: squad value
+						"""
+
+
+						points_scored = int(float(row_contents_array[5].get_text()))
+						points_on_bench = int(float(row_contents_array[6].get_text()))
+						points_spent = int(float(row_contents_array[8].get_text()))
+						overall_total_points = int(float(row_contents_array[3].get_text()))
+						squad_value = float(row_contents_array[9].get_text())
 
 						fixture_score = int(int(points_scored) - int(points_spent))
 
@@ -143,10 +157,10 @@ def scrape():
 				chips_history_table = history_page_soup.find("h3", text="Chips")
 
 				#move up the soup DOM until the table is found
-				while len(chips_history_table.select('.Table-ziussd-1.fHBHIK')) == 0:
+				while len(chips_history_table.select('.Layout__Main-eg6k6r-1 table.Table-ziussd-1.dUELIG')) == 0:
 					chips_history_table = chips_history_table.parent
 				else:
-					chips_history_table_rows = chips_history_table.select('.Table-ziussd-1.fHBHIK tbody tr')
+					chips_history_table_rows = chips_history_table.select('.Layout__Main-eg6k6r-1 table.Table-ziussd-1.dUELIG tbody tr')
 
 				chips_played = {}
 
@@ -156,6 +170,7 @@ def scrape():
 
 						row_contents_array = row.contents
 
+						# check this after a chip is played
 						chip_gameweek = row_contents_array[2].find('a').get('href').split('/')[4]
 						chip_gameweek = str("{0:0=2d}".format(int(chip_gameweek)))
 
@@ -179,7 +194,7 @@ def scrape():
 
 					#wait for the gameweek-by-gameweek data table container to appear
 					WebDriverWait(driver, 5).until(
-					EC.presence_of_element_located((By.CSS_SELECTOR, ".Table-ziussd-1.fHBHIK"))
+					EC.presence_of_element_located((By.CSS_SELECTOR, ".Layout__Main-eg6k6r-1 table.Table-ziussd-1.dUELIG"))
 					)
 
 
@@ -188,12 +203,13 @@ def scrape():
 					try:
 						#Look for the page placeholder instead
 						element = WebDriverWait(driver, 5).until(
-						EC.text_to_be_present_in_element((By.CSS_SELECTOR, ".Layout__Main-eg6k6r-1.wXYnc"), "No transfers have been made yet for this team.")
+						EC.text_to_be_present_in_element((By.CSS_SELECTOR, ".Layout__Main-eg6k6r-1"), "No transfers have been made yet for this team.")
 						)
 
 					except:
 						print("Err – Transfers")
 					else:
+						print("No transfers made")
 						transfers_obj = False
 
 				else:
@@ -206,12 +222,12 @@ def scrape():
 					transfers_history_table = transfers_page_soup.find("h2", text="Transfers")
 
 					#move up the soup DOM until a table is found
-					while len(transfers_history_table.select('.Table-ziussd-1.fHBHIK')) == 0:
+					while len(transfers_history_table.select('table.Table-ziussd-1.dUELIG')) == 0:
 						transfers_history_table = transfers_history_table.parent
 					else:
 						transfers_history_table = transfers_history_table
 
-					transfers_history_table_rows = transfers_history_table.select('.Table-ziussd-1.fHBHIK tbody tr')
+					transfers_history_table_rows = transfers_history_table.select('.Layout__Main-eg6k6r-1 table.Table-ziussd-1.dUELIG tbody tr')
 
 					for row in transfers_history_table_rows:
 
@@ -249,7 +265,7 @@ def scrape():
 
 							#wait for the data table container to appear
 							WebDriverWait(driver, 5).until(
-							EC.presence_of_element_located((By.CSS_SELECTOR, "a.Tab__Link-sc-19t48gi-1.dDKNAk"))
+							EC.presence_of_element_located((By.CSS_SELECTOR, ".Layout__Main-eg6k6r-1 a.Tab__TabLink-sc-19t48gi-1.jIjLCn"))
 							)
 
 						except:
@@ -265,8 +281,8 @@ def scrape():
 								print("Waiting for data tables to appear...")
 
 								#wait for the gameweek-by-gameweek data table container to appear
-								WebDriverWait(driver, 5).until(
-								EC.presence_of_element_located((By.CSS_SELECTOR, ".sc-bdnxRM.denPjM table.Table-ziussd-1.EntryEventTable__StatsTable-sc-1d2xgo1-1.fHBHIK.jWFNPC"))
+								WebDriverWait(driver, 5).until(						
+								EC.presence_of_element_located((By.CSS_SELECTOR, ".Layout__Main-eg6k6r-1 table.Table-ziussd-1.EntryEventTable__StatsTable-sc-1d2xgo1-1.dUELIG.gTOduH"))
 								)
 
 							except:
@@ -277,7 +293,7 @@ def scrape():
 								#create a new soup of DOM
 								squad_page_soup = BeautifulSoup(driver.page_source, 'lxml')
 
-								squad_data_tables = squad_page_soup.select(".sc-bdnxRM.denPjM table.Table-ziussd-1.EntryEventTable__StatsTable-sc-1d2xgo1-1.fHBHIK.jWFNPC")
+								squad_data_tables = squad_page_soup.select(".Layout__Main-eg6k6r-1 table.Table-ziussd-1.EntryEventTable__StatsTable-sc-1d2xgo1-1.dUELIG.gTOduH")
 								#print(squad_data_tables)
 
 								for idx, table in enumerate(squad_data_tables):
@@ -316,10 +332,9 @@ def scrape():
 
 										#row_cells[2] # Name / Team / Position info
 										player_information_container = row_cells[2].select("div.Media__Body-sc-94ghy9-2")
-
 										temp_player_obj['player_name'] = player_information_container[0].select(".ElementInTable__Name-y9xi40-1")[0].get_text()
-										temp_player_obj['player_team'] = player_information_container[0].select(".ElementInTable__Team-y9xi40-2")[0].get_text()
-										temp_player_obj['player_position'] = player_information_container[0].select(".ElementInTable__Team-y9xi40-2")[0].parent.contents[1].get_text()
+										temp_player_obj['player_team'] = player_information_container[0].select(".ElementInTable__Team-y9xi40-3")[0].get_text()
+										temp_player_obj['player_position'] = player_information_container[0].select(".ElementInTable__Team-y9xi40-3")[0].parent.contents[1].get_text()
 
 										#row_cells[3] # Points scored
 										temp_player_obj['points_scored'] = row_cells[3].get_text()
@@ -405,13 +420,9 @@ def accept_cookies():
 		# wait for the 'accept all' button to be clickable
 		WebDriverWait(driver, 30).until(
 			EC.element_to_be_clickable((By.CSS_SELECTOR, "button._2hTJ5th4dIYlveipSEMYHH.BfdVlAo_cgSVjDUegen0F.js-accept-all-close"))
-
 		)
-
 	except:
-
-		print("Error - button not found")
-	
+		print("Err - button not found")
 	else:
 		# Click the button
 		driver.find_element_by_css_selector('button._2hTJ5th4dIYlveipSEMYHH.BfdVlAo_cgSVjDUegen0F.js-accept-all-close').click()

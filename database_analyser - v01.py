@@ -1,7 +1,7 @@
 import json
 
 # load database
-database_dir = './database'
+database_dir = './seasons/2023/builders/~ templates'
 database_path = database_dir + '/database.json'
 
 with open(database_path) as f:
@@ -9,7 +9,7 @@ with open(database_path) as f:
 
 
 # define gameweek
-gameweeks = [25,30]
+gameweeks = [1,1]
 
 
 d_list = []

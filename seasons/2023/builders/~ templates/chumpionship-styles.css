@@ -129,7 +129,7 @@
 	div.table-row-container div.table-column.team-name , div.table-header-container div.table-column.team-name {
 		padding-left: 0.5rem;
 		padding-right:0.5rem;
-		width: 19.5rem;
+		width: 20.5rem;
 		text-align: left;
 	}
 
@@ -236,7 +236,7 @@
 	}
 
 	div.result-list-container div.team {
-		width: 15.5rem;
+		width: 16rem;
 		padding-left: 0rem;
 		padding-right: 0rem;
 	}
@@ -318,7 +318,7 @@
 	}
 
 	div.fixture-list-container div.team {
-		width: 16.2rem;
+		width: 16.7rem;
 		padding-left: 0.5rem;
 		padding-right: 0.5rem;
 	}
@@ -384,7 +384,7 @@
 	}
 
 	main {
-		width: 50rem;
+		width: 51rem;
 	}
 
 	div.page.border {

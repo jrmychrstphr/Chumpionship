@@ -73,7 +73,7 @@ def scrape():
 
 				#wait for the fixture table to appear in DOM
 				element = WebDriverWait(driver, 30).until(
-					EC.presence_of_element_located((By.CSS_SELECTOR, "table.Table-ziussd-1.MatchesTable__StyledMatchesTable-sc-1p0h4g1-0.fHBHIK.fwmEXa"))
+					EC.presence_of_element_located((By.CSS_SELECTOR, "table.Table-ziussd-1.MatchesTable__StyledMatchesTable-sc-1p0h4g1-0.dUELIG.fwmEXa"))
 
 				)
 
@@ -89,7 +89,7 @@ def scrape():
 				fixture_soup = BeautifulSoup(driver.page_source, 'lxml')
 
 				#filter to the tr elements in the fixture table
-				fixture_table_rows = fixture_soup.select("table.Table-ziussd-1.MatchesTable__StyledMatchesTable-sc-1p0h4g1-0.fHBHIK.fwmEXa tbody tr")
+				fixture_table_rows = fixture_soup.select("table.Table-ziussd-1.MatchesTable__StyledMatchesTable-sc-1p0h4g1-0.dUELIG.fwmEXa tbody tr")
 
 				#scrape FPL fixture list for each team in the database
 				for row in fixture_table_rows:

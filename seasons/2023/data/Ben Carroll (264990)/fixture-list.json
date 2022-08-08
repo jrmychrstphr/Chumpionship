@@ -1,0 +1,154 @@
+{
+    "GW01": {
+        "opponent_code": "1114199",
+        "status": "away"
+    },
+    "GW02": {
+        "opponent_code": "417249",
+        "status": "home"
+    },
+    "GW03": {
+        "opponent_code": "2045273",
+        "status": "home"
+    },
+    "GW04": {
+        "opponent_code": "870170",
+        "status": "away"
+    },
+    "GW05": {
+        "opponent_code": "701836",
+        "status": "home"
+    },
+    "GW06": {
+        "opponent_code": "2037281",
+        "status": "home"
+    },
+    "GW07": {
+        "opponent_code": "2129352",
+        "status": "away"
+    },
+    "GW08": {
+        "opponent_code": "1123094",
+        "status": "away"
+    },
+    "GW09": {
+        "opponent_code": "594302",
+        "status": "away"
+    },
+    "GW10": {
+        "opponent_code": "117678",
+        "status": "away"
+    },
+    "GW11": {
+        "opponent_code": "1840203",
+        "status": "home"
+    },
+    "GW12": {
+        "opponent_code": "2070773",
+        "status": "home"
+    },
+    "GW13": {
+        "opponent_code": "2069149",
+        "status": "away"
+    },
+    "GW14": {
+        "opponent_code": "140183",
+        "status": "away"
+    },
+    "GW15": {
+        "opponent_code": "2037213",
+        "status": "away"
+    },
+    "GW16": {
+        "opponent_code": "172170",
+        "status": "home"
+    },
+    "GW17": {
+        "opponent_code": "2189166",
+        "status": "away"
+    },
+    "GW18": {
+        "opponent_code": "51920",
+        "status": "away"
+    },
+    "GW19": {
+        "opponent_code": "2046178",
+        "status": "away"
+    },
+    "GW20": {
+        "opponent_code": "1114199",
+        "status": "home"
+    },
+    "GW21": {
+        "opponent_code": "417249",
+        "status": "away"
+    },
+    "GW22": {
+        "opponent_code": "2045273",
+        "status": "away"
+    },
+    "GW23": {
+        "opponent_code": "870170",
+        "status": "home"
+    },
+    "GW24": {
+        "opponent_code": "701836",
+        "status": "away"
+    },
+    "GW25": {
+        "opponent_code": "2037281",
+        "status": "away"
+    },
+    "GW26": {
+        "opponent_code": "2129352",
+        "status": "home"
+    },
+    "GW27": {
+        "opponent_code": "1123094",
+        "status": "home"
+    },
+    "GW28": {
+        "opponent_code": "594302",
+        "status": "home"
+    },
+    "GW29": {
+        "opponent_code": "117678",
+        "status": "home"
+    },
+    "GW30": {
+        "opponent_code": "1840203",
+        "status": "away"
+    },
+    "GW31": {
+        "opponent_code": "2070773",
+        "status": "away"
+    },
+    "GW32": {
+        "opponent_code": "2069149",
+        "status": "home"
+    },
+    "GW33": {
+        "opponent_code": "140183",
+        "status": "home"
+    },
+    "GW34": {
+        "opponent_code": "2037213",
+        "status": "home"
+    },
+    "GW35": {
+        "opponent_code": "172170",
+        "status": "away"
+    },
+    "GW36": {
+        "opponent_code": "2189166",
+        "status": "home"
+    },
+    "GW37": {
+        "opponent_code": "51920",
+        "status": "home"
+    },
+    "GW38": {
+        "opponent_code": "2046178",
+        "status": "home"
+    }
+}

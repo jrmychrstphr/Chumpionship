@@ -74,3 +74,4 @@ JavaScript error: https://www.premierleague.com/resources/prod/v6.98.1-4068/ism/
 2022-08-02 11:00:09.474 plugin-container[14082:119540] nil host used in call to allowsSpecificHTTPSCertificateForHost
 2022-08-02 11:00:09.474 plugin-container[14082:119540] nil host used in call to allowsAnyHTTPSCertificateForHost:
 1659438019624	Marionette	INFO	Stopped listening on port 50539
+1659439468566	Marionette	INFO	Stopped listening on port 50447

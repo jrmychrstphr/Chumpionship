@@ -41,10 +41,10 @@ for dirpath, dirnames, files in os.walk(database_dir):
 					team_name = d['team_name']
 
 			# open player_info.json
-			elif file_name == 'fixture_list.json':
+			elif file_name == 'fixture-list.json':
 
-				# pull data from fixture_list.json
-				with open(dirpath + "/fixture_list.json") as f:
+				# pull data from fixture-list.json
+				with open(dirpath + "/fixture-list.json") as f:
 					d = json.load(f)
 
 					for gameweek, val in d.items():
@@ -77,6 +77,8 @@ for dirpath, dirnames, files in os.walk(database_dir):
 		database[manager_code]['total_score_array'] = overall_total_points_array
 		database[manager_code]['fixture_opponent_array'] = fixture_opponent_array
 
+
+#print(database)
 
 # second pass (calculate fixture results, league points)
 for manager_code in database:
@@ -160,9 +162,10 @@ for gameweek, value in temp_league_pos_dict.items():
 		database[manager_code]['league_position_array'].append(int(pos))
 
 
-print(database)
+#print(database)
 
 #save temp json of player info
 with open(database_path, 'w') as f:
 	json.dump(database, f, sort_keys=True, indent=4, separators=(',', ': '))
+	print(f"database saced to: {database_path}")
 

@@ -134,8 +134,8 @@ while input_verified == False:
 #If yes, delete files from season folder:
 
 files_to_delete = [
-	"./data/fixtures_compiler.py",
-	"./data/fixtures_scraper.py",
+	"./fixtures_compiler.py",
+	"./fixtures_scraper.py",
 	"./data/fixture_scrape.json"
 ]
 

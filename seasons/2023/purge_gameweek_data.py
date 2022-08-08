@@ -4,7 +4,7 @@ import os
 
 def purge():
 
-	database_dir = './data/'
+	database_dir = './data'
 
 	for dirpath, dirnames, files in os.walk(database_dir):
 		print(f'Found directory: {dirpath}')
@@ -13,11 +13,12 @@ def purge():
 
 			if file_name.startswith('GW'):
 
-				print('1', dirpath)
-				print('2', file_name)
-				print('3', dirpath + file_name)
+				#print('1', dirpath)
+				#print('2', file_name)
+				#print('3', dirpath + file_name)
 
-				f = dirpath + file_name
+				f = dirpath + "/" + file_name
+				print(f"Deleting: {f}")
 				os.remove(f)
 
 def execute():
