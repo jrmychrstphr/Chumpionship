@@ -4,7 +4,7 @@ import json
 
 #create empty dict to store data
 database = {}
-temp_league_pos_dict = {}
+third_pass_dict = {}
 
 # First pass (pulled from scraped data)
 database_dir = './data'
@@ -121,28 +121,29 @@ for manager_code in database:
 		database[manager_code]['league_points_array'].append(sum(fixture_points_array))
 		database[manager_code]['fixture_margin_array'] = fixture_margin_array
 
-		# push data to temp_league_pos_dict for calculating league position later
-		if gameweek not in temp_league_pos_dict:
-			temp_league_pos_dict[gameweek] = []
+		# push data to third_pass_dict for calculating league position later
+		if gameweek not in third_pass_dict:
+			third_pass_dict[gameweek] = []
 
 		temp_league_pos_obj = {
 			'manager_code': manager_code,
 			'league_points':d[manager_code]['league_points_array'][count],
-			'total_score': d[manager_code]['total_score_array'][count]
+			'total_score': d[manager_code]['total_score_array'][count],
+			'fixture_score': d[manager_code]['fixture_score_array'][count]
 		}
 
-		temp_league_pos_dict[gameweek].append(temp_league_pos_obj)
+		third_pass_dict[gameweek].append(temp_league_pos_obj)
 		#print(f'{gameweek}: {score} – {opponent_score}... {fixture_result}')
 
+#print(third_pass_dict)
 
 # third pass (calculate league position)
-for gameweek, value in temp_league_pos_dict.items():
+for gameweek, value in third_pass_dict.items():
 
 	d = sorted(value.copy(), key = lambda x: (x['league_points'], x['total_score']), reverse=True)
+	for idx, val in enumerate(d):
 
-	for idx, value in enumerate(d):
-
-		manager_code = value['manager_code']
+		manager_code = val['manager_code']
 
 		if idx > 0:
 			# if league points and total score  == the previous entry in the array,
@@ -161,11 +162,34 @@ for gameweek, value in temp_league_pos_dict.items():
 
 		database[manager_code]['league_position_array'].append(int(pos))
 
+	
+	d = sorted(value.copy(), key = lambda x: (x['fixture_score']), reverse=True)
+	for idx, val in enumerate(d):
 
-#print(database)
+		manager_code = val['manager_code']
+
+		if idx > 0:
+			# if fixture_score  == the previous entry in the array,
+			if d[idx]['fixture_score'] == d[idx-1]['fixture_score']:
+				# the position is the same as the previous entry
+				pos = pos
+			#else, the position is determined by the item's position in the sorted list
+			else:
+				pos = idx+1
+		#the league pos for the first item in the sorted list will always be 1
+		else:
+			pos = idx+1
+
+		if 'fixture_score_rank_array' not in database[manager_code]:
+			database[manager_code]['fixture_score_rank_array'] = []
+
+		database[manager_code]['fixture_score_rank_array'].append(int(pos))
+
+
+print(database)
 
 #save temp json of player info
 with open(database_path, 'w') as f:
 	json.dump(database, f, sort_keys=True, indent=4, separators=(',', ': '))
-	print(f"database saced to: {database_path}")
+	print(f"Saved to: {database_path}")
 
