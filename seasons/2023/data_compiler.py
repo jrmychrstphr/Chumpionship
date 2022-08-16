@@ -26,6 +26,13 @@ for dirpath, dirnames, files in os.walk(database_dir):
 		fixture_score_array = []
 		overall_total_points_array = []
 		fixture_opponent_array = []
+		chip_played_array = []
+
+		transfers_made_array = []
+		transfered_in_array = []
+		transfered_out_array = []
+
+		captains_array = []
 
 		for file_name in files:
 
@@ -61,12 +68,20 @@ for dirpath, dirnames, files in os.walk(database_dir):
 
 		for file_name in existing_gameweeks:
 
-				# pull data from file
+				# pull data from files
 				with open(dirpath + "/" + file_name) as f:
 					d = json.load(f)
 
 					fixture_score_array.append(d['fixture_score'])
 					overall_total_points_array.append(d['overall_total_points'])
+					chip_played_array.append(d['chip_played'])
+					transfers_made_array.append(d['transfers_made'])
+					transfered_in_array.append(d['transfered_in'])
+					transfered_out_array.append(d['transfered_out'])
+
+					for x in d['squad']:
+						if x['captain_status'].lower() == 'captain':
+							captains_array.append(f"{x['player_name']} ({x['player_position']}, {x['player_team']})")
 
 
 		database[manager_code] = {}
@@ -76,6 +91,13 @@ for dirpath, dirnames, files in os.walk(database_dir):
 		database[manager_code]['fixture_score_array'] = fixture_score_array
 		database[manager_code]['total_score_array'] = overall_total_points_array
 		database[manager_code]['fixture_opponent_array'] = fixture_opponent_array
+		database[manager_code]['chip_played_array'] = chip_played_array
+		
+		database[manager_code]['transfers_made_array'] = transfers_made_array
+		database[manager_code]['transfered_in_array'] = transfered_in_array
+		database[manager_code]['transfered_out_array'] = transfered_out_array
+		
+		database[manager_code]['captains_array'] = captains_array
 
 
 #print(database)
@@ -88,6 +110,7 @@ for manager_code in database:
 	# to write to database
 	database[manager_code]['fixture_result_array'] = []
 	database[manager_code]['league_points_array'] = []
+	database[manager_code]['total_league_points_array'] = []
 	database[manager_code]['fixture_margin_array'] = []
 
 	# temporary lists
@@ -106,19 +129,19 @@ for manager_code in database:
 		#calculate fixture result
 		if fixture_margin > 0:
 			database[manager_code]['fixture_result_array'].append('win')
-			fixture_points_array.append(3)
+			database[manager_code]['league_points_array'].append(3)
 		elif fixture_margin < 0:
 			database[manager_code]['fixture_result_array'].append('loss')
-			fixture_points_array.append(0)
+			database[manager_code]['league_points_array'].append(0)
 		elif fixture_margin == 0:
 			database[manager_code]['fixture_result_array'].append('draw')
-			fixture_points_array.append(1)
+			database[manager_code]['league_points_array'].append(1)
 		else:
 			fixture_result = 'error'
 			fixture_points_array.append('error')
 			print(f'Error calculating result: {d[manager_code]["manager_name"]}, {gameweek}')
 
-		database[manager_code]['league_points_array'].append(sum(fixture_points_array))
+		database[manager_code]['total_league_points_array'].append(sum(database[manager_code]['league_points_array']))
 		database[manager_code]['fixture_margin_array'] = fixture_margin_array
 
 		# push data to third_pass_dict for calculating league position later
@@ -127,7 +150,7 @@ for manager_code in database:
 
 		temp_league_pos_obj = {
 			'manager_code': manager_code,
-			'league_points':d[manager_code]['league_points_array'][count],
+			'league_points':d[manager_code]['total_league_points_array'][count],
 			'total_score': d[manager_code]['total_score_array'][count],
 			'fixture_score': d[manager_code]['fixture_score_array'][count]
 		}
@@ -186,7 +209,7 @@ for gameweek, value in third_pass_dict.items():
 		database[manager_code]['fixture_score_rank_array'].append(int(pos))
 
 
-print(database)
+#print(database)
 
 #save temp json of player info
 with open(database_path, 'w') as f:
