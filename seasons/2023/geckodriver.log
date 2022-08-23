@@ -182,3 +182,41 @@ JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch res
 JavaScript warning: https://pagead2.googlesyndication.com/bg/dJtiYfEJEI0hyw5wQ_g_8NlKRsHdja2JZeZ5T9NF0jg.js line 2 > eval line 7265 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
 1660642414922	Marionette	INFO	Stopped listening on port 53038
 JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+1661240359573	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/dj/r_d53pv97qn6cb7zp_63kxxh0000gn/T/rust_mozprofile.VBdTpyQZREKo"
+2022-08-23 08:39:20.592 plugin-container[10335:123392] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-08-23 08:39:20.593 plugin-container[10335:123392] nil host used in call to allowsAnyHTTPSCertificateForHost:
+2022-08-23 08:39:20.601 plugin-container[10335:123392] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-08-23 08:39:20.601 plugin-container[10335:123392] nil host used in call to allowsAnyHTTPSCertificateForHost:
+2022-08-23 08:39:20.601 plugin-container[10335:123395] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-08-23 08:39:20.601 plugin-container[10335:123395] nil host used in call to allowsAnyHTTPSCertificateForHost:
+1661240360620	Marionette	INFO	Marionette enabled
+1661240360658	Marionette	INFO	Listening on port 51906
+1661240360946	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/dj/r_d53pv97qn6cb7zp_63kxxh0000gn/T/rust_mozprofile.VBdTpyQZREKo/search.json.mozlz4", (void 0)))
+2022-08-23 07:39:25.619 plugin-container[10353:123882] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-08-23 07:39:25.619 plugin-container[10353:123882] nil host used in call to allowsAnyHTTPSCertificateForHost:
+2022-08-23 07:39:25.622 plugin-container[10353:123882] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-08-23 07:39:25.622 plugin-container[10353:123882] nil host used in call to allowsAnyHTTPSCertificateForHost:
+2022-08-23 07:39:25.622 plugin-container[10353:123883] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-08-23 07:39:25.622 plugin-container[10353:123883] nil host used in call to allowsAnyHTTPSCertificateForHost:
+JavaScript warning: https://pagead2.googlesyndication.com/bg/oORtDv9EbGDZJqtoCU6ZUa1h2CU5mRmZpTeRJMx0_5U.js line 2 > eval line 2527 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/oORtDv9EbGDZJqtoCU6ZUa1h2CU5mRmZpTeRJMx0_5U.js line 2 > eval line 2644 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/oORtDv9EbGDZJqtoCU6ZUa1h2CU5mRmZpTeRJMx0_5U.js line 2 > eval line 1810 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/oORtDv9EbGDZJqtoCU6ZUa1h2CU5mRmZpTeRJMx0_5U.js line 2 > eval line 4033 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/oORtDv9EbGDZJqtoCU6ZUa1h2CU5mRmZpTeRJMx0_5U.js line 2 > eval line 1378 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/oORtDv9EbGDZJqtoCU6ZUa1h2CU5mRmZpTeRJMx0_5U.js line 2 > eval line 1415 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/oORtDv9EbGDZJqtoCU6ZUa1h2CU5mRmZpTeRJMx0_5U.js line 2 > eval line 6216 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/oORtDv9EbGDZJqtoCU6ZUa1h2CU5mRmZpTeRJMx0_5U.js line 2 > eval line 2681 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/oORtDv9EbGDZJqtoCU6ZUa1h2CU5mRmZpTeRJMx0_5U.js line 2 > eval line 3 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/oORtDv9EbGDZJqtoCU6ZUa1h2CU5mRmZpTeRJMx0_5U.js line 2 > eval line 1515 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/oORtDv9EbGDZJqtoCU6ZUa1h2CU5mRmZpTeRJMx0_5U.js line 2 > eval line 5426 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/oORtDv9EbGDZJqtoCU6ZUa1h2CU5mRmZpTeRJMx0_5U.js line 2 > eval line 3142 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/oORtDv9EbGDZJqtoCU6ZUa1h2CU5mRmZpTeRJMx0_5U.js line 2 > eval line 6818 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/oORtDv9EbGDZJqtoCU6ZUa1h2CU5mRmZpTeRJMx0_5U.js line 2 > eval line 6966 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/oORtDv9EbGDZJqtoCU6ZUa1h2CU5mRmZpTeRJMx0_5U.js line 2 > eval line 1251 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/oORtDv9EbGDZJqtoCU6ZUa1h2CU5mRmZpTeRJMx0_5U.js line 2 > eval line 3905 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/oORtDv9EbGDZJqtoCU6ZUa1h2CU5mRmZpTeRJMx0_5U.js line 2 > eval line 4642 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/oORtDv9EbGDZJqtoCU6ZUa1h2CU5mRmZpTeRJMx0_5U.js line 2 > eval line 1485 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/oORtDv9EbGDZJqtoCU6ZUa1h2CU5mRmZpTeRJMx0_5U.js line 2 > eval line 1940 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/oORtDv9EbGDZJqtoCU6ZUa1h2CU5mRmZpTeRJMx0_5U.js line 2 > eval line 1180 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1661240447720	Marionette	INFO	Stopped listening on port 51906

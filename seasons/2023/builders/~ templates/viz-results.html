@@ -101,7 +101,18 @@
                                 "manager_code": v.home_team,
                                 "manager_name": data.database[v.home_team].manager_name,
                                 "team_name": data.database[v.home_team].team_name,
-                                "chip_played": null,
+                                "chip_played": (function(){
+                                    g = parseInt(gw.replace("GW",""))
+                                    if( data.database[v.home_team].chip_played_array.length >= g ) {
+                                        c = data.database[v.home_team].chip_played_array[g-1]
+                                        .toLowerCase().replace(" ", "-")
+                                        if (c != "none") {
+                                            return c
+                                        } else {
+                                            return null
+                                        }
+                                    }
+                                })(),
 
                                 "fixture_score": (function(){
                                     g = parseInt(gw.replace("GW",""))
@@ -135,7 +146,18 @@
                                 "manager_code": v.away_team,
                                 "manager_name": data.database[v.away_team].manager_name,
                                 "team_name": data.database[v.away_team].team_name,
-                                "chip_played": null,
+                                "chip_played": (function(){
+                                    g = parseInt(gw.replace("GW",""))
+                                    if( data.database[v.away_team].chip_played_array.length >= g ) {
+                                        c = data.database[v.away_team].chip_played_array[g-1]
+                                        .toLowerCase().replace(" ", "-")
+                                        if (c != "none") {
+                                            return c
+                                        } else {
+                                            return null
+                                        }
+                                    }
+                                })(),
                                 "fixture_score": (function(){
                                     g = parseInt(gw.replace("GW",""))
                                     if( data.database[v.away_team].fixture_score_array.length >= g ) {
@@ -237,11 +259,11 @@
 
 
                         if (d.home.chip_played != null) {
-                            alert("A chip was played")
+                            home_chip.classed(d.home.chip_played, true)
                         }
 
                         if (d.away.chip_played != null) {
-                            alert("A chip was played")
+                            away_chip.classed(d.away.chip_played, true)
                         }
 
 
