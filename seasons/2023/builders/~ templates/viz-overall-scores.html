@@ -2,114 +2,149 @@
 
 <html lang="en">
     <head>
-        <meta http-equiv="content-type" content="text/html; charset=utf-8">
-        <title>Chumpionship – Overall Scores</title>
-        
-        <link rel="stylesheet" type="text/css" href="shared/chumpionship-styles.css">   
-        
+
+        <title>Chumpionship - Results</title>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://d3js.org/d3.v5.min.js"></script>
 
-
-        <script src="shared/load_database.js"></script>
-        <script src="shared/common_functions.js"></script>
-        <script src="shared/database_queries.js"></script>
-        <script src="shared/content-builders-library.js"></script>
-        <script src="shared/chumpionship_colours.js"></script>
-        <script src="shared/svg.js"></script>
-        <script src="shared/dynamic_styles.js"></script>
-
-        <style>
-            
-            #controls {
-                margin: 1rem;
-                padding: 1rem;
-                border: 1px solid;
-                position: fixed;
-                top: 0;
-                right: 0;
-                width: 8rem;
-                font-size: 0.8rem;
-                font-family: "Helvetica Neue";
-                background: white;
-            }
-
-            #controls div.group {
-                margin-bottom: 1rem;
-            }
-
-            #controls div.label {
-                margin-bottom: 0.5rem;
-            }
-
-            #controls fieldset {
-                margin: 0px;
-                padding: 0px;
-                border: 0px;
-            }
-
-        </style>
+        <!-- to replace with python -->
+        **common-functions.js**
+        **chumpionship-styles.css**  
+        **chumpionship-colours.js**
+        **dynamic-styles.js**
 
         <script>
             
             
             $( function(){
 
+                const data = {
+                    "database": **database.json**,
+                    "fixture_list": **fixture-list.json**
+                }
+
+                //console.log(data)
+
                 styles.core()
 
-                //build title block
-                const title_container = d3.select("#title-block")
-                .append("div")
-                .classed("title-wrapper", true)
-                .append("div")
-                .classed("title-container", true)
+                // build controls
+                const controls = d3.select( 'body' )
+                .append( 'div' )
+                .attr("id", "controls")
+                .classed( 'controls-wrapper' , true )
+                .append( 'div' )
+                .classed( 'controls-container' , true )
 
-                const title = title_container.append("div")
-                .classed("text display large", true)
+                /* gameweek select */
 
-                const subtitle = title_container.append("div")
+                const gameweek_select_group = controls.append( 'div' ).classed( 'group' , true )
+                
+                gameweek_select_group.append( 'div' ).classed( 'label' , true ).text( 'Gameweek from: ' )
+
+                const gameweek_start_select = gameweek_select_group
+                .append( 'select' )
+                .attr("name", "gameweek_start_select")
+                .attr("id", "gameweek_start_select")
+
+                gameweek_select_group.append( 'div' ).classed( 'label' , true ).text( 'Gameweek to: ' )
+
+                const gameweek_end_select = gameweek_select_group
+                .append( 'select' )
+                .attr("name", "gameweek_end_select")
+                .attr("id", "gameweek_end_select")
+
+                let gw_array = [0]
+
+                // create a list of gameweeks
+                $.each( data.fixture_list, function(k, v) {    
+                    gw_array.push(parseInt(k.replace("GW","")))
+                })
+
+                //console.log(gw_array)
+
+                $.each( gw_array.sort(d3.ascending), function() {    
+                    gameweek_start_select.append( 'option' ).attr("value", this).text("GW"+parseInt(this.toString().replace("GW","")))
+                    gameweek_end_select.append( 'option' ).attr("value", this).text("GW"+parseInt(this.toString().replace("GW","")))
+                })
+
+                /* generate button */
+
+                const generate_button = controls.append( 'button' )
+                .attr("type", "button")
+                .text( ' Generate' )
+                .on("click", function() {
+                    //function
+                    //console.log("Button clicked!")
+                    
+                    var input_gw_from = $("#gameweek_start_select").val()
+                    var input_gw_to = $("#gameweek_end_select").val()
+
+                    if (input_gw_to >= input_gw_from) {
+                        //console.log(input_gw_from, input_gw_to)
+                        build_viz(input_gw_from, input_gw_to)
+                    }
+                    
+                })
+
+
+                function build_viz(gw_from, gw_to) {
+
+                    //console.log(data.database)
+
+                    if (!(gw_from)) { 
+                        gw_from = 0; 
+                    }
+
+                    if (!(gw_to)) { 
+                        gw_to = 1; 
+                    }
+
+                    $( '#title-block' ).empty()
+                    $( '#content-block' ).empty()
+
+                    //build title block
+                    var title_container = d3.select("#title-block")
+                    .append("div")
+                    .classed("title-wrapper", true)
+                    .append("div")
+                    .classed("title-container", true)
+
+                    var title = title_container.append("div")
+                    .classed("text display large", true)
+                    .text("Overall scores")
+
+                    var subtitle = title_container.append("div")
                     .classed("text display regular", true)
+                    .text("GW" + gw_to)
 
-                //create dataset
-                function create_dataset() {
+                    //build dataset
+                    dataset = []
+                    scores = []
 
-                    let d = [];
+                    $.each( data.database, function(k, v) {
 
-                    // for each player in the database
-                    $.each( database["player_data"], function(k, v) {
+                        temp_obj = {
+                            "manager_code": v.fpl_code,
+                            "manager_name": v.manager_name,
+                            "team_name": v.team_name,
+                            "total_score_array": (function(){
+                                x = Array.from(v.total_score_array)
+                                x.unshift(0) //add zero value to start of array
+                                return x
+                            })(),
+                        }
 
-                        let temp_obj = {}
-                        temp_obj["manager_code"] = k
-                        temp_obj["overall_score_array"] = v['season_performance']['fixture_score_running_total_array']
+                        dataset.push(temp_obj)
+                    } )
 
-                        d.push(temp_obj)
+                    //console.log(dataset)
 
-                    });
+                    dataset = dataset.slice().sort((a, b) => d3.ascending(a.total_score_array[gw_to], b.total_score_array[gw_to]) || d3.descending(a.manager_name, b.manager_name))
 
-                    return d;
+                    //console.log(dataset)
 
-                };
-
-                let dataset = create_dataset()
-
-                function draw_viz(gw_end, span) {
-
-                    if(!(gw_end)) { gw_end = 21; }
-                    if(!(span)) { gw_start = gw_end-1; } else { gw_start = gw_end-parseInt(span)}
-
-                    console.log(gw_start)
-                    console.log(gw_end)
-
-                    title.text("Overall scores")
-
-                    subtitle.text(function(d) {
-                        let msg = "GW" + gw_end
-                        return msg
-                    })
-
-                    $( "#content-block" ).empty()
-
-                    //generate viz
+                    
+                    //build viz
                     const viz_container = d3.select("#content-block")
                     .append("div")
                     .classed("viz-wrapper", true)
@@ -121,9 +156,9 @@
                         "height": 560,
                         "margin": {
                             "top": 0,
-                            "right": 30,
+                            "right": 0,
                             "bottom": 30,
-                            "left": 130
+                            "left": 150
                         }
                     }
 
@@ -132,32 +167,25 @@
                         .attr("width", viz_config.width)
                         .attr("viewBox","0 0 " + viz_config.width + " " + viz_config.height)
 
-
-                    dataset = dataset.slice().sort((a, b) => d3.ascending(a.overall_score_array[gw_end-1], b.overall_score_array[gw_end-1]) || d3.descending(db_return_manager_fullname(database, a.manager_code), db_return_manager_fullname(database, b.manager_code)))
-
-
+                    //generate viz
 
                     //set scales
                     let xDomain = function() {
 
                         let x = []
-
                         let scores = []
 
                         //collect all the scores in an array and define the min max of the dataset
                         $.each( dataset, function(idx, val) {
-                            if (gw_start > 0) {
-                                scores.push(val['overall_score_array'][gw_start-1])
-                            } else {
-                                scores.push(0)
-                            }
-
-                            scores.push(val['overall_score_array'][gw_end-1])
+                            scores.push(val.total_score_array[gw_from])
+                            scores.push(val.total_score_array[gw_to])
                         });
 
+                        //console.log(scores)
                         x = d3.extent(scores)
                         //console.log(scores)
 
+                        //console.log(x)
                         x[0] = Math.floor(x[0]/200)*200
                         x[1] = (Math.ceil(((x[1])/200)+0.5)*200)
                         //console.log(x)
@@ -169,14 +197,10 @@
                     let yDomain = function() {
 
                         let y = []
-
                         //push all scores of selected players to an array
                         $.each( dataset, function(idx,val) {
                             y.push(val["manager_code"])
                         })
-
-                        //y = y.slice().sort((a, b) => d3.descending(db_return_manager_fullname(database, a), db_return_manager_fullname(database, b)))
-
                         return y
 
                     } ();
@@ -191,19 +215,6 @@
                     .paddingOuter(0.5)
                     .paddingInner(0)
 
-                    console.log(xScale.range)
-
-
-/*
-                    //add background
-                    svg.append("rect")
-                    .attr("x", viz_config.margin.left)
-                    .attr("y", 0)
-                    .attr("height", viz_config.height-(viz_config.margin.bottom))
-                    .attr("width", viz_config.width-(viz_config.margin.left+viz_config.margin.right))
-                    .style("fill", "rgba(255,255,255,0.03)")
-
-*/                    
 
                     //build axes
                     let xAxisGenerator = d3.axisBottom(xScale)
@@ -235,9 +246,9 @@
                     .style("stroke-width", 1)
 
                     xAxis.select(".domain").remove()
-                    
-                    //add data
 
+
+                    //add data
                     const data_colours = d3.scaleLinear()
                                         .domain([1, 5, 10, 15, 20])
                                         .range([chump.colours.green, chump.colours.light_blue, chump.colours.blue, chump.colours.purple, chump.colours.pink])
@@ -248,14 +259,8 @@
 
                     $.each(dataset.reverse(), function(idx, val) {
 
-                        let score_prev, score_now;
-                        score_now = val.overall_score_array[gw_end-1]
-                        if (!(val.overall_score_array[gw_start-1])) {
-                            score_prev = 0
-                        } else {
-                            score_prev = val.overall_score_array[gw_start-1]
-                        }
-
+                        const prev_score = val.total_score_array[gw_from];
+                        const new_score = val.total_score_array[gw_to];
 
                         let colour = data_colours(idx+1)
 
@@ -264,19 +269,6 @@
                             'r_large': 7,
                             'stroke_width': 2
                         }
-
-                        /*
-
-                        data_group.append("line")
-                        .attr("x1", viz_config.margin.left)
-                        .attr("x2", viz_config.width - viz_config.margin.right)
-                        .attr("y1", yScale(val.manager_code))
-                        .attr("y2", yScale(val.manager_code))
-                        .style("stroke", chump.colours.midnight_blue)
-                        .style("stroke-width", circle_config.stroke_width)
-                        .style("fill", "none")
-
-                        */
 
                         //blue line first
                         data_group.append("line")
@@ -301,8 +293,8 @@
                         .style("fill", "none")
 
                         data_group.append("line")
-                        .attr("x1", xScale(score_prev))
-                        .attr("x2", xScale(score_now))
+                        .attr("x1", xScale(prev_score))
+                        .attr("x2", xScale(new_score))
                         .attr("y1", yScale(val.manager_code)+yScale.bandwidth()/2)
                         .attr("y2", yScale(val.manager_code)+yScale.bandwidth()/2)
                         //.style("stroke", viz_colours[idx])
@@ -312,7 +304,7 @@
 
                         //score prev
                         data_group.append("circle")
-                        .attr("cx", xScale(score_prev))
+                        .attr("cx", xScale(prev_score))
                         .attr("cy", yScale(val.manager_code)+yScale.bandwidth()/2)
                         .attr("r", circle_config.r_small)
                         .attr("stroke-width", circle_config.stroke_width)
@@ -326,11 +318,18 @@
                         .attr("dy", 5.5)
                         //.attr("dx", 15)
                         .style("fill", "white")
-                        .text(function(d) { return db_return_manager_fullname(database, val.manager_code) + "" })
+                        .text(val.manager_name)
 
                         data_group.append("line")
-                        .attr("x1", xScale(score_now)+(circle_config.r_large))
-                        .attr("x2", xScale(score_now)+(circle_config.r_large)+85)
+                        .attr("x1", xScale(new_score)+(circle_config.r_large))
+                        .attr("x2", function(d) {
+                                if (gw_from != 0) {
+                                    x = xScale(new_score)+(circle_config.r_large)+85
+                                } else {
+                                    x = xScale(new_score)+(circle_config.r_large)+30
+                                }
+                                return x
+                            })
                         .attr("y1", yScale(val.manager_code)+yScale.bandwidth()/2)
                         .attr("y2", yScale(val.manager_code)+yScale.bandwidth()/2)
                         .style("stroke", chump.colours.midnight_blue)
@@ -340,24 +339,29 @@
 
                         let label = data_group.append("text")
                         .classed("text small bold", true)
-                        .attr("x", xScale(score_now))
+                        .attr("x", xScale(new_score))
                         .attr("y", yScale(val.manager_code)+yScale.bandwidth()/2)
                         .attr("dy", 5.5)
                         .attr("dx", 12)
                         .style("fill", colour)
                         .text(function(d) { 
 
-                            let diff = score_now - score_prev
+                            if (gw_from != 0) {
+                                diff = new_score - prev_score
 
-                            if (diff > 0) { 
-                                diff = "+" + diff 
-                            } else if (diff < 0) { 
-                                diff = "-" + diff 
+                                if (diff > 0) { 
+                                    diff = "+" + diff 
+                                } else if (diff < 0) { 
+                                    diff = "-" + diff 
+                                } else {
+                                    diff = "nc"
+                                }
+
+                                msg = return_comma_formatted_number(new_score) + " (" + diff + ")"
+
                             } else {
-                                diff = "nc"
+                                msg = return_comma_formatted_number(new_score) 
                             }
-
-                            let msg = return_comma_formatted_number(score_now) + " (" + diff + ")"
 
                             return msg
 
@@ -365,84 +369,28 @@
 
                         //score now
                         data_group.append("circle")
-                        .attr("cx", xScale(score_now))
+                        .attr("cx", xScale(new_score))
                         .attr("cy", yScale(val.manager_code)+yScale.bandwidth()/2)
                         .attr("r", circle_config.r_large)
                         .attr("stroke-width", circle_config.stroke_width)
                         .style("stroke", colour)
                         .style("fill", colour)
 
-
-
-
                     })
 
-                    var footnote = d3.select("#content-block")
-                    .append("div")
-                    .classed("footnote text small", true)
-                    .text("Figures in brackets indicate points scored since GW"+gw_start)
-                    .style("margin-top", "2rem")
+
+                    
+                    if (gw_from != 0) {
+                        var footnote = d3.select("#content-block")
+                        .append("div")
+                        .classed("footnote text small", true)
+                        .text("Figures in brackets indicate points scored since GW"+gw_from)
+                        .style("margin-top", "2rem")
+                    }
+
+                    styles.add()
 
                 }
-
-
-                // build controls
-                const controls = d3.select( 'body' )
-                .append( 'div' )
-                .attr("id", "controls")
-                .classed( 'controls-wrapper' , true )
-                .append( 'div' )
-                .classed( 'controls-container' , true )
-
-                /* gameweek select */
-                const gameweek_select_group = controls.append( 'div' ).classed( 'group' , true )
-                gameweek_select_group.append( 'div' ).classed( 'label' , true ).text( 'Gameweek: ' )
-
-                const gameweek_select = gameweek_select_group
-                .append( 'select' )
-                .attr("name", "gameweek_select")
-                .attr("id", "gameweek_select")
-
-                /* span select */
-                const span_select_group = controls.append( 'div' ).classed( 'group' , true )
-                span_select_group.append( 'div' ).classed( 'label' , true ).text( 'Span: ' )
-
-                const span_select = span_select_group
-                .append( 'input' )
-                .attr("type", "number")
-                .attr("name", "span_select")
-                .attr("id", "span_select")
-                .attr("min", "1")
-                .attr("max", "10")
-                .attr("value", "1")
-
-                let gw_array = []
-
-                // create a list of gameweeks
-                $.each( database[ 'fixture_list' ], function(k, v) {    
-                    gw_array.push(k)
-                })
-
-                $.each( gw_array.sort(d3.ascending), function() {    
-                    gameweek_select.append( 'option' ).attr("value", parseInt(this)).text(this)
-                })
-
-                
-
-                const btn = controls.append( "button" )
-                .attr("type", "button")
-                .text( " Generate" )
-                .on("click", function() {
-
-                    var input_gw = $("#gameweek_select").val() // grab type input from select
-                    var input_span = $("#span_select").val() // grab type input from select
-
-                    draw_viz(input_gw, input_span)
-
-                })
-
-                styles.add()
-
             });
 
             
@@ -454,6 +402,7 @@
     <body> 
         <main>
             <section>
+                <div id="logo"></div>
                 <div class="wrapper">
                     <div class="container">
                         <div id="title-block"></div>

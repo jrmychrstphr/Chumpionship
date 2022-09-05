@@ -9,6 +9,30 @@
   <script src="https://d3js.org/d3.v5.min.js">
   </script>
   <!-- to replace with python -->
+  <script>
+   function return_gameweek_string(gameweek) {
+        g = (("0" + parseInt(gameweek)).slice(-2) ).toString();
+        return g
+    }
+
+    function return_ordinal(num) {
+        var j = num % 10, k = num % 100;
+        if (j == 1 && k != 11) { return num + "st"; }
+        if (j == 2 && k != 12) { return num + "nd"; }
+        if (j == 3 && k != 13) { return num + "rd"; }
+        return num + "th";
+    }
+
+    function return_comma_formatted_number(num) {
+        return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+
+    function return_replace_diacritics(s) {
+
+        s = s.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+        return s;
+    }
+  </script>
   <style type="text/css">
    div.viz-wrapper svg {
 		overflow: visible;
@@ -5635,7 +5659,7 @@
 }
                 }
 
-                console.log(data)
+                //console.log(data)
 
                 styles.core()
 
@@ -5650,6 +5674,7 @@
                 /* gameweek select */
 
                 const gameweek_select_group = controls.append( 'div' ).classed( 'group' , true )
+                
                 gameweek_select_group.append( 'div' ).classed( 'label' , true ).text( 'Gameweek: ' )
 
                 const gameweek_select = gameweek_select_group
@@ -5657,15 +5682,18 @@
                 .attr("name", "gameweek_select")
                 .attr("id", "gameweek_select")
 
+
                 let gw_array = []
 
                 // create a list of gameweeks
                 $.each( data.fixture_list, function(k, v) {    
-                    gw_array.push(k)
+                    gw_array.push(parseInt(k.replace("GW","")))
                 })
 
+                //console.log(gw_array)
+
                 $.each( gw_array.sort(d3.ascending), function() {    
-                    gameweek_select.append( 'option' ).attr("value", this).text("GW"+parseInt(this.replace("GW","")))
+                    gameweek_select.append( 'option' ).attr("value", this).text("GW"+parseInt(this.toString().replace("GW","")))
                 })
 
                 /* generate button */
@@ -5678,12 +5706,18 @@
                     //console.log("Button clicked!")
                     
                     var input_gw = $("#gameweek_select").val()
-                    build_results(input_gw)
+                    build_viz(input_gw)
                     
-                    //console.log(input_gw)
                 })
 
-                function build_results(gw) {
+
+                function build_viz(gw) {
+
+                    //console.log(data.database)
+
+                    if (!(gw)) { 
+                        gw_to = 1; 
+                    }
 
                     $( '#title-block' ).empty()
                     $( '#content-block' ).empty()
@@ -5697,196 +5731,336 @@
 
                     var title = title_container.append("div")
                     .classed("text display large", true)
-                    .text("Results")
+                    .text("Single scores")
 
                     var subtitle = title_container.append("div")
                     .classed("text display regular", true)
-                    .text("GW" + parseInt(gw.replace("GW","")))
+                    .text("GW" + gw)
 
                     //build dataset
                     dataset = []
                     scores = []
 
-                    $.each( data.fixture_list[gw], function(k, v) {
+                    $.each( data.database, function(k, v) {
 
                         temp_obj = {
-                            "home": {
-                                "manager_code": v.home_team,
-                                "manager_name": data.database[v.home_team].manager_name,
-                                "team_name": data.database[v.home_team].team_name,
-                                "chip_played": (function(){
-                                    g = parseInt(gw.replace("GW",""))
-                                    if( data.database[v.home_team].chip_played_array.length >= g ) {
-                                        c = data.database[v.home_team].chip_played_array[g-1]
-                                        .toLowerCase().replace(" ", "-")
-                                        if (c != "none") {
-                                            return c
-                                        } else {
-                                            return null
+                            "manager_code": v.fpl_code,
+                            "manager_name": v.manager_name,
+                            "team_name": v.team_name,
+                            "fixture_score_array": Array.from(v.fixture_score_array).slice(0,gw),
+                            
+                            "top_score": {
+                                "score": (function() {
+                                return d3.max(v.fixture_score_array.slice(0,gw))
+                                })(),
+                                "instances": (function(){
+                                    x = []
+                                    $.each(v.fixture_score_array.slice(0,gw), function (idx, val){
+                                        if (val == d3.max(v.fixture_score_array.slice(0,gw))) {
+                                            x.push("GW"+(idx+1))
                                         }
-                                    }
-                                })(),
-
-                                "fixture_score": (function(){
-                                    g = parseInt(gw.replace("GW",""))
-                                    if( data.database[v.home_team].fixture_score_array.length >= g ) {
-                                        s = data.database[v.home_team].fixture_score_array[g-1]
-                                        //scores.push(s)
-                                        return s
-                                    } else {
-                                        return null
-                                    }
-                                })(),
-                                "fixture_score_rank": (function(){
-                                    g = parseInt(gw.replace("GW",""))
-                                    if( data.database[v.home_team].fixture_score_array.length >= g ) {
-                                        s = data.database[v.home_team].fixture_score_rank_array[g-1]
-                                        return s
-                                    } else {
-                                        return null
-                                    }
-                                })(),
-                                "fixture_result": (function(){
-                                    g = parseInt(gw.replace("GW",""))
-                                    if( data.database[v.home_team].fixture_result_array.length >= g ) {
-                                        return data.database[v.home_team].fixture_result_array[g-1]
-                                    } else {
-                                        return null
-                                    }
+                                    })
+                                    return x
                                 })()
                             },
-                            "away": {
-                                "manager_code": v.away_team,
-                                "manager_name": data.database[v.away_team].manager_name,
-                                "team_name": data.database[v.away_team].team_name,
-                                "chip_played": (function(){
-                                    g = parseInt(gw.replace("GW",""))
-                                    if( data.database[v.away_team].chip_played_array.length >= g ) {
-                                        c = data.database[v.away_team].chip_played_array[g-1]
-                                        .toLowerCase().replace(" ", "-")
-                                        if (c != "none") {
-                                            return c
-                                        } else {
-                                            return null
-                                        }
-                                    }
-                                })(),
-                                "fixture_score": (function(){
-                                    g = parseInt(gw.replace("GW",""))
-                                    if( data.database[v.away_team].fixture_score_array.length >= g ) {
-                                        s = data.database[v.away_team].fixture_score_array[g-1]
-                                        //scores.push(s)
-                                        return s
-                                    } else {
-                                        return null
-                                    }
-                                })(),
-                                "fixture_score_rank": (function(){
-                                    g = parseInt(gw.replace("GW",""))
-                                    if( data.database[v.away_team].fixture_score_array.length >= g ) {
-                                        s = data.database[v.away_team].fixture_score_rank_array[g-1]
-                                        return s
-                                    } else {
-                                        return null
-                                    }
-                                })(),
-                                "fixture_result": (function(){
-                                    g = parseInt(gw.replace("GW",""))
-                                    if( data.database[v.away_team].fixture_result_array.length >= g ) {
-                                        return data.database[v.away_team].fixture_result_array[g-1]
-                                    } else {
-                                        return null
-                                    }
-                                })()
-                            }
+
                         }
+
                         dataset.push(temp_obj)
                     } )
 
                     console.log(dataset)
 
-                    dataset = dataset.slice().sort((a, b) => d3.ascending(a.home.team_name, b.home.team_name))
+                    dataset = dataset.slice().sort((a, b) => d3.descending(a.manager_name, b.manager_name))
 
+                    console.log(dataset)
 
-                    //build content
-                    var viz_container = d3.select("#content-block")
+                    
+                    //build viz
+                    const viz_container = d3.select("#content-block")
                     .append("div")
-                    .classed("result-list-wrapper", true)
+                    .classed("viz-wrapper", true)
                     .append("div")
-                    .classed("result-list-container", true)
+                    .classed("viz-container", true)
 
-                    var fixtures = viz_container.selectAll("div.result-wrapper")
-                    .data(dataset).enter()
-                    .append("div")
-                    .classed("result-wrapper", true)
-                    .append("div")
-                    .classed("result-container text display regular", true)
-                    .each( function(d, i){
+                    const viz_config = {
+                        "width": viz_container.node().getBoundingClientRect().width,
+                        "height": 560,
+                        "margin": {
+                            "top": 0,
+                            "right": 0,
+                            "bottom": 30,
+                            "left": 150
+                        },
+                        "xAxis_increments": 25
+                    }
 
-                        let result_row = d3.select(this)
-                        .append("div")
-                        .classed("result-row", true)
+                    const svg = viz_container.append("svg")
+                        .attr("height", viz_config.height)
+                        .attr("width", viz_config.width)
+                        .attr("viewBox","0 0 " + viz_config.width + " " + viz_config.height)
 
-                        let home_chip = result_row.append("div")
-                        .classed("chip-indicator", true)
-                        .classed("home", true)
+                    //generate viz
 
-                        result_row.append("div")
-                        .classed("indicator result-color", true)
-                        .classed(d.home.fixture_result, true)
+                    //set scales
+                    let xDomain = function() {
 
-                        let home_team = result_row.append("div")
-                        .classed("home team", true)
-                        .text(d.home.team_name)
+                        let x = []
+                        let scores = []
 
-                        let home_score = result_row.append("div")
-                        .classed("home score result-color", true)
-                        .classed(d.home.fixture_result, true)
+                        //collect all the scores in an array and define the min max of the dataset
+                        $.each( dataset, function(idx, val) {
+                            $.each( val.fixture_score_array, function(i, v) {
+                                scores.push(v)
+                            })
+                        });
 
-                        let away_score = result_row.append("div")
-                        .classed("away score result-color", true)
-                        .classed(d.away.fixture_result, true)
+                        //console.log(scores)
+                        x = d3.extent(scores)
+                        //console.log(scores)
 
-                        let away_team = result_row.append("div")
-                        .classed("away team", true)
-                        .text(d.away.team_name)
+                        let xAi = viz_config.xAxis_increments
 
-                        result_row.append("div")
-                        .classed("indicator result-color", true)
-                        .classed(d.away.fixture_result, true)
+                        x[0] = Math.floor(x[0]/xAi)*xAi
+                        x[1] = Math.ceil(((x[1])/xAi))*xAi
+                        //console.log(x)
 
-                        let away_chip = result_row.append("div")
-                        .classed("chip-indicator", true)
-                        .classed("away", true)
+                        return x
 
-                        home_score.text(d.home.fixture_score)
-                        .append("span")
-                        .classed("rank text small", true)
-                        .text("("+d.home.fixture_score_rank+")")
+                    } ();
+
+                    let yDomain = function() {
+
+                        let y = []
+                        //push all scores of selected players to an array
+                        $.each( dataset, function(idx,val) {
+                            y.push(val["manager_code"])
+                        })
+                        return y
+
+                    } ();
+
+                    xScale = d3.scaleLinear()
+                    .domain(xDomain)
+                    .range([viz_config.margin.left, viz_config.width-viz_config.margin.right])
+
+                    yScale = d3.scaleBand()
+                    .domain(yDomain)
+                    .range([viz_config.height-viz_config.margin.bottom, viz_config.margin.top])
+                    .paddingOuter(0.5)
+                    .paddingInner(0)
 
 
-                        away_score.text(d.away.fixture_score)
-                        .append("span")
-                        .classed("rank text small", true)
-                        .text("("+d.away.fixture_score_rank+")")
+                    //build axes
+                    let xAxisGenerator = d3.axisBottom(xScale)
+                    .tickFormat(function(d) {
+                        if (d%viz_config.xAxis_increments==0 || d3.extent(xDomain).includes(d)) {
+                            return return_comma_formatted_number(d) + "pts"
+                        }
+                    })
+                    .tickValues(function() {
+                        a = [];
+                        for (i = xDomain[0]; i <= xDomain[1]; i++) {
+                            if (i%viz_config.xAxis_increments==0) { a.push(i); }
+                        };
+                        return a;
+                    }())
+                    .tickSizeInner(-(viz_config.height - viz_config.margin.bottom))
 
+                    let = xAxis = svg.append("g")
+                    .attr("transform", "translate(0," + (viz_config.height - viz_config.margin.bottom) + ")")
+                    .call(xAxisGenerator)
 
-                        if (d.home.chip_played != null) {
-                            home_chip.classed(d.home.chip_played, true)
+                    xAxis.selectAll(".tick text")
+                    .attr("x", 0)
+                    .attr("dy", 15)
+                    .classed("text small colour-white", true)
+
+                    xAxis.selectAll("line")
+                    .style("stroke", "rgba(255,255,255,0.35)")
+                    .style("stroke-width", 1)
+
+                    xAxis.select(".domain").remove()
+
+                    //create colour scale
+                    function define_colour_scale() {
+
+                        let colours_array = [chump.colours.green, chump.colours.light_blue, chump.colours.blue, chump.colours.purple, chump.colours.pink]
+
+                        let scores = []
+
+                        //collect all the scores in an array and define the min max of the dataset
+                        $.each( dataset, function(idx, val) {
+                            $.each( val.fixture_score_array, function(i, v) {
+                                scores.push(v)
+                            })
+                        });
+
+                        function define_domain() {
+                            //console.log(xDomain)
+                            let a = d3.min(scores)
+                            let b = d3.max(scores)
+                            let c = colours_array.length
+                            let x = []
+
+                            for ( i = a; i <= b; i = i+((b-a)/c) ){
+                                x.push(i)
+                            }
+
+                            return x
                         }
 
-                        if (d.away.chip_played != null) {
-                            away_chip.classed(d.away.chip_played, true)
+                        let color_scale = d3.scaleLinear()
+                                            .domain(define_domain())
+                                            .range(colours_array.reverse())
+                                            .interpolate(d3.interpolateRgb)
+
+                        return color_scale
+
+                    }
+
+                    const data_colours = define_colour_scale()
+                    const data_group = svg.append("g").classed("data-goup", true)
+
+
+                    //define top score
+                    function define_top_score() {
+
+                        let scores = []
+
+                        //collect all the scores in an array
+                        $.each( dataset, function(idx, val) {
+                            scores  = scores.concat(val.fixture_score_array)
+                        });
+
+                        //define the min max of the array
+                        max = d3.max(scores)
+
+                        return max
+                    }
+
+                    const max_score = define_top_score()
+
+
+                    //vizualise data
+                    // for each player...
+                    $.each(dataset, function(idx, val) {    
+
+                        //blue line first
+                        data_group.append("line")
+                        .attr("x1", xScale(xDomain[0]))
+                        .attr("x2", xScale(xDomain[1]))
+                        .attr("y1", yScale(val.manager_code)+yScale.bandwidth()/2)
+                        .attr("y2", yScale(val.manager_code)+yScale.bandwidth()/2)
+                        .style("stroke", chump.colours.midnight_blue)
+                        .style("stroke-width", 1)
+                        .style("stroke-dasharray", "2,6")
+                        .style("fill", "none")
+
+                        //white line second
+                        data_group.append("line")
+                        .attr("x1", xScale(xDomain[0]))
+                        .attr("x2", xScale(xDomain[1]))
+                        .attr("y1", yScale(val.manager_code)+yScale.bandwidth()/2)
+                        .attr("y2", yScale(val.manager_code)+yScale.bandwidth()/2)
+                        .style("stroke", "rgba(255,255,255,0.35)")
+                        .style("stroke-width", 1)
+                        .style("stroke-dasharray", "1,5")
+                        .style("fill", "none")
+
+                        let circle_config = {
+                            'r_small': 3,
+                            's_small': 1.5,
+                            'r_large': 7,
+                            's_large': 1.5,
                         }
 
+                        // ... draw a circle showing each fixture score
+                        $.each(val.fixture_score_array.sort(d3.ascending), function(i,v) {
+
+                            if (v===max_score) {
+
+                                data_group.append("text")
+                                .classed("text small bold", true)
+                                .attr("x", xScale(v))
+                                .attr("y", yScale(val.manager_code)+yScale.bandwidth()/2)
+                                .attr("dy", 5)
+                                .attr("text-anchor", "middle")
+                                .style("fill", chump.colours.midnight_blue)
+                                //.text("&#9733")
+
+                                data_group.append("line")
+                                .attr("x1", xScale(v)+(circle_config.r_large))
+                                .attr("x2", xScale(v)+(circle_config.r_large)+90)
+                                .attr("y1", yScale(val.manager_code)+yScale.bandwidth()/2)
+                                .attr("y2", yScale(val.manager_code)+yScale.bandwidth()/2)
+                                .style("stroke", chump.colours.midnight_blue)
+                                .style("stroke-width", 20)
+                                //.style("stroke-dasharray", "5,5")
+                                .style("fill", "none")
+
+                                data_group.append("text")
+                                .classed("text tiny ", true)
+                                .attr("x", xScale(v))
+                                .attr("y", yScale(val.manager_code)+yScale.bandwidth()/2)
+                                .attr("dy", 4)
+                                .attr("dx", 17)
+                                .attr("text-anchor", "left")
+                                .style("fill", "white")
+                                .text(function(d){
+                                    let msg = val.top_score.score + "pts (" + val.top_score.instances.join(", ") + ")"
+                                    return msg
+                                })
+
+                            }
+
+                            data_group.append("circle")
+                            .attr("cx", xScale(v))
+                            .attr("cy", yScale(val.manager_code)+yScale.bandwidth()/2)
+                            .attr("r", function(d){
+                                let x
+                                if (v == max_score) {
+                                    x = circle_config.r_large
+                                } else {
+                                    x = circle_config.r_small
+                                }
+                                return x
+                            })
+                            .attr("stroke-width", function(d){
+                                let x
+                                if (v == max_score) {
+                                    x = circle_config.s_large
+                                } else {
+                                    x = circle_config.s_small
+                                }
+                                return x
+                            })
+                            .style("stroke", data_colours(v))
+                            .style("fill", function(d){
+                                let x
+                                if (v == max_score) {
+                                    x = data_colours(v)
+                                } else {
+                                    x = chump.colours.midnight_blue
+                                }
+                                return x
+                            })
+                            .attr("title", v)
+
+                        })
+
+
+                        let name = data_group.append("text")
+                        .classed("text small", true)
+                        .attr("x", 0)
+                        .attr("y", yScale(val.manager_code)+yScale.bandwidth()/2)
+                        .attr("dy", 5.5)
+                        //.attr("dx", 15)
+                        .style("fill", "white")
+                        .text(val.manager_name)
 
 
                     })
-
-                    var footnote = d3.select("#content-block")
-                    .append("div")
-                    .classed("footnote text small", true)
-                    .text("Figures in brackets indicate fixture score rank in GW"+parseInt(gw.replace("GW","")))
 
                     styles.add()
 

@@ -23,7 +23,7 @@ def return_gameweeks(n):
 	print(f"gameweeks = {g}")
 	return g
 
-gameweeks = return_gameweeks("4")
+gameweeks = return_gameweeks("5")
 
 # compile dataset
 
@@ -121,7 +121,7 @@ notifications.append(f"Highest fixture score: {'{:,}'.format(m)}pts")
 for x in d:
 	for idx, val in enumerate(x['range_fixture_scores']):
 		if val == m:
-			notifications.append(f">> {x['manager_name']} ({x['team_name']}), {'GW' + gameweeks[0]+idx if len(gameweeks) > 1 else ''}vs {teams[x['opponents'][gameweeks[0]+idx-1]]['team_name']}")
+			notifications.append(f">> {x['manager_name']} ({x['team_name']}), {'GW' + str(gameweeks[0]+idx) + ' ' if len(gameweeks) > 1 else ''}vs {teams[x['opponents'][gameweeks[0]+idx-1]]['team_name']}")
 notifications.append(f"")
 
 
@@ -131,7 +131,7 @@ notifications.append(f"Lowest fixture score: {'{:,}'.format(m)}pts")
 for x in d:
 	for idx, val in enumerate(x['range_fixture_scores']):
 		if val == m:
-			notifications.append(f">> {x['manager_name']} ({x['team_name']}), {'GW' + gameweeks[0]+idx if len(gameweeks) > 1 else ''}vs {teams[x['opponents'][gameweeks[0]+idx-1]]['team_name']}")
+			notifications.append(f">> {x['manager_name']} ({x['team_name']}), {'GW' + str(gameweeks[0]+idx) + ' ' if len(gameweeks) > 1 else ''}vs {teams[x['opponents'][gameweeks[0]+idx-1]]['team_name']}")
 notifications.append(f"")
 
 
@@ -142,7 +142,7 @@ notifications.append(f"Largest margin of victory: {'{:,}'.format(m)}pts")
 for x in d:
 	for idx, val in enumerate(x['range_fixture_margins']):
 		if val == m:
-			notifications.append(f">> {x['manager_name']} ({x['team_name']}), {'GW' + gameweeks[0]+idx if len(gameweeks) > 1 else ''}vs {teams[x['opponents'][gameweeks[0]+idx-1]]['team_name']}")
+			notifications.append(f">> {x['manager_name']} ({x['team_name']}), {'GW' + str(gameweeks[0]+idx) if len(gameweeks) > 1 else ''}vs {teams[x['opponents'][gameweeks[0]+idx-1]]['team_name']}")
 notifications.append(f"")
 
 
@@ -252,7 +252,7 @@ if len(l) != 0:
 			for y in d:
 				if str(x[0]) in (y["range_captains"]):
 					for idx, val in enumerate(y["range_captains"]):
-						notifications.append(f"   – {y['manager_name']} ({y['team_name']}){', GW' + gameweeks[0]+idx if len(gameweeks) > 1 else ''}")
+						notifications.append(f"   – {y['manager_name']} ({y['team_name']}){', GW' + str(gameweeks[0]+idx) if len(gameweeks) > 1 else ''}")
 notifications.append(f"")
 
 
