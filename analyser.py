@@ -23,7 +23,7 @@ def return_gameweeks(n):
 	print(f"gameweeks = {g}")
 	return g
 
-gameweeks = return_gameweeks("8")
+gameweeks = return_gameweeks("9")
 
 # compile dataset
 
@@ -276,7 +276,7 @@ if gameweeks[0] > 4:
 	for x in d:
 		for idx, val in enumerate(x['range_fixture_scores']):
 			if val == x['season_highest_fixture_score']:
-				l.append(f">> {'{:,}'.format(val)}pts {x['manager_name']} ({x['team_name']}), GW{gameweeks[0]+idx} vs {teams[x['opponents'][idx]]['team_name']}")
+				l.append(f">> {'{:,}'.format(val)}pts {x['manager_name']} ({x['team_name']}), GW{gameweeks[0]+idx} vs {teams[x['opponents'][gameweeks[0]+idx-1]]['team_name']}")
 	notifications.append(f"Personal best scores set: {len(l)}")
 	if len(l) != 0:
 		for x in sorted(l, reverse=True):
@@ -290,7 +290,7 @@ if gameweeks[0] > 4:
 	for x in d:
 		for idx, val in enumerate(x['range_fixture_scores']):
 			if val == x['season_lowest_fixture_score']:
-				l.append(f">> {'{:,}'.format(val)}pts {x['manager_name']} ({x['team_name']}), GW{gameweeks[0]+idx} vs {teams[x['opponents'][idx]]['team_name']}")
+				l.append(f">> {'{:,}'.format(val)}pts {x['manager_name']} ({x['team_name']}), GW{gameweeks[0]+idx} vs {teams[x['opponents'][gameweeks[0]+idx-1]]['team_name']}")
 	notifications.append(f"Personal worst scores set: {len(l)}")
 	if len(l) != 0:
 		for x in sorted(l, reverse=False):
