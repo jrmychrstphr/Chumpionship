@@ -76,8 +76,8 @@
                     //function
                     //console.log("Button clicked!")
                     
-                    var input_gw_from = $("#gameweek_start_select").val()
-                    var input_gw_to = $("#gameweek_end_select").val()
+                    var input_gw_from = parseInt($("#gameweek_start_select").val())
+                    var input_gw_to = parseInt($("#gameweek_end_select").val())
 
                     if (input_gw_to >= input_gw_from) {
                         //console.log(input_gw_from, input_gw_to)
