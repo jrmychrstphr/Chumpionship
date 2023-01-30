@@ -1,0 +1,470 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"> 
+
+<html lang="en">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <title>Chumpionship – Overall Scores</title>
+        
+        <link rel="stylesheet" type="text/css" href="chumpionship-styles.css">   
+        
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://d3js.org/d3.v5.min.js"></script>
+
+        <script src="load_database.js"></script>
+
+        <script src="common_functions.js"></script>
+
+        <script src="database_queries.js"></script>
+        <script src="content-builders-library.js"></script>
+
+        <script src="chumpionship_colours.js"></script>
+        <script src="svg.js"></script>
+        <script src="dynamic_styles.js"></script>
+
+        <style>
+            
+            #controls {
+                margin: 1rem;
+                padding: 1rem;
+                border: 1px solid;
+                position: fixed;
+                top: 0;
+                right: 0;
+                width: 8rem;
+                font-size: 0.8rem;
+                font-family: "Helvetica Neue";
+                background: white;
+            }
+
+            #controls div.group {
+                margin-bottom: 1rem;
+            }
+
+            #controls div.label {
+                margin-bottom: 0.5rem;
+            }
+
+            #controls fieldset {
+                margin: 0px;
+                padding: 0px;
+                border: 0px;
+            }
+
+        </style>
+
+        <script>
+            
+            
+            $( function(){
+
+                styles.core()
+
+                //build title block
+                const title_container = d3.select("#title-block")
+                .append("div")
+                .classed("title-wrapper", true)
+                .append("div")
+                .classed("title-container", true)
+
+                const title = title_container.append("div")
+                .classed("text display large", true)
+
+                const subtitle = title_container.append("div")
+                    .classed("text display regular", true)
+
+                //create dataset
+                function create_dataset() {
+
+                    let d = [];
+
+                    // for each player in the database
+                    $.each( database["player_data"], function(k, v) {
+
+                        let temp_obj = {}
+                        temp_obj["manager_code"] = k
+                        temp_obj["overall_score_array"] = v['season_performance']['fixture_score_running_total_array']
+
+                        d.push(temp_obj)
+
+                    });
+
+                    return d;
+
+                };
+
+                let dataset = create_dataset()
+
+                function draw_viz(gw_end, span) {
+
+                    if(!(gw_end)) { gw_end = 21; }
+                    if(!(span)) { gw_start = gw_end-1; } else { gw_start = gw_end-parseInt(span)}
+
+                    console.log(gw_start)
+                    console.log(gw_end)
+
+                    title.text("Overall scores")
+
+                    subtitle.text(function(d) {
+                        let msg = "GW" + gw_end
+                        return msg
+                    })
+
+                    $( "#content-block" ).empty()
+
+                    //generate viz
+                    const viz_container = d3.select("#content-block")
+                    .append("div")
+                    .classed("viz-wrapper", true)
+                    .append("div")
+                    .classed("viz-container", true)
+
+                    const viz_config = {
+                        "width": viz_container.node().getBoundingClientRect().width,
+                        "height": 560,
+                        "margin": {
+                            "top": 0,
+                            "right": 30,
+                            "bottom": 30,
+                            "left": 130
+                        }
+                    }
+
+                    const svg = viz_container.append("svg")
+                        .attr("height", viz_config.height)
+                        .attr("width", viz_config.width)
+                        .attr("viewBox","0 0 " + viz_config.width + " " + viz_config.height)
+
+
+                    dataset = dataset.slice().sort((a, b) => d3.ascending(a.overall_score_array[gw_end-1], b.overall_score_array[gw_end-1]) || d3.descending(db_return_manager_fullname(database, a.manager_code), db_return_manager_fullname(database, b.manager_code)))
+
+
+
+                    //set scales
+                    let xDomain = function() {
+
+                        let x = []
+
+                        let scores = []
+
+                        //collect all the scores in an array and define the min max of the dataset
+                        $.each( dataset, function(idx, val) {
+                            if (gw_start > 0) {
+                                scores.push(val['overall_score_array'][gw_start-1])
+                            } else {
+                                scores.push(0)
+                            }
+
+                            scores.push(val['overall_score_array'][gw_end-1])
+                        });
+
+                        x = d3.extent(scores)
+                        //console.log(scores)
+
+                        x[0] = Math.floor(x[0]/200)*200
+                        x[1] = (Math.ceil(((x[1])/200)+0.5)*200)
+                        //console.log(x)
+
+                        return x
+
+                    } ();
+
+                    let yDomain = function() {
+
+                        let y = []
+
+                        //push all scores of selected players to an array
+                        $.each( dataset, function(idx,val) {
+                            y.push(val["manager_code"])
+                        })
+
+                        //y = y.slice().sort((a, b) => d3.descending(db_return_manager_fullname(database, a), db_return_manager_fullname(database, b)))
+
+                        return y
+
+                    } ();
+
+                    xScale = d3.scaleLinear()
+                    .domain(xDomain)
+                    .range([viz_config.margin.left, viz_config.width-viz_config.margin.right])
+
+                    yScale = d3.scaleBand()
+                    .domain(yDomain)
+                    .range([viz_config.height-viz_config.margin.bottom, viz_config.margin.top])
+                    .paddingOuter(0.5)
+                    .paddingInner(0)
+
+                    console.log(xScale.range)
+
+
+/*
+                    //add background
+                    svg.append("rect")
+                    .attr("x", viz_config.margin.left)
+                    .attr("y", 0)
+                    .attr("height", viz_config.height-(viz_config.margin.bottom))
+                    .attr("width", viz_config.width-(viz_config.margin.left+viz_config.margin.right))
+                    .style("fill", "rgba(255,255,255,0.03)")
+
+*/                    
+
+                    //build axes
+                    let xAxisGenerator = d3.axisBottom(xScale)
+                    .tickFormat(function(d) {
+                        if (d%200==0 || d3.extent(xDomain).includes(d)) {
+                            return return_comma_formatted_number(d) + "pts"
+                        }
+                    })
+                    .tickValues(function() {
+                        a = [];
+                        for (i = xDomain[0]; i <= xDomain[1]; i++) {
+                            if (i%200==0) { a.push(i); }
+                        };
+                        return a;
+                    }())
+                    .tickSizeInner(-(viz_config.height - viz_config.margin.bottom))
+
+                    let = xAxis = svg.append("g")
+                    .attr("transform", "translate(0," + (viz_config.height - viz_config.margin.bottom) + ")")
+                    .call(xAxisGenerator)
+
+                    xAxis.selectAll(".tick text")
+                    .attr("x", 0)
+                    .attr("dy", 15)
+                    .classed("text small colour-white", true)
+
+                    xAxis.selectAll("line")
+                    .style("stroke", "rgba(255,255,255,0.35)")
+                    .style("stroke-width", 1)
+
+                    xAxis.select(".domain").remove()
+                    
+                    //add data
+
+                    const data_colours = d3.scaleLinear()
+                                        .domain([1, 5, 10, 15, 20])
+                                        .range([chump.colours.green, chump.colours.light_blue, chump.colours.blue, chump.colours.purple, chump.colours.pink])
+                                        .interpolate(d3.interpolateRgb)
+
+
+                    const data_group = svg.append("g").classed("data-goup", true)
+
+                    $.each(dataset.reverse(), function(idx, val) {
+
+                        let score_prev, score_now;
+                        score_now = val.overall_score_array[gw_end-1]
+                        if (!(val.overall_score_array[gw_start-1])) {
+                            score_prev = 0
+                        } else {
+                            score_prev = val.overall_score_array[gw_start-1]
+                        }
+
+
+                        let colour = data_colours(idx+1)
+
+                        let circle_config = {
+                            'r_small': 3.5,
+                            'r_large': 7,
+                            'stroke_width': 2
+                        }
+
+                        /*
+
+                        data_group.append("line")
+                        .attr("x1", viz_config.margin.left)
+                        .attr("x2", viz_config.width - viz_config.margin.right)
+                        .attr("y1", yScale(val.manager_code))
+                        .attr("y2", yScale(val.manager_code))
+                        .style("stroke", chump.colours.midnight_blue)
+                        .style("stroke-width", circle_config.stroke_width)
+                        .style("fill", "none")
+
+                        */
+
+                        //blue line first
+                        data_group.append("line")
+                        .attr("x1", xScale(xDomain[0]))
+                        .attr("x2", xScale(xDomain[1]))
+                        .attr("y1", yScale(val.manager_code)+yScale.bandwidth()/2)
+                        .attr("y2", yScale(val.manager_code)+yScale.bandwidth()/2)
+                        .style("stroke", chump.colours.midnight_blue)
+                        .style("stroke-width", 1)
+                        .style("stroke-dasharray", "2,6")
+                        .style("fill", "none")
+
+                        //white line second
+                        data_group.append("line")
+                        .attr("x1", xScale(xDomain[0]))
+                        .attr("x2", xScale(xDomain[1]))
+                        .attr("y1", yScale(val.manager_code)+yScale.bandwidth()/2)
+                        .attr("y2", yScale(val.manager_code)+yScale.bandwidth()/2)
+                        .style("stroke", "rgba(255,255,255,0.35)")
+                        .style("stroke-width", 1)
+                        .style("stroke-dasharray", "1,5")
+                        .style("fill", "none")
+
+                        data_group.append("line")
+                        .attr("x1", xScale(score_prev))
+                        .attr("x2", xScale(score_now))
+                        .attr("y1", yScale(val.manager_code)+yScale.bandwidth()/2)
+                        .attr("y2", yScale(val.manager_code)+yScale.bandwidth()/2)
+                        //.style("stroke", viz_colours[idx])
+                        .style("stroke", colour)
+                        .style("stroke-width", circle_config.stroke_width)
+                        .style("fill", "none")
+
+                        //score prev
+                        data_group.append("circle")
+                        .attr("cx", xScale(score_prev))
+                        .attr("cy", yScale(val.manager_code)+yScale.bandwidth()/2)
+                        .attr("r", circle_config.r_small)
+                        .attr("stroke-width", circle_config.stroke_width)
+                        .style("stroke", colour)
+                        .style("fill", chump.colours.midnight_blue)
+
+                        let name = data_group.append("text")
+                        .classed("text small", true)
+                        .attr("x", 0)
+                        .attr("y", yScale(val.manager_code)+yScale.bandwidth()/2)
+                        .attr("dy", 5.5)
+                        //.attr("dx", 15)
+                        .style("fill", "white")
+                        .text(function(d) { return db_return_manager_fullname(database, val.manager_code) + "" })
+
+                        data_group.append("line")
+                        .attr("x1", xScale(score_now)+(circle_config.r_large))
+                        .attr("x2", xScale(score_now)+(circle_config.r_large)+85)
+                        .attr("y1", yScale(val.manager_code)+yScale.bandwidth()/2)
+                        .attr("y2", yScale(val.manager_code)+yScale.bandwidth()/2)
+                        .style("stroke", chump.colours.midnight_blue)
+                        .style("stroke-width", 20)
+                        //.style("stroke-dasharray", "5,5")
+                        .style("fill", "none")
+
+                        let label = data_group.append("text")
+                        .classed("text small bold", true)
+                        .attr("x", xScale(score_now))
+                        .attr("y", yScale(val.manager_code)+yScale.bandwidth()/2)
+                        .attr("dy", 5.5)
+                        .attr("dx", 12)
+                        .style("fill", colour)
+                        .text(function(d) { 
+
+                            let diff = score_now - score_prev
+
+                            if (diff > 0) { 
+                                diff = "+" + diff 
+                            } else if (diff < 0) { 
+                                diff = "-" + diff 
+                            } else {
+                                diff = "nc"
+                            }
+
+                            let msg = return_comma_formatted_number(score_now) + " (" + diff + ")"
+
+                            return msg
+
+                          })
+
+                        //score now
+                        data_group.append("circle")
+                        .attr("cx", xScale(score_now))
+                        .attr("cy", yScale(val.manager_code)+yScale.bandwidth()/2)
+                        .attr("r", circle_config.r_large)
+                        .attr("stroke-width", circle_config.stroke_width)
+                        .style("stroke", colour)
+                        .style("fill", colour)
+
+
+
+
+                    })
+
+                    var footnote = d3.select("#content-block")
+                    .append("div")
+                    .classed("footnote text small", true)
+                    .text("Figures in brackets indicate points scored since GW"+gw_start)
+                    .style("margin-top", "2rem")
+
+                }
+
+
+                // build controls
+                const controls = d3.select( 'body' )
+                .append( 'div' )
+                .attr("id", "controls")
+                .classed( 'controls-wrapper' , true )
+                .append( 'div' )
+                .classed( 'controls-container' , true )
+
+                /* gameweek select */
+                const gameweek_select_group = controls.append( 'div' ).classed( 'group' , true )
+                gameweek_select_group.append( 'div' ).classed( 'label' , true ).text( 'Gameweek: ' )
+
+                const gameweek_select = gameweek_select_group
+                .append( 'select' )
+                .attr("name", "gameweek_select")
+                .attr("id", "gameweek_select")
+
+                /* span select */
+                const span_select_group = controls.append( 'div' ).classed( 'group' , true )
+                span_select_group.append( 'div' ).classed( 'label' , true ).text( 'Span: ' )
+
+                const span_select = span_select_group
+                .append( 'input' )
+                .attr("type", "number")
+                .attr("name", "span_select")
+                .attr("id", "span_select")
+                .attr("min", "1")
+                .attr("max", "10")
+                .attr("value", "1")
+
+                let gw_array = []
+
+                // create a list of gameweeks
+                $.each( database[ 'fixture_list' ], function(k, v) {    
+                    gw_array.push(k)
+                })
+
+                $.each( gw_array.sort(d3.ascending), function() {    
+                    gameweek_select.append( 'option' ).attr("value", parseInt(this)).text(this)
+                })
+
+                
+
+                const btn = controls.append( "button" )
+                .attr("type", "button")
+                .text( " Generate" )
+                .on("click", function() {
+
+                    var input_gw = $("#gameweek_select").val() // grab type input from select
+                    var input_span = $("#span_select").val() // grab type input from select
+
+                    draw_viz(input_gw, input_span)
+
+                })
+
+                styles.add()
+
+            });
+
+            
+        
+        </script>
+        
+    </head> 
+    
+    <body> 
+        <main>
+            <section>
+                <div class="wrapper">
+                    <div class="container">
+                        <div id="title-block"></div>
+                        <div id="content-block"></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </body> 
+
+
+</html>

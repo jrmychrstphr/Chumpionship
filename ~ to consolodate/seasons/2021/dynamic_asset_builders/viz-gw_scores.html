@@ -1,0 +1,441 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"> 
+
+<html lang="en">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <title>Chumpionship – Fixture scores</title>
+        
+        <link rel="stylesheet" type="text/css" href="chumpionship-styles.css">   
+        
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://d3js.org/d3.v5.min.js"></script>
+
+        <script src="load_database.js"></script>
+
+        <script src="common_functions.js"></script>
+
+        <script src="database_queries.js"></script>
+        <script src="content-builders-library.js"></script>
+
+        <script src="chumpionship_colours.js"></script>
+        <script src="svg.js"></script>
+        <script src="dynamic_styles.js"></script>
+
+        <style>
+            
+            #controls {
+                margin: 1rem;
+                padding: 1rem;
+                border: 1px solid;
+                position: fixed;
+                top: 0;
+                right: 0;
+                width: 8rem;
+                font-size: 0.8rem;
+                font-family: "Helvetica Neue";
+                background: white;
+            }
+
+            #controls div.group {
+                margin-bottom: 1rem;
+            }
+
+            #controls div.label {
+                margin-bottom: 0.5rem;
+            }
+
+            #controls fieldset {
+                margin: 0px;
+                padding: 0px;
+                border: 0px;
+            }
+
+        </style>
+
+        <script>
+            
+            
+            $( function(){
+
+                styles.core()
+
+                //build title block
+                const title_container = d3.select("#title-block")
+                .append("div")
+                .classed("title-wrapper", true)
+                .append("div")
+                .classed("title-container", true)
+
+                const title = title_container.append("div")
+                .classed("text display large", true)
+
+                const subtitle = title_container.append("div")
+                    .classed("text display regular", true)
+
+                //create dataset
+                function create_dataset() {
+
+                    let d = [];
+
+                    // for each player in the database
+                    $.each( database["player_data"], function(k, v) {
+
+                        let temp_obj = {}
+                        temp_obj["manager_code"] = k
+                        temp_obj["fixture_score_array"] = v['season_performance']['fixture_score_array']
+
+                        temp_obj["top_score"] = {}
+                        temp_obj["top_score"]["score"] = d3.max(temp_obj["fixture_score_array"])
+                        temp_obj["top_score"]["gw"] = []
+
+                        $.each( temp_obj["fixture_score_array"], function(idx, val) {
+                            if (parseInt(val) === parseInt(temp_obj["top_score"]["score"])) {
+                                temp_obj["top_score"]["gw"].push(idx+1)
+                            }
+                        });
+
+                        d.push(temp_obj)
+
+                    });
+
+                    return d;
+
+                };
+
+                const dataset = create_dataset().slice().sort((a, b) => d3.descending(db_return_manager_fullname(database, a.manager_code,), db_return_manager_fullname(database, b.manager_code)));
+
+                //console.log(dataset)
+
+                function draw_viz() {
+
+                    title.text("Single scores")
+
+                    subtitle.text(function(d) {
+
+                        let a = dataset[0].fixture_score_array.length;
+                        let msg;
+
+                        if ( a===1 ) {
+                            msg = "GW"+parseInt(a)
+                        } else if ( a > 1 ) {
+                            msg = "GWs 1-"+parseInt(a)
+                        } else {
+                            msg = "Err"
+                        }
+
+                        return msg
+                    })
+
+                    $( "#content-block" ).empty()
+
+                    //generate viz
+                    const viz_container = d3.select("#content-block")
+                    .append("div")
+                    .classed("viz-wrapper", true)
+                    .append("div")
+                    .classed("viz-container", true)
+
+                    const viz_config = {
+                        "width": viz_container.node().getBoundingClientRect().width,
+                        "height": 560,
+                        "margin": {
+                            "top": 0,
+                            "right": 30,
+                            "bottom": 30,
+                            "left": 130
+                        },
+                        "xAxis_increments": 25
+                    }
+
+                    const svg = viz_container.append("svg")
+                        .attr("height", viz_config.height)
+                        .attr("width", viz_config.width)
+                        .attr("viewBox","0 0 " + viz_config.width + " " + viz_config.height)
+
+
+                    //set scales
+                    let xDomain = function() {
+
+                        let x = []
+                        let scores = []
+
+                        //collect all the scores in an array
+                        $.each( dataset, function(idx, val) {
+                            scores  = scores.concat(val.fixture_score_array)
+                        });
+
+                        //define the min max of the array
+                        x = d3.extent(scores)
+                        console.log(x)
+
+                        let xAi = viz_config.xAxis_increments
+
+                        x[0] = Math.floor(x[0]/xAi)*xAi
+                        x[1] = Math.ceil(((x[1])/xAi))*xAi
+                        console.log(x)
+
+                        return x
+
+                    } ();
+
+                    let yDomain = function() {
+
+                        let y = []
+
+                        //push all scores of selected players to an array
+                        $.each( dataset, function(idx,val) {
+                            y.push(val["manager_code"])
+                        })
+
+                        return y
+
+                    } ();
+
+                    xScale = d3.scaleLinear()
+                    .domain(xDomain)
+                    .range([viz_config.margin.left, viz_config.width-viz_config.margin.right])
+
+                    yScale = d3.scaleBand()
+                    .domain(yDomain)
+                    .range([viz_config.height-viz_config.margin.bottom, viz_config.margin.top])
+                    .paddingOuter(0.5)
+                    .paddingInner(0)
+
+
+
+
+                    //build axes
+                    let xAxisGenerator = d3.axisBottom(xScale)
+                    .tickFormat(function(d) {
+                        if (d%viz_config.xAxis_increments==0 || d3.extent(xDomain).includes(d)) {
+                            return return_comma_formatted_number(d) + "pts"
+                        }
+                    })
+                    .tickValues(function() {
+                        a = [];
+                        for (i = xDomain[0]; i <= xDomain[1]; i++) {
+                            if (i%viz_config.xAxis_increments==0) { a.push(i); }
+                        };
+                        return a;
+                    }())
+                    .tickSizeInner(-(viz_config.height - viz_config.margin.bottom))
+
+                    let = xAxis = svg.append("g")
+                    .attr("transform", "translate(0," + (viz_config.height - viz_config.margin.bottom) + ")")
+                    .call(xAxisGenerator)
+
+                    xAxis.selectAll(".tick text")
+                    .attr("x", 0)
+                    .attr("dy", 15)
+                    .classed("text small colour-white", true)
+
+                    xAxis.selectAll("line")
+                    .style("stroke", "rgba(255,255,255,0.35)")
+                    .style("stroke-width", 1)
+
+                    xAxis.select(".domain").remove()
+
+                    //create colour scale
+                    function define_colour_scale() {
+
+                        let colours_array = [chump.colours.green, chump.colours.light_blue, chump.colours.blue, chump.colours.purple, chump.colours.pink]
+
+                        function define_domain() {
+                            let a = xDomain[0]
+                            let b = xDomain[1]
+                            let c = colours_array.length
+                            let x = []
+
+                            for ( i = a; i <= b; i = i+((b-a)/c) ){
+                                x.push(i)
+                            }
+
+                            return x
+                        }
+
+                        let color_scale = d3.scaleLinear()
+                                            .domain(define_domain())
+                                            .range(colours_array.reverse())
+                                            .interpolate(d3.interpolateRgb)
+
+                        return color_scale
+
+                    }
+
+                    const data_colours = define_colour_scale()
+                    const data_group = svg.append("g").classed("data-goup", true)
+
+                    //define top score
+                    function define_top_score() {
+
+                        let scores = []
+
+                        //collect all the scores in an array
+                        $.each( dataset, function(idx, val) {
+                            scores  = scores.concat(val.fixture_score_array)
+                        });
+
+                        //define the min max of the array
+                        max = d3.max(scores)
+
+                        return max
+                    }
+
+                    const max_score = define_top_score()
+
+
+                    //vizualise data
+                    // for each player...
+                    $.each(dataset, function(idx, val) {    
+
+                        //blue line first
+                        data_group.append("line")
+                        .attr("x1", xScale(xDomain[0]))
+                        .attr("x2", xScale(xDomain[1]))
+                        .attr("y1", yScale(val.manager_code)+yScale.bandwidth()/2)
+                        .attr("y2", yScale(val.manager_code)+yScale.bandwidth()/2)
+                        .style("stroke", chump.colours.midnight_blue)
+                        .style("stroke-width", 1)
+                        .style("stroke-dasharray", "2,6")
+                        .style("fill", "none")
+
+                        //white line second
+                        data_group.append("line")
+                        .attr("x1", xScale(xDomain[0]))
+                        .attr("x2", xScale(xDomain[1]))
+                        .attr("y1", yScale(val.manager_code)+yScale.bandwidth()/2)
+                        .attr("y2", yScale(val.manager_code)+yScale.bandwidth()/2)
+                        .style("stroke", "rgba(255,255,255,0.35)")
+                        .style("stroke-width", 1)
+                        .style("stroke-dasharray", "1,5")
+                        .style("fill", "none")
+
+                        let circle_config = {
+                            'r_small': 3.5,
+                            'r_large': 12,
+                            'stroke_width': 1
+                        }
+
+                        // ... draw a circle showing each fixture score
+                        $.each(val.fixture_score_array.sort(d3.ascending), function(i,v) {
+
+                            data_group.append("circle")
+                            .attr("cx", xScale(v))
+                            .attr("cy", yScale(val.manager_code)+yScale.bandwidth()/2)
+                            .attr("r", function(d){
+
+                                let a
+
+                                if (v===max_score) {
+                                    a = circle_config.r_large
+                                } else {
+                                    a = circle_config.r_small
+                                }
+
+                                return a
+
+                            })
+                            .attr("stroke-width", circle_config.stroke_width)
+                            .style("stroke", chump.colours.midnight_blue)
+                            .style("fill", data_colours(v))
+                            .attr("title", v)
+
+                            // add labels to max score
+                            if (v===max_score) {
+
+                                data_group.append("text")
+                                .classed("text small bold", true)
+                                .attr("x", xScale(v))
+                                .attr("y", yScale(val.manager_code)+yScale.bandwidth()/2)
+                                .attr("dy", 5)
+                                .attr("text-anchor", "middle")
+                                .style("fill", chump.colours.midnight_blue)
+                                .text("£")
+
+                                data_group.append("line")
+                                .attr("x1", xScale(v)+(circle_config.r_large))
+                                .attr("x2", xScale(v)+(circle_config.r_large)+90)
+                                .attr("y1", yScale(val.manager_code)+yScale.bandwidth()/2)
+                                .attr("y2", yScale(val.manager_code)+yScale.bandwidth()/2)
+                                .style("stroke", chump.colours.midnight_blue)
+                                .style("stroke-width", 20)
+                                //.style("stroke-dasharray", "5,5")
+                                .style("fill", "none")
+
+                                data_group.append("text")
+                                .classed("text tiny ", true)
+                                .attr("x", xScale(v))
+                                .attr("y", yScale(val.manager_code)+yScale.bandwidth()/2)
+                                .attr("dy", 4)
+                                .attr("dx", 17)
+                                .attr("text-anchor", "left")
+                                .style("fill", "white")
+                                .text(function(d){
+                                    let msg;
+                                    if (val.top_score.gw.length === 1) {
+                                        msg = val.top_score.score + "pts (GW" + val.top_score.gw + ")"
+                                    } else if (val.top_score.gw.length === 0) {
+                                        msg = "Err"
+                                    } else {
+                                        msg = val.top_score.score + "pts (GWs " + val.top_score.gw + ")"
+                                    }
+
+                                    return msg
+                                })
+
+                            }
+
+
+
+                        })
+
+
+                        let name = data_group.append("text")
+                        .classed("text small", true)
+                        .attr("x", 0)
+                        .attr("y", yScale(val.manager_code)+yScale.bandwidth()/2)
+                        .attr("dy", 5.5)
+                        //.attr("dx", 15)
+                        .style("fill", "white")
+                        .text(function(d) { return db_return_manager_fullname(database, val.manager_code) + "" })
+
+
+                    })
+
+                    /*
+                    var footnote = d3.select("#content-block")
+                    .append("div")
+                    .classed("footnote text small", true)
+                    .text("The season's top single score will win £15. In the event of a tie, this prize will be shared evenly across all =1st scores.")
+                    .style("margin-top", "2rem")
+                    */
+
+                }
+
+                draw_viz()
+
+                styles.add()
+
+            });
+
+            
+        
+        </script>
+        
+    </head> 
+    
+    <body> 
+        <main>
+            <section>
+                <div class="wrapper">
+                    <div class="container">
+                        <div id="title-block"></div>
+                        <div id="content-block"></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </body> 
+
+
+</html>

@@ -1,0 +1,302 @@
+1658743303576	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/dj/r_d53pv97qn6cb7zp_63kxxh0000gn/T/rust_mozprofile.2FO6pXIFQOqn"
+2022-07-25 11:01:44.250 plugin-container[88995:1844797] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-07-25 11:01:44.250 plugin-container[88995:1844797] nil host used in call to allowsAnyHTTPSCertificateForHost:
+2022-07-25 11:01:44.257 plugin-container[88995:1844797] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-07-25 11:01:44.257 plugin-container[88995:1844797] nil host used in call to allowsAnyHTTPSCertificateForHost:
+2022-07-25 11:01:44.257 plugin-container[88995:1844795] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-07-25 11:01:44.257 plugin-container[88995:1844795] nil host used in call to allowsAnyHTTPSCertificateForHost:
+1658743304273	Marionette	INFO	Marionette enabled
+1658743304302	Marionette	INFO	Listening on port 56289
+1658743304769	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/dj/r_d53pv97qn6cb7zp_63kxxh0000gn/T/rust_mozprofile.2FO6pXIFQOqn/search.json.mozlz4", (void 0)))
+1658743354105	Marionette	INFO	Stopped listening on port 56289
+JavaScript error: chrome://remote/content/marionette/cert.js, line 55: NS_ERROR_NOT_AVAILABLE: Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsICertOverrideService.setDisableAllSecurityChecksAndLetAttackersInterceptMyData]
+1658744233950	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/dj/r_d53pv97qn6cb7zp_63kxxh0000gn/T/rust_mozprofile.yDp6IKmLyIj1"
+2022-07-25 11:17:14.373 plugin-container[89765:1853438] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-07-25 11:17:14.373 plugin-container[89765:1853438] nil host used in call to allowsAnyHTTPSCertificateForHost:
+2022-07-25 11:17:14.376 plugin-container[89765:1853438] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-07-25 11:17:14.376 plugin-container[89765:1853438] nil host used in call to allowsAnyHTTPSCertificateForHost:
+2022-07-25 11:17:14.376 plugin-container[89765:1853445] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-07-25 11:17:14.376 plugin-container[89765:1853445] nil host used in call to allowsAnyHTTPSCertificateForHost:
+1658744234387	Marionette	INFO	Marionette enabled
+1658744234416	Marionette	INFO	Listening on port 56368
+1658744234878	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/dj/r_d53pv97qn6cb7zp_63kxxh0000gn/T/rust_mozprofile.yDp6IKmLyIj1/search.json.mozlz4", (void 0)))
+1658744320241	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/dj/r_d53pv97qn6cb7zp_63kxxh0000gn/T/rust_mozprofile.9xYldvIsGFhJ"
+2022-07-25 11:18:40.704 plugin-container[89861:1855038] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-07-25 11:18:40.704 plugin-container[89861:1855038] nil host used in call to allowsAnyHTTPSCertificateForHost:
+2022-07-25 11:18:40.709 plugin-container[89861:1855038] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-07-25 11:18:40.709 plugin-container[89861:1855038] nil host used in call to allowsAnyHTTPSCertificateForHost:
+2022-07-25 11:18:40.709 plugin-container[89861:1855043] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-07-25 11:18:40.709 plugin-container[89861:1855043] nil host used in call to allowsAnyHTTPSCertificateForHost:
+1658744320718	Marionette	INFO	Marionette enabled
+1658744320752	Marionette	INFO	Listening on port 56443
+1658744321224	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/dj/r_d53pv97qn6cb7zp_63kxxh0000gn/T/rust_mozprofile.9xYldvIsGFhJ/search.json.mozlz4", (void 0)))
+1658744806950	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/dj/r_d53pv97qn6cb7zp_63kxxh0000gn/T/rust_mozprofile.kfB1NRbChypG"
+2022-07-25 11:26:47.446 plugin-container[90290:1860610] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-07-25 11:26:47.446 plugin-container[90290:1860610] nil host used in call to allowsAnyHTTPSCertificateForHost:
+2022-07-25 11:26:47.450 plugin-container[90290:1860610] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-07-25 11:26:47.450 plugin-container[90290:1860610] nil host used in call to allowsAnyHTTPSCertificateForHost:
+2022-07-25 11:26:47.451 plugin-container[90290:1860631] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-07-25 11:26:47.451 plugin-container[90290:1860631] nil host used in call to allowsAnyHTTPSCertificateForHost:
+1658744807459	Marionette	INFO	Marionette enabled
+1658744807491	Marionette	INFO	Listening on port 56582
+1658744807971	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/dj/r_d53pv97qn6cb7zp_63kxxh0000gn/T/rust_mozprofile.kfB1NRbChypG/search.json.mozlz4", (void 0)))
+JavaScript error: resource://activity-stream/lib/PersonalityProvider/PersonalityProvider.jsm, line 68: TypeError: http://%(server)s/dummy/blocklist// is not a valid URL.
+JavaScript error: resource://activity-stream/lib/PersonalityProvider/PersonalityProvider.jsm, line 68: TypeError: http://%(server)s/dummy/blocklist// is not a valid URL.
+JavaScript error: resource://activity-stream/lib/PersonalityProvider/PersonalityProvider.jsm, line 68: TypeError: http://%(server)s/dummy/blocklist// is not a valid URL.
+console.error: "Failed to fetch undefinedmain-workspace/personality-provider-models/170a56ca-c1bf-4181-9b30-693002f7e245.json: "
+console.error: "Failed to fetch undefinedmain-workspace/personality-provider-models/06e44aaa-324b-47ac-b458-72e1bccdf86b.json: "
+console.error: "Failed to fetch undefinedmain-workspace/personality-provider-models/30c71fa2-8842-419c-89db-addd30268f5b.json: "
+console.error: "Failed to fetch undefinedmain-workspace/personality-provider-models/fa731eb2-b049-44bc-a12d-f42f7cea991d.json: "
+console.error: "Failed to fetch undefinedmain-workspace/personality-provider-models/2a0dbd55-2eae-44ea-b787-5379594979ff.json: "
+console.error: "Failed to fetch undefinedmain-workspace/personality-provider-models/bd6fe48d-f356-4af1-bb7e-4de42b1e6272.json: "
+console.error: "Failed to fetch undefinedmain-workspace/personality-provider-models/c2485f5d-8bb1-4a45-a752-efffe9cd55c3.json: "
+console.error: "Failed to fetch undefinedmain-workspace/personality-provider-models/281d6a98-5f8e-4bc4-8bae-72e7e16933ca.json: "
+console.error: "Failed to fetch undefinedmain-workspace/personality-provider-models/e8645388-afc5-48e3-8f3f-80f82a5353dc.json: "
+console.error: "Failed to fetch undefinedmain-workspace/personality-provider-models/47d2bcee-b6c1-464e-a443-e3527d029b0f.json: "
+console.error: "Failed to fetch undefinedmain-workspace/personality-provider-models/18f03fe5-a60f-48c5-8cb8-13da750ca395.json: "
+console.error: "Failed to fetch undefinedmain-workspace/personality-provider-models/cdd3cdfb-1988-482a-850f-ec02aff07f45.json: "
+console.error: "Failed to fetch undefinedmain-workspace/personality-provider-models/a3944b1a-5464-406f-a97e-691702019575.json: "
+console.error: "Failed to fetch undefinedmain-workspace/personality-provider-models/61c97d21-6576-4624-aa8b-37839293aebd.json: "
+console.error: "Failed to fetch undefinedmain-workspace/personality-provider-models/1db0b78b-42f2-44fd-b78c-43f5fc760fa1.json: "
+console.error: "Failed to fetch undefinedmain-workspace/personality-provider-models/393f4033-c815-48d4-bf23-1eb42b4d30db.json: "
+console.error: "Failed to fetch undefinedmain-workspace/personality-provider-models/76666027-45db-4baa-8197-6e0f886966a8.json: "
+console.error: "Failed to fetch undefinedmain-workspace/personality-provider-models/24538f21-45ca-4dab-addb-65f655a688e2.json: "
+console.error: "Failed to fetch undefinedmain-workspace/personality-provider-models/ad749af2-93d7-4bf3-982f-a558175fd806.json: "
+console.error: "Failed to fetch undefinedmain-workspace/personality-provider-models/f477331d-33dc-4dfe-be46-88d5223fb439.json: "
+console.error: "Failed to fetch undefinedmain-workspace/personality-provider-models/8267a2cc-0984-4410-87db-c02530703a98.json: "
+console.error: "Failed to fetch undefinedmain-workspace/personality-provider-models/3fcbb458-7362-47bb-a426-6b542eb2f014.json: "
+console.error: "Failed to fetch undefinedmain-workspace/personality-provider-models/5d011771-de98-48f3-8565-7fc1ef6439c3.json: "
+console.error: "Failed to fetch undefinedmain-workspace/personality-provider-models/145b9461-d6cc-4341-8d96-ec3bacace059.json: "
+console.error: "Failed to fetch undefinedmain-workspace/personality-provider-models/0685a1b5-34eb-4c13-8c90-bc82735e527f.json: "
+console.error: "Failed to fetch undefinedmain-workspace/personality-provider-models/170a56ca-c1bf-4181-9b30-693002f7e245.json: "
+console.error: "Failed to fetch undefinedmain-workspace/personality-provider-models/06e44aaa-324b-47ac-b458-72e1bccdf86b.json: "
+console.error: "Failed to fetch undefinedmain-workspace/personality-provider-models/30c71fa2-8842-419c-89db-addd30268f5b.json: "
+console.error: "Failed to fetch undefinedmain-workspace/personality-provider-models/fa731eb2-b049-44bc-a12d-f42f7cea991d.json: "
+console.error: "Failed to fetch undefinedmain-workspace/personality-provider-models/2a0dbd55-2eae-44ea-b787-5379594979ff.json: "
+console.error: "Failed to fetch undefinedmain-workspace/personality-provider-models/bd6fe48d-f356-4af1-bb7e-4de42b1e6272.json: "
+console.error: "Failed to fetch undefinedmain-workspace/personality-provider-models/c2485f5d-8bb1-4a45-a752-efffe9cd55c3.json: "
+console.error: "Failed to fetch undefinedmain-workspace/personality-provider-models/281d6a98-5f8e-4bc4-8bae-72e7e16933ca.json: "
+console.error: "Failed to fetch undefinedmain-workspace/personality-provider-models/e8645388-afc5-48e3-8f3f-80f82a5353dc.json: "
+console.error: "Failed to fetch undefinedmain-workspace/personality-provider-models/47d2bcee-b6c1-464e-a443-e3527d029b0f.json: "
+console.error: "Failed to fetch undefinedmain-workspace/personality-provider-models/18f03fe5-a60f-48c5-8cb8-13da750ca395.json: "
+console.error: "Failed to fetch undefinedmain-workspace/personality-provider-models/cdd3cdfb-1988-482a-850f-ec02aff07f45.json: "
+console.error: "Failed to fetch undefinedmain-workspace/personality-provider-models/a3944b1a-5464-406f-a97e-691702019575.json: "
+console.error: "Failed to fetch undefinedmain-workspace/personality-provider-models/61c97d21-6576-4624-aa8b-37839293aebd.json: "
+console.error: "Failed to fetch undefinedmain-workspace/personality-provider-models/1db0b78b-42f2-44fd-b78c-43f5fc760fa1.json: "
+console.error: "Failed to fetch undefinedmain-workspace/personality-provider-models/393f4033-c815-48d4-bf23-1eb42b4d30db.json: "
+console.error: "Failed to fetch undefinedmain-workspace/personality-provider-models/76666027-45db-4baa-8197-6e0f886966a8.json: "
+console.error: "Failed to fetch undefinedmain-workspace/personality-provider-models/24538f21-45ca-4dab-addb-65f655a688e2.json: "
+console.error: "Failed to fetch undefinedmain-workspace/personality-provider-models/ad749af2-93d7-4bf3-982f-a558175fd806.json: "
+console.error: "Failed to fetch undefinedmain-workspace/personality-provider-models/f477331d-33dc-4dfe-be46-88d5223fb439.json: "
+console.error: "Failed to fetch undefinedmain-workspace/personality-provider-models/8267a2cc-0984-4410-87db-c02530703a98.json: "
+console.error: "Failed to fetch undefinedmain-workspace/personality-provider-models/3fcbb458-7362-47bb-a426-6b542eb2f014.json: "
+console.error: "Failed to fetch undefinedmain-workspace/personality-provider-models/5d011771-de98-48f3-8565-7fc1ef6439c3.json: "
+console.error: "Failed to fetch undefinedmain-workspace/personality-provider-models/145b9461-d6cc-4341-8d96-ec3bacace059.json: "
+console.error: "Failed to fetch undefinedmain-workspace/personality-provider-models/0685a1b5-34eb-4c13-8c90-bc82735e527f.json: "
+console.error: "Failed to fetch undefinedmain-workspace/personality-provider-models/170a56ca-c1bf-4181-9b30-693002f7e245.json: "
+console.error: "Failed to fetch undefinedmain-workspace/personality-provider-models/06e44aaa-324b-47ac-b458-72e1bccdf86b.json: "
+console.error: "Failed to fetch undefinedmain-workspace/personality-provider-models/30c71fa2-8842-419c-89db-addd30268f5b.json: "
+console.error: "Failed to fetch undefinedmain-workspace/personality-provider-models/fa731eb2-b049-44bc-a12d-f42f7cea991d.json: "
+console.error: "Failed to fetch undefinedmain-workspace/personality-provider-models/2a0dbd55-2eae-44ea-b787-5379594979ff.json: "
+console.error: "Failed to fetch undefinedmain-workspace/personality-provider-models/bd6fe48d-f356-4af1-bb7e-4de42b1e6272.json: "
+console.error: "Failed to fetch undefinedmain-workspace/personality-provider-models/c2485f5d-8bb1-4a45-a752-efffe9cd55c3.json: "
+console.error: "Failed to fetch undefinedmain-workspace/personality-provider-models/281d6a98-5f8e-4bc4-8bae-72e7e16933ca.json: "
+console.error: "Failed to fetch undefinedmain-workspace/personality-provider-models/e8645388-afc5-48e3-8f3f-80f82a5353dc.json: "
+console.error: "Failed to fetch undefinedmain-workspace/personality-provider-models/47d2bcee-b6c1-464e-a443-e3527d029b0f.json: "
+console.error: "Failed to fetch undefinedmain-workspace/personality-provider-models/18f03fe5-a60f-48c5-8cb8-13da750ca395.json: "
+console.error: "Failed to fetch undefinedmain-workspace/personality-provider-models/cdd3cdfb-1988-482a-850f-ec02aff07f45.json: "
+console.error: "Failed to fetch undefinedmain-workspace/personality-provider-models/a3944b1a-5464-406f-a97e-691702019575.json: "
+console.error: "Failed to fetch undefinedmain-workspace/personality-provider-models/61c97d21-6576-4624-aa8b-37839293aebd.json: "
+console.error: "Failed to fetch undefinedmain-workspace/personality-provider-models/1db0b78b-42f2-44fd-b78c-43f5fc760fa1.json: "
+console.error: "Failed to fetch undefinedmain-workspace/personality-provider-models/393f4033-c815-48d4-bf23-1eb42b4d30db.json: "
+console.error: "Failed to fetch undefinedmain-workspace/personality-provider-models/76666027-45db-4baa-8197-6e0f886966a8.json: "
+console.error: "Failed to fetch undefinedmain-workspace/personality-provider-models/24538f21-45ca-4dab-addb-65f655a688e2.json: "
+console.error: "Failed to fetch undefinedmain-workspace/personality-provider-models/ad749af2-93d7-4bf3-982f-a558175fd806.json: "
+console.error: "Failed to fetch undefinedmain-workspace/personality-provider-models/f477331d-33dc-4dfe-be46-88d5223fb439.json: "
+console.error: "Failed to fetch undefinedmain-workspace/personality-provider-models/8267a2cc-0984-4410-87db-c02530703a98.json: "
+console.error: "Failed to fetch undefinedmain-workspace/personality-provider-models/3fcbb458-7362-47bb-a426-6b542eb2f014.json: "
+console.error: "Failed to fetch undefinedmain-workspace/personality-provider-models/5d011771-de98-48f3-8565-7fc1ef6439c3.json: "
+console.error: "Failed to fetch undefinedmain-workspace/personality-provider-models/145b9461-d6cc-4341-8d96-ec3bacace059.json: "
+console.error: "Failed to fetch undefinedmain-workspace/personality-provider-models/0685a1b5-34eb-4c13-8c90-bc82735e527f.json: "
+console.error: "Failed to fetch undefinedmain-workspace/personality-provider-recipe/e4fb5038-c29e-4954-98a0-72a882e4841f.json: "
+console.error: "Failed to fetch undefinedmain-workspace/personality-provider-recipe/e4fb5038-c29e-4954-98a0-72a882e4841f.json: "
+console.error: "Failed to fetch undefinedmain-workspace/personality-provider-recipe/e4fb5038-c29e-4954-98a0-72a882e4841f.json: "
+1658745203400	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/dj/r_d53pv97qn6cb7zp_63kxxh0000gn/T/rust_mozprofile.iASdap5geOs2"
+2022-07-25 11:33:23.917 plugin-container[90629:1864258] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-07-25 11:33:23.917 plugin-container[90629:1864258] nil host used in call to allowsAnyHTTPSCertificateForHost:
+2022-07-25 11:33:23.922 plugin-container[90629:1864258] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-07-25 11:33:23.922 plugin-container[90629:1864258] nil host used in call to allowsAnyHTTPSCertificateForHost:
+2022-07-25 11:33:23.923 plugin-container[90629:1864256] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-07-25 11:33:23.923 plugin-container[90629:1864256] nil host used in call to allowsAnyHTTPSCertificateForHost:
+1658745203934	Marionette	INFO	Marionette enabled
+1658745203968	Marionette	INFO	Listening on port 56678
+1658745204446	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/dj/r_d53pv97qn6cb7zp_63kxxh0000gn/T/rust_mozprofile.iASdap5geOs2/search.json.mozlz4", (void 0)))
+JavaScript error: resource://activity-stream/lib/PersonalityProvider/PersonalityProvider.jsm, line 68: TypeError: http://%(server)s/dummy/blocklist// is not a valid URL.
+JavaScript error: resource://activity-stream/lib/PersonalityProvider/PersonalityProvider.jsm, line 68: TypeError: http://%(server)s/dummy/blocklist// is not a valid URL.
+JavaScript error: resource://activity-stream/lib/PersonalityProvider/PersonalityProvider.jsm, line 68: TypeError: http://%(server)s/dummy/blocklist// is not a valid URL.
+JavaScript error: resource://activity-stream/lib/PersonalityProvider/PersonalityProvider.jsm, line 68: TypeError: http://%(server)s/dummy/blocklist// is not a valid URL.
+JavaScript error: resource://activity-stream/lib/PersonalityProvider/PersonalityProvider.jsm, line 68: TypeError: http://%(server)s/dummy/blocklist// is not a valid URL.
+JavaScript error: resource://activity-stream/lib/PersonalityProvider/PersonalityProvider.jsm, line 68: TypeError: http://%(server)s/dummy/blocklist// is not a valid URL.
+JavaScript error: resource://activity-stream/lib/PersonalityProvider/PersonalityProvider.jsm, line 68: TypeError: http://%(server)s/dummy/blocklist// is not a valid URL.
+JavaScript error: resource://activity-stream/lib/PersonalityProvider/PersonalityProvider.jsm, line 68: TypeError: http://%(server)s/dummy/blocklist// is not a valid URL.
+JavaScript error: resource://activity-stream/lib/PersonalityProvider/PersonalityProvider.jsm, line 68: TypeError: http://%(server)s/dummy/blocklist// is not a valid URL.
+JavaScript error: resource://activity-stream/lib/PersonalityProvider/PersonalityProvider.jsm, line 68: TypeError: http://%(server)s/dummy/blocklist// is not a valid URL.
+1658748552453	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/dj/r_d53pv97qn6cb7zp_63kxxh0000gn/T/rust_mozprofile.Jg6FM58G78kQ"
+2022-07-25 12:29:12.970 plugin-container[94288:1893990] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-07-25 12:29:12.970 plugin-container[94288:1893990] nil host used in call to allowsAnyHTTPSCertificateForHost:
+2022-07-25 12:29:12.975 plugin-container[94288:1893990] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-07-25 12:29:12.975 plugin-container[94288:1893990] nil host used in call to allowsAnyHTTPSCertificateForHost:
+2022-07-25 12:29:12.975 plugin-container[94288:1893995] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-07-25 12:29:12.975 plugin-container[94288:1893995] nil host used in call to allowsAnyHTTPSCertificateForHost:
+1658748552981	Marionette	INFO	Marionette enabled
+1658748553015	Marionette	INFO	Listening on port 56939
+1658748553483	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/dj/r_d53pv97qn6cb7zp_63kxxh0000gn/T/rust_mozprofile.Jg6FM58G78kQ/search.json.mozlz4", (void 0)))
+JavaScript error: https://www.premierleague.com/resources/prod/v6.98.1-4068/ism/js/tcf-cmp.min.js, line 8: GVLError: aborted
+2022-07-25 11:29:30.924 plugin-container[94318:1894827] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-07-25 11:29:30.925 plugin-container[94318:1894827] nil host used in call to allowsAnyHTTPSCertificateForHost:
+2022-07-25 11:29:30.929 plugin-container[94318:1894827] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-07-25 11:29:30.929 plugin-container[94318:1894827] nil host used in call to allowsAnyHTTPSCertificateForHost:
+2022-07-25 11:29:30.929 plugin-container[94318:1894829] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-07-25 11:29:30.929 plugin-container[94318:1894829] nil host used in call to allowsAnyHTTPSCertificateForHost:
+1658748571565	Marionette	INFO	Stopped listening on port 56939
+1658748592229	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/dj/r_d53pv97qn6cb7zp_63kxxh0000gn/T/rust_mozprofile.q3zfnWEjU0Dx"
+2022-07-25 12:29:52.760 plugin-container[94360:1895262] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-07-25 12:29:52.760 plugin-container[94360:1895262] nil host used in call to allowsAnyHTTPSCertificateForHost:
+2022-07-25 12:29:52.764 plugin-container[94360:1895262] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-07-25 12:29:52.764 plugin-container[94360:1895262] nil host used in call to allowsAnyHTTPSCertificateForHost:
+2022-07-25 12:29:52.764 plugin-container[94360:1895269] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-07-25 12:29:52.764 plugin-container[94360:1895269] nil host used in call to allowsAnyHTTPSCertificateForHost:
+1658748592777	Marionette	INFO	Marionette enabled
+1658748592813	Marionette	INFO	Listening on port 57024
+1658748593305	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/dj/r_d53pv97qn6cb7zp_63kxxh0000gn/T/rust_mozprofile.q3zfnWEjU0Dx/search.json.mozlz4", (void 0)))
+JavaScript error: https://www.premierleague.com/resources/prod/v6.98.1-4068/ism/js/tcf-cmp.min.js, line 8: GVLError: aborted
+2022-07-25 11:30:04.883 plugin-container[94388:1895737] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-07-25 11:30:04.883 plugin-container[94388:1895737] nil host used in call to allowsAnyHTTPSCertificateForHost:
+2022-07-25 11:30:04.889 plugin-container[94388:1895737] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-07-25 11:30:04.889 plugin-container[94388:1895737] nil host used in call to allowsAnyHTTPSCertificateForHost:
+2022-07-25 11:30:04.889 plugin-container[94388:1895748] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-07-25 11:30:04.889 plugin-container[94388:1895748] nil host used in call to allowsAnyHTTPSCertificateForHost:
+1658748605131	Marionette	INFO	Stopped listening on port 57024
+1658748686119	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/dj/r_d53pv97qn6cb7zp_63kxxh0000gn/T/rust_mozprofile.55NX6TEowiZu"
+2022-07-25 12:31:26.555 plugin-container[94498:1896568] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-07-25 12:31:26.555 plugin-container[94498:1896568] nil host used in call to allowsAnyHTTPSCertificateForHost:
+2022-07-25 12:31:26.558 plugin-container[94498:1896568] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-07-25 12:31:26.558 plugin-container[94498:1896568] nil host used in call to allowsAnyHTTPSCertificateForHost:
+2022-07-25 12:31:26.559 plugin-container[94498:1896575] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-07-25 12:31:26.559 plugin-container[94498:1896575] nil host used in call to allowsAnyHTTPSCertificateForHost:
+1658748686569	Marionette	INFO	Marionette enabled
+1658748686598	Marionette	INFO	Listening on port 57108
+1658748687088	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/dj/r_d53pv97qn6cb7zp_63kxxh0000gn/T/rust_mozprofile.55NX6TEowiZu/search.json.mozlz4", (void 0)))
+JavaScript error: https://www.premierleague.com/resources/prod/v6.98.1-4068/ism/js/tcf-cmp.min.js, line 8: GVLError: aborted
+2022-07-25 11:31:33.767 plugin-container[94521:1897074] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-07-25 11:31:33.767 plugin-container[94521:1897074] nil host used in call to allowsAnyHTTPSCertificateForHost:
+2022-07-25 11:31:33.770 plugin-container[94521:1897074] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-07-25 11:31:33.770 plugin-container[94521:1897074] nil host used in call to allowsAnyHTTPSCertificateForHost:
+2022-07-25 11:31:33.770 plugin-container[94521:1897077] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-07-25 11:31:33.770 plugin-container[94521:1897077] nil host used in call to allowsAnyHTTPSCertificateForHost:
+JavaScript error: https://www.premierleague.com/resources/prod/v6.98.1-4068/ism/js/tcf-cmp.min.js, line 8: GVLError: aborted
+1658748714878	Marionette	INFO	Stopped listening on port 57108
+1658748825022	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/dj/r_d53pv97qn6cb7zp_63kxxh0000gn/T/rust_mozprofile.KO1yC7UyPixl"
+2022-07-25 12:33:45.531 plugin-container[94692:1898256] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-07-25 12:33:45.532 plugin-container[94692:1898256] nil host used in call to allowsAnyHTTPSCertificateForHost:
+2022-07-25 12:33:45.535 plugin-container[94692:1898256] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-07-25 12:33:45.535 plugin-container[94692:1898256] nil host used in call to allowsAnyHTTPSCertificateForHost:
+2022-07-25 12:33:45.536 plugin-container[94692:1898254] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-07-25 12:33:45.536 plugin-container[94692:1898254] nil host used in call to allowsAnyHTTPSCertificateForHost:
+1658748825546	Marionette	INFO	Marionette enabled
+1658748825575	Marionette	INFO	Listening on port 57190
+1658748826043	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/dj/r_d53pv97qn6cb7zp_63kxxh0000gn/T/rust_mozprofile.KO1yC7UyPixl/search.json.mozlz4", (void 0)))
+JavaScript error: https://www.premierleague.com/resources/prod/v6.98.1-4068/ism/js/tcf-cmp.min.js, line 8: GVLError: aborted
+2022-07-25 11:33:50.785 plugin-container[94707:1898745] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-07-25 11:33:50.785 plugin-container[94707:1898745] nil host used in call to allowsAnyHTTPSCertificateForHost:
+2022-07-25 11:33:50.788 plugin-container[94707:1898745] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-07-25 11:33:50.788 plugin-container[94707:1898745] nil host used in call to allowsAnyHTTPSCertificateForHost:
+2022-07-25 11:33:50.788 plugin-container[94707:1898748] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-07-25 11:33:50.788 plugin-container[94707:1898748] nil host used in call to allowsAnyHTTPSCertificateForHost:
+JavaScript error: https://www.premierleague.com/resources/prod/v6.98.1-4068/ism/js/tcf-cmp.min.js, line 8: GVLError: aborted
+JavaScript error: https://www.premierleague.com/resources/prod/v6.98.1-4068/ism/js/tcf-cmp.min.js, line 8: GVLError: aborted
+JavaScript error: resource://activity-stream/lib/PersonalityProvider/PersonalityProvider.jsm, line 68: TypeError: http://%(server)s/dummy/blocklist// is not a valid URL.
+1658748851781	Marionette	INFO	Stopped listening on port 57190
+1658748865358	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/dj/r_d53pv97qn6cb7zp_63kxxh0000gn/T/rust_mozprofile.jZpuUCCQ3XWp"
+2022-07-25 12:34:25.833 plugin-container[94766:1899334] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-07-25 12:34:25.834 plugin-container[94766:1899334] nil host used in call to allowsAnyHTTPSCertificateForHost:
+2022-07-25 12:34:25.837 plugin-container[94766:1899334] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-07-25 12:34:25.837 plugin-container[94766:1899334] nil host used in call to allowsAnyHTTPSCertificateForHost:
+2022-07-25 12:34:25.837 plugin-container[94766:1899336] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-07-25 12:34:25.837 plugin-container[94766:1899336] nil host used in call to allowsAnyHTTPSCertificateForHost:
+1658748865848	Marionette	INFO	Marionette enabled
+1658748865881	Marionette	INFO	Listening on port 57274
+1658748866376	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/dj/r_d53pv97qn6cb7zp_63kxxh0000gn/T/rust_mozprofile.jZpuUCCQ3XWp/search.json.mozlz4", (void 0)))
+JavaScript error: https://www.premierleague.com/resources/prod/v6.98.1-4068/ism/js/tcf-cmp.min.js, line 8: GVLError: aborted
+2022-07-25 11:34:32.448 plugin-container[94785:1899868] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-07-25 11:34:32.448 plugin-container[94785:1899868] nil host used in call to allowsAnyHTTPSCertificateForHost:
+2022-07-25 11:34:32.451 plugin-container[94785:1899868] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-07-25 11:34:32.451 plugin-container[94785:1899868] nil host used in call to allowsAnyHTTPSCertificateForHost:
+2022-07-25 11:34:32.452 plugin-container[94785:1899870] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-07-25 11:34:32.452 plugin-container[94785:1899870] nil host used in call to allowsAnyHTTPSCertificateForHost:
+JavaScript error: https://www.premierleague.com/resources/prod/v6.98.1-4068/ism/js/tcf-cmp.min.js, line 8: GVLError: aborted
+1658748893421	Marionette	INFO	Stopped listening on port 57274
+JavaScript error: resource://activity-stream/lib/PersonalityProvider/PersonalityProvider.jsm, line 68: TypeError: http://%(server)s/dummy/blocklist// is not a valid URL.
+1658748969979	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/dj/r_d53pv97qn6cb7zp_63kxxh0000gn/T/rust_mozprofile.XabjoSEHf7fQ"
+2022-07-25 12:36:10.398 plugin-container[94917:1900956] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-07-25 12:36:10.399 plugin-container[94917:1900956] nil host used in call to allowsAnyHTTPSCertificateForHost:
+2022-07-25 12:36:10.402 plugin-container[94917:1900956] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-07-25 12:36:10.402 plugin-container[94917:1900956] nil host used in call to allowsAnyHTTPSCertificateForHost:
+2022-07-25 12:36:10.402 plugin-container[94917:1900963] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-07-25 12:36:10.402 plugin-container[94917:1900963] nil host used in call to allowsAnyHTTPSCertificateForHost:
+1658748970412	Marionette	INFO	Marionette enabled
+1658748970440	Marionette	INFO	Listening on port 57364
+1658748970911	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/dj/r_d53pv97qn6cb7zp_63kxxh0000gn/T/rust_mozprofile.XabjoSEHf7fQ/search.json.mozlz4", (void 0)))
+JavaScript error: https://www.premierleague.com/resources/prod/v6.98.1-4068/ism/js/tcf-cmp.min.js, line 8: GVLError: aborted
+2022-07-25 11:36:17.432 plugin-container[94940:1901466] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-07-25 11:36:17.432 plugin-container[94940:1901466] nil host used in call to allowsAnyHTTPSCertificateForHost:
+2022-07-25 11:36:17.436 plugin-container[94940:1901466] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-07-25 11:36:17.436 plugin-container[94940:1901466] nil host used in call to allowsAnyHTTPSCertificateForHost:
+2022-07-25 11:36:17.437 plugin-container[94940:1901477] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-07-25 11:36:17.437 plugin-container[94940:1901477] nil host used in call to allowsAnyHTTPSCertificateForHost:
+JavaScript error: https://www.premierleague.com/resources/prod/v6.98.1-4068/ism/js/tcf-cmp.min.js, line 8: GVLError: aborted
+JavaScript error: https://www.premierleague.com/resources/prod/v6.98.1-4068/ism/js/tcf-cmp.min.js, line 8: GVLError: aborted
+JavaScript error: https://www.premierleague.com/resources/prod/v6.98.1-4068/ism/js/tcf-cmp.min.js, line 8: GVLError: aborted
+1658748997739	Marionette	INFO	Stopped listening on port 57364
+JavaScript error: resource://activity-stream/lib/PersonalityProvider/PersonalityProvider.jsm, line 68: TypeError: http://%(server)s/dummy/blocklist// is not a valid URL.
+JavaScript error: resource://activity-stream/lib/PersonalityProvider/PersonalityProvider.jsm, line 68: TypeError: http://%(server)s/dummy/blocklist// is not a valid URL.
+JavaScript error: resource://activity-stream/lib/PersonalityProvider/PersonalityProvider.jsm, line 68: TypeError: http://%(server)s/dummy/blocklist// is not a valid URL.
+JavaScript error: resource://activity-stream/lib/PersonalityProvider/PersonalityProvider.jsm, line 68: TypeError: http://%(server)s/dummy/blocklist// is not a valid URL.
+JavaScript error: resource://activity-stream/lib/PersonalityProvider/PersonalityProvider.jsm, line 68: TypeError: http://%(server)s/dummy/blocklist// is not a valid URL.
+JavaScript error: resource://activity-stream/lib/PersonalityProvider/PersonalityProvider.jsm, line 68: TypeError: http://%(server)s/dummy/blocklist// is not a valid URL.
+JavaScript error: resource://activity-stream/lib/PersonalityProvider/PersonalityProvider.jsm, line 68: TypeError: http://%(server)s/dummy/blocklist// is not a valid URL.
+JavaScript error: resource://activity-stream/lib/PersonalityProvider/PersonalityProvider.jsm, line 68: TypeError: http://%(server)s/dummy/blocklist// is not a valid URL.
+JavaScript error: resource://activity-stream/lib/PersonalityProvider/PersonalityProvider.jsm, line 68: TypeError: http://%(server)s/dummy/blocklist// is not a valid URL.
+JavaScript error: resource://activity-stream/lib/PersonalityProvider/PersonalityProvider.jsm, line 68: TypeError: http://%(server)s/dummy/blocklist// is not a valid URL.
+JavaScript error: resource://activity-stream/lib/PersonalityProvider/PersonalityProvider.jsm, line 68: TypeError: http://%(server)s/dummy/blocklist// is not a valid URL.
+JavaScript error: resource://activity-stream/lib/PersonalityProvider/PersonalityProvider.jsm, line 68: TypeError: http://%(server)s/dummy/blocklist// is not a valid URL.
+JavaScript error: resource://activity-stream/lib/PersonalityProvider/PersonalityProvider.jsm, line 68: TypeError: http://%(server)s/dummy/blocklist// is not a valid URL.
+JavaScript error: resource://activity-stream/lib/PersonalityProvider/PersonalityProvider.jsm, line 68: TypeError: http://%(server)s/dummy/blocklist// is not a valid URL.
+JavaScript error: resource://activity-stream/lib/PersonalityProvider/PersonalityProvider.jsm, line 68: TypeError: http://%(server)s/dummy/blocklist// is not a valid URL.
+JavaScript error: resource://activity-stream/lib/PersonalityProvider/PersonalityProvider.jsm, line 68: TypeError: http://%(server)s/dummy/blocklist// is not a valid URL.
+JavaScript error: resource://activity-stream/lib/PersonalityProvider/PersonalityProvider.jsm, line 68: TypeError: http://%(server)s/dummy/blocklist// is not a valid URL.
+JavaScript error: resource://activity-stream/lib/PersonalityProvider/PersonalityProvider.jsm, line 68: TypeError: http://%(server)s/dummy/blocklist// is not a valid URL.
+JavaScript error: resource://activity-stream/lib/PersonalityProvider/PersonalityProvider.jsm, line 68: TypeError: http://%(server)s/dummy/blocklist// is not a valid URL.
+JavaScript error: resource://activity-stream/lib/PersonalityProvider/PersonalityProvider.jsm, line 68: TypeError: http://%(server)s/dummy/blocklist// is not a valid URL.
+JavaScript error: resource://activity-stream/lib/PersonalityProvider/PersonalityProvider.jsm, line 68: TypeError: http://%(server)s/dummy/blocklist// is not a valid URL.
+JavaScript error: resource://activity-stream/lib/PersonalityProvider/PersonalityProvider.jsm, line 68: TypeError: http://%(server)s/dummy/blocklist// is not a valid URL.
+JavaScript error: resource://activity-stream/lib/PersonalityProvider/PersonalityProvider.jsm, line 68: TypeError: http://%(server)s/dummy/blocklist// is not a valid URL.
+1658765253440	Marionette	INFO	Stopped listening on port 56678
+JavaScript error: chrome://remote/content/marionette/cert.js, line 55: NS_ERROR_NOT_AVAILABLE: Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsICertOverrideService.setDisableAllSecurityChecksAndLetAttackersInterceptMyData]
+1658765256451	Marionette	INFO	Stopped listening on port 56582
+JavaScript error: chrome://remote/content/marionette/cert.js, line 55: NS_ERROR_NOT_AVAILABLE: Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsICertOverrideService.setDisableAllSecurityChecksAndLetAttackersInterceptMyData]
+1658765259806	Marionette	INFO	Stopped listening on port 56443
+JavaScript error: chrome://remote/content/marionette/cert.js, line 55: NS_ERROR_NOT_AVAILABLE: Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsICertOverrideService.setDisableAllSecurityChecksAndLetAttackersInterceptMyData]
+1658765260495	Marionette	INFO	Stopped listening on port 56368
+JavaScript error: chrome://remote/content/marionette/cert.js, line 55: NS_ERROR_NOT_AVAILABLE: Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsICertOverrideService.setDisableAllSecurityChecksAndLetAttackersInterceptMyData]

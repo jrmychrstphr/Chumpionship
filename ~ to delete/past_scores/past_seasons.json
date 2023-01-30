@@ -1,0 +1,952 @@
+[
+    {
+        "manager_code": "2189166",
+        "manager_name": "David Grice",
+        "past_seasons": [
+            {
+                "points": 1969,
+                "rank": 2253361,
+                "season": "2019/20"
+            },
+            {
+                "points": 2235,
+                "rank": 686802,
+                "season": "2020/21"
+            },
+            {
+                "points": 2202,
+                "rank": 1183519,
+                "season": "2021/22"
+            }
+        ]
+    },
+    {
+        "manager_code": "2129352",
+        "manager_name": "Gareth Mytton",
+        "past_seasons": [
+            {
+                "points": 1903,
+                "rank": 694974,
+                "season": "2009/10"
+            },
+            {
+                "points": 1803,
+                "rank": 618800,
+                "season": "2010/11"
+            },
+            {
+                "points": 1986,
+                "rank": 674842,
+                "season": "2016/17"
+            },
+            {
+                "points": 2305,
+                "rank": 12638,
+                "season": "2017/18"
+            },
+            {
+                "points": 2062,
+                "rank": 1191381,
+                "season": "2018/19"
+            },
+            {
+                "points": 2208,
+                "rank": 261969,
+                "season": "2019/20"
+            },
+            {
+                "points": 2281,
+                "rank": 444947,
+                "season": "2020/21"
+            },
+            {
+                "points": 2194,
+                "rank": 1235969,
+                "season": "2021/22"
+            }
+        ]
+    },
+    {
+        "manager_code": "2069149",
+        "manager_name": "Dan Browne",
+        "past_seasons": [
+            {
+                "points": 1132,
+                "rank": 1464578,
+                "season": "2007/08"
+            },
+            {
+                "points": 1695,
+                "rank": 1265393,
+                "season": "2011/12"
+            },
+            {
+                "points": 1836,
+                "rank": 828605,
+                "season": "2012/13"
+            },
+            {
+                "points": 1758,
+                "rank": 1851492,
+                "season": "2013/14"
+            },
+            {
+                "points": 1819,
+                "rank": 1006010,
+                "season": "2014/15"
+            },
+            {
+                "points": 1791,
+                "rank": 1830332,
+                "season": "2015/16"
+            },
+            {
+                "points": 1922,
+                "rank": 1029839,
+                "season": "2016/17"
+            },
+            {
+                "points": 2132,
+                "rank": 337640,
+                "season": "2017/18"
+            },
+            {
+                "points": 1793,
+                "rank": 4121224,
+                "season": "2018/19"
+            },
+            {
+                "points": 2018,
+                "rank": 1699188,
+                "season": "2019/20"
+            },
+            {
+                "points": 1961,
+                "rank": 2999621,
+                "season": "2020/21"
+            },
+            {
+                "points": 2303,
+                "rank": 645116,
+                "season": "2021/22"
+            }
+        ]
+    },
+    {
+        "manager_code": "2070773",
+        "manager_name": "Kester Mollahan",
+        "past_seasons": [
+            {
+                "points": 1239,
+                "rank": 2161604,
+                "season": "2010/11"
+            },
+            {
+                "points": 1938,
+                "rank": 310995,
+                "season": "2011/12"
+            },
+            {
+                "points": 1993,
+                "rank": 240806,
+                "season": "2012/13"
+            },
+            {
+                "points": 2042,
+                "rank": 874550,
+                "season": "2013/14"
+            },
+            {
+                "points": 1907,
+                "rank": 551692,
+                "season": "2014/15"
+            },
+            {
+                "points": 2029,
+                "rank": 498589,
+                "season": "2015/16"
+            },
+            {
+                "points": 1892,
+                "rank": 1218381,
+                "season": "2016/17"
+            },
+            {
+                "points": 2196,
+                "rank": 133547,
+                "season": "2017/18"
+            },
+            {
+                "points": 1925,
+                "rank": 2800310,
+                "season": "2018/19"
+            },
+            {
+                "points": 1961,
+                "rank": 2349570,
+                "season": "2019/20"
+            },
+            {
+                "points": 2245,
+                "rank": 628279,
+                "season": "2020/21"
+            },
+            {
+                "points": 2116,
+                "rank": 1794137,
+                "season": "2021/22"
+            }
+        ]
+    },
+    {
+        "manager_code": "2046178",
+        "manager_name": "Mike Yeboah",
+        "past_seasons": [
+            {
+                "points": 1944,
+                "rank": 898841,
+                "season": "2016/17"
+            },
+            {
+                "points": 2032,
+                "rank": 928933,
+                "season": "2017/18"
+            },
+            {
+                "points": 2084,
+                "rank": 984833,
+                "season": "2018/19"
+            },
+            {
+                "points": 1991,
+                "rank": 1999246,
+                "season": "2019/20"
+            },
+            {
+                "points": 2036,
+                "rank": 2280593,
+                "season": "2020/21"
+            },
+            {
+                "points": 2307,
+                "rank": 629432,
+                "season": "2021/22"
+            }
+        ]
+    },
+    {
+        "manager_code": "2045273",
+        "manager_name": "Chris Marsh",
+        "past_seasons": [
+            {
+                "points": 2260,
+                "rank": 146011,
+                "season": "2013/14"
+            },
+            {
+                "points": 1953,
+                "rank": 361664,
+                "season": "2014/15"
+            },
+            {
+                "points": 1755,
+                "rank": 1997065,
+                "season": "2015/16"
+            },
+            {
+                "points": 2085,
+                "rank": 280533,
+                "season": "2016/17"
+            },
+            {
+                "points": 1697,
+                "rank": 3592559,
+                "season": "2017/18"
+            },
+            {
+                "points": 1892,
+                "rank": 3174061,
+                "season": "2018/19"
+            },
+            {
+                "points": 1919,
+                "rank": 2850953,
+                "season": "2019/20"
+            },
+            {
+                "points": 2245,
+                "rank": 629117,
+                "season": "2020/21"
+            },
+            {
+                "points": 1880,
+                "rank": 3976283,
+                "season": "2021/22"
+            }
+        ]
+    },
+    {
+        "manager_code": "1840203",
+        "manager_name": "Lee Campbell-Guthrie",
+        "past_seasons": [
+            {
+                "points": 1753,
+                "rank": 1017707,
+                "season": "2011/12"
+            },
+            {
+                "points": 1843,
+                "rank": 799067,
+                "season": "2012/13"
+            },
+            {
+                "points": 2145,
+                "rank": 474253,
+                "season": "2013/14"
+            },
+            {
+                "points": 1810,
+                "rank": 1059231,
+                "season": "2014/15"
+            },
+            {
+                "points": 1911,
+                "rank": 1165678,
+                "season": "2015/16"
+            },
+            {
+                "points": 2171,
+                "rank": 102139,
+                "season": "2016/17"
+            },
+            {
+                "points": 2130,
+                "rank": 347487,
+                "season": "2017/18"
+            },
+            {
+                "points": 1963,
+                "rank": 2340928,
+                "season": "2018/19"
+            },
+            {
+                "points": 2133,
+                "rank": 665715,
+                "season": "2019/20"
+            },
+            {
+                "points": 2255,
+                "rank": 577454,
+                "season": "2020/21"
+            },
+            {
+                "points": 2326,
+                "rank": 552655,
+                "season": "2021/22"
+            }
+        ]
+    },
+    {
+        "manager_code": "2037281",
+        "manager_name": "Dan Mclean",
+        "past_seasons": [
+            {
+                "points": 1478,
+                "rank": 1815428,
+                "season": "2009/10"
+            },
+            {
+                "points": 1323,
+                "rank": 2397258,
+                "season": "2011/12"
+            },
+            {
+                "points": 1300,
+                "rank": 2404521,
+                "season": "2012/13"
+            },
+            {
+                "points": 1821,
+                "rank": 1663001,
+                "season": "2013/14"
+            },
+            {
+                "points": 1771,
+                "rank": 1925256,
+                "season": "2015/16"
+            },
+            {
+                "points": 1729,
+                "rank": 2306372,
+                "season": "2016/17"
+            },
+            {
+                "points": 1832,
+                "rank": 2565501,
+                "season": "2017/18"
+            },
+            {
+                "points": 1951,
+                "rank": 2486638,
+                "season": "2018/19"
+            },
+            {
+                "points": 1832,
+                "rank": 3908712,
+                "season": "2019/20"
+            },
+            {
+                "points": 2054,
+                "rank": 2113725,
+                "season": "2020/21"
+            },
+            {
+                "points": 2236,
+                "rank": 982253,
+                "season": "2021/22"
+            }
+        ]
+    },
+    {
+        "manager_code": "2037213",
+        "manager_name": "Pete Baker",
+        "past_seasons": [
+            {
+                "points": 1885,
+                "rank": 333119,
+                "season": "2010/11"
+            },
+            {
+                "points": 1864,
+                "rank": 557485,
+                "season": "2011/12"
+            },
+            {
+                "points": 1653,
+                "rank": 1620208,
+                "season": "2012/13"
+            },
+            {
+                "points": 1908,
+                "rank": 1379887,
+                "season": "2013/14"
+            },
+            {
+                "points": 1834,
+                "rank": 927634,
+                "season": "2014/15"
+            },
+            {
+                "points": 2166,
+                "rank": 79652,
+                "season": "2015/16"
+            },
+            {
+                "points": 1914,
+                "rank": 1079592,
+                "season": "2016/17"
+            },
+            {
+                "points": 2091,
+                "rank": 538841,
+                "season": "2017/18"
+            },
+            {
+                "points": 2062,
+                "rank": 1193731,
+                "season": "2018/19"
+            },
+            {
+                "points": 2283,
+                "rank": 70747,
+                "season": "2019/20"
+            },
+            {
+                "points": 2189,
+                "rank": 989859,
+                "season": "2020/21"
+            },
+            {
+                "points": 2204,
+                "rank": 1172204,
+                "season": "2021/22"
+            }
+        ]
+    },
+    {
+        "manager_code": "870170",
+        "manager_name": "Ben Rachell",
+        "past_seasons": [
+            {
+                "points": 1917,
+                "rank": 374890,
+                "season": "2011/12"
+            },
+            {
+                "points": 1786,
+                "rank": 1058351,
+                "season": "2012/13"
+            },
+            {
+                "points": 1926,
+                "rank": 1006460,
+                "season": "2016/17"
+            },
+            {
+                "points": 2001,
+                "rank": 1171619,
+                "season": "2017/18"
+            },
+            {
+                "points": 2024,
+                "rank": 1604492,
+                "season": "2018/19"
+            },
+            {
+                "points": 2144,
+                "rank": 1330119,
+                "season": "2020/21"
+            },
+            {
+                "points": 2099,
+                "rank": 1934476,
+                "season": "2021/22"
+            }
+        ]
+    },
+    {
+        "manager_code": "1123094",
+        "manager_name": "Liam Kelly",
+        "past_seasons": [
+            {
+                "points": 1385,
+                "rank": 1978918,
+                "season": "2010/11"
+            },
+            {
+                "points": 1827,
+                "rank": 703706,
+                "season": "2011/12"
+            },
+            {
+                "points": 1789,
+                "rank": 1046272,
+                "season": "2012/13"
+            },
+            {
+                "points": 2265,
+                "rank": 135504,
+                "season": "2013/14"
+            },
+            {
+                "points": 1589,
+                "rank": 2158266,
+                "season": "2014/15"
+            },
+            {
+                "points": 1951,
+                "rank": 921613,
+                "season": "2015/16"
+            },
+            {
+                "points": 1579,
+                "rank": 3179423,
+                "season": "2016/17"
+            },
+            {
+                "points": 2063,
+                "rank": 708538,
+                "season": "2017/18"
+            },
+            {
+                "points": 2147,
+                "rank": 516004,
+                "season": "2018/19"
+            },
+            {
+                "points": 2129,
+                "rank": 689324,
+                "season": "2019/20"
+            },
+            {
+                "points": 2143,
+                "rank": 1332397,
+                "season": "2020/21"
+            },
+            {
+                "points": 2053,
+                "rank": 2312833,
+                "season": "2021/22"
+            }
+        ]
+    },
+    {
+        "manager_code": "1114199",
+        "manager_name": "Mike Dove",
+        "past_seasons": [
+            {
+                "points": 2076,
+                "rank": 301495,
+                "season": "2015/16"
+            },
+            {
+                "points": 2087,
+                "rank": 275569,
+                "season": "2016/17"
+            },
+            {
+                "points": 2268,
+                "rank": 32273,
+                "season": "2017/18"
+            },
+            {
+                "points": 2219,
+                "rank": 208623,
+                "season": "2018/19"
+            },
+            {
+                "points": 1916,
+                "rank": 2886405,
+                "season": "2019/20"
+            },
+            {
+                "points": 1831,
+                "rank": 4226045,
+                "season": "2020/21"
+            },
+            {
+                "points": 2376,
+                "rank": 377367,
+                "season": "2021/22"
+            }
+        ]
+    },
+    {
+        "manager_code": "701836",
+        "manager_name": "David Steel",
+        "past_seasons": [
+            {
+                "points": 2050,
+                "rank": 2345851,
+                "season": "2021/22"
+            }
+        ]
+    },
+    {
+        "manager_code": "594302",
+        "manager_name": "Jon Lescott",
+        "past_seasons": [
+            {
+                "points": 1910,
+                "rank": 395953,
+                "season": "2011/12"
+            },
+            {
+                "points": 1813,
+                "rank": 936286,
+                "season": "2012/13"
+            },
+            {
+                "points": 1582,
+                "rank": 2636343,
+                "season": "2015/16"
+            },
+            {
+                "points": 1776,
+                "rank": 1994405,
+                "season": "2016/17"
+            },
+            {
+                "points": 2001,
+                "rank": 1170907,
+                "season": "2017/18"
+            },
+            {
+                "points": 2036,
+                "rank": 1468382,
+                "season": "2018/19"
+            },
+            {
+                "points": 2092,
+                "rank": 980507,
+                "season": "2019/20"
+            },
+            {
+                "points": 2258,
+                "rank": 560482,
+                "season": "2020/21"
+            },
+            {
+                "points": 2169,
+                "rank": 1406476,
+                "season": "2021/22"
+            }
+        ]
+    },
+    {
+        "manager_code": "417249",
+        "manager_name": "Sammy Murphy",
+        "past_seasons": [
+            {
+                "points": 1756,
+                "rank": 1340696,
+                "season": "2014/15"
+            },
+            {
+                "points": 2179,
+                "rank": 62810,
+                "season": "2015/16"
+            },
+            {
+                "points": 2010,
+                "rank": 559179,
+                "season": "2016/17"
+            },
+            {
+                "points": 2004,
+                "rank": 1144806,
+                "season": "2017/18"
+            },
+            {
+                "points": 1815,
+                "rank": 3938402,
+                "season": "2018/19"
+            },
+            {
+                "points": 1870,
+                "rank": 3450134,
+                "season": "2019/20"
+            },
+            {
+                "points": 2122,
+                "rank": 1747798,
+                "season": "2021/22"
+            }
+        ]
+    },
+    {
+        "manager_code": "264990",
+        "manager_name": "Ben Carroll",
+        "past_seasons": [
+            {
+                "points": 2201,
+                "rank": 288785,
+                "season": "2013/14"
+            },
+            {
+                "points": 1942,
+                "rank": 402530,
+                "season": "2014/15"
+            },
+            {
+                "points": 2115,
+                "rank": 180113,
+                "season": "2015/16"
+            },
+            {
+                "points": 1963,
+                "rank": 790184,
+                "season": "2016/17"
+            },
+            {
+                "points": 2194,
+                "rank": 138261,
+                "season": "2017/18"
+            },
+            {
+                "points": 2320,
+                "rank": 40815,
+                "season": "2018/19"
+            },
+            {
+                "points": 2177,
+                "rank": 397977,
+                "season": "2019/20"
+            },
+            {
+                "points": 2323,
+                "rank": 276351,
+                "season": "2020/21"
+            },
+            {
+                "points": 2482,
+                "rank": 134002,
+                "season": "2021/22"
+            }
+        ]
+    },
+    {
+        "manager_code": "172170",
+        "manager_name": "Darren Baker",
+        "past_seasons": [
+            {
+                "points": 1678,
+                "rank": 1337194,
+                "season": "2011/12"
+            },
+            {
+                "points": 1695,
+                "rank": 2239361,
+                "season": "2015/16"
+            },
+            {
+                "points": 1439,
+                "rank": 3699873,
+                "season": "2016/17"
+            },
+            {
+                "points": 1664,
+                "rank": 3830236,
+                "season": "2017/18"
+            },
+            {
+                "points": 1990,
+                "rank": 2009954,
+                "season": "2018/19"
+            },
+            {
+                "points": 1900,
+                "rank": 3088100,
+                "season": "2019/20"
+            },
+            {
+                "points": 2251,
+                "rank": 599994,
+                "season": "2020/21"
+            },
+            {
+                "points": 2327,
+                "rank": 549057,
+                "season": "2021/22"
+            }
+        ]
+    },
+    {
+        "manager_code": "140183",
+        "manager_name": "James Stillwell",
+        "past_seasons": [
+            {
+                "points": 1617,
+                "rank": 2984608,
+                "season": "2016/17"
+            },
+            {
+                "points": 1981,
+                "rank": 1336107,
+                "season": "2017/18"
+            },
+            {
+                "points": 2301,
+                "rank": 57977,
+                "season": "2018/19"
+            },
+            {
+                "points": 2085,
+                "rank": 1037093,
+                "season": "2019/20"
+            },
+            {
+                "points": 2313,
+                "rank": 311431,
+                "season": "2020/21"
+            },
+            {
+                "points": 2355,
+                "rank": 443880,
+                "season": "2021/22"
+            }
+        ]
+    },
+    {
+        "manager_code": "117678",
+        "manager_name": "Richard Walker",
+        "past_seasons": [
+            {
+                "points": 2268,
+                "rank": 101239,
+                "season": "2018/19"
+            },
+            {
+                "points": 2267,
+                "rank": 97796,
+                "season": "2019/20"
+            },
+            {
+                "points": 2184,
+                "rank": 1020296,
+                "season": "2020/21"
+            },
+            {
+                "points": 2193,
+                "rank": 1242066,
+                "season": "2021/22"
+            }
+        ]
+    },
+    {
+        "manager_code": "51920",
+        "manager_name": "Jeremy Harding",
+        "past_seasons": [
+            {
+                "points": 1763,
+                "rank": 774883,
+                "season": "2010/11"
+            },
+            {
+                "points": 1631,
+                "rank": 1531676,
+                "season": "2011/12"
+            },
+            {
+                "points": 1906,
+                "rank": 526209,
+                "season": "2012/13"
+            },
+            {
+                "points": 2033,
+                "rank": 911070,
+                "season": "2013/14"
+            },
+            {
+                "points": 1933,
+                "rank": 438462,
+                "season": "2014/15"
+            },
+            {
+                "points": 2092,
+                "rank": 248128,
+                "season": "2015/16"
+            },
+            {
+                "points": 2147,
+                "rank": 139201,
+                "season": "2016/17"
+            },
+            {
+                "points": 2193,
+                "rank": 140693,
+                "season": "2017/18"
+            },
+            {
+                "points": 2093,
+                "rank": 906872,
+                "season": "2018/19"
+            },
+            {
+                "points": 2174,
+                "rank": 416687,
+                "season": "2019/20"
+            },
+            {
+                "points": 2126,
+                "rank": 1474554,
+                "season": "2020/21"
+            },
+            {
+                "points": 2435,
+                "rank": 222872,
+                "season": "2021/22"
+            }
+        ]
+    }
+]
