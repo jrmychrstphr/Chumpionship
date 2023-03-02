@@ -1017,3 +1017,80 @@ JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: Synta
 JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
 JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
 1676897700111	Marionette	INFO	Stopped listening on port 57103
+1677785528577	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/dj/r_d53pv97qn6cb7zp_63kxxh0000gn/T/rust_mozprofile.mAJPFqzu1jEN"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1677785533587	Marionette	INFO	Marionette enabled
+1677785533701	Marionette	INFO	Listening on port 65077
+1677785534587	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/dj/r_d53pv97qn6cb7zp_63kxxh0000gn/T/rust_mozprofile.PycalowB1SfM"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/dj/r_d53pv97qn6cb7zp_63kxxh0000gn/T/rust_mozprofile.mAJPFqzu1jEN/search.json.mozlz4", (void 0)))
+1677785535227	Marionette	INFO	Marionette enabled
+1677785535311	Marionette	INFO	Listening on port 65110
+1677785535963	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/dj/r_d53pv97qn6cb7zp_63kxxh0000gn/T/rust_mozprofile.PycalowB1SfM/search.json.mozlz4", (void 0)))
+JavaScript error: https://js.datadome.co/tags.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://js.datadome.co/tags.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+1677785631869	Marionette	INFO	Stopped listening on port 65110
