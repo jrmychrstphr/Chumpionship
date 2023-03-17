@@ -419,13 +419,15 @@ def accept_cookies():
 		print("Waiting to accept cookies")
 		# wait for the 'accept all' button to be clickable
 		WebDriverWait(driver, 30).until(
-			EC.element_to_be_clickable((By.CSS_SELECTOR, "button._2hTJ5th4dIYlveipSEMYHH.BfdVlAo_cgSVjDUegen0F.js-accept-all-close"))
+			#EC.element_to_be_clickable((By.CSS_SELECTOR, "button._2hTJ5th4dIYlveipSEMYHH.BfdVlAo_cgSVjDUegen0F.js-accept-all-close"))
+			EC.element_to_be_clickable((By.CSS_SELECTOR, "#onetrust-accept-btn-handler"))
 		)
 	except:
 		print("Err - button not found")
 	else:
 		# Click the button
-		driver.find_element_by_css_selector('button._2hTJ5th4dIYlveipSEMYHH.BfdVlAo_cgSVjDUegen0F.js-accept-all-close').click()
+		#driver.find_element_by_css_selector('button._2hTJ5th4dIYlveipSEMYHH.BfdVlAo_cgSVjDUegen0F.js-accept-all-close').click()
+		driver.find_element_by_css_selector('#onetrust-accept-btn-handler').click()
 		print("Cookies accepted")
 
 
