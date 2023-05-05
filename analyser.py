@@ -23,7 +23,7 @@ def return_gameweeks(n):
 	print(f"gameweeks = {g}")
 	return g
 
-gameweeks = return_gameweeks("32")
+gameweeks = return_gameweeks("34")
 
 # compile dataset
 
