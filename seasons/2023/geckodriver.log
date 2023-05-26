@@ -2128,3 +2128,96 @@ JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: Synta
 JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
 JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
 1684482109019	Marionette	INFO	Stopped listening on port 65329
+1685083181352	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/dj/r_d53pv97qn6cb7zp_63kxxh0000gn/T/rust_mozprofile.dgSgZ6084jcA"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1685083186296	Marionette	INFO	Marionette enabled
+1685083186487	Marionette	INFO	Listening on port 62196
+[ERROR glean_core] Error setting metrics feature config: Json(Error("EOF while parsing a value", line: 1, column: 0))
+[Child 14909, Main Thread] WARNING: JSWindowActorChild::SendRawMessage (Conduits, ConduitClosed) not sent: !CanSend() || !mManager || !mManager->CanSend(): file /builds/worker/checkouts/gecko/dom/ipc/jsactor/JSWindowActorChild.cpp:57
+[Child 14909, Main Thread] WARNING: JSWindowActorChild::SendRawMessage (Conduits, ConduitClosed) not sent: !CanSend() || !mManager || !mManager->CanSend(): file /builds/worker/checkouts/gecko/dom/ipc/jsactor/JSWindowActorChild.cpp:57
+[Child 14909, Main Thread] WARNING: JSWindowActorChild::SendRawMessage (Conduits, ConduitClosed) not sent: !CanSend() || !mManager || !mManager->CanSend(): file /builds/worker/checkouts/gecko/dom/ipc/jsactor/JSWindowActorChild.cpp:57
+[Child 14909, Main Thread] WARNING: JSWindowActorChild::SendRawMessage (Conduits, ConduitClosed) not sent: !CanSend() || !mManager || !mManager->CanSend(): file /builds/worker/checkouts/gecko/dom/ipc/jsactor/JSWindowActorChild.cpp:57
+[Child 14909, Main Thread] WARNING: JSWindowActorChild::SendRawMessage (Conduits, ConduitClosed) not sent: !CanSend() || !mManager || !mManager->CanSend(): file /builds/worker/checkouts/gecko/dom/ipc/jsactor/JSWindowActorChild.cpp:57
+[Child 14909, Main Thread] WARNING: JSWindowActorChild::SendRawMessage (Conduits, ConduitClosed) not sent: !CanSend() || !mManager || !mManager->CanSend(): file /builds/worker/checkouts/gecko/dom/ipc/jsactor/JSWindowActorChild.cpp:57
+[Child 14909, Main Thread] WARNING: JSWindowActorChild::SendRawMessage (Conduits, ConduitClosed) not sent: !CanSend() || !mManager || !mManager->CanSend(): file /builds/worker/checkouts/gecko/dom/ipc/jsactor/JSWindowActorChild.cpp:57
+[Child 14909, Main Thread] WARNING: JSWindowActorChild::SendRawMessage (Conduits, ConduitClosed) not sent: !CanSend() || !mManager || !mManager->CanSend(): file /builds/worker/checkouts/gecko/dom/ipc/jsactor/JSWindowActorChild.cpp:57
+1685083193860	Marionette	INFO	Stopped listening on port 62196
+1685083198656	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/dj/r_d53pv97qn6cb7zp_63kxxh0000gn/T/rust_mozprofile.uffUk2U1K7i2"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1685083199323	Marionette	INFO	Marionette enabled
+1685083199438	Marionette	INFO	Listening on port 62286
+1685083200020	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[ERROR glean_core] Error setting metrics feature config: Json(Error("EOF while parsing a value", line: 1, column: 0))
+JavaScript error: https://js.datadome.co/tags.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+1685083274557	Marionette	INFO	Stopped listening on port 62286
+[Child 14935, Main Thread] WARNING: JSWindowActorChild::SendRawMessage (Conduits, ConduitClosed) not sent: !CanSend() || !mManager || !mManager->CanSend(): file /builds/worker/checkouts/gecko/dom/ipc/jsactor/JSWindowActorChild.cpp:57
+[Child 14935, Main Thread] WARNING: JSWindowActorChild::SendRawMessage (Conduits, ConduitClosed) not sent: !CanSend() || !mManager || !mManager->CanSend(): file /builds/worker/checkouts/gecko/dom/ipc/jsactor/JSWindowActorChild.cpp:57
+[Child 14935, Main Thread] WARNING: JSWindowActorChild::SendRawMessage (Conduits, ConduitClosed) not sent: !CanSend() || !mManager || !mManager->CanSend(): file /builds/worker/checkouts/gecko/dom/ipc/jsactor/JSWindowActorChild.cpp:57
+[Child 14935, Main Thread] WARNING: JSWindowActorChild::SendRawMessage (Conduits, ConduitClosed) not sent: !CanSend() || !mManager || !mManager->CanSend(): file /builds/worker/checkouts/gecko/dom/ipc/jsactor/JSWindowActorChild.cpp:57
+[Child 14935, Main Thread] WARNING: JSWindowActorChild::SendRawMessage (Conduits, ConduitClosed) not sent: !CanSend() || !mManager || !mManager->CanSend(): file /builds/worker/checkouts/gecko/dom/ipc/jsactor/JSWindowActorChild.cpp:57
+[Child 14935, Main Thread] WARNING: JSWindowActorChild::SendRawMessage (Conduits, ConduitClosed) not sent: !CanSend() || !mManager || !mManager->CanSend(): file /builds/worker/checkouts/gecko/dom/ipc/jsactor/JSWindowActorChild.cpp:57
+[Child 14935, Main Thread] WARNING: JSWindowActorChild::SendRawMessage (Conduits, ConduitClosed) not sent: !CanSend() || !mManager || !mManager->CanSend(): file /builds/worker/checkouts/gecko/dom/ipc/jsactor/JSWindowActorChild.cpp:57
+[Child 14935, Main Thread] WARNING: JSWindowActorChild::SendRawMessage (Conduits, ConduitClosed) not sent: !CanSend() || !mManager || !mManager->CanSend(): file /builds/worker/checkouts/gecko/dom/ipc/jsactor/JSWindowActorChild.cpp:57
