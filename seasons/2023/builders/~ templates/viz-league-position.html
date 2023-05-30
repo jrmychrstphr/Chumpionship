@@ -55,7 +55,7 @@
                 console.log(player_array.slice().sort((a, b) => d3.ascending(a.team_name, b.team_name)))
 
                 $.each( player_array.slice().sort((a, b) => d3.ascending(a.team_name, b.team_name)), function() {
-                    let text =  this.manager_name + " (" + this.team_name + ")"   
+                    let text =  this.team_name + " (" + this.manager_name + ")"   
                     player_select.append( 'option' ).attr("value", this.manager_code).text(text)
                 })
 
@@ -97,7 +97,7 @@
 
                     var subtitle = title_container.append("div")
                     .classed("text display regular", true)
-                    .text((data.database[input_player]["manager_name"] + " (" + data.database[input_player]["team_name"] + ")").toUpperCase())
+                    .text((data.database[input_player]["team_name"] + " (" + data.database[input_player]["manager_name"] + ")").toUpperCase())
                     
                     //build dataset
                     dataset = []
