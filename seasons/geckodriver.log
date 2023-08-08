@@ -75,3 +75,121 @@ JavaScript error: https://www.premierleague.com/resources/prod/v6.98.1-4068/ism/
 2022-08-02 11:00:09.474 plugin-container[14082:119540] nil host used in call to allowsAnyHTTPSCertificateForHost:
 1659438019624	Marionette	INFO	Stopped listening on port 50539
 1659439468566	Marionette	INFO	Stopped listening on port 50447
+1691242125188	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/dj/r_d53pv97qn6cb7zp_63kxxh0000gn/T/rust_mozprofile.986Iq61wcJlS"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1691242130648	Marionette	INFO	Marionette enabled
+1691242130887	Marionette	INFO	Listening on port 51045
+1691242139588	Marionette	INFO	Stopped listening on port 51045
+1691242148034	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/dj/r_d53pv97qn6cb7zp_63kxxh0000gn/T/rust_mozprofile.tjO9kFffrGac"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1691242148601	Marionette	INFO	Marionette enabled
+1691242148773	Marionette	INFO	Listening on port 51115
+1691242149183	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+1691243216156	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/dj/r_d53pv97qn6cb7zp_63kxxh0000gn/T/rust_mozprofile.5Sgjvvjw5JZy"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1691243216785	Marionette	INFO	Marionette enabled
+1691243216970	Marionette	INFO	Listening on port 51749
+1691243217188	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+console.error: "Unable to find target with innerWindowId:6442450945"
+console.error: "Unable to find target with innerWindowId:6442450945"
+console.error: "Unable to find target with innerWindowId:6442450945"
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+console.warn: "Listener for event 'frame' did not return a promise."
+console.warn: "Listener for event 'frame' did not return a promise."
+console.warn: "Listener for event 'frame' did not return a promise."
+JavaScript error: , line 0: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: , line 0: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: , line 0: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: , line 0: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+1691243536843	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/dj/r_d53pv97qn6cb7zp_63kxxh0000gn/T/rust_mozprofile.yWWfJWPDnl5j"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1691243537448	Marionette	INFO	Marionette enabled
+1691243537636	Marionette	INFO	Listening on port 51968
+1691243537855	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+1691243635862	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/dj/r_d53pv97qn6cb7zp_63kxxh0000gn/T/rust_mozprofile.wPtGsLahFmRA"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1691243636454	Marionette	INFO	Marionette enabled
+1691243636628	Marionette	INFO	Listening on port 52106
+1691243637039	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+1691243968306	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/dj/r_d53pv97qn6cb7zp_63kxxh0000gn/T/rust_mozprofile.3zneucKqn7n8"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1691243968898	Marionette	INFO	Marionette enabled
+1691243969094	Marionette	INFO	Listening on port 52291
+1691243969317	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+1691244077054	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/dj/r_d53pv97qn6cb7zp_63kxxh0000gn/T/rust_mozprofile.HU26M4txx2Jg"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1691244077656	Marionette	INFO	Marionette enabled
+1691244077852	Marionette	INFO	Listening on port 52441
+1691244078074	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+1691244106396	Marionette	INFO	Stopped listening on port 52441
+JavaScript error: chrome://remote/content/marionette/cert.sys.mjs, line 51: NS_ERROR_NOT_AVAILABLE: Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsICertOverrideService.setDisableAllSecurityChecksAndLetAttackersInterceptMyData]
+1691244107949	Marionette	INFO	Stopped listening on port 52291
+JavaScript error: chrome://remote/content/marionette/cert.sys.mjs, line 51: NS_ERROR_NOT_AVAILABLE: Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsICertOverrideService.setDisableAllSecurityChecksAndLetAttackersInterceptMyData]
+1691244110386	Marionette	INFO	Stopped listening on port 52106
+JavaScript error: chrome://remote/content/marionette/cert.sys.mjs, line 51: NS_ERROR_NOT_AVAILABLE: Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsICertOverrideService.setDisableAllSecurityChecksAndLetAttackersInterceptMyData]
+1691244111823	Marionette	INFO	Stopped listening on port 51968
+JavaScript error: chrome://remote/content/marionette/cert.sys.mjs, line 51: NS_ERROR_NOT_AVAILABLE: Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsICertOverrideService.setDisableAllSecurityChecksAndLetAttackersInterceptMyData]
+1691244116022	Marionette	INFO	Stopped listening on port 51749
+JavaScript error: , line 0: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: , line 0: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: , line 0: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: , line 0: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: , line 0: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: chrome://remote/content/marionette/cert.sys.mjs, line 51: NS_ERROR_NOT_AVAILABLE: Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsICertOverrideService.setDisableAllSecurityChecksAndLetAttackersInterceptMyData]
+1691244179655	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/dj/r_d53pv97qn6cb7zp_63kxxh0000gn/T/rust_mozprofile.8FDeQSpRX18D"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1691244180230	Marionette	INFO	Marionette enabled
+1691244180418	Marionette	INFO	Listening on port 52584
+1691244180632	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+1691244423854	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/dj/r_d53pv97qn6cb7zp_63kxxh0000gn/T/rust_mozprofile.ELgPxT4jymRc"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1691244424458	Marionette	INFO	Marionette enabled
+1691244424644	Marionette	INFO	Listening on port 52770
+1691244425083	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+1691244467117	Marionette	INFO	Stopped listening on port 52770
+1691244982527	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/dj/r_d53pv97qn6cb7zp_63kxxh0000gn/T/rust_mozprofile.eO2FYoBnTvcp"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1691244983093	Marionette	INFO	Marionette enabled
+1691244983278	Marionette	INFO	Listening on port 53030
+1691244983682	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1691244986264	Marionette	INFO	Stopped listening on port 52584
+JavaScript error: , line 0: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: , line 0: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: , line 0: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: , line 0: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+1691245286170	Marionette	INFO	Stopped listening on port 53030
+1691492194655	Marionette	INFO	Stopped listening on port 51115
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+JavaScript error: chrome://remote/content/marionette/cert.sys.mjs, line 51: NS_ERROR_NOT_AVAILABLE: Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsICertOverrideService.setDisableAllSecurityChecksAndLetAttackersInterceptMyData]

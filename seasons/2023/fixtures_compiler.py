@@ -2,8 +2,12 @@
 
 Takes data from fixture_scrape.json and compiles into:
 
-* Compiles all weekly fixtures in ./data/fixture_list.json
+* Compiles a full list of all weekly fixtures in ./data/fixture_list.json
+* Compiles a full list of all weekly fixtures in ./builders/~ templates << this is used to build email assets
+
+
 * Compiles each team's fixtures in ./data/[team directory]/fixture_list.json
+
 
 """
 

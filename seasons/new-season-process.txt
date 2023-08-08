@@ -1,0 +1,17 @@
+new-season-process.txt
+
+new_season.py
+
+1. User input league code
+	- I could simplify this to pasting a URL which auto trims to the league code
+2. Scrapes from:
+	- league standings page (ie, in-season), then
+	- new entries page (ie, pre-season)
+
+3. User input for league name (eg, "2024") to be used to name the directory folder
+
+4. Duplicates the contents of the template folder
+
+5. Saves a json witht the league code in it (do I use this?)
+
+6. Saves the scraped data as a json for manual editing before processing further

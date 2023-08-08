@@ -34,9 +34,9 @@ def define_directory_name():
 
 		name = input("Enter a name for this season's league (e.g. 2022): ")
 		#check
-		input_check = input('Are you sure? (Y): ')
+		input_check = input("Are you sure? (Y): ")
 
-		if str(input_check.upper()) == 'Y':
+		if str(input_check.upper()) == "Y":
 			input_verified == True
 			break
 		else:
@@ -52,9 +52,9 @@ def define_league_code():
 		#define league code
 		code = input("Enter league code: ")
 		#check
-		input_check = input('Are you sure? (Y): ')
+		input_check = input("Are you sure? (Y): ")
 
-		if str(input_check.upper()) == 'Y':
+		if str(input_check.upper()) == "Y":
 			input_verified == True
 			break
 		else:
@@ -67,21 +67,28 @@ def define_league_code():
 #####
 def scrape(league_code):
 
+	import fpl_accept_cookies
+	fpl_accept_cookies.accept_cookies(driver)
+
+
 	temp_array = []
 	codes_array = []
+
+	league_standings_url = "https://fantasy.premierleague.com/leagues/" + str(league_code) + "/standings/h"
+	league_newentries_url = "https://fantasy.premierleague.com/leagues/" + str(league_code) + "/new-entries/h"
+
+	table_css_selector = "table.Table-ziussd-1.dUELIG"
 
 	# Load 'standings' page first
 	print("Loading 'standings' page")
 
-	league_url = 'https://fantasy.premierleague.com/leagues/' + league_code + '/standings/h'
-
 	try:
 		#open the webpage
-		driver.get(league_url)
-		
+		driver.get(league_standings_url)
+
 		#wait for the league table to appear in DOM
 		element = WebDriverWait(driver, 10).until(
-			EC.presence_of_element_located((By.CSS_SELECTOR, "table.Table-ziussd-1.hkwAOm"))
+			EC.presence_of_element_located((By.CSS_SELECTOR, table_css_selector))
 		)
 		
 
@@ -95,22 +102,22 @@ def scrape(league_code):
 
 		try:
 			#create soup of page DOM
-			soup = BeautifulSoup(driver.page_source, 'lxml')
+			soup = BeautifulSoup(driver.page_source, "lxml")
 
 			#print(f"soup: {soup}")
 			
 			#filter to just league table
-			tables = soup.find_all('table' , class_='Table-ziussd-1')
+			tables = soup.find_all("table" , class_="Table-ziussd-1")
 			#print(f"league_table: {tables}")
 
 			#find <a> tags in the league table
-			anchors = tables[0].find_all('a')
+			anchors = tables[0].find_all("a")
 			#print(f"anchors: {anchors}")
 
 			if len(anchors) > 0 :
 				for a in anchors:
 
-					c = a.get('href').split('/')[2]
+					c = a.get("href").split("/")[2]
 
 					if c not in codes_array: 
 
@@ -129,7 +136,7 @@ def scrape(league_code):
 			else: print("No anchors found")
 
 		except:
-			print('Err - Unable to scrape page')
+			print("Err - Unable to scrape page")
 
 
 	
@@ -139,15 +146,13 @@ def scrape(league_code):
 	# Load 'new-entries' page second 
 	print("Loading 'new entries' page")
 
-	league_url = 'https://fantasy.premierleague.com/leagues/' + league_code + '/new-entries/h'
-
 	try:
 		#open the webpage
-		driver.get(league_url)
+		driver.get(league_newentries_url)
 		
 		#wait for the league table to appear in DOM
 		element = WebDriverWait(driver, 10).until(
-			EC.presence_of_element_located((By.CSS_SELECTOR, "table.Table-ziussd-1.hkwAOm"))
+			EC.presence_of_element_located((By.CSS_SELECTOR, table_css_selector))
 		)
 		
 
@@ -164,40 +169,45 @@ def scrape(league_code):
 			soup = BeautifulSoup(driver.page_source, 'lxml')
 
 			#print(f"soup: {soup}")
+
+			#locate table h3 text element 'New entries'
+			new_entries_table = soup.find("h3", text="New entries")
+
+			# move up the soup DOM until the table is found
+			while len(new_entries_table.select(table_css_selector)) == 0:
+				new_entries_table = new_entries_table.parent
+				print("moving up the DOM")
+			else:
+				new_entries_table = new_entries_table
+				new_entries_table_rows = new_entries_table.select(table_css_selector + ' tbody tr')
+				print("table located")
 			
-			#filter to just league table
-			tables = soup.find_all('table' , class_='Table-ziussd-1')
-			#print(f"league_table: {tables}")
+			if len(new_entries_table_rows) > 0:
 
-			#find <a> tags in the league table
-			anchors = tables[0].find_all('a')
-			#print(f"anchors: {anchors}")
+				print("info found")
 
-			if len(anchors) > 0 :
+				for row in new_entries_table_rows:
+					row_contents_array = row.contents
 
-				for a in anchors:
+					team_name = str(row_contents_array[0].get_text().title())
+					manager_name = str(row_contents_array[1].get_text().title())
+					fpl_code = str(row_contents_array[1].find('a').get('href').split('/')[2])
 
-					c = a.get('href').split('/')[2]
+					info = {
+						"fpl_code": fpl_code,
+						"manager_name": manager_name,
+						"team_name": team_name
+					}
 
-					if c not in codes_array: 
+					#codes_array.append(fpl_code)
 
-						entry = {
-							"manager_code": c,
-							"manager_name": a.get_text().title(),
-							"team_name": a.parent.previous_sibling.get_text().title()
-						}
+					print(info)
+					temp_array.append(info)
 
-						codes_array.append(c)
-
-						#print(entry)
-						temp_array.append(entry)
-
-			else: print("No anchors found")
-
-
+			else: print("No info found")
 
 		except:
-			print('Err - unable to scrape page')
+			print("Err - unable to scrape page")
 
 		else:
 			return temp_array
@@ -251,7 +261,7 @@ def create_dir(directory_name, input_array, league_code):
 
 		for x in d:
 
-			folder_name = destination_dir + '/data/' + x['manager_name'] + ' (' + x['manager_code'] + ')'
+			folder_name = destination_dir + '/data/' + x['manager_name'] + ' (' + x['fpl_code'] + ')'
 
 			# add a folder for each team
 			p = Path(folder_name)

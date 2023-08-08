@@ -1,0 +1,362 @@
+1691276032986	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/dj/r_d53pv97qn6cb7zp_63kxxh0000gn/T/rust_mozprofile.xy0hrOg066BW"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1691276033763	Marionette	INFO	Marionette enabled
+1691276034041	Marionette	INFO	Listening on port 62533
+1691276034314	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+1691276084667	Marionette	INFO	Stopped listening on port 62533
+1691276127418	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/dj/r_d53pv97qn6cb7zp_63kxxh0000gn/T/rust_mozprofile.maq8ywKUsjEp"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1691276128006	Marionette	INFO	Marionette enabled
+1691276128213	Marionette	INFO	Listening on port 62694
+1691276128719	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+1691276227074	Marionette	INFO	Stopped listening on port 62694
+1691276239449	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/dj/r_d53pv97qn6cb7zp_63kxxh0000gn/T/rust_mozprofile.bPjTbYsGEK84"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1691276240057	Marionette	INFO	Marionette enabled
+1691276240260	Marionette	INFO	Listening on port 62860
+1691276240790	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+1691276257359	Marionette	INFO	Stopped listening on port 62860
+1691406112753	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/dj/r_d53pv97qn6cb7zp_63kxxh0000gn/T/rust_mozprofile.MzYFGM3rxpjZ"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1691406113351	Marionette	INFO	Marionette enabled
+1691406113591	Marionette	INFO	Listening on port 56602
+1691406113842	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+1691406290320	Marionette	INFO	Stopped listening on port 56602
+JavaScript error: chrome://remote/content/marionette/cert.sys.mjs, line 51: NS_ERROR_NOT_AVAILABLE: Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsICertOverrideService.setDisableAllSecurityChecksAndLetAttackersInterceptMyData]
+1691406416450	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/dj/r_d53pv97qn6cb7zp_63kxxh0000gn/T/rust_mozprofile.WAit7T3bEQgv"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1691406417056	Marionette	INFO	Marionette enabled
+1691406417273	Marionette	INFO	Listening on port 56932
+1691406417802	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+1691406425178	Marionette	INFO	Stopped listening on port 56932
+JavaScript error: chrome://remote/content/marionette/cert.sys.mjs, line 51: NS_ERROR_NOT_AVAILABLE: Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsICertOverrideService.setDisableAllSecurityChecksAndLetAttackersInterceptMyData]
+1691406851771	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/dj/r_d53pv97qn6cb7zp_63kxxh0000gn/T/rust_mozprofile.CmHExKvtB3K4"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1691406852338	Marionette	INFO	Marionette enabled
+1691406852530	Marionette	INFO	Listening on port 57214
+1691406853036	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+1691411036200	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/dj/r_d53pv97qn6cb7zp_63kxxh0000gn/T/rust_mozprofile.hy02jbQWXsVD"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1691411036833	Marionette	INFO	Marionette enabled
+1691411037035	Marionette	INFO	Listening on port 58749
+1691411037499	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+1691411060877	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/dj/r_d53pv97qn6cb7zp_63kxxh0000gn/T/rust_mozprofile.4xChXv4IsR7Z"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1691411061472	Marionette	INFO	Marionette enabled
+1691411061689	Marionette	INFO	Listening on port 58900
+1691411062183	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+1691411065821	Marionette	INFO	Stopped listening on port 58900
+1691411111872	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/dj/r_d53pv97qn6cb7zp_63kxxh0000gn/T/rust_mozprofile.FkkfnCAnDbzF"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1691411112421	Marionette	INFO	Marionette enabled
+1691411112601	Marionette	INFO	Listening on port 59031
+1691411113085	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+1691411116854	Marionette	INFO	Stopped listening on port 59031
+1691411127570	Marionette	INFO	Stopped listening on port 58749
+1691411503170	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/dj/r_d53pv97qn6cb7zp_63kxxh0000gn/T/rust_mozprofile.qnjOHF4tKwsU"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1691411503721	Marionette	INFO	Marionette enabled
+1691411503923	Marionette	INFO	Listening on port 59476
+1691411504384	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+1691411507901	Marionette	INFO	Stopped listening on port 59476
+1691412240095	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/dj/r_d53pv97qn6cb7zp_63kxxh0000gn/T/rust_mozprofile.0MxEyfHvTC1t"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1691412241076	Marionette	INFO	Marionette enabled
+1691412241593	Marionette	INFO	Listening on port 59768
+1691412242681	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+1691412248489	Marionette	INFO	Stopped listening on port 59768
+1691412267261	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/dj/r_d53pv97qn6cb7zp_63kxxh0000gn/T/rust_mozprofile.fhxtTJsxhkJp"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1691412267824	Marionette	INFO	Marionette enabled
+1691412268022	Marionette	INFO	Listening on port 59932
+1691412268513	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+1691412271813	Marionette	INFO	Stopped listening on port 59932
+1691413906368	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/dj/r_d53pv97qn6cb7zp_63kxxh0000gn/T/rust_mozprofile.6JIh8cOxjVqV"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1691413906920	Marionette	INFO	Marionette enabled
+1691413907142	Marionette	INFO	Listening on port 60488
+1691413907619	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+1691413927266	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/dj/r_d53pv97qn6cb7zp_63kxxh0000gn/T/rust_mozprofile.eCC55PgzHfK3"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1691413927865	Marionette	INFO	Marionette enabled
+1691413928059	Marionette	INFO	Listening on port 60641
+1691413928527	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+1691413932112	Marionette	INFO	Stopped listening on port 60641
+1691414058287	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/dj/r_d53pv97qn6cb7zp_63kxxh0000gn/T/rust_mozprofile.4zxNTDeonqIa"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1691414058901	Marionette	INFO	Marionette enabled
+1691414059095	Marionette	INFO	Listening on port 60797
+1691414059597	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+1691414063274	Marionette	INFO	Stopped listening on port 60797
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+console.warn: "Listener for event 'frame' did not return a promise."
+console.warn: "Listener for event 'frame' did not return a promise."
+console.warn: "Listener for event 'frame' did not return a promise."
+1691420404723	Marionette	INFO	Stopped listening on port 57214
+JavaScript error: , line 0: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: , line 0: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: , line 0: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: , line 0: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: chrome://remote/content/marionette/cert.sys.mjs, line 51: NS_ERROR_NOT_AVAILABLE: Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsICertOverrideService.setDisableAllSecurityChecksAndLetAttackersInterceptMyData]
+1691420406608	Marionette	INFO	Stopped listening on port 60488
+1691427745156	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/dj/r_d53pv97qn6cb7zp_63kxxh0000gn/T/rust_mozprofile.wALHQ4VMpB8z"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1691427745682	Marionette	INFO	Marionette enabled
+1691427745861	Marionette	INFO	Listening on port 62944
+1691427746446	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+1691427833682	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/dj/r_d53pv97qn6cb7zp_63kxxh0000gn/T/rust_mozprofile.OVj9qG1t0dNo"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1691427834297	Marionette	INFO	Marionette enabled
+1691427834511	Marionette	INFO	Listening on port 63138
+1691427835040	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+1691427858389	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/dj/r_d53pv97qn6cb7zp_63kxxh0000gn/T/rust_mozprofile.Yng7zkaFy7gS"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1691427859027	Marionette	INFO	Marionette enabled
+1691427859256	Marionette	INFO	Listening on port 63270
+1691427859717	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+1691427883953	Marionette	INFO	Stopped listening on port 63270
+1691428006438	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/dj/r_d53pv97qn6cb7zp_63kxxh0000gn/T/rust_mozprofile.I5Loim279JXm"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1691428007060	Marionette	INFO	Marionette enabled
+1691428007247	Marionette	INFO	Listening on port 63428
+1691428007714	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+1691428528503	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/dj/r_d53pv97qn6cb7zp_63kxxh0000gn/T/rust_mozprofile.sUTSZbzSxkSa"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1691428529095	Marionette	INFO	Marionette enabled
+1691428529288	Marionette	INFO	Listening on port 63752
+1691428529762	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+1691428605496	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/dj/r_d53pv97qn6cb7zp_63kxxh0000gn/T/rust_mozprofile.IWJEVLbwdqjk"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1691428606160	Marionette	INFO	Marionette enabled
+1691428606370	Marionette	INFO	Listening on port 63914
+1691428606835	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+1691428628776	Marionette	INFO	Stopped listening on port 63914
+1691428657411	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/dj/r_d53pv97qn6cb7zp_63kxxh0000gn/T/rust_mozprofile.VWoeW0EAC5Jx"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1691428657998	Marionette	INFO	Marionette enabled
+1691428658197	Marionette	INFO	Listening on port 64090
+1691428658654	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+1691428680581	Marionette	INFO	Stopped listening on port 64090
+1691428803675	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/dj/r_d53pv97qn6cb7zp_63kxxh0000gn/T/rust_mozprofile.nJZUfG68wp2E"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1691428804297	Marionette	INFO	Marionette enabled
+1691428804515	Marionette	INFO	Listening on port 64248
+1691428805004	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+1691428820135	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+1691428825111	Marionette	INFO	Stopped listening on port 64248
+1691428970784	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/dj/r_d53pv97qn6cb7zp_63kxxh0000gn/T/rust_mozprofile.drYNpl3b2gP9"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1691428971447	Marionette	INFO	Marionette enabled
+1691428971639	Marionette	INFO	Listening on port 64439
+1691428972116	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+1691428993198	Marionette	INFO	Stopped listening on port 64439
+1691429026087	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/dj/r_d53pv97qn6cb7zp_63kxxh0000gn/T/rust_mozprofile.Cw21jpT9XJV6"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1691429026718	Marionette	INFO	Marionette enabled
+1691429026910	Marionette	INFO	Listening on port 64611
+1691429027366	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+1691429047290	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/dj/r_d53pv97qn6cb7zp_63kxxh0000gn/T/rust_mozprofile.rZZut0SGE1e9"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1691429047859	Marionette	INFO	Marionette enabled
+1691429048048	Marionette	INFO	Listening on port 64735
+1691429048524	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+1691429082227	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/dj/r_d53pv97qn6cb7zp_63kxxh0000gn/T/rust_mozprofile.t3l1NwU7FyQh"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1691429082827	Marionette	INFO	Marionette enabled
+1691429083042	Marionette	INFO	Listening on port 64863
+1691429083538	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
+1691429104443	Marionette	INFO	Stopped listening on port 64863
+1691492189229	Marionette	INFO	Stopped listening on port 64735
+1691492189853	Marionette	INFO	Stopped listening on port 64611
+1691492190496	Marionette	INFO	Stopped listening on port 63752
+1691492191213	Marionette	INFO	Stopped listening on port 63138
+1691492191845	Marionette	INFO	Stopped listening on port 62944
+1691492193788	Marionette	INFO	Stopped listening on port 63428

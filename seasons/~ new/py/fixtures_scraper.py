@@ -1,0 +1,133 @@
+"""
+Scrapes fixtures and outputs one json called "temp_fixture_scrape.json"
+
+"""
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
+from pathlib import Path
+import os
+import json
+
+from bs4 import BeautifulSoup
+
+
+###############
+# Open browser #
+
+def open_browser():
+	global driver
+	driver = webdriver.Firefox()
+	print("Browser opened")
+
+	
+###############
+# Close browser #
+
+def close_browser():
+	driver.quit()
+	print("Browser closed")
+
+
+def scrape():
+
+	data_dict = {}
+	database_dir = "../data"
+
+	# get league code from league_info.json
+	with open(database_dir + "/league_info.json") as f:
+		d = json.load(f)
+		league_code = d["league_code"]
+
+	for dirpath, dirnames, files in os.walk(database_dir):
+		print(f"Found directory: {dirpath}")
+
+		if not dirpath == database_dir:
+
+			for file_name in files:
+
+				# open player_info.json
+				if file_name == "player_info.json":
+					# get manager code from player_info.json
+					with open(dirpath + "/" + file_name) as f:
+						d = json.load(f)
+						fpl_code = d["fpl_code"]
+						manager_name = d["manager_name"]
+
+			data_dict[fpl_code] = {}
+
+			# Build the url
+			url = "https://fantasy.premierleague.com/leagues/" + league_code + "/matches/h?event=0&entry=" + manager_code
+			table_css_selector = "table.Table-ziussd-1.MatchesTable__StyledMatchesTable-sc-1p0h4g1-0.dUELIG.fwmEXa"
+
+			try:
+				print("Loading league fixtures page for ", manager_name)
+
+				#open the page
+				driver.get(url)
+
+				#wait for the fixture table to appear in DOM
+				WebDriverWait(driver, 30).until(
+					EC.presence_of_element_located((By.CSS_SELECTOR, table_css_selector))
+				)
+
+
+			except:
+				#if the table is not found, display an error message
+				print("Error - data table not found")
+
+			else:
+				print("Success!")
+
+				#create soup of DOM
+				fixture_soup = BeautifulSoup(driver.page_source, "lxml")
+
+				#filter to the tr elements in the fixture table
+				fixture_table_rows = fixture_soup.select(table_css_selector + " tbody tr")
+
+				#scrape FPL fixture list for each team in the database
+				for row in fixture_table_rows:
+
+					item_array = row.contents
+
+					fixture_gameweek = str("{0:0=2d}".format(int(item_array[0].get_text())))
+
+					for x in item_array:
+
+						if "MatchesEntry" in str(x):
+							code = x.find("a").get("href").split('/')[2]
+							#print(x.find("a").get("href").split('/')[2])
+
+							# The DOM will have 2 matching hrefs for each fixture
+							# The href that does not contain the current manager_code will be the opponent's code
+							if code != fpl_code:
+								opponent_code = code
+
+					data_dict[fpl_code][fixture_gameweek] = opponent_code
+
+				print(data_dict)
+
+	##### WRITE TO DATABASE #####
+	filename = "temp_fixture_scrape.json"
+	with open(filename, "w") as f:
+		print(f"Saving data to: {filename} ")
+		json.dump(data_dict, f, sort_keys=True, indent=4, separators=(",", ": "))
+
+
+
+#####
+def execute():
+
+	open_browser()
+
+	import cookies
+	cookies.accept_cookies(driver)
+
+	scrape()
+	close_browser()
+
+
+execute()
