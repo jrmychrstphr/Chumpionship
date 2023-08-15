@@ -134,7 +134,7 @@ for manager_code in database:
 		score = database[manager_code]["fixture_score_array"][count]
 		# print(f"score: {score}")
 		opponent_score = database[d[manager_code]["fixture_opponent_array"][count]]["fixture_score_array"][count]
-		fixture_margin = int(score) - int(opponent_score)
+		fixture_margin = float(score) - float(opponent_score)
 
 
 		#calculate fixture result
@@ -154,7 +154,7 @@ for manager_code in database:
 			exit()
 
 		database[manager_code]["total_league_points_array"].append(sum(database[manager_code]["league_points_array"]))
-		database[manager_code]["fixture_margin_array"].append(str(fixture_margin))
+		database[manager_code]["fixture_margin_array"].append(float(fixture_margin))
 
 		# push data to third_pass_dict for calculating league position later
 		if gameweek not in third_pass_dict:

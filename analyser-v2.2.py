@@ -2,10 +2,10 @@ import json
 from collections import Counter
 
 # load database
-season_dir = './seasons/2023'	#edit this to target different seasons
+season_dir = './seasons/2024'	#edit this to target different seasons
 
-database_path = season_dir + '/builders/~ templates/database.json'
-fixtures_path = season_dir + '/data/fixture-list.json'
+database_path = season_dir + '/data/database.json'
+fixtures_path = season_dir + '/data/season_fixture_list.json'
 
 with open(database_path) as f:
 	d_data = json.load(f)
@@ -331,7 +331,7 @@ def fx_stats(gw):
 
 	fx_list = []
 
-	gameweek_fixturelist = d_fixtures[str("GW"+format_two_digit(gw))]
+	gameweek_fixturelist = d_fixtures[str(format_two_digit(gw))]
 
 	#for each fixture in the gameweek...
 	for fix in gameweek_fixturelist:

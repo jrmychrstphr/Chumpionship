@@ -9,23 +9,23 @@
     },
     "03": {
         "opponent_code": "1912559",
-        "status": "away"
+        "status": "home"
     },
     "04": {
         "opponent_code": "1064075",
-        "status": "away"
+        "status": "home"
     },
     "05": {
         "opponent_code": "2363240",
-        "status": "home"
+        "status": "away"
     },
     "06": {
         "opponent_code": "1533539",
-        "status": "home"
+        "status": "away"
     },
     "07": {
         "opponent_code": "1441480",
-        "status": "home"
+        "status": "away"
     },
     "08": {
         "opponent_code": "1145510",
@@ -33,15 +33,15 @@
     },
     "09": {
         "opponent_code": "2040174",
-        "status": "away"
+        "status": "home"
     },
     "10": {
         "opponent_code": "3617216",
-        "status": "away"
+        "status": "home"
     },
     "11": {
         "opponent_code": "1536414",
-        "status": "home"
+        "status": "away"
     },
     "12": {
         "opponent_code": "2330058",
@@ -57,15 +57,15 @@
     },
     "15": {
         "opponent_code": "820938",
-        "status": "home"
+        "status": "away"
     },
     "16": {
         "opponent_code": "373862",
-        "status": "away"
+        "status": "home"
     },
     "17": {
         "opponent_code": "1648946",
-        "status": "away"
+        "status": "home"
     },
     "18": {
         "opponent_code": "1533478",
@@ -73,7 +73,7 @@
     },
     "19": {
         "opponent_code": "3523724",
-        "status": "home"
+        "status": "away"
     },
     "20": {
         "opponent_code": "1538547",
@@ -85,23 +85,23 @@
     },
     "22": {
         "opponent_code": "1912559",
-        "status": "home"
+        "status": "away"
     },
     "23": {
         "opponent_code": "1064075",
-        "status": "home"
+        "status": "away"
     },
     "24": {
         "opponent_code": "2363240",
-        "status": "away"
+        "status": "home"
     },
     "25": {
         "opponent_code": "1533539",
-        "status": "away"
+        "status": "home"
     },
     "26": {
         "opponent_code": "1441480",
-        "status": "away"
+        "status": "home"
     },
     "27": {
         "opponent_code": "1145510",
@@ -109,15 +109,15 @@
     },
     "28": {
         "opponent_code": "2040174",
-        "status": "home"
+        "status": "away"
     },
     "29": {
         "opponent_code": "3617216",
-        "status": "home"
+        "status": "away"
     },
     "30": {
         "opponent_code": "1536414",
-        "status": "away"
+        "status": "home"
     },
     "31": {
         "opponent_code": "2330058",
@@ -133,15 +133,15 @@
     },
     "34": {
         "opponent_code": "820938",
-        "status": "away"
+        "status": "home"
     },
     "35": {
         "opponent_code": "373862",
-        "status": "home"
+        "status": "away"
     },
     "36": {
         "opponent_code": "1648946",
-        "status": "home"
+        "status": "away"
     },
     "37": {
         "opponent_code": "1533478",
@@ -149,6 +149,6 @@
     },
     "38": {
         "opponent_code": "3523724",
-        "status": "away"
+        "status": "home"
     }
 }

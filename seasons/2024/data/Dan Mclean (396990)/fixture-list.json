@@ -17,15 +17,15 @@
     },
     "05": {
         "opponent_code": "2330058",
-        "status": "home"
+        "status": "away"
     },
     "06": {
         "opponent_code": "2040174",
-        "status": "home"
+        "status": "away"
     },
     "07": {
         "opponent_code": "2612182",
-        "status": "home"
+        "status": "away"
     },
     "08": {
         "opponent_code": "1536414",
@@ -33,7 +33,7 @@
     },
     "09": {
         "opponent_code": "373862",
-        "status": "home"
+        "status": "away"
     },
     "10": {
         "opponent_code": "3523724",
@@ -41,7 +41,7 @@
     },
     "11": {
         "opponent_code": "1533478",
-        "status": "home"
+        "status": "away"
     },
     "12": {
         "opponent_code": "820938",
@@ -57,19 +57,19 @@
     },
     "15": {
         "opponent_code": "1538547",
-        "status": "home"
+        "status": "away"
     },
     "16": {
         "opponent_code": "1557080",
-        "status": "home"
+        "status": "away"
     },
     "17": {
         "opponent_code": "1912559",
-        "status": "home"
+        "status": "away"
     },
     "18": {
         "opponent_code": "1064075",
-        "status": "home"
+        "status": "away"
     },
     "19": {
         "opponent_code": "1533539",
@@ -93,15 +93,15 @@
     },
     "24": {
         "opponent_code": "2330058",
-        "status": "away"
+        "status": "home"
     },
     "25": {
         "opponent_code": "2040174",
-        "status": "away"
+        "status": "home"
     },
     "26": {
         "opponent_code": "2612182",
-        "status": "away"
+        "status": "home"
     },
     "27": {
         "opponent_code": "1536414",
@@ -109,7 +109,7 @@
     },
     "28": {
         "opponent_code": "373862",
-        "status": "away"
+        "status": "home"
     },
     "29": {
         "opponent_code": "3523724",
@@ -117,7 +117,7 @@
     },
     "30": {
         "opponent_code": "1533478",
-        "status": "away"
+        "status": "home"
     },
     "31": {
         "opponent_code": "820938",
@@ -133,19 +133,19 @@
     },
     "34": {
         "opponent_code": "1538547",
-        "status": "away"
+        "status": "home"
     },
     "35": {
         "opponent_code": "1557080",
-        "status": "away"
+        "status": "home"
     },
     "36": {
         "opponent_code": "1912559",
-        "status": "away"
+        "status": "home"
     },
     "37": {
         "opponent_code": "1064075",
-        "status": "away"
+        "status": "home"
     },
     "38": {
         "opponent_code": "1533539",
