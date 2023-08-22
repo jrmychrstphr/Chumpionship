@@ -1,3 +1,6 @@
+# Need to add:
+# + Most popular captain choice
+
 import json
 from collections import Counter
 
@@ -46,13 +49,23 @@ d_gwdata = {}
 
 for key, val in d_data.items():
 
-	#fixture_scores
-	if "fixture_scores" not in d_gwdata:
-		d_gwdata["fixture_scores"] = val['fixture_score_array'].copy()
+	#print(f"key: {key}, val: {val}")
+
+	#combined_fixture_scores
+	if "combined_fixture_scores" not in d_gwdata:
+		d_gwdata["combined_fixture_scores"] = val['fixture_score_array'].copy()
 	else:
 		#if the list already exists, add together the scores
 		for idx, v in enumerate(val['fixture_score_array']):
-			d_gwdata["fixture_scores"][idx]+=v
+			d_gwdata["combined_fixture_scores"][idx]+=v
+
+	#all_fixture_scores
+	if "all_fixture_scores" not in d_gwdata:
+		d_gwdata["all_fixture_scores"] = [[x] for x in val['fixture_score_array']]
+	else:
+		#if the list already exists, add together the scores
+		for idx, v in enumerate(val['fixture_score_array']):
+			d_gwdata["all_fixture_scores"][idx].append(v)
 
 	#transfers_made
 	if "transfers_made" not in d_gwdata:
@@ -87,7 +100,7 @@ for key, val in d_data.items():
 def gw_stats(gw):
 
 	#stop if the dataset is shorter that the requested gw
-	if len(d_gwdata["fixture_scores"]) < gw:
+	if len(d_gwdata["combined_fixture_scores"]) < gw:
 		print("Gameweek "+ str(gw) +" has not yet been played")
 		return
 
@@ -97,7 +110,7 @@ def gw_stats(gw):
 
 	###############
 	#scores
-	scores = d_gwdata["fixture_scores"][:(gw)]
+	scores = d_gwdata["combined_fixture_scores"][:(gw)]
 	gameweek_score = scores[-1]
 	scores_sorted = sorted(scores, reverse=True)
 	score_highest_in = 0
@@ -114,32 +127,32 @@ def gw_stats(gw):
 	if score_rank == 1 and gw > 4 or gw == 1:
 		message = "Round " + str(gw) + " was the highest-scoring week of the season so far,"\
 			" with a combined haul of " +\
-			str(comma_format(d_gwdata["fixture_scores"][int(gw-1)]))
+			str(comma_format(d_gwdata["combined_fixture_scores"][int(gw-1)]))
 	
 	#lowest score after GW4
 	elif score_rank == gw and gw > 4:
 		message = "Round " + str(gw) + " was the lowest-scoring week of the season so far,"\
 			" with a combined total of just " +\
-			str(comma_format(d_gwdata["fixture_scores"][int(gw-1)]))
+			str(comma_format(d_gwdata["combined_fixture_scores"][int(gw-1)]))
 
 	#top-five score after GW9
 	elif score_rank <= 5 and gw > 9:
 		message = "Round " + str(gw) + " was the " + ord(score_rank) +\
 		"-highest-scoring week of the season so far, with a combined total of " +\
-			str(comma_format(d_gwdata["fixture_scores"][int(gw-1)]))
+			str(comma_format(d_gwdata["combined_fixture_scores"][int(gw-1)]))
 
 	#bottom-five score after GW9
 	elif score_rank >= (gw-4) and gw > 9:
 		message = "Round " + str(gw) + " was the " + ord(gw-score_rank+1) +\
 		"-lowest-scoring week of the season so far, with a combined total of only " +\
-			str(comma_format(d_gwdata["fixture_scores"][int(gw-1)]))
+			str(comma_format(d_gwdata["combined_fixture_scores"][int(gw-1)]))
 
 	#any other score
 	else:
 		message = "Round " + str(gw) + " saw Chumpionship teams score a combined total of " +\
-			str(comma_format(d_gwdata["fixture_scores"][int(gw-1)])) +\
+			str(comma_format(d_gwdata["combined_fixture_scores"][int(gw-1)])) +\
 			" points"
-	
+
 	#difference in score to last GW
 	if gw > 1:
 		score_diff = scores[-1] - scores[-2]
@@ -154,6 +167,12 @@ def gw_stats(gw):
 	if score_highest_in > 2 and gw > 4:
 		message += ", and the highest combined score for " + str(score_highest_in) + " Weeks"
 	
+	#add the average score
+	# print(d_gwdata["all_fixture_scores"][int(gw-1)])
+	# print(d_gwdata["all_fixture_scores"])
+	avg = sum(d_gwdata["all_fixture_scores"][int(gw-1)])/len(d_gwdata["all_fixture_scores"][int(gw-1)])
+	message += ". The average score was " + str(comma_format(round(avg, 2)))
+
 	#add message to statements list
 	if len(message) > 0:
 		print_statements.append(message)
@@ -330,9 +349,10 @@ for key, val in d_data.items():
 def fx_stats(gw):
 
 	fx_list = []
+	f
 
 	gameweek_fixturelist = d_fixtures[str(format_two_digit(gw))]
-
+		
 	#for each fixture in the gameweek...
 	for fix in gameweek_fixturelist:
 		
@@ -364,10 +384,12 @@ def fx_stats(gw):
 				"fixture_result_array": d_data[str(val)]["fixture_result_array"][:int(gw)],
 				"fixture_result": d_data[str(val)]["fixture_result_array"][int(gw-1)],
 
-
-
-
 			}
+
+			if "fix_combined_score" not in fx_dict:
+				fx_dict["fix_combined_score"] = float(fx_dict[str(key)]["fixture_score"])
+			else:
+				fx_dict["fix_combined_score"] += float(fx_dict[str(key)]["fixture_score"])
 
 		fx_list.append(fx_dict)
 
@@ -580,10 +602,16 @@ def fx_stats(gw):
 	#for each fixture...
 	for fix in sorted_fx_list:
 
+		# print(f"fix_combined_score: {fix['fix_combined_score']}")
+		# print(f"{[x['fix_combined_score'] for x in sorted_fx_list]}")
+		# print(f"Max: {max([x['fix_combined_score'] for x in sorted_fx_list])}")
+		# print(f"Min: {min([x['fix_combined_score'] for x in sorted_fx_list])}")
+
 		#fixture and scoreline
 		fixture_scoreline = str(fix["home_team"]["team_name"]) + " " + str(fix["home_team"]["fixture_score"]) +\
 		" – " + str(fix["away_team"]["fixture_score"]) + " " + str(fix["away_team"]["team_name"])
 		print_statements.append(fixture_scoreline)
+
 
 		#calculate season and gameweek-sepcific mins, maxs, etc...
 		season_scores = list(item for sublist in d_fxdata["fixture_scores"][:int(gw)] for item in sublist)
@@ -606,22 +634,41 @@ def fx_stats(gw):
 		gameweek_max_margin = max(gameweek_margins)
 		gameweek_max_margin_count = gameweek_margins.count(gameweek_max_margin)
 
-		#exceptional landmarks that require an alt approach... 
+		gameweek_combined_scores = [x["fix_combined_score"] for x in sorted_fx_list]
+		gameweek_max_combined_score = max(gameweek_combined_scores)
+		gameweek_max_combined_score_count = gameweek_combined_scores.count(gameweek_max_combined_score)
+		gameweek_min_combined_score = min(gameweek_combined_scores)
+		gameweek_min_combined_score_count = gameweek_combined_scores.count(gameweek_min_combined_score)
 
-		#Both top-scoring teams 
-		if fix["home_team"]["fixture_score"] == gameweek_max_score and fix["away_team"]["fixture_score"] == gameweek_max_score:
-			message += str(fix["home_team"]["team_name"]) + " and " + str(fix["away_team"]["team_name"]) +\
-			" hauled in " + str(gameweek_max_score) + " apiece to top the GW" + str(gw) + " scoreboard"
-			print_statements.append(message)
+		
+		#highest-scoring fixture of the gameweek?
+		if fix["fix_combined_score"] == gameweek_max_combined_score:
+			#if multiple teams set a new season high-score		
+			if gameweek_max_combined_score_count > 1:
+				msg = "One of " + str(gameweek_max_combined_score_count) + \
+				"highest-scoring fixtures in GW" + str(gw)
+			else:
+				msg = "The highest-scoring fixture of GW" + str(gw)
 
-		else:
-			message = str(stats("home_team"))
+			msg += " with a combined score of " + str(fix["fix_combined_score"]) + "pts"
+			print_statements.append(msg)
 
-			if not stats("home_team") == None:
-				print_statements.append(str(stats("home_team")))
+		#lowest-scoring fixture of the gameweek?
+		if fix["fix_combined_score"] == gameweek_min_combined_score:
+			#if multiple teams set a new season high-score		
+			if gameweek_min_combined_score_count > 1:
+				msg = "One of " + str(gameweek_min_combined_score_count) + \
+				"lowest-scoring fixtures in GW" + str(gw)
+			else:
+				msg = "The lowest-scoring fixture of GW" + str(gw)
 
-			if not stats("away_team") == None:
-				print_statements.append(str(stats("away_team")))
+			msg += " with a combined score of " + str(fix["fix_combined_score"]) + "pts"
+			print_statements.append(msg)
+
+
+
+		print_statements.append(str(stats("home_team")))
+		print_statements.append(str(stats("away_team")))
 
 
 	for x in print_statements:

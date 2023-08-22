@@ -219,7 +219,7 @@ def scrape():
 			try:
 				#Look for the page placeholder instead
 				print(f"Searching for transfers message...")
-				WebDriverWait(driver, 30).until(
+				WebDriverWait(driver, 2).until(
 				EC.text_to_be_present_in_element((By.CSS_SELECTOR, ".Layout__Main-eg6k6r-1"), "No transfers have been made")
 				)
 
