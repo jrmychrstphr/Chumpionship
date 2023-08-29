@@ -139,7 +139,7 @@
 	div.table-row-container div.table-column.team-name , div.table-header-container div.table-column.team-name {
 		padding-left: 0.5rem;
 		padding-right:0.5rem;
-		width: 19.5rem;
+		width: 20.5rem;
 		text-align: left;
 	}
 
@@ -215,6 +215,7 @@
 	}
 
 	div.result-list-container div.result-container div.result-row {
+		position:  relative;
 		width: 100%;
 		float: left;
 	}
@@ -224,6 +225,39 @@
 		display: inline-block;
 		float: left;
 		text-align: center;
+	}
+
+	div.result-list-container div.result-container div.result-row div.chip-indicator {
+		position: absolute;
+		width: 1.4rem;
+		height: 2.2rem;
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: center;	
+	}
+
+	div.result-list-container div.result-container div.result-row div.chip-indicator.bench-boost {
+		background-image: url("assets/chip-bench-boost.svg");
+	}
+
+	div.result-list-container div.result-container div.result-row div.chip-indicator.free-hit {
+		background-image: url("assets/chip-free-hit.svg");
+	}
+
+	div.result-list-container div.result-container div.result-row div.chip-indicator.triple-captain {
+		background-image: url("assets/chip-triple-captain.svg");
+	}
+
+	div.result-list-container div.result-container div.result-row div.chip-indicator.wildcard {
+		background-image: url("assets/chip-wildcard.svg");
+	}
+
+	div.result-list-container div.result-container div.result-row div.chip-indicator.home {
+		left: -1.8rem;
+	}
+
+	div.result-list-container div.result-container div.result-row div.chip-indicator.away {
+		right: -1.8rem;
 	}
 
 	div.result-list-container div.result-container div.result-row div.team {
@@ -246,7 +280,7 @@
 	}
 
 	div.result-list-container div.team {
-		width: 15.5rem;
+		width: 16rem;
 		padding-left: 0rem;
 		padding-right: 0rem;
 	}
@@ -328,7 +362,7 @@
 	}
 
 	div.fixture-list-container div.team {
-		width: 16.2rem;
+		width: 16.7rem;
 		padding-left: 0.5rem;
 		padding-right: 0.5rem;
 	}
@@ -394,7 +428,7 @@
 	}
 
 	main {
-		width: 50rem;
+		width: 51rem;
 	}
 
 	div.page.border {

@@ -2,37 +2,13 @@
 <html lang="en">
  <head>
   <title>
-   Standings - Chumpionship
+   Fixtures - Chumpionship
   </title>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
   </script>
   <script src="https://d3js.org/d3.v5.min.js">
   </script>
   <!-- to replace with python -->
-  <script>
-   function return_gameweek_string(gameweek) {
-        g = (("0" + parseInt(gameweek)).slice(-2) ).toString();
-        return g
-    }
-
-    function return_ordinal(num) {
-        var j = num % 10, k = num % 100;
-        if (j == 1 && k != 11) { return num + "st"; }
-        if (j == 2 && k != 12) { return num + "nd"; }
-        if (j == 3 && k != 13) { return num + "rd"; }
-        return num + "th";
-    }
-
-    function return_comma_formatted_number(num) {
-        return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-    }
-
-    function return_replace_diacritics(s) {
-
-        s = s.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
-        return s;
-    }
-  </script>
   <style type="text/css">
    div.viz-wrapper svg {
 		overflow: visible;
@@ -163,7 +139,7 @@
 	div.table-row-container div.table-column.team-name , div.table-header-container div.table-column.team-name {
 		padding-left: 0.5rem;
 		padding-right:0.5rem;
-		width: 20.5rem;
+		width: 19.5rem;
 		text-align: left;
 	}
 
@@ -239,7 +215,6 @@
 	}
 
 	div.result-list-container div.result-container div.result-row {
-		position:  relative;
 		width: 100%;
 		float: left;
 	}
@@ -249,39 +224,6 @@
 		display: inline-block;
 		float: left;
 		text-align: center;
-	}
-
-	div.result-list-container div.result-container div.result-row div.chip-indicator {
-		position: absolute;
-		width: 1.4rem;
-		height: 2.2rem;
-		background-repeat: no-repeat;
-		background-size: contain;
-		background-position: center;	
-	}
-
-	div.result-list-container div.result-container div.result-row div.chip-indicator.bench-boost {
-		background-image: url("assets/chip-bench-boost.svg");
-	}
-
-	div.result-list-container div.result-container div.result-row div.chip-indicator.free-hit {
-		background-image: url("assets/chip-free-hit.svg");
-	}
-
-	div.result-list-container div.result-container div.result-row div.chip-indicator.triple-captain {
-		background-image: url("assets/chip-triple-captain.svg");
-	}
-
-	div.result-list-container div.result-container div.result-row div.chip-indicator.wildcard {
-		background-image: url("assets/chip-wildcard.svg");
-	}
-
-	div.result-list-container div.result-container div.result-row div.chip-indicator.home {
-		left: -1.8rem;
-	}
-
-	div.result-list-container div.result-container div.result-row div.chip-indicator.away {
-		right: -1.8rem;
 	}
 
 	div.result-list-container div.result-container div.result-row div.team {
@@ -304,7 +246,7 @@
 	}
 
 	div.result-list-container div.team {
-		width: 16rem;
+		width: 15.5rem;
 		padding-left: 0rem;
 		padding-right: 0rem;
 	}
@@ -386,7 +328,7 @@
 	}
 
 	div.fixture-list-container div.team {
-		width: 16.7rem;
+		width: 16.2rem;
 		padding-left: 0.5rem;
 		padding-right: 0.5rem;
 	}
@@ -452,7 +394,7 @@
 	}
 
 	main {
-		width: 51rem;
+		width: 50rem;
 	}
 
 	div.page.border {
@@ -4690,21 +4632,21 @@
                     //console.log("Button clicked!")
                     
                     var input_gw = $("#gameweek_select").val()
-                    build_table(input_gw)
+                    build_fixtures(input_gw)
                     
                     //console.log(input_gw)
                 })
 
-                function build_table(gw) {
 
+
+                function build_fixtures(gw) {
+
+                    $( '#logo' ).empty()
                     $( '#title-block' ).empty()
                     $( '#content-block' ).empty()
 
-                    // add this to database
-                    league_config = {
-                        "prizes": 4,
-                        "relegation": 3
-                    }
+                    //define gameweek
+                    if (!(gw)) { gw = 1 }
 
                     //build title block
                     var title_container = d3.select("#title-block")
@@ -4715,73 +4657,52 @@
 
                     var title = title_container.append("div")
                     .classed("text display large", true)
-                    .text("Standings")
+                    .text("Fixtures")
 
                     var subtitle = title_container.append("div")
                     .classed("text display regular", true)
                     .text("GW" + parseInt(gw.replace("GW","")))
 
-                    //data
+                    //build logo
+                    logo = d3.select("#logo")
+                    .append("div")
+                    .classed("logo-wrapper", true)
+                    .append("div")
+                    .classed("logo-container", true)
+
+
+                    //build dataset
                     dataset = []
 
-                    $.each( data.database, function(k, v) {
+                    $.each( data.fixture_list[gw], function(k, v) {
+
+                        //console.log(v)
 
                         temp_obj = {
-                            "manager_code": k,
-                            "manager_name": v.manager_name,
-                            "team_name": v.team_name,
-                            "league_position": (function(){
+                            "home": {
+                                "manager_code": v.home_team,
+                                "manager_name": data.database[v.home_team].manager_name,
+                                "team_name": data.database[v.home_team].team_name,
+                                "previous_pos": (function(){
                                     g = parseInt(gw.replace("GW",""))
-                                    if( v.league_position_array.length >= g ) {
-                                        return v.league_position_array[g-1]
+                                    if ( g > 1 ) {
+                                        return data.database[v.home_team].league_position_array[g-2]
                                     } else {
                                         return null
                                     }
-                                })(),
-                            "league_position_change": (function(){
+                                })()
+                            },
+                            "away": {
+                                "manager_code": v.away_team,
+                                "manager_name": data.database[v.away_team].manager_name,
+                                "team_name": data.database[v.away_team].team_name,
+                                "previous_pos": (function(){
                                     g = parseInt(gw.replace("GW",""))
-                                    if( g > 1 ) {
-                                        c = (parseInt(v.league_position_array[g-1]) - parseInt(v.league_position_array[g-2]))
-                                        return c
+                                    if ( g > 1 ) {
+                                        return data.database[v.away_team].league_position_array[g-2]
                                     } else {
                                         return null
                                     }
-                                })(),
-                            "total_score": (function(){
-                                    g = parseInt(gw.replace("GW",""))
-                                    if( v.total_score_array.length >= g ) {
-                                        return v.total_score_array[g-1]
-                                    } else {
-                                        return null
-                                    }
-                                })(),
-                            "league_points": (function(){
-                                    g = parseInt(gw.replace("GW",""))
-                                    if( v.total_league_points_array.length >= g ) {
-                                        return v.total_league_points_array[g-1]
-                                    } else {
-                                        return null
-                                    }
-                                })(),
-
-                            "streak": {
-                                "type": (function(){
-                                    g = parseInt(gw.replace("GW",""))
-                                    t = v.fixture_result_array.slice(0,(g)).reverse()[0][0]
-
-                                    return t
-                                })(),
-                                "len": (function(){
-                                    g = parseInt(gw.replace("GW",""))
-                                    r = v.fixture_result_array.slice(0,(g)).reverse()
-                                    l = 0
-
-                                    $.each(r, function(idx, val) {
-                                        if (val != r[0]) { return false; }
-                                        l++;
-                                    })
-
-                                    return l
                                 })()
                             }
                         }
@@ -4789,216 +4710,79 @@
                         dataset.push(temp_obj)
 
 
-                    })
+                    } )
 
-                    dataset = dataset.slice().sort((a, b) => d3.ascending(a.league_position, b.league_position))
-
-
-                    console.log(dataset)
-
+                    //console.log(dataset)
+                    dataset = dataset.slice().sort((a, b) => d3.ascending(a.home.team_name, b.home.team_name))
+                    //console.log(dataset)
 
                     //build content
                     var viz_container = d3.select("#content-block")
                     .append("div")
-                    .classed("league-table-wrapper", true)
+                    .classed("fixture-list-wrapper", true)
                     .append("div")
-                    .classed("league-table-container", true)
+                    .classed("fixture-list-container", true)
 
-                    let table_header = viz_container.append("div")
-                    .classed("table-header-wrapper", true)
-                    .append("div")
-                    .classed("table-header-container", true)
-
-                    table_header.append("div").classed("table-column position text small", true)
-                    .text("Pos.")
-
-                    table_header.append("div").classed("table-column team-name text small", true)
-                    .text("Team / Manager")
-                    
-                    table_header.append("div").classed("table-column score text small", true)
-                    .text("Score")
-                    
-                    table_header.append("div").classed("table-column league-points text small", true)
-                    .text("Points")
-                    
-                    table_header.append("div").classed("table-column viz text small", true)
-                    .text("Streak")
-                    
-
-
-                    var table_rows = viz_container.selectAll("div.table-row-wrapper")
+                    var fixtures = viz_container.selectAll("div.fixture-wrapper")
                     .data(dataset).enter()
                     .append("div")
-                    .classed("table-row-wrapper", true)
+                    .classed("fixture-wrapper", true)
                     .append("div")
-                    .classed("table-row-container", true)
-                    .each( function(d, i) {
+                    .classed("fixture-container", true)
+                    .each( function(d, i){
 
-                        if ( d.league_position === 1 ) {
-                            d3.select(this).classed("position-first", true)
-                        } else if ( d.league_position <= league_config.prizes ) {
-                            d3.select(this).classed("position-prize", true)
-                        } else if ( d.league_position >= dataset.length - league_config.prizes + 2 ) {
-                            d3.select(this).classed("position-relegation", true)
-                        }
-
-                        //console.log(d)
-                        //console.log(d.league_position_change)
-
-                        if ( d.league_position_change > 0 || d.league_position_change < 0 ) {
-
-                            var change = d3.select(this)
-                            .append("div")
-                            .classed("position-change-wrapper", true)
-                            .append("div")
-                            .classed("position-change-container", true)
-
-                            if ( d.league_position_change < 0 ) {
-                                // up arrow
-                                change.classed("arrow-up", true)
-                            } else if ( d.league_position_change > 0 ) {
-                                //down arrow
-                                change.classed("arrow-down", true)
-                            }
-
-                            arrow = change.html(chump.svg.arrow)
-
-                        }
-
+                        let home = d3.select(this)
+                        .append("div")
+                        .classed("home team text display regular", true)
+                        .text(d.home.team_name)
 
                         d3.select(this)
                         .append("div")
-                        .classed("table-column position text display regular", true)
-                        .text(function (d) {
+                        .classed("vs-block text display regular", true)
+                        .text("v")
+                        .style("background-color", function(d) {
+                            //console.log(i)
+                            //console.log(dataset.length)
 
-                            if ( d.league_position != (i+1)) {
-                                t = "="
-                            } else {
-                                t = d.league_position
-                            }
+                            c = [chump.colours.green, chump.colours.light_blue, chump.colours.blue, chump.colours.purple, chump.colours.pink]
 
-                            return t
+                            return c[Math.ceil((c.length/dataset.length)*(i+1)-1)]
                         })
-                        
-                        d3.select(this)
-                        .append("div")
-                        .classed("table-column team-name text display regular", true)
-                        .text(d.team_name)
-                        .append("span")
-                        .classed("rank text small", true)
-                        .text(d.manager_name)
-                        
-                        d3.select(this)
-                        .append("div")
-                        .classed("table-column score text display regular", true)
-                        .text(return_comma_formatted_number(d.total_score))
-                        
-                        var points = d3.select(this)
-                        .append("div")
-                        .classed("table-column league-points text display regular", true)
-                        .text(return_comma_formatted_number(d.league_points))
 
-                        points.append("span")
-                        .classed("display small", true)
-                        .text("pts")
-
-                        var viz_container = d3.select(this)
+                        
+                        let away = d3.select(this)
                         .append("div")
-                        .classed("table-column viz", true)
+                        .classed("away team text display regular", true)
+                        .text(d.away.team_name)
 
-                        config = {
-                            "width": $(this).find(".viz").width(),
-                            "height": $(this).find(".viz").height(), 
-                            "padding": {
-                                "top": 0,
-                                "right": 0,
-                                "bottom": 0,
-                                "left": 5
-                            },
-                            "circle": {
-                                "radius": 10,
-                                "stroke_width": 2
-                            }
+                        if ( d.home.previous_pos && d.away.previous_pos ) {
+
+                            footnote = true
+
+                            home.append("span")
+                            .classed("rank text small", true)
+                            .text("("+d.home.previous_pos+")")
+
+                            away.append("span")
+                            .classed("rank text small", true)
+                            .text("("+d.away.previous_pos+")")
+                            
                         }
 
-                        svg = viz_container.append("svg")
-                        .attr("height", config.height)
-                        .attr("width", config.width)
-                        .attr("viewBox","0 0 " + config.width + " " + config.height)
-
-                        // define max streak length
-                        var xMax = function() {
-                            a  = []
-                            $.each( dataset, function(idx, val) {
-                                a.push(val.streak.len)
-                            })
-                            a = d3.max(a)
-                            return a
-                        } ()
-
-                        let colour;
-
-                        if (d.streak.type === "w") {
-                            colour = chump.colours.green
-                        } else if (d.streak.type === "l") {
-                            colour = chump.colours.pink
-                        } else if (d.streak.type === "d") {
-                            colour = chump.colours.light_blue
-                        } else {
-                            colour = "white"
-                        }
-
-                        // add data
-                        var data_group = svg.append("g").classed("data-goup", true)
-
-                        //calculate spacing
-                        let s = (function(){
-                        
-                            let s, t = 35, r = config.circle.radius; // t = gap for text
-
-                            //calculate how much space is available for circles
-                            let gap = (config.width - (config.padding.left + config.padding.right) - (t+r));
-
-                            if (gap/xMax > r) {
-                                s = r;
-                            } else {
-                                s = gap/xMax                    
-                            }
-
-                            return s;
-
-                        }) ()
-
-                        for (ii = 0; ii < d.streak.len; ii++) {
-                            console.log(d.streak)
-                            data_group.append("circle")
-                            .attr("cx", config.circle.radius+(ii*s) + config.padding.left)
-                            .attr("cy", config.height/2)
-                            .attr("r", config.circle.radius)
-                            .attr("stroke-width", config.circle.stroke_width)
-                            .style("stroke", chump.colours.midnight_blue)
-                            .style("fill", colour)
-                        }
-
-                        let text = data_group.append("text")
-                        .classed("text small bold", true)
-                        .attr("x", config.circle.radius + (ii*s) + config.padding.left + 5)
-                        .attr("y", config.height/2)
-                        .attr("dy", 5.5)
-                        .style("text-anchor", "start")
-                        .style("fill", colour)
-                        .text(function(d) {
-                            let msg;
-
-                            msg = d.streak.type + d.streak.len;
-
-                            return msg.toUpperCase();
-                        })
                     })
 
-                    styles.add()
-                }
+                    if ( footnote ) {
 
+                        var footnote = d3.select("#content-block")
+                        .append("div")
+                        .classed("footnote text small", true)
+                        .text("Figures in brackets indicate league rank ahead of GW"+parseInt(gw.replace("GW","")))
+
+                    }
+
+                    styles.add()
+
+                }
             });
   </script>
  </head>

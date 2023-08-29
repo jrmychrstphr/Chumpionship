@@ -218,10 +218,7 @@
                             d3.select(this).classed("position-relegation", true)
                         }
 
-                        //console.log(d)
-                        //console.log(d.league_position_change)
-
-                        if ( d.league_position_change > 0 || d.league_position_change < 0 ) {
+                        if ( d.league_position_change != 0 || d.league_position_change === null ) {
 
                             var change = d3.select(this)
                             .append("div")

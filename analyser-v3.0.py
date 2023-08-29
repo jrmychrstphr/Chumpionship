@@ -212,7 +212,8 @@ for gw in range(1,gameweeks_played+1):
 
 	# Gameweek chips
 	def return_list_of_gameweek_chips(gw):
-		return [x['chip_played'] for x in d_players if x['gw'] == gw and x['chip_played'].lower() != 'none']
+		#return [x['chip_played'] for x in d_players if x['gw'] == gw and x['chip_played'].lower() != 'none']
+		return [x['captain'] for x in d_players if x['gw'] == gw and x['captain'].lower() != 'none']
 		# return [x['chip_played'] for x in d_players if x['gw'] == gw and x['chip_played'].lower()]
 
 	def gameweek_chips_message():

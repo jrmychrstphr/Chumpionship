@@ -3339,3 +3339,7 @@ JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: Synta
 JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
 JavaScript error: https://www.googletagservices.com/tag/js/gpt.js, line 1: SyntaxError: expected expression, got '<'
 1693302621882	Marionette	INFO	Stopped listening on port 55047
+JavaScript warning: https://fantasy.premierleague.com/static/js/2.e9154dcb.chunk.js, line 2: Script terminated by timeout at:
+o@https://fantasy.premierleague.com/static/js/2.e9154dcb.chunk.js:2:1129072
+
+1693304709236	Marionette	INFO	Stopped listening on port 53822

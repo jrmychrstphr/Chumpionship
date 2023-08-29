@@ -46,7 +46,7 @@
 
                 let gw_array = []
 
-                // create a list of gameweeks
+                // create a list of functions
                 $.each( data.fixture_list, function(k, v) {    
                     gw_array.push(k)
                 })
@@ -101,6 +101,16 @@
                                 "manager_code": v.home_team,
                                 "manager_name": data.database[v.home_team].manager_name,
                                 "team_name": data.database[v.home_team].team_name,
+                                "fixture_score": (function(){
+                                    g = parseInt(gw.replace("GW",""))
+                                    if( data.database[v.home_team].fixture_score_array.length >= g ) {
+                                        s = data.database[v.home_team].fixture_score_array[g-1]
+                                        scores.push(s)
+                                        return s
+                                    } else {
+                                        return null
+                                    }
+                                })(),
                                 "chip_played": (function(){
                                     g = parseInt(gw.replace("GW",""))
                                     if( data.database[v.home_team].chip_played_array.length >= g ) {
@@ -111,26 +121,6 @@
                                         } else {
                                             return null
                                         }
-                                    }
-                                })(),
-
-                                "fixture_score": (function(){
-                                    g = parseInt(gw.replace("GW",""))
-                                    if( data.database[v.home_team].fixture_score_array.length >= g ) {
-                                        s = data.database[v.home_team].fixture_score_array[g-1]
-                                        //scores.push(s)
-                                        return s
-                                    } else {
-                                        return null
-                                    }
-                                })(),
-                                "fixture_score_rank": (function(){
-                                    g = parseInt(gw.replace("GW",""))
-                                    if( data.database[v.home_team].fixture_score_array.length >= g ) {
-                                        s = data.database[v.home_team].fixture_score_rank_array[g-1]
-                                        return s
-                                    } else {
-                                        return null
                                     }
                                 })(),
                                 "fixture_result": (function(){
@@ -146,6 +136,16 @@
                                 "manager_code": v.away_team,
                                 "manager_name": data.database[v.away_team].manager_name,
                                 "team_name": data.database[v.away_team].team_name,
+                                "fixture_score": (function(){
+                                    g = parseInt(gw.replace("GW",""))
+                                    if( data.database[v.away_team].fixture_score_array.length >= g ) {
+                                        s = data.database[v.away_team].fixture_score_array[g-1]
+                                        scores.push(s)
+                                        return s
+                                    } else {
+                                        return null
+                                    }
+                                })(),
                                 "chip_played": (function(){
                                     g = parseInt(gw.replace("GW",""))
                                     if( data.database[v.away_team].chip_played_array.length >= g ) {
@@ -156,25 +156,6 @@
                                         } else {
                                             return null
                                         }
-                                    }
-                                })(),
-                                "fixture_score": (function(){
-                                    g = parseInt(gw.replace("GW",""))
-                                    if( data.database[v.away_team].fixture_score_array.length >= g ) {
-                                        s = data.database[v.away_team].fixture_score_array[g-1]
-                                        //scores.push(s)
-                                        return s
-                                    } else {
-                                        return null
-                                    }
-                                })(),
-                                "fixture_score_rank": (function(){
-                                    g = parseInt(gw.replace("GW",""))
-                                    if( data.database[v.away_team].fixture_score_array.length >= g ) {
-                                        s = data.database[v.away_team].fixture_score_rank_array[g-1]
-                                        return s
-                                    } else {
-                                        return null
                                     }
                                 })(),
                                 "fixture_result": (function(){
@@ -214,10 +195,6 @@
                         .append("div")
                         .classed("result-row", true)
 
-                        let home_chip = result_row.append("div")
-                        .classed("chip-indicator", true)
-                        .classed("home", true)
-
                         result_row.append("div")
                         .classed("indicator result-color", true)
                         .classed(d.home.fixture_result, true)
@@ -242,31 +219,25 @@
                         .classed("indicator result-color", true)
                         .classed(d.away.fixture_result, true)
 
-                        let away_chip = result_row.append("div")
-                        .classed("chip-indicator", true)
-                        .classed("away", true)
 
                         home_score.text(d.home.fixture_score)
                         .append("span")
                         .classed("rank text small", true)
-                        .text("("+d.home.fixture_score_rank+")")
+                        .text(function(d) {
+                            i = scores.sort(d3.descending).indexOf(d.home.fixture_score)
+                            s = "("+(i+1)+")"
+                            return s
+                        })
 
 
                         away_score.text(d.away.fixture_score)
                         .append("span")
                         .classed("rank text small", true)
-                        .text("("+d.away.fixture_score_rank+")")
-
-
-                        if (d.home.chip_played != null) {
-                            home_chip.classed(d.home.chip_played, true)
-                        }
-
-                        if (d.away.chip_played != null) {
-                            away_chip.classed(d.away.chip_played, true)
-                        }
-
-
+                        .text(function(d) {
+                            i = scores.sort(d3.descending).indexOf(d.away.fixture_score)
+                            s = "("+(i+1)+")"
+                            return s
+                        })
 
                     })
 

@@ -2,7 +2,7 @@
 <html lang="en">
  <head>
   <title>
-   Standings - Chumpionship
+   Single scores - Chumpionship
   </title>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
   </script>
@@ -4647,7 +4647,7 @@
 }
                 }
 
-                console.log(data)
+                //console.log(data)
 
                 styles.core()
 
@@ -4662,6 +4662,7 @@
                 /* gameweek select */
 
                 const gameweek_select_group = controls.append( 'div' ).classed( 'group' , true )
+                
                 gameweek_select_group.append( 'div' ).classed( 'label' , true ).text( 'Gameweek: ' )
 
                 const gameweek_select = gameweek_select_group
@@ -4669,15 +4670,18 @@
                 .attr("name", "gameweek_select")
                 .attr("id", "gameweek_select")
 
+
                 let gw_array = []
 
-                // create a list of functions
+                // create a list of gameweeks
                 $.each( data.fixture_list, function(k, v) {    
-                    gw_array.push(k)
+                    gw_array.push(parseInt(k.replace("GW","")))
                 })
 
+                //console.log(gw_array)
+
                 $.each( gw_array.sort(d3.ascending), function() {    
-                    gameweek_select.append( 'option' ).attr("value", this).text("GW"+parseInt(this.replace("GW","")))
+                    gameweek_select.append( 'option' ).attr("value", this).text("GW"+parseInt(this.toString().replace("GW","")))
                 })
 
                 /* generate button */
@@ -4689,22 +4693,22 @@
                     //function
                     //console.log("Button clicked!")
                     
-                    var input_gw = $("#gameweek_select").val()
-                    build_table(input_gw)
+                    var input_gw = parseInt($("#gameweek_select").val())
+                    build_viz(input_gw)
                     
-                    //console.log(input_gw)
                 })
 
-                function build_table(gw) {
+
+                function build_viz(gw) {
+
+                    //console.log(data.database)
+
+                    if (!(gw)) { 
+                        gw_to = 1; 
+                    }
 
                     $( '#title-block' ).empty()
                     $( '#content-block' ).empty()
-
-                    // add this to database
-                    league_config = {
-                        "prizes": 4,
-                        "relegation": 3
-                    }
 
                     //build title block
                     var title_container = d3.select("#title-block")
@@ -4715,290 +4719,340 @@
 
                     var title = title_container.append("div")
                     .classed("text display large", true)
-                    .text("Standings")
+                    .text("Single scores")
 
                     var subtitle = title_container.append("div")
                     .classed("text display regular", true)
-                    .text("GW" + parseInt(gw.replace("GW","")))
+                    .text("GW" + gw)
 
-                    //data
+                    //build dataset
                     dataset = []
+                    scores = []
 
                     $.each( data.database, function(k, v) {
 
                         temp_obj = {
-                            "manager_code": k,
+                            "manager_code": v.fpl_code,
                             "manager_name": v.manager_name,
                             "team_name": v.team_name,
-                            "league_position": (function(){
-                                    g = parseInt(gw.replace("GW",""))
-                                    if( v.league_position_array.length >= g ) {
-                                        return v.league_position_array[g-1]
-                                    } else {
-                                        return null
-                                    }
+                            "fixture_score_array": Array.from(v.fixture_score_array).slice(0,gw),
+                            
+                            "top_score": {
+                                "score": (function() {
+                                return d3.max(v.fixture_score_array.slice(0,gw))
                                 })(),
-                            "league_position_change": (function(){
-                                    g = parseInt(gw.replace("GW",""))
-                                    if( g > 1 ) {
-                                        c = (parseInt(v.league_position_array[g-1]) - parseInt(v.league_position_array[g-2]))
-                                        return c
-                                    } else {
-                                        return null
-                                    }
-                                })(),
-                            "total_score": (function(){
-                                    g = parseInt(gw.replace("GW",""))
-                                    if( v.total_score_array.length >= g ) {
-                                        return v.total_score_array[g-1]
-                                    } else {
-                                        return null
-                                    }
-                                })(),
-                            "league_points": (function(){
-                                    g = parseInt(gw.replace("GW",""))
-                                    if( v.total_league_points_array.length >= g ) {
-                                        return v.total_league_points_array[g-1]
-                                    } else {
-                                        return null
-                                    }
-                                })(),
-
-                            "streak": {
-                                "type": (function(){
-                                    g = parseInt(gw.replace("GW",""))
-                                    t = v.fixture_result_array.slice(0,(g)).reverse()[0][0]
-
-                                    return t
-                                })(),
-                                "len": (function(){
-                                    g = parseInt(gw.replace("GW",""))
-                                    r = v.fixture_result_array.slice(0,(g)).reverse()
-                                    l = 0
-
-                                    $.each(r, function(idx, val) {
-                                        if (val != r[0]) { return false; }
-                                        l++;
+                                "instances": (function(){
+                                    x = []
+                                    $.each(v.fixture_score_array.slice(0,gw), function (idx, val){
+                                        if (val == d3.max(v.fixture_score_array.slice(0,gw))) {
+                                            x.push("GW"+(idx+1))
+                                        }
                                     })
-
-                                    return l
+                                    return x
                                 })()
-                            }
+                            },
+
                         }
 
                         dataset.push(temp_obj)
-
-
-                    })
-
-                    dataset = dataset.slice().sort((a, b) => d3.ascending(a.league_position, b.league_position))
-
+                    } )
 
                     console.log(dataset)
 
+                    dataset = dataset.slice().sort((a, b) => d3.descending(a.manager_name, b.manager_name))
 
-                    //build content
-                    var viz_container = d3.select("#content-block")
-                    .append("div")
-                    .classed("league-table-wrapper", true)
-                    .append("div")
-                    .classed("league-table-container", true)
+                    console.log(dataset)
 
-                    let table_header = viz_container.append("div")
-                    .classed("table-header-wrapper", true)
-                    .append("div")
-                    .classed("table-header-container", true)
-
-                    table_header.append("div").classed("table-column position text small", true)
-                    .text("Pos.")
-
-                    table_header.append("div").classed("table-column team-name text small", true)
-                    .text("Team / Manager")
                     
-                    table_header.append("div").classed("table-column score text small", true)
-                    .text("Score")
-                    
-                    table_header.append("div").classed("table-column league-points text small", true)
-                    .text("Points")
-                    
-                    table_header.append("div").classed("table-column viz text small", true)
-                    .text("Streak")
-                    
-
-
-                    var table_rows = viz_container.selectAll("div.table-row-wrapper")
-                    .data(dataset).enter()
+                    //build viz
+                    const viz_container = d3.select("#content-block")
                     .append("div")
-                    .classed("table-row-wrapper", true)
+                    .classed("viz-wrapper", true)
                     .append("div")
-                    .classed("table-row-container", true)
-                    .each( function(d, i) {
+                    .classed("viz-container", true)
 
-                        if ( d.league_position === 1 ) {
-                            d3.select(this).classed("position-first", true)
-                        } else if ( d.league_position <= league_config.prizes ) {
-                            d3.select(this).classed("position-prize", true)
-                        } else if ( d.league_position >= dataset.length - league_config.prizes + 2 ) {
-                            d3.select(this).classed("position-relegation", true)
-                        }
+                    const viz_config = {
+                        "width": viz_container.node().getBoundingClientRect().width,
+                        "height": 560,
+                        "margin": {
+                            "top": 0,
+                            "right": 0,
+                            "bottom": 30,
+                            "left": 150
+                        },
+                        "xAxis_increments": 25
+                    }
 
-                        //console.log(d)
-                        //console.log(d.league_position_change)
+                    const svg = viz_container.append("svg")
+                        .attr("height", viz_config.height)
+                        .attr("width", viz_config.width)
+                        .attr("viewBox","0 0 " + viz_config.width + " " + viz_config.height)
 
-                        if ( d.league_position_change > 0 || d.league_position_change < 0 ) {
+                    //generate viz
 
-                            var change = d3.select(this)
-                            .append("div")
-                            .classed("position-change-wrapper", true)
-                            .append("div")
-                            .classed("position-change-container", true)
+                    //set scales
+                    let xDomain = function() {
 
-                            if ( d.league_position_change < 0 ) {
-                                // up arrow
-                                change.classed("arrow-up", true)
-                            } else if ( d.league_position_change > 0 ) {
-                                //down arrow
-                                change.classed("arrow-down", true)
-                            }
+                        let x = []
+                        let scores = []
 
-                            arrow = change.html(chump.svg.arrow)
-
-                        }
-
-
-                        d3.select(this)
-                        .append("div")
-                        .classed("table-column position text display regular", true)
-                        .text(function (d) {
-
-                            if ( d.league_position != (i+1)) {
-                                t = "="
-                            } else {
-                                t = d.league_position
-                            }
-
-                            return t
-                        })
-                        
-                        d3.select(this)
-                        .append("div")
-                        .classed("table-column team-name text display regular", true)
-                        .text(d.team_name)
-                        .append("span")
-                        .classed("rank text small", true)
-                        .text(d.manager_name)
-                        
-                        d3.select(this)
-                        .append("div")
-                        .classed("table-column score text display regular", true)
-                        .text(return_comma_formatted_number(d.total_score))
-                        
-                        var points = d3.select(this)
-                        .append("div")
-                        .classed("table-column league-points text display regular", true)
-                        .text(return_comma_formatted_number(d.league_points))
-
-                        points.append("span")
-                        .classed("display small", true)
-                        .text("pts")
-
-                        var viz_container = d3.select(this)
-                        .append("div")
-                        .classed("table-column viz", true)
-
-                        config = {
-                            "width": $(this).find(".viz").width(),
-                            "height": $(this).find(".viz").height(), 
-                            "padding": {
-                                "top": 0,
-                                "right": 0,
-                                "bottom": 0,
-                                "left": 5
-                            },
-                            "circle": {
-                                "radius": 10,
-                                "stroke_width": 2
-                            }
-                        }
-
-                        svg = viz_container.append("svg")
-                        .attr("height", config.height)
-                        .attr("width", config.width)
-                        .attr("viewBox","0 0 " + config.width + " " + config.height)
-
-                        // define max streak length
-                        var xMax = function() {
-                            a  = []
-                            $.each( dataset, function(idx, val) {
-                                a.push(val.streak.len)
+                        //collect all the scores in an array and define the min max of the dataset
+                        $.each( dataset, function(idx, val) {
+                            $.each( val.fixture_score_array, function(i, v) {
+                                scores.push(v)
                             })
-                            a = d3.max(a)
-                            return a
-                        } ()
+                        });
 
-                        let colour;
+                        //console.log(scores)
+                        x = d3.extent(scores)
+                        //console.log(scores)
 
-                        if (d.streak.type === "w") {
-                            colour = chump.colours.green
-                        } else if (d.streak.type === "l") {
-                            colour = chump.colours.pink
-                        } else if (d.streak.type === "d") {
-                            colour = chump.colours.light_blue
-                        } else {
-                            colour = "white"
+                        let xAi = viz_config.xAxis_increments
+
+                        x[0] = Math.floor(x[0]/xAi)*xAi
+                        x[1] = Math.ceil(((x[1])/xAi))*xAi
+                        //console.log(x)
+
+                        return x
+
+                    } ();
+
+                    let yDomain = function() {
+
+                        let y = []
+                        //push all scores of selected players to an array
+                        $.each( dataset, function(idx,val) {
+                            y.push(val["manager_code"])
+                        })
+                        return y
+
+                    } ();
+
+                    xScale = d3.scaleLinear()
+                    .domain(xDomain)
+                    .range([viz_config.margin.left, viz_config.width-viz_config.margin.right])
+
+                    yScale = d3.scaleBand()
+                    .domain(yDomain)
+                    .range([viz_config.height-viz_config.margin.bottom, viz_config.margin.top])
+                    .paddingOuter(0.5)
+                    .paddingInner(0)
+
+
+                    //build axes
+                    let xAxisGenerator = d3.axisBottom(xScale)
+                    .tickFormat(function(d) {
+                        if (d%viz_config.xAxis_increments==0 || d3.extent(xDomain).includes(d)) {
+                            return return_comma_formatted_number(d) + "pts"
                         }
+                    })
+                    .tickValues(function() {
+                        a = [];
+                        for (i = xDomain[0]; i <= xDomain[1]; i++) {
+                            if (i%viz_config.xAxis_increments==0) { a.push(i); }
+                        };
+                        return a;
+                    }())
+                    .tickSizeInner(-(viz_config.height - viz_config.margin.bottom))
 
-                        // add data
-                        var data_group = svg.append("g").classed("data-goup", true)
+                    let = xAxis = svg.append("g")
+                    .attr("transform", "translate(0," + (viz_config.height - viz_config.margin.bottom) + ")")
+                    .call(xAxisGenerator)
 
-                        //calculate spacing
-                        let s = (function(){
-                        
-                            let s, t = 35, r = config.circle.radius; // t = gap for text
+                    xAxis.selectAll(".tick text")
+                    .attr("x", 0)
+                    .attr("dy", 15)
+                    .classed("text small colour-white", true)
 
-                            //calculate how much space is available for circles
-                            let gap = (config.width - (config.padding.left + config.padding.right) - (t+r));
+                    xAxis.selectAll("line")
+                    .style("stroke", "rgba(255,255,255,0.35)")
+                    .style("stroke-width", 1)
 
-                            if (gap/xMax > r) {
-                                s = r;
-                            } else {
-                                s = gap/xMax                    
+                    xAxis.select(".domain").remove()
+
+                    //create colour scale
+                    function define_colour_scale() {
+
+                        let colours_array = [chump.colours.green, chump.colours.light_blue, chump.colours.blue, chump.colours.purple, chump.colours.pink]
+
+                        let scores = []
+
+                        //collect all the scores in an array and define the min max of the dataset
+                        $.each( dataset, function(idx, val) {
+                            $.each( val.fixture_score_array, function(i, v) {
+                                scores.push(v)
+                            })
+                        });
+
+                        function define_domain() {
+                            //console.log(xDomain)
+                            let a = d3.min(scores)
+                            let b = d3.max(scores)
+                            let c = colours_array.length
+                            let x = []
+
+                            for ( i = a; i <= b; i = i+((b-a)/c) ){
+                                x.push(i)
                             }
 
-                            return s;
-
-                        }) ()
-
-                        for (ii = 0; ii < d.streak.len; ii++) {
-                            console.log(d.streak)
-                            data_group.append("circle")
-                            .attr("cx", config.circle.radius+(ii*s) + config.padding.left)
-                            .attr("cy", config.height/2)
-                            .attr("r", config.circle.radius)
-                            .attr("stroke-width", config.circle.stroke_width)
-                            .style("stroke", chump.colours.midnight_blue)
-                            .style("fill", colour)
+                            return x
                         }
 
-                        let text = data_group.append("text")
-                        .classed("text small bold", true)
-                        .attr("x", config.circle.radius + (ii*s) + config.padding.left + 5)
-                        .attr("y", config.height/2)
-                        .attr("dy", 5.5)
-                        .style("text-anchor", "start")
-                        .style("fill", colour)
-                        .text(function(d) {
-                            let msg;
+                        let color_scale = d3.scaleLinear()
+                                            .domain(define_domain())
+                                            .range(colours_array.reverse())
+                                            .interpolate(d3.interpolateRgb)
 
-                            msg = d.streak.type + d.streak.len;
+                        return color_scale
 
-                            return msg.toUpperCase();
+                    }
+
+                    const data_colours = define_colour_scale()
+                    const data_group = svg.append("g").classed("data-goup", true)
+
+
+                    //define top score
+                    function define_top_score() {
+
+                        let scores = []
+
+                        //collect all the scores in an array
+                        $.each( dataset, function(idx, val) {
+                            scores  = scores.concat(val.fixture_score_array)
+                        });
+
+                        //define the min max of the array
+                        max = d3.max(scores)
+
+                        return max
+                    }
+
+                    const max_score = define_top_score()
+
+
+                    //vizualise data
+                    // for each player...
+                    $.each(dataset, function(idx, val) {    
+
+                        //blue line first
+                        data_group.append("line")
+                        .attr("x1", xScale(xDomain[0]))
+                        .attr("x2", xScale(xDomain[1]))
+                        .attr("y1", yScale(val.manager_code)+yScale.bandwidth()/2)
+                        .attr("y2", yScale(val.manager_code)+yScale.bandwidth()/2)
+                        .style("stroke", chump.colours.midnight_blue)
+                        .style("stroke-width", 1)
+                        .style("stroke-dasharray", "2,6")
+                        .style("fill", "none")
+
+                        //white line second
+                        data_group.append("line")
+                        .attr("x1", xScale(xDomain[0]))
+                        .attr("x2", xScale(xDomain[1]))
+                        .attr("y1", yScale(val.manager_code)+yScale.bandwidth()/2)
+                        .attr("y2", yScale(val.manager_code)+yScale.bandwidth()/2)
+                        .style("stroke", "rgba(255,255,255,0.35)")
+                        .style("stroke-width", 1)
+                        .style("stroke-dasharray", "1,5")
+                        .style("fill", "none")
+
+                        let circle_config = {
+                            'r_small': 3,
+                            's_small': 1.5,
+                            'r_large': 7,
+                            's_large': 1.5,
+                        }
+
+                        // ... draw a circle showing each fixture score
+                        $.each(val.fixture_score_array.sort(d3.ascending), function(i,v) {
+
+                            if (v===max_score) {
+
+                                data_group.append("text")
+                                .classed("text small bold", true)
+                                .attr("x", xScale(v))
+                                .attr("y", yScale(val.manager_code)+yScale.bandwidth()/2)
+                                .attr("dy", 5)
+                                .attr("text-anchor", "middle")
+                                .style("fill", chump.colours.midnight_blue)
+                                //.text("&#9733")
+
+                                data_group.append("line")
+                                .attr("x1", xScale(v)+(circle_config.r_large))
+                                .attr("x2", xScale(v)+(circle_config.r_large)+90)
+                                .attr("y1", yScale(val.manager_code)+yScale.bandwidth()/2)
+                                .attr("y2", yScale(val.manager_code)+yScale.bandwidth()/2)
+                                .style("stroke", chump.colours.midnight_blue)
+                                .style("stroke-width", 20)
+                                //.style("stroke-dasharray", "5,5")
+                                .style("fill", "none")
+
+                                data_group.append("text")
+                                .classed("text tiny ", true)
+                                .attr("x", xScale(v))
+                                .attr("y", yScale(val.manager_code)+yScale.bandwidth()/2)
+                                .attr("dy", 4)
+                                .attr("dx", 17)
+                                .attr("text-anchor", "left")
+                                .style("fill", "white")
+                                .text(function(d){
+                                    let msg = val.top_score.score + "pts (" + val.top_score.instances.join(", ") + ")"
+                                    return msg
+                                })
+
+                            }
+
+                            data_group.append("circle")
+                            .attr("cx", xScale(v))
+                            .attr("cy", yScale(val.manager_code)+yScale.bandwidth()/2)
+                            .attr("r", function(d){
+                                let x
+                                if (v == max_score) {
+                                    x = circle_config.r_large
+                                } else {
+                                    x = circle_config.r_small
+                                }
+                                return x
+                            })
+                            .attr("stroke-width", function(d){
+                                let x
+                                if (v == max_score) {
+                                    x = circle_config.s_large
+                                } else {
+                                    x = circle_config.s_small
+                                }
+                                return x
+                            })
+                            .style("stroke", data_colours(v))
+                            .style("fill", function(d){
+                                let x
+                                if (v == max_score) {
+                                    x = data_colours(v)
+                                } else {
+                                    x = chump.colours.midnight_blue
+                                }
+                                return x
+                            })
+                            .attr("title", v)
+
                         })
+
+
+                        let name = data_group.append("text")
+                        .classed("text small", true)
+                        .attr("x", 0)
+                        .attr("y", yScale(val.manager_code)+yScale.bandwidth()/2)
+                        .attr("dy", 5.5)
+                        //.attr("dx", 15)
+                        .style("fill", "white")
+                        .text(val.manager_name)
+
+
                     })
 
                     styles.add()
-                }
 
+                }
             });
   </script>
  </head>
