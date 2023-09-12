@@ -1,5 +1,5 @@
 import json
-from collections import Counter
+import collections
 
 # load database
 season_dir = './seasons/2024'	#edit this to target different seasons
@@ -101,11 +101,13 @@ for fixture in d_fixtures:
 
 # print(d_fixtures)
 
-from collections import Counter
-
 for gw in range(1,gameweeks_played+1):
+
+	def print_divder(): print(f"-------------------")
 	print(f"")
-	print(f"--- Gameweek {gw} ---")
+	print_divder()
+	print(f"--- Gameweek {format_two_digit(gw)} ---")
+	print_divder()
 
 	# Gameweek score
 	def return_combined_gw_score(gw):
@@ -167,7 +169,7 @@ for gw in range(1,gameweeks_played+1):
 
 		# add: was the highest/lowest scoring round for 5+ weeks
 		
-		msg += f" Chumpionship teams scored a combined {comma_format(int(return_combined_gw_score(gw)))}pts"
+		msg += f" Chumpionship teams scored a combined {comma_format(int(return_combined_gw_score(gw)))} points"
 		
 		if gw > 1:
 			score_diff = return_combined_gw_score(gw) - return_combined_gw_score(gw-1)
@@ -199,7 +201,7 @@ for gw in range(1,gameweeks_played+1):
 			msg += f"The first transfer window of the campaign saw"
 			msg += f" {comma_format(int(return_combined_gw_transfers_made(gw)))} changes"
 		elif return_combined_gw_transfers_made(gw) == max(return_list_of_gw_transfers_made(gw)):
-			msg += f"The busiest transfer window of the season so far saw"
+			msg += f"The busiest transfer window so far saw"
 			msg += f" {comma_format(int(return_combined_gw_transfers_made(gw)))} changes"
 		else:
 			msg += f"{comma_format(int(return_combined_gw_transfers_made(gw)))} changes were"
@@ -212,36 +214,97 @@ for gw in range(1,gameweeks_played+1):
 
 	# Gameweek chips
 	def return_list_of_gameweek_chips(gw):
-		#return [x['chip_played'] for x in d_players if x['gw'] == gw and x['chip_played'].lower() != 'none']
-		return [x['captain'] for x in d_players if x['gw'] == gw and x['captain'].lower() != 'none']
-		# return [x['chip_played'] for x in d_players if x['gw'] == gw and x['chip_played'].lower()]
+		return [x['chip_played'] for x in d_players if x['gw'] == gw and x['chip_played'].lower() != 'none']
 
 	def gameweek_chips_message():
 		msg = f""
 
 		gw_chip_count = len(return_list_of_gameweek_chips(gw))
-		gw_chip_dict = Counter(return_list_of_gameweek_chips(gw))
-
-		print(gw_chip_dict)
+		gw_chip_dict = collections.Counter(return_list_of_gameweek_chips(gw))
 
 		if gw_chip_count == 0:
 			return False
 
 		if len(gw_chip_dict) == 1:
-			for key,val in Counter(return_list_of_gameweek_chips(gw)).items():
-				msg += f"{int(val)} {key.title()}"
+			for key,val in gw_chip_dict.items():
+				msg += f"{written_number(int(val)).title()} team"
 				if val > 1: msg += f"s"
-				msg += f" were played in GW{gw}"
+				msg += f" played a {key.title()} in GW{gw}"
 
 		else:
-			msg += f"{int(gw_chip_count)} chips were played in GW{gw}:"
-			for key,val in Counter(return_list_of_gameweek_chips(gw)).items():
-				msg += f" {int(val)} {key.title()}"
-				if val > 1: msg += f"s"
+			msg += f"{int(gw_chip_count)} teams played a chip in GW{gw}:"
+
+			for i,x in enumerate(gw_chip_dict.most_common()):
+				chip_name = str(x[0])
+				val = int(x[1])
+
+				if i != 0: msg += f";"
+				msg += f" {chip_name}: {val}"
+
 
 		return msg
 
-	print(gameweek_chips_message())
+	if gameweek_chips_message(): print(gameweek_chips_message())
+
+
+	# Gameweek captains
+	def return_list_of_gameweek_captains(gw):
+		return [x['captain'] for x in d_players if x['gw'] == gw]
+
+	def gameweek_captains_message():
+		msg = f""
+
+		gw_cap_dict = collections.Counter(return_list_of_gameweek_captains(gw))
+
+		msg += f"GW{gw} captains:"
+
+		for i,x in enumerate(gw_cap_dict.most_common()):
+			player_name = str(x[0].split('(')[0]).strip()
+			val = int(x[1])
+
+			if i != 0: msg += f";"
+			msg += f" {player_name}: {val}"
+		
+		return msg
+
+	print(gameweek_captains_message())
+
+
+	def hi_score_fix_message():
+		szn_hi_score = max([x['total_points_scored'] for x in d_fixtures])
+		gw_hi_score = max([x['total_points_scored'] for x in d_fixtures if x['gw'] == gw])
+
+		gw_hi_score_fixtures = [x for x in d_fixtures if x['gw'] == gw and x['total_points_scored'] == gw_hi_score]
+
+		msg = f""
+
+		if len(gw_hi_score_fixtures) > 1:
+			msg += f"{written_number(len(gw_hi_score_fixtures)).title()} high-scoring fixtures: "
+
+		for fix in gw_hi_score_fixtures:
+			home = [x for x in d_players if x['gw'] == gw and x['manager_code'] == str(fix['home_manager_code'])][0]
+			away = [x for x in d_players if x['gw'] == gw and x['manager_code'] == str(fix['away_manager_code'])][0]
+			print(f"home: {home}")
+			print(f"away: {away}")
+
+			msg += f"The highest-scoring fixture in GW{gw} was: "
+			msg += f"{home['team_name']} {int(home['fixture_score'])}-{int(away['fixture_score'])} {away['team_name']}"
+
+
+			if fix['fixture_margin'] == 0:
+				msg += f"{home['manager_name']} and {away['manager_name']} shared the spoils "
+				msg += f"in the highest-scoring fixture of Round {gw} as {home['team_name']} and {away['team_name']} "
+				msg += f"combined for {gw_hi_score}"
+			else:
+				winner = [x for x in [home, away] if x['fixture_margin'] > 0][0]
+				msg += f"{winner['manager_name']} bagged a win as "
+
+			msg += f"in the highest-scoring fixture of Round {gw}"
+
+		return msg
+
+	print(hi_score_fix_message())
+
 
 
 
