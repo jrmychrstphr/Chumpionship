@@ -459,8 +459,12 @@
         }
     ],
     "squad_value": 99.7,
-    "transfered_in": [],
-    "transfered_out": [],
-    "transfers_made": 0,
+    "transfered_in": [
+        "Areola"
+    ],
+    "transfered_out": [
+        "Guaita"
+    ],
+    "transfers_made": 1,
     "vice_captain": "A.Becker (LIV, GKP)"
 }

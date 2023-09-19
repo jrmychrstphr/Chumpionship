@@ -459,8 +459,14 @@
         }
     ],
     "squad_value": 100.6,
-    "transfered_in": [],
-    "transfered_out": [],
-    "transfers_made": 0,
+    "transfered_in": [
+        "Bowen",
+        "Ederson M."
+    ],
+    "transfered_out": [
+        "L.Paquet\u00e1",
+        "Pickford"
+    ],
+    "transfers_made": 2,
     "vice_captain": "Saka (ARS, MID)"
 }

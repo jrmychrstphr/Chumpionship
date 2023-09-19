@@ -261,8 +261,8 @@
             "game_started": "1",
             "goals_conceded": "0",
             "goals_scored": "0",
-            "ict_index": "6.9",
-            "influence": "8.6",
+            "ict_index": "6.4",
+            "influence": "7.6",
             "minutes_played": "87",
             "own_goals": "0",
             "penalty_misses": "0",
@@ -274,7 +274,7 @@
             "red_cards": "0",
             "saves_made": "0",
             "squad_status": "active",
-            "threat": "48.0",
+            "threat": "44.0",
             "yellow_cards": "0"
         },
         {
@@ -373,7 +373,7 @@
             "bonus_points_scored": "1",
             "captain_status": "None",
             "clean_sheets": "0",
-            "creativity": "0.0",
+            "creativity": "16.1",
             "expeceted_goals_conceded": "1.20",
             "expected_assists": "0.03",
             "expected_goal_involvement": "1.33",
@@ -381,8 +381,8 @@
             "game_started": "1",
             "goals_conceded": "1",
             "goals_scored": "1",
-            "ict_index": "0.0",
-            "influence": "0.0",
+            "ict_index": "11.4",
+            "influence": "40.8",
             "minutes_played": "87",
             "own_goals": "0",
             "penalty_misses": "0",
@@ -394,7 +394,7 @@
             "red_cards": "0",
             "saves_made": "0",
             "squad_status": "benched",
-            "threat": "0.0",
+            "threat": "57.0",
             "yellow_cards": "0"
         },
         {

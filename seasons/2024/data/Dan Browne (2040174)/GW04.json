@@ -459,8 +459,12 @@
         }
     ],
     "squad_value": 100.1,
-    "transfered_in": [],
-    "transfered_out": [],
-    "transfers_made": 0,
+    "transfered_in": [
+        "Gusto"
+    ],
+    "transfered_out": [
+        "Shaw"
+    ],
+    "transfers_made": 1,
     "vice_captain": "Foden (MCI, MID)"
 }

@@ -217,32 +217,33 @@ def scrape():
 			print(f"Loading transfers page for {manager_name}")
 
 			try:
-				#Look for the page placeholder instead
-				print(f"Searching for transfers message...")
-				WebDriverWait(driver, 2).until(
-				EC.text_to_be_present_in_element((By.CSS_SELECTOR, ".Layout__Main-eg6k6r-1"), "No transfers have been made")
+				#wait for the gameweek-by-gameweek data table container to appear
+				WebDriverWait(driver, 10).until(
+				EC.presence_of_element_located((By.CSS_SELECTOR, table_css_selector))
 				)
-
 			except:
-				
-				print("Searching for transfer data table")
+				#if the table is *not* found...
+				print(f"Err- Data table not detected")
+
 				try:
-					#wait for the gameweek-by-gameweek data table container to appear
-					WebDriverWait(driver, 30).until(
-					EC.presence_of_element_located((By.CSS_SELECTOR, table_css_selector))
+					#Look for the page placeholder instead
+					print(f"Searching for transfers message...")
+					WebDriverWait(driver, 5).until(
+					EC.text_to_be_present_in_element((By.CSS_SELECTOR, ".Layout__Main-eg6k6r-1"), "No transfers have been made")
 					)
+
 				except:
-					#if the table is *not* found...
-					print(f"Err- Data table not detected")
-					exit()
+					print(f"Err - unable to detect transfers")
+					transfers_status = False
 				else:
-					#if the table is found...
-					print("Success - transfers data table detected")
-					transfers_status = True
+					print(f"{manager_name} is yet to make a transfer")
+					transfers_status = False
 
 			else:
-				print(f"{manager_name} is yet to make a transfer")
-				transfers_status = False
+				#if the table is found...
+				print("Success - transfers data table detected")
+				transfers_status = True
+
 
 			if transfers_status:
 				transfers_page_soup = BeautifulSoup(driver.page_source, 'lxml')
