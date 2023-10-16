@@ -156,11 +156,15 @@ for gw in range(1,gameweeks_played+1):
 
 		msg = f"Round {gw}"
 
+		print(return_gw_combined_score_rank(gw))
+		print(return_combined_gw_score(gw))
+		print(len(return_list_of_gw_scores(gw)))
+
 		if return_gw_combined_score_rank(gw) == 1:
 			msg += f" was the highest-scoring week of the season so far."
 		elif return_gw_combined_score_rank(gw) <= 5:
 			msg += f" was the {ord(return_gw_combined_score_rank(gw))} highest-scoring week of the season so far."
-		elif return_gw_combined_score_rank(gw) <= len(return_list_of_gw_scores(gw)) and gw > 2:
+		elif return_gw_combined_score_rank(gw) >= len(return_list_of_gw_scores(gw)) and gw > 2:
 			msg += f" was the lowest-scoring week of the season so far."
 		elif high_low_gw_score_since(gw) and high_low_gw_score_since(gw) > 2:
 			msg += f" was the highest-scoring week for {abs(high_low_gw_score_since(gw))} rounds."
