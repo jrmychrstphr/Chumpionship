@@ -6016,3 +6016,20 @@ JavaScript warning: https://pagead2.googlesyndication.com/bg/4WwaGfWzeDAeGvs0Zrt
 JavaScript warning: https://pagead2.googlesyndication.com/bg/4WwaGfWzeDAeGvs0ZrtmWMJUG7fu6zGPBJzQt4duOkA.js line 2 > eval line 5916 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
 JavaScript warning: https://pagead2.googlesyndication.com/bg/4WwaGfWzeDAeGvs0ZrtmWMJUG7fu6zGPBJzQt4duOkA.js line 2 > eval line 7279 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
 1699352087312	Marionette	INFO	Stopped listening on port 49844
+1700337958257	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/dj/r_d53pv97qn6cb7zp_63kxxh0000gn/T/rust_mozprofile.mYQZ0OEb7QAF"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1700337966035	Marionette	INFO	Marionette enabled
+1700337966303	Marionette	INFO	Listening on port 54071
+1700337970166	Marionette	INFO	Stopped listening on port 54071
+1700337975973	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/dj/r_d53pv97qn6cb7zp_63kxxh0000gn/T/rust_mozprofile.j11TK0b6kHHq"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1700337976608	Marionette	INFO	Marionette enabled
+1700337976799	Marionette	INFO	Listening on port 54152
+1700337977372	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1700338006684	addons.xpi	ERROR	System addon update list error SyntaxError: XMLHttpRequest.open: 'http://%(server)s/dummy-system-addons.xml' is not a valid URL.
+1700338059385	Marionette	INFO	Stopped listening on port 54152
+JavaScript warning: https://fantasy.premierleague.com/static/js/2.b5e28ee2.chunk.js, line 2: Script terminated by timeout at:
+o@https://fantasy.premierleague.com/static/js/2.b5e28ee2.chunk.js:2:1169683
+
