@@ -6033,3 +6033,50 @@ console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1
 JavaScript warning: https://fantasy.premierleague.com/static/js/2.b5e28ee2.chunk.js, line 2: Script terminated by timeout at:
 o@https://fantasy.premierleague.com/static/js/2.b5e28ee2.chunk.js:2:1169683
 
+1701295477923	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/dj/r_d53pv97qn6cb7zp_63kxxh0000gn/T/rust_mozprofile.MidNPNHjHIg4"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1701295478801	Marionette	INFO	Marionette enabled
+1701295479084	Marionette	INFO	Listening on port 60990
+1701295479508	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://pagead2.googlesyndication.com/bg/AX3dw4l-chShuz7KlUyOrqJTCrFFfFTQ1_DS3LGhDvc.js line 2 > eval line 7259 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/AX3dw4l-chShuz7KlUyOrqJTCrFFfFTQ1_DS3LGhDvc.js line 2 > eval line 2052 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/AX3dw4l-chShuz7KlUyOrqJTCrFFfFTQ1_DS3LGhDvc.js line 2 > eval line 4302 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/AX3dw4l-chShuz7KlUyOrqJTCrFFfFTQ1_DS3LGhDvc.js line 2 > eval line 3877 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/AX3dw4l-chShuz7KlUyOrqJTCrFFfFTQ1_DS3LGhDvc.js line 2 > eval line 1034 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/AX3dw4l-chShuz7KlUyOrqJTCrFFfFTQ1_DS3LGhDvc.js line 2 > eval line 1462 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+1701295508845	addons.xpi	ERROR	System addon update list error SyntaxError: XMLHttpRequest.open: 'http://%(server)s/dummy-system-addons.xml' is not a valid URL.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/AX3dw4l-chShuz7KlUyOrqJTCrFFfFTQ1_DS3LGhDvc.js line 2 > eval line 3900 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/AX3dw4l-chShuz7KlUyOrqJTCrFFfFTQ1_DS3LGhDvc.js line 2 > eval line 5699 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/AX3dw4l-chShuz7KlUyOrqJTCrFFfFTQ1_DS3LGhDvc.js line 2 > eval line 3179 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/AX3dw4l-chShuz7KlUyOrqJTCrFFfFTQ1_DS3LGhDvc.js line 2 > eval line 2044 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/AX3dw4l-chShuz7KlUyOrqJTCrFFfFTQ1_DS3LGhDvc.js line 2 > eval line 3142 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/AX3dw4l-chShuz7KlUyOrqJTCrFFfFTQ1_DS3LGhDvc.js line 2 > eval line 7593 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/AX3dw4l-chShuz7KlUyOrqJTCrFFfFTQ1_DS3LGhDvc.js line 2 > eval line 53 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/AX3dw4l-chShuz7KlUyOrqJTCrFFfFTQ1_DS3LGhDvc.js line 2 > eval line 6479 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/AX3dw4l-chShuz7KlUyOrqJTCrFFfFTQ1_DS3LGhDvc.js line 2 > eval line 5077 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/AX3dw4l-chShuz7KlUyOrqJTCrFFfFTQ1_DS3LGhDvc.js line 2 > eval line 4020 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/AX3dw4l-chShuz7KlUyOrqJTCrFFfFTQ1_DS3LGhDvc.js line 2 > eval line 5259 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/AX3dw4l-chShuz7KlUyOrqJTCrFFfFTQ1_DS3LGhDvc.js line 2 > eval line 6946 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/AX3dw4l-chShuz7KlUyOrqJTCrFFfFTQ1_DS3LGhDvc.js line 2 > eval line 1003 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/AX3dw4l-chShuz7KlUyOrqJTCrFFfFTQ1_DS3LGhDvc.js line 2 > eval line 6613 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1701295559308	Marionette	INFO	Stopped listening on port 60990
+JavaScript warning: https://fantasy.premierleague.com/static/js/2.b5e28ee2.chunk.js, line 2: Script terminated by timeout at:
+o@https://fantasy.premierleague.com/static/js/2.b5e28ee2.chunk.js:2:1169683
+
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
