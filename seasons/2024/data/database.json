@@ -13,13 +13,17 @@
             "Watkins (AVL, FWD)",
             "Haaland (MCI, FWD)",
             "Watkins (AVL, FWD)",
-            "Watkins (AVL, FWD)"
+            "Watkins (AVL, FWD)",
+            "Salah (LIV, MID)",
+            "Salah (LIV, MID)"
         ],
         "chip_played_array": [
             "None",
             "None",
             "None",
             "Wildcard",
+            "None",
+            "None",
             "None",
             "None",
             "None",
@@ -43,7 +47,9 @@
             -3.0,
             -3.0,
             -20.0,
-            12.0
+            12.0,
+            -5.0,
+            -2.0
         ],
         "fixture_opponent_array": [
             "1538547",
@@ -98,7 +104,9 @@
             "loss",
             "loss",
             "loss",
-            "win"
+            "win",
+            "loss",
+            "loss"
         ],
         "fixture_score_array": [
             73.0,
@@ -113,7 +121,9 @@
             67.0,
             26.0,
             67.0,
-            44.0
+            44.0,
+            52.0,
+            40.0
         ],
         "fixture_score_rank_array": [
             7,
@@ -128,7 +138,9 @@
             11,
             17,
             13,
-            12
+            12,
+            17,
+            10
         ],
         "fpl_code": "1050067",
         "league_points_array": [
@@ -144,7 +156,9 @@
             0,
             0,
             0,
-            3
+            3,
+            0,
+            0
         ],
         "league_position_array": [
             11,
@@ -159,7 +173,9 @@
             16,
             16,
             16,
-            15
+            15,
+            15,
+            16
         ],
         "manager_name": "Lee Campbell-Guthrie",
         "team_name": "Hav A Laugh",
@@ -176,6 +192,8 @@
             13,
             13,
             13,
+            16,
+            16,
             16
         ],
         "total_score_array": [
@@ -191,7 +209,9 @@
             569.0,
             595.0,
             662.0,
-            706.0
+            706.0,
+            758.0,
+            798.0
         ],
         "transfered_in_array": [
             [],
@@ -246,7 +266,12 @@
                 "Palmer",
                 "Salah",
                 "Baldock"
-            ]
+            ],
+            [
+                "Mbeumo",
+                "Isak"
+            ],
+            []
         ],
         "transfered_out_array": [
             [],
@@ -301,7 +326,12 @@
                 "Bowen",
                 "Son",
                 "Gvardiol"
-            ]
+            ],
+            [
+                "Szoboszlai",
+                "Watkins"
+            ],
+            []
         ],
         "transfers_made_array": [
             0,
@@ -316,7 +346,9 @@
             1,
             1,
             1,
-            3
+            3,
+            2,
+            0
         ]
     },
     "1064075": {
@@ -333,7 +365,9 @@
             "Salah (LIV, MID)",
             "Salah (LIV, MID)",
             "Watkins (AVL, FWD)",
-            "Son (TOT, MID)"
+            "Son (TOT, MID)",
+            "Salah (LIV, MID)",
+            "Salah (LIV, MID)"
         ],
         "chip_played_array": [
             "None",
@@ -341,6 +375,8 @@
             "None",
             "None",
             "Wildcard",
+            "None",
+            "None",
             "None",
             "None",
             "None",
@@ -363,7 +399,9 @@
             -9.0,
             -9.0,
             -10.0,
-            1.0
+            1.0,
+            -4.0,
+            -9.0
         ],
         "fixture_opponent_array": [
             "1648946",
@@ -418,7 +456,9 @@
             "loss",
             "loss",
             "loss",
-            "win"
+            "win",
+            "loss",
+            "loss"
         ],
         "fixture_score_array": [
             44.0,
@@ -433,7 +473,9 @@
             54.0,
             26.0,
             51.0,
-            52.0
+            52.0,
+            52.0,
+            36.0
         ],
         "fixture_score_rank_array": [
             20,
@@ -448,7 +490,9 @@
             17,
             17,
             19,
-            7
+            7,
+            17,
+            15
         ],
         "fpl_code": "1064075",
         "league_points_array": [
@@ -464,7 +508,9 @@
             0,
             0,
             0,
-            3
+            3,
+            0,
+            0
         ],
         "league_position_array": [
             20,
@@ -479,7 +525,9 @@
             17,
             17,
             18,
-            16
+            16,
+            18,
+            18
         ],
         "manager_name": "Jeremy Harding",
         "team_name": "Costabomb Athletico",
@@ -496,6 +544,8 @@
             12,
             12,
             12,
+            15,
+            15,
             15
         ],
         "total_score_array": [
@@ -511,7 +561,9 @@
             578.0,
             604.0,
             655.0,
-            707.0
+            707.0,
+            759.0,
+            795.0
         ],
         "transfered_in_array": [
             [],
@@ -573,6 +625,11 @@
             ],
             [
                 "Mitoma"
+            ],
+            [],
+            [
+                "Palmer",
+                "Saliba"
             ],
             []
         ],
@@ -637,6 +694,11 @@
             [
                 "Maddison"
             ],
+            [],
+            [
+                "Mitoma",
+                "Boly"
+            ],
             []
         ],
         "transfers_made_array": [
@@ -652,11 +714,15 @@
             2,
             1,
             1,
+            0,
+            2,
             0
         ]
     },
     "1145510": {
         "captains_array": [
+            "Haaland (MCI, FWD)",
+            "Haaland (MCI, FWD)",
             "Haaland (MCI, FWD)",
             "Haaland (MCI, FWD)",
             "Haaland (MCI, FWD)",
@@ -684,6 +750,8 @@
             "None",
             "None",
             "Wildcard",
+            "None",
+            "None",
             "None"
         ],
         "fixture_margin_array": [
@@ -699,7 +767,9 @@
             -8.0,
             -6.0,
             25.0,
-            30.0
+            30.0,
+            -3.0,
+            -6.0
         ],
         "fixture_opponent_array": [
             "396990",
@@ -754,7 +824,9 @@
             "loss",
             "loss",
             "win",
-            "win"
+            "win",
+            "loss",
+            "loss"
         ],
         "fixture_score_array": [
             63.0,
@@ -769,7 +841,9 @@
             81.0,
             31.0,
             90.0,
-            60.0
+            60.0,
+            57.0,
+            57.0
         ],
         "fixture_score_rank_array": [
             12,
@@ -784,6 +858,8 @@
             3,
             12,
             3,
+            2,
+            11,
             2
         ],
         "fpl_code": "1145510",
@@ -800,7 +876,9 @@
             0,
             0,
             3,
-            3
+            3,
+            0,
+            0
         ],
         "league_position_array": [
             14,
@@ -815,6 +893,8 @@
             15,
             15,
             14,
+            13,
+            13,
             13
         ],
         "manager_name": "Gareth Mytton",
@@ -832,6 +912,8 @@
             13,
             13,
             16,
+            19,
+            19,
             19
         ],
         "total_score_array": [
@@ -847,7 +929,9 @@
             585.0,
             616.0,
             706.0,
-            766.0
+            766.0,
+            823.0,
+            880.0
         ],
         "transfered_in_array": [
             [],
@@ -889,6 +973,10 @@
                 "Lascelles",
                 "Gu\u00e9hi",
                 "Pedro Porro"
+            ],
+            [],
+            [
+                "Kelleher"
             ],
             []
         ],
@@ -933,6 +1021,10 @@
                 "Burn",
                 "Colwill"
             ],
+            [],
+            [
+                "A.Becker"
+            ],
             []
         ],
         "transfers_made_array": [
@@ -948,6 +1040,8 @@
             1,
             1,
             7,
+            0,
+            1,
             0
         ]
     },
@@ -965,13 +1059,17 @@
             "Watkins (AVL, FWD)",
             "Haaland (MCI, FWD)",
             "Salah (LIV, MID)",
-            "Haaland (MCI, FWD)"
+            "Haaland (MCI, FWD)",
+            "Haaland (MCI, FWD)",
+            "Salah (LIV, MID)"
         ],
         "chip_played_array": [
             "None",
             "None",
             "None",
             "Wildcard",
+            "None",
+            "None",
             "None",
             "None",
             "None",
@@ -995,7 +1093,9 @@
             8.0,
             -9.0,
             10.0,
-            9.0
+            9.0,
+            21.0,
+            -14.0
         ],
         "fixture_opponent_array": [
             "2612182",
@@ -1050,7 +1150,9 @@
             "win",
             "loss",
             "win",
-            "win"
+            "win",
+            "win",
+            "loss"
         ],
         "fixture_score_array": [
             82.0,
@@ -1065,7 +1167,9 @@
             71.0,
             27.0,
             61.0,
-            57.0
+            57.0,
+            81.0,
+            24.0
         ],
         "fixture_score_rank_array": [
             1,
@@ -1080,7 +1184,9 @@
             7,
             16,
             17,
-            4
+            4,
+            1,
+            20
         ],
         "fpl_code": "1441480",
         "league_points_array": [
@@ -1096,7 +1202,9 @@
             3,
             0,
             3,
-            3
+            3,
+            3,
+            0
         ],
         "league_position_array": [
             1,
@@ -1105,6 +1213,8 @@
             4,
             2,
             2,
+            1,
+            1,
             1,
             1,
             1,
@@ -1128,7 +1238,9 @@
             27,
             27,
             30,
-            33
+            33,
+            36,
+            36
         ],
         "total_score_array": [
             82.0,
@@ -1143,7 +1255,9 @@
             594.0,
             621.0,
             682.0,
-            739.0
+            739.0,
+            820.0,
+            844.0
         ],
         "transfered_in_array": [
             [],
@@ -1190,7 +1304,11 @@
             ],
             [
                 "Saliba"
-            ]
+            ],
+            [
+                "Tomiyasu"
+            ],
+            []
         ],
         "transfered_out_array": [
             [],
@@ -1237,7 +1355,11 @@
             ],
             [
                 "Cash"
-            ]
+            ],
+            [
+                "Udogie"
+            ],
+            []
         ],
         "transfers_made_array": [
             0,
@@ -1252,7 +1374,9 @@
             1,
             0,
             3,
-            1
+            1,
+            1,
+            0
         ]
     },
     "1533478": {
@@ -1269,7 +1393,9 @@
             "Watkins (AVL, FWD)",
             "Haaland (MCI, FWD)",
             "Salah (LIV, MID)",
-            "Haaland (MCI, FWD)"
+            "Haaland (MCI, FWD)",
+            "Salah (LIV, MID)",
+            "Salah (LIV, MID)"
         ],
         "chip_played_array": [
             "None",
@@ -1279,6 +1405,8 @@
             "None",
             "None",
             "Wildcard",
+            "None",
+            "None",
             "None",
             "None",
             "None",
@@ -1299,7 +1427,9 @@
             4.0,
             -24.0,
             4.0,
-            15.0
+            15.0,
+            -29.0,
+            -10.0
         ],
         "fixture_opponent_array": [
             "1912559",
@@ -1354,7 +1484,9 @@
             "win",
             "loss",
             "win",
-            "win"
+            "win",
+            "loss",
+            "loss"
         ],
         "fixture_score_array": [
             68.0,
@@ -1369,7 +1501,9 @@
             68.0,
             11.0,
             95.0,
-            56.0
+            56.0,
+            43.0,
+            30.0
         ],
         "fixture_score_rank_array": [
             8,
@@ -1384,7 +1518,9 @@
             9,
             20,
             1,
-            5
+            5,
+            19,
+            19
         ],
         "fpl_code": "1533478",
         "league_points_array": [
@@ -1400,7 +1536,9 @@
             3,
             0,
             3,
-            3
+            3,
+            0,
+            0
         ],
         "league_position_array": [
             7,
@@ -1415,7 +1553,9 @@
             7,
             11,
             8,
-            5
+            5,
+            10,
+            12
         ],
         "manager_name": "Ben Rachell",
         "team_name": "Benno Athletic",
@@ -1432,6 +1572,8 @@
             16,
             16,
             19,
+            22,
+            22,
             22
         ],
         "total_score_array": [
@@ -1447,7 +1589,9 @@
             598.0,
             609.0,
             704.0,
-            760.0
+            760.0,
+            803.0,
+            833.0
         ],
         "transfered_in_array": [
             [],
@@ -1496,6 +1640,12 @@
             ],
             [
                 "Eze"
+            ],
+            [
+                "Darwin"
+            ],
+            [
+                "Hee Chan"
             ]
         ],
         "transfered_out_array": [
@@ -1545,6 +1695,12 @@
             ],
             [
                 "Mitoma"
+            ],
+            [
+                "Watkins"
+            ],
+            [
+                "Eze"
             ]
         ],
         "transfers_made_array": [
@@ -1560,6 +1716,8 @@
             1,
             0,
             2,
+            1,
+            1,
             1
         ]
     },
@@ -1577,6 +1735,8 @@
             "Salah (LIV, MID)",
             "Salah (LIV, MID)",
             "Nketiah (ARS, FWD)",
+            "Salah (LIV, MID)",
+            "Salah (LIV, MID)",
             "Salah (LIV, MID)"
         ],
         "chip_played_array": [
@@ -1592,7 +1752,9 @@
             "None",
             "None",
             "None",
-            "Wildcard"
+            "Wildcard",
+            "None",
+            "None"
         ],
         "fixture_margin_array": [
             -10.0,
@@ -1607,7 +1769,9 @@
             17.0,
             6.0,
             -34.0,
-            -22.0
+            -22.0,
+            -21.0,
+            -6.0
         ],
         "fixture_opponent_array": [
             "820938",
@@ -1662,6 +1826,8 @@
             "win",
             "win",
             "loss",
+            "loss",
+            "loss",
             "loss"
         ],
         "fixture_score_array": [
@@ -1677,7 +1843,9 @@
             52.0,
             37.0,
             48.0,
-            40.0
+            40.0,
+            60.0,
+            38.0
         ],
         "fixture_score_rank_array": [
             10,
@@ -1692,7 +1860,9 @@
             19,
             5,
             20,
-            17
+            17,
+            7,
+            13
         ],
         "fpl_code": "1533539",
         "league_points_array": [
@@ -1707,6 +1877,8 @@
             0,
             3,
             3,
+            0,
+            0,
             0,
             0
         ],
@@ -1723,6 +1895,8 @@
             8,
             6,
             11,
+            14,
+            14,
             14
         ],
         "manager_name": "Jon Lescott",
@@ -1740,6 +1914,8 @@
             15,
             18,
             18,
+            18,
+            18,
             18
         ],
         "total_score_array": [
@@ -1755,7 +1931,9 @@
             620.0,
             657.0,
             705.0,
-            745.0
+            745.0,
+            805.0,
+            843.0
         ],
         "transfered_in_array": [
             [],
@@ -1802,6 +1980,12 @@
                 "Coufal",
                 "Ortega Moreno",
                 "Areola"
+            ],
+            [
+                "Darwin"
+            ],
+            [
+                "Mbeumo"
             ]
         ],
         "transfered_out_array": [
@@ -1849,6 +2033,12 @@
                 "Estupi\u00f1an",
                 "Travers",
                 "Ederson M."
+            ],
+            [
+                "Watkins"
+            ],
+            [
+                "Harrison"
             ]
         ],
         "transfers_made_array": [
@@ -1864,7 +2054,9 @@
             1,
             1,
             1,
-            7
+            7,
+            1,
+            1
         ]
     },
     "1536414": {
@@ -1881,7 +2073,9 @@
             "Haaland (MCI, FWD)",
             "Haaland (MCI, FWD)",
             "Haaland (MCI, FWD)",
-            "Haaland (MCI, FWD)"
+            "Haaland (MCI, FWD)",
+            "Haaland (MCI, FWD)",
+            "Salah (LIV, MID)"
         ],
         "chip_played_array": [
             "None",
@@ -1896,7 +2090,9 @@
             "None",
             "None",
             "None",
-            "None"
+            "None",
+            "None",
+            "Wildcard"
         ],
         "fixture_margin_array": [
             4.0,
@@ -1911,7 +2107,9 @@
             25.0,
             3.0,
             -15.0,
-            -3.0
+            -3.0,
+            -9.0,
+            8.0
         ],
         "fixture_opponent_array": [
             "3617216",
@@ -1966,7 +2164,9 @@
             "win",
             "win",
             "loss",
-            "loss"
+            "loss",
+            "loss",
+            "win"
         ],
         "fixture_score_array": [
             62.0,
@@ -1981,7 +2181,9 @@
             79.0,
             29.0,
             67.0,
-            52.0
+            52.0,
+            67.0,
+            44.0
         ],
         "fixture_score_rank_array": [
             13,
@@ -1996,7 +2198,9 @@
             4,
             14,
             13,
-            7
+            7,
+            4,
+            6
         ],
         "fpl_code": "1536414",
         "league_points_array": [
@@ -2012,7 +2216,9 @@
             3,
             3,
             0,
-            0
+            0,
+            0,
+            3
         ],
         "league_position_array": [
             9,
@@ -2027,7 +2233,9 @@
             2,
             2,
             4,
-            4
+            4,
+            6,
+            7
         ],
         "manager_name": "Liam Kelly",
         "team_name": "Farcelona",
@@ -2044,7 +2252,9 @@
             21,
             24,
             24,
-            24
+            24,
+            24,
+            27
         ],
         "total_score_array": [
             62.0,
@@ -2059,7 +2269,9 @@
             582.0,
             611.0,
             678.0,
-            730.0
+            730.0,
+            797.0,
+            841.0
         ],
         "transfered_in_array": [
             [],
@@ -2090,7 +2302,18 @@
                 "Son",
                 "Palmer"
             ],
-            []
+            [],
+            [],
+            [
+                "Archer",
+                "Kluivert",
+                "Salah",
+                "Sou\u010dek",
+                "Tsimikas",
+                "Trippier",
+                "Areola",
+                "Dubravka"
+            ]
         ],
         "transfered_out_array": [
             [],
@@ -2121,7 +2344,18 @@
                 "Maddison",
                 "Trossard"
             ],
-            []
+            [],
+            [],
+            [
+                "J.Alvarez",
+                "Son",
+                "Mitoma",
+                "Douglas Luiz",
+                "Botman",
+                "Andersen",
+                "Raya",
+                "Flekken"
+            ]
         ],
         "transfers_made_array": [
             0,
@@ -2136,11 +2370,15 @@
             2,
             0,
             2,
-            0
+            0,
+            0,
+            8
         ]
     },
     "1538547": {
         "captains_array": [
+            "Haaland (MCI, FWD)",
+            "Haaland (MCI, FWD)",
             "Haaland (MCI, FWD)",
             "Haaland (MCI, FWD)",
             "Haaland (MCI, FWD)",
@@ -2168,7 +2406,9 @@
             "None",
             "None",
             "None",
-            "None"
+            "None",
+            "None",
+            "Wildcard"
         ],
         "fixture_margin_array": [
             1.0,
@@ -2183,7 +2423,9 @@
             8.0,
             -22.0,
             2.0,
-            3.0
+            3.0,
+            3.0,
+            7.0
         ],
         "fixture_opponent_array": [
             "1050067",
@@ -2238,6 +2480,8 @@
             "win",
             "loss",
             "win",
+            "win",
+            "win",
             "win"
         ],
         "fixture_score_array": [
@@ -2253,7 +2497,9 @@
             89.0,
             22.0,
             77.0,
-            55.0
+            55.0,
+            64.0,
+            43.0
         ],
         "fixture_score_rank_array": [
             6,
@@ -2268,7 +2514,9 @@
             1,
             19,
             11,
-            6
+            6,
+            5,
+            8
         ],
         "fpl_code": "1538547",
         "league_points_array": [
@@ -2283,6 +2531,8 @@
             0,
             3,
             0,
+            3,
+            3,
             3,
             3
         ],
@@ -2299,7 +2549,9 @@
             9,
             12,
             9,
-            9
+            9,
+            4,
+            4
         ],
         "manager_name": "Richard Walker",
         "team_name": "RB South Croydon",
@@ -2316,7 +2568,9 @@
             15,
             15,
             18,
-            21
+            21,
+            24,
+            27
         ],
         "total_score_array": [
             74.0,
@@ -2331,7 +2585,9 @@
             612.0,
             634.0,
             711.0,
-            766.0
+            766.0,
+            830.0,
+            873.0
         ],
         "transfered_in_array": [
             [],
@@ -2370,6 +2626,19 @@
             ],
             [
                 "Maguire"
+            ],
+            [
+                "Zinchenko"
+            ],
+            [
+                "Gordon",
+                "Saka",
+                "Bentley",
+                "Palmer",
+                "Akanji",
+                "Trippier",
+                "Isak",
+                "Sanchez"
             ]
         ],
         "transfered_out_array": [
@@ -2409,6 +2678,19 @@
             ],
             [
                 "Botman"
+            ],
+            [
+                "Estupi\u00f1an"
+            ],
+            [
+                "Bowen",
+                "Mitoma",
+                "Pope",
+                "Diaby",
+                "Digne",
+                "Dalot",
+                "Watkins",
+                "Ortega Moreno"
             ]
         ],
         "transfers_made_array": [
@@ -2424,7 +2706,9 @@
             2,
             2,
             2,
-            1
+            1,
+            1,
+            8
         ]
     },
     "1557080": {
@@ -2441,6 +2725,8 @@
             "Salah (LIV, MID)",
             "Haaland (MCI, FWD)",
             "Salah (LIV, MID)",
+            "Salah (LIV, MID)",
+            "Salah (LIV, MID)",
             "Salah (LIV, MID)"
         ],
         "chip_played_array": [
@@ -2454,6 +2740,8 @@
             "None",
             "None",
             "Triple Captain",
+            "None",
+            "None",
             "None",
             "None",
             "None"
@@ -2471,7 +2759,9 @@
             -8.0,
             7.0,
             2.0,
-            -15.0
+            -15.0,
+            9.0,
+            5.0
         ],
         "fixture_opponent_array": [
             "3523724",
@@ -2526,7 +2816,9 @@
             "loss",
             "win",
             "win",
-            "loss"
+            "loss",
+            "win",
+            "win"
         ],
         "fixture_score_array": [
             68.0,
@@ -2541,7 +2833,9 @@
             63.0,
             36.0,
             80.0,
-            44.0
+            44.0,
+            76.0,
+            39.0
         ],
         "fixture_score_rank_array": [
             8,
@@ -2556,6 +2850,8 @@
             13,
             6,
             9,
+            12,
+            2,
             12
         ],
         "fpl_code": "1557080",
@@ -2572,7 +2868,9 @@
             0,
             3,
             3,
-            0
+            0,
+            3,
+            3
         ],
         "league_position_array": [
             7,
@@ -2587,6 +2885,8 @@
             6,
             5,
             3,
+            2,
+            2,
             2
         ],
         "manager_name": "David Steel",
@@ -2604,7 +2904,9 @@
             18,
             21,
             24,
-            24
+            24,
+            27,
+            30
         ],
         "total_score_array": [
             68.0,
@@ -2619,7 +2921,9 @@
             586.0,
             622.0,
             702.0,
-            746.0
+            746.0,
+            822.0,
+            861.0
         ],
         "transfered_in_array": [
             [],
@@ -2668,7 +2972,15 @@
                 "Foster",
                 "James"
             ],
-            []
+            [],
+            [
+                "Mee",
+                "Palmer",
+                "Mbeumo"
+            ],
+            [
+                "Lascelles"
+            ]
         ],
         "transfered_out_array": [
             [],
@@ -2717,7 +3029,15 @@
                 "Morris",
                 "Romero"
             ],
-            []
+            [],
+            [
+                "James",
+                "Sarr",
+                "Bowen"
+            ],
+            [
+                "Evans"
+            ]
         ],
         "transfers_made_array": [
             0,
@@ -2732,7 +3052,9 @@
             2,
             0,
             2,
-            0
+            0,
+            3,
+            1
         ]
     },
     "1648946": {
@@ -2749,12 +3071,16 @@
             "Haaland (MCI, FWD)",
             "Haaland (MCI, FWD)",
             "Haaland (MCI, FWD)",
+            "Haaland (MCI, FWD)",
+            "Haaland (MCI, FWD)",
             "Haaland (MCI, FWD)"
         ],
         "chip_played_array": [
             "None",
             "None",
             "Wildcard",
+            "None",
+            "None",
             "None",
             "None",
             "None",
@@ -2779,7 +3105,9 @@
             5.0,
             -7.0,
             15.0,
-            2.0
+            2.0,
+            0.0,
+            10.0
         ],
         "fixture_opponent_array": [
             "1064075",
@@ -2834,6 +3162,8 @@
             "win",
             "loss",
             "win",
+            "win",
+            "draw",
             "win"
         ],
         "fixture_score_array": [
@@ -2849,7 +3179,9 @@
             68.0,
             33.0,
             82.0,
-            44.0
+            44.0,
+            60.0,
+            40.0
         ],
         "fixture_score_rank_array": [
             18,
@@ -2864,7 +3196,9 @@
             9,
             11,
             5,
-            12
+            12,
+            7,
+            10
         ],
         "fpl_code": "1648946",
         "league_points_array": [
@@ -2880,6 +3214,8 @@
             3,
             0,
             3,
+            3,
+            1,
             3
         ],
         "league_position_array": [
@@ -2895,7 +3231,9 @@
             11,
             14,
             12,
-            10
+            10,
+            11,
+            9
         ],
         "manager_name": "Kester Mollahan",
         "team_name": "FC Hammer",
@@ -2912,7 +3250,9 @@
             15,
             15,
             18,
-            21
+            21,
+            22,
+            25
         ],
         "total_score_array": [
             48.0,
@@ -2927,7 +3267,9 @@
             579.0,
             612.0,
             694.0,
-            738.0
+            738.0,
+            798.0,
+            838.0
         ],
         "transfered_in_array": [
             [],
@@ -2959,6 +3301,8 @@
                 "Trippier",
                 "Tsimikas"
             ],
+            [],
+            [],
             [],
             [],
             [],
@@ -2997,6 +3341,8 @@
             [],
             [],
             [],
+            [],
+            [],
             []
         ],
         "transfers_made_array": [
@@ -3009,6 +3355,8 @@
             0,
             0,
             2,
+            0,
+            0,
             0,
             0,
             0,
@@ -3029,12 +3377,16 @@
             "J.Alvarez (MCI, FWD)",
             "J.Alvarez (MCI, FWD)",
             "J.Alvarez (MCI, FWD)",
+            "J.Alvarez (MCI, FWD)",
+            "J.Alvarez (MCI, FWD)",
             "J.Alvarez (MCI, FWD)"
         ],
         "chip_played_array": [
             "None",
             "None",
             "Wildcard",
+            "None",
+            "None",
             "None",
             "None",
             "None",
@@ -3059,7 +3411,9 @@
             -17.0,
             9.0,
             -25.0,
-            10.0
+            10.0,
+            -20.0,
+            -8.0
         ],
         "fixture_opponent_array": [
             "1533478",
@@ -3114,7 +3468,9 @@
             "loss",
             "win",
             "loss",
-            "win"
+            "win",
+            "loss",
+            "loss"
         ],
         "fixture_score_array": [
             64.0,
@@ -3129,7 +3485,9 @@
             35.0,
             36.0,
             65.0,
-            46.0
+            46.0,
+            36.0,
+            36.0
         ],
         "fixture_score_rank_array": [
             11,
@@ -3144,7 +3502,9 @@
             20,
             6,
             16,
-            11
+            11,
+            20,
+            15
         ],
         "fpl_code": "1912559",
         "league_points_array": [
@@ -3160,7 +3520,9 @@
             0,
             3,
             0,
-            3
+            3,
+            0,
+            0
         ],
         "league_position_array": [
             13,
@@ -3175,7 +3537,9 @@
             19,
             18,
             19,
-            18
+            18,
+            19,
+            19
         ],
         "manager_name": "Dale Halls",
         "team_name": "Average x1",
@@ -3192,6 +3556,8 @@
             9,
             12,
             12,
+            15,
+            15,
             15
         ],
         "total_score_array": [
@@ -3207,7 +3573,9 @@
             511.0,
             547.0,
             612.0,
-            658.0
+            658.0,
+            694.0,
+            730.0
         ],
         "transfered_in_array": [
             [],
@@ -3238,6 +3606,8 @@
                 "Wilson",
                 "Sterling"
             ],
+            [],
+            [],
             []
         ],
         "transfered_out_array": [
@@ -3269,6 +3639,8 @@
                 "Morris",
                 "Rashford"
             ],
+            [],
+            [],
             []
         ],
         "transfers_made_array": [
@@ -3284,6 +3656,8 @@
             0,
             0,
             2,
+            0,
+            0,
             0
         ]
     },
@@ -3301,9 +3675,13 @@
             "Haaland (MCI, FWD)",
             "Haaland (MCI, FWD)",
             "Haaland (MCI, FWD)",
-            "Haaland (MCI, FWD)"
+            "Haaland (MCI, FWD)",
+            "Haaland (MCI, FWD)",
+            "Tsimikas (LIV, DEF)"
         ],
         "chip_played_array": [
+            "None",
+            "None",
             "None",
             "None",
             "None",
@@ -3331,7 +3709,9 @@
             -5.0,
             22.0,
             -2.0,
-            -10.0
+            -10.0,
+            4.0,
+            -2.0
         ],
         "fixture_opponent_array": [
             "2330058",
@@ -3386,6 +3766,8 @@
             "loss",
             "win",
             "loss",
+            "loss",
+            "win",
             "loss"
         ],
         "fixture_score_array": [
@@ -3401,7 +3783,9 @@
             63.0,
             44.0,
             78.0,
-            36.0
+            36.0,
+            56.0,
+            45.0
         ],
         "fixture_score_rank_array": [
             13,
@@ -3416,7 +3800,9 @@
             13,
             1,
             10,
-            18
+            18,
+            14,
+            4
         ],
         "fpl_code": "2040174",
         "league_points_array": [
@@ -3432,6 +3818,8 @@
             0,
             3,
             0,
+            0,
+            3,
             0
         ],
         "league_position_array": [
@@ -3442,6 +3830,8 @@
             19,
             19,
             19,
+            20,
+            20,
             20,
             20,
             20,
@@ -3464,7 +3854,9 @@
             3,
             6,
             6,
-            6
+            6,
+            9,
+            9
         ],
         "total_score_array": [
             62.0,
@@ -3479,7 +3871,9 @@
             545.0,
             589.0,
             667.0,
-            703.0
+            703.0,
+            759.0,
+            804.0
         ],
         "transfered_in_array": [
             [],
@@ -3516,6 +3910,11 @@
             [
                 "Son",
                 "Palmer"
+            ],
+            [],
+            [
+                "Dubravka",
+                "\u00d8degaard"
             ]
         ],
         "transfered_out_array": [
@@ -3553,6 +3952,11 @@
             [
                 "Foden",
                 "Luis D\u00edaz"
+            ],
+            [],
+            [
+                "Areola",
+                "B.Fernandes"
             ]
         ],
         "transfers_made_array": [
@@ -3567,6 +3971,8 @@
             1,
             1,
             1,
+            0,
+            2,
             0,
             2
         ]
@@ -3585,12 +3991,16 @@
             "Watkins (AVL, FWD)",
             "Haaland (MCI, FWD)",
             "Haaland (MCI, FWD)",
-            "Haaland (MCI, FWD)"
+            "Haaland (MCI, FWD)",
+            "Salah (LIV, MID)",
+            "Salah (LIV, MID)"
         ],
         "chip_played_array": [
             "None",
             "None",
             "Wildcard",
+            "None",
+            "None",
             "None",
             "None",
             "None",
@@ -3615,7 +4025,9 @@
             -4.0,
             -7.0,
             20.0,
-            -1.0
+            -1.0,
+            -3.0,
+            6.0
         ],
         "fixture_opponent_array": [
             "2040174",
@@ -3670,7 +4082,9 @@
             "loss",
             "loss",
             "win",
-            "loss"
+            "loss",
+            "loss",
+            "win"
         ],
         "fixture_score_array": [
             76.0,
@@ -3685,7 +4099,9 @@
             64.0,
             29.0,
             87.0,
-            51.0
+            51.0,
+            61.0,
+            44.0
         ],
         "fixture_score_rank_array": [
             3,
@@ -3700,7 +4116,9 @@
             12,
             14,
             4,
-            9
+            9,
+            6,
+            6
         ],
         "fpl_code": "2330058",
         "league_points_array": [
@@ -3716,7 +4134,9 @@
             0,
             0,
             3,
-            0
+            0,
+            0,
+            3
         ],
         "league_position_array": [
             3,
@@ -3731,7 +4151,9 @@
             4,
             7,
             6,
-            6
+            6,
+            12,
+            10
         ],
         "manager_name": "Chris Marsh",
         "team_name": "Klich Bait",
@@ -3748,7 +4170,9 @@
             18,
             18,
             21,
-            21
+            21,
+            21,
+            24
         ],
         "total_score_array": [
             76.0,
@@ -3763,7 +4187,9 @@
             608.0,
             637.0,
             724.0,
-            775.0
+            775.0,
+            836.0,
+            880.0
         ],
         "transfered_in_array": [
             [],
@@ -3807,6 +4233,11 @@
             ],
             [
                 "Lascelles"
+            ],
+            [],
+            [
+                "McTominay",
+                "Salah"
             ],
             []
         ],
@@ -3853,6 +4284,11 @@
             [
                 "Van de Ven"
             ],
+            [],
+            [
+                "Son",
+                "Maddison"
+            ],
             []
         ],
         "transfers_made_array": [
@@ -3868,6 +4304,8 @@
             3,
             1,
             1,
+            0,
+            2,
             0
         ]
     },
@@ -3885,9 +4323,13 @@
             "Maddison (TOT, MID)",
             "Salah (LIV, MID)",
             "Salah (LIV, MID)",
-            "Bowen (WHU, MID)"
+            "Bowen (WHU, MID)",
+            "Salah (LIV, MID)",
+            "Salah (LIV, MID)"
         ],
         "chip_played_array": [
+            "None",
+            "None",
             "None",
             "None",
             "None",
@@ -3915,7 +4357,9 @@
             9.0,
             3.0,
             34.0,
-            -9.0
+            -9.0,
+            3.0,
+            2.0
         ],
         "fixture_opponent_array": [
             "373862",
@@ -3970,7 +4414,9 @@
             "win",
             "win",
             "win",
-            "loss"
+            "loss",
+            "win",
+            "win"
         ],
         "fixture_score_array": [
             52.0,
@@ -3985,7 +4431,9 @@
             63.0,
             41.0,
             82.0,
-            48.0
+            48.0,
+            60.0,
+            47.0
         ],
         "fixture_score_rank_array": [
             17,
@@ -4000,7 +4448,9 @@
             13,
             2,
             5,
-            10
+            10,
+            7,
+            3
         ],
         "fpl_code": "2363240",
         "league_points_array": [
@@ -4016,7 +4466,9 @@
             3,
             3,
             3,
-            0
+            0,
+            3,
+            3
         ],
         "league_position_array": [
             18,
@@ -4031,7 +4483,9 @@
             14,
             10,
             7,
-            12
+            12,
+            8,
+            8
         ],
         "manager_name": "David Grice",
         "team_name": "Renford Rejects",
@@ -4048,7 +4502,9 @@
             13,
             16,
             19,
-            19
+            19,
+            22,
+            25
         ],
         "total_score_array": [
             52.0,
@@ -4063,7 +4519,9 @@
             604.0,
             645.0,
             727.0,
-            775.0
+            775.0,
+            835.0,
+            882.0
         ],
         "transfered_in_array": [
             [],
@@ -4098,7 +4556,11 @@
             [
                 "Ward-Prowse",
                 "Gu\u00e9hi"
-            ]
+            ],
+            [
+                "Pope"
+            ],
+            []
         ],
         "transfered_out_array": [
             [],
@@ -4133,7 +4595,11 @@
             [
                 "Mitoma",
                 "Ak\u00e9"
-            ]
+            ],
+            [
+                "A.Becker"
+            ],
+            []
         ],
         "transfers_made_array": [
             0,
@@ -4148,7 +4614,9 @@
             0,
             1,
             1,
-            2
+            2,
+            1,
+            0
         ]
     },
     "2612182": {
@@ -4165,7 +4633,9 @@
             "Haaland (MCI, FWD)",
             "Haaland (MCI, FWD)",
             "Salah (LIV, MID)",
-            "Haaland (MCI, FWD)"
+            "Haaland (MCI, FWD)",
+            "Salah (LIV, MID)",
+            "Salah (LIV, MID)"
         ],
         "chip_played_array": [
             "None",
@@ -4178,6 +4648,8 @@
             "None",
             "None",
             "Wildcard",
+            "None",
+            "None",
             "None",
             "None",
             "None"
@@ -4195,7 +4667,9 @@
             1.0,
             7.0,
             -4.0,
-            15.0
+            15.0,
+            5.0,
+            9.0
         ],
         "fixture_opponent_array": [
             "1441480",
@@ -4250,6 +4724,8 @@
             "win",
             "win",
             "loss",
+            "win",
+            "win",
             "win"
         ],
         "fixture_score_array": [
@@ -4265,7 +4741,9 @@
             73.0,
             40.0,
             91.0,
-            59.0
+            59.0,
+            57.0,
+            45.0
         ],
         "fixture_score_rank_array": [
             19,
@@ -4280,7 +4758,9 @@
             5,
             3,
             2,
-            3
+            3,
+            11,
+            4
         ],
         "fpl_code": "2612182",
         "league_points_array": [
@@ -4296,6 +4776,8 @@
             3,
             3,
             0,
+            3,
+            3,
             3
         ],
         "league_position_array": [
@@ -4311,7 +4793,9 @@
             11,
             8,
             10,
-            8
+            8,
+            5,
+            5
         ],
         "manager_name": "James Stillwell",
         "team_name": "Sorry Nic Jackson",
@@ -4328,7 +4812,9 @@
             15,
             18,
             18,
-            21
+            21,
+            24,
+            27
         ],
         "total_score_array": [
             47.0,
@@ -4343,7 +4829,9 @@
             579.0,
             619.0,
             710.0,
-            769.0
+            769.0,
+            826.0,
+            871.0
         ],
         "transfered_in_array": [
             [],
@@ -4393,6 +4881,12 @@
             ],
             [
                 "Hee Chan"
+            ],
+            [
+                "Ferguson"
+            ],
+            [
+                "Son"
             ]
         ],
         "transfered_out_array": [
@@ -4443,6 +4937,12 @@
             ],
             [
                 "Mitoma"
+            ],
+            [
+                "Watkins"
+            ],
+            [
+                "B.Fernandes"
             ]
         ],
         "transfers_made_array": [
@@ -4458,6 +4958,8 @@
             14,
             0,
             2,
+            1,
+            1,
             1
         ]
     },
@@ -4475,7 +4977,9 @@
             "Son (TOT, MID)",
             "Son (TOT, MID)",
             "Son (TOT, MID)",
-            "Son (TOT, MID)"
+            "Son (TOT, MID)",
+            "Salah (LIV, MID)",
+            "Salah (LIV, MID)"
         ],
         "chip_played_array": [
             "None",
@@ -4486,6 +4990,8 @@
             "None",
             "None",
             "Wildcard",
+            "None",
+            "None",
             "None",
             "None",
             "None",
@@ -4505,7 +5011,9 @@
             -28.0,
             -3.0,
             -27.0,
-            -30.0
+            -30.0,
+            -3.0,
+            14.0
         ],
         "fixture_opponent_array": [
             "1557080",
@@ -4560,7 +5068,9 @@
             "loss",
             "loss",
             "loss",
-            "loss"
+            "loss",
+            "loss",
+            "win"
         ],
         "fixture_score_array": [
             54.0,
@@ -4575,7 +5085,9 @@
             56.0,
             38.0,
             54.0,
-            30.0
+            30.0,
+            54.0,
+            38.0
         ],
         "fixture_score_rank_array": [
             16,
@@ -4590,7 +5102,9 @@
             16,
             4,
             18,
-            20
+            20,
+            16,
+            13
         ],
         "fpl_code": "3523724",
         "league_points_array": [
@@ -4606,7 +5120,9 @@
             0,
             0,
             0,
-            0
+            0,
+            0,
+            3
         ],
         "league_position_array": [
             17,
@@ -4621,7 +5137,9 @@
             10,
             13,
             15,
-            17
+            17,
+            17,
+            15
         ],
         "manager_name": "Jo Breese",
         "team_name": "Dinoscores",
@@ -4638,7 +5156,9 @@
             15,
             15,
             15,
-            15
+            15,
+            15,
+            18
         ],
         "total_score_array": [
             54.0,
@@ -4653,7 +5173,9 @@
             584.0,
             622.0,
             676.0,
-            706.0
+            706.0,
+            760.0,
+            798.0
         ],
         "transfered_in_array": [
             [],
@@ -4696,7 +5218,14 @@
                 "Mbeumo"
             ],
             [],
-            []
+            [],
+            [
+                "Darwin",
+                "Dalot"
+            ],
+            [
+                "Zinchenko"
+            ]
         ],
         "transfered_out_array": [
             [],
@@ -4739,7 +5268,14 @@
                 "Mitoma"
             ],
             [],
-            []
+            [],
+            [
+                "Watkins",
+                "Cash"
+            ],
+            [
+                "White"
+            ]
         ],
         "transfers_made_array": [
             0,
@@ -4754,7 +5290,9 @@
             0,
             2,
             0,
-            0
+            0,
+            2,
+            1
         ]
     },
     "3617216": {
@@ -4771,7 +5309,9 @@
             "Salah (LIV, MID)",
             "Salah (LIV, MID)",
             "Salah (LIV, MID)",
-            "B.Fernandes (MUN, MID)"
+            "B.Fernandes (MUN, MID)",
+            "Salah (LIV, MID)",
+            "Salah (LIV, MID)"
         ],
         "chip_played_array": [
             "None",
@@ -4784,6 +5324,8 @@
             "None",
             "None",
             "Wildcard",
+            "None",
+            "None",
             "None",
             "None",
             "None"
@@ -4801,7 +5343,9 @@
             3.0,
             9.0,
             -2.0,
-            22.0
+            22.0,
+            20.0,
+            6.0
         ],
         "fixture_opponent_array": [
             "1536414",
@@ -4856,6 +5400,8 @@
             "win",
             "win",
             "loss",
+            "win",
+            "win",
             "win"
         ],
         "fixture_score_array": [
@@ -4871,7 +5417,9 @@
             70.0,
             35.0,
             75.0,
-            62.0
+            62.0,
+            56.0,
+            63.0
         ],
         "fixture_score_rank_array": [
             15,
@@ -4886,6 +5434,8 @@
             8,
             8,
             12,
+            1,
+            14,
             1
         ],
         "fpl_code": "3617216",
@@ -4902,6 +5452,8 @@
             3,
             3,
             0,
+            3,
+            3,
             3
         ],
         "league_position_array": [
@@ -4917,7 +5469,9 @@
             13,
             9,
             13,
-            11
+            11,
+            7,
+            6
         ],
         "manager_name": "Mike Yeboah",
         "team_name": "Powerstars",
@@ -4934,7 +5488,9 @@
             15,
             18,
             18,
-            21
+            21,
+            24,
+            27
         ],
         "total_score_array": [
             58.0,
@@ -4949,7 +5505,9 @@
             554.0,
             589.0,
             664.0,
-            726.0
+            726.0,
+            782.0,
+            845.0
         ],
         "transfered_in_array": [
             [],
@@ -4993,6 +5551,13 @@
             ],
             [
                 "B.Fernandes"
+            ],
+            [
+                "Agyei",
+                "Salah"
+            ],
+            [
+                "Isak"
             ]
         ],
         "transfered_out_array": [
@@ -5037,6 +5602,13 @@
             ],
             [
                 "Salah"
+            ],
+            [
+                "Sarr",
+                "B.Fernandes"
+            ],
+            [
+                "Watkins"
             ]
         ],
         "transfers_made_array": [
@@ -5051,6 +5623,8 @@
             2,
             6,
             0,
+            2,
+            1,
             2,
             1
         ]
@@ -5069,7 +5643,9 @@
             "Salah (LIV, MID)",
             "Haaland (MCI, FWD)",
             "Haaland (MCI, FWD)",
-            "Haaland (MCI, FWD)"
+            "Haaland (MCI, FWD)",
+            "Haaland (MCI, FWD)",
+            "Salah (LIV, MID)"
         ],
         "chip_played_array": [
             "None",
@@ -5080,6 +5656,8 @@
             "None",
             "None",
             "Wildcard",
+            "None",
+            "None",
             "None",
             "None",
             "None",
@@ -5099,7 +5677,9 @@
             -1.0,
             -4.0,
             27.0,
-            -2.0
+            -2.0,
+            29.0,
+            -5.0
         ],
         "fixture_opponent_array": [
             "2363240",
@@ -5154,6 +5734,8 @@
             "loss",
             "loss",
             "win",
+            "loss",
+            "win",
             "loss"
         ],
         "fixture_score_array": [
@@ -5169,7 +5751,9 @@
             72.0,
             30.0,
             81.0,
-            42.0
+            42.0,
+            72.0,
+            34.0
         ],
         "fixture_score_rank_array": [
             3,
@@ -5184,7 +5768,9 @@
             6,
             13,
             8,
-            15
+            15,
+            3,
+            18
         ],
         "fpl_code": "373862",
         "league_points_array": [
@@ -5198,6 +5784,8 @@
             3,
             3,
             0,
+            0,
+            3,
             0,
             3,
             0
@@ -5215,7 +5803,9 @@
             18,
             19,
             17,
-            19
+            19,
+            16,
+            17
         ],
         "manager_name": "Mike Dove",
         "team_name": "Inter Benfleet",
@@ -5232,7 +5822,9 @@
             9,
             9,
             12,
-            12
+            12,
+            15,
+            15
         ],
         "total_score_array": [
             76.0,
@@ -5247,7 +5839,9 @@
             600.0,
             630.0,
             711.0,
-            753.0
+            753.0,
+            825.0,
+            859.0
         ],
         "transfered_in_array": [
             [],
@@ -5296,7 +5890,11 @@
             ],
             [
                 "Palmer"
-            ]
+            ],
+            [
+                "Gabriel"
+            ],
+            []
         ],
         "transfered_out_array": [
             [],
@@ -5345,7 +5943,11 @@
             ],
             [
                 "Chukwuemeka"
-            ]
+            ],
+            [
+                "Cash"
+            ],
+            []
         ],
         "transfers_made_array": [
             0,
@@ -5360,7 +5962,9 @@
             1,
             1,
             1,
-            1
+            1,
+            1,
+            0
         ]
     },
     "396990": {
@@ -5377,7 +5981,9 @@
             "Haaland (MCI, FWD)",
             "Haaland (MCI, FWD)",
             "Haaland (MCI, FWD)",
-            "Areola (WHU, GKP)"
+            "Areola (WHU, GKP)",
+            "Haaland (MCI, FWD)",
+            "Haaland (MCI, FWD)"
         ],
         "chip_played_array": [
             "None",
@@ -5392,6 +5998,8 @@
             "None",
             "Wildcard",
             "None",
+            "None",
+            "Bench Boost",
             "None"
         ],
         "fixture_margin_array": [
@@ -5407,7 +6015,9 @@
             28.0,
             24.0,
             -15.0,
-            -12.0
+            -12.0,
+            0.0,
+            -7.0
         ],
         "fixture_opponent_array": [
             "1145510",
@@ -5462,6 +6072,8 @@
             "win",
             "win",
             "loss",
+            "loss",
+            "draw",
             "loss"
         ],
         "fixture_score_array": [
@@ -5477,7 +6089,9 @@
             84.0,
             35.0,
             67.0,
-            32.0
+            32.0,
+            60.0,
+            36.0
         ],
         "fixture_score_rank_array": [
             2,
@@ -5492,7 +6106,9 @@
             2,
             8,
             13,
-            19
+            19,
+            7,
+            15
         ],
         "fpl_code": "396990",
         "league_points_array": [
@@ -5508,6 +6124,8 @@
             3,
             3,
             0,
+            0,
+            1,
             0
         ],
         "league_position_array": [
@@ -5523,7 +6141,9 @@
             3,
             3,
             5,
-            7
+            7,
+            9,
+            11
         ],
         "manager_name": "Dan Mclean",
         "team_name": "Make Some Moyes",
@@ -5540,7 +6160,9 @@
             18,
             21,
             21,
-            21
+            21,
+            22,
+            22
         ],
         "total_score_array": [
             78.0,
@@ -5555,7 +6177,9 @@
             636.0,
             671.0,
             738.0,
-            770.0
+            770.0,
+            830.0,
+            866.0
         ],
         "transfered_in_array": [
             [],
@@ -5600,7 +6224,14 @@
             [
                 "Solanke",
                 "Andersen"
-            ]
+            ],
+            [
+                "Kudus",
+                "Mbeumo",
+                "Isak",
+                "Trippier"
+            ],
+            []
         ],
         "transfered_out_array": [
             [],
@@ -5645,7 +6276,14 @@
             [
                 "Watkins",
                 "White"
-            ]
+            ],
+            [
+                "Bowen",
+                "Eze",
+                "Solanke",
+                "Andersen"
+            ],
+            []
         ],
         "transfers_made_array": [
             0,
@@ -5660,7 +6298,9 @@
             2,
             5,
             2,
-            2
+            2,
+            4,
+            0
         ]
     },
     "820938": {
@@ -5675,6 +6315,8 @@
             "Son (TOT, MID)",
             "Haaland (MCI, FWD)",
             "Watkins (AVL, FWD)",
+            "Salah (LIV, MID)",
+            "Salah (LIV, MID)",
             "Salah (LIV, MID)",
             "Salah (LIV, MID)",
             "Salah (LIV, MID)"
@@ -5692,6 +6334,8 @@
             "None",
             "None",
             "Free Hit",
+            "None",
+            "None",
             "None"
         ],
         "fixture_margin_array": [
@@ -5707,7 +6351,9 @@
             -25.0,
             4.0,
             15.0,
-            -15.0
+            -15.0,
+            3.0,
+            2.0
         ],
         "fixture_opponent_array": [
             "1533539",
@@ -5762,7 +6408,9 @@
             "loss",
             "win",
             "win",
-            "loss"
+            "loss",
+            "win",
+            "win"
         ],
         "fixture_score_array": [
             75.0,
@@ -5777,7 +6425,9 @@
             54.0,
             34.0,
             82.0,
-            41.0
+            41.0,
+            57.0,
+            42.0
         ],
         "fixture_score_rank_array": [
             5,
@@ -5792,7 +6442,9 @@
             17,
             10,
             5,
-            16
+            16,
+            11,
+            9
         ],
         "fpl_code": "820938",
         "league_points_array": [
@@ -5808,7 +6460,9 @@
             0,
             3,
             3,
-            0
+            0,
+            3,
+            3
         ],
         "league_position_array": [
             5,
@@ -5823,7 +6477,9 @@
             5,
             4,
             2,
-            2
+            2,
+            3,
+            3
         ],
         "manager_name": "Darren Baker",
         "team_name": "Old Havertz Kai Hard",
@@ -5840,7 +6496,9 @@
             18,
             21,
             24,
-            24
+            24,
+            27,
+            30
         ],
         "total_score_array": [
             75.0,
@@ -5855,7 +6513,9 @@
             589.0,
             623.0,
             705.0,
-            746.0
+            746.0,
+            803.0,
+            845.0
         ],
         "transfered_in_array": [
             [],
@@ -5927,6 +6587,14 @@
             ],
             [
                 "Saliba"
+            ],
+            [
+                "Bowen",
+                "Pinnock",
+                "Mbeumo"
+            ],
+            [
+                "Son"
             ]
         ],
         "transfered_out_array": [
@@ -5999,6 +6667,14 @@
             ],
             [
                 "Sch\u00e4r"
+            ],
+            [
+                "Son",
+                "Cash",
+                "Foden"
+            ],
+            [
+                "Bowen"
             ]
         ],
         "transfers_made_array": [
@@ -6014,6 +6690,8 @@
             3,
             1,
             12,
+            1,
+            3,
             1
         ]
     }
