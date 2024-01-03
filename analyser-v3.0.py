@@ -169,7 +169,7 @@ for gw in range(1,gameweeks_played+1):
 		elif high_low_gw_score_since(gw) and high_low_gw_score_since(gw) > 2:
 			msg += f" was the highest-scoring week for {abs(high_low_gw_score_since(gw))} rounds."
 		
-		elif high_low_gw_score_since(gw) and high_low_gw_score_since(gw) < 2:
+		elif high_low_gw_score_since(gw) and high_low_gw_score_since(gw) < -2:
 			msg += f" was the lowest-scoring week for {abs(high_low_gw_score_since(gw))} rounds."
 
 
