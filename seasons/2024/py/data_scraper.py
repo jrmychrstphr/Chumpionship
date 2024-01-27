@@ -313,7 +313,7 @@ def scrape():
 						pass
 
 					# "Click" the list view toggle button to reveal the data table
-					driver.find_element_by_link_text("List View").click()
+					driver.find_element(By.LINK_TEXT, "List View").click()
 					print("'List View' button clicked")
 
 					data_table_css_selector = "div.Layout__Main-eg6k6r-1 table.Table-ziussd-1.EntryEventTable__StatsTable-sc-1d2xgo1-1.dUELIG.gTOduH"

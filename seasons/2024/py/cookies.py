@@ -38,7 +38,7 @@ def accept_cookies(driver):
 		#if the button is dfound, let's click it!
 		else:
 			# Click the button
-			driver.find_element_by_css_selector(accept_btn_css_selector).click()
+			driver.find_element(By.CSS_SELECTOR, accept_btn_css_selector).click()
 			print("Button clicked - cookies accepted")
 			completed = True
 
