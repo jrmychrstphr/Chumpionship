@@ -491,7 +491,8 @@
 
 	@font-face {
 	    font-family: 'Champion';
-	    src: url('assets/Champion HTFHeavyweight Regular.otf');
+	    src: url('assets/KoningDisplay-Black_TRIAL.otf');
+	    //src: url('assets/Champion HTFHeavyweight Regular.otf');
 	    font-weight: 800;
 	}
 
