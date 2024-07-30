@@ -1,0 +1,401 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"> 
+
+<html lang="en">
+    <head>
+
+        <title>Standings - Chumpionship</title>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://d3js.org/d3.v5.min.js"></script>
+
+        <!-- to replace with python -->
+        **common-functions.js**
+        **chumpionship-styles.css**  
+        **chumpionship-colours.js**
+        **dynamic-styles.js**
+
+        <script>
+            
+            
+            $( function(){
+
+                const data = {
+                    "database": **database.json**,
+                    "fixture_list": **fixture-list.json**
+                }
+
+                console.log(data)
+
+                styles.core()
+
+                // build controls
+                const controls = d3.select( 'body' )
+                .append( 'div' )
+                .attr("id", "controls")
+                .classed( 'controls-wrapper' , true )
+                .append( 'div' )
+                .classed( 'controls-container' , true )
+
+                /* gameweek select */
+
+                const gameweek_select_group = controls.append( 'div' ).classed( 'group' , true )
+                gameweek_select_group.append( 'div' ).classed( 'label' , true ).text( 'Gameweek: ' )
+
+                const gameweek_select = gameweek_select_group
+                .append( 'select' )
+                .attr("name", "gameweek_select")
+                .attr("id", "gameweek_select")
+
+                let gw_array = []
+
+                // create a list of functions
+                $.each( data.fixture_list, function(k, v) {    
+                    gw_array.push(k)
+                })
+
+                $.each( gw_array.sort(d3.ascending), function() {    
+                    gameweek_select.append( 'option' ).attr("value", this).text("GW"+parseInt(this.replace("GW","")))
+                })
+
+                /* generate button */
+
+                const generate_button = controls.append( 'button' )
+                .attr("type", "button")
+                .text( ' Generate' )
+                .on("click", function() {
+                    //function
+                    //console.log("Button clicked!")
+                    
+                    var input_gw = $("#gameweek_select").val()
+                    build_table(input_gw)
+                    
+                    //console.log(input_gw)
+                })
+
+                function build_table(gw) {
+
+                    $( '#title-block' ).empty()
+                    $( '#content-block' ).empty()
+
+                    // add this to database
+                    league_config = {
+                        "prizes": 4,
+                        "relegation": 3
+                    }
+
+                    //build title block
+                    var title_container = d3.select("#title-block")
+                    .append("div")
+                    .classed("title-wrapper", true)
+                    .append("div")
+                    .classed("title-container", true)
+
+                    var title = title_container.append("div")
+                    .classed("text display large", true)
+                    .text("Standings")
+
+                    var subtitle = title_container.append("div")
+                    .classed("text display regular", true)
+                    .text("GW" + parseInt(gw.replace("GW","")))
+
+                    //data
+                    dataset = []
+
+                    $.each( data.database, function(k, v) {
+
+                        temp_obj = {
+                            "manager_code": k,
+                            "manager_name": v.manager_name,
+                            "team_name": v.team_name,
+                            "league_position": (function(){
+                                    g = parseInt(gw.replace("GW",""))
+                                    if( v.league_position_array.length >= g ) {
+                                        return v.league_position_array[g-1]
+                                    } else {
+                                        return null
+                                    }
+                                })(),
+                            "league_position_change": (function(){
+                                    g = parseInt(gw.replace("GW",""))
+                                    if( g > 1 ) {
+                                        c = (parseInt(v.league_position_array[g-1]) - parseInt(v.league_position_array[g-2]))
+                                        return c
+                                    } else {
+                                        return null
+                                    }
+                                })(),
+                            "total_score": (function(){
+                                    g = parseInt(gw.replace("GW",""))
+                                    if( v.total_score_array.length >= g ) {
+                                        return v.total_score_array[g-1]
+                                    } else {
+                                        return null
+                                    }
+                                })(),
+                            "league_points": (function(){
+                                    g = parseInt(gw.replace("GW",""))
+                                    if( v.total_league_points_array.length >= g ) {
+                                        return v.total_league_points_array[g-1]
+                                    } else {
+                                        return null
+                                    }
+                                })(),
+
+                            "streak": {
+                                "type": (function(){
+                                    g = parseInt(gw.replace("GW",""))
+                                    t = v.fixture_result_array.slice(0,(g)).reverse()[0][0]
+
+                                    return t
+                                })(),
+                                "len": (function(){
+                                    g = parseInt(gw.replace("GW",""))
+                                    r = v.fixture_result_array.slice(0,(g)).reverse()
+                                    l = 0
+
+                                    $.each(r, function(idx, val) {
+                                        if (val != r[0]) { return false; }
+                                        l++;
+                                    })
+
+                                    return l
+                                })()
+                            }
+                        }
+
+                        dataset.push(temp_obj)
+
+
+                    })
+
+                    dataset = dataset.slice().sort((a, b) => d3.ascending(a.league_position, b.league_position))
+
+
+                    console.log(dataset)
+
+
+                    //build content
+                    var viz_container = d3.select("#content-block")
+                    .append("div")
+                    .classed("league-table-wrapper", true)
+                    .append("div")
+                    .classed("league-table-container", true)
+
+                    let table_header = viz_container.append("div")
+                    .classed("table-header-wrapper", true)
+                    .append("div")
+                    .classed("table-header-container", true)
+
+                    table_header.append("div").classed("table-column position text small", true)
+                    .text("Pos.")
+
+                    table_header.append("div").classed("table-column team-name text small", true)
+                    .text("Team / Manager")
+                    
+                    table_header.append("div").classed("table-column score text small", true)
+                    .text("Score")
+                    
+                    table_header.append("div").classed("table-column league-points text small", true)
+                    .text("Points")
+                    
+                    table_header.append("div").classed("table-column viz text small", true)
+                    .text("Streak")
+                    
+
+
+                    var table_rows = viz_container.selectAll("div.table-row-wrapper")
+                    .data(dataset).enter()
+                    .append("div")
+                    .classed("table-row-wrapper", true)
+                    .append("div")
+                    .classed("table-row-container", true)
+                    .each( function(d, i) {
+
+                        if ( d.league_position === 1 ) {
+                            d3.select(this).classed("position-first", true)
+                        } else if ( d.league_position <= league_config.prizes ) {
+                            d3.select(this).classed("position-prize", true)
+                        } else if ( d.league_position >= dataset.length - league_config.prizes + 2 ) {
+                            d3.select(this).classed("position-relegation", true)
+                        }
+
+                        //console.log(d)
+                        //console.log(d.league_position_change)
+
+                        if ( d.league_position_change > 0 || d.league_position_change < 0 ) {
+
+                            var change = d3.select(this)
+                            .append("div")
+                            .classed("position-change-wrapper", true)
+                            .append("div")
+                            .classed("position-change-container", true)
+
+                            if ( d.league_position_change < 0 ) {
+                                // up arrow
+                                change.classed("arrow-up", true)
+                            } else if ( d.league_position_change > 0 ) {
+                                //down arrow
+                                change.classed("arrow-down", true)
+                            }
+
+                            arrow = change.html(chump.svg.arrow)
+
+                        }
+
+
+                        d3.select(this)
+                        .append("div")
+                        .classed("table-column position text display regular", true)
+                        .text(function (d) {
+
+                            if ( d.league_position != (i+1)) {
+                                t = "="
+                            } else {
+                                t = d.league_position
+                            }
+
+                            return t
+                        })
+                        
+                        d3.select(this)
+                        .append("div")
+                        .classed("table-column team-name text display regular", true)
+                        .text(d.team_name)
+                        .append("span")
+                        .classed("rank text small", true)
+                        .text(d.manager_name)
+                        
+                        d3.select(this)
+                        .append("div")
+                        .classed("table-column score text display regular", true)
+                        .text(return_comma_formatted_number(d.total_score))
+                        
+                        var points = d3.select(this)
+                        .append("div")
+                        .classed("table-column league-points text display regular", true)
+                        .text(return_comma_formatted_number(d.league_points))
+
+                        points.append("span")
+                        .classed("display small", true)
+                        .text("pts")
+
+                        var viz_container = d3.select(this)
+                        .append("div")
+                        .classed("table-column viz", true)
+
+                        config = {
+                            "width": $(this).find(".viz").width(),
+                            "height": $(this).find(".viz").height(), 
+                            "padding": {
+                                "top": 0,
+                                "right": 0,
+                                "bottom": 0,
+                                "left": 5
+                            },
+                            "circle": {
+                                "radius": 10,
+                                "stroke_width": 2
+                            }
+                        }
+
+                        svg = viz_container.append("svg")
+                        .attr("height", config.height)
+                        .attr("width", config.width)
+                        .attr("viewBox","0 0 " + config.width + " " + config.height)
+
+                        // define max streak length
+                        var xMax = function() {
+                            a  = []
+                            $.each( dataset, function(idx, val) {
+                                a.push(val.streak.len)
+                            })
+                            a = d3.max(a)
+                            return a
+                        } ()
+
+                        let colour;
+
+                        if (d.streak.type === "w") {
+                            colour = chump.colours.green
+                        } else if (d.streak.type === "l") {
+                            colour = chump.colours.pink
+                        } else if (d.streak.type === "d") {
+                            colour = chump.colours.light_blue
+                        } else {
+                            colour = "white"
+                        }
+
+                        // add data
+                        var data_group = svg.append("g").classed("data-goup", true)
+
+                        //calculate spacing
+                        let s = (function(){
+                        
+                            let s, t = 35, r = config.circle.radius; // t = gap for text
+
+                            //calculate how much space is available for circles
+                            let gap = (config.width - (config.padding.left + config.padding.right) - (t+r));
+
+                            if (gap/xMax > r) {
+                                s = r;
+                            } else {
+                                s = gap/xMax                    
+                            }
+
+                            return s;
+
+                        }) ()
+
+                        for (ii = 0; ii < d.streak.len; ii++) {
+                            console.log(d.streak)
+                            data_group.append("circle")
+                            .attr("cx", config.circle.radius+(ii*s) + config.padding.left)
+                            .attr("cy", config.height/2)
+                            .attr("r", config.circle.radius)
+                            .attr("stroke-width", config.circle.stroke_width)
+                            .style("stroke", chump.colours.midnight_blue)
+                            .style("fill", colour)
+                        }
+
+                        let text = data_group.append("text")
+                        .classed("text small bold", true)
+                        .attr("x", config.circle.radius + (ii*s) + config.padding.left + 5)
+                        .attr("y", config.height/2)
+                        .attr("dy", 5.5)
+                        .style("text-anchor", "start")
+                        .style("fill", colour)
+                        .text(function(d) {
+                            let msg;
+
+                            msg = d.streak.type + d.streak.len;
+
+                            return msg.toUpperCase();
+                        })
+                    })
+
+                    styles.add()
+                }
+
+            });
+
+            
+        
+        </script>
+        
+    </head> 
+    
+    <body> 
+        <main>
+            <section>
+                <div id="logo"></div>
+                <div class="wrapper">
+                    <div class="container">
+                        <div id="title-block"></div>
+                        <div id="content-block"></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </body> 
+
+
+</html>
