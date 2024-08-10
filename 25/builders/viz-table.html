@@ -1,9 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
  <head>
-  <title>
-   Standings - Chumpionship
-  </title>
+  <title>Standings - Chumpionship 2025</title>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
   </script>
   <script src="https://d3js.org/d3.v5.min.js">
@@ -34,520 +32,139 @@
     }
   </script>
   <style type="text/css">
-   div.viz-wrapper svg {
-		overflow: visible;
-	}
 
-	/* Viz legends */
-	div.viz-wrapper {
-		//background-color: rgba(255,255,255,0.1);
-	}
+	/* --- General --- */
 
-	div.legend-wrapper {
-		margin-bottom: 2rem;
-	}
-
-	div.legend-container {
-		margin: -0.15rem;
-	}
-
-	div.legend-item:not(.vs) {
-		margin: 0.15rem;
-		padding: 0.3rem 0.6rem 0.15rem;
-	}
-
-	div.legend-item {
-		margin: 0.15rem 0;
-		padding: 0 0.3rem;
-		border-radius: 0.2rem;
-		display: inline-block;
-	}
-
-
-	/* Bubble charts */
-
-	div.viz:not(:last-child) {
-		margin-bottom: 2rem;
-	}
-
-	div.viz div.caption {
-		max-width: 36ch;
-		margin-bottom: 1rem;
-	}
-
-	div.viz div.caption div.subtitle {
-		margin-bottom: 0.3rem;
-	}
-
-	div.viz svg .text.small.superscript {
-		font-size: 0.6rem;
-		baseline-shift: super;
-	}
-
-
-	/* League Table */
-
-	div.league-table-wrapper {
-	}
-
-	div.league-table-container {
-		width: 100%;
-		margin: 0;
-		display: inline-block;
-	}
-
-	div.league-table-container div.table-row-wrapper {
-	}
-
-	div.league-table-container div.table-row-container, div.league-table-container div.table-header-container {
-		margin: 0 -0.15rem;
-		display: inline-block;
-		width: 100%;
-	}
-
-	div.table-header-container div.table-column {
-		margin: 0rem 0.15rem 0.2rem;
-		display: inline-block;
-		float: left;
-		text-align: center;
-		color: white;
-		border-bottom: solid 0.1rem white;
-		padding-bottom: 0.15rem;
-	}
-
-	div.table-row-container div.table-column {
-		margin: 0.15rem;
-		display: inline-block;
-		float: left;
-		text-align: center;
-	}
-
-
-	div.table-row-container div.position-change-wrapper {
-		float: left;
-		height: 0rem;
-		width: 0rem;
-	}
-
-	div.table-row-container div.position-change-container {
-		position: relative;
-		width: 2.2rem;
-		height: 2.2rem;
-		margin: 0.15rem;
-		left: -2.5rem;
-	}
-
-	div.table-row-container div.position-change-container.arrow-down {
-		transform: rotate(180deg);
-	}
-
-
-	div.table-row-container div.position-change-container svg {
-		width: 1rem;
-		height: 1rem;
-		margin: 0.6rem;
-	}
-
-	div.table-row-container div.table-column.position, div.table-header-container div.table-column.position  {
-		width: 2.3rem;
-		padding-left: 0rem;
-		padding-right: 0rem;
-	}
-
-	div.table-row-container div.table-column.position {
-		padding-top: 0.6rem;
-		padding-bottom: 0.6rem;
-		background-color: white;
-	}
-
-	div.table-row-container div.table-column.team-name , div.table-header-container div.table-column.team-name {
-		padding-left: 0.5rem;
-		padding-right:0.5rem;
-		width: 20.5rem;
-		text-align: left;
-	}
-
-	div.table-row-container div.table-column.team-name {
-		padding-top: 0.6rem;
-		padding-bottom: 0.6rem;
-		background-color: white;
-	}
-
-	div.table-row-container div.table-column.team-name span {
-		vertical-align: baseline;
-		padding-left: 0.4rem;
-		line-height: 0;
-	}
-
-	div.table-row-container div.table-column.score, div.table-header-container div.table-column.score {
-		padding-left: 0.5rem;
-		padding-right: 0.5rem;
-		width: 4.25rem;
-	}
-
-	div.table-row-container div.table-column.score {
-		padding-top: 0.6rem;
-		padding-bottom: 0.6rem;
-		background-color: white;
-	}
-
-	div.table-row-container div.table-column.league-points, div.table-header-container div.table-column.league-points {
-		padding-left: 0.5rem;
-		padding-right: 0.5rem;
-		width: 4.25rem;
-	}
-
-	div.table-row-container div.table-column.league-points {
-		padding-top: 0.6rem;
-		padding-bottom: 0.6rem;
-		background-color: white;
-	}
-
-	div.table-row-container div.table-column.viz, div.table-header-container div.table-column.viz {
-		padding-left: 0rem;
-		padding-right: 0rem;
-		width: 7.2rem;
-	}
-
-	div.table-row-container div.table-column.viz {
-		height: 2.2rem;
-	}
-
-	div.table-header-container div.table-column.viz {
-		text-align: left;
-	}
-
-
-
-	/* Results */
-
-	div.result-list-container {
-		margin: 0 -1rem 2rem;
-		display: inline-block;
-		width: calc(100% + 2rem);
-	}
-
-	div.result-list-container div.result-wrapper {
-		margin-bottom: 0.5rem;
-	}
-
-	div.result-list-container div.result-container {
-		margin: -0.15rem;
-		display: inline-block;
-		padding: 0 1rem;
-		width: calc(100% - 2rem);
-	}
-
-	div.result-list-container div.result-container div.result-row {
-		position:  relative;
-		width: 100%;
-		float: left;
-	}
-
-	div.result-list-container div.result-container div.result-row div {
-		margin: 0.15rem;
-		display: inline-block;
-		float: left;
-		text-align: center;
-	}
-
-	div.result-list-container div.result-container div.result-row div.chip-indicator {
-		position: absolute;
-		width: 1.4rem;
-		height: 2.2rem;
-		background-repeat: no-repeat;
-		background-size: contain;
-		background-position: center;	
-	}
-
-	div.result-list-container div.result-container div.result-row div.chip-indicator.bench-boost {
-		background-image: url("assets/chip-bench-boost.svg");
-	}
-
-	div.result-list-container div.result-container div.result-row div.chip-indicator.free-hit {
-		background-image: url("assets/chip-free-hit.svg");
-	}
-
-	div.result-list-container div.result-container div.result-row div.chip-indicator.triple-captain {
-		background-image: url("assets/chip-triple-captain.svg");
-	}
-
-	div.result-list-container div.result-container div.result-row div.chip-indicator.wildcard {
-		background-image: url("assets/chip-wildcard.svg");
-	}
-
-	div.result-list-container div.result-container div.result-row div.chip-indicator.home {
-		left: -1.8rem;
-	}
-
-	div.result-list-container div.result-container div.result-row div.chip-indicator.away {
-		right: -1.8rem;
-	}
-
-	div.result-list-container div.result-container div.result-row div.team {
-		background: white;
-		padding-top: 0.6rem;
-		padding-bottom: 0.6rem;
-	}
-
-	div.result-list-container div.result-container div.result-row div.score {
-		background: white;
-		padding-top: 0.6rem;
-		padding-bottom: 0.6rem;
-
-	}
-
-	div.result-list-container div.result-container div.result-row div.score span {
-		vertical-align: top;
-		padding-left: 0.15rem;
-		font-weight: 600;
-	}
-
-	div.result-list-container div.team {
-		width: 16rem;
-		padding-left: 0rem;
-		padding-right: 0rem;
-	}
-
-	/*
-	div.result-list-container div.result-container div.result-row div.team.away {
-		text-align: left;
-	}
-
-	div.result-list-container div.result-container div.result-row div.team.home {
-		text-align: right;
-	}
-	*/
-
-	div.result-list-container div.score {
-		width: 4.1rem;
-		padding-left: 0rem;
-		padding-right: 0rem;
-	}
-
-	div.result-list-container div.indicator {
-		width: 0.5rem;
-		height: 1rem;
-		padding-top: 0.6rem;
-		padding-bottom: 0.6rem;
-		padding-left: 0rem;
-		padding-right: 0rem;
-	}
-
-	div.result-list-container div.viz {
-		width: 17.85rem;
-		height: 2.2rem;
-		padding-left: 0rem;
-		padding-right: 0rem;
-	}
-
-	div.footnote {
-		color: white;
-	}
-
-
-	/* Fixtures */
-
-	div.fixture-list-wrapper:not(:last-child) {
-		margin-bottom:2rem;
-	}
-
-	div.fixture-list-container {
-		margin: 0 -1rem;
-		display: inline-block;
-	}
-
-	div.fixture-list-container div.fixture-wrapper {
-		width: 50%;
-		float: left;
-	}
-
-	div.fixture-list-container div.fixture-wrapper:nth-child(2n) {
-		padding-top: 2.5rem;
-	}
-
-	div.fixture-list-container div.fixture-container {
-		margin: -0.15rem;
-		display: inline-block;
-		padding: 0 1rem;
-		width: calc(100% - 2rem);
-	}
-
-	div.fixture-list-container div.fixture-container div {
-
-		background: white;
-		margin: 0.15rem;
-		display: inline-block;
-		float: left;
-		text-align: center;
-		padding-top: 0.6rem;
-		padding-bottom: 0.6rem;
-
-	}
-
-	div.fixture-list-container div.team {
-		width: 16.7rem;
-		padding-left: 0.5rem;
-		padding-right: 0.5rem;
-	}
-
-	div.fixture-list-container div.team span {
-		vertical-align: top;
-		padding-left: 0.15rem;
-	}
-
-
-	div.fixture-list-container div.vs-block {
-		width: 2.2rem;
-		padding-left: 0rem;
-		padding-right: 0rem;
-		clear: left;
-
-	}
-
-	div.fixture-list-container div.team.home {
-
-	}
-
-	div.fixture-list-container div.team.away {
-
-	}
-
-	/* title block */
-	div.title-wrapper {
-		color: white;
-		margin-bottom: 2rem;
-	}
-
-	div.title-container {
-	}
-
-	div.title-container .explainer {
-		margin-top: 2rem;
-	}
-
-	/* Logo */
-	div.logo-wrapper {
-		position: relative;
-	}
-
-	div.logo-container {
-		background-image: url("assets/Logo.svg");
-		background-repeat: no-repeat;
-		background-size: contain;
-		background-position: center;
-
-		position: absolute;
-		top: 2rem;
-		right: 4rem;
-		height: 5rem;
-		width: 5rem;
-	}
-
-
-
-	/* General */
 	html {
-		font-size: 18px;
+		font-size: 32px;
 	}
 
 	main {
-		width: 51rem;
+		width: 38rem;
 	}
 
 	div.page.border {
 		width: 100%;
-		height: 1rem;
+		height: 0.5rem;
 	}
 
-	.wrapper{
-		padding: 2rem 4rem;
+	div.page-wrapper{
+		padding: 1rem 3rem;
 	}
 
+	/* title block */ 
+	#title-block div.title-wrapper {
+		margin-bottom: 1rem;
+		margin-top: -0.25rem;
+	}
+
+	/* footer block */
+	#footer-block div.text {
+		//color: white;
+		margin-top: 0.5rem;
+		margin-bottom: 1rem;
+	}
+
+	#footer-block div.logo-container {
+		background-image: url("assets/logo2025@4x-8.png");
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: right center;
+
+		height: 2.5rem;
+		width: 100%;
+	}
+
+	/* text styles */
 	.text {
-		font-family: 'Helvetical Neue';
-		font-weight: 400;
+		font-family: 'Koning';
+		transform: scaleX(1.1);
 	}
 
-	.text.bold {
-		font-weight: 800;
+	.text.left-aligned {
+		text-align: left;
+		transform-origin: 0% 0;
 	}
 
-	.text.display {
-		font-family: 'Champion';
-		font-weight: 800;
+	.text.centre-aligned {
+		text-align: center;
+		transform-origin: 50% 0;
 	}
 
-	.text.large {
-		font-size: 1.5rem;
-		line-height: 1.5rem;
-		text-transform: uppercase;
+	.text.right-aligned {
+		text-align: right;
+		transform-origin: 100% 0;
 	}
 
-	.text.regular {
-		font-size: 0.95rem;
+	.text.subhead {
+	    margin-top: -0.2rem;
+	}
+
+	.text.weight-regular {
+		font-weight: 500;
+	}
+
+	.text.weight-bold {
+		font-weight: 700;
+	}
+
+	.text.weight-black {
+		font-weight: 900;
+	}
+
+	.text.size-large {
+		font-size: 2rem;
+		line-height: 1.25em;
+	}
+
+	.text.size-regular {
+		font-size: 1rem;
 		line-height: 1rem;
 	}
 
-	.text.small {
-		font-size: 0.7rem;
+	.text.size-small {
+		font-size: 0.75rem;
 		line-height: 1rem;
 	}
 
-	.text.tiny {
+	.text.size-tiny {
 		font-size: 0.6rem;
 		line-height: 0.8rem;
 	}
 
-	.text.colour-white {
-		color: white;
-	}
-
-
-	/* Fonts */
+	/* fonts */
 	@font-face {
-	    font-family: 'Champion';
-	    src: url('assets/Champion HTFFlyweight Regular.otf');
-	    font-weight: 200;
-	}
+			/* updated Jul 24 */
+		    font-family: 'Koning';
+		    src: url('assets/KoningDisplay-SemiLight_TRIAL.woff2');
+		    font-weight: 400;
+		}
 
 	@font-face {
-	    font-family: 'Champion';
-	    src: url('assets/Champion HTFFeatherweight Regular.otf');
-	    font-weight: 400;
-	}
+		    font-family: 'Koning';
+		    src: url('assets/KoningDisplay-Regular_TRIAL.woff2');
+		    font-weight: 500;
+		}
 
 	@font-face {
-	    font-family: 'Champion';
-	    src: url('assets/Champion HTFMiddleweight Regular.otf');
-	    font-weight: 600;
-	}
+		    font-family: 'Koning';
+		    src: url('assets/KoningDisplay-SemiBold_TRIAL.woff2');
+		    font-weight: 600;
+		}
 
 	@font-face {
-	    font-family: 'Champion';
-	    src: url('assets/Champion HTFHeavyweight Regular.otf');
-	    font-weight: 800;
-	}
+		    font-family: 'Koning';
+		    src: url('assets/KoningDisplay-Bold_TRIAL.woff2');
+		    font-weight: 700;
+		}
 
 	@font-face {
-	    font-family: 'Helvetical Neue';
-	    src: url('assets/HelveticaNeueLTStd-Roman.otf');
-	    font-weight: 400;
-	}
+		    font-family: 'Koning';
+		    src: url('assets/KoningDisplay-Black_TRIAL.woff2');
+		    font-weight: 900;
+		}
 
-	@font-face {
-	    font-family: 'Helvetical Neue';
-	    src: url('assets/HelveticaNeueLTStd-Bd.otf');
-	    font-weight: 800;
-	}
-
-	@font-face {
-	    font-family: 'Helvetical Neue';
-	    src: url('assets/HelveticaNeueLTStd-Lt.otf');
-	    font-weight: 200;
-	}
-
-
+	/* --- control panel --- */
     #controls {
         margin: 1rem;
         padding: 1rem;
@@ -568,17 +185,78 @@
     #controls div.label {
         margin-bottom: 0.5rem;
     }
+
+	/* --- League Table --- */
+
+/* --- Results --- */
+	div.league-table-container {
+		display: inline-block;
+	}
+
+	div.league-table-container div.table-row-container  {
+		display: inline-block;
+	}
+
+	div.league-table-container div.table-row {
+		position:  relative;
+		width: 100%;
+		float: left;
+		margin-bottom: 0.25rem;
+	}
+
+	div.league-table-container div.table-row div {
+		display: inline-block;
+		float: left;
+
+		height: 1.5rem;
+		padding-top: 0.15rem;
+		line-height: 1rem;
+	}
+
+	div.league-table-container div.table-row div:not(.change-indicator):not(.col-streak) {
+		padding-left: 0.5rem;
+		padding-right: 0.5rem;
+	}
+
+	div.league-table-container div.col-position {
+		margin-right: 0.1rem;
+		width: calc(2.6rem - 1rem);
+	}
+
+	div.league-table-container div.col-team {
+		margin-right: 0.1rem;
+		width: calc(16rem - 1rem);
+	}
+
+	div.league-table-container div.col-points {
+		margin-right: 0.1rem;
+		width: calc(3rem - 1rem);
+	}
+
+	div.league-table-container div.col-total {
+		margin-right: 0.1rem;
+		width: calc(4rem - 1rem);
+	}
+
+	div.league-table-container div.col-streak {
+		width: 2.6rem;
+	}
+
+
+
   </style>
   <script>
    chump = {
 		"colours": {
-			"green": d3.rgb("rgb(0,255,130)"),
-			"light_blue": d3.rgb("rgb(0,210,255)"),
-			"blue": d3.rgb("rgb(0,120,250)"),
-			"purple": d3.rgb("rgb(130,80,230)"),
-			"pink": d3.rgb("rgb(255,50,180)"),
-			"midnight_blue": d3.rgb("rgb(10,10,50)"),
+			"green": d3.rgb("rgb(0,219,113)"),
+			"light_blue": d3.rgb("rgb(0,165,255)"),
+			"blue": d3.rgb("rgb(0,78,250)"),
+			"purple": d3.rgb("rgb(103,42,225)"),
+			"pink": d3.rgb("rgb(255,41,176)"),
+			"midnight_blue": d3.rgb("rgb(13,0,77)"),
+			"light_midnight_blue": d3.rgb("rgb(22,0,122)"),
 			"axis_lines": d3.rgb("rgb(90,90,115)"),
+			//updated Jul 24
 		},
 		"gradients": {
 			"css": {
@@ -608,8 +286,18 @@
         },
 
         add : function() {
+            
+            d3.selectAll(".text.colour-midnight").style("color", chump.colours.midnight_blue)
+            d3.selectAll(".text.colour-white").style("color", "white")
+            //d3.selectAll(".fixture-list-wrapper, .result-list-wrapper, .league-table-wrapper, .legend-item").style("color", chump.colours.midnight_blue)
 
-            d3.selectAll(".fixture-list-wrapper, .result-list-wrapper, .league-table-wrapper, .legend-item").style("color", chump.colours.midnight_blue)
+            d3.selectAll(".background-white").style("background", "white")
+            d3.selectAll(".background-blue").style("background", chump.colours.blue)
+            d3.selectAll(".background-light-blue").style("background", chump.colours.light_blue)
+            d3.selectAll(".background-green").style("background", chump.colours.green)
+            d3.selectAll(".background-pink").style("background", chump.colours.pink)
+            d3.selectAll(".background-purple").style("background", chump.purple)
+            d3.selectAll(".background-light-midnight").style("background", chump.colours.light_midnight_blue)
 
             d3.selectAll(".result-row .result-color.win").style("background", chump.colours.green)
             d3.selectAll(".result-row .result-color.loss").style("background", chump.colours.pink)
@@ -639,6 +327,7 @@
         
     }
   </script>
+
   <script>
    $( function(){
 
@@ -17429,14 +17118,14 @@
 
                 function build_table(gw) {
 
-                    $( '#title-block' ).empty()
-                    $( '#content-block' ).empty()
-
-                    // add this to database
                     league_config = {
                         "prizes": 4,
                         "relegation": 3
                     }
+
+                    $( '#title-block' ).empty()
+                    $( '#content-block' ).empty()
+                    $( '#footer-block' ).empty()
 
                     //build title block
                     var title_container = d3.select("#title-block")
@@ -17446,12 +17135,13 @@
                     .classed("title-container", true)
 
                     var title = title_container.append("div")
-                    .classed("text display large", true)
+                    .classed("text title weight-black size-large left-aligned colour-white", true)
                     .text("Standings")
 
                     var subtitle = title_container.append("div")
-                    .classed("text display regular", true)
+                    .classed("text subhead weight-regular size-regular left-aligned colour-white", true)
                     .text("GW" + parseInt(gw.replace("GW","")))
+
 
                     //data
                     dataset = []
@@ -17530,78 +17220,108 @@
 
 
                     //build content
-                    var viz_container = d3.select("#content-block")
+                    var table_container = d3.select("#content-block")
                     .append("div")
                     .classed("league-table-wrapper", true)
                     .append("div")
                     .classed("league-table-container", true)
 
-                    let table_header = viz_container.append("div")
+                    let table_header = table_container.append("div")
                     .classed("table-header-wrapper", true)
                     .append("div")
-                    .classed("table-header-container", true)
+                    .classed("table-header-container head", true)
+                    .append("div")
+                    .classed("table-row", true)
 
-                    table_header.append("div").classed("table-column position text small", true)
+                    //col-position
+                    table_header.append("div")
+                    .classed("col-position text-container", true)
+                    .append("div")
+                    .classed("text weight-regular centre-aligned colour-white size-small", true)
                     .text("Pos.")
 
-                    table_header.append("div").classed("table-column team-name text small", true)
-                    .text("Team / Manager")
-                    
-                    table_header.append("div").classed("table-column score text small", true)
-                    .text("Score")
-                    
-                    table_header.append("div").classed("table-column league-points text small", true)
-                    .text("Points")
-                    
-                    table_header.append("div").classed("table-column viz text small", true)
+                    //col-team
+                    table_header.append("div")
+                    .classed("col-team text-container", true)
+                    .append("div")
+                    .classed("text weight-regular left-aligned colour-white size-small", true)
+                    .text("Team")
+
+                    //col-points
+                    table_header.append("div")
+                    .classed("col-points text-container", true)
+                    .append("div")
+                    .classed("text weight-regular centre-aligned colour-white size-small", true)
+                    .text("Pts")
+
+                    //col-total
+                    table_header.append("div")
+                    .classed("col-total text-container", true)
+                    .append("div")
+                    .classed("text weight-regular left-aligned colour-white size-small", true)
+                    .text("Total")
+
+                    //col-streak
+                    table_header.append("div")
+                    .classed("col-total text-container", true)
+                    .append("div")
+                    .classed("text weight-regular centre-aligned colour-white size-small", true)
                     .text("Streak")
-                    
 
 
-                    var table_rows = viz_container.selectAll("div.table-row-wrapper")
+                    var table_rows = table_container
+                    .append("div")
+                    .classed("table-rows-wrapper", true)
+                    .append("div")
+                    .classed("table-rows-container", true)
+
+                    table_rows.selectAll("div.table-row")
                     .data(dataset).enter()
                     .append("div")
-                    .classed("table-row-wrapper", true)
-                    .append("div")
-                    .classed("table-row-container", true)
+                    .classed("table-row", true)
                     .each( function(d, i) {
 
+                    	//set row status for styling reasons
+                    	var row_status
+
                         if ( d.league_position === 1 ) {
-                            d3.select(this).classed("position-first", true)
+                            row_status = "top"
                         } else if ( d.league_position <= league_config.prizes ) {
-                            d3.select(this).classed("position-prize", true)
+                           row_status = "prize"
                         } else if ( d.league_position >= dataset.length - league_config.prizes + 2 ) {
-                            d3.select(this).classed("position-relegation", true)
+                            row_status = "drop"
+                        } else {
+                        	row_status = "default"
                         }
 
                         //console.log(d)
                         //console.log(d.league_position_change)
 
-                        if ( d.league_position_change > 0 || d.league_position_change < 0 ) {
+                        //col-change
+	                    let change = d3.select(this).append("div")
+	                    .classed("change-indicator", true)
 
-                            var change = d3.select(this)
-                            .append("div")
-                            .classed("position-change-wrapper", true)
-                            .append("div")
-                            .classed("position-change-container", true)
-
-                            if ( d.league_position_change < 0 ) {
-                                // up arrow
-                                change.classed("arrow-up", true)
-                            } else if ( d.league_position_change > 0 ) {
-                                //down arrow
-                                change.classed("arrow-down", true)
-                            }
-
-                            arrow = change.html(chump.svg.arrow)
-
+                        if ( d.league_position_change > 0) {
+                        	change.classed("arrow-down", true)
+                        } else if ( d.league_position_change < 0) {
+                        	change.classed("arrow-up", true)
                         }
 
+	                    //col-position
+	                    d3.select(this).append("div")
+	                    .classed("col-position text-container", true)
+	                    .classed("background-light-midnight", row_status=="default")
+	                    .classed("background-green", row_status=="top")
+	                    .classed("background-light-blue", row_status=="prize")
+	                    .classed("background-pink", row_status=="drop")
+	                    .append("div")
+	                    .classed("text weight-black centre-aligned", true)
+	                    .classed("colour-white", row_status=="default")
+	                    .classed("colour-midnight", row_status!="default")
+	                    .text(function (d) {
 
-                        d3.select(this)
-                        .append("div")
-                        .classed("table-column position text display regular", true)
-                        .text(function (d) {
+	                    	console.log(d.team_name)
+	                    	console.log(d.league_position)
 
                             if ( d.league_position != (i+1)) {
                                 t = "="
@@ -17611,32 +17331,47 @@
 
                             return t
                         })
-                        
-                        d3.select(this)
-                        .append("div")
-                        .classed("table-column team-name text display regular", true)
+
+                        //col-team
+	                    d3.select(this).append("div")
+	                    .classed("col-team text-container", true)
+	                    .classed("background-light-midnight", row_status=="default")
+	                    .classed("background-white", row_status!="default")
+	                    .append("div")
+	                    .classed("text weight-regular left-aligned", true)
+	                    .classed("colour-white", row_status=="default")
+	                    .classed("colour-midnight", row_status!="default")
                         .text(d.team_name)
+                        /*
                         .append("span")
                         .classed("rank text small", true)
                         .text(d.manager_name)
-                        
-                        d3.select(this)
-                        .append("div")
-                        .classed("table-column score text display regular", true)
-                        .text(return_comma_formatted_number(d.total_score))
-                        
-                        var points = d3.select(this)
-                        .append("div")
-                        .classed("table-column league-points text display regular", true)
+                        */
+
+                        //col-points
+	                    d3.select(this).append("div")
+	                    .classed("col-points text-container", true)
+	                    .append("div")
+	                    .classed("text weight-regular centre-aligned", true)
+	                    .classed("background-light-midnight", row_status=="default")
+	                    .classed("background-white", row_status!="default")
                         .text(return_comma_formatted_number(d.league_points))
 
-                        points.append("span")
-                        .classed("display small", true)
-                        .text("pts")
+                        //col-total
+	                    d3.select(this).append("div")
+	                    .classed("col-total text-container", true)
+	                    .classed("background-light-midnight", row_status=="default")
+	                    .classed("background-white", row_status!="default")
+	                    .append("div")
+	                    .classed("text weight-regular centre-aligned", true)
+	                    .classed("background-light-midnight", row_status=="default")
+	                    .classed("background-white", row_status!="default")
+                        .text(return_comma_formatted_number(d.total_score))
 
-                        var viz_container = d3.select(this)
-                        .append("div")
-                        .classed("table-column viz", true)
+
+                        //col-streak
+	                    var viz_container = d3.select(this).append("div")
+	                    .classed("col-streak viz", true)
 
                         config = {
                             "width": $(this).find(".viz").width(),
@@ -17736,18 +17471,18 @@
  </head>
  <body>
   <main>
-   <section>
-    <div id="logo">
-    </div>
-    <div class="wrapper">
-     <div class="container">
-      <div id="title-block">
-      </div>
-      <div id="content-block">
-      </div>
-     </div>
-    </div>
-   </section>
+    <section>
+        <div class="page-wrapper">
+            <div class="container">
+                <div id="title-block">
+                </div>
+                <div id="content-block">
+                </div>
+                <div id="footer-block">
+                </div>
+            </div>
+        </div>
+    </section>
   </main>
  </body>
 </html>
