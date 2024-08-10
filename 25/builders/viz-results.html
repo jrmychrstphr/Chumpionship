@@ -411,22 +411,21 @@
 		margin-top: 2rem;
 	}
 
-	/* Logo */
-	div.logo-wrapper {
-		position: relative;
+	/* Footer */
+	#footer-block div.text {
+		color: white;
+		margin-top: 0.5rem;
+		margin-bottom: 1rem;
 	}
 
-	div.logo-container {
-		background-image: url("assets/Logo.svg");
+	#footer-block div.logo-container {
+		background-image: url("assets/logo2025@4x-8.png");
 		background-repeat: no-repeat;
 		background-size: contain;
-		background-position: center;
+		background-position: right center;
 
-		position: absolute;
-		top: 2rem;
-		right: 4rem;
-		height: 5rem;
-		width: 5rem;
+		height: 2.5rem;
+		width: 100%;
 	}
 
 
@@ -479,7 +478,7 @@
 	}
 
 	.text.weight-regular {
-		font-weight: 600;
+		font-weight: 500;
 	}
 
 	.text.weight-bold {
@@ -501,7 +500,7 @@
 	}
 
 	.text.size-small {
-		font-size: 0.7rem;
+		font-size: 0.75rem;
 		line-height: 1rem;
 	}
 
@@ -516,6 +515,20 @@
 
 
 	/* Fonts */
+
+@font-face {
+		/* updated Jul 24 */
+	    font-family: 'Koning';
+	    src: url('assets/KoningDisplay-SemiLight_TRIAL.woff2');
+	    font-weight: 400;
+	}
+
+@font-face {
+		/* updated Jul 24 */
+	    font-family: 'Koning';
+	    src: url('assets/KoningDisplay-Regular_TRIAL.woff2');
+	    font-weight: 500;
+	}
 
 @font-face {
 		/* updated Jul 24 */
@@ -17424,6 +17437,7 @@
 
                     $( '#title-block' ).empty()
                     $( '#content-block' ).empty()
+                    $( '#footer-block' ).empty()
 
                     //build title block
                     var title_container = d3.select("#title-block")
@@ -17575,27 +17589,27 @@
                         let home_team = result_row.append("div")
                         .classed("home team text-container", true)
 						.append("div")
-						.classed("text regular right-aligned", true)
+						.classed("text weight-regular right-aligned", true)
                         .text(d.home.team_name)
 
                         let home_score = result_row.append("div")
                         .classed("home score text-container", true)
                         .classed(d.home.fixture_result, true)
 						.append("div")
-						.classed("text black centre-aligned weight-black", true)
+						.classed("text centre-aligned weight-black", true)
 						.text(d.home.fixture_score)
 
                         let away_score = result_row.append("div")
                         .classed("away score text-container", true)
                         .classed(d.away.fixture_result, true)
 						.append("div")
-						.classed("text black centre-aligned weight-black", true)
+						.classed("text centre-aligned weight-black", true)
 						.text(d.away.fixture_score)
 
                         let away_team = result_row.append("div")
                         .classed("away team text-container", true)
 						.append("div")
-						.classed("text regular left-aligned", true)
+						.classed("text weight-regular left-aligned", true)
                         .text(d.away.team_name)
 
                         result_row.append("div")
@@ -17632,10 +17646,18 @@
 
                     })
 
-                    var footnote = d3.select("#content-block")
+                    var footer = d3.select("#footer-block")
+ 					.append("div")
+                    .classed("footer-wrapper", true)
                     .append("div")
-                    .classed("footnote text small", true)
-                    .text("Figures in brackets indicate fixture score rank in GW"+parseInt(gw.replace("GW","")))
+                    .classed("footer-container", true)
+
+                    var footnote = footer.append("div")
+                    .classed("text weight-regular size-small left-aligned", true)
+                    .text("Chips: B=Bench Boost; F=Free Hit; T=Triple Captain; W=Wildcard.")
+
+                    var logo = footer.append("div")
+                    .classed("logo-container", true)
 
                     styles.add()
 
@@ -17653,6 +17675,8 @@
       <div id="title-block">
       </div>
       <div id="content-block">
+      </div>
+      <div id="footer-block">
       </div>
      </div>
     </div>
