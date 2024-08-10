@@ -2,7 +2,7 @@
 <html lang="en">
  <head>
   <title>
-   Results 25 - Chumpionship
+   Results - Chumpionship 2025
   </title>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
   </script>
@@ -10,183 +10,8 @@
   </script>
   <!-- to replace with python -->
   <style type="text/css">
-   div.viz-wrapper svg {
-		overflow: visible;
-	}
 
-	/* Viz legends */
-	div.legend-wrapper {
-		margin-bottom: 2rem;
-	}
-
-	div.legend-container {
-		margin: -0.15rem;
-	}
-
-	div.legend-item:not(.vs) {
-		margin: 0.15rem;
-		padding: 0.3rem 0.6rem 0.15rem;
-	}
-
-	div.legend-item {
-		margin: 0.15rem 0;
-		padding: 0 0.3rem;
-		border-radius: 0.2rem;
-		display: inline-block;
-	}
-
-
-	/* Bubble charts */
-
-	div.viz:not(:last-child) {
-		margin-bottom: 2rem;
-	}
-
-	div.viz div.caption {
-		max-width: 36ch;
-		margin-bottom: 1rem;
-	}
-
-	div.viz div.caption div.subtitle {
-		margin-bottom: 0.3rem;
-	}
-
-	div.viz svg .text.small.superscript {
-		font-size: 0.6rem;
-		baseline-shift: super;
-	}
-
-
-	/* League Table */
-
-	div.league-table-container {
-		width: 100%;
-		margin: 0;
-		display: inline-block;
-	}
-
-	div.league-table-container div.table-row-container, div.league-table-container div.table-header-container {
-		margin: 0 -0.15rem;
-		display: inline-block;
-		width: 100%;
-	}
-
-	div.table-header-container div.table-column {
-		margin: 0rem 0.15rem 0.2rem;
-		display: inline-block;
-		float: left;
-		text-align: center;
-		//color: white;
-		border-bottom: solid 0.1rem white;
-		padding-bottom: 0.15rem;
-	}
-
-	div.table-row-container div.table-column {
-		margin: 0.15rem;
-		display: inline-block;
-		float: left;
-		text-align: center;
-	}
-
-
-	div.table-row-container div.position-change-wrapper {
-		float: left;
-		height: 0rem;
-		width: 0rem;
-	}
-
-	div.table-row-container div.position-change-container {
-		position: relative;
-		width: 2.2rem;
-		height: 2.2rem;
-		margin: 0.15rem;
-		left: -2.5rem;
-	}
-
-	div.table-row-container div.position-change-container.arrow-down {
-		transform: rotate(180deg);
-	}
-
-
-	div.table-row-container div.position-change-container svg {
-		width: 1rem;
-		height: 1rem;
-		margin: 0.6rem;
-	}
-
-	div.table-row-container div.table-column.position, div.table-header-container div.table-column.position  {
-		width: 2.3rem;
-		padding-left: 0rem;
-		padding-right: 0rem;
-	}
-
-	div.table-row-container div.table-column.position {
-		padding-top: 0.6rem;
-		padding-bottom: 0.6rem;
-		background-color: white;
-	}
-
-	div.table-row-container div.table-column.team-name , div.table-header-container div.table-column.team-name {
-		padding-left: 0.5rem;
-		padding-right:0.5rem;
-		width: 20.5rem;
-		text-align: left;
-	}
-
-	div.table-row-container div.table-column.team-name {
-		padding-top: 0.6rem;
-		padding-bottom: 0.6rem;
-		background-color: white;
-	}
-
-	div.table-row-container div.table-column.team-name span {
-		vertical-align: baseline;
-		padding-left: 0.4rem;
-		line-height: 0;
-	}
-
-	div.table-row-container div.table-column.score, div.table-header-container div.table-column.score {
-		padding-left: 0.5rem;
-		padding-right: 0.5rem;
-		width: 4.25rem;
-	}
-
-	div.table-row-container div.table-column.score {
-		padding-top: 0.6rem;
-		padding-bottom: 0.6rem;
-		background-color: white;
-	}
-
-	div.table-row-container div.table-column.league-points, div.table-header-container div.table-column.league-points {
-		padding-left: 0.5rem;
-		padding-right: 0.5rem;
-		width: 4.25rem;
-	}
-
-	div.table-row-container div.table-column.league-points {
-		padding-top: 0.6rem;
-		padding-bottom: 0.6rem;
-		background-color: white;
-	}
-
-	div.table-row-container div.table-column.viz, div.table-header-container div.table-column.viz {
-		padding-left: 0rem;
-		padding-right: 0rem;
-		width: 7.2rem;
-	}
-
-	div.table-row-container div.table-column.viz {
-		height: 2.2rem;
-	}
-
-	div.table-header-container div.table-column.viz {
-		text-align: left;
-	}
-
-
-
-	/* Results */
-
+  	/* --- Results --- */
 	div.result-list-container {
 		display: inline-block;
 	}
@@ -241,7 +66,6 @@
 	}
 
 	div.result-list-container div.result-container div.result-row div.team {
-		//background: #16007A;
 		padding-left: 0.5rem;
 		padding-right: 0.5rem;
 		margin: 0 0.1rem;
@@ -291,85 +115,35 @@
 		width: 0.5rem;
 	}
 
-	/* Fixtures */
 
-	div.fixture-list-wrapper:not(:last-child) {
-		margin-bottom:2rem;
+
+
+	/* --- General --- */
+
+	html {
+		font-size: 32px;
 	}
 
-	div.fixture-list-container {
-		margin: 0 -1rem;
-		display: inline-block;
+	main {
+		width: 38rem;
 	}
 
-	div.fixture-list-container div.fixture-wrapper {
-		width: 50%;
-		float: left;
+	div.page.border {
+		width: 100%;
+		height: 0.5rem;
 	}
 
-	div.fixture-list-container div.fixture-wrapper:nth-child(2n) {
-		padding-top: 2.5rem;
+	div.page-wrapper{
+		padding: 1rem 3rem;
 	}
 
-	div.fixture-list-container div.fixture-container {
-		margin: -0.15rem;
-		display: inline-block;
-		padding: 0 1rem;
-		width: calc(100% - 2rem);
-	}
-
-	div.fixture-list-container div.fixture-container div {
-		background: white;
-		margin: 0.15rem;
-		display: inline-block;
-		float: left;
-		text-align: center;
-		padding-top: 0.6rem;
-		padding-bottom: 0.6rem;
-	}
-
-	div.fixture-list-container div.team {
-		width: 16.7rem;
-		padding-left: 0.5rem;
-		padding-right: 0.5rem;
-	}
-
-	div.fixture-list-container div.team span {
-		vertical-align: top;
-		padding-left: 0.15rem;
-	}
-
-
-	div.fixture-list-container div.vs-block {
-		width: 2.2rem;
-		padding-left: 0rem;
-		padding-right: 0rem;
-		clear: left;
-
-	}
-
-	div.fixture-list-container div.team.home {
-
-	}
-
-	div.fixture-list-container div.team.away {
-
-	}
-
-	/* title block */
-	div.title-wrapper {
+	/* title block */ 
+	#title-block div.title-wrapper {
 		margin-bottom: 1rem;
 		margin-top: -0.25rem;
 	}
 
-	div.title-container {
-	}
-
-	div.title-container .explainer {
-		margin-top: 2rem;
-	}
-
-	/* Footer */
+	/* footer block */
 	#footer-block div.text {
 		//color: white;
 		margin-top: 0.5rem;
@@ -386,30 +160,7 @@
 		width: 100%;
 	}
 
-
-
-	/* General */
-	html {
-		font-size: 32px; /* updated */
-	}
-
-	main {
-		width: 38rem;
-	}
-
-	div.page.border {
-		width: 100%;
-		height: 0.5rem;
-	}
-
-/*	div.background-white {
-		background: white;
-	}
-*/
-	div.page-wrapper{
-		padding: 1rem 3rem;
-	}
-
+	/* text styles */
 	.text {
 		font-family: 'Koning';
 		transform: scaleX(1.1);
@@ -466,40 +217,39 @@
 		line-height: 0.8rem;
 	}
 
-	/* Fonts */
+	/* fonts */
+	@font-face {
+			/* updated Jul 24 */
+		    font-family: 'Koning';
+		    src: url('assets/KoningDisplay-SemiLight_TRIAL.woff2');
+		    font-weight: 400;
+		}
 
-@font-face {
-		/* updated Jul 24 */
-	    font-family: 'Koning';
-	    src: url('assets/KoningDisplay-SemiLight_TRIAL.woff2');
-	    font-weight: 400;
-	}
+	@font-face {
+		    font-family: 'Koning';
+		    src: url('assets/KoningDisplay-Regular_TRIAL.woff2');
+		    font-weight: 500;
+		}
 
-@font-face {
-	    font-family: 'Koning';
-	    src: url('assets/KoningDisplay-Regular_TRIAL.woff2');
-	    font-weight: 500;
-	}
+	@font-face {
+		    font-family: 'Koning';
+		    src: url('assets/KoningDisplay-SemiBold_TRIAL.woff2');
+		    font-weight: 600;
+		}
 
-@font-face {
-	    font-family: 'Koning';
-	    src: url('assets/KoningDisplay-SemiBold_TRIAL.woff2');
-	    font-weight: 600;
-	}
+	@font-face {
+		    font-family: 'Koning';
+		    src: url('assets/KoningDisplay-Bold_TRIAL.woff2');
+		    font-weight: 700;
+		}
 
-@font-face {
-	    font-family: 'Koning';
-	    src: url('assets/KoningDisplay-Bold_TRIAL.woff2');
-	    font-weight: 700;
-	}
+	@font-face {
+		    font-family: 'Koning';
+		    src: url('assets/KoningDisplay-Black_TRIAL.woff2');
+		    font-weight: 900;
+		}
 
-@font-face {
-	    font-family: 'Koning';
-	    src: url('assets/KoningDisplay-Black_TRIAL.woff2');
-	    font-weight: 900;
-	}
-
-
+	/* --- control panel --- */
     #controls {
         margin: 1rem;
         padding: 1rem;
@@ -522,6 +272,7 @@
     }
 
   </style>
+
   <script>
    chump = {
 		"colours": {
@@ -17520,7 +17271,7 @@
                     .append("div")
                     .classed("result-list-container", true)
 
-                    var fixtures = viz_container.selectAll("div.result-wrapper")
+                    var results = viz_container.selectAll("div.result-wrapper")
                     .data(dataset).enter()
                     .append("div")
                     .classed("result-wrapper", true)
@@ -17607,18 +17358,18 @@
  </head>
  <body>
   <main>
-   <section>
-    <div class="page-wrapper">
-     <div class="container">
-      <div id="title-block">
-      </div>
-      <div id="content-block">
-      </div>
-      <div id="footer-block">
-      </div>
-     </div>
-    </div>
-   </section>
+    <section>
+        <div class="page-wrapper">
+            <div class="container">
+                <div id="title-block">
+                </div>
+                <div id="content-block">
+                </div>
+                <div id="footer-block">
+                </div>
+            </div>
+        </div>
+    </section>
   </main>
  </body>
 </html>

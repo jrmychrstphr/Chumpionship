@@ -1,5 +1,6 @@
-<script>
-    styles = {
+  <script>
+  /* updated: Aug 24 (results) */
+   styles = {
         core : function() {
 
             d3.select("main").style('background', chump.colours.midnight_blue);
@@ -13,9 +14,13 @@
         },
 
         add : function() {
-
-            d3.selectAll("text.colour-midnight").style("color", chump.colours.midnight_blue)
+            
+            d3.selectAll(".text.colour-midnight").style("color", chump.colours.midnight_blue)
+            d3.selectAll(".text.colour-white").style("color", "white")
             //d3.selectAll(".fixture-list-wrapper, .result-list-wrapper, .league-table-wrapper, .legend-item").style("color", chump.colours.midnight_blue)
+
+            d3.selectAll(".background-white").style("background", "white")
+            d3.selectAll(".background-light-midnight").style("background", chump.colours.light_midnight_blue)
 
             d3.selectAll(".result-row .result-color.win").style("background", chump.colours.green)
             d3.selectAll(".result-row .result-color.loss").style("background", chump.colours.pink)
@@ -44,4 +49,4 @@
         }
         
     }
-</script>
+  </script>

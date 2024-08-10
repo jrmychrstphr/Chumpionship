@@ -1,5 +1,292 @@
 <style type="text/css">
 
+	/* --- General --- */
+
+	html {
+		font-size: 32px;
+	}
+
+	main {
+		width: 38rem;
+	}
+
+	div.page.border {
+		width: 100%;
+		height: 0.5rem;
+	}
+
+	div.page-wrapper{
+		padding: 1rem 3rem;
+	}
+
+	/* title block */ 
+	#title-block div.title-wrapper {
+		margin-bottom: 1rem;
+		margin-top: -0.25rem;
+	}
+
+	/* footer block */
+	#footer-block div.text {
+		//color: white;
+		margin-top: 0.5rem;
+	}
+
+	#footer-block div.logo-container {
+		background-image: url("assets/logo2025@4x-8.png");
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: right center;
+
+		height: 2.5rem;
+		width: 100%;
+		margin-top: 1rem;
+	}
+
+	/* text styles */
+	.text {
+		font-family: 'Koning';
+		transform: scaleX(1.1);
+	}
+
+	.text.left-aligned {
+		text-align: left;
+		transform-origin: 0% 0;
+	}
+
+	.text.centre-aligned {
+		text-align: center;
+		transform-origin: 50% 0;
+	}
+
+	.text.right-aligned {
+		text-align: right;
+		transform-origin: 100% 0;
+	}
+
+	.text.subhead {
+	    margin-top: -0.2rem;
+	}
+
+	.text.weight-regular {
+		font-weight: 500;
+	}
+
+	.text.weight-bold {
+		font-weight: 700;
+	}
+
+	.text.weight-black {
+		font-weight: 900;
+	}
+
+	.text.size-large {
+		font-size: 2rem;
+		line-height: 1.25em;
+	}
+
+	.text.size-regular {
+		font-size: 1rem;
+		line-height: 1rem;
+	}
+
+	.text.size-small {
+		font-size: 0.75rem;
+		line-height: 1rem;
+	}
+
+	.text.size-tiny {
+		font-size: 0.6rem;
+		line-height: 0.8rem;
+	}
+
+	/* fonts */
+	@font-face {
+			/* updated Jul 24 */
+		    font-family: 'Koning';
+		    src: url('assets/KoningDisplay-SemiLight_TRIAL.woff2');
+		    font-weight: 400;
+		}
+
+	@font-face {
+		    font-family: 'Koning';
+		    src: url('assets/KoningDisplay-Regular_TRIAL.woff2');
+		    font-weight: 500;
+		}
+
+	@font-face {
+		    font-family: 'Koning';
+		    src: url('assets/KoningDisplay-SemiBold_TRIAL.woff2');
+		    font-weight: 600;
+		}
+
+	@font-face {
+		    font-family: 'Koning';
+		    src: url('assets/KoningDisplay-Bold_TRIAL.woff2');
+		    font-weight: 700;
+		}
+
+	@font-face {
+		    font-family: 'Koning';
+		    src: url('assets/KoningDisplay-Black_TRIAL.woff2');
+		    font-weight: 900;
+		}
+
+
+  	/* --- Results --- */
+	div.viz-result-list-container {
+		display: inline-block;
+	}
+
+	div.result-list-container div.result-container {
+		display: inline-block;
+	}
+
+	div.result-list-container div.result-container div.result-row {
+		position:  relative;
+		width: 100%;
+		float: left;
+		margin-bottom: 0.25rem;
+	}
+
+	div.result-list-container div.result-container div.result-row div {
+		display: inline-block;
+		float: left;
+	}
+
+	div.result-list-container div.result-container div.result-row div.chip-indicator {
+		position: absolute;
+		width: 1.25rem;
+		height: 1.65rem;
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: center;	
+	}
+
+	div.result-list-container div.chip-indicator.bench-boost {
+		background-image: url("assets/chip-bench-boost.svg");
+	}
+
+	div.result-list-container div.chip-indicator.free-hit {
+		background-image: url("assets/chip-free-hit.svg");
+	}
+
+	div.result-list-container div.chip-indicator.triple-captain {
+		background-image: url("assets/chip-triple-captain.svg");
+	}
+
+	div.result-list-container div.chip-indicator.wildcard {
+		background-image: url("assets/chip-wildcard.svg");
+	}
+
+	div.result-list-container div.result-container div.result-row div.chip-indicator.home {
+		left: calc(-1.25rem - 0.2rem);
+	}
+
+	div.result-list-container div.result-container div.result-row div.chip-indicator.away {
+		right: calc(-1.25rem - 0.2rem);
+	}
+
+	div.result-list-container div.result-container div.result-row div.team {
+		//background: #16007A;
+		padding-left: 0.5rem;
+		padding-right: 0.5rem;
+		margin: 0 0.1rem;
+		width: 11.25rem;
+	}
+
+	div.result-list-container div.result-container div.result-row div:not(.chip-indicator) {
+		height: 1.5rem;
+		padding-top: 0.15rem;
+		line-height: 1rem;
+	}
+
+	div.result-list-container div.result-container div.result-row div.team div.text {
+		//width: calc(100% - 1.2rem);
+	}
+
+	div.result-list-container div.result-container div.result-row div.team.home div.text {
+		float: right;
+	}
+
+	div.result-list-container div.result-container div.result-row div.team.away div.text {
+		float: left;
+	}
+
+
+	div.result-list-container div.result-container div.result-row div.score div.text {
+		width: 100%;
+	}
+
+	div.result-list-container div.result-container div.result-row div.score.home {
+		margin-right: 0.1rem;
+	}
+
+	div.result-list-container div.score {
+		width: 3rem;
+		padding-left: 0rem;
+		padding-right: 0rem;
+	}
+
+	div.result-list-container div.result-indicator {
+		width: 0.5rem;
+	}
+
+
+	/* --- Fixtures --- */
+	div.fixture-list-container {
+		display: inline-block;
+	}
+
+	div.fixture-list-container div.fixture-container {
+		display: inline-block;
+	}
+
+	div.fixture-list-container div.fixture-container div.fixture-row {
+		position:  relative;
+		width: 100%;
+		float: left;
+		margin-bottom: 0.25rem;
+	}
+
+	div.fixture-list-container div.fixture-container div.fixture-row div {
+		display: inline-block;
+		float: left;
+	}
+
+	div.fixture-list-container div.fixture-container div.fixture-row div.team {
+		padding-left: 0.5rem;
+		padding-right: 0.5rem;
+		width: 13.9rem;
+	}
+
+	div.fixture-list-container div.fixture-container div.fixture-row div {
+		height: 1.5rem;
+		padding-top: 0.15rem;
+		line-height: 1rem;
+	}
+
+	div.fixture-list-container div.fixture-container div.fixture-row div.team.home div.text {
+		float: right;
+	}
+
+	div.fixture-list-container div.fixture-container div.fixture-row div.team.away div.text {
+		float: left;
+	}
+
+
+	div.fixture-list-container div.fixture-container div.fixture-row div.score div.text {
+		width: 100%;
+	}
+
+	div.fixture-list-container div.score {
+		width: 2rem;
+		margin: 0 0.1rem;
+		padding-left: 0rem;
+		padding-right: 0rem;
+	}
+
+	/* ------------------- */
+
 	div.viz-wrapper svg {
 		overflow: visible;
 	}
@@ -183,338 +470,7 @@
 		text-align: left;
 	}
 
-
-
-	/* Results */
-
-	div.result-list-container {
-		margin: 0 -1rem 2rem;
-		display: inline-block;
-		width: calc(100% + 2rem);
-	}
-
-	div.result-list-container div.result-wrapper {
-		margin-bottom: 0.5rem;
-	}
-
-	div.result-list-container div.result-container {
-		margin: -0.15rem;
-		display: inline-block;
-		padding: 0 1rem;
-		width: calc(100% - 2rem);
-	}
-
-	div.result-list-container div.result-container div.result-row {
-		position:  relative;
-		width: 100%;
-		float: left;
-	}
-
-	div.result-list-container div.result-container div.result-row div {
-		margin: 0.15rem;
-		display: inline-block;
-		float: left;
-		text-align: center;
-	}
-
-	div.result-list-container div.result-container div.result-row div.chip-indicator {
-		position: absolute;
-		width: 1.4rem;
-		height: 2.2rem;
-		background-repeat: no-repeat;
-		background-size: contain;
-		background-position: center;	
-	}
-
-	div.result-list-container div.result-container div.result-row div.chip-indicator.bench-boost {
-		background-image: url("assets/chip-bench-boost.svg");
-	}
-
-	div.result-list-container div.result-container div.result-row div.chip-indicator.free-hit {
-		background-image: url("assets/chip-free-hit.svg");
-	}
-
-	div.result-list-container div.result-container div.result-row div.chip-indicator.triple-captain {
-		background-image: url("assets/chip-triple-captain.svg");
-	}
-
-	div.result-list-container div.result-container div.result-row div.chip-indicator.wildcard {
-		background-image: url("assets/chip-wildcard.svg");
-	}
-
-	div.result-list-container div.result-container div.result-row div.chip-indicator.home {
-		left: -1.8rem;
-	}
-
-	div.result-list-container div.result-container div.result-row div.chip-indicator.away {
-		right: -1.8rem;
-	}
-
-	div.result-list-container div.result-container div.result-row div.team {
-		background: white;
-		padding-top: 0.6rem;
-		padding-bottom: 0.6rem;
-	}
-
-	div.result-list-container div.result-container div.result-row div.score {
-		background: white;
-		padding-top: 0.6rem;
-		padding-bottom: 0.6rem;
-
-	}
-
-	div.result-list-container div.result-container div.result-row div.score span {
-		vertical-align: top;
-		padding-left: 0.15rem;
-		font-weight: 600;
-	}
-
-	div.result-list-container div.team {
-		width: 16rem;
-		padding-left: 0rem;
-		padding-right: 0rem;
-	}
-
-	/*
-	div.result-list-container div.result-container div.result-row div.team.away {
-		text-align: left;
-	}
-
-	div.result-list-container div.result-container div.result-row div.team.home {
-		text-align: right;
-	}
-	*/
-
-	div.result-list-container div.score {
-		width: 4.1rem;
-		padding-left: 0rem;
-		padding-right: 0rem;
-	}
-
-	div.result-list-container div.indicator {
-		width: 0.5rem;
-		height: 1rem;
-		padding-top: 0.6rem;
-		padding-bottom: 0.6rem;
-		padding-left: 0rem;
-		padding-right: 0rem;
-	}
-
-	div.result-list-container div.viz {
-		width: 17.85rem;
-		height: 2.2rem;
-		padding-left: 0rem;
-		padding-right: 0rem;
-	}
-
-	div.footnote {
-		color: white;
-	}
-
-
-	/* Fixtures */
-
-	div.fixture-list-wrapper:not(:last-child) {
-		margin-bottom:2rem;
-	}
-
-	div.fixture-list-container {
-		margin: 0 -1rem;
-		display: inline-block;
-	}
-
-	div.fixture-list-container div.fixture-wrapper {
-		width: 50%;
-		float: left;
-	}
-
-	div.fixture-list-container div.fixture-wrapper:nth-child(2n) {
-		padding-top: 2.5rem;
-	}
-
-	div.fixture-list-container div.fixture-container {
-		margin: -0.15rem;
-		display: inline-block;
-		padding: 0 1rem;
-		width: calc(100% - 2rem);
-	}
-
-	div.fixture-list-container div.fixture-container div {
-
-		background: white;
-		margin: 0.15rem;
-		display: inline-block;
-		float: left;
-		text-align: center;
-		padding-top: 0.6rem;
-		padding-bottom: 0.6rem;
-
-	}
-
-	div.fixture-list-container div.team {
-		width: 16.7rem;
-		padding-left: 0.5rem;
-		padding-right: 0.5rem;
-	}
-
-	div.fixture-list-container div.team span {
-		vertical-align: top;
-		padding-left: 0.15rem;
-	}
-
-
-	div.fixture-list-container div.vs-block {
-		width: 2.2rem;
-		padding-left: 0rem;
-		padding-right: 0rem;
-		clear: left;
-
-	}
-
-	div.fixture-list-container div.team.home {
-
-	}
-
-	div.fixture-list-container div.team.away {
-
-	}
-
-	/* title block */
-	div.title-wrapper {
-		color: white;
-		margin-bottom: 2rem;
-	}
-
-	div.title-container {
-	}
-
-	div.title-container .explainer {
-		margin-top: 2rem;
-	}
-
-	/* Logo */
-	div.logo-wrapper {
-		position: relative;
-	}
-
-	div.logo-container {
-		background-image: url("assets/Logo.svg");
-		background-repeat: no-repeat;
-		background-size: contain;
-		background-position: center;
-
-		position: absolute;
-		top: 2rem;
-		right: 4rem;
-		height: 5rem;
-		width: 5rem;
-	}
-
-
-
-	/* General */
-	html {
-		font-size: 18px;
-	}
-
-	main {
-		width: 51rem;
-	}
-
-	div.page.border {
-		width: 100%;
-		height: 1rem;
-	}
-
-	.wrapper{
-		padding: 2rem 4rem;
-	}
-
-	.text {
-		font-family: 'Helvetical Neue';
-		font-weight: 400;
-	}
-
-	.text.bold {
-		font-weight: 800;
-	}
-
-	.text.display {
-		font-family: 'Champion';
-		font-weight: 800;
-	}
-
-	.text.large {
-		font-size: 1.5rem;
-		line-height: 1.5rem;
-		text-transform: uppercase;
-	}
-
-	.text.regular {
-		font-size: 0.95rem;
-		line-height: 1rem;
-	}
-
-	.text.small {
-		font-size: 0.7rem;
-		line-height: 1rem;
-	}
-
-	.text.tiny {
-		font-size: 0.6rem;
-		line-height: 0.8rem;
-	}
-
-	.text.colour-white {
-		color: white;
-	}
-
-
-	/* Fonts */
-	@font-face {
-	    font-family: 'Champion';
-	    src: url('assets/Champion HTFFlyweight Regular.otf');
-	    font-weight: 200;
-	}
-
-	@font-face {
-	    font-family: 'Champion';
-	    src: url('assets/Champion HTFFeatherweight Regular.otf');
-	    font-weight: 400;
-	}
-
-	@font-face {
-	    font-family: 'Champion';
-	    src: url('assets/Champion HTFMiddleweight Regular.otf');
-	    font-weight: 600;
-	}
-
-	@font-face {
-	    font-family: 'Champion';
-	    src: url('assets/KoningDisplay-Black_TRIAL.otf');
-	    //src: url('assets/Champion HTFHeavyweight Regular.otf');
-	    font-weight: 800;
-	}
-
-	@font-face {
-	    font-family: 'Helvetical Neue';
-	    src: url('assets/HelveticaNeueLTStd-Roman.otf');
-	    font-weight: 400;
-	}
-
-	@font-face {
-	    font-family: 'Helvetical Neue';
-	    src: url('assets/HelveticaNeueLTStd-Bd.otf');
-	    font-weight: 800;
-	}
-
-	@font-face {
-	    font-family: 'Helvetical Neue';
-	    src: url('assets/HelveticaNeueLTStd-Lt.otf');
-	    font-weight: 200;
-	}
-
-
+	/* --- control panel --- */
     #controls {
         margin: 1rem;
         padding: 1rem;

@@ -74,12 +74,13 @@
 
                 function build_fixtures(gw) {
 
-                    $( '#logo' ).empty()
                     $( '#title-block' ).empty()
                     $( '#content-block' ).empty()
+                    $( '#footer-block' ).empty()
 
                     //define gameweek
                     if (!(gw)) { gw = 1 }
+
 
                     //build title block
                     var title_container = d3.select("#title-block")
@@ -89,19 +90,12 @@
                     .classed("title-container", true)
 
                     var title = title_container.append("div")
-                    .classed("text display large", true)
+                    .classed("text title weight-black size-large left-aligned colour-white", true)
                     .text("Fixtures")
 
                     var subtitle = title_container.append("div")
-                    .classed("text display regular", true)
+                    .classed("text subhead weight-regular size-regular left-aligned colour-white", true)
                     .text("GW" + parseInt(gw.replace("GW","")))
-
-                    //build logo
-                    logo = d3.select("#logo")
-                    .append("div")
-                    .classed("logo-wrapper", true)
-                    .append("div")
-                    .classed("logo-container", true)
 
 
                     //build dataset
@@ -164,79 +158,71 @@
                     .classed("fixture-container", true)
                     .each( function(d, i){
 
-                        let home = d3.select(this)
+                        let fixture_row = d3.select(this)
                         .append("div")
-                        .classed("home team text display regular", true)
+                        .classed("fixture-row", true)
+
+                        fixture_row.append("div")
+                        .classed("result-indicator result-color", true)
+                        .classed(d.home.fixture_result, true)
+
+                        let home_team = fixture_row.append("div")
+                        .classed("home team text-container background-light-midnight", true)
+                        .append("div")
+                        .classed("text weight-regular right-aligned colour-white", true)
                         .text(d.home.team_name)
 
-                        d3.select(this)
+                        let versus = fixture_row.append("div")
+                        .classed("home score text-container background-white", true)
                         .append("div")
-                        .classed("vs-block text display regular", true)
-                        .text("v")
-                        .style("background-color", function(d) {
-                            //console.log(i)
-                            //console.log(dataset.length)
+                        .classed("text centre-aligned weight-black colour-midnight", true)
+                        .text("vs")
 
-                            c = [chump.colours.green, chump.colours.light_blue, chump.colours.blue, chump.colours.purple, chump.colours.pink]
-
-                            return c[Math.ceil((c.length/dataset.length)*(i+1)-1)]
-                        })
-
-                        
-                        let away = d3.select(this)
+                        let away_team = fixture_row.append("div")
+                        .classed("away team text-container background-light-midnight", true)
                         .append("div")
-                        .classed("away team text display regular", true)
+                        .classed("text weight-regular left-aligned colour-white", true)
                         .text(d.away.team_name)
 
-                        if ( d.home.previous_pos && d.away.previous_pos ) {
-
-                            footnote = true
-
-                            home.append("span")
-                            .classed("rank text small", true)
-                            .text("("+d.home.previous_pos+")")
-
-                            away.append("span")
-                            .classed("rank text small", true)
-                            .text("("+d.away.previous_pos+")")
-                            
-                        }
+                        fixture_row.append("div")
+                        .classed("result-indicator result-color", true)
+                        .classed(d.away.fixture_result, true)
 
                     })
 
-                    if ( footnote ) {
+                    var footer = d3.select("#footer-block")
+                    .append("div")
+                    .classed("footer-wrapper", true)
+                    .append("div")
+                    .classed("footer-container", true)
 
-                        var footnote = d3.select("#content-block")
-                        .append("div")
-                        .classed("footnote text small", true)
-                        .text("Figures in brackets indicate league rank ahead of GW"+parseInt(gw.replace("GW","")))
-
-                    }
+                    var logo = footer.append("div")
+                    .classed("logo-container", true)
 
                     styles.add()
 
                 }
             });
-
-            
-        
-        </script>
+  </script>
         
     </head> 
     
-    <body> 
-        <main>
-            <section>
-                <div id="logo"></div>
-                <div class="wrapper">
-                    <div class="container">
-                        <div id="title-block"></div>
-                        <div id="content-block"></div>
-                    </div>
+ <body>
+  <main>
+    <section>
+        <div class="page-wrapper">
+            <div class="container">
+                <div id="title-block">
                 </div>
-            </section>
-        </main>
-    </body> 
+                <div id="content-block">
+                </div>
+                <div id="footer-block">
+                </div>
+            </div>
+        </div>
+    </section>
+  </main>
+ </body>
 
 
 </html>
