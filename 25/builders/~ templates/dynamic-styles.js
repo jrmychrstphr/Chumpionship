@@ -14,7 +14,8 @@
 
         add : function() {
 
-            d3.selectAll(".fixture-list-wrapper, .result-list-wrapper, .league-table-wrapper, .legend-item").style("color", chump.colours.midnight_blue)
+            d3.selectAll("text.colour-midnight").style("color", chump.colours.midnight_blue)
+            //d3.selectAll(".fixture-list-wrapper, .result-list-wrapper, .league-table-wrapper, .legend-item").style("color", chump.colours.midnight_blue)
 
             d3.selectAll(".result-row .result-color.win").style("background", chump.colours.green)
             d3.selectAll(".result-row .result-color.loss").style("background", chump.colours.pink)

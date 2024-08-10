@@ -15,10 +15,6 @@
 	}
 
 	/* Viz legends */
-	div.viz-wrapper {
-		//background-color: rgba(255,255,255,0.1);
-	}
-
 	div.legend-wrapper {
 		margin-bottom: 2rem;
 	}
@@ -63,16 +59,10 @@
 
 	/* League Table */
 
-	div.league-table-wrapper {
-	}
-
 	div.league-table-container {
 		width: 100%;
 		margin: 0;
 		display: inline-block;
-	}
-
-	div.league-table-container div.table-row-wrapper {
 	}
 
 	div.league-table-container div.table-row-container, div.league-table-container div.table-header-container {
@@ -86,7 +76,7 @@
 		display: inline-block;
 		float: left;
 		text-align: center;
-		color: white;
+		//color: white;
 		border-bottom: solid 0.1rem white;
 		padding-bottom: 0.15rem;
 	}
@@ -198,20 +188,11 @@
 	/* Results */
 
 	div.result-list-container {
-		//margin: 0 -1rem 2rem;
 		display: inline-block;
-		//width: calc(100% + 2rem);
-	}
-
-	div.result-list-container div.result-wrapper {
-		//margin-bottom: 0.5rem;
 	}
 
 	div.result-list-container div.result-container {
-		//margin: -0.15rem;
 		display: inline-block;
-		//padding: 0 1rem;
-		//width: calc(100% - 2rem);
 	}
 
 	div.result-list-container div.result-container div.result-row {
@@ -228,53 +209,53 @@
 
 	div.result-list-container div.result-container div.result-row div.chip-indicator {
 		position: absolute;
-		width: 1.65rem;
+		width: 1.25rem;
 		height: 1.65rem;
 		background-repeat: no-repeat;
 		background-size: contain;
 		background-position: center;	
 	}
 
-	div.result-list-container div.result-container div.result-row div.chip-indicator.bench-boost {
+	div.result-list-container div.chip-indicator.bench-boost {
 		background-image: url("assets/chip-bench-boost.svg");
 	}
 
-	div.result-list-container div.result-container div.result-row div.chip-indicator.free-hit {
+	div.result-list-container div.chip-indicator.free-hit {
 		background-image: url("assets/chip-free-hit.svg");
 	}
 
-	div.result-list-container div.result-container div.result-row div.chip-indicator.triple-captain {
+	div.result-list-container div.chip-indicator.triple-captain {
 		background-image: url("assets/chip-triple-captain.svg");
 	}
 
-	div.result-list-container div.result-container div.result-row div.chip-indicator.wildcard {
+	div.result-list-container div.chip-indicator.wildcard {
 		background-image: url("assets/chip-wildcard.svg");
 	}
 
 	div.result-list-container div.result-container div.result-row div.chip-indicator.home {
-		left: calc(-1.65rem - 0.2rem);
+		left: calc(-1.25rem - 0.2rem);
 	}
 
 	div.result-list-container div.result-container div.result-row div.chip-indicator.away {
-		right: calc(-1.65rem - 0.2rem);
+		right: calc(-1.25rem - 0.2rem);
 	}
 
 	div.result-list-container div.result-container div.result-row div.team {
-		background: #16007A;
-		color: white;
+		//background: #16007A;
 		padding-left: 0.5rem;
 		padding-right: 0.5rem;
 		margin: 0 0.1rem;
 		width: 11.25rem;
 	}
 
-	div.result-list-container div.result-container div.result-row div.team, div.result-list-container div.result-container div.result-row div.score, div.result-list-container div.result-container div.result-row div.result-indicator {
+	div.result-list-container div.result-container div.result-row div:not(.chip-indicator) {
 		height: 1.5rem;
 		padding-top: 0.15rem;
+		line-height: 1rem;
 	}
 
 	div.result-list-container div.result-container div.result-row div.team div.text {
-		width: calc(100% - 1.2rem);
+		//width: calc(100% - 1.2rem);
 	}
 
 	div.result-list-container div.result-container div.result-row div.team.home div.text {
@@ -285,10 +266,6 @@
 		float: left;
 	}
 
-
-	div.result-list-container div.result-container div.result-row div.score {
-		background: white;
-	}
 
 	div.result-list-container div.result-container div.result-row div.score div.text {
 		width: 100%;
@@ -304,12 +281,6 @@
 		font-weight: 600;
 	}
 
-	/*div.result-list-container div.team {
-		width: 10rem;
-		padding-left: 0rem;
-		padding-right: 0rem;
-	}*/
-
 	div.result-list-container div.score {
 		width: 3rem;
 		padding-left: 0rem;
@@ -319,18 +290,6 @@
 	div.result-list-container div.result-indicator {
 		width: 0.5rem;
 	}
-
-	div.result-list-container div.viz {
-		width: 17.85rem;
-		height: 2.2rem;
-		padding-left: 0rem;
-		padding-right: 0rem;
-	}
-
-	div.footnote {
-		color: white;
-	}
-
 
 	/* Fixtures */
 
@@ -399,7 +358,6 @@
 
 	/* title block */
 	div.title-wrapper {
-		color: white;
 		margin-bottom: 1rem;
 		margin-top: -0.25rem;
 	}
@@ -413,7 +371,7 @@
 
 	/* Footer */
 	#footer-block div.text {
-		color: white;
+		//color: white;
 		margin-top: 0.5rem;
 		margin-bottom: 1rem;
 	}
@@ -444,7 +402,11 @@
 		height: 0.5rem;
 	}
 
-	.wrapper{
+/*	div.background-white {
+		background: white;
+	}
+*/
+	div.page-wrapper{
 		padding: 1rem 3rem;
 	}
 
@@ -468,12 +430,7 @@
 		transform-origin: 100% 0;
 	}
 
-	.text.title {
-		/*font-size: 2rem;*/
-	}
-
-	.text.indicator {
-		/*font-size: 1rem;*/
+	.text.subhead {
 	    margin-top: -0.2rem;
 	}
 
@@ -509,11 +466,6 @@
 		line-height: 0.8rem;
 	}
 
-	.text.colour-white {
-		color: white;
-	}
-
-
 	/* Fonts */
 
 @font-face {
@@ -524,28 +476,24 @@
 	}
 
 @font-face {
-		/* updated Jul 24 */
 	    font-family: 'Koning';
 	    src: url('assets/KoningDisplay-Regular_TRIAL.woff2');
 	    font-weight: 500;
 	}
 
 @font-face {
-		/* updated Jul 24 */
 	    font-family: 'Koning';
 	    src: url('assets/KoningDisplay-SemiBold_TRIAL.woff2');
 	    font-weight: 600;
 	}
 
 @font-face {
-		/* updated Jul 24 */
 	    font-family: 'Koning';
 	    src: url('assets/KoningDisplay-Bold_TRIAL.woff2');
 	    font-weight: 700;
 	}
 
 @font-face {
-		/* updated Jul 24 */
 	    font-family: 'Koning';
 	    src: url('assets/KoningDisplay-Black_TRIAL.woff2');
 	    font-weight: 900;
@@ -572,6 +520,7 @@
     #controls div.label {
         margin-bottom: 0.5rem;
     }
+
   </style>
   <script>
    chump = {
@@ -614,8 +563,13 @@
         },
 
         add : function() {
+            
+            d3.selectAll(".text.colour-midnight").style("color", chump.colours.midnight_blue)
+            d3.selectAll(".text.colour-white").style("color", "white")
+            //d3.selectAll(".fixture-list-wrapper, .result-list-wrapper, .league-table-wrapper, .legend-item").style("color", chump.colours.midnight_blue)
 
-            d3.selectAll(".fixture-list-wrapper, .result-list-wrapper, .league-table-wrapper, .legend-item").style("color", chump.colours.midnight_blue)
+            d3.selectAll(".background-white").style("background", "white")
+            d3.selectAll(".background-light-midnight").style("background", chump.colours.light_midnight_blue)
 
             d3.selectAll(".result-row .result-color.win").style("background", chump.colours.green)
             d3.selectAll(".result-row .result-color.loss").style("background", chump.colours.pink)
@@ -17447,11 +17401,11 @@
                     .classed("title-container", true)
 
                     var title = title_container.append("div")
-                    .classed("text title weight-black size-large left-aligned", true)
+                    .classed("text title weight-black size-large left-aligned colour-white", true)
                     .text("Results")
 
                     var subtitle = title_container.append("div")
-                    .classed("text indicator weight-regular size-regular left-aligned", true)
+                    .classed("text subhead weight-regular size-regular left-aligned colour-white", true)
                     .text("GW" + parseInt(gw.replace("GW","")))
 
                     //build dataset
@@ -17587,29 +17541,29 @@
                         .classed(d.home.fixture_result, true)
 
                         let home_team = result_row.append("div")
-                        .classed("home team text-container", true)
+                        .classed("home team text-container background-light-midnight", true)
 						.append("div")
-						.classed("text weight-regular right-aligned", true)
+						.classed("text weight-regular right-aligned colour-white", true)
                         .text(d.home.team_name)
 
                         let home_score = result_row.append("div")
-                        .classed("home score text-container", true)
+                        .classed("home score text-container background-white", true)
                         .classed(d.home.fixture_result, true)
 						.append("div")
-						.classed("text centre-aligned weight-black", true)
+						.classed("text centre-aligned weight-black colour-midnight", true)
 						.text(d.home.fixture_score)
 
                         let away_score = result_row.append("div")
-                        .classed("away score text-container", true)
+                        .classed("away score text-container background-white", true)
                         .classed(d.away.fixture_result, true)
 						.append("div")
-						.classed("text centre-aligned weight-black", true)
+						.classed("text centre-aligned weight-black colour-midnight", true)
 						.text(d.away.fixture_score)
 
                         let away_team = result_row.append("div")
-                        .classed("away team text-container", true)
+                        .classed("away team text-container background-light-midnight", true)
 						.append("div")
-						.classed("text weight-regular left-aligned", true)
+						.classed("text weight-regular left-aligned colour-white", true)
                         .text(d.away.team_name)
 
                         result_row.append("div")
@@ -17619,20 +17573,6 @@
                         let away_chip = result_row.append("div")
                         .classed("chip-indicator", true)
                         .classed("away", true)
-
-                        /*
-                        home_score.text(d.home.fixture_score)
-                        .append("span")
-                        .classed("rank text small", true)
-                        .text("("+d.home.fixture_score_rank+")")
-
-
-                        away_score.text(d.away.fixture_score)
-                        .append("span")
-                        .classed("rank text small", true)
-                        .text("("+d.away.fixture_score_rank+")")
-                        */
-
 
                         if (d.home.chip_played != null) {
                             home_chip.classed(d.home.chip_played, true)
@@ -17653,7 +17593,7 @@
                     .classed("footer-container", true)
 
                     var footnote = footer.append("div")
-                    .classed("text weight-regular size-small left-aligned", true)
+                    .classed("text weight-regular size-small left-aligned colour-white", true)
                     .text("Chips: B=Bench Boost; F=Free Hit; T=Triple Captain; W=Wildcard.")
 
                     var logo = footer.append("div")
@@ -17668,9 +17608,7 @@
  <body>
   <main>
    <section>
-    <div id="logo">
-    </div>
-    <div class="wrapper">
+    <div class="page-wrapper">
      <div class="container">
       <div id="title-block">
       </div>
