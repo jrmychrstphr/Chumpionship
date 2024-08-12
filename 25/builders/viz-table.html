@@ -329,6 +329,15 @@
             d3.selectAll(".background-purple").style("background", chump.purple)
             d3.selectAll(".background-light-midnight").style("background", chump.colours.light_midnight_blue)
 
+            d3.selectAll("svg .fill-white").style("fill", "white")
+            d3.selectAll("svg .fill-blue").style("fill", chump.colours.blue)
+            d3.selectAll("svg .fill-light-blue").style("fill", chump.colours.light_blue)
+            d3.selectAll("svg .fill-green").style("fill", chump.colours.green)
+            d3.selectAll("svg .fill-pink").style("fill", chump.colours.pink)
+            d3.selectAll("svg .fill-purple").style("fill", chump.purple)
+            d3.selectAll("svg .fill-light-midnight").style("fill", chump.colours.light_midnight_blue)
+
+
             d3.selectAll(".result-row .result-color.win").style("background", chump.colours.green)
             d3.selectAll(".result-row .result-color.loss").style("background", chump.colours.pink)
             d3.selectAll(".result-row .result-color.draw").style("background", chump.colours.light_blue)
@@ -17176,78 +17185,72 @@
                     //data
                     dataset = []
 
-                    $.each( data.database, function(k, v) {
+                    $.each(data.database, function(k, v) {
 
                         temp_obj = {
                             "manager_code": k,
                             "manager_name": v.manager_name,
                             "team_name": v.team_name,
                             "league_position": (function(){
-                                    g = parseInt(gw.replace("GW",""))
-                                    if( v.league_position_array.length >= g ) {
-                                        return v.league_position_array[g-1]
-                                    } else {
-                                        return null
-                                    }
-                                })(),
+                                g = parseInt(gw.replace("GW",""))
+                                if( v.league_position_array.length >= g ) {
+                                    return v.league_position_array[g-1]
+                                } else {
+                                    return null
+                                }
+                            })(),
                             "league_position_change": (function(){
-                                    g = parseInt(gw.replace("GW",""))
-                                    if( g > 1 ) {
-                                        c = (parseInt(v.league_position_array[g-1]) - parseInt(v.league_position_array[g-2]))
-                                        return c
-                                    } else {
-                                        return null
-                                    }
-                                })(),
+	                            g = parseInt(gw.replace("GW",""))
+	                            if( g > 1 ) {
+	                                c = (parseInt(v.league_position_array[g-1]) - parseInt(v.league_position_array[g-2]))
+	                                return c
+	                            } else {
+	                                return null
+	                            }
+                            })(),
                             "total_score": (function(){
-                                    g = parseInt(gw.replace("GW",""))
-                                    if( v.total_score_array.length >= g ) {
-                                        return v.total_score_array[g-1]
-                                    } else {
-                                        return null
-                                    }
-                                })(),
+								g = parseInt(gw.replace("GW",""))
+                                if( v.total_score_array.length >= g ) {
+                                    return v.total_score_array[g-1]
+                                } else {
+                                    return null
+                                }
+                            })(),
                             "league_points": (function(){
-                                    g = parseInt(gw.replace("GW",""))
-                                    if( v.total_league_points_array.length >= g ) {
-                                        return v.total_league_points_array[g-1]
-                                    } else {
-                                        return null
-                                    }
-                                })(),
+                                g = parseInt(gw.replace("GW",""))
+                                if( v.total_league_points_array.length >= g ) {
+                                    return v.total_league_points_array[g-1]
+                                } else {
+                                    return null
+                                }
+                            })(),
+                            "streak": (function(){
+                                g = parseInt(gw.replace("GW",""))
+                                r = v.fixture_result_array.slice(0,(g)).reverse()
 
-                            "streak": {
-                                "type": (function(){
-                                    g = parseInt(gw.replace("GW",""))
-                                    t = v.fixture_result_array.slice(0,(g)).reverse()[0][0]
+                                var first_result
+                            	$.each(r, function(idx, value) {
+                            		first_result = r[idx]
+                            		if (first_result != "draw") {
+                            			return false;
+                            		}
+								});
 
-                                    return t
-                                })(),
-                                "len": (function(){
-                                    g = parseInt(gw.replace("GW",""))
-                                    r = v.fixture_result_array.slice(0,(g)).reverse()
-                                    l = 0
+								results_in_streak = []
+                            	$.each(r, function(idx, value) {
+                            		if (r[idx] == first_result || r[idx] == "draw") {
+                            			results_in_streak.push(r[idx])
+                            		} else { return false }
+								});
 
-                                    $.each(r, function(idx, val) {
-                                        if (val != r[0]) { return false; }
-                                        l++;
-                                    })
+                                return results_in_streak
 
-                                    return l
-                                })(),
-                                "results_array": (function(){
-                                    g = parseInt(gw.replace("GW",""))
-                                    r = v.fixture_result_array.slice(0,(g)).reverse()
-
-                                    return r
-                                })()
-                            }
-                        }
+                            	})()
+                         }
 
                         dataset.push(temp_obj)
 
-
-                    })
+                    });
 
                     dataset = dataset.slice().sort((a, b) => d3.ascending(a.league_position, b.league_position))
 
@@ -17356,8 +17359,8 @@
 	                    .classed("colour-midnight", row_status!="default")
 	                    .text(function (d) {
 
-	                    	console.log(d.team_name)
-	                    	console.log(d.league_position)
+	                    	//console.log(d.team_name)
+	                    	//console.log(d.league_position)
 
                             if ( d.league_position != (i+1)) {
                                 t = "="
@@ -17417,7 +17420,7 @@
                             "height": $(this).find(".viz").height(), 
                             "padding": {
                                 "top": 0*rem,
-                                "right": 1.5*rem,
+                                "right": 1*rem,
                                 "bottom": 0*rem,
                                 "left": 0.1*rem
                             },
@@ -17436,12 +17439,17 @@
                         var xMax = function() {
                             a  = []
                             $.each( dataset, function(idx, val) {
-                                a.push(val.streak.len)
+                            	//console.log(val.streak)
+                            	//console.log(val.streak.length)
+                                a.push(val.streak.length)
                             })
                             a = d3.max(a)
                             return a
                         } ()
 
+                        //console.log("max length:", xMax)
+
+                        /*
                         let colour;
 
                         if (d.streak.type === "w") {
@@ -17453,6 +17461,7 @@
                         } else {
                             colour = "white"
                         }
+                        */
 
                         // add data
                         var data_group = svg.append("g").classed("data-goup", true)
@@ -17475,37 +17484,36 @@
 
                         }) ()
 
-                        console.log("reults_array" + d.streak.results_array)
+                        var fills = {
+                    		"loss": chump.colours.pink,
+                    		"draw": chump.colours.light_blue,
+                    		"win": chump.colours.green
+                    	}
 
-                        $.each(d.streak.results_array, function( idx, value ) {
-                        	console.log(idx, value)
-                        });
+                    	console.log("d.streak", d.streak)
+                    	console.log("d.streak.length", d.streak.length)
 
-                        //adds a circle for each game in streak
-                        for (ii = 0; ii < d.streak.len; ii++) {
+
+                        $.each( d.streak.reverse(), function(idx, val) {
                             data_group.append("circle")
-                            .attr("cx", config.circle.radius+(ii*s) + config.padding.left)
+                            .attr("cx", config.circle.radius+(idx*s) + config.padding.left)
                             .attr("cy", config.height/2)
                             .attr("r", config.circle.radius)
                             .attr("stroke-width", config.circle.stroke_width)
                             .style("stroke", chump.colours.midnight_blue)
-                            .style("fill", colour)
-                        }
+                            .classed("fill-green", val=="win")
+                            .classed("fill-pink", val=="loss")
+                            .classed("fill-light-blue", val=="draw")
+                        });
 
                         let text = data_group.append("text")
                         .classed("text weight-regular size-small", true)
-                        .attr("x", ((config.circle.radius+((d.streak.len-1)*s) + config.padding.left)*(100/110))+0.75*rem)
+                        .attr("x", ((config.circle.radius+((d.streak.length-1)*s) + config.padding.left)*(100/110))+0.75*rem)
                         .attr("y", config.height/2)
                         .attr("dy", 0.3*rem)
                         .style("text-anchor", "start")
-                        .style("fill", colour)
-                        .text(function(d) {
-                            let msg;
-
-                            msg = d.streak.type + d.streak.len;
-
-                            return msg.toUpperCase();
-                        })
+                        .classed("fill-white", true)
+                        .text(d.streak.length)
                     })
 
 

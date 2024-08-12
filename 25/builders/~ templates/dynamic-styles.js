@@ -27,6 +27,14 @@
             d3.selectAll(".background-purple").style("background", chump.purple)
             d3.selectAll(".background-light-midnight").style("background", chump.colours.light_midnight_blue)
 
+            d3.selectAll("svg .fill-white").style("fill", "white")
+            d3.selectAll("svg .fill-blue").style("fill", chump.colours.blue)
+            d3.selectAll("svg .fill-light-blue").style("fill", chump.colours.light_blue)
+            d3.selectAll("svg .fill-green").style("fill", chump.colours.green)
+            d3.selectAll("svg .fill-pink").style("fill", chump.colours.pink)
+            d3.selectAll("svg .fill-purple").style("fill", chump.purple)
+            d3.selectAll("svg .fill-light-midnight").style("fill", chump.colours.light_midnight_blue)
+
             d3.selectAll(".result-row .result-color.win").style("background", chump.colours.green)
             d3.selectAll(".result-row .result-color.loss").style("background", chump.colours.pink)
             d3.selectAll(".result-row .result-color.draw").style("background", chump.colours.light_blue)
