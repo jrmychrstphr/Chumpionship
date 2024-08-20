@@ -203,7 +203,7 @@
                     .append("div")
                     .classed("result-list-container", true)
 
-                    var fixtures = viz_container.selectAll("div.result-wrapper")
+                    var results = viz_container.selectAll("div.result-wrapper")
                     .data(dataset).enter()
                     .append("div")
                     .classed("result-wrapper", true)
@@ -220,8 +220,10 @@
                         .classed("home", true)
 
                         result_row.append("div")
-                        .classed("result-indicator result-color", true)
-                        .classed(d.home.fixture_result, true)
+                        .classed("result-indicator", true)
+                        .classed("background-green", d.home.fixture_result=="win")
+                        .classed("background-pink", d.home.fixture_result=="loss")
+                        .classed("background-light-blue", d.home.fixture_result=="draw")
 
                         let home_team = result_row.append("div")
                         .classed("home team text-container background-light-midnight", true)
@@ -231,12 +233,14 @@
 
                         let home_score = result_row.append("div")
                         .classed("home score text-container background-white", true)
+                        .classed(d.home.fixture_result, true)
                         .append("div")
                         .classed("text centre-aligned weight-black colour-midnight", true)
                         .text(d.home.fixture_score)
 
                         let away_score = result_row.append("div")
                         .classed("away score text-container background-white", true)
+                        .classed(d.away.fixture_result, true)
                         .append("div")
                         .classed("text centre-aligned weight-black colour-midnight", true)
                         .text(d.away.fixture_score)
@@ -248,8 +252,10 @@
                         .text(d.away.team_name)
 
                         result_row.append("div")
-                        .classed("result-indicator result-color", true)
-                        .classed(d.away.fixture_result, true)
+                        .classed("result-indicator", true)
+                        .classed("background-green", d.away.fixture_result=="win")
+                        .classed("background-pink", d.away.fixture_result=="loss")
+                        .classed("background-light-blue", d.away.fixture_result=="draw")
 
                         let away_chip = result_row.append("div")
                         .classed("chip-indicator", true)
@@ -279,6 +285,7 @@
 
                     var logo = footer.append("div")
                     .classed("logo-container", true)
+
 
                     styles.add()
 

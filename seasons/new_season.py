@@ -77,7 +77,7 @@ def scrape(league_code):
 	league_standings_url = "https://fantasy.premierleague.com/leagues/" + str(league_code) + "/standings/h"
 	league_newentries_url = "https://fantasy.premierleague.com/leagues/" + str(league_code) + "/new-entries/h"
 
-	table_css_selector = "table.Table-ziussd-1.dUELIG"
+	table_css_selector = "table.Table-sc-ziussd-1.iPaulP" 
 
 	# Load 'standings' page first
 	print("Loading 'standings' page")
@@ -104,14 +104,17 @@ def scrape(league_code):
 			#create soup of page DOM
 			soup = BeautifulSoup(driver.page_source, "lxml")
 
+			print(f"soup made")
 			#print(f"soup: {soup}")
 			
 			#filter to just league table
-			tables = soup.find_all("table" , class_="Table-ziussd-1")
+			tables = soup.find_all("table" , class_="Table-sc-ziussd-1") 
+			print(f"league table found")
 			#print(f"league_table: {tables}")
 
 			#find <a> tags in the league table
 			anchors = tables[0].find_all("a")
+			print(f"anchors found")
 			#print(f"anchors: {anchors}")
 
 			if len(anchors) > 0 :
@@ -124,7 +127,7 @@ def scrape(league_code):
 						# if scraping league standing page (ie, after GW1)
 
 						entry = {
-							"manager_code": c,
+							"fpl_code": c,
 							"team_name": a.get_text(),
 							"manager_name": a.parent.contents[2].title()
 						}
@@ -150,7 +153,7 @@ def scrape(league_code):
 		#open the webpage
 		driver.get(league_newentries_url)
 		
-		#wait for the league table to appear in DOM
+		#wait for the  table to appear in DOM
 		element = WebDriverWait(driver, 10).until(
 			EC.presence_of_element_located((By.CSS_SELECTOR, table_css_selector))
 		)
@@ -224,8 +227,8 @@ def create_dir(directory_name, input_array, league_code):
 		}
 
 	#copy the directory template
-	source_dir = "./~ new season template"
-	destination_dir = "./" + directory_name
+	source_dir = "seasons/~ new season template"
+	destination_dir = "seasons/" + directory_name
 	shutil.copytree(source_dir, destination_dir)
 
 
@@ -260,6 +263,8 @@ def create_dir(directory_name, input_array, league_code):
 		#print(d)
 
 		for x in d:
+
+			print(x)
 
 			folder_name = destination_dir + '/data/' + x['manager_name'] + ' (' + x['fpl_code'] + ')'
 

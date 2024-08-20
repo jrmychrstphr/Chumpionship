@@ -1,0 +1,1622 @@
+{
+    "125471": {
+        "captains_array": [
+            "Mateta"
+        ],
+        "captains_points_array": [
+            2.0
+        ],
+        "chip_played_array": [
+            "None"
+        ],
+        "fixture_margin_array": [
+            -20.0
+        ],
+        "fixture_opponent_array": [
+            "220117",
+            "4070813",
+            "3084251",
+            "2048719",
+            "917048",
+            "4530389",
+            "2724690",
+            "2353401",
+            "4004226",
+            "2762974",
+            "2292265",
+            "2371151",
+            "72499",
+            "2386920",
+            "2584817",
+            "2352820",
+            "2042017",
+            "4204701",
+            "2241208",
+            "220117",
+            "4070813",
+            "3084251",
+            "2048719",
+            "917048",
+            "4530389",
+            "2724690",
+            "2353401",
+            "4004226",
+            "2762974",
+            "2292265",
+            "2371151",
+            "72499",
+            "2386920",
+            "2584817",
+            "2352820",
+            "2042017",
+            "4204701",
+            "2241208"
+        ],
+        "fixture_result_array": [
+            "loss"
+        ],
+        "fixture_score_array": [
+            40.0
+        ],
+        "fixture_score_rank_array": [
+            19
+        ],
+        "fpl_code": "125471",
+        "league_points_array": [
+            0
+        ],
+        "league_position_array": [
+            19
+        ],
+        "manager_name": "Dan Mclean",
+        "team_name": "Ya Kilman Me Man",
+        "total_league_points_array": [
+            0
+        ],
+        "total_score_array": [
+            40.0
+        ],
+        "transfers_made_array": [
+            0
+        ]
+    },
+    "2042017": {
+        "captains_array": [
+            "Solanke"
+        ],
+        "captains_points_array": [
+            4.0
+        ],
+        "chip_played_array": [
+            "None"
+        ],
+        "fixture_margin_array": [
+            -14.0
+        ],
+        "fixture_opponent_array": [
+            "2584817",
+            "2352820",
+            "2386920",
+            "4204701",
+            "4070813",
+            "2241208",
+            "2048719",
+            "220117",
+            "4530389",
+            "3084251",
+            "2353401",
+            "917048",
+            "2762974",
+            "2724690",
+            "2371151",
+            "4004226",
+            "125471",
+            "2292265",
+            "72499",
+            "2584817",
+            "2352820",
+            "2386920",
+            "4204701",
+            "4070813",
+            "2241208",
+            "2048719",
+            "220117",
+            "4530389",
+            "3084251",
+            "2353401",
+            "917048",
+            "2762974",
+            "2724690",
+            "2371151",
+            "4004226",
+            "125471",
+            "2292265",
+            "72499"
+        ],
+        "fixture_result_array": [
+            "loss"
+        ],
+        "fixture_score_array": [
+            46.0
+        ],
+        "fixture_score_rank_array": [
+            15
+        ],
+        "fpl_code": "2042017",
+        "league_points_array": [
+            0
+        ],
+        "league_position_array": [
+            15
+        ],
+        "manager_name": "Jeremy Harding",
+        "team_name": "Hapless Ingles?",
+        "total_league_points_array": [
+            0
+        ],
+        "total_score_array": [
+            46.0
+        ],
+        "transfers_made_array": [
+            0
+        ]
+    },
+    "2048719": {
+        "captains_array": [
+            "Haaland"
+        ],
+        "captains_points_array": [
+            14.0
+        ],
+        "chip_played_array": [
+            "None"
+        ],
+        "fixture_margin_array": [
+            -9.0
+        ],
+        "fixture_opponent_array": [
+            "2292265",
+            "2371151",
+            "72499",
+            "125471",
+            "2584817",
+            "2352820",
+            "2042017",
+            "4204701",
+            "4070813",
+            "2241208",
+            "2386920",
+            "220117",
+            "4530389",
+            "3084251",
+            "2353401",
+            "917048",
+            "2762974",
+            "2724690",
+            "4004226",
+            "2292265",
+            "2371151",
+            "72499",
+            "125471",
+            "2584817",
+            "2352820",
+            "2042017",
+            "4204701",
+            "4070813",
+            "2241208",
+            "2386920",
+            "220117",
+            "4530389",
+            "3084251",
+            "2353401",
+            "917048",
+            "2762974",
+            "2724690",
+            "4004226"
+        ],
+        "fixture_result_array": [
+            "loss"
+        ],
+        "fixture_score_array": [
+            61.0
+        ],
+        "fixture_score_rank_array": [
+            9
+        ],
+        "fpl_code": "2048719",
+        "league_points_array": [
+            0
+        ],
+        "league_position_array": [
+            13
+        ],
+        "manager_name": "Richard Walker",
+        "team_name": "East Croydon",
+        "total_league_points_array": [
+            0
+        ],
+        "total_score_array": [
+            61.0
+        ],
+        "transfers_made_array": [
+            0
+        ]
+    },
+    "220117": {
+        "captains_array": [
+            "Isak"
+        ],
+        "captains_points_array": [
+            10.0
+        ],
+        "chip_played_array": [
+            "None"
+        ],
+        "fixture_margin_array": [
+            20.0
+        ],
+        "fixture_opponent_array": [
+            "125471",
+            "2292265",
+            "2352820",
+            "72499",
+            "4204701",
+            "2584817",
+            "2241208",
+            "2042017",
+            "2386920",
+            "4070813",
+            "3084251",
+            "2048719",
+            "917048",
+            "4530389",
+            "2724690",
+            "2353401",
+            "4004226",
+            "2762974",
+            "2371151",
+            "125471",
+            "2292265",
+            "2352820",
+            "72499",
+            "4204701",
+            "2584817",
+            "2241208",
+            "2042017",
+            "2386920",
+            "4070813",
+            "3084251",
+            "2048719",
+            "917048",
+            "4530389",
+            "2724690",
+            "2353401",
+            "4004226",
+            "2762974",
+            "2371151"
+        ],
+        "fixture_result_array": [
+            "win"
+        ],
+        "fixture_score_array": [
+            60.0
+        ],
+        "fixture_score_rank_array": [
+            10
+        ],
+        "fpl_code": "220117",
+        "league_points_array": [
+            3
+        ],
+        "league_position_array": [
+            7
+        ],
+        "manager_name": "Mike Dove",
+        "team_name": "Calafiori Dreamin\u2019",
+        "total_league_points_array": [
+            3
+        ],
+        "total_score_array": [
+            60.0
+        ],
+        "transfers_made_array": [
+            0
+        ]
+    },
+    "2241208": {
+        "captains_array": [
+            "Isak"
+        ],
+        "captains_points_array": [
+            10.0
+        ],
+        "chip_played_array": [
+            "None"
+        ],
+        "fixture_margin_array": [
+            4.0
+        ],
+        "fixture_opponent_array": [
+            "2352820",
+            "72499",
+            "4204701",
+            "2584817",
+            "2386920",
+            "2042017",
+            "220117",
+            "4070813",
+            "3084251",
+            "2048719",
+            "917048",
+            "4530389",
+            "2724690",
+            "2353401",
+            "4004226",
+            "2762974",
+            "2292265",
+            "2371151",
+            "125471",
+            "2352820",
+            "72499",
+            "4204701",
+            "2584817",
+            "2386920",
+            "2042017",
+            "220117",
+            "4070813",
+            "3084251",
+            "2048719",
+            "917048",
+            "4530389",
+            "2724690",
+            "2353401",
+            "4004226",
+            "2762974",
+            "2292265",
+            "2371151",
+            "125471"
+        ],
+        "fixture_result_array": [
+            "win"
+        ],
+        "fixture_score_array": [
+            72.0
+        ],
+        "fixture_score_rank_array": [
+            4
+        ],
+        "fpl_code": "2241208",
+        "league_points_array": [
+            3
+        ],
+        "league_position_array": [
+            4
+        ],
+        "manager_name": "Kester Mollahan",
+        "team_name": "FC Hammer",
+        "total_league_points_array": [
+            3
+        ],
+        "total_score_array": [
+            72.0
+        ],
+        "transfers_made_array": [
+            0
+        ]
+    },
+    "2292265": {
+        "captains_array": [
+            "M.Salah"
+        ],
+        "captains_points_array": [
+            28.0
+        ],
+        "chip_played_array": [
+            "None"
+        ],
+        "fixture_margin_array": [
+            9.0
+        ],
+        "fixture_opponent_array": [
+            "2048719",
+            "220117",
+            "4530389",
+            "3084251",
+            "2353401",
+            "917048",
+            "2762974",
+            "2724690",
+            "2371151",
+            "4004226",
+            "125471",
+            "2386920",
+            "2352820",
+            "72499",
+            "4204701",
+            "2584817",
+            "2241208",
+            "2042017",
+            "4070813",
+            "2048719",
+            "220117",
+            "4530389",
+            "3084251",
+            "2353401",
+            "917048",
+            "2762974",
+            "2724690",
+            "2371151",
+            "4004226",
+            "125471",
+            "2386920",
+            "2352820",
+            "72499",
+            "4204701",
+            "2584817",
+            "2241208",
+            "2042017",
+            "4070813"
+        ],
+        "fixture_result_array": [
+            "win"
+        ],
+        "fixture_score_array": [
+            70.0
+        ],
+        "fixture_score_rank_array": [
+            5
+        ],
+        "fpl_code": "2292265",
+        "league_points_array": [
+            3
+        ],
+        "league_position_array": [
+            5
+        ],
+        "manager_name": "James Stillwell",
+        "team_name": "Sorry Nic Jackson",
+        "total_league_points_array": [
+            3
+        ],
+        "total_score_array": [
+            70.0
+        ],
+        "transfers_made_array": [
+            0
+        ]
+    },
+    "2352820": {
+        "captains_array": [
+            "M.Salah"
+        ],
+        "captains_points_array": [
+            28.0
+        ],
+        "chip_played_array": [
+            "None"
+        ],
+        "fixture_margin_array": [
+            -4.0
+        ],
+        "fixture_opponent_array": [
+            "2241208",
+            "2042017",
+            "220117",
+            "4070813",
+            "3084251",
+            "2048719",
+            "917048",
+            "4530389",
+            "2724690",
+            "2353401",
+            "4004226",
+            "2762974",
+            "2292265",
+            "2371151",
+            "72499",
+            "125471",
+            "2584817",
+            "2386920",
+            "4204701",
+            "2241208",
+            "2042017",
+            "220117",
+            "4070813",
+            "3084251",
+            "2048719",
+            "917048",
+            "4530389",
+            "2724690",
+            "2353401",
+            "4004226",
+            "2762974",
+            "2292265",
+            "2371151",
+            "72499",
+            "125471",
+            "2584817",
+            "2386920",
+            "4204701"
+        ],
+        "fixture_result_array": [
+            "loss"
+        ],
+        "fixture_score_array": [
+            68.0
+        ],
+        "fixture_score_rank_array": [
+            7
+        ],
+        "fpl_code": "2352820",
+        "league_points_array": [
+            0
+        ],
+        "league_position_array": [
+            11
+        ],
+        "manager_name": "Ben Carroll",
+        "team_name": "Pretty Pretty Utd",
+        "total_league_points_array": [
+            0
+        ],
+        "total_score_array": [
+            68.0
+        ],
+        "transfers_made_array": [
+            0
+        ]
+    },
+    "2353401": {
+        "captains_array": [
+            "Haaland"
+        ],
+        "captains_points_array": [
+            14.0
+        ],
+        "chip_played_array": [
+            "None"
+        ],
+        "fixture_margin_array": [
+            19.0
+        ],
+        "fixture_opponent_array": [
+            "2724690",
+            "2386920",
+            "4004226",
+            "2762974",
+            "2292265",
+            "2371151",
+            "72499",
+            "125471",
+            "2584817",
+            "2352820",
+            "2042017",
+            "4204701",
+            "4070813",
+            "2241208",
+            "2048719",
+            "220117",
+            "4530389",
+            "3084251",
+            "917048",
+            "2724690",
+            "2386920",
+            "4004226",
+            "2762974",
+            "2292265",
+            "2371151",
+            "72499",
+            "125471",
+            "2584817",
+            "2352820",
+            "2042017",
+            "4204701",
+            "4070813",
+            "2241208",
+            "2048719",
+            "220117",
+            "4530389",
+            "3084251",
+            "917048"
+        ],
+        "fixture_result_array": [
+            "win"
+        ],
+        "fixture_score_array": [
+            75.0
+        ],
+        "fixture_score_rank_array": [
+            2
+        ],
+        "fpl_code": "2353401",
+        "league_points_array": [
+            3
+        ],
+        "league_position_array": [
+            2
+        ],
+        "manager_name": "David Steel",
+        "team_name": "Admirable Guppies",
+        "total_league_points_array": [
+            3
+        ],
+        "total_score_array": [
+            75.0
+        ],
+        "transfers_made_array": [
+            0
+        ]
+    },
+    "2371151": {
+        "captains_array": [
+            "Isak"
+        ],
+        "captains_points_array": [
+            10.0
+        ],
+        "chip_played_array": [
+            "None"
+        ],
+        "fixture_margin_array": [
+            15.0
+        ],
+        "fixture_opponent_array": [
+            "3084251",
+            "2048719",
+            "917048",
+            "4530389",
+            "2724690",
+            "2353401",
+            "4004226",
+            "2762974",
+            "2292265",
+            "2386920",
+            "72499",
+            "125471",
+            "2584817",
+            "2352820",
+            "2042017",
+            "4204701",
+            "4070813",
+            "2241208",
+            "220117",
+            "3084251",
+            "2048719",
+            "917048",
+            "4530389",
+            "2724690",
+            "2353401",
+            "4004226",
+            "2762974",
+            "2292265",
+            "2386920",
+            "72499",
+            "125471",
+            "2584817",
+            "2352820",
+            "2042017",
+            "4204701",
+            "4070813",
+            "2241208",
+            "220117"
+        ],
+        "fixture_result_array": [
+            "win"
+        ],
+        "fixture_score_array": [
+            58.0
+        ],
+        "fixture_score_rank_array": [
+            12
+        ],
+        "fpl_code": "2371151",
+        "league_points_array": [
+            3
+        ],
+        "league_position_array": [
+            9
+        ],
+        "manager_name": "Jo Breese",
+        "team_name": "Dinoscores",
+        "total_league_points_array": [
+            3
+        ],
+        "total_score_array": [
+            58.0
+        ],
+        "transfers_made_array": [
+            0
+        ]
+    },
+    "2386920": {
+        "captains_array": [
+            "Isak"
+        ],
+        "captains_points_array": [
+            10.0
+        ],
+        "chip_played_array": [
+            "None"
+        ],
+        "fixture_margin_array": [
+            -5.0
+        ],
+        "fixture_opponent_array": [
+            "4204701",
+            "2353401",
+            "2042017",
+            "2724690",
+            "2241208",
+            "2762974",
+            "4070813",
+            "4004226",
+            "220117",
+            "2371151",
+            "2048719",
+            "2292265",
+            "3084251",
+            "125471",
+            "4530389",
+            "72499",
+            "917048",
+            "2352820",
+            "2584817",
+            "4204701",
+            "2353401",
+            "2042017",
+            "2724690",
+            "2241208",
+            "2762974",
+            "4070813",
+            "4004226",
+            "220117",
+            "2371151",
+            "2048719",
+            "2292265",
+            "3084251",
+            "125471",
+            "4530389",
+            "72499",
+            "917048",
+            "2352820",
+            "2584817"
+        ],
+        "fixture_result_array": [
+            "loss"
+        ],
+        "fixture_score_array": [
+            65.0
+        ],
+        "fixture_score_rank_array": [
+            8
+        ],
+        "fpl_code": "2386920",
+        "league_points_array": [
+            0
+        ],
+        "league_position_array": [
+            12
+        ],
+        "manager_name": "Ben Rachell",
+        "team_name": "Benno Athletic",
+        "total_league_points_array": [
+            0
+        ],
+        "total_score_array": [
+            65.0
+        ],
+        "transfers_made_array": [
+            0
+        ]
+    },
+    "2584817": {
+        "captains_array": [
+            "Isak"
+        ],
+        "captains_points_array": [
+            10.0
+        ],
+        "chip_played_array": [
+            "None"
+        ],
+        "fixture_margin_array": [
+            14.0
+        ],
+        "fixture_opponent_array": [
+            "2042017",
+            "4204701",
+            "4070813",
+            "2241208",
+            "2048719",
+            "220117",
+            "4530389",
+            "3084251",
+            "2353401",
+            "917048",
+            "2762974",
+            "2724690",
+            "2371151",
+            "4004226",
+            "125471",
+            "2292265",
+            "2352820",
+            "72499",
+            "2386920",
+            "2042017",
+            "4204701",
+            "4070813",
+            "2241208",
+            "2048719",
+            "220117",
+            "4530389",
+            "3084251",
+            "2353401",
+            "917048",
+            "2762974",
+            "2724690",
+            "2371151",
+            "4004226",
+            "125471",
+            "2292265",
+            "2352820",
+            "72499",
+            "2386920"
+        ],
+        "fixture_result_array": [
+            "win"
+        ],
+        "fixture_score_array": [
+            60.0
+        ],
+        "fixture_score_rank_array": [
+            10
+        ],
+        "fpl_code": "2584817",
+        "league_points_array": [
+            3
+        ],
+        "league_position_array": [
+            7
+        ],
+        "manager_name": "Dan Browne",
+        "team_name": "Mr Browne\u2019s Boys",
+        "total_league_points_array": [
+            3
+        ],
+        "total_score_array": [
+            60.0
+        ],
+        "transfers_made_array": [
+            0
+        ]
+    },
+    "2724690": {
+        "captains_array": [
+            "Isak"
+        ],
+        "captains_points_array": [
+            10.0
+        ],
+        "chip_played_array": [
+            "None"
+        ],
+        "fixture_margin_array": [
+            -19.0
+        ],
+        "fixture_opponent_array": [
+            "2353401",
+            "917048",
+            "2762974",
+            "2386920",
+            "2371151",
+            "4004226",
+            "125471",
+            "2292265",
+            "2352820",
+            "72499",
+            "4204701",
+            "2584817",
+            "2241208",
+            "2042017",
+            "220117",
+            "4070813",
+            "3084251",
+            "2048719",
+            "4530389",
+            "2353401",
+            "917048",
+            "2762974",
+            "2386920",
+            "2371151",
+            "4004226",
+            "125471",
+            "2292265",
+            "2352820",
+            "72499",
+            "4204701",
+            "2584817",
+            "2241208",
+            "2042017",
+            "220117",
+            "4070813",
+            "3084251",
+            "2048719",
+            "4530389"
+        ],
+        "fixture_result_array": [
+            "loss"
+        ],
+        "fixture_score_array": [
+            56.0
+        ],
+        "fixture_score_rank_array": [
+            13
+        ],
+        "fpl_code": "2724690",
+        "league_points_array": [
+            0
+        ],
+        "league_position_array": [
+            14
+        ],
+        "manager_name": "Jon Lescott",
+        "team_name": "Hammer It Home",
+        "total_league_points_array": [
+            0
+        ],
+        "total_score_array": [
+            56.0
+        ],
+        "transfers_made_array": [
+            0
+        ]
+    },
+    "2762974": {
+        "captains_array": [
+            "Al-Hamadi"
+        ],
+        "captains_points_array": [
+            2.0
+        ],
+        "chip_played_array": [
+            "None"
+        ],
+        "fixture_margin_array": [
+            2.0
+        ],
+        "fixture_opponent_array": [
+            "917048",
+            "4530389",
+            "2724690",
+            "2353401",
+            "4004226",
+            "2386920",
+            "2292265",
+            "2371151",
+            "72499",
+            "125471",
+            "2584817",
+            "2352820",
+            "2042017",
+            "4204701",
+            "4070813",
+            "2241208",
+            "2048719",
+            "220117",
+            "3084251",
+            "917048",
+            "4530389",
+            "2724690",
+            "2353401",
+            "4004226",
+            "2386920",
+            "2292265",
+            "2371151",
+            "72499",
+            "125471",
+            "2584817",
+            "2352820",
+            "2042017",
+            "4204701",
+            "4070813",
+            "2241208",
+            "2048719",
+            "220117",
+            "3084251"
+        ],
+        "fixture_result_array": [
+            "win"
+        ],
+        "fixture_score_array": [
+            48.0
+        ],
+        "fixture_score_rank_array": [
+            14
+        ],
+        "fpl_code": "2762974",
+        "league_points_array": [
+            3
+        ],
+        "league_position_array": [
+            10
+        ],
+        "manager_name": "David Grice",
+        "team_name": "Renford Rejects",
+        "total_league_points_array": [
+            3
+        ],
+        "total_score_array": [
+            48.0
+        ],
+        "transfers_made_array": [
+            0
+        ]
+    },
+    "3084251": {
+        "captains_array": [
+            "B.Fernandes"
+        ],
+        "captains_points_array": [
+            6.0
+        ],
+        "chip_played_array": [
+            "None"
+        ],
+        "fixture_margin_array": [
+            -15.0
+        ],
+        "fixture_opponent_array": [
+            "2371151",
+            "4004226",
+            "125471",
+            "2292265",
+            "2352820",
+            "72499",
+            "4204701",
+            "2584817",
+            "2241208",
+            "2042017",
+            "220117",
+            "4070813",
+            "2386920",
+            "2048719",
+            "917048",
+            "4530389",
+            "2724690",
+            "2353401",
+            "2762974",
+            "2371151",
+            "4004226",
+            "125471",
+            "2292265",
+            "2352820",
+            "72499",
+            "4204701",
+            "2584817",
+            "2241208",
+            "2042017",
+            "220117",
+            "4070813",
+            "2386920",
+            "2048719",
+            "917048",
+            "4530389",
+            "2724690",
+            "2353401",
+            "2762974"
+        ],
+        "fixture_result_array": [
+            "loss"
+        ],
+        "fixture_score_array": [
+            43.0
+        ],
+        "fixture_score_rank_array": [
+            17
+        ],
+        "fpl_code": "3084251",
+        "league_points_array": [
+            0
+        ],
+        "league_position_array": [
+            17
+        ],
+        "manager_name": "Mike Yeboah",
+        "team_name": "Powerstars",
+        "total_league_points_array": [
+            0
+        ],
+        "total_score_array": [
+            43.0
+        ],
+        "transfers_made_array": [
+            0
+        ]
+    },
+    "4004226": {
+        "captains_array": [
+            "Isak"
+        ],
+        "captains_points_array": [
+            10.0
+        ],
+        "chip_played_array": [
+            "None"
+        ],
+        "fixture_margin_array": [
+            -33.0
+        ],
+        "fixture_opponent_array": [
+            "4530389",
+            "3084251",
+            "2353401",
+            "917048",
+            "2762974",
+            "2724690",
+            "2371151",
+            "2386920",
+            "125471",
+            "2292265",
+            "2352820",
+            "72499",
+            "4204701",
+            "2584817",
+            "2241208",
+            "2042017",
+            "220117",
+            "4070813",
+            "2048719",
+            "4530389",
+            "3084251",
+            "2353401",
+            "917048",
+            "2762974",
+            "2724690",
+            "2371151",
+            "2386920",
+            "125471",
+            "2292265",
+            "2352820",
+            "72499",
+            "4204701",
+            "2584817",
+            "2241208",
+            "2042017",
+            "220117",
+            "4070813",
+            "2048719"
+        ],
+        "fixture_result_array": [
+            "loss"
+        ],
+        "fixture_score_array": [
+            41.0
+        ],
+        "fixture_score_rank_array": [
+            18
+        ],
+        "fpl_code": "4004226",
+        "league_points_array": [
+            0
+        ],
+        "league_position_array": [
+            18
+        ],
+        "manager_name": "Liam Kelly",
+        "team_name": "Farcelona",
+        "total_league_points_array": [
+            0
+        ],
+        "total_score_array": [
+            41.0
+        ],
+        "transfers_made_array": [
+            0
+        ]
+    },
+    "4070813": {
+        "captains_array": [
+            "Haaland"
+        ],
+        "captains_points_array": [
+            14.0
+        ],
+        "chip_played_array": [
+            "None"
+        ],
+        "fixture_margin_array": [
+            -57.0
+        ],
+        "fixture_opponent_array": [
+            "72499",
+            "125471",
+            "2584817",
+            "2352820",
+            "2042017",
+            "4204701",
+            "2386920",
+            "2241208",
+            "2048719",
+            "220117",
+            "4530389",
+            "3084251",
+            "2353401",
+            "917048",
+            "2762974",
+            "2724690",
+            "2371151",
+            "4004226",
+            "2292265",
+            "72499",
+            "125471",
+            "2584817",
+            "2352820",
+            "2042017",
+            "4204701",
+            "2386920",
+            "2241208",
+            "2048719",
+            "220117",
+            "4530389",
+            "3084251",
+            "2353401",
+            "917048",
+            "2762974",
+            "2724690",
+            "2371151",
+            "4004226",
+            "2292265"
+        ],
+        "fixture_result_array": [
+            "loss"
+        ],
+        "fixture_score_array": [
+            27.0
+        ],
+        "fixture_score_rank_array": [
+            20
+        ],
+        "fpl_code": "4070813",
+        "league_points_array": [
+            0
+        ],
+        "league_position_array": [
+            20
+        ],
+        "manager_name": "Sammy Murphy",
+        "team_name": "West Sam",
+        "total_league_points_array": [
+            0
+        ],
+        "total_score_array": [
+            27.0
+        ],
+        "transfers_made_array": [
+            0
+        ]
+    },
+    "4204701": {
+        "captains_array": [
+            "Isak"
+        ],
+        "captains_points_array": [
+            10.0
+        ],
+        "chip_played_array": [
+            "None"
+        ],
+        "fixture_margin_array": [
+            5.0
+        ],
+        "fixture_opponent_array": [
+            "2386920",
+            "2584817",
+            "2241208",
+            "2042017",
+            "220117",
+            "4070813",
+            "3084251",
+            "2048719",
+            "917048",
+            "4530389",
+            "2724690",
+            "2353401",
+            "4004226",
+            "2762974",
+            "2292265",
+            "2371151",
+            "72499",
+            "125471",
+            "2352820",
+            "2386920",
+            "2584817",
+            "2241208",
+            "2042017",
+            "220117",
+            "4070813",
+            "3084251",
+            "2048719",
+            "917048",
+            "4530389",
+            "2724690",
+            "2353401",
+            "4004226",
+            "2762974",
+            "2292265",
+            "2371151",
+            "72499",
+            "125471",
+            "2352820"
+        ],
+        "fixture_result_array": [
+            "win"
+        ],
+        "fixture_score_array": [
+            70.0
+        ],
+        "fixture_score_rank_array": [
+            5
+        ],
+        "fpl_code": "4204701",
+        "league_points_array": [
+            3
+        ],
+        "league_position_array": [
+            5
+        ],
+        "manager_name": "Josh Christie",
+        "team_name": "I\u2019m Solanke",
+        "total_league_points_array": [
+            3
+        ],
+        "total_score_array": [
+            70.0
+        ],
+        "transfers_made_array": [
+            0
+        ]
+    },
+    "4530389": {
+        "captains_array": [
+            "Isak"
+        ],
+        "captains_points_array": [
+            10.0
+        ],
+        "chip_played_array": [
+            "None"
+        ],
+        "fixture_margin_array": [
+            33.0
+        ],
+        "fixture_opponent_array": [
+            "4004226",
+            "2762974",
+            "2292265",
+            "2371151",
+            "72499",
+            "125471",
+            "2584817",
+            "2352820",
+            "2042017",
+            "4204701",
+            "4070813",
+            "2241208",
+            "2048719",
+            "220117",
+            "2386920",
+            "3084251",
+            "2353401",
+            "917048",
+            "2724690",
+            "4004226",
+            "2762974",
+            "2292265",
+            "2371151",
+            "72499",
+            "125471",
+            "2584817",
+            "2352820",
+            "2042017",
+            "4204701",
+            "4070813",
+            "2241208",
+            "2048719",
+            "220117",
+            "2386920",
+            "3084251",
+            "2353401",
+            "917048",
+            "2724690"
+        ],
+        "fixture_result_array": [
+            "win"
+        ],
+        "fixture_score_array": [
+            74.0
+        ],
+        "fixture_score_rank_array": [
+            3
+        ],
+        "fpl_code": "4530389",
+        "league_points_array": [
+            3
+        ],
+        "league_position_array": [
+            3
+        ],
+        "manager_name": "Chris Towers",
+        "team_name": "Surry Hills",
+        "total_league_points_array": [
+            3
+        ],
+        "total_score_array": [
+            74.0
+        ],
+        "transfers_made_array": [
+            0
+        ]
+    },
+    "72499": {
+        "captains_array": [
+            "M.Salah"
+        ],
+        "captains_points_array": [
+            28.0
+        ],
+        "chip_played_array": [
+            "None"
+        ],
+        "fixture_margin_array": [
+            57.0
+        ],
+        "fixture_opponent_array": [
+            "4070813",
+            "2241208",
+            "2048719",
+            "220117",
+            "4530389",
+            "3084251",
+            "2353401",
+            "917048",
+            "2762974",
+            "2724690",
+            "2371151",
+            "4004226",
+            "125471",
+            "2292265",
+            "2352820",
+            "2386920",
+            "4204701",
+            "2584817",
+            "2042017",
+            "4070813",
+            "2241208",
+            "2048719",
+            "220117",
+            "4530389",
+            "3084251",
+            "2353401",
+            "917048",
+            "2762974",
+            "2724690",
+            "2371151",
+            "4004226",
+            "125471",
+            "2292265",
+            "2352820",
+            "2386920",
+            "4204701",
+            "2584817",
+            "2042017"
+        ],
+        "fixture_result_array": [
+            "win"
+        ],
+        "fixture_score_array": [
+            84.0
+        ],
+        "fixture_score_rank_array": [
+            1
+        ],
+        "fpl_code": "72499",
+        "league_points_array": [
+            3
+        ],
+        "league_position_array": [
+            1
+        ],
+        "manager_name": "Darren Baker",
+        "team_name": "Old Havertz Kai Hard",
+        "total_league_points_array": [
+            3
+        ],
+        "total_score_array": [
+            84.0
+        ],
+        "transfers_made_array": [
+            0
+        ]
+    },
+    "917048": {
+        "captains_array": [
+            "Isak"
+        ],
+        "captains_points_array": [
+            10.0
+        ],
+        "chip_played_array": [
+            "None"
+        ],
+        "fixture_margin_array": [
+            -2.0
+        ],
+        "fixture_opponent_array": [
+            "2762974",
+            "2724690",
+            "2371151",
+            "4004226",
+            "125471",
+            "2292265",
+            "2352820",
+            "72499",
+            "4204701",
+            "2584817",
+            "2241208",
+            "2042017",
+            "220117",
+            "4070813",
+            "3084251",
+            "2048719",
+            "2386920",
+            "4530389",
+            "2353401",
+            "2762974",
+            "2724690",
+            "2371151",
+            "4004226",
+            "125471",
+            "2292265",
+            "2352820",
+            "72499",
+            "4204701",
+            "2584817",
+            "2241208",
+            "2042017",
+            "220117",
+            "4070813",
+            "3084251",
+            "2048719",
+            "2386920",
+            "4530389",
+            "2353401"
+        ],
+        "fixture_result_array": [
+            "loss"
+        ],
+        "fixture_score_array": [
+            46.0
+        ],
+        "fixture_score_rank_array": [
+            15
+        ],
+        "fpl_code": "917048",
+        "league_points_array": [
+            0
+        ],
+        "league_position_array": [
+            15
+        ],
+        "manager_name": "Chris Marsh",
+        "team_name": "Klich Bait",
+        "total_league_points_array": [
+            0
+        ],
+        "total_score_array": [
+            46.0
+        ],
+        "transfers_made_array": [
+            0
+        ]
+    }
+}

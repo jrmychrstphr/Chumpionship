@@ -3,7 +3,7 @@
 <html lang="en">
     <head>
 
-        <title>Results - Chumpionship</title>
+        <title>Results - Chumpionship 2025</title>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://d3js.org/d3.v5.min.js"></script>
 
@@ -46,7 +46,7 @@
 
                 let gw_array = []
 
-                // create a list of functions
+                // create a list of gameweeks
                 $.each( data.fixture_list, function(k, v) {    
                     gw_array.push(k)
                 })
@@ -74,6 +74,7 @@
 
                     $( '#title-block' ).empty()
                     $( '#content-block' ).empty()
+                    $( '#footer-block' ).empty()
 
                     //build title block
                     var title_container = d3.select("#title-block")
@@ -83,11 +84,11 @@
                     .classed("title-container", true)
 
                     var title = title_container.append("div")
-                    .classed("text display large", true)
+                    .classed("text title weight-black size-large left-aligned colour-white", true)
                     .text("Results")
 
                     var subtitle = title_container.append("div")
-                    .classed("text display regular", true)
+                    .classed("text subhead weight-regular size-regular left-aligned colour-white", true)
                     .text("GW" + parseInt(gw.replace("GW","")))
 
                     //build dataset
@@ -101,11 +102,33 @@
                                 "manager_code": v.home_team,
                                 "manager_name": data.database[v.home_team].manager_name,
                                 "team_name": data.database[v.home_team].team_name,
+                                "chip_played": (function(){
+                                    g = parseInt(gw.replace("GW",""))
+                                    if( data.database[v.home_team].chip_played_array.length >= g ) {
+                                        c = data.database[v.home_team].chip_played_array[g-1]
+                                        .toLowerCase().replace(" ", "-")
+                                        if (c != "none") {
+                                            return c
+                                        } else {
+                                            return null
+                                        }
+                                    }
+                                })(),
+
                                 "fixture_score": (function(){
                                     g = parseInt(gw.replace("GW",""))
                                     if( data.database[v.home_team].fixture_score_array.length >= g ) {
                                         s = data.database[v.home_team].fixture_score_array[g-1]
-                                        scores.push(s)
+                                        //scores.push(s)
+                                        return s
+                                    } else {
+                                        return null
+                                    }
+                                })(),
+                                "fixture_score_rank": (function(){
+                                    g = parseInt(gw.replace("GW",""))
+                                    if( data.database[v.home_team].fixture_score_array.length >= g ) {
+                                        s = data.database[v.home_team].fixture_score_rank_array[g-1]
                                         return s
                                     } else {
                                         return null
@@ -124,11 +147,32 @@
                                 "manager_code": v.away_team,
                                 "manager_name": data.database[v.away_team].manager_name,
                                 "team_name": data.database[v.away_team].team_name,
+                                "chip_played": (function(){
+                                    g = parseInt(gw.replace("GW",""))
+                                    if( data.database[v.away_team].chip_played_array.length >= g ) {
+                                        c = data.database[v.away_team].chip_played_array[g-1]
+                                        .toLowerCase().replace(" ", "-")
+                                        if (c != "none") {
+                                            return c
+                                        } else {
+                                            return null
+                                        }
+                                    }
+                                })(),
                                 "fixture_score": (function(){
                                     g = parseInt(gw.replace("GW",""))
                                     if( data.database[v.away_team].fixture_score_array.length >= g ) {
                                         s = data.database[v.away_team].fixture_score_array[g-1]
-                                        scores.push(s)
+                                        //scores.push(s)
+                                        return s
+                                    } else {
+                                        return null
+                                    }
+                                })(),
+                                "fixture_score_rank": (function(){
+                                    g = parseInt(gw.replace("GW",""))
+                                    if( data.database[v.away_team].fixture_score_array.length >= g ) {
+                                        s = data.database[v.away_team].fixture_score_rank_array[g-1]
                                         return s
                                     } else {
                                         return null
@@ -159,88 +203,108 @@
                     .append("div")
                     .classed("result-list-container", true)
 
-                    var fixtures = viz_container.selectAll("div.result-wrapper")
+                    var results = viz_container.selectAll("div.result-wrapper")
                     .data(dataset).enter()
                     .append("div")
                     .classed("result-wrapper", true)
                     .append("div")
-                    .classed("result-container text display regular", true)
+                    .classed("result-container", true)
                     .each( function(d, i){
 
                         let result_row = d3.select(this)
                         .append("div")
                         .classed("result-row", true)
 
+                        let home_chip = result_row.append("div")
+                        .classed("chip-indicator", true)
+                        .classed("home", true)
+
                         result_row.append("div")
-                        .classed("indicator result-color", true)
-                        .classed(d.home.fixture_result, true)
+                        .classed("result-indicator", true)
+                        .classed("background-green", d.home.fixture_result=="win")
+                        .classed("background-pink", d.home.fixture_result=="loss")
+                        .classed("background-light-blue", d.home.fixture_result=="draw")
 
                         let home_team = result_row.append("div")
-                        .classed("home team", true)
+                        .classed("home team text-container background-light-midnight", true)
+                        .append("div")
+                        .classed("text weight-regular right-aligned colour-white", true)
                         .text(d.home.team_name)
 
                         let home_score = result_row.append("div")
-                        .classed("home score result-color", true)
+                        .classed("home score text-container background-white", true)
                         .classed(d.home.fixture_result, true)
+                        .append("div")
+                        .classed("text centre-aligned weight-black colour-midnight", true)
+                        .text(d.home.fixture_score)
 
                         let away_score = result_row.append("div")
-                        .classed("away score result-color", true)
+                        .classed("away score text-container background-white", true)
                         .classed(d.away.fixture_result, true)
+                        .append("div")
+                        .classed("text centre-aligned weight-black colour-midnight", true)
+                        .text(d.away.fixture_score)
 
                         let away_team = result_row.append("div")
-                        .classed("away team", true)
+                        .classed("away team text-container background-light-midnight", true)
+                        .append("div")
+                        .classed("text weight-regular left-aligned colour-white", true)
                         .text(d.away.team_name)
 
                         result_row.append("div")
-                        .classed("indicator result-color", true)
-                        .classed(d.away.fixture_result, true)
+                        .classed("result-indicator", true)
+                        .classed("background-green", d.away.fixture_result=="win")
+                        .classed("background-pink", d.away.fixture_result=="loss")
+                        .classed("background-light-blue", d.away.fixture_result=="draw")
+
+                        let away_chip = result_row.append("div")
+                        .classed("chip-indicator", true)
+                        .classed("away", true)
+
+                        if (d.home.chip_played != null) {
+                            home_chip.classed(d.home.chip_played, true)
+                        }
+
+                        if (d.away.chip_played != null) {
+                            away_chip.classed(d.away.chip_played, true)
+                        }
 
 
-                        home_score.text(d.home.fixture_score)
-                        .append("span")
-                        .classed("rank text small", true)
-                        .text(function(d) {
-                            i = scores.sort(d3.descending).indexOf(d.home.fixture_score)
-                            s = "("+(i+1)+")"
-                            return s
-                        })
-
-
-                        away_score.text(d.away.fixture_score)
-                        .append("span")
-                        .classed("rank text small", true)
-                        .text(function(d) {
-                            i = scores.sort(d3.descending).indexOf(d.away.fixture_score)
-                            s = "("+(i+1)+")"
-                            return s
-                        })
 
                     })
 
-                    var footnote = d3.select("#content-block")
+                    var footer = d3.select("#footer-block")
                     .append("div")
-                    .classed("footnote text small", true)
-                    .text("Figures in brackets indicate fixture score rank in GW"+parseInt(gw.replace("GW","")))
+                    .classed("footer-wrapper", true)
+                    .append("div")
+                    .classed("footer-container", true)
+
+                    var footnote = footer.append("div")
+                    .classed("text weight-regular size-small left-aligned colour-white", true)
+                    .text("Chips: B=Bench Boost; F=Free Hit; T=Triple Captain; W=Wildcard.")
+
+                    var logo = footer.append("div")
+                    .classed("logo-container", true)
+
 
                     styles.add()
 
                 }
             });
-
-            
-        
-        </script>
-        
+        </script>        
     </head> 
     
     <body> 
         <main>
             <section>
-                <div id="logo"></div>
-                <div class="wrapper">
+                <div class="page-wrapper">
                     <div class="container">
-                        <div id="title-block"></div>
-                        <div id="content-block"></div>
+                        <div id="title-block">
+                        </div>
+                        <div id="content-block">
+                        </div>
+                        <div id="footer-block">
+                        </div>
                     </div>
                 </div>
             </section>

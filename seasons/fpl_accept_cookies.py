@@ -1,3 +1,7 @@
+# ============================================================
+# Code snippet to be used to accept cookies on the FPL site
+# ============================================================
+
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
@@ -7,12 +11,14 @@ from selenium.webdriver.support import expected_conditions as EC
 def accept_cookies(driver):
 
 	completed = False
-	accept_btn_css_selector = "#onetrust-accept-btn-handler"
 
 	#open the webpage
 	driver.get("https://fantasy.premierleague.com/")
 
 	while completed == False:
+		
+		# ===== change this when needed =====
+		accept_btn_css_selector = "#onetrust-accept-btn-handler" 
 
 		try:
 			print("Waiting to accept cookies")
@@ -32,7 +38,7 @@ def accept_cookies(driver):
 		#if the button is dfound, let's click it!
 		else:
 			# Click the button
-			driver.find_element_by_css_selector(accept_btn_css_selector).click()
-			print("Cookies accepted :)")
+			driver.find_element(By.CSS_SELECTOR, accept_btn_css_selector).click()
+			print("Button clicked - cookies accepted")
 			completed = True
 

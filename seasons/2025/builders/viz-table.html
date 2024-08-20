@@ -1,0 +1,4155 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head>
+  <title>
+   Standings - Chumpionship 2025
+  </title>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+  </script>
+  <script src="https://d3js.org/d3.v5.min.js">
+  </script>
+  <!-- to replace with python -->
+  <script>
+   function return_gameweek_string(gameweek) {
+        g = (("0" + parseInt(gameweek)).slice(-2) ).toString();
+        return g
+    }
+
+    function return_ordinal(num) {
+        var j = num % 10, k = num % 100;
+        if (j == 1 && k != 11) { return num + "st"; }
+        if (j == 2 && k != 12) { return num + "nd"; }
+        if (j == 3 && k != 13) { return num + "rd"; }
+        return num + "th";
+    }
+
+    function return_comma_formatted_number(num) {
+        return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+
+    function return_replace_diacritics(s) {
+
+        s = s.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+        return s;
+    }
+  </script>
+  <style type="text/css">
+   /* --- General --- */
+
+	html {
+		font-size: 32px;
+	}
+
+	main {
+		width: 38rem;
+	}
+
+	div.page.border {
+		width: 100%;
+		height: 0.5rem;
+	}
+
+	div.page-wrapper{
+		padding: 1rem 3rem;
+	}
+
+	/* title block */ 
+	#title-block div.title-wrapper {
+		margin-bottom: 1rem;
+		margin-top: -0.25rem;
+	}
+
+	/* footer block */
+	#footer-block div.text {
+		margin-top: 0.5rem;
+	}
+
+	#footer-block div.logo-container {
+		background-image: url("assets/logo2025@4x-8.png");
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: right center;
+
+		height: 2.5rem;
+		width: 100%;
+		margin-top: 1rem;
+	}
+
+	/* text styles */
+	.text {
+		font-family: 'Koning';
+		transform: scaleX(1.1);
+	}
+
+	.text.left-aligned {
+		text-align: left;
+		transform-origin: 0% 0;
+	}
+
+	.text.centre-aligned {
+		text-align: center;
+		transform-origin: 50% 0;
+	}
+
+	.text.right-aligned {
+		text-align: right;
+		transform-origin: 100% 0;
+	}
+
+	.text.subhead {
+	    margin-top: -0.2rem;
+	}
+
+	.text.weight-regular {
+		font-weight: 500;
+	}
+
+	.text.weight-bold {
+		font-weight: 700;
+	}
+
+	.text.weight-black {
+		font-weight: 900;
+	}
+
+	.text.size-large {
+		font-size: 2rem;
+		line-height: 1.25em;
+	}
+
+	.text.size-regular {
+		font-size: 1rem;
+		line-height: 1rem;
+	}
+
+	.text.size-small {
+		font-size: 0.75rem;
+		line-height: 1rem;
+	}
+
+	.text.size-tiny {
+		font-size: 0.6rem;
+		line-height: 0.8rem;
+	}
+
+	/* fonts */
+	@font-face {
+			/* updated Jul 24 */
+		    font-family: 'Koning';
+		    src: url('assets/KoningDisplay-SemiLight_TRIAL.woff2');
+		    font-weight: 400;
+		}
+
+	@font-face {
+		    font-family: 'Koning';
+		    src: url('assets/KoningDisplay-Regular_TRIAL.woff2');
+		    font-weight: 500;
+		}
+
+	@font-face {
+		    font-family: 'Koning';
+		    src: url('assets/KoningDisplay-SemiBold_TRIAL.woff2');
+		    font-weight: 600;
+		}
+
+	@font-face {
+		    font-family: 'Koning';
+		    src: url('assets/KoningDisplay-Bold_TRIAL.woff2');
+		    font-weight: 700;
+		}
+
+	@font-face {
+		    font-family: 'Koning';
+		    src: url('assets/KoningDisplay-Black_TRIAL.woff2');
+		    font-weight: 900;
+		}
+
+
+  	/* --- Results --- */
+	div.viz-result-list-container {
+		display: inline-block;
+	}
+
+	div.result-list-container div.result-container {
+		display: inline-block;
+	}
+
+	div.result-list-container div.result-container div.result-row {
+		position:  relative;
+		width: 100%;
+		float: left;
+		margin-bottom: 0.25rem;
+	}
+
+	div.result-list-container div.result-container div.result-row div {
+		display: inline-block;
+		float: left;
+	}
+
+	div.result-list-container div.result-container div.result-row div.chip-indicator {
+		position: absolute;
+		width: 1.25rem;
+		height: 1.65rem;
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: center;	
+	}
+
+	div.result-list-container div.chip-indicator.bench-boost {
+		background-image: url("assets/chip-bench-boost.svg");
+	}
+
+	div.result-list-container div.chip-indicator.free-hit {
+		background-image: url("assets/chip-free-hit.svg");
+	}
+
+	div.result-list-container div.chip-indicator.triple-captain {
+		background-image: url("assets/chip-triple-captain.svg");
+	}
+
+	div.result-list-container div.chip-indicator.wildcard {
+		background-image: url("assets/chip-wildcard.svg");
+	}
+
+	div.result-list-container div.result-container div.result-row div.chip-indicator.home {
+		left: calc(-1.25rem - 0.2rem);
+	}
+
+	div.result-list-container div.result-container div.result-row div.chip-indicator.away {
+		right: calc(-1.25rem - 0.2rem);
+	}
+
+	div.result-list-container div.result-container div.result-row div.team {
+		padding-left: 0.5rem;
+		padding-right: 0.5rem;
+		margin: 0 0.1rem;
+		width: 11.25rem;
+	}
+
+	div.result-list-container div.result-container div.result-row div:not(.chip-indicator) {
+		height: 1.5rem;
+		padding-top: 0.15rem;
+		line-height: 1rem;
+	}
+
+	div.result-list-container div.result-container div.result-row div.team div.text {
+		//width: calc(100% - 1.2rem);
+	}
+
+	div.result-list-container div.result-container div.result-row div.team.home div.text {
+		float: right;
+	}
+
+	div.result-list-container div.result-container div.result-row div.team.away div.text {
+		float: left;
+	}
+
+
+	div.result-list-container div.result-container div.result-row div.score div.text {
+		width: 100%;
+	}
+
+	div.result-list-container div.result-container div.result-row div.score.home {
+		margin-right: 0.1rem;
+	}
+
+	div.result-list-container div.score {
+		width: 3rem;
+		padding-left: 0rem;
+		padding-right: 0rem;
+	}
+
+	div.result-list-container div.result-indicator {
+		width: 0.5rem;
+	}
+
+
+	/* --- Fixture list --- */
+	div.fixture-list-container {
+		display: inline-block;
+	}
+
+	div.fixture-list-container div.fixture-container {
+		display: inline-block;
+	}
+
+	div.fixture-list-container div.fixture-container div.fixture-row {
+		position:  relative;
+		width: 100%;
+		float: left;
+		margin-bottom: 0.25rem;
+	}
+
+	div.fixture-list-container div.fixture-container div.fixture-row div {
+		display: inline-block;
+		float: left;
+	}
+
+	div.fixture-list-container div.fixture-container div.fixture-row div.team {
+		padding-left: 0.5rem;
+		padding-right: 0.5rem;
+		width: 13.9rem;
+	}
+
+	div.fixture-list-container div.fixture-container div.fixture-row div {
+		height: 1.5rem;
+		padding-top: 0.15rem;
+		line-height: 1rem;
+	}
+
+	div.fixture-list-container div.fixture-container div.fixture-row div.team.home div.text {
+		float: right;
+	}
+
+	div.fixture-list-container div.fixture-container div.fixture-row div.team.away div.text {
+		float: left;
+	}
+
+
+	div.fixture-list-container div.fixture-container div.fixture-row div.score div.text {
+		width: 100%;
+	}
+
+	div.fixture-list-container div.score {
+		width: 2rem;
+		margin: 0 0.1rem;
+		padding-left: 0rem;
+		padding-right: 0rem;
+	}
+
+	/* --- League Table --- */
+
+	div.league-table-container {
+		display: inline-block;
+	}
+
+	div.league-table-container div.table-row-container  {
+		display: inline-block;
+	}
+
+	div.league-table-container div.table-row {
+		position:  relative;
+		width: 100%;
+		float: left;
+		margin-bottom: 0.25rem;
+	}
+
+	div.league-table-container div.table-row:not(.head) div {
+		height: 1.5rem;
+	}
+
+	div.league-table-container div.table-row div {
+		display: inline-block;
+		float: left;
+
+		padding-top: 0.15rem;
+		line-height: 1rem;
+	}
+
+	div.league-table-container div.table-row div.text-container:not(.change-indicator):not(.col-streak) {
+		padding-left: 0.5rem;
+		padding-right: 0.5rem;
+	}
+
+	div.league-table-container div.table-row div.text-container.col-streak {
+		padding-left: 0.1rem;
+	}
+
+
+	div.league-table-container div.table-row div.text.centre-aligned {
+		width: 100%;
+	}
+
+	div.league-table-container div.col-position {
+		margin-right: 0.1rem;
+		width: calc(2.4rem - 1rem);
+	}
+
+	div.league-table-container div.col-team {
+		margin-right: 0.1rem;
+		width: calc(16.6rem - 1rem);
+	}
+
+	div.league-table-container div.col-team span.manager-name {
+		padding-left: 0.25rem;
+	}
+
+	div.league-table-container div.col-points {
+		margin-right: 0.1rem;
+		width: calc(2.5rem - 1rem);
+	}
+
+	div.league-table-container div.col-total {
+		margin-right: 0.1rem;
+		width: calc(4rem - 1rem);
+	}
+
+	div.league-table-container div.col-streak {
+		width: calc(6.1rem - 0.1rem);
+	}
+
+	div.league-table-container div.change-indicator {
+		position: absolute;
+		left: calc(-1.25rem - 0.2rem);
+		width: 1.25rem;
+		height: 1.65rem;
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: center;	
+	}
+
+	div.league-table-container div.change-indicator.arrow-up {
+		background-image: url("assets/arrow-up.svg");
+	}
+
+	div.league-table-container div.change-indicator.arrow-down {
+		background-image: url("assets/arrow-down.svg");
+	}
+
+	/* ------------------- */
+
+	/* --- control panel --- */
+    #controls {
+        margin: 1rem;
+        padding: 1rem;
+        border: 1px solid;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 8rem;
+        font-size: 0.8rem;
+        font-family: 'sans-serif';
+        background: white;
+    }
+
+    #controls div.group {
+        margin-bottom: 1rem;
+    }
+
+    #controls div.label {
+        margin-bottom: 0.5rem;
+    }
+  </style>
+  <script>
+   chump = {
+		"colours": {
+			"green": d3.rgb("rgb(0,219,113)"),
+			"light_blue": d3.rgb("rgb(0,165,255)"),
+			"blue": d3.rgb("rgb(0,78,250)"),
+			"purple": d3.rgb("rgb(103,42,225)"),
+			"pink": d3.rgb("rgb(255,41,176)"),
+			"midnight_blue": d3.rgb("rgb(13,0,77)"),
+			"light_midnight_blue": d3.rgb("rgb(22,0,122)"),
+			"axis_lines": d3.rgb("rgb(90,90,115)"),
+		},
+		"gradients": {
+			"css": {
+			}
+		}
+	};
+
+	chump.gradients.css.pink_blue_green = "linear-gradient(90deg, "+ chump.colours.pink +" 0%, "+ chump.colours.purple +" 25%, "+ chump.colours.blue +" 50%, "+ chump.colours.light_blue +" 75%, "+ chump.colours.green +" 100%)";
+	chump.gradients.css.blue_green = "linear-gradient(90deg, "+ chump.colours.blue +" 0%, "+ chump.colours.light_blue +" 50%,"+ chump.colours.green +" 100%)";
+	chump.gradients.css.pink_blue = "linear-gradient(90deg, "+ chump.colours.pink +" 0%, "+ chump.colours.purple +" 50%,"+ chump.colours.blue +" 100%)";
+  </script>
+  <script>
+   styles = {
+     core : function() {
+
+         d3.select("main").style('background', chump.colours.midnight_blue);
+         
+         d3.select("main").insert("div",":first-child").classed("page border top", true)
+         .style("background", chump.gradients.css.blue_green);
+
+         d3.select("main").append("div").classed("page border bottom", true)
+         .style("background", chump.gradients.css.pink_blue);
+
+     },
+
+     add : function() {
+         
+         d3.selectAll(".text.colour-white").style("color", "white")
+         d3.selectAll(".text.colour-blue").style("color", chump.colours.blue)
+         d3.selectAll(".text.colour-light-blue").style("color", chump.colours.light_blue)
+         d3.selectAll(".text.colour-green").style("color", chump.colours.green)
+         d3.selectAll(".text.colour-pink").style("color", chump.colours.pink)
+         d3.selectAll(".text.colour-purple").style("color", chump.purple)
+         d3.selectAll(".text.colour-light-midnight").style("color", chump.colours.light_midnight_blue)
+         d3.selectAll(".text.colour-midnight").style("color", chump.colours.midnight_blue)
+
+         d3.selectAll(".background-white").style("background", "white")
+         d3.selectAll(".background-blue").style("background", chump.colours.blue)
+         d3.selectAll(".background-light-blue").style("background", chump.colours.light_blue)
+         d3.selectAll(".background-green").style("background", chump.colours.green)
+         d3.selectAll(".background-pink").style("background", chump.colours.pink)
+         d3.selectAll(".background-purple").style("background", chump.purple)
+         d3.selectAll(".background-light-midnight").style("background", chump.colours.light_midnight_blue)
+         d3.selectAll(".background-midnight").style("background", chump.colours.midnight_blue)
+
+         d3.selectAll("svg .fill-white").style("fill", "white")
+         d3.selectAll("svg .fill-blue").style("fill", chump.colours.blue)
+         d3.selectAll("svg .fill-light-blue").style("fill", chump.colours.light_blue)
+         d3.selectAll("svg .fill-green").style("fill", chump.colours.green)
+         d3.selectAll("svg .fill-pink").style("fill", chump.colours.pink)
+         d3.selectAll("svg .fill-purple").style("fill", chump.purple)
+         d3.selectAll("svg .fill-light-midnight").style("fill", chump.colours.light_midnight_blue)
+         d3.selectAll("svg .fill-midnight").style("fill", chump.colours.midnight_blue)
+
+     }
+     
+ }
+  </script>
+  <script>
+   $( function(){
+
+                const data = {
+                    "database": {
+    "125471": {
+        "captains_array": [
+            "Mateta"
+        ],
+        "captains_points_array": [
+            2.0
+        ],
+        "chip_played_array": [
+            "None"
+        ],
+        "fixture_margin_array": [
+            -20.0
+        ],
+        "fixture_opponent_array": [
+            "220117",
+            "4070813",
+            "3084251",
+            "2048719",
+            "917048",
+            "4530389",
+            "2724690",
+            "2353401",
+            "4004226",
+            "2762974",
+            "2292265",
+            "2371151",
+            "72499",
+            "2386920",
+            "2584817",
+            "2352820",
+            "2042017",
+            "4204701",
+            "2241208",
+            "220117",
+            "4070813",
+            "3084251",
+            "2048719",
+            "917048",
+            "4530389",
+            "2724690",
+            "2353401",
+            "4004226",
+            "2762974",
+            "2292265",
+            "2371151",
+            "72499",
+            "2386920",
+            "2584817",
+            "2352820",
+            "2042017",
+            "4204701",
+            "2241208"
+        ],
+        "fixture_result_array": [
+            "loss"
+        ],
+        "fixture_score_array": [
+            40.0
+        ],
+        "fixture_score_rank_array": [
+            19
+        ],
+        "fpl_code": "125471",
+        "league_points_array": [
+            0
+        ],
+        "league_position_array": [
+            19
+        ],
+        "manager_name": "Dan Mclean",
+        "team_name": "Ya Kilman Me Man",
+        "total_league_points_array": [
+            0
+        ],
+        "total_score_array": [
+            40.0
+        ],
+        "transfers_made_array": [
+            0
+        ]
+    },
+    "2042017": {
+        "captains_array": [
+            "Solanke"
+        ],
+        "captains_points_array": [
+            4.0
+        ],
+        "chip_played_array": [
+            "None"
+        ],
+        "fixture_margin_array": [
+            -14.0
+        ],
+        "fixture_opponent_array": [
+            "2584817",
+            "2352820",
+            "2386920",
+            "4204701",
+            "4070813",
+            "2241208",
+            "2048719",
+            "220117",
+            "4530389",
+            "3084251",
+            "2353401",
+            "917048",
+            "2762974",
+            "2724690",
+            "2371151",
+            "4004226",
+            "125471",
+            "2292265",
+            "72499",
+            "2584817",
+            "2352820",
+            "2386920",
+            "4204701",
+            "4070813",
+            "2241208",
+            "2048719",
+            "220117",
+            "4530389",
+            "3084251",
+            "2353401",
+            "917048",
+            "2762974",
+            "2724690",
+            "2371151",
+            "4004226",
+            "125471",
+            "2292265",
+            "72499"
+        ],
+        "fixture_result_array": [
+            "loss"
+        ],
+        "fixture_score_array": [
+            46.0
+        ],
+        "fixture_score_rank_array": [
+            15
+        ],
+        "fpl_code": "2042017",
+        "league_points_array": [
+            0
+        ],
+        "league_position_array": [
+            15
+        ],
+        "manager_name": "Jeremy Harding",
+        "team_name": "Hapless Ingles?",
+        "total_league_points_array": [
+            0
+        ],
+        "total_score_array": [
+            46.0
+        ],
+        "transfers_made_array": [
+            0
+        ]
+    },
+    "2048719": {
+        "captains_array": [
+            "Haaland"
+        ],
+        "captains_points_array": [
+            14.0
+        ],
+        "chip_played_array": [
+            "None"
+        ],
+        "fixture_margin_array": [
+            -9.0
+        ],
+        "fixture_opponent_array": [
+            "2292265",
+            "2371151",
+            "72499",
+            "125471",
+            "2584817",
+            "2352820",
+            "2042017",
+            "4204701",
+            "4070813",
+            "2241208",
+            "2386920",
+            "220117",
+            "4530389",
+            "3084251",
+            "2353401",
+            "917048",
+            "2762974",
+            "2724690",
+            "4004226",
+            "2292265",
+            "2371151",
+            "72499",
+            "125471",
+            "2584817",
+            "2352820",
+            "2042017",
+            "4204701",
+            "4070813",
+            "2241208",
+            "2386920",
+            "220117",
+            "4530389",
+            "3084251",
+            "2353401",
+            "917048",
+            "2762974",
+            "2724690",
+            "4004226"
+        ],
+        "fixture_result_array": [
+            "loss"
+        ],
+        "fixture_score_array": [
+            61.0
+        ],
+        "fixture_score_rank_array": [
+            9
+        ],
+        "fpl_code": "2048719",
+        "league_points_array": [
+            0
+        ],
+        "league_position_array": [
+            13
+        ],
+        "manager_name": "Richard Walker",
+        "team_name": "East Croydon",
+        "total_league_points_array": [
+            0
+        ],
+        "total_score_array": [
+            61.0
+        ],
+        "transfers_made_array": [
+            0
+        ]
+    },
+    "220117": {
+        "captains_array": [
+            "Isak"
+        ],
+        "captains_points_array": [
+            10.0
+        ],
+        "chip_played_array": [
+            "None"
+        ],
+        "fixture_margin_array": [
+            20.0
+        ],
+        "fixture_opponent_array": [
+            "125471",
+            "2292265",
+            "2352820",
+            "72499",
+            "4204701",
+            "2584817",
+            "2241208",
+            "2042017",
+            "2386920",
+            "4070813",
+            "3084251",
+            "2048719",
+            "917048",
+            "4530389",
+            "2724690",
+            "2353401",
+            "4004226",
+            "2762974",
+            "2371151",
+            "125471",
+            "2292265",
+            "2352820",
+            "72499",
+            "4204701",
+            "2584817",
+            "2241208",
+            "2042017",
+            "2386920",
+            "4070813",
+            "3084251",
+            "2048719",
+            "917048",
+            "4530389",
+            "2724690",
+            "2353401",
+            "4004226",
+            "2762974",
+            "2371151"
+        ],
+        "fixture_result_array": [
+            "win"
+        ],
+        "fixture_score_array": [
+            60.0
+        ],
+        "fixture_score_rank_array": [
+            10
+        ],
+        "fpl_code": "220117",
+        "league_points_array": [
+            3
+        ],
+        "league_position_array": [
+            7
+        ],
+        "manager_name": "Mike Dove",
+        "team_name": "Calafiori Dreamin\u2019",
+        "total_league_points_array": [
+            3
+        ],
+        "total_score_array": [
+            60.0
+        ],
+        "transfers_made_array": [
+            0
+        ]
+    },
+    "2241208": {
+        "captains_array": [
+            "Isak"
+        ],
+        "captains_points_array": [
+            10.0
+        ],
+        "chip_played_array": [
+            "None"
+        ],
+        "fixture_margin_array": [
+            4.0
+        ],
+        "fixture_opponent_array": [
+            "2352820",
+            "72499",
+            "4204701",
+            "2584817",
+            "2386920",
+            "2042017",
+            "220117",
+            "4070813",
+            "3084251",
+            "2048719",
+            "917048",
+            "4530389",
+            "2724690",
+            "2353401",
+            "4004226",
+            "2762974",
+            "2292265",
+            "2371151",
+            "125471",
+            "2352820",
+            "72499",
+            "4204701",
+            "2584817",
+            "2386920",
+            "2042017",
+            "220117",
+            "4070813",
+            "3084251",
+            "2048719",
+            "917048",
+            "4530389",
+            "2724690",
+            "2353401",
+            "4004226",
+            "2762974",
+            "2292265",
+            "2371151",
+            "125471"
+        ],
+        "fixture_result_array": [
+            "win"
+        ],
+        "fixture_score_array": [
+            72.0
+        ],
+        "fixture_score_rank_array": [
+            4
+        ],
+        "fpl_code": "2241208",
+        "league_points_array": [
+            3
+        ],
+        "league_position_array": [
+            4
+        ],
+        "manager_name": "Kester Mollahan",
+        "team_name": "FC Hammer",
+        "total_league_points_array": [
+            3
+        ],
+        "total_score_array": [
+            72.0
+        ],
+        "transfers_made_array": [
+            0
+        ]
+    },
+    "2292265": {
+        "captains_array": [
+            "M.Salah"
+        ],
+        "captains_points_array": [
+            28.0
+        ],
+        "chip_played_array": [
+            "None"
+        ],
+        "fixture_margin_array": [
+            9.0
+        ],
+        "fixture_opponent_array": [
+            "2048719",
+            "220117",
+            "4530389",
+            "3084251",
+            "2353401",
+            "917048",
+            "2762974",
+            "2724690",
+            "2371151",
+            "4004226",
+            "125471",
+            "2386920",
+            "2352820",
+            "72499",
+            "4204701",
+            "2584817",
+            "2241208",
+            "2042017",
+            "4070813",
+            "2048719",
+            "220117",
+            "4530389",
+            "3084251",
+            "2353401",
+            "917048",
+            "2762974",
+            "2724690",
+            "2371151",
+            "4004226",
+            "125471",
+            "2386920",
+            "2352820",
+            "72499",
+            "4204701",
+            "2584817",
+            "2241208",
+            "2042017",
+            "4070813"
+        ],
+        "fixture_result_array": [
+            "win"
+        ],
+        "fixture_score_array": [
+            70.0
+        ],
+        "fixture_score_rank_array": [
+            5
+        ],
+        "fpl_code": "2292265",
+        "league_points_array": [
+            3
+        ],
+        "league_position_array": [
+            5
+        ],
+        "manager_name": "James Stillwell",
+        "team_name": "Sorry Nic Jackson",
+        "total_league_points_array": [
+            3
+        ],
+        "total_score_array": [
+            70.0
+        ],
+        "transfers_made_array": [
+            0
+        ]
+    },
+    "2352820": {
+        "captains_array": [
+            "M.Salah"
+        ],
+        "captains_points_array": [
+            28.0
+        ],
+        "chip_played_array": [
+            "None"
+        ],
+        "fixture_margin_array": [
+            -4.0
+        ],
+        "fixture_opponent_array": [
+            "2241208",
+            "2042017",
+            "220117",
+            "4070813",
+            "3084251",
+            "2048719",
+            "917048",
+            "4530389",
+            "2724690",
+            "2353401",
+            "4004226",
+            "2762974",
+            "2292265",
+            "2371151",
+            "72499",
+            "125471",
+            "2584817",
+            "2386920",
+            "4204701",
+            "2241208",
+            "2042017",
+            "220117",
+            "4070813",
+            "3084251",
+            "2048719",
+            "917048",
+            "4530389",
+            "2724690",
+            "2353401",
+            "4004226",
+            "2762974",
+            "2292265",
+            "2371151",
+            "72499",
+            "125471",
+            "2584817",
+            "2386920",
+            "4204701"
+        ],
+        "fixture_result_array": [
+            "loss"
+        ],
+        "fixture_score_array": [
+            68.0
+        ],
+        "fixture_score_rank_array": [
+            7
+        ],
+        "fpl_code": "2352820",
+        "league_points_array": [
+            0
+        ],
+        "league_position_array": [
+            11
+        ],
+        "manager_name": "Ben Carroll",
+        "team_name": "Pretty Pretty Utd",
+        "total_league_points_array": [
+            0
+        ],
+        "total_score_array": [
+            68.0
+        ],
+        "transfers_made_array": [
+            0
+        ]
+    },
+    "2353401": {
+        "captains_array": [
+            "Haaland"
+        ],
+        "captains_points_array": [
+            14.0
+        ],
+        "chip_played_array": [
+            "None"
+        ],
+        "fixture_margin_array": [
+            19.0
+        ],
+        "fixture_opponent_array": [
+            "2724690",
+            "2386920",
+            "4004226",
+            "2762974",
+            "2292265",
+            "2371151",
+            "72499",
+            "125471",
+            "2584817",
+            "2352820",
+            "2042017",
+            "4204701",
+            "4070813",
+            "2241208",
+            "2048719",
+            "220117",
+            "4530389",
+            "3084251",
+            "917048",
+            "2724690",
+            "2386920",
+            "4004226",
+            "2762974",
+            "2292265",
+            "2371151",
+            "72499",
+            "125471",
+            "2584817",
+            "2352820",
+            "2042017",
+            "4204701",
+            "4070813",
+            "2241208",
+            "2048719",
+            "220117",
+            "4530389",
+            "3084251",
+            "917048"
+        ],
+        "fixture_result_array": [
+            "win"
+        ],
+        "fixture_score_array": [
+            75.0
+        ],
+        "fixture_score_rank_array": [
+            2
+        ],
+        "fpl_code": "2353401",
+        "league_points_array": [
+            3
+        ],
+        "league_position_array": [
+            2
+        ],
+        "manager_name": "David Steel",
+        "team_name": "Admirable Guppies",
+        "total_league_points_array": [
+            3
+        ],
+        "total_score_array": [
+            75.0
+        ],
+        "transfers_made_array": [
+            0
+        ]
+    },
+    "2371151": {
+        "captains_array": [
+            "Isak"
+        ],
+        "captains_points_array": [
+            10.0
+        ],
+        "chip_played_array": [
+            "None"
+        ],
+        "fixture_margin_array": [
+            15.0
+        ],
+        "fixture_opponent_array": [
+            "3084251",
+            "2048719",
+            "917048",
+            "4530389",
+            "2724690",
+            "2353401",
+            "4004226",
+            "2762974",
+            "2292265",
+            "2386920",
+            "72499",
+            "125471",
+            "2584817",
+            "2352820",
+            "2042017",
+            "4204701",
+            "4070813",
+            "2241208",
+            "220117",
+            "3084251",
+            "2048719",
+            "917048",
+            "4530389",
+            "2724690",
+            "2353401",
+            "4004226",
+            "2762974",
+            "2292265",
+            "2386920",
+            "72499",
+            "125471",
+            "2584817",
+            "2352820",
+            "2042017",
+            "4204701",
+            "4070813",
+            "2241208",
+            "220117"
+        ],
+        "fixture_result_array": [
+            "win"
+        ],
+        "fixture_score_array": [
+            58.0
+        ],
+        "fixture_score_rank_array": [
+            12
+        ],
+        "fpl_code": "2371151",
+        "league_points_array": [
+            3
+        ],
+        "league_position_array": [
+            9
+        ],
+        "manager_name": "Jo Breese",
+        "team_name": "Dinoscores",
+        "total_league_points_array": [
+            3
+        ],
+        "total_score_array": [
+            58.0
+        ],
+        "transfers_made_array": [
+            0
+        ]
+    },
+    "2386920": {
+        "captains_array": [
+            "Isak"
+        ],
+        "captains_points_array": [
+            10.0
+        ],
+        "chip_played_array": [
+            "None"
+        ],
+        "fixture_margin_array": [
+            -5.0
+        ],
+        "fixture_opponent_array": [
+            "4204701",
+            "2353401",
+            "2042017",
+            "2724690",
+            "2241208",
+            "2762974",
+            "4070813",
+            "4004226",
+            "220117",
+            "2371151",
+            "2048719",
+            "2292265",
+            "3084251",
+            "125471",
+            "4530389",
+            "72499",
+            "917048",
+            "2352820",
+            "2584817",
+            "4204701",
+            "2353401",
+            "2042017",
+            "2724690",
+            "2241208",
+            "2762974",
+            "4070813",
+            "4004226",
+            "220117",
+            "2371151",
+            "2048719",
+            "2292265",
+            "3084251",
+            "125471",
+            "4530389",
+            "72499",
+            "917048",
+            "2352820",
+            "2584817"
+        ],
+        "fixture_result_array": [
+            "loss"
+        ],
+        "fixture_score_array": [
+            65.0
+        ],
+        "fixture_score_rank_array": [
+            8
+        ],
+        "fpl_code": "2386920",
+        "league_points_array": [
+            0
+        ],
+        "league_position_array": [
+            12
+        ],
+        "manager_name": "Ben Rachell",
+        "team_name": "Benno Athletic",
+        "total_league_points_array": [
+            0
+        ],
+        "total_score_array": [
+            65.0
+        ],
+        "transfers_made_array": [
+            0
+        ]
+    },
+    "2584817": {
+        "captains_array": [
+            "Isak"
+        ],
+        "captains_points_array": [
+            10.0
+        ],
+        "chip_played_array": [
+            "None"
+        ],
+        "fixture_margin_array": [
+            14.0
+        ],
+        "fixture_opponent_array": [
+            "2042017",
+            "4204701",
+            "4070813",
+            "2241208",
+            "2048719",
+            "220117",
+            "4530389",
+            "3084251",
+            "2353401",
+            "917048",
+            "2762974",
+            "2724690",
+            "2371151",
+            "4004226",
+            "125471",
+            "2292265",
+            "2352820",
+            "72499",
+            "2386920",
+            "2042017",
+            "4204701",
+            "4070813",
+            "2241208",
+            "2048719",
+            "220117",
+            "4530389",
+            "3084251",
+            "2353401",
+            "917048",
+            "2762974",
+            "2724690",
+            "2371151",
+            "4004226",
+            "125471",
+            "2292265",
+            "2352820",
+            "72499",
+            "2386920"
+        ],
+        "fixture_result_array": [
+            "win"
+        ],
+        "fixture_score_array": [
+            60.0
+        ],
+        "fixture_score_rank_array": [
+            10
+        ],
+        "fpl_code": "2584817",
+        "league_points_array": [
+            3
+        ],
+        "league_position_array": [
+            7
+        ],
+        "manager_name": "Dan Browne",
+        "team_name": "Mr Browne\u2019s Boys",
+        "total_league_points_array": [
+            3
+        ],
+        "total_score_array": [
+            60.0
+        ],
+        "transfers_made_array": [
+            0
+        ]
+    },
+    "2724690": {
+        "captains_array": [
+            "Isak"
+        ],
+        "captains_points_array": [
+            10.0
+        ],
+        "chip_played_array": [
+            "None"
+        ],
+        "fixture_margin_array": [
+            -19.0
+        ],
+        "fixture_opponent_array": [
+            "2353401",
+            "917048",
+            "2762974",
+            "2386920",
+            "2371151",
+            "4004226",
+            "125471",
+            "2292265",
+            "2352820",
+            "72499",
+            "4204701",
+            "2584817",
+            "2241208",
+            "2042017",
+            "220117",
+            "4070813",
+            "3084251",
+            "2048719",
+            "4530389",
+            "2353401",
+            "917048",
+            "2762974",
+            "2386920",
+            "2371151",
+            "4004226",
+            "125471",
+            "2292265",
+            "2352820",
+            "72499",
+            "4204701",
+            "2584817",
+            "2241208",
+            "2042017",
+            "220117",
+            "4070813",
+            "3084251",
+            "2048719",
+            "4530389"
+        ],
+        "fixture_result_array": [
+            "loss"
+        ],
+        "fixture_score_array": [
+            56.0
+        ],
+        "fixture_score_rank_array": [
+            13
+        ],
+        "fpl_code": "2724690",
+        "league_points_array": [
+            0
+        ],
+        "league_position_array": [
+            14
+        ],
+        "manager_name": "Jon Lescott",
+        "team_name": "Hammer It Home",
+        "total_league_points_array": [
+            0
+        ],
+        "total_score_array": [
+            56.0
+        ],
+        "transfers_made_array": [
+            0
+        ]
+    },
+    "2762974": {
+        "captains_array": [
+            "Al-Hamadi"
+        ],
+        "captains_points_array": [
+            2.0
+        ],
+        "chip_played_array": [
+            "None"
+        ],
+        "fixture_margin_array": [
+            2.0
+        ],
+        "fixture_opponent_array": [
+            "917048",
+            "4530389",
+            "2724690",
+            "2353401",
+            "4004226",
+            "2386920",
+            "2292265",
+            "2371151",
+            "72499",
+            "125471",
+            "2584817",
+            "2352820",
+            "2042017",
+            "4204701",
+            "4070813",
+            "2241208",
+            "2048719",
+            "220117",
+            "3084251",
+            "917048",
+            "4530389",
+            "2724690",
+            "2353401",
+            "4004226",
+            "2386920",
+            "2292265",
+            "2371151",
+            "72499",
+            "125471",
+            "2584817",
+            "2352820",
+            "2042017",
+            "4204701",
+            "4070813",
+            "2241208",
+            "2048719",
+            "220117",
+            "3084251"
+        ],
+        "fixture_result_array": [
+            "win"
+        ],
+        "fixture_score_array": [
+            48.0
+        ],
+        "fixture_score_rank_array": [
+            14
+        ],
+        "fpl_code": "2762974",
+        "league_points_array": [
+            3
+        ],
+        "league_position_array": [
+            10
+        ],
+        "manager_name": "David Grice",
+        "team_name": "Renford Rejects",
+        "total_league_points_array": [
+            3
+        ],
+        "total_score_array": [
+            48.0
+        ],
+        "transfers_made_array": [
+            0
+        ]
+    },
+    "3084251": {
+        "captains_array": [
+            "B.Fernandes"
+        ],
+        "captains_points_array": [
+            6.0
+        ],
+        "chip_played_array": [
+            "None"
+        ],
+        "fixture_margin_array": [
+            -15.0
+        ],
+        "fixture_opponent_array": [
+            "2371151",
+            "4004226",
+            "125471",
+            "2292265",
+            "2352820",
+            "72499",
+            "4204701",
+            "2584817",
+            "2241208",
+            "2042017",
+            "220117",
+            "4070813",
+            "2386920",
+            "2048719",
+            "917048",
+            "4530389",
+            "2724690",
+            "2353401",
+            "2762974",
+            "2371151",
+            "4004226",
+            "125471",
+            "2292265",
+            "2352820",
+            "72499",
+            "4204701",
+            "2584817",
+            "2241208",
+            "2042017",
+            "220117",
+            "4070813",
+            "2386920",
+            "2048719",
+            "917048",
+            "4530389",
+            "2724690",
+            "2353401",
+            "2762974"
+        ],
+        "fixture_result_array": [
+            "loss"
+        ],
+        "fixture_score_array": [
+            43.0
+        ],
+        "fixture_score_rank_array": [
+            17
+        ],
+        "fpl_code": "3084251",
+        "league_points_array": [
+            0
+        ],
+        "league_position_array": [
+            17
+        ],
+        "manager_name": "Mike Yeboah",
+        "team_name": "Powerstars",
+        "total_league_points_array": [
+            0
+        ],
+        "total_score_array": [
+            43.0
+        ],
+        "transfers_made_array": [
+            0
+        ]
+    },
+    "4004226": {
+        "captains_array": [
+            "Isak"
+        ],
+        "captains_points_array": [
+            10.0
+        ],
+        "chip_played_array": [
+            "None"
+        ],
+        "fixture_margin_array": [
+            -33.0
+        ],
+        "fixture_opponent_array": [
+            "4530389",
+            "3084251",
+            "2353401",
+            "917048",
+            "2762974",
+            "2724690",
+            "2371151",
+            "2386920",
+            "125471",
+            "2292265",
+            "2352820",
+            "72499",
+            "4204701",
+            "2584817",
+            "2241208",
+            "2042017",
+            "220117",
+            "4070813",
+            "2048719",
+            "4530389",
+            "3084251",
+            "2353401",
+            "917048",
+            "2762974",
+            "2724690",
+            "2371151",
+            "2386920",
+            "125471",
+            "2292265",
+            "2352820",
+            "72499",
+            "4204701",
+            "2584817",
+            "2241208",
+            "2042017",
+            "220117",
+            "4070813",
+            "2048719"
+        ],
+        "fixture_result_array": [
+            "loss"
+        ],
+        "fixture_score_array": [
+            41.0
+        ],
+        "fixture_score_rank_array": [
+            18
+        ],
+        "fpl_code": "4004226",
+        "league_points_array": [
+            0
+        ],
+        "league_position_array": [
+            18
+        ],
+        "manager_name": "Liam Kelly",
+        "team_name": "Farcelona",
+        "total_league_points_array": [
+            0
+        ],
+        "total_score_array": [
+            41.0
+        ],
+        "transfers_made_array": [
+            0
+        ]
+    },
+    "4070813": {
+        "captains_array": [
+            "Haaland"
+        ],
+        "captains_points_array": [
+            14.0
+        ],
+        "chip_played_array": [
+            "None"
+        ],
+        "fixture_margin_array": [
+            -57.0
+        ],
+        "fixture_opponent_array": [
+            "72499",
+            "125471",
+            "2584817",
+            "2352820",
+            "2042017",
+            "4204701",
+            "2386920",
+            "2241208",
+            "2048719",
+            "220117",
+            "4530389",
+            "3084251",
+            "2353401",
+            "917048",
+            "2762974",
+            "2724690",
+            "2371151",
+            "4004226",
+            "2292265",
+            "72499",
+            "125471",
+            "2584817",
+            "2352820",
+            "2042017",
+            "4204701",
+            "2386920",
+            "2241208",
+            "2048719",
+            "220117",
+            "4530389",
+            "3084251",
+            "2353401",
+            "917048",
+            "2762974",
+            "2724690",
+            "2371151",
+            "4004226",
+            "2292265"
+        ],
+        "fixture_result_array": [
+            "loss"
+        ],
+        "fixture_score_array": [
+            27.0
+        ],
+        "fixture_score_rank_array": [
+            20
+        ],
+        "fpl_code": "4070813",
+        "league_points_array": [
+            0
+        ],
+        "league_position_array": [
+            20
+        ],
+        "manager_name": "Sammy Murphy",
+        "team_name": "West Sam",
+        "total_league_points_array": [
+            0
+        ],
+        "total_score_array": [
+            27.0
+        ],
+        "transfers_made_array": [
+            0
+        ]
+    },
+    "4204701": {
+        "captains_array": [
+            "Isak"
+        ],
+        "captains_points_array": [
+            10.0
+        ],
+        "chip_played_array": [
+            "None"
+        ],
+        "fixture_margin_array": [
+            5.0
+        ],
+        "fixture_opponent_array": [
+            "2386920",
+            "2584817",
+            "2241208",
+            "2042017",
+            "220117",
+            "4070813",
+            "3084251",
+            "2048719",
+            "917048",
+            "4530389",
+            "2724690",
+            "2353401",
+            "4004226",
+            "2762974",
+            "2292265",
+            "2371151",
+            "72499",
+            "125471",
+            "2352820",
+            "2386920",
+            "2584817",
+            "2241208",
+            "2042017",
+            "220117",
+            "4070813",
+            "3084251",
+            "2048719",
+            "917048",
+            "4530389",
+            "2724690",
+            "2353401",
+            "4004226",
+            "2762974",
+            "2292265",
+            "2371151",
+            "72499",
+            "125471",
+            "2352820"
+        ],
+        "fixture_result_array": [
+            "win"
+        ],
+        "fixture_score_array": [
+            70.0
+        ],
+        "fixture_score_rank_array": [
+            5
+        ],
+        "fpl_code": "4204701",
+        "league_points_array": [
+            3
+        ],
+        "league_position_array": [
+            5
+        ],
+        "manager_name": "Josh Christie",
+        "team_name": "I\u2019m Solanke",
+        "total_league_points_array": [
+            3
+        ],
+        "total_score_array": [
+            70.0
+        ],
+        "transfers_made_array": [
+            0
+        ]
+    },
+    "4530389": {
+        "captains_array": [
+            "Isak"
+        ],
+        "captains_points_array": [
+            10.0
+        ],
+        "chip_played_array": [
+            "None"
+        ],
+        "fixture_margin_array": [
+            33.0
+        ],
+        "fixture_opponent_array": [
+            "4004226",
+            "2762974",
+            "2292265",
+            "2371151",
+            "72499",
+            "125471",
+            "2584817",
+            "2352820",
+            "2042017",
+            "4204701",
+            "4070813",
+            "2241208",
+            "2048719",
+            "220117",
+            "2386920",
+            "3084251",
+            "2353401",
+            "917048",
+            "2724690",
+            "4004226",
+            "2762974",
+            "2292265",
+            "2371151",
+            "72499",
+            "125471",
+            "2584817",
+            "2352820",
+            "2042017",
+            "4204701",
+            "4070813",
+            "2241208",
+            "2048719",
+            "220117",
+            "2386920",
+            "3084251",
+            "2353401",
+            "917048",
+            "2724690"
+        ],
+        "fixture_result_array": [
+            "win"
+        ],
+        "fixture_score_array": [
+            74.0
+        ],
+        "fixture_score_rank_array": [
+            3
+        ],
+        "fpl_code": "4530389",
+        "league_points_array": [
+            3
+        ],
+        "league_position_array": [
+            3
+        ],
+        "manager_name": "Chris Towers",
+        "team_name": "Surry Hills",
+        "total_league_points_array": [
+            3
+        ],
+        "total_score_array": [
+            74.0
+        ],
+        "transfers_made_array": [
+            0
+        ]
+    },
+    "72499": {
+        "captains_array": [
+            "M.Salah"
+        ],
+        "captains_points_array": [
+            28.0
+        ],
+        "chip_played_array": [
+            "None"
+        ],
+        "fixture_margin_array": [
+            57.0
+        ],
+        "fixture_opponent_array": [
+            "4070813",
+            "2241208",
+            "2048719",
+            "220117",
+            "4530389",
+            "3084251",
+            "2353401",
+            "917048",
+            "2762974",
+            "2724690",
+            "2371151",
+            "4004226",
+            "125471",
+            "2292265",
+            "2352820",
+            "2386920",
+            "4204701",
+            "2584817",
+            "2042017",
+            "4070813",
+            "2241208",
+            "2048719",
+            "220117",
+            "4530389",
+            "3084251",
+            "2353401",
+            "917048",
+            "2762974",
+            "2724690",
+            "2371151",
+            "4004226",
+            "125471",
+            "2292265",
+            "2352820",
+            "2386920",
+            "4204701",
+            "2584817",
+            "2042017"
+        ],
+        "fixture_result_array": [
+            "win"
+        ],
+        "fixture_score_array": [
+            84.0
+        ],
+        "fixture_score_rank_array": [
+            1
+        ],
+        "fpl_code": "72499",
+        "league_points_array": [
+            3
+        ],
+        "league_position_array": [
+            1
+        ],
+        "manager_name": "Darren Baker",
+        "team_name": "Old Havertz Kai Hard",
+        "total_league_points_array": [
+            3
+        ],
+        "total_score_array": [
+            84.0
+        ],
+        "transfers_made_array": [
+            0
+        ]
+    },
+    "917048": {
+        "captains_array": [
+            "Isak"
+        ],
+        "captains_points_array": [
+            10.0
+        ],
+        "chip_played_array": [
+            "None"
+        ],
+        "fixture_margin_array": [
+            -2.0
+        ],
+        "fixture_opponent_array": [
+            "2762974",
+            "2724690",
+            "2371151",
+            "4004226",
+            "125471",
+            "2292265",
+            "2352820",
+            "72499",
+            "4204701",
+            "2584817",
+            "2241208",
+            "2042017",
+            "220117",
+            "4070813",
+            "3084251",
+            "2048719",
+            "2386920",
+            "4530389",
+            "2353401",
+            "2762974",
+            "2724690",
+            "2371151",
+            "4004226",
+            "125471",
+            "2292265",
+            "2352820",
+            "72499",
+            "4204701",
+            "2584817",
+            "2241208",
+            "2042017",
+            "220117",
+            "4070813",
+            "3084251",
+            "2048719",
+            "2386920",
+            "4530389",
+            "2353401"
+        ],
+        "fixture_result_array": [
+            "loss"
+        ],
+        "fixture_score_array": [
+            46.0
+        ],
+        "fixture_score_rank_array": [
+            15
+        ],
+        "fpl_code": "917048",
+        "league_points_array": [
+            0
+        ],
+        "league_position_array": [
+            15
+        ],
+        "manager_name": "Chris Marsh",
+        "team_name": "Klich Bait",
+        "total_league_points_array": [
+            0
+        ],
+        "total_score_array": [
+            46.0
+        ],
+        "transfers_made_array": [
+            0
+        ]
+    }
+},
+                    "fixture_list": {
+    "01": [
+        {
+            "away_team": "220117",
+            "home_team": "125471"
+        },
+        {
+            "away_team": "2292265",
+            "home_team": "2048719"
+        },
+        {
+            "away_team": "2762974",
+            "home_team": "917048"
+        },
+        {
+            "away_team": "2241208",
+            "home_team": "2352820"
+        },
+        {
+            "away_team": "72499",
+            "home_team": "4070813"
+        },
+        {
+            "away_team": "2042017",
+            "home_team": "2584817"
+        },
+        {
+            "away_team": "2371151",
+            "home_team": "3084251"
+        },
+        {
+            "away_team": "4530389",
+            "home_team": "4004226"
+        },
+        {
+            "away_team": "2386920",
+            "home_team": "4204701"
+        },
+        {
+            "away_team": "2724690",
+            "home_team": "2353401"
+        }
+    ],
+    "02": [
+        {
+            "away_team": "3084251",
+            "home_team": "4004226"
+        },
+        {
+            "away_team": "917048",
+            "home_team": "2724690"
+        },
+        {
+            "away_team": "2048719",
+            "home_team": "2371151"
+        },
+        {
+            "away_team": "125471",
+            "home_team": "4070813"
+        },
+        {
+            "away_team": "4204701",
+            "home_team": "2584817"
+        },
+        {
+            "away_team": "220117",
+            "home_team": "2292265"
+        },
+        {
+            "away_team": "2386920",
+            "home_team": "2353401"
+        },
+        {
+            "away_team": "2042017",
+            "home_team": "2352820"
+        },
+        {
+            "away_team": "4530389",
+            "home_team": "2762974"
+        },
+        {
+            "away_team": "2241208",
+            "home_team": "72499"
+        }
+    ],
+    "03": [
+        {
+            "away_team": "2292265",
+            "home_team": "4530389"
+        },
+        {
+            "away_team": "4204701",
+            "home_team": "2241208"
+        },
+        {
+            "away_team": "4004226",
+            "home_team": "2353401"
+        },
+        {
+            "away_team": "2386920",
+            "home_team": "2042017"
+        },
+        {
+            "away_team": "2048719",
+            "home_team": "72499"
+        },
+        {
+            "away_team": "2724690",
+            "home_team": "2762974"
+        },
+        {
+            "away_team": "4070813",
+            "home_team": "2584817"
+        },
+        {
+            "away_team": "2352820",
+            "home_team": "220117"
+        },
+        {
+            "away_team": "125471",
+            "home_team": "3084251"
+        },
+        {
+            "away_team": "2371151",
+            "home_team": "917048"
+        }
+    ],
+    "04": [
+        {
+            "away_team": "72499",
+            "home_team": "220117"
+        },
+        {
+            "away_team": "2584817",
+            "home_team": "2241208"
+        },
+        {
+            "away_team": "4070813",
+            "home_team": "2352820"
+        },
+        {
+            "away_team": "2042017",
+            "home_team": "4204701"
+        },
+        {
+            "away_team": "2762974",
+            "home_team": "2353401"
+        },
+        {
+            "away_team": "4530389",
+            "home_team": "2371151"
+        },
+        {
+            "away_team": "2386920",
+            "home_team": "2724690"
+        },
+        {
+            "away_team": "917048",
+            "home_team": "4004226"
+        },
+        {
+            "away_team": "2292265",
+            "home_team": "3084251"
+        },
+        {
+            "away_team": "125471",
+            "home_team": "2048719"
+        }
+    ],
+    "05": [
+        {
+            "away_team": "2762974",
+            "home_team": "4004226"
+        },
+        {
+            "away_team": "2048719",
+            "home_team": "2584817"
+        },
+        {
+            "away_team": "2353401",
+            "home_team": "2292265"
+        },
+        {
+            "away_team": "4204701",
+            "home_team": "220117"
+        },
+        {
+            "away_team": "917048",
+            "home_team": "125471"
+        },
+        {
+            "away_team": "2371151",
+            "home_team": "2724690"
+        },
+        {
+            "away_team": "4070813",
+            "home_team": "2042017"
+        },
+        {
+            "away_team": "2386920",
+            "home_team": "2241208"
+        },
+        {
+            "away_team": "4530389",
+            "home_team": "72499"
+        },
+        {
+            "away_team": "2352820",
+            "home_team": "3084251"
+        }
+    ],
+    "06": [
+        {
+            "away_team": "125471",
+            "home_team": "4530389"
+        },
+        {
+            "away_team": "2386920",
+            "home_team": "2762974"
+        },
+        {
+            "away_team": "3084251",
+            "home_team": "72499"
+        },
+        {
+            "away_team": "4070813",
+            "home_team": "4204701"
+        },
+        {
+            "away_team": "2584817",
+            "home_team": "220117"
+        },
+        {
+            "away_team": "2352820",
+            "home_team": "2048719"
+        },
+        {
+            "away_team": "4004226",
+            "home_team": "2724690"
+        },
+        {
+            "away_team": "917048",
+            "home_team": "2292265"
+        },
+        {
+            "away_team": "2042017",
+            "home_team": "2241208"
+        },
+        {
+            "away_team": "2371151",
+            "home_team": "2353401"
+        }
+    ],
+    "07": [
+        {
+            "away_team": "2762974",
+            "home_team": "2292265"
+        },
+        {
+            "away_team": "2584817",
+            "home_team": "4530389"
+        },
+        {
+            "away_team": "3084251",
+            "home_team": "4204701"
+        },
+        {
+            "away_team": "2352820",
+            "home_team": "917048"
+        },
+        {
+            "away_team": "4004226",
+            "home_team": "2371151"
+        },
+        {
+            "away_team": "2241208",
+            "home_team": "220117"
+        },
+        {
+            "away_team": "2386920",
+            "home_team": "4070813"
+        },
+        {
+            "away_team": "2724690",
+            "home_team": "125471"
+        },
+        {
+            "away_team": "2048719",
+            "home_team": "2042017"
+        },
+        {
+            "away_team": "2353401",
+            "home_team": "72499"
+        }
+    ],
+    "08": [
+        {
+            "away_team": "2292265",
+            "home_team": "2724690"
+        },
+        {
+            "away_team": "2048719",
+            "home_team": "4204701"
+        },
+        {
+            "away_team": "125471",
+            "home_team": "2353401"
+        },
+        {
+            "away_team": "2042017",
+            "home_team": "220117"
+        },
+        {
+            "away_team": "2386920",
+            "home_team": "4004226"
+        },
+        {
+            "away_team": "3084251",
+            "home_team": "2584817"
+        },
+        {
+            "away_team": "72499",
+            "home_team": "917048"
+        },
+        {
+            "away_team": "4070813",
+            "home_team": "2241208"
+        },
+        {
+            "away_team": "2371151",
+            "home_team": "2762974"
+        },
+        {
+            "away_team": "4530389",
+            "home_team": "2352820"
+        }
+    ],
+    "09": [
+        {
+            "away_team": "4204701",
+            "home_team": "917048"
+        },
+        {
+            "away_team": "2386920",
+            "home_team": "220117"
+        },
+        {
+            "away_team": "2292265",
+            "home_team": "2371151"
+        },
+        {
+            "away_team": "4530389",
+            "home_team": "2042017"
+        },
+        {
+            "away_team": "2762974",
+            "home_team": "72499"
+        },
+        {
+            "away_team": "3084251",
+            "home_team": "2241208"
+        },
+        {
+            "away_team": "2352820",
+            "home_team": "2724690"
+        },
+        {
+            "away_team": "4004226",
+            "home_team": "125471"
+        },
+        {
+            "away_team": "2353401",
+            "home_team": "2584817"
+        },
+        {
+            "away_team": "4070813",
+            "home_team": "2048719"
+        }
+    ],
+    "10": [
+        {
+            "away_team": "2292265",
+            "home_team": "4004226"
+        },
+        {
+            "away_team": "2386920",
+            "home_team": "2371151"
+        },
+        {
+            "away_team": "917048",
+            "home_team": "2584817"
+        },
+        {
+            "away_team": "4070813",
+            "home_team": "220117"
+        },
+        {
+            "away_team": "2048719",
+            "home_team": "2241208"
+        },
+        {
+            "away_team": "72499",
+            "home_team": "2724690"
+        },
+        {
+            "away_team": "2353401",
+            "home_team": "2352820"
+        },
+        {
+            "away_team": "2762974",
+            "home_team": "125471"
+        },
+        {
+            "away_team": "4204701",
+            "home_team": "4530389"
+        },
+        {
+            "away_team": "3084251",
+            "home_team": "2042017"
+        }
+    ],
+    "11": [
+        {
+            "away_team": "2724690",
+            "home_team": "4204701"
+        },
+        {
+            "away_team": "72499",
+            "home_team": "2371151"
+        },
+        {
+            "away_team": "4004226",
+            "home_team": "2352820"
+        },
+        {
+            "away_team": "220117",
+            "home_team": "3084251"
+        },
+        {
+            "away_team": "2353401",
+            "home_team": "2042017"
+        },
+        {
+            "away_team": "2762974",
+            "home_team": "2584817"
+        },
+        {
+            "away_team": "4530389",
+            "home_team": "4070813"
+        },
+        {
+            "away_team": "2292265",
+            "home_team": "125471"
+        },
+        {
+            "away_team": "917048",
+            "home_team": "2241208"
+        },
+        {
+            "away_team": "2048719",
+            "home_team": "2386920"
+        }
+    ],
+    "12": [
+        {
+            "away_team": "2042017",
+            "home_team": "917048"
+        },
+        {
+            "away_team": "2292265",
+            "home_team": "2386920"
+        },
+        {
+            "away_team": "2724690",
+            "home_team": "2584817"
+        },
+        {
+            "away_team": "4004226",
+            "home_team": "72499"
+        },
+        {
+            "away_team": "2371151",
+            "home_team": "125471"
+        },
+        {
+            "away_team": "2353401",
+            "home_team": "4204701"
+        },
+        {
+            "away_team": "2241208",
+            "home_team": "4530389"
+        },
+        {
+            "away_team": "3084251",
+            "home_team": "4070813"
+        },
+        {
+            "away_team": "2048719",
+            "home_team": "220117"
+        },
+        {
+            "away_team": "2352820",
+            "home_team": "2762974"
+        }
+    ],
+    "13": [
+        {
+            "away_team": "2042017",
+            "home_team": "2762974"
+        },
+        {
+            "away_team": "4204701",
+            "home_team": "4004226"
+        },
+        {
+            "away_team": "4070813",
+            "home_team": "2353401"
+        },
+        {
+            "away_team": "72499",
+            "home_team": "125471"
+        },
+        {
+            "away_team": "2241208",
+            "home_team": "2724690"
+        },
+        {
+            "away_team": "917048",
+            "home_team": "220117"
+        },
+        {
+            "away_team": "2584817",
+            "home_team": "2371151"
+        },
+        {
+            "away_team": "3084251",
+            "home_team": "2386920"
+        },
+        {
+            "away_team": "2292265",
+            "home_team": "2352820"
+        },
+        {
+            "away_team": "2048719",
+            "home_team": "4530389"
+        }
+    ],
+    "14": [
+        {
+            "away_team": "917048",
+            "home_team": "4070813"
+        },
+        {
+            "away_team": "2292265",
+            "home_team": "72499"
+        },
+        {
+            "away_team": "2353401",
+            "home_team": "2241208"
+        },
+        {
+            "away_team": "3084251",
+            "home_team": "2048719"
+        },
+        {
+            "away_team": "2352820",
+            "home_team": "2371151"
+        },
+        {
+            "away_team": "4204701",
+            "home_team": "2762974"
+        },
+        {
+            "away_team": "220117",
+            "home_team": "4530389"
+        },
+        {
+            "away_team": "4004226",
+            "home_team": "2584817"
+        },
+        {
+            "away_team": "2386920",
+            "home_team": "125471"
+        },
+        {
+            "away_team": "2042017",
+            "home_team": "2724690"
+        }
+    ],
+    "15": [
+        {
+            "away_team": "4004226",
+            "home_team": "2241208"
+        },
+        {
+            "away_team": "2386920",
+            "home_team": "4530389"
+        },
+        {
+            "away_team": "125471",
+            "home_team": "2584817"
+        },
+        {
+            "away_team": "2292265",
+            "home_team": "4204701"
+        },
+        {
+            "away_team": "72499",
+            "home_team": "2352820"
+        },
+        {
+            "away_team": "917048",
+            "home_team": "3084251"
+        },
+        {
+            "away_team": "220117",
+            "home_team": "2724690"
+        },
+        {
+            "away_team": "2048719",
+            "home_team": "2353401"
+        },
+        {
+            "away_team": "2762974",
+            "home_team": "4070813"
+        },
+        {
+            "away_team": "2371151",
+            "home_team": "2042017"
+        }
+    ],
+    "16": [
+        {
+            "away_team": "2724690",
+            "home_team": "4070813"
+        },
+        {
+            "away_team": "2042017",
+            "home_team": "4004226"
+        },
+        {
+            "away_team": "220117",
+            "home_team": "2353401"
+        },
+        {
+            "away_team": "4530389",
+            "home_team": "3084251"
+        },
+        {
+            "away_team": "72499",
+            "home_team": "2386920"
+        },
+        {
+            "away_team": "2048719",
+            "home_team": "917048"
+        },
+        {
+            "away_team": "2352820",
+            "home_team": "125471"
+        },
+        {
+            "away_team": "2584817",
+            "home_team": "2292265"
+        },
+        {
+            "away_team": "2371151",
+            "home_team": "4204701"
+        },
+        {
+            "away_team": "2241208",
+            "home_team": "2762974"
+        }
+    ],
+    "17": [
+        {
+            "away_team": "2386920",
+            "home_team": "917048"
+        },
+        {
+            "away_team": "2042017",
+            "home_team": "125471"
+        },
+        {
+            "away_team": "2292265",
+            "home_team": "2241208"
+        },
+        {
+            "away_team": "2762974",
+            "home_team": "2048719"
+        },
+        {
+            "away_team": "220117",
+            "home_team": "4004226"
+        },
+        {
+            "away_team": "2353401",
+            "home_team": "4530389"
+        },
+        {
+            "away_team": "2371151",
+            "home_team": "4070813"
+        },
+        {
+            "away_team": "72499",
+            "home_team": "4204701"
+        },
+        {
+            "away_team": "2724690",
+            "home_team": "3084251"
+        },
+        {
+            "away_team": "2352820",
+            "home_team": "2584817"
+        }
+    ],
+    "18": [
+        {
+            "away_team": "4070813",
+            "home_team": "4004226"
+        },
+        {
+            "away_team": "125471",
+            "home_team": "4204701"
+        },
+        {
+            "away_team": "2584817",
+            "home_team": "72499"
+        },
+        {
+            "away_team": "2386920",
+            "home_team": "2352820"
+        },
+        {
+            "away_team": "4530389",
+            "home_team": "917048"
+        },
+        {
+            "away_team": "2042017",
+            "home_team": "2292265"
+        },
+        {
+            "away_team": "2724690",
+            "home_team": "2048719"
+        },
+        {
+            "away_team": "2353401",
+            "home_team": "3084251"
+        },
+        {
+            "away_team": "2762974",
+            "home_team": "220117"
+        },
+        {
+            "away_team": "2241208",
+            "home_team": "2371151"
+        }
+    ],
+    "19": [
+        {
+            "away_team": "2762974",
+            "home_team": "3084251"
+        },
+        {
+            "away_team": "2042017",
+            "home_team": "72499"
+        },
+        {
+            "away_team": "4070813",
+            "home_team": "2292265"
+        },
+        {
+            "away_team": "4004226",
+            "home_team": "2048719"
+        },
+        {
+            "away_team": "2353401",
+            "home_team": "917048"
+        },
+        {
+            "away_team": "4530389",
+            "home_team": "2724690"
+        },
+        {
+            "away_team": "4204701",
+            "home_team": "2352820"
+        },
+        {
+            "away_team": "2371151",
+            "home_team": "220117"
+        },
+        {
+            "away_team": "125471",
+            "home_team": "2241208"
+        },
+        {
+            "away_team": "2386920",
+            "home_team": "2584817"
+        }
+    ],
+    "20": [
+        {
+            "away_team": "125471",
+            "home_team": "220117"
+        },
+        {
+            "away_team": "4004226",
+            "home_team": "4530389"
+        },
+        {
+            "away_team": "2584817",
+            "home_team": "2042017"
+        },
+        {
+            "away_team": "4204701",
+            "home_team": "2386920"
+        },
+        {
+            "away_team": "917048",
+            "home_team": "2762974"
+        },
+        {
+            "away_team": "2048719",
+            "home_team": "2292265"
+        },
+        {
+            "away_team": "4070813",
+            "home_team": "72499"
+        },
+        {
+            "away_team": "2352820",
+            "home_team": "2241208"
+        },
+        {
+            "away_team": "2353401",
+            "home_team": "2724690"
+        },
+        {
+            "away_team": "3084251",
+            "home_team": "2371151"
+        }
+    ],
+    "21": [
+        {
+            "away_team": "2584817",
+            "home_team": "4204701"
+        },
+        {
+            "away_team": "2353401",
+            "home_team": "2386920"
+        },
+        {
+            "away_team": "2292265",
+            "home_team": "220117"
+        },
+        {
+            "away_team": "4070813",
+            "home_team": "125471"
+        },
+        {
+            "away_team": "2724690",
+            "home_team": "917048"
+        },
+        {
+            "away_team": "72499",
+            "home_team": "2241208"
+        },
+        {
+            "away_team": "2352820",
+            "home_team": "2042017"
+        },
+        {
+            "away_team": "4004226",
+            "home_team": "3084251"
+        },
+        {
+            "away_team": "2371151",
+            "home_team": "2048719"
+        },
+        {
+            "away_team": "2762974",
+            "home_team": "4530389"
+        }
+    ],
+    "22": [
+        {
+            "away_team": "220117",
+            "home_team": "2352820"
+        },
+        {
+            "away_team": "2042017",
+            "home_team": "2386920"
+        },
+        {
+            "away_team": "2353401",
+            "home_team": "4004226"
+        },
+        {
+            "away_team": "2584817",
+            "home_team": "4070813"
+        },
+        {
+            "away_team": "4530389",
+            "home_team": "2292265"
+        },
+        {
+            "away_team": "72499",
+            "home_team": "2048719"
+        },
+        {
+            "away_team": "2762974",
+            "home_team": "2724690"
+        },
+        {
+            "away_team": "917048",
+            "home_team": "2371151"
+        },
+        {
+            "away_team": "3084251",
+            "home_team": "125471"
+        },
+        {
+            "away_team": "2241208",
+            "home_team": "4204701"
+        }
+    ],
+    "23": [
+        {
+            "away_team": "2048719",
+            "home_team": "125471"
+        },
+        {
+            "away_team": "2353401",
+            "home_team": "2762974"
+        },
+        {
+            "away_team": "2352820",
+            "home_team": "4070813"
+        },
+        {
+            "away_team": "220117",
+            "home_team": "72499"
+        },
+        {
+            "away_team": "4204701",
+            "home_team": "2042017"
+        },
+        {
+            "away_team": "2724690",
+            "home_team": "2386920"
+        },
+        {
+            "away_team": "2371151",
+            "home_team": "4530389"
+        },
+        {
+            "away_team": "3084251",
+            "home_team": "2292265"
+        },
+        {
+            "away_team": "4004226",
+            "home_team": "917048"
+        },
+        {
+            "away_team": "2241208",
+            "home_team": "2584817"
+        }
+    ],
+    "24": [
+        {
+            "away_team": "2724690",
+            "home_team": "2371151"
+        },
+        {
+            "away_team": "2241208",
+            "home_team": "2386920"
+        },
+        {
+            "away_team": "72499",
+            "home_team": "4530389"
+        },
+        {
+            "away_team": "3084251",
+            "home_team": "2352820"
+        },
+        {
+            "away_team": "2584817",
+            "home_team": "2048719"
+        },
+        {
+            "away_team": "4004226",
+            "home_team": "2762974"
+        },
+        {
+            "away_team": "125471",
+            "home_team": "917048"
+        },
+        {
+            "away_team": "2292265",
+            "home_team": "2353401"
+        },
+        {
+            "away_team": "220117",
+            "home_team": "4204701"
+        },
+        {
+            "away_team": "2042017",
+            "home_team": "4070813"
+        }
+    ],
+    "25": [
+        {
+            "away_team": "4204701",
+            "home_team": "4070813"
+        },
+        {
+            "away_team": "2353401",
+            "home_team": "2371151"
+        },
+        {
+            "away_team": "220117",
+            "home_team": "2584817"
+        },
+        {
+            "away_team": "2762974",
+            "home_team": "2386920"
+        },
+        {
+            "away_team": "2292265",
+            "home_team": "917048"
+        },
+        {
+            "away_team": "2048719",
+            "home_team": "2352820"
+        },
+        {
+            "away_team": "4530389",
+            "home_team": "125471"
+        },
+        {
+            "away_team": "2241208",
+            "home_team": "2042017"
+        },
+        {
+            "away_team": "2724690",
+            "home_team": "4004226"
+        },
+        {
+            "away_team": "72499",
+            "home_team": "3084251"
+        }
+    ],
+    "26": [
+        {
+            "away_team": "220117",
+            "home_team": "2241208"
+        },
+        {
+            "away_team": "4530389",
+            "home_team": "2584817"
+        },
+        {
+            "away_team": "2371151",
+            "home_team": "4004226"
+        },
+        {
+            "away_team": "4204701",
+            "home_team": "3084251"
+        },
+        {
+            "away_team": "72499",
+            "home_team": "2353401"
+        },
+        {
+            "away_team": "2042017",
+            "home_team": "2048719"
+        },
+        {
+            "away_team": "917048",
+            "home_team": "2352820"
+        },
+        {
+            "away_team": "125471",
+            "home_team": "2724690"
+        },
+        {
+            "away_team": "4070813",
+            "home_team": "2386920"
+        },
+        {
+            "away_team": "2292265",
+            "home_team": "2762974"
+        }
+    ],
+    "27": [
+        {
+            "away_team": "2353401",
+            "home_team": "125471"
+        },
+        {
+            "away_team": "917048",
+            "home_team": "72499"
+        },
+        {
+            "away_team": "2241208",
+            "home_team": "4070813"
+        },
+        {
+            "away_team": "2352820",
+            "home_team": "4530389"
+        },
+        {
+            "away_team": "220117",
+            "home_team": "2042017"
+        },
+        {
+            "away_team": "2762974",
+            "home_team": "2371151"
+        },
+        {
+            "away_team": "2724690",
+            "home_team": "2292265"
+        },
+        {
+            "away_team": "2584817",
+            "home_team": "3084251"
+        },
+        {
+            "away_team": "4204701",
+            "home_team": "2048719"
+        },
+        {
+            "away_team": "4004226",
+            "home_team": "2386920"
+        }
+    ],
+    "28": [
+        {
+            "away_team": "220117",
+            "home_team": "2386920"
+        },
+        {
+            "away_team": "2042017",
+            "home_team": "4530389"
+        },
+        {
+            "away_team": "2724690",
+            "home_team": "2352820"
+        },
+        {
+            "away_team": "125471",
+            "home_team": "4004226"
+        },
+        {
+            "away_team": "2241208",
+            "home_team": "3084251"
+        },
+        {
+            "away_team": "72499",
+            "home_team": "2762974"
+        },
+        {
+            "away_team": "2584817",
+            "home_team": "2353401"
+        },
+        {
+            "away_team": "2371151",
+            "home_team": "2292265"
+        },
+        {
+            "away_team": "2048719",
+            "home_team": "4070813"
+        },
+        {
+            "away_team": "917048",
+            "home_team": "4204701"
+        }
+    ],
+    "29": [
+        {
+            "away_team": "2241208",
+            "home_team": "2048719"
+        },
+        {
+            "away_team": "2371151",
+            "home_team": "2386920"
+        },
+        {
+            "away_team": "125471",
+            "home_team": "2762974"
+        },
+        {
+            "away_team": "4530389",
+            "home_team": "4204701"
+        },
+        {
+            "away_team": "2352820",
+            "home_team": "2353401"
+        },
+        {
+            "away_team": "2584817",
+            "home_team": "917048"
+        },
+        {
+            "away_team": "2724690",
+            "home_team": "72499"
+        },
+        {
+            "away_team": "220117",
+            "home_team": "4070813"
+        },
+        {
+            "away_team": "4004226",
+            "home_team": "2292265"
+        },
+        {
+            "away_team": "2042017",
+            "home_team": "3084251"
+        }
+    ],
+    "30": [
+        {
+            "away_team": "2584817",
+            "home_team": "2762974"
+        },
+        {
+            "away_team": "125471",
+            "home_team": "2292265"
+        },
+        {
+            "away_team": "2042017",
+            "home_team": "2353401"
+        },
+        {
+            "away_team": "3084251",
+            "home_team": "220117"
+        },
+        {
+            "away_team": "2371151",
+            "home_team": "72499"
+        },
+        {
+            "away_team": "4204701",
+            "home_team": "2724690"
+        },
+        {
+            "away_team": "4070813",
+            "home_team": "4530389"
+        },
+        {
+            "away_team": "2241208",
+            "home_team": "917048"
+        },
+        {
+            "away_team": "2386920",
+            "home_team": "2048719"
+        },
+        {
+            "away_team": "2352820",
+            "home_team": "4004226"
+        }
+    ],
+    "31": [
+        {
+            "away_team": "220117",
+            "home_team": "2048719"
+        },
+        {
+            "away_team": "72499",
+            "home_team": "4004226"
+        },
+        {
+            "away_team": "4204701",
+            "home_team": "2353401"
+        },
+        {
+            "away_team": "2386920",
+            "home_team": "2292265"
+        },
+        {
+            "away_team": "2762974",
+            "home_team": "2352820"
+        },
+        {
+            "away_team": "4530389",
+            "home_team": "2241208"
+        },
+        {
+            "away_team": "917048",
+            "home_team": "2042017"
+        },
+        {
+            "away_team": "2584817",
+            "home_team": "2724690"
+        },
+        {
+            "away_team": "4070813",
+            "home_team": "3084251"
+        },
+        {
+            "away_team": "125471",
+            "home_team": "2371151"
+        }
+    ],
+    "32": [
+        {
+            "away_team": "2762974",
+            "home_team": "2042017"
+        },
+        {
+            "away_team": "2371151",
+            "home_team": "2584817"
+        },
+        {
+            "away_team": "4004226",
+            "home_team": "4204701"
+        },
+        {
+            "away_team": "2386920",
+            "home_team": "3084251"
+        },
+        {
+            "away_team": "220117",
+            "home_team": "917048"
+        },
+        {
+            "away_team": "2724690",
+            "home_team": "2241208"
+        },
+        {
+            "away_team": "2353401",
+            "home_team": "4070813"
+        },
+        {
+            "away_team": "125471",
+            "home_team": "72499"
+        },
+        {
+            "away_team": "4530389",
+            "home_team": "2048719"
+        },
+        {
+            "away_team": "2352820",
+            "home_team": "2292265"
+        }
+    ],
+    "33": [
+        {
+            "away_team": "2724690",
+            "home_team": "2042017"
+        },
+        {
+            "away_team": "2048719",
+            "home_team": "3084251"
+        },
+        {
+            "away_team": "125471",
+            "home_team": "2386920"
+        },
+        {
+            "away_team": "4530389",
+            "home_team": "220117"
+        },
+        {
+            "away_team": "2241208",
+            "home_team": "2353401"
+        },
+        {
+            "away_team": "4070813",
+            "home_team": "917048"
+        },
+        {
+            "away_team": "2371151",
+            "home_team": "2352820"
+        },
+        {
+            "away_team": "2762974",
+            "home_team": "4204701"
+        },
+        {
+            "away_team": "72499",
+            "home_team": "2292265"
+        },
+        {
+            "away_team": "2584817",
+            "home_team": "4004226"
+        }
+    ],
+    "34": [
+        {
+            "away_team": "2241208",
+            "home_team": "4004226"
+        },
+        {
+            "away_team": "3084251",
+            "home_team": "917048"
+        },
+        {
+            "away_team": "4204701",
+            "home_team": "2292265"
+        },
+        {
+            "away_team": "2042017",
+            "home_team": "2371151"
+        },
+        {
+            "away_team": "2352820",
+            "home_team": "72499"
+        },
+        {
+            "away_team": "2353401",
+            "home_team": "2048719"
+        },
+        {
+            "away_team": "4530389",
+            "home_team": "2386920"
+        },
+        {
+            "away_team": "4070813",
+            "home_team": "2762974"
+        },
+        {
+            "away_team": "2724690",
+            "home_team": "220117"
+        },
+        {
+            "away_team": "2584817",
+            "home_team": "125471"
+        }
+    ],
+    "35": [
+        {
+            "away_team": "4070813",
+            "home_team": "2724690"
+        },
+        {
+            "away_team": "2762974",
+            "home_team": "2241208"
+        },
+        {
+            "away_team": "3084251",
+            "home_team": "4530389"
+        },
+        {
+            "away_team": "2292265",
+            "home_team": "2584817"
+        },
+        {
+            "away_team": "4004226",
+            "home_team": "2042017"
+        },
+        {
+            "away_team": "917048",
+            "home_team": "2048719"
+        },
+        {
+            "away_team": "2386920",
+            "home_team": "72499"
+        },
+        {
+            "away_team": "125471",
+            "home_team": "2352820"
+        },
+        {
+            "away_team": "2353401",
+            "home_team": "220117"
+        },
+        {
+            "away_team": "4204701",
+            "home_team": "2371151"
+        }
+    ],
+    "36": [
+        {
+            "away_team": "3084251",
+            "home_team": "2724690"
+        },
+        {
+            "away_team": "4070813",
+            "home_team": "2371151"
+        },
+        {
+            "away_team": "4004226",
+            "home_team": "220117"
+        },
+        {
+            "away_team": "4530389",
+            "home_team": "2353401"
+        },
+        {
+            "away_team": "125471",
+            "home_team": "2042017"
+        },
+        {
+            "away_team": "917048",
+            "home_team": "2386920"
+        },
+        {
+            "away_team": "2241208",
+            "home_team": "2292265"
+        },
+        {
+            "away_team": "2584817",
+            "home_team": "2352820"
+        },
+        {
+            "away_team": "2048719",
+            "home_team": "2762974"
+        },
+        {
+            "away_team": "4204701",
+            "home_team": "72499"
+        }
+    ],
+    "37": [
+        {
+            "away_team": "2292265",
+            "home_team": "2042017"
+        },
+        {
+            "away_team": "3084251",
+            "home_team": "2353401"
+        },
+        {
+            "away_team": "220117",
+            "home_team": "2762974"
+        },
+        {
+            "away_team": "2048719",
+            "home_team": "2724690"
+        },
+        {
+            "away_team": "2352820",
+            "home_team": "2386920"
+        },
+        {
+            "away_team": "2371151",
+            "home_team": "2241208"
+        },
+        {
+            "away_team": "917048",
+            "home_team": "4530389"
+        },
+        {
+            "away_team": "4004226",
+            "home_team": "4070813"
+        },
+        {
+            "away_team": "72499",
+            "home_team": "2584817"
+        },
+        {
+            "away_team": "4204701",
+            "home_team": "125471"
+        }
+    ],
+    "38": [
+        {
+            "away_team": "2584817",
+            "home_team": "2386920"
+        },
+        {
+            "away_team": "917048",
+            "home_team": "2353401"
+        },
+        {
+            "away_team": "3084251",
+            "home_team": "2762974"
+        },
+        {
+            "away_team": "2352820",
+            "home_team": "4204701"
+        },
+        {
+            "away_team": "220117",
+            "home_team": "2371151"
+        },
+        {
+            "away_team": "72499",
+            "home_team": "2042017"
+        },
+        {
+            "away_team": "2724690",
+            "home_team": "4530389"
+        },
+        {
+            "away_team": "2292265",
+            "home_team": "4070813"
+        },
+        {
+            "away_team": "2048719",
+            "home_team": "4004226"
+        },
+        {
+            "away_team": "2241208",
+            "home_team": "125471"
+        }
+    ]
+}
+                }
+
+                console.log(data)
+
+                styles.core()
+
+                // build controls
+                const controls = d3.select( 'body' )
+                .append( 'div' )
+                .attr("id", "controls")
+                .classed( 'controls-wrapper' , true )
+                .append( 'div' )
+                .classed( 'controls-container' , true )
+
+                /* gameweek select */
+
+                const gameweek_select_group = controls.append( 'div' ).classed( 'group' , true )
+                gameweek_select_group.append( 'div' ).classed( 'label' , true ).text( 'Gameweek: ' )
+
+                const gameweek_select = gameweek_select_group
+                .append( 'select' )
+                .attr("name", "gameweek_select")
+                .attr("id", "gameweek_select")
+
+                
+                // create a list of past gameweeks
+                let gw_array = []
+                let weeks = []
+
+                $.each( data.database, function(k, v) {    
+                    weeks.push(v.fixture_score_array.length)
+                })
+
+                $.each((d3.range(1, d3.max(weeks)+1, 1)).sort(d3.ascending), function(i,v) {
+                    x = return_gameweek_string(v)
+                    gameweek_select.append( 'option' ).attr("value", x).text("GW"+parseInt(x.replace("GW","")))
+                })
+
+                /* generate button */
+                const generate_button = controls.append( 'button' )
+                .attr("type", "button")
+                .text( ' Generate' )
+                .on("click", function() {
+                    //function
+                    //console.log("Button clicked!")
+                    
+                    var input_gw = $("#gameweek_select").val()
+                    build_table(input_gw)
+                    
+                    //console.log(input_gw)
+                })
+                .attr("id", "controls_button")
+
+                function build_table(gw) {
+
+                    league_config = {
+                        "prizes": 4,
+                        "relegation": 3
+                    }
+
+                    $( '#title-block' ).empty()
+                    $( '#content-block' ).empty()
+                    $( '#footer-block' ).empty()
+
+                    //build title block
+                    var title_container = d3.select("#title-block")
+                    .append("div")
+                    .classed("title-wrapper", true)
+                    .append("div")
+                    .classed("title-container", true)
+
+                    var title = title_container.append("div")
+                    .classed("text title weight-black size-large left-aligned colour-white", true)
+                    .text("Standings")
+
+                    var subtitle = title_container.append("div")
+                    .classed("text subhead weight-regular size-regular left-aligned colour-white", true)
+                    .text("GW" + parseInt(gw.replace("GW","")))
+
+
+                    //data
+                    dataset = []
+
+                    $.each(data.database, function(k, v) {
+
+                        temp_obj = {
+                            "manager_code": k,
+                            "manager_name": v.manager_name,
+                            "team_name": v.team_name,
+                            "league_position": (function(){
+                                g = parseInt(gw.replace("GW",""))
+                                if( v.league_position_array.length >= g ) {
+                                    return v.league_position_array[g-1]
+                                } else {
+                                    return null
+                                }
+                            })(),
+                            "league_position_change": (function(){
+                                g = parseInt(gw.replace("GW",""))
+                                if( g > 1 ) {
+                                    c = (parseInt(v.league_position_array[g-1]) - parseInt(v.league_position_array[g-2]))
+                                    return c
+                                } else {
+                                    return null
+                                }
+                            })(),
+                            "total_score": (function(){
+                                g = parseInt(gw.replace("GW",""))
+                                if( v.total_score_array.length >= g ) {
+                                    return v.total_score_array[g-1]
+                                } else {
+                                    return null
+                                }
+                            })(),
+                            "league_points": (function(){
+                                g = parseInt(gw.replace("GW",""))
+                                if( v.total_league_points_array.length >= g ) {
+                                    return v.total_league_points_array[g-1]
+                                } else {
+                                    return null
+                                }
+                            })(),
+                            "streak": (function(){
+                                g = parseInt(gw.replace("GW",""))
+                                r = v.fixture_result_array.slice(0,(g)).reverse()
+
+                                var first_result
+                                $.each(r, function(idx, value) {
+                                    first_result = r[idx]
+                                    if (first_result != "draw") {
+                                        return false;
+                                    }
+                                });
+
+                                results_in_streak = []
+                                $.each(r, function(idx, value) {
+                                    if (r[idx] == first_result || r[idx] == "draw") {
+                                        results_in_streak.push(r[idx])
+                                    } else { return false }
+                                });
+
+                                return results_in_streak
+
+                                })()
+                         }
+
+                        dataset.push(temp_obj)
+
+                    });
+
+                    dataset = dataset.slice().sort((a, b) => d3.ascending(a.league_position, b.league_position))
+
+
+                    console.log(dataset)
+
+
+                    //build content
+                    var table_container = d3.select("#content-block")
+                    .append("div")
+                    .classed("league-table-wrapper", true)
+                    .append("div")
+                    .classed("league-table-container", true)
+
+                    let table_header = table_container.append("div")
+                    .classed("table-header-wrapper", true)
+                    .append("div")
+                    .classed("table-header-container", true)
+                    .append("div")
+                    .classed("table-row head", true)
+
+                    //col-position (header)
+                    table_header.append("div")
+                    .classed("col-position text-container", true)
+                    .append("div")
+                    .classed("text weight-regular centre-aligned colour-white size-small", true)
+                    .text("Pos.")
+
+                    //col-team (header)
+                    table_header.append("div")
+                    .classed("col-team text-container", true)
+                    .append("div")
+                    .classed("text weight-regular left-aligned colour-white size-small", true)
+                    .text("Team")
+
+                    //col-points (header)
+                    table_header.append("div")
+                    .classed("col-points text-container", true)
+                    .append("div")
+                    .classed("text weight-regular centre-aligned colour-white size-small", true)
+                    .text("Pts")
+
+                    //col-total (header)
+                    table_header.append("div")
+                    .classed("col-total text-container", true)
+                    .append("div")
+                    .classed("text weight-regular centre-aligned colour-white size-small", true)
+                    .text("Total")
+
+                    //col-streak
+                    table_header.append("div")
+                    .classed("col-streak text-container", true)
+                    .append("div")
+                    .classed("text weight-regular left-aligned colour-white size-small", true)
+                    .text("Streak")
+
+
+                    var table_rows = table_container
+                    .append("div")
+                    .classed("table-rows-wrapper", true)
+                    .append("div")
+                    .classed("table-rows-container", true)
+
+                    table_rows.selectAll("div.table-row")
+                    .data(dataset).enter()
+                    .append("div")
+                    .classed("table-row", true)
+                    .each( function(d, i) {
+
+                        //set row status for styling reasons
+                        var row_status
+
+                        if ( d.league_position === 1 ) {
+                            row_status = "top"
+                        } else if ( d.league_position <= league_config.prizes ) {
+                           row_status = "prize"
+                        } else if ( d.league_position >= dataset.length - league_config.prizes + 2 ) {
+                            row_status = "drop"
+                        } else {
+                            row_status = "default"
+                        }
+
+                        //col-change
+                        let change = d3.select(this).append("div")
+                        .classed("change-indicator", true)
+
+                        if ( d.league_position_change > 0) {
+                            change.classed("arrow-down", true)
+                        } else if ( d.league_position_change < 0) {
+                            change.classed("arrow-up", true)
+                        }
+
+                        //col-position
+                        d3.select(this).append("div")
+                        .classed("col-position text-container", true)
+                        .classed("background-light-midnight", row_status=="default")
+                        .classed("background-green", row_status=="top")
+                        .classed("background-light-blue", row_status=="prize")
+                        .classed("background-pink", row_status=="drop")
+                        .append("div")
+                        .classed("text weight-black centre-aligned", true)
+                        .classed("colour-white", row_status=="default")
+                        .classed("colour-midnight", row_status!="default")
+                        .text(function (d) {
+                            if ( d.league_position != (i+1)) {
+                                t = "="
+                            } else {
+                                t = d.league_position
+                            }
+                            return t
+                        })
+
+                        //col-team
+                        d3.select(this).append("div")
+                        .classed("col-team text-container", true)
+                        .classed("background-light-midnight", row_status=="default")
+                        .classed("background-white", row_status!="default")
+                        .append("div")
+                        .classed("text weight-regular left-aligned", true)
+                        .classed("colour-white", row_status=="default")
+                        .classed("colour-midnight", row_status!="default")
+                        .text(d.team_name)
+                        .append("span")
+                        .classed("manager-name text weight-regular left-aligned size-tiny", true)
+                        .text(d.manager_name)
+
+                        //col-points
+                        d3.select(this).append("div")
+                        .classed("col-points text-container", true)
+                        .classed("background-light-midnight", row_status=="default")
+                        .classed("background-white", row_status!="default")
+                        .append("div")
+                        .classed("text weight-regular centre-aligned", true)
+                        .classed("colour-white", row_status=="default")
+                        .classed("colour-midnight", row_status!="default")
+                        .text(return_comma_formatted_number(d.league_points))
+
+                        //col-total
+                        d3.select(this).append("div")
+                        .classed("col-total text-container", true)
+                        .classed("background-light-midnight", row_status=="default")
+                        .classed("background-white", row_status!="default")
+                        .append("div")
+                        .classed("text weight-regular centre-aligned", true)
+                        .classed("colour-white", row_status=="default")
+                        .classed("colour-midnight", row_status!="default")
+                        .text(return_comma_formatted_number(d.total_score))
+
+
+                        //col-streak
+                        var viz_container = d3.select(this).append("div")
+                        .classed("col-streak viz", true)
+
+                        // get global font-size for proporionate values
+                        var rem = parseInt($("html").css( "font-size" ))
+
+                        config = {
+                            "width": $(this).find(".viz").width(),
+                            "height": $(this).find(".viz").height(), 
+                            "padding": {
+                                "top": 0*rem,
+                                "right": 1*rem,
+                                "bottom": 0*rem,
+                                "left": 0.1*rem
+                            },
+                            "circle": {
+                                "radius": 0.6*rem,
+                                "stroke_width": 0.06*rem
+                            }
+                        }
+
+                        svg = viz_container.append("svg")
+                        .attr("height", config.height)
+                        .attr("width", config.width)
+                        .attr("viewBox","0 0 " + config.width + " " + config.height)
+
+                        // define max streak length
+                        var xMax = function() {
+                            a  = []
+                            $.each( dataset, function(idx, val) {
+                                //console.log(val.streak)
+                                //console.log(val.streak.length)
+                                a.push(val.streak.length)
+                            })
+                            a = d3.max(a)
+                            return a
+                        } ()
+
+                        //console.log("max length:", xMax)
+
+                        // add data
+                        var data_group = svg.append("g").classed("data-goup", true)
+
+                        //calculate spacing of circles
+                        let s = (function(){
+                        
+                            let s, t = 0.25*rem, r = config.circle.radius; // t = gap for text
+
+                            //calculate how much space is available for circles
+                            let gap = (config.width - (config.padding.left + config.padding.right) - (t+r));
+
+                            if (gap/xMax > r) {
+                                s = r;
+                            } else {
+                                s = gap/xMax                    
+                            }
+
+                            return s;
+
+                        }) ()
+
+                        /*var fills = {
+                            "loss": chump.colours.pink,
+                            "draw": chump.colours.light_blue,
+                            "win": chump.colours.green
+                        }*/
+
+                        console.log("d.streak", d.streak)
+                        console.log("d.streak.length", d.streak.length)
+
+
+                        $.each( d.streak.reverse(), function(idx, val) {
+                            data_group.append("circle")
+                            .attr("cx", config.circle.radius+(idx*s) + config.padding.left)
+                            .attr("cy", config.height/2)
+                            .attr("r", config.circle.radius)
+                            .attr("stroke-width", config.circle.stroke_width)
+                            .style("stroke", chump.colours.midnight_blue)
+                            .classed("fill-green", val=="win")
+                            .classed("fill-pink", val=="loss")
+                            .classed("fill-light-blue", val=="draw")
+                        });
+
+                        let text = data_group.append("text")
+                        .classed("text weight-regular size-small", true)
+                        .attr("x", ((config.circle.radius+((d.streak.length-1)*s) + config.padding.left)*(100/110))+0.75*rem)
+                        .attr("y", config.height/2)
+                        .attr("dy", 0.3*rem)
+                        .style("text-anchor", "start")
+                        .classed("fill-white", true)
+                        .text(d.streak.length)
+                    })
+
+
+                    // footer and logo
+                    var footer = d3.select("#footer-block")
+                    .append("div")
+                    .classed("footer-wrapper", true)
+                    .append("div")
+                    .classed("footer-container", true)
+
+                    var footnote = footer.append("div")
+                    .classed("text weight-regular size-small left-aligned colour-white", true)
+                    .text("Arrows indicate change in rank this GW.")
+
+                    var logo = footer.append("div")
+                    .classed("logo-container", true)
+
+                    styles.add()
+                }
+
+            });
+  </script>
+ </head>
+ <body>
+  <main id="export_me">
+   <section>
+    <div class="page-wrapper">
+     <div class="container">
+      <div id="title-block">
+      </div>
+      <div id="content-block">
+      </div>
+      <div id="footer-block">
+      </div>
+     </div>
+    </div>
+   </section>
+  </main>
+ </body>
+</html>

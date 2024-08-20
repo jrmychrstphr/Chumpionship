@@ -18,7 +18,7 @@
         if (j == 1 && k != 11) { return num + "st"; }
         if (j == 2 && k != 12) { return num + "nd"; }
         if (j == 3 && k != 13) { return num + "rd"; }
-        return num + "th";
+        return num + "th"; 
     }
 
     function return_comma_formatted_number(num) {
@@ -188,7 +188,6 @@
 
 	/* --- League Table --- */
 
-/* --- Results --- */
 	div.league-table-container {
 		display: inline-block;
 	}
@@ -221,6 +220,11 @@
 		padding-right: 0.5rem;
 	}
 
+	div.league-table-container div.table-row div.text-container.col-streak {
+		padding-left: 0.1rem;
+	}
+
+
 	div.league-table-container div.table-row div.text.centre-aligned {
 		width: 100%;
 	}
@@ -250,7 +254,7 @@
 	}
 
 	div.league-table-container div.col-streak {
-		width: calc(6.1rem);
+		width: calc(6.1rem - 0.1rem);
 	}
 
 	div.league-table-container div.change-indicator {
@@ -317,9 +321,13 @@
 
         add : function() {
             
-            d3.selectAll(".text.colour-midnight").style("color", chump.colours.midnight_blue)
             d3.selectAll(".text.colour-white").style("color", "white")
-            //d3.selectAll(".fixture-list-wrapper, .result-list-wrapper, .league-table-wrapper, .legend-item").style("color", chump.colours.midnight_blue)
+            d3.selectAll(".text.colour-blue").style("color", chump.colours.blue)
+            d3.selectAll(".text.colour-light-blue").style("color", chump.colours.light_blue)
+            d3.selectAll(".text.colour-green").style("color", chump.colours.green)
+            d3.selectAll(".text.colour-pink").style("color", chump.colours.pink)
+            d3.selectAll(".text.colour-purple").style("color", chump.purple)
+            d3.selectAll(".text.colour-light-midnight").style("color", chump.colours.light_midnight_blue)
 
             d3.selectAll(".background-white").style("background", "white")
             d3.selectAll(".background-blue").style("background", chump.colours.blue)
@@ -337,7 +345,8 @@
             d3.selectAll("svg .fill-purple").style("fill", chump.purple)
             d3.selectAll("svg .fill-light-midnight").style("fill", chump.colours.light_midnight_blue)
 
-
+            /*
+            //probably depreciated
             d3.selectAll(".result-row .result-color.win").style("background", chump.colours.green)
             d3.selectAll(".result-row .result-color.loss").style("background", chump.colours.pink)
             d3.selectAll(".result-row .result-color.draw").style("background", chump.colours.light_blue)
@@ -352,21 +361,12 @@
             d3.selectAll("div.league-table-container div.table-row-container.position-first .table-column:not(.viz)").style("background", chump.colours.green)
             d3.selectAll("div.league-table-container div.table-row-container.position-prize .table-column:not(.viz").style("background", chump.colours.light_blue)
             d3.selectAll("div.league-table-container div.table-row-container.position-relegation .table-column:not(.viz").style("background", chump.colours.pink)
-
-            //bubble-pack viz
-            d3.selectAll("div.viz svg .colour-gkp").style("fill", chump.colours.purple)
-            d3.selectAll("div.viz svg .colour-def").style("fill", chump.colours.green)
-            d3.selectAll("div.viz svg .colour-mid").style("fill", chump.colours.light_blue)
-            d3.selectAll("div.viz svg .colour-fwd").style("fill", chump.colours.pink)
-            d3.selectAll("div.viz svg .colour-white").style("fill", "white")
-
-            d3.selectAll("div.viz.bubble-pack svg text:not(.colour-gkp):not(.colour-def):not(.colour-mid):not(.colour-fwd):not(.colour-white)").style("fill", chump.colours.midnight_blue)
+            */
 
         }
         
     }
   </script>
-
   <script>
    $( function(){
 
@@ -17333,9 +17333,6 @@
                         	row_status = "default"
                         }
 
-                        //console.log(d)
-                        //console.log(d.league_position_change)
-
                         //col-change
 	                    let change = d3.select(this).append("div")
 	                    .classed("change-indicator", true)
@@ -17358,16 +17355,11 @@
 	                    .classed("colour-white", row_status=="default")
 	                    .classed("colour-midnight", row_status!="default")
 	                    .text(function (d) {
-
-	                    	//console.log(d.team_name)
-	                    	//console.log(d.league_position)
-
                             if ( d.league_position != (i+1)) {
                                 t = "="
                             } else {
                                 t = d.league_position
                             }
-
                             return t
                         })
 
@@ -17449,20 +17441,6 @@
 
                         //console.log("max length:", xMax)
 
-                        /*
-                        let colour;
-
-                        if (d.streak.type === "w") {
-                            colour = chump.colours.green
-                        } else if (d.streak.type === "l") {
-                            colour = chump.colours.pink
-                        } else if (d.streak.type === "d") {
-                            colour = chump.colours.light_blue
-                        } else {
-                            colour = "white"
-                        }
-                        */
-
                         // add data
                         var data_group = svg.append("g").classed("data-goup", true)
 
@@ -17484,11 +17462,11 @@
 
                         }) ()
 
-                        var fills = {
+                        /*var fills = {
                     		"loss": chump.colours.pink,
                     		"draw": chump.colours.light_blue,
                     		"win": chump.colours.green
-                    	}
+                    	}*/
 
                     	console.log("d.streak", d.streak)
                     	console.log("d.streak.length", d.streak.length)
