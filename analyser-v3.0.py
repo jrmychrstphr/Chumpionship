@@ -2,7 +2,7 @@ import json
 import collections
 
 # load database
-season_dir = './seasons/2024'	#edit this to target different seasons
+season_dir = './seasons/2025'	#edit this to target different seasons
 
 database_path = season_dir + '/data/database.json'
 fixtures_path = season_dir + '/data/season_fixture_list.json'
@@ -72,6 +72,7 @@ for item in [x for x in d_fixtures]:
 			'fixture_score_rank': int(i_database[manager_code]['fixture_score_rank_array'][int(item['gw'])-1]),
 			'total_season_score': float(i_database[manager_code]['total_score_array'][int(item['gw'])-1]),
 			'captain': str(i_database[manager_code]['captains_array'][int(item['gw'])-1]),
+			'captain_points': int(i_database[manager_code]['captains_points_array'][int(item['gw'])-1]),
 			'chip_played': str(i_database[manager_code]['chip_played_array'][int(item['gw'])-1]),
 			'transfers_made': int(i_database[manager_code]['transfers_made_array'][int(item['gw'])-1]),
 			'league_pos_after': int(i_database[manager_code]['league_position_array'][int(item['gw'])-1]),
@@ -241,7 +242,7 @@ for gw in range(1,gameweeks_played+1):
 				msg += f" played a {key.title()}"
 
 		else:
-			msg += f"{int(gw_chip_count)} teams played a chip:"
+			msg += f"{written_number(int(gw_chip_count)).title()} teams played a chip:"
 
 			for i,x in enumerate(gw_chip_dict.most_common()):
 				chip_name = str(x[0])
@@ -258,19 +259,99 @@ for gw in range(1,gameweeks_played+1):
 	def msg_captains():
 		msg = f""
 
-		#create a list of gameweek captains
-		c = [x['captain'] for x in d_players if x['gw'] == gw]
+		#Isak (5pts before captain bonus) was the league's most popular skipper, wearing 10 Chumpionship armbands in Week 1. 
+		#M.Salah (14pts), and Haaland (7pts) wore three armbands each; 
+		#while Mateta (1pt), Al-Hamadi (1pt), Solanke (2pts), and B.Fernandes (3pts) wore 1 armband apiece.
 
-		gw_cap_dict = collections.Counter(c)
+		# name: 
+		# score:
+		# occurrances:
+		
 
-		msg += f"GW{gw} captains:"
+		#create a list of gameweek captains data
+		caps_data = []
 
-		for i,x in enumerate(gw_cap_dict.most_common()):
-			player_name = str(x[0].split('(')[0]).strip()
-			val = int(x[1])
+		data = [x for x in d_players if x['gw'] == gw]
 
-			if i != 0: msg += f";"
-			msg += f" {player_name}: {val}"
+		for x in data:
+			dict = {
+				"name": str(x['captain']),
+			}
+
+			if "captain" in x['chip_played'].lower() :
+				dict["score"] = int(x['captain_points']/3)
+			else:
+				dict["score"] = int(x['captain_points']/2)
+
+			caps_data.append(dict)
+
+		# print("caps_data")
+		# print(caps_data)
+
+		result = {}
+		for item in caps_data:
+			name = item['name']
+			if name not in result:
+				result[name] = {'count': 1, **item}
+			else:
+				result[name]['count'] += 1
+
+		caps_data = list(result.values())
+		
+		# Extract unique scores
+		unique_counts = {item['count'] for item in result.values()}
+		unique_counts = sorted(list(unique_counts), reverse=True)
+
+		# print("caps_data")
+		# print(caps_data)
+
+		# print("unique_counts")
+		# print(unique_counts)
+
+		msg += f"{written_number(len(caps_data)).title()} different players were given the armband by Chumpionship teams in Week {gw}. "
+
+		for idx,count in enumerate(unique_counts):
+			matches = [cap for cap in caps_data if cap['count'] == count]
+			matches.sort(key=lambda x: x['score'], reverse=True)
+			# print("count")
+			# print(count)
+			# print("matches")
+			# print(matches)
+			# print(len(matches))
+
+			for i,match in enumerate(matches):
+				name = match['name']
+				score = match['score']
+				msg += f"{name} ({score}pts)"
+
+
+				# add commas if more than one match
+				if len(matches) > 1:
+					if i+2 == len(matches):
+						msg += f", and "
+					elif i+1 == len(matches): 
+						msg += f""
+					else:
+						msg += f", "
+
+			
+			if idx == 0:
+				if len(matches) == 1: 
+					msg += f" was the league's most popular choice"
+				else: 
+					msg += f" were the league's most popular choice"
+						
+				msg += f" – wearing {written_number(count)} armbands"
+			elif count > 1:
+				msg += f" wore {written_number(count)} armbands"
+			else:
+				msg += f" wore {written_number(count)} armband"
+
+
+			if len(matches) > 1:
+				msg += f" each"
+				
+			msg += f". "
 		
 		return msg
 	if msg_captains(): print(msg_captains())
