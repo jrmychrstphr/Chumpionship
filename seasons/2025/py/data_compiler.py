@@ -67,6 +67,7 @@ for item in os.listdir(data_dir_path):
 			"team_name": str(team_name),
 
 			"fixture_score_array": [],
+			"bench_score_array": [],
 			"total_score_array": [],
 			"fixture_opponent_array": fixture_opponent_array,
 			"chip_played_array": [],
@@ -90,6 +91,9 @@ for item in os.listdir(data_dir_path):
 				if "fixture_score" in d:
 					database[manager_code]["fixture_score_array"].append(d["fixture_score"])
 
+				if "points_on_bench" in d:
+					database[manager_code]["bench_score_array"].append(d["points_on_bench"])
+
 				if "overall_total_points" in d:
 					database[manager_code]["total_score_array"].append(d["overall_total_points"])
 
@@ -98,14 +102,6 @@ for item in os.listdir(data_dir_path):
 
 				if "transfers_made" in d:
 					database[manager_code]["transfers_made_array"].append(d["transfers_made"])
-
-				"""
-				if "transfered_in" in d:
-					database[manager_code]["transfered_in_array"].append(d["transfered_in"])
-
-				if "transfered_out" in d:
-					database[manager_code]["transfered_out_array"].append(d["transfered_out"])
-				"""
 
 				if "captain_name" in d:
 					database[manager_code]["captains_array"].append(d["captain_name"])

@@ -81,6 +81,8 @@ for item in [x for x in d_fixtures]:
 			'season_win_count': int(i_database[manager_code]['fixture_result_array'][:int(item['gw'])].count('win')),
 			'season_loss_count': int(i_database[manager_code]['fixture_result_array'][:int(item['gw'])].count('loss')),
 			'season_draw_count': int(i_database[manager_code]['fixture_result_array'][:int(item['gw'])].count('draw')),
+
+			'bench_score': float(i_database[manager_code]['bench_score_array'][int(item['gw'])-1]),
 		}
 
 		#print(f"{temp_dict}")
@@ -259,15 +261,6 @@ for gw in range(1,gameweeks_played+1):
 	def msg_captains():
 		msg = f""
 
-		#Isak (5pts before captain bonus) was the league's most popular skipper, wearing 10 Chumpionship armbands in Week 1. 
-		#M.Salah (14pts), and Haaland (7pts) wore three armbands each; 
-		#while Mateta (1pt), Al-Hamadi (1pt), Solanke (2pts), and B.Fernandes (3pts) wore 1 armband apiece.
-
-		# name: 
-		# score:
-		# occurrances:
-		
-
 		#create a list of gameweek captains data
 		caps_data = []
 
@@ -285,9 +278,6 @@ for gw in range(1,gameweeks_played+1):
 
 			caps_data.append(dict)
 
-		# print("caps_data")
-		# print(caps_data)
-
 		result = {}
 		for item in caps_data:
 			name = item['name']
@@ -302,22 +292,11 @@ for gw in range(1,gameweeks_played+1):
 		unique_counts = {item['count'] for item in result.values()}
 		unique_counts = sorted(list(unique_counts), reverse=True)
 
-		# print("caps_data")
-		# print(caps_data)
-
-		# print("unique_counts")
-		# print(unique_counts)
-
 		msg += f"{written_number(len(caps_data)).title()} different players were given the armband by Chumpionship teams in Week {gw}. "
 
 		for idx,count in enumerate(unique_counts):
 			matches = [cap for cap in caps_data if cap['count'] == count]
 			matches.sort(key=lambda x: x['score'], reverse=True)
-			# print("count")
-			# print(count)
-			# print("matches")
-			# print(matches)
-			# print(len(matches))
 
 			for i,match in enumerate(matches):
 				name = match['name']
@@ -471,6 +450,7 @@ for gw in range(1,gameweeks_played+1):
 		return msg
 	if msg_hiscore(): print(msg_hiscore())
 
+	# biggest winning margin
 	def msg_fixmargin():
 		value = max([x['fixture_margin'] for x in d_players if x['gw'] == gw])
 		results = [x for x in d_players if x['gw'] == gw and x['fixture_margin'] == value]
@@ -496,6 +476,49 @@ for gw in range(1,gameweeks_played+1):
 
 		return msg
 	if msg_fixmargin(): print(msg_fixmargin())
+
+	# most points on bench
+	def msg_benchpts():
+		value = max([x['bench_score'] for x in d_players if x['gw'] == gw])
+		results = [x for x in d_players if x['gw'] == gw and x['bench_score'] == value]
+
+		season_hi = max([x['bench_score'] for x in d_players if x['gw'] <= gw])
+
+		if len(results) == 0:
+			return
+		
+		msg = f""
+
+		# first, list the players
+		for idx, x in enumerate(results):
+			opponent_name = [a['manager_name'] for a in d_players if a['manager_code'] == x['fixture_opponent']][0]
+			msg += f"{x['manager_name']}"
+
+			# add commas if a list of multiple names
+			if len(results) > 1 and idx+1 == len(results):
+				msg += f", and "
+			elif len(results) > 1:
+				msg += f", "
+			else: 
+				msg += f" "
+
+		if len(results) > 2:
+			msg += f"each "
+		elif len(results) == 2:
+			msg += f"both "
+
+		msg += f"left {int(value)}pts on the sidelines in GW{gw}"
+		msg += f" – the biggest bench score of the Round"
+
+		if value == season_hi:
+			msg += f", and of the season so far!"
+		else:
+			msg += f"."
+
+		if len(results) > 1: msg += f"\n"
+
+		return msg
+	if msg_benchpts(): print(msg_benchpts())
 
 	def list_managercodes():
 		results = []
