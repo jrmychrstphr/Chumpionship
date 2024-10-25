@@ -8,8 +8,8 @@ from selenium.webdriver.support.ui import Select
 # start a WebDriver instance
 driver = webdriver.Safari()
 
-# maximizing browser
-driver.maximize_window() 
+# set the browser window size
+driver.set_window_size(2000,2000)
 
 # visit the target page
 page_url = data_dir_path = f"{Path(__file__).parent.parent}/builders/viz-fixture-list.html"
