@@ -158,28 +158,25 @@ for gw in range(1,gameweeks_played+1):
 			return sum([x['fixture_score'] for x in d_players if x['gw'] == gw]) / len([x['fixture_score'] for x in d_players if x['gw'] == gw])
 
 		# build the message
-		msg = f"Round {gw}"
+		msg = f""
 
 		if return_combinedscore_rank(gw) == 1:
-			msg += f" was the highest-scoring week of the season so far."
+			msg += f"Round {gw} was the highest-scoring week of the season so far."
 		
 		elif return_combinedscore_rank(gw) >= len(return_list_combinedscores(gw)) and gw > 2:
-			msg += f" was the lowest-scoring week of the season so far."
+			msg += f"Round {gw} was the lowest-scoring week of the season so far."
 		
 		elif return_combinedscore_rank(gw) <= 5:
-			msg += f" was the {ord(return_combinedscore_rank(gw))} highest-scoring week of the season so far."
+			msg += f"Round {gw} was the {ord(return_combinedscore_rank(gw))} highest-scoring week of the season so far."
 		
 		elif high_low_gw_score_since(gw) and high_low_gw_score_since(gw) > 2:
-			msg += f" was the highest-scoring week for {abs(high_low_gw_score_since(gw))} rounds."
+			msg += f"Round {gw} was the highest-scoring week for {abs(high_low_gw_score_since(gw))} rounds."
 		
 		elif high_low_gw_score_since(gw) and high_low_gw_score_since(gw) < -2:
-			msg += f" was the lowest-scoring week for {abs(high_low_gw_score_since(gw))} rounds."
+			msg += f"Round {gw} was the lowest-scoring week for {abs(high_low_gw_score_since(gw))} rounds."
 
 
-
-
-		
-		msg += f" Chumpionship teams scored a combined {comma_format(int(return_combinedscore(gw)))} points"
+		msg += f"Chumpionship teams scored a combined {comma_format(int(return_combinedscore(gw)))} points"
 		
 		if gw > 1:
 			score_diff = return_combinedscore(gw) - return_combinedscore(gw-1)
@@ -292,7 +289,7 @@ for gw in range(1,gameweeks_played+1):
 		unique_counts = {item['count'] for item in result.values()}
 		unique_counts = sorted(list(unique_counts), reverse=True)
 
-		msg += f"{written_number(len(caps_data)).title()} different players were given the armband by Chumpionship teams in Week {gw}. "
+		msg += f"{written_number(len(caps_data)).title()} PL players were given the armband by Chumpionship teams in Week {gw}. "
 
 		for idx,count in enumerate(unique_counts):
 			matches = [cap for cap in caps_data if cap['count'] == count]
