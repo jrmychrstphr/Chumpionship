@@ -108,6 +108,16 @@ for fixture in d_fixtures:
 
 print(set([x['chip_played'] for x in d_players ]))
 
+#declare boolean masks
+no_chip_played = [x for x in d_players if x['chip_played'] == "None"]
+wildcard_played = [x for x in d_players if x['chip_played'] == "Wildcard"]
+bench_boost_played = [x for x in d_players if x['chip_played'] == "Bench Boost"]
+free_hit_played = [x for x in d_players if x['chip_played'] == "Free Hit"]
+triple_captain_played = [x for x in d_players if x['chip_played'] == "Triple Captain"]
+
+print(f"{len(wildcard_played)} wildcards")
+print(f"{len(no_chip_played)} None")
+
 """
 Chip-free chief (£20) 🙌
 The highest single-week score of the season 
@@ -117,7 +127,7 @@ that is achieved without a chip will earn £20.
 print(f"Chip-free chief (£20)")
 
 #filter to just entries with the chip
-entries = [x for x in d_players if x['chip_played'] == "None"]
+entries = no_chip_played
 
 if len(entries) == 0:
 	print(f"No relevant scores have been set")
@@ -142,7 +152,7 @@ playing a Free Hit chip will win £20.
 print(f"Free Hit hero (£20)")
 
 #filter to just entries with the chip
-entries = [x for x in d_players if x['chip_played'] == "Free Hit"]
+entries = free_hit_played
 
 if len(entries) == 0:
 	print(f"No relevant scores have been set")
@@ -170,7 +180,7 @@ injuries, suspensions and no-shows in your starting XI.
 print(f"Bench Boost Boss")
 
 #filter to just entries with the chip
-entries = [x for x in d_players if x['chip_played'] == "Bench Boost"]
+entries = bench_boost_played
 
 if len(entries) == 0:
 	print(f"No relevant scores have been set")
@@ -199,7 +209,7 @@ healthy and playing!
 print(f"Triple Captain Crown")
 
 #filter to just entries with the chip
-entries = [x for x in d_players if x['chip_played'] == "Triple Captain"]
+entries = triple_captain_played
 
 if len(entries) == 0:
 	print(f"No relevant scores have been set")

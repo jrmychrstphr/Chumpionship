@@ -26,7 +26,7 @@ def open_browser():
 	driver = webdriver.Firefox()
 	print("Browser opened")
 
-	
+
 ###############
 # Close browser #
 
@@ -40,7 +40,7 @@ def scrape():
 
 	for item in os.listdir(data_dir_path):
 		item_filepath = data_dir_path + "/" + item
-		
+	
 		#for each subfolder (ie, for each team)...
 		if os.path.isdir(item_filepath):
 
@@ -56,7 +56,7 @@ def scrape():
 				print("Err - 'player_info.json' not found")
 
 			existing_gameweeks = [x.replace("GW", "").replace(".json", "") for x in list_of_subfolder_contents if x.startswith("GW")]
-			
+		
 			print(f"Scraping data for {manager_name}")
 			print(f"Existing gameweeks: {existing_gameweeks}")
 
@@ -64,7 +64,7 @@ def scrape():
 			table_css_selector = "div.Layout__Main-sc-eg6k6r-1 table.Table-sc-ziussd-1.iPaulP"
 
 
-			
+		
 			# ===== HISTORY PAGE: GW data and Chips =====
 			# Build the url
 			history_page_url = "https://fantasy.premierleague.com/entry/" + manager_code + "/history"
@@ -105,7 +105,7 @@ def scrape():
 				season_data_table = season_data_table
 				season_data_table_rows = season_data_table.select(table_css_selector + " tbody tr")
 				print("Success - season data table located")
-			
+		
 			if len(season_data_table_rows) > 0:
 				print("Success - info found in season data table")
 
@@ -147,7 +147,7 @@ def scrape():
 
 						# push data to data_dict
 						data_dict[str(season_data_gameweek)] = {
-						
+					
 							"points_scored": points_scored,
 							"points_on_bench": points_on_bench,
 							"points_spent": points_spent,
@@ -172,7 +172,7 @@ def scrape():
 				print("No info found in season data table")
 
 
-			
+		
 			##### CHIPS #####
 			#locate table h3 text element 'Chips'
 			chips_data_table = history_page_soup.find("h3", string="Chips")
@@ -186,7 +186,7 @@ def scrape():
 				chips_data_table = chips_data_table
 				chips_data_table_rows = chips_data_table.select(table_css_selector + " tbody tr")
 				print("Success - chips data table located")
-			
+		
 			if len(chips_data_table_rows) > 0:
 				print("Success - info found in chips data table")
 
@@ -262,7 +262,7 @@ def scrape():
 					transfers_history_table = transfers_history_table
 					transfers_history_table_rows = transfers_history_table.select(table_css_selector + " tbody tr")
 					print("Success - transfers data table located")
-				
+			
 				if len(transfers_history_table_rows) > 0:
 					print("Success - info found in transfers data table")
 
@@ -287,8 +287,8 @@ def scrape():
 							#data_dict[transfers_gameweek]["transfered_in"].append(transfered_in)
 							#data_dict[transfers_gameweek]["transfered_out"].append(transfered_out)
 
-			
-			##### SQUAD #####
+		
+			##### SQUAD (AND BENCH BOOST)#####
 			gameweek_anchors = season_data_table.find_all("a")
 
 			for anchor in gameweek_anchors:
@@ -319,6 +319,10 @@ def scrape():
 					print("'List View' button clicked")
 
 					data_table_css_selector = "div.Layout__Main-sc-eg6k6r-1 table.Table-sc-ziussd-1.EntryEventTable__StatsTable-sc-1d2xgo1-1"
+					"""
+					Table-sc-ziussd-1 EntryEventTable__StatsTable-sc-1d2xgo1-1 iPaulP gTOduH
+					Table-sc-ziussd-1 EntryEventTable__StatsTable-sc-1d2xgo1-1 iPaulP gTOduH
+     				"""
 
 					try:
 						print("Waiting for data tables to appear...")
@@ -339,18 +343,19 @@ def scrape():
 						squad_data_tables = squad_page_soup.select(data_table_css_selector)
 						#print(squad_data_tables)
 
+						# check for BB chip play in GW
+						bench_boost_played = str(data_dict[squad_gameweek]["chip_played"]) == "Bench Boost"
+					
+						if bench_boost_played:
+							print(f"Bench Boost played by {manager_name} in GW{squad_gameweek}")
+						
+							#store scores in variables
+							lineup_score, bench_score = 0.0,0.0
+       
 						for idx, table in enumerate(squad_data_tables):
 
-							# squad status
-							if idx == 0: 
-								squad_status = "active"
-							elif idx == 1:
-								squad_status = "benched"
-
 							table_rows = table.select("tbody tr")
-
-							#temp_squad = []
-
+						
 							for row in table_rows:
 
 								row_cells = row.select("td")
@@ -359,12 +364,21 @@ def scrape():
 								player_name = player_information_container[0].select(".ElementInTable__Name-sc-y9xi40-1")[0].get_text()
 								points_scored = str(row_cells[3].get_text())
 
-								#changed to only find captain score and name
+								#Get Captain score and name
 								if len(row_cells[1].select("svg.TableCaptains__StyledCaptain-sc-1ub910p-0")) > 0:									
 									data_dict[squad_gameweek]["captain_name"] = str(player_name)
 									data_dict[squad_gameweek]["captain_score"] = float(points_scored)
-									
-
+								
+								#if BB, add score to appropriate variable
+								if bench_boost_played:
+									if idx == 0:
+										#player in lineup
+										lineup_score += float(points_scored)
+									elif idx == 1:
+										#player on bench
+										bench_score += float(points_scored)
+          
+          
 								"""
 								row_cells = row.select("td")
 
@@ -406,7 +420,7 @@ def scrape():
 									"saves_made": str(row_cells[14].get_text()),
 									"bonus_points_scored": str(row_cells[15].get_text()),
 									"bonus_points_rating": str(row_cells[16].get_text()),
-								
+							
 									"influence": str(row_cells[17].get_text()),
 									"creativity": str(row_cells[18].get_text()),
 									"threat": str(row_cells[19].get_text()),
@@ -420,8 +434,35 @@ def scrape():
 
 								data_dict[squad_gameweek]["squad"].append(temp_player_obj)
 								"""
-
-
+									
+						#check that the calculated scores match the total score 
+						#scraped from the history table
+						if bench_boost_played:
+							history_score = float(data_dict[squad_gameweek]["points_scored"])
+							combined_teampage_score = lineup_score + bench_score
+						
+							if history_score == combined_teampage_score:
+								print(f"Phew! The scores match")
+							else:
+								print(f"Ooops! The scores don't match")
+								print(f"The score on the History page: {history_score}")
+								print(f"=========")
+								print(f"Lineup score: {lineup_score}")
+								print(f"Bench score: {bench_score}")
+								print(f"Combined score: {combined_teampage_score}")
+							
+								print(f"")
+								print(f"Manual input required")
+								#ask for manual input
+								lineup_score = input("Lineup score: ")
+								bench_score = input("Bench score: ")
+						
+							#overwrite data with new data
+							data_dict[squad_gameweek]["points_scored"] = lineup_score
+							data_dict[squad_gameweek]["points_on_bench"] = bench_score
+	
+							print(f"Bench Boost fix processed")
+							print(f"Scores updated")
 
 
 			##### WRITE TO DATABASE #####
