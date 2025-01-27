@@ -22,7 +22,8 @@
             6.0,
             4.0,
             15.0,
-            15.0
+            15.0,
+            16.0
         ],
         "captains_array": [
             "Mateta",
@@ -46,7 +47,8 @@
             "N.Jackson",
             "M.Salah",
             "M.Salah",
-            "De Bruyne"
+            "De Bruyne",
+            "M.Salah"
         ],
         "captains_points_array": [
             2.0,
@@ -70,7 +72,8 @@
             2.0,
             14.0,
             4.0,
-            24.0
+            24.0,
+            16.0
         ],
         "chip_played_array": [
             "None",
@@ -88,6 +91,7 @@
             "None",
             "None",
             "Free Hit",
+            "None",
             "None",
             "None",
             "None",
@@ -118,7 +122,8 @@
             -25.0,
             15.0,
             -16.0,
-            21.0
+            21.0,
+            -6.0
         ],
         "fixture_opponent_array": [
             "220117",
@@ -182,7 +187,8 @@
             "loss",
             "win",
             "loss",
-            "win"
+            "win",
+            "loss"
         ],
         "fixture_score_array": [
             40.0,
@@ -206,7 +212,8 @@
             51.0,
             66.0,
             25.0,
-            54.0
+            54.0,
+            56.0
         ],
         "fixture_score_rank_array": [
             19,
@@ -230,7 +237,8 @@
             18,
             8,
             20,
-            7
+            7,
+            13
         ],
         "fpl_code": "125471",
         "league_points_array": [
@@ -255,7 +263,8 @@
             0,
             3,
             0,
-            3
+            3,
+            0
         ],
         "league_position_array": [
             19,
@@ -279,7 +288,8 @@
             15,
             15,
             16,
-            15
+            15,
+            17
         ],
         "manager_name": "Dan Mclean",
         "team_name": "Ya Kilman Me Man",
@@ -305,6 +315,7 @@
             21,
             24,
             24,
+            27,
             27
         ],
         "total_score_array": [
@@ -329,7 +340,8 @@
             921.0,
             987.0,
             1012.0,
-            1066.0
+            1066.0,
+            1122.0
         ],
         "transfers_made_array": [
             0,
@@ -353,7 +365,8 @@
             0,
             3,
             0,
-            4
+            4,
+            2
         ]
     },
     "2042017": {
@@ -379,6 +392,7 @@
             19.0,
             10.0,
             2.0,
+            0.0,
             0.0
         ],
         "captains_array": [
@@ -398,6 +412,7 @@
             "Palmer",
             "Palmer",
             "Saka",
+            "Palmer",
             "Palmer",
             "Palmer",
             "Palmer",
@@ -427,6 +442,7 @@
             4.0,
             20.0,
             20.0,
+            4.0,
             4.0
         ],
         "chip_played_array": [
@@ -444,6 +460,7 @@
             "None",
             "None",
             "Wildcard",
+            "None",
             "None",
             "None",
             "None",
@@ -475,7 +492,8 @@
             -35.0,
             5.0,
             -15.0,
-            0.0
+            0.0,
+            -17.0
         ],
         "fixture_opponent_array": [
             "2584817",
@@ -539,7 +557,8 @@
             "loss",
             "win",
             "loss",
-            "draw"
+            "draw",
+            "loss"
         ],
         "fixture_score_array": [
             46.0,
@@ -563,7 +582,8 @@
             57.0,
             60.0,
             70.0,
-            64.0
+            64.0,
+            33.0
         ],
         "fixture_score_rank_array": [
             15,
@@ -587,7 +607,8 @@
             16,
             11,
             9,
-            2
+            2,
+            20
         ],
         "fpl_code": "2042017",
         "league_points_array": [
@@ -612,7 +633,8 @@
             0,
             3,
             0,
-            1
+            1,
+            0
         ],
         "league_position_array": [
             15,
@@ -636,6 +658,7 @@
             11,
             10,
             10,
+            13,
             13
         ],
         "manager_name": "Jeremy Harding",
@@ -662,6 +685,7 @@
             25,
             28,
             28,
+            29,
             29
         ],
         "total_score_array": [
@@ -686,7 +710,8 @@
             1050.0,
             1110.0,
             1180.0,
-            1244.0
+            1244.0,
+            1277.0
         ],
         "transfers_made_array": [
             0,
@@ -710,6 +735,7 @@
             1,
             3,
             0,
+            1,
             1
         ]
     },
@@ -736,9 +762,11 @@
             2.0,
             4.0,
             11.0,
-            3.0
+            3.0,
+            5.0
         ],
         "captains_array": [
+            "Haaland",
             "Haaland",
             "Haaland",
             "Haaland",
@@ -784,7 +812,8 @@
             16.0,
             26.0,
             4.0,
-            18.0
+            18.0,
+            24.0
         ],
         "chip_played_array": [
             "None",
@@ -808,7 +837,8 @@
             "None",
             "None",
             "None",
-            "Triple Captain"
+            "Triple Captain",
+            "None"
         ],
         "fixture_margin_array": [
             -9.0,
@@ -832,7 +862,8 @@
             -27.0,
             30.0,
             -22.0,
-            17.0
+            17.0,
+            6.0
         ],
         "fixture_opponent_array": [
             "2292265",
@@ -896,6 +927,7 @@
             "loss",
             "win",
             "loss",
+            "win",
             "win"
         ],
         "fixture_score_array": [
@@ -920,7 +952,8 @@
             65.0,
             92.0,
             53.0,
-            74.0
+            74.0,
+            62.0
         ],
         "fixture_score_rank_array": [
             9,
@@ -944,7 +977,8 @@
             13,
             1,
             15,
-            1
+            1,
+            6
         ],
         "fpl_code": "2048719",
         "league_points_array": [
@@ -969,6 +1003,7 @@
             0,
             3,
             0,
+            3,
             3
         ],
         "league_position_array": [
@@ -993,7 +1028,8 @@
             18,
             17,
             17,
-            17
+            17,
+            16
         ],
         "manager_name": "Richard Walker",
         "team_name": "Atletico de E. Croydon",
@@ -1019,7 +1055,8 @@
             18,
             21,
             21,
-            24
+            24,
+            27
         ],
         "total_score_array": [
             61.0,
@@ -1043,7 +1080,8 @@
             1035.0,
             1127.0,
             1180.0,
-            1254.0
+            1254.0,
+            1316.0
         ],
         "transfers_made_array": [
             0,
@@ -1066,6 +1104,7 @@
             0,
             0,
             4,
+            0,
             0,
             0
         ]
@@ -1093,7 +1132,8 @@
             3.0,
             16.0,
             3.0,
-            15.0
+            15.0,
+            9.0
         ],
         "captains_array": [
             "Isak",
@@ -1117,7 +1157,8 @@
             "M.Salah",
             "M.Salah",
             "Isak",
-            "Isak"
+            "Isak",
+            "M.Salah"
         ],
         "captains_points_array": [
             10.0,
@@ -1141,7 +1182,8 @@
             32.0,
             14.0,
             32.0,
-            4.0
+            4.0,
+            16.0
         ],
         "chip_played_array": [
             "None",
@@ -1165,7 +1207,8 @@
             "None",
             "None",
             "None",
-            "Wildcard"
+            "Wildcard",
+            "None"
         ],
         "fixture_margin_array": [
             20.0,
@@ -1189,7 +1232,8 @@
             19.0,
             -15.0,
             33.0,
-            -21.0
+            -21.0,
+            8.0
         ],
         "fixture_opponent_array": [
             "125471",
@@ -1253,7 +1297,8 @@
             "win",
             "loss",
             "win",
-            "loss"
+            "loss",
+            "win"
         ],
         "fixture_score_array": [
             60.0,
@@ -1277,7 +1322,8 @@
             94.0,
             51.0,
             85.0,
-            34.0
+            34.0,
+            56.0
         ],
         "fixture_score_rank_array": [
             10,
@@ -1301,7 +1347,8 @@
             3,
             17,
             3,
-            15
+            15,
+            13
         ],
         "fpl_code": "220117",
         "league_points_array": [
@@ -1326,7 +1373,8 @@
             3,
             0,
             3,
-            0
+            0,
+            3
         ],
         "league_position_array": [
             7,
@@ -1350,7 +1398,8 @@
             3,
             3,
             3,
-            4
+            4,
+            3
         ],
         "manager_name": "Mike Dove",
         "team_name": "Calafiori Dreamin\u2019",
@@ -1376,7 +1425,8 @@
             39,
             39,
             42,
-            42
+            42,
+            45
         ],
         "total_score_array": [
             60.0,
@@ -1400,7 +1450,8 @@
             1134.0,
             1185.0,
             1270.0,
-            1304.0
+            1304.0,
+            1360.0
         ],
         "transfers_made_array": [
             0,
@@ -1424,7 +1475,8 @@
             1,
             1,
             1,
-            8
+            8,
+            0
         ]
     },
     "2241208": {
@@ -1450,7 +1502,8 @@
             6.0,
             7.0,
             22.0,
-            12.0
+            12.0,
+            15.0
         ],
         "captains_array": [
             "Isak",
@@ -1474,7 +1527,8 @@
             "M.Salah",
             "M.Salah",
             "M.Salah",
-            "Wood"
+            "Wood",
+            "M.Salah"
         ],
         "captains_points_array": [
             10.0,
@@ -1498,7 +1552,8 @@
             32.0,
             14.0,
             4.0,
-            24.0
+            24.0,
+            16.0
         ],
         "chip_played_array": [
             "None",
@@ -1522,6 +1577,7 @@
             "None",
             "None",
             "Bench Boost",
+            "None",
             "None"
         ],
         "fixture_margin_array": [
@@ -1546,7 +1602,8 @@
             25.0,
             5.0,
             5.0,
-            13.0
+            13.0,
+            -10.0
         ],
         "fixture_opponent_array": [
             "2352820",
@@ -1610,7 +1667,8 @@
             "win",
             "win",
             "win",
-            "win"
+            "win",
+            "loss"
         ],
         "fixture_score_array": [
             72.0,
@@ -1634,7 +1692,8 @@
             76.0,
             60.0,
             87.0,
-            51.0
+            51.0,
+            56.0
         ],
         "fixture_score_rank_array": [
             4,
@@ -1658,7 +1717,8 @@
             8,
             11,
             2,
-            9
+            9,
+            13
         ],
         "fpl_code": "2241208",
         "league_points_array": [
@@ -1683,7 +1743,8 @@
             3,
             3,
             3,
-            3
+            3,
+            0
         ],
         "league_position_array": [
             4,
@@ -1707,7 +1768,8 @@
             7,
             6,
             4,
-            3
+            3,
+            5
         ],
         "manager_name": "Kester Mollahan",
         "team_name": "FC Hammer",
@@ -1733,6 +1795,7 @@
             34,
             37,
             40,
+            43,
             43
         ],
         "total_score_array": [
@@ -1757,7 +1820,8 @@
             1034.0,
             1094.0,
             1181.0,
-            1232.0
+            1232.0,
+            1288.0
         ],
         "transfers_made_array": [
             0,
@@ -1781,6 +1845,7 @@
             5,
             0,
             2,
+            1,
             1
         ]
     },
@@ -1807,7 +1872,8 @@
             5.0,
             12.0,
             26.0,
-            11.0
+            11.0,
+            13.0
         ],
         "captains_array": [
             "M.Salah",
@@ -1831,7 +1897,8 @@
             "Palmer",
             "M.Salah",
             "M.Salah",
-            "Palmer"
+            "Palmer",
+            "M.Salah"
         ],
         "captains_points_array": [
             28.0,
@@ -1855,7 +1922,8 @@
             4.0,
             14.0,
             4.0,
-            4.0
+            4.0,
+            16.0
         ],
         "chip_played_array": [
             "None",
@@ -1878,6 +1946,7 @@
             "None",
             "None",
             "Wildcard",
+            "None",
             "None",
             "None"
         ],
@@ -1903,7 +1972,8 @@
             5.0,
             -30.0,
             -33.0,
-            15.0
+            15.0,
+            8.0
         ],
         "fixture_opponent_array": [
             "2048719",
@@ -1967,6 +2037,7 @@
             "win",
             "loss",
             "loss",
+            "win",
             "win"
         ],
         "fixture_score_array": [
@@ -1991,7 +2062,8 @@
             54.0,
             62.0,
             52.0,
-            47.0
+            47.0,
+            57.0
         ],
         "fixture_score_rank_array": [
             5,
@@ -2015,6 +2087,7 @@
             17,
             9,
             16,
+            12,
             12
         ],
         "fpl_code": "2292265",
@@ -2040,6 +2113,7 @@
             3,
             0,
             0,
+            3,
             3
         ],
         "league_position_array": [
@@ -2064,7 +2138,8 @@
             4,
             4,
             6,
-            5
+            5,
+            4
         ],
         "manager_name": "James Stillwell",
         "team_name": "Sorry Nic Jackson",
@@ -2090,7 +2165,8 @@
             38,
             38,
             38,
-            41
+            41,
+            44
         ],
         "total_score_array": [
             70.0,
@@ -2114,7 +2190,8 @@
             1158.0,
             1220.0,
             1272.0,
-            1319.0
+            1319.0,
+            1376.0
         ],
         "transfers_made_array": [
             0,
@@ -2138,7 +2215,8 @@
             1,
             11,
             0,
-            1
+            1,
+            3
         ]
     },
     "2352820": {
@@ -2164,7 +2242,8 @@
             6.0,
             3.0,
             15.0,
-            5.0
+            5.0,
+            4.0
         ],
         "captains_array": [
             "M.Salah",
@@ -2188,6 +2267,7 @@
             "M.Salah",
             "M.Salah",
             "Isak",
+            "M.Salah",
             "M.Salah"
         ],
         "captains_points_array": [
@@ -2212,7 +2292,8 @@
             32.0,
             14.0,
             32.0,
-            6.0
+            6.0,
+            16.0
         ],
         "chip_played_array": [
             "None",
@@ -2221,6 +2302,7 @@
             "None",
             "None",
             "Wildcard",
+            "None",
             "None",
             "None",
             "None",
@@ -2260,7 +2342,8 @@
             28.0,
             -5.0,
             15.0,
-            21.0
+            21.0,
+            5.0
         ],
         "fixture_opponent_array": [
             "2241208",
@@ -2324,6 +2407,7 @@
             "win",
             "loss",
             "win",
+            "win",
             "win"
         ],
         "fixture_score_array": [
@@ -2348,7 +2432,8 @@
             97.0,
             55.0,
             85.0,
-            55.0
+            55.0,
+            72.0
         ],
         "fixture_score_rank_array": [
             7,
@@ -2372,7 +2457,8 @@
             2,
             15,
             3,
-            5
+            5,
+            1
         ],
         "fpl_code": "2352820",
         "league_points_array": [
@@ -2396,6 +2482,7 @@
             3,
             3,
             0,
+            3,
             3,
             3
         ],
@@ -2421,6 +2508,7 @@
             12,
             12,
             12,
+            10,
             10
         ],
         "manager_name": "Ben Carroll",
@@ -2447,7 +2535,8 @@
             24,
             24,
             27,
-            30
+            30,
+            33
         ],
         "total_score_array": [
             68.0,
@@ -2471,7 +2560,8 @@
             1103.0,
             1158.0,
             1243.0,
-            1298.0
+            1298.0,
+            1370.0
         ],
         "transfers_made_array": [
             0,
@@ -2495,7 +2585,8 @@
             3,
             1,
             1,
-            0
+            0,
+            1
         ]
     },
     "2353401": {
@@ -2521,7 +2612,8 @@
             12.0,
             11.0,
             14.0,
-            9.0
+            9.0,
+            11.0
         ],
         "captains_array": [
             "Haaland",
@@ -2534,6 +2626,7 @@
             "Haaland",
             "Haaland",
             "Haaland",
+            "M.Salah",
             "M.Salah",
             "M.Salah",
             "M.Salah",
@@ -2569,7 +2662,8 @@
             32.0,
             14.0,
             4.0,
-            6.0
+            6.0,
+            16.0
         ],
         "chip_played_array": [
             "None",
@@ -2590,6 +2684,7 @@
             "Triple Captain",
             "None",
             "Wildcard",
+            "None",
             "None",
             "None",
             "None",
@@ -2617,7 +2712,8 @@
             28.0,
             19.0,
             26.0,
-            -4.0
+            -4.0,
+            1.0
         ],
         "fixture_opponent_array": [
             "2724690",
@@ -2681,7 +2777,8 @@
             "win",
             "win",
             "win",
-            "loss"
+            "loss",
+            "win"
         ],
         "fixture_score_array": [
             75.0,
@@ -2705,7 +2802,8 @@
             92.0,
             68.0,
             63.0,
-            50.0
+            50.0,
+            62.0
         ],
         "fixture_score_rank_array": [
             2,
@@ -2729,7 +2827,8 @@
             4,
             6,
             10,
-            10
+            10,
+            6
         ],
         "fpl_code": "2353401",
         "league_points_array": [
@@ -2754,7 +2853,8 @@
             3,
             3,
             3,
-            0
+            0,
+            3
         ],
         "league_position_array": [
             2,
@@ -2778,7 +2878,8 @@
             2,
             2,
             1,
-            2
+            2,
+            1
         ],
         "manager_name": "David Steel",
         "team_name": "Admirable Guppies",
@@ -2804,7 +2905,8 @@
             45,
             48,
             51,
-            51
+            51,
+            54
         ],
         "total_score_array": [
             75.0,
@@ -2828,7 +2930,8 @@
             1201.0,
             1269.0,
             1332.0,
-            1382.0
+            1382.0,
+            1444.0
         ],
         "transfers_made_array": [
             0,
@@ -2852,6 +2955,7 @@
             0,
             0,
             3,
+            0,
             0
         ]
     },
@@ -2878,7 +2982,8 @@
             3.0,
             13.0,
             9.0,
-            15.0
+            15.0,
+            5.0
         ],
         "captains_array": [
             "Isak",
@@ -2902,7 +3007,8 @@
             "M.Salah",
             "M.Salah",
             "M.Salah",
-            "Isak"
+            "Isak",
+            "M.Salah"
         ],
         "captains_points_array": [
             10.0,
@@ -2926,7 +3032,8 @@
             32.0,
             14.0,
             4.0,
-            4.0
+            4.0,
+            16.0
         ],
         "chip_played_array": [
             "None",
@@ -2949,6 +3056,7 @@
             "None",
             "None",
             "Wildcard",
+            "None",
             "None",
             "None"
         ],
@@ -2974,7 +3082,8 @@
             -19.0,
             25.0,
             22.0,
-            -16.0
+            -16.0,
+            18.0
         ],
         "fixture_opponent_array": [
             "3084251",
@@ -3038,7 +3147,8 @@
             "loss",
             "win",
             "win",
-            "loss"
+            "loss",
+            "win"
         ],
         "fixture_score_array": [
             58.0,
@@ -3062,7 +3172,8 @@
             75.0,
             86.0,
             75.0,
-            32.0
+            32.0,
+            69.0
         ],
         "fixture_score_rank_array": [
             12,
@@ -3086,7 +3197,8 @@
             10,
             2,
             8,
-            19
+            19,
+            2
         ],
         "fpl_code": "2371151",
         "league_points_array": [
@@ -3111,7 +3223,8 @@
             0,
             3,
             3,
-            0
+            0,
+            3
         ],
         "league_position_array": [
             9,
@@ -3135,7 +3248,8 @@
             16,
             16,
             15,
-            16
+            16,
+            14
         ],
         "manager_name": "Jo Breese",
         "team_name": "Dinoscores",
@@ -3161,7 +3275,8 @@
             19,
             22,
             25,
-            25
+            25,
+            28
         ],
         "total_score_array": [
             58.0,
@@ -3185,7 +3300,8 @@
             1080.0,
             1166.0,
             1241.0,
-            1273.0
+            1273.0,
+            1342.0
         ],
         "transfers_made_array": [
             0,
@@ -3208,6 +3324,7 @@
             1,
             1,
             10,
+            0,
             0,
             0
         ]
@@ -3235,7 +3352,8 @@
             5.0,
             1.0,
             10.0,
-            5.0
+            5.0,
+            9.0
         ],
         "captains_array": [
             "Isak",
@@ -3259,7 +3377,8 @@
             "M.Salah",
             "M.Salah",
             "M.Salah",
-            "Isak"
+            "Isak",
+            "M.Salah"
         ],
         "captains_points_array": [
             10.0,
@@ -3283,7 +3402,8 @@
             32.0,
             14.0,
             4.0,
-            4.0
+            4.0,
+            16.0
         ],
         "chip_played_array": [
             "None",
@@ -3307,7 +3427,8 @@
             "None",
             "None",
             "None",
-            "Wildcard"
+            "Wildcard",
+            "None"
         ],
         "fixture_margin_array": [
             -5.0,
@@ -3331,7 +3452,8 @@
             20.0,
             -8.0,
             -26.0,
-            0.0
+            0.0,
+            1.0
         ],
         "fixture_opponent_array": [
             "4204701",
@@ -3395,7 +3517,8 @@
             "win",
             "loss",
             "loss",
-            "draw"
+            "draw",
+            "win"
         ],
         "fixture_score_array": [
             65.0,
@@ -3419,7 +3542,8 @@
             101.0,
             59.0,
             37.0,
-            64.0
+            64.0,
+            59.0
         ],
         "fixture_score_rank_array": [
             8,
@@ -3443,7 +3567,8 @@
             1,
             13,
             19,
-            2
+            2,
+            10
         ],
         "fpl_code": "2386920",
         "league_points_array": [
@@ -3468,7 +3593,8 @@
             3,
             0,
             0,
-            1
+            1,
+            3
         ],
         "league_position_array": [
             12,
@@ -3492,7 +3618,8 @@
             5,
             8,
             8,
-            8
+            8,
+            7
         ],
         "manager_name": "Ben Rachell",
         "team_name": "Benno Athletic",
@@ -3518,7 +3645,8 @@
             34,
             34,
             34,
-            35
+            35,
+            38
         ],
         "total_score_array": [
             65.0,
@@ -3542,7 +3670,8 @@
             1161.0,
             1220.0,
             1257.0,
-            1321.0
+            1321.0,
+            1380.0
         ],
         "transfers_made_array": [
             0,
@@ -3566,7 +3695,8 @@
             2,
             1,
             0,
-            15
+            15,
+            2
         ]
     },
     "2584817": {
@@ -3592,6 +3722,7 @@
             2.0,
             8.0,
             3.0,
+            3.0,
             3.0
         ],
         "captains_array": [
@@ -3613,6 +3744,7 @@
             "Saka",
             "Saka",
             "Palmer",
+            "M.Salah",
             "M.Salah",
             "M.Salah",
             "M.Salah",
@@ -3640,7 +3772,8 @@
             32.0,
             14.0,
             4.0,
-            6.0
+            6.0,
+            16.0
         ],
         "chip_played_array": [
             "None",
@@ -3662,6 +3795,7 @@
             "None",
             "None",
             "Wildcard",
+            "None",
             "None",
             "None",
             "None"
@@ -3688,7 +3822,8 @@
             -20.0,
             -5.0,
             24.0,
-            -6.0
+            -6.0,
+            10.0
         ],
         "fixture_opponent_array": [
             "2042017",
@@ -3752,7 +3887,8 @@
             "loss",
             "loss",
             "win",
-            "loss"
+            "loss",
+            "win"
         ],
         "fixture_score_array": [
             60.0,
@@ -3776,7 +3912,8 @@
             81.0,
             55.0,
             84.0,
-            33.0
+            33.0,
+            66.0
         ],
         "fixture_score_rank_array": [
             10,
@@ -3800,7 +3937,8 @@
             7,
             15,
             5,
-            16
+            16,
+            4
         ],
         "fpl_code": "2584817",
         "league_points_array": [
@@ -3825,7 +3963,8 @@
             0,
             0,
             3,
-            0
+            0,
+            3
         ],
         "league_position_array": [
             7,
@@ -3845,6 +3984,7 @@
             20,
             20,
             20,
+            19,
             19,
             19,
             19,
@@ -3875,7 +4015,8 @@
             15,
             15,
             18,
-            18
+            18,
+            21
         ],
         "total_score_array": [
             60.0,
@@ -3899,7 +4040,8 @@
             1004.0,
             1059.0,
             1143.0,
-            1176.0
+            1176.0,
+            1242.0
         ],
         "transfers_made_array": [
             0,
@@ -3923,7 +4065,8 @@
             6,
             2,
             0,
-            0
+            0,
+            3
         ]
     },
     "2724690": {
@@ -3949,7 +4092,8 @@
             1.0,
             4.0,
             16.0,
-            9.0
+            9.0,
+            7.0
         ],
         "captains_array": [
             "Isak",
@@ -3973,7 +4117,8 @@
             "M.Salah",
             "M.Salah",
             "Isak",
-            "Isak"
+            "Isak",
+            "M.Salah"
         ],
         "captains_points_array": [
             10.0,
@@ -3997,7 +4142,8 @@
             32.0,
             14.0,
             32.0,
-            4.0
+            4.0,
+            16.0
         ],
         "chip_played_array": [
             "None",
@@ -4008,6 +4154,7 @@
             "None",
             "None",
             "Wildcard",
+            "None",
             "None",
             "None",
             "None",
@@ -4045,7 +4192,8 @@
             -13.0,
             -19.0,
             -20.0,
-            -22.0
+            -22.0,
+            -1.0
         ],
         "fixture_opponent_array": [
             "2353401",
@@ -4109,6 +4257,7 @@
             "loss",
             "loss",
             "loss",
+            "loss",
             "loss"
         ],
         "fixture_score_array": [
@@ -4133,7 +4282,8 @@
             63.0,
             49.0,
             56.0,
-            33.0
+            33.0,
+            58.0
         ],
         "fixture_score_rank_array": [
             13,
@@ -4157,7 +4307,8 @@
             15,
             19,
             14,
-            16
+            16,
+            11
         ],
         "fpl_code": "2724690",
         "league_points_array": [
@@ -4179,6 +4330,7 @@
             0,
             3,
             3,
+            0,
             0,
             0,
             0,
@@ -4206,7 +4358,8 @@
             10,
             11,
             11,
-            14
+            14,
+            15
         ],
         "manager_name": "Jon Lescott",
         "team_name": "Hammer It Home",
@@ -4228,6 +4381,7 @@
             21,
             21,
             24,
+            27,
             27,
             27,
             27,
@@ -4256,7 +4410,8 @@
             1150.0,
             1199.0,
             1255.0,
-            1288.0
+            1288.0,
+            1346.0
         ],
         "transfers_made_array": [
             0,
@@ -4280,7 +4435,8 @@
             0,
             2,
             2,
-            1
+            1,
+            0
         ]
     },
     "2762974": {
@@ -4306,7 +4462,8 @@
             0.0,
             2.0,
             6.0,
-            16.0
+            16.0,
+            2.0
         ],
         "captains_array": [
             "Al-Hamadi",
@@ -4330,7 +4487,8 @@
             "M.Salah",
             "M.Salah",
             "M.Salah",
-            "Wood"
+            "Wood",
+            "Isak"
         ],
         "captains_points_array": [
             2.0,
@@ -4354,7 +4512,8 @@
             32.0,
             14.0,
             4.0,
-            24.0
+            24.0,
+            26.0
         ],
         "chip_played_array": [
             "None",
@@ -4378,7 +4537,8 @@
             "None",
             "None",
             "None",
-            "None"
+            "None",
+            "Bench Boost"
         ],
         "fixture_margin_array": [
             2.0,
@@ -4402,7 +4562,8 @@
             27.0,
             7.0,
             -29.0,
-            22.0
+            22.0,
+            -1.0
         ],
         "fixture_opponent_array": [
             "917048",
@@ -4466,7 +4627,8 @@
             "win",
             "win",
             "loss",
-            "win"
+            "win",
+            "loss"
         ],
         "fixture_score_array": [
             48.0,
@@ -4490,7 +4652,8 @@
             66.0,
             82.0,
             62.0,
-            55.0
+            55.0,
+            61.0
         ],
         "fixture_score_rank_array": [
             14,
@@ -4514,7 +4677,8 @@
             12,
             3,
             11,
-            5
+            5,
+            8
         ],
         "fpl_code": "2762974",
         "league_points_array": [
@@ -4539,7 +4703,8 @@
             3,
             3,
             0,
-            3
+            3,
+            0
         ],
         "league_position_array": [
             10,
@@ -4563,7 +4728,8 @@
             1,
             1,
             2,
-            1
+            1,
+            2
         ],
         "manager_name": "David Grice",
         "team_name": "Renford Rejects",
@@ -4589,6 +4755,7 @@
             48,
             51,
             51,
+            54,
             54
         ],
         "total_score_array": [
@@ -4613,7 +4780,8 @@
             1155.0,
             1237.0,
             1299.0,
-            1354.0
+            1354.0,
+            1415.0
         ],
         "transfers_made_array": [
             0,
@@ -4637,7 +4805,8 @@
             3,
             1,
             1,
-            1
+            1,
+            0
         ]
     },
     "3084251": {
@@ -4663,6 +4832,7 @@
             8.0,
             5.0,
             8.0,
+            3.0,
             3.0
         ],
         "captains_array": [
@@ -4686,6 +4856,7 @@
             "Palmer",
             "Palmer",
             "Palmer",
+            "M.Salah",
             "M.Salah",
             "M.Salah"
         ],
@@ -4711,9 +4882,11 @@
             4.0,
             20.0,
             4.0,
-            6.0
+            6.0,
+            16.0
         ],
         "chip_played_array": [
+            "None",
             "None",
             "None",
             "None",
@@ -4759,7 +4932,8 @@
             -27.0,
             -25.0,
             11.0,
-            -21.0
+            -21.0,
+            -8.0
         ],
         "fixture_opponent_array": [
             "2371151",
@@ -4823,6 +4997,7 @@
             "loss",
             "loss",
             "win",
+            "loss",
             "loss"
         ],
         "fixture_score_array": [
@@ -4847,7 +5022,8 @@
             39.0,
             61.0,
             58.0,
-            33.0
+            33.0,
+            49.0
         ],
         "fixture_score_rank_array": [
             17,
@@ -4871,7 +5047,8 @@
             20,
             10,
             13,
-            16
+            16,
+            18
         ],
         "fpl_code": "3084251",
         "league_points_array": [
@@ -4896,6 +5073,7 @@
             0,
             0,
             3,
+            0,
             0
         ],
         "league_position_array": [
@@ -4916,6 +5094,7 @@
             18,
             18,
             18,
+            20,
             20,
             20,
             20,
@@ -4946,6 +5125,7 @@
             14,
             14,
             17,
+            17,
             17
         ],
         "total_score_array": [
@@ -4970,7 +5150,8 @@
             853.0,
             914.0,
             972.0,
-            1005.0
+            1005.0,
+            1054.0
         ],
         "transfers_made_array": [
             0,
@@ -4994,7 +5175,8 @@
             2,
             1,
             1,
-            0
+            0,
+            2
         ]
     },
     "4004226": {
@@ -5020,7 +5202,8 @@
             1.0,
             -1.0,
             20.0,
-            2.0
+            2.0,
+            1.0
         ],
         "captains_array": [
             "Isak",
@@ -5044,6 +5227,7 @@
             "M.Salah",
             "M.Salah",
             "M.Salah",
+            "Isak",
             "Isak"
         ],
         "captains_points_array": [
@@ -5068,7 +5252,8 @@
             32.0,
             14.0,
             4.0,
-            4.0
+            4.0,
+            26.0
         ],
         "chip_played_array": [
             "None",
@@ -5092,7 +5277,8 @@
             "None",
             "None",
             "None",
-            "None"
+            "None",
+            "Wildcard"
         ],
         "fixture_margin_array": [
             -33.0,
@@ -5116,7 +5302,8 @@
             27.0,
             -16.0,
             -11.0,
-            4.0
+            4.0,
+            5.0
         ],
         "fixture_opponent_array": [
             "4530389",
@@ -5180,6 +5367,7 @@
             "win",
             "loss",
             "loss",
+            "win",
             "win"
         ],
         "fixture_score_array": [
@@ -5204,7 +5392,8 @@
             92.0,
             58.0,
             47.0,
-            54.0
+            54.0,
+            66.0
         ],
         "fixture_score_rank_array": [
             18,
@@ -5228,7 +5417,8 @@
             4,
             14,
             17,
-            7
+            7,
+            4
         ],
         "fpl_code": "4004226",
         "league_points_array": [
@@ -5253,6 +5443,7 @@
             3,
             0,
             0,
+            3,
             3
         ],
         "league_position_array": [
@@ -5275,6 +5466,7 @@
             19,
             18,
             17,
+            18,
             18,
             18,
             18
@@ -5303,7 +5495,8 @@
             18,
             18,
             18,
-            21
+            21,
+            24
         ],
         "total_score_array": [
             41.0,
@@ -5327,7 +5520,8 @@
             1069.0,
             1127.0,
             1174.0,
-            1228.0
+            1228.0,
+            1294.0
         ],
         "transfers_made_array": [
             0,
@@ -5351,7 +5545,8 @@
             2,
             0,
             0,
-            3
+            3,
+            6
         ]
     },
     "4070813": {
@@ -5377,6 +5572,7 @@
             11.0,
             10.0,
             3.0,
+            2.0,
             2.0
         ],
         "captains_array": [
@@ -5396,6 +5592,7 @@
             "M.Salah",
             "M.Salah",
             "M.Salah",
+            "Enzo",
             "Enzo",
             "Enzo",
             "Enzo",
@@ -5425,13 +5622,15 @@
             2.0,
             2.0,
             4.0,
-            0.0
+            0.0,
+            4.0
         ],
         "chip_played_array": [
             "None",
             "Free Hit",
             "None",
             "Wildcard",
+            "None",
             "None",
             "None",
             "None",
@@ -5473,7 +5672,8 @@
             -5.0,
             -6.0,
             16.0,
-            6.0
+            6.0,
+            -5.0
         ],
         "fixture_opponent_array": [
             "72499",
@@ -5537,7 +5737,8 @@
             "loss",
             "loss",
             "win",
-            "win"
+            "win",
+            "loss"
         ],
         "fixture_score_array": [
             27.0,
@@ -5561,7 +5762,8 @@
             49.0,
             45.0,
             41.0,
-            39.0
+            39.0,
+            67.0
         ],
         "fixture_score_rank_array": [
             20,
@@ -5585,7 +5787,8 @@
             19,
             20,
             18,
-            13
+            13,
+            3
         ],
         "fpl_code": "4070813",
         "league_points_array": [
@@ -5610,7 +5813,8 @@
             0,
             0,
             3,
-            3
+            3,
+            0
         ],
         "league_position_array": [
             20,
@@ -5634,6 +5838,7 @@
             14,
             14,
             14,
+            12,
             12
         ],
         "manager_name": "Sammy Murphy",
@@ -5660,6 +5865,7 @@
             24,
             24,
             27,
+            30,
             30
         ],
         "total_score_array": [
@@ -5684,7 +5890,8 @@
             1038.0,
             1083.0,
             1124.0,
-            1163.0
+            1163.0,
+            1230.0
         ],
         "transfers_made_array": [
             0,
@@ -5704,6 +5911,7 @@
             0,
             5,
             1,
+            0,
             0,
             0,
             0,
@@ -5734,7 +5942,8 @@
             15.0,
             10.0,
             6.0,
-            5.0
+            5.0,
+            7.0
         ],
         "captains_array": [
             "Isak",
@@ -5756,6 +5965,7 @@
             "M.Salah",
             "M.Salah",
             "Palmer",
+            "M.Salah",
             "M.Salah",
             "M.Salah",
             "M.Salah"
@@ -5782,12 +5992,14 @@
             4.0,
             14.0,
             4.0,
-            6.0
+            6.0,
+            16.0
         ],
         "chip_played_array": [
             "None",
             "None",
             "Wildcard",
+            "None",
             "None",
             "None",
             "None",
@@ -5830,7 +6042,8 @@
             -28.0,
             8.0,
             -24.0,
-            -13.0
+            -13.0,
+            17.0
         ],
         "fixture_opponent_array": [
             "2386920",
@@ -5894,7 +6107,8 @@
             "loss",
             "win",
             "loss",
-            "loss"
+            "loss",
+            "win"
         ],
         "fixture_score_array": [
             70.0,
@@ -5918,7 +6132,8 @@
             69.0,
             67.0,
             60.0,
-            38.0
+            38.0,
+            50.0
         ],
         "fixture_score_rank_array": [
             5,
@@ -5942,7 +6157,8 @@
             11,
             7,
             12,
-            14
+            14,
+            17
         ],
         "fpl_code": "4204701",
         "league_points_array": [
@@ -5967,7 +6183,8 @@
             0,
             3,
             0,
-            0
+            0,
+            3
         ],
         "league_position_array": [
             5,
@@ -5988,6 +6205,7 @@
             8,
             9,
             8,
+            9,
             9,
             9,
             9,
@@ -6017,7 +6235,8 @@
             30,
             33,
             33,
-            33
+            33,
+            36
         ],
         "total_score_array": [
             70.0,
@@ -6041,7 +6260,8 @@
             1158.0,
             1225.0,
             1285.0,
-            1323.0
+            1323.0,
+            1373.0
         ],
         "transfers_made_array": [
             0,
@@ -6065,7 +6285,8 @@
             1,
             0,
             0,
-            3
+            3,
+            2
         ]
     },
     "4530389": {
@@ -6091,7 +6312,8 @@
             16.0,
             10.0,
             6.0,
-            5.0
+            5.0,
+            15.0
         ],
         "captains_array": [
             "Isak",
@@ -6115,7 +6337,8 @@
             "M.Salah",
             "M.Salah",
             "Isak",
-            "Isak"
+            "Isak",
+            "M.Salah"
         ],
         "captains_points_array": [
             10.0,
@@ -6139,13 +6362,15 @@
             32.0,
             14.0,
             32.0,
-            4.0
+            4.0,
+            16.0
         ],
         "chip_played_array": [
             "None",
             "None",
             "None",
             "Wildcard",
+            "None",
             "None",
             "None",
             "None",
@@ -6187,7 +6412,8 @@
             13.0,
             16.0,
             29.0,
-            -15.0
+            -15.0,
+            -18.0
         ],
         "fixture_opponent_array": [
             "4004226",
@@ -6251,6 +6477,7 @@
             "win",
             "win",
             "win",
+            "loss",
             "loss"
         ],
         "fixture_score_array": [
@@ -6275,7 +6502,8 @@
             76.0,
             74.0,
             91.0,
-            32.0
+            32.0,
+            51.0
         ],
         "fixture_score_rank_array": [
             3,
@@ -6299,7 +6527,8 @@
             8,
             5,
             1,
-            19
+            19,
+            16
         ],
         "fpl_code": "4530389",
         "league_points_array": [
@@ -6324,6 +6553,7 @@
             3,
             3,
             3,
+            0,
             0
         ],
         "league_position_array": [
@@ -6348,6 +6578,7 @@
             8,
             7,
             5,
+            6,
             6
         ],
         "manager_name": "Chris Towers",
@@ -6374,6 +6605,7 @@
             33,
             36,
             39,
+            39,
             39
         ],
         "total_score_array": [
@@ -6398,7 +6630,8 @@
             1092.0,
             1166.0,
             1257.0,
-            1289.0
+            1289.0,
+            1340.0
         ],
         "transfers_made_array": [
             0,
@@ -6419,6 +6652,7 @@
             1,
             0,
             2,
+            1,
             1,
             1,
             1,
@@ -6448,7 +6682,8 @@
             2.0,
             1.0,
             9.0,
-            2.0
+            2.0,
+            14.0
         ],
         "captains_array": [
             "M.Salah",
@@ -6472,7 +6707,8 @@
             "M.Salah",
             "M.Salah",
             "Palmer",
-            "Palmer"
+            "Palmer",
+            "M.Salah"
         ],
         "captains_points_array": [
             28.0,
@@ -6496,7 +6732,8 @@
             32.0,
             14.0,
             20.0,
-            4.0
+            4.0,
+            16.0
         ],
         "chip_played_array": [
             "None",
@@ -6504,6 +6741,7 @@
             "None",
             "Wildcard",
             "Free Hit",
+            "None",
             "None",
             "None",
             "None",
@@ -6544,7 +6782,8 @@
             35.0,
             6.0,
             -5.0,
-            -17.0
+            -17.0,
+            -8.0
         ],
         "fixture_opponent_array": [
             "4070813",
@@ -6608,6 +6847,7 @@
             "win",
             "win",
             "loss",
+            "loss",
             "loss"
         ],
         "fixture_score_array": [
@@ -6632,7 +6872,8 @@
             92.0,
             51.0,
             82.0,
-            57.0
+            57.0,
+            48.0
         ],
         "fixture_score_rank_array": [
             1,
@@ -6656,7 +6897,8 @@
             4,
             17,
             6,
-            4
+            4,
+            19
         ],
         "fpl_code": "72499",
         "league_points_array": [
@@ -6680,6 +6922,7 @@
             0,
             3,
             3,
+            0,
             0,
             0
         ],
@@ -6705,7 +6948,8 @@
             6,
             5,
             7,
-            7
+            7,
+            8
         ],
         "manager_name": "Darren Baker",
         "team_name": "Old Havertz Kai Hard",
@@ -6729,6 +6973,7 @@
             31,
             31,
             34,
+            37,
             37,
             37,
             37
@@ -6755,7 +7000,8 @@
             1130.0,
             1181.0,
             1263.0,
-            1320.0
+            1320.0,
+            1368.0
         ],
         "transfers_made_array": [
             0,
@@ -6779,7 +7025,8 @@
             1,
             0,
             2,
-            0
+            0,
+            3
         ]
     },
     "917048": {
@@ -6805,7 +7052,8 @@
             13.0,
             3.0,
             14.0,
-            6.0
+            6.0,
+            9.0
         ],
         "captains_array": [
             "Isak",
@@ -6828,6 +7076,7 @@
             "Palmer",
             "Palmer",
             "M.Salah",
+            "Isak",
             "Isak",
             "Isak"
         ],
@@ -6853,7 +7102,8 @@
             4.0,
             14.0,
             32.0,
-            4.0
+            4.0,
+            26.0
         ],
         "chip_played_array": [
             "None",
@@ -6865,6 +7115,7 @@
             "None",
             "None",
             "Wildcard",
+            "None",
             "None",
             "None",
             "None",
@@ -6901,7 +7152,8 @@
             -28.0,
             -7.0,
             20.0,
-            16.0
+            16.0,
+            -5.0
         ],
         "fixture_opponent_array": [
             "2762974",
@@ -6965,7 +7217,8 @@
             "loss",
             "loss",
             "win",
-            "win"
+            "win",
+            "loss"
         ],
         "fixture_score_array": [
             46.0,
@@ -6989,7 +7242,8 @@
             64.0,
             75.0,
             76.0,
-            48.0
+            48.0,
+            61.0
         ],
         "fixture_score_rank_array": [
             15,
@@ -7013,7 +7267,8 @@
             14,
             4,
             7,
-            11
+            11,
+            8
         ],
         "fpl_code": "917048",
         "league_points_array": [
@@ -7038,7 +7293,8 @@
             0,
             0,
             3,
-            3
+            3,
+            0
         ],
         "league_position_array": [
             15,
@@ -7062,6 +7318,7 @@
             13,
             12,
             13,
+            11,
             11
         ],
         "manager_name": "Chris Marsh",
@@ -7088,6 +7345,7 @@
             24,
             24,
             27,
+            30,
             30
         ],
         "total_score_array": [
@@ -7112,7 +7370,8 @@
             1083.0,
             1158.0,
             1234.0,
-            1282.0
+            1282.0,
+            1343.0
         ],
         "transfers_made_array": [
             0,
@@ -7136,7 +7395,8 @@
             2,
             0,
             0,
-            3
+            3,
+            0
         ]
     }
 }

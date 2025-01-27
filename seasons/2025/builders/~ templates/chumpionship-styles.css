@@ -177,6 +177,10 @@
 		background-image: url("assets/chip-wildcard.svg");
 	}
 
+	div.result-list-container div.chip-indicator.assistant-manager {
+		background-image: url("assets/chip-assistant-manager.svg");
+	}
+
 	div.result-list-container div.result-container div.result-row div.chip-indicator.home {
 		left: calc(-1.25rem - 0.2rem);
 	}

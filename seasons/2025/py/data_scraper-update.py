@@ -56,14 +56,13 @@ def scrape():
 				print("Err - 'player_info.json' not found")
 
 			existing_gameweeks = [x.replace("GW", "").replace(".json", "") for x in list_of_subfolder_contents if x.startswith("GW")]
+			existing_gameweeks.sort()
 		
 			print(f"Scraping data for {manager_name}")
 			print(f"Existing gameweeks: {existing_gameweeks}")
 
 			# ===== Edit this if needed =====
 			table_css_selector = "div.Layout__Main-sc-eg6k6r-1 table.Table-sc-ziussd-1.iPaulP"
-
-
 		
 			# ===== HISTORY PAGE: GW data and Chips =====
 			# Build the url
@@ -126,7 +125,7 @@ def scrape():
 						"""
 						0: gw
 						1: overall rank
-						2: 
+						2: movement in rank
 						3: overall points
 						4: gameweek rank
 						5: gameweek points
@@ -154,16 +153,8 @@ def scrape():
 							"fixture_score": fixture_score,
 							"squad_value": squad_value,
 							"overall_total_points": overall_total_points,
-
 							"chip_played": "None",
-
 							"transfers_made": 0,
-							#"transfered_in": [],
-							#"transfered_out": [],
-
-							#"squad": [],
-							#"vice_captain": "",
-							#"captain": "",
 							"captain_name": "",
 							"captain_score": 0,
 
@@ -281,12 +272,6 @@ def scrape():
 							# add 1 to the total transfers made in that gamweek
 							data_dict[transfers_gameweek]["transfers_made"] += 1
 
-							#transfered_in = row_contents_array[1].get_text()
-							#transfered_out = row_contents_array[2].get_text()
-
-							#data_dict[transfers_gameweek]["transfered_in"].append(transfered_in)
-							#data_dict[transfers_gameweek]["transfered_out"].append(transfered_out)
-
 		
 			##### SQUAD (AND BENCH BOOST)#####
 			gameweek_anchors = season_data_table.find_all("a")
@@ -305,10 +290,11 @@ def scrape():
 					try:
 						#wait for the 'List View' button' to be clickable
 						WebDriverWait(driver, 10).until(
-						EC.element_to_be_clickable((By.CSS_SELECTOR, "div.Layout__Main-sc-eg6k6r-1 a.Tab__TabLink-sc-19t48gi-1.jIjLCn"))
+						#EC.element_to_be_clickable((By.CSS_SELECTOR, "div.Layout__Main-sc-eg6k6r-1 a.Tab__TabLink-sc-19t48gi-1.jIjLCn"))
+						EC.element_to_be_clickable((By.CSS_SELECTOR, "div.Layout__Main-sc-eg6k6r-1 a.Tab__TabLink-sc-19t48gi-1.lTOXM"))
 						)
 					except:
-						print("Err - page failed to load")
+						print("Err - 'List View' button not found")
 						exit()
 					else:
 						print("Success - page loaded")
@@ -319,10 +305,9 @@ def scrape():
 					print("'List View' button clicked")
 
 					data_table_css_selector = "div.Layout__Main-sc-eg6k6r-1 table.Table-sc-ziussd-1.EntryEventTable__StatsTable-sc-1d2xgo1-1"
+
 					"""
-					Table-sc-ziussd-1 EntryEventTable__StatsTable-sc-1d2xgo1-1 iPaulP gTOduH
-					Table-sc-ziussd-1 EntryEventTable__StatsTable-sc-1d2xgo1-1 iPaulP gTOduH
-     				"""
+					"""
 
 					try:
 						print("Waiting for data tables to appear...")
@@ -351,7 +336,7 @@ def scrape():
 						
 							#store scores in variables
 							lineup_score, bench_score = 0.0,0.0
-       
+
 						for idx, table in enumerate(squad_data_tables):
 
 							table_rows = table.select("tbody tr")
@@ -365,7 +350,7 @@ def scrape():
 								points_scored = str(row_cells[3].get_text())
 
 								#Get Captain score and name
-								if len(row_cells[1].select("svg.TableCaptains__StyledCaptain-sc-1ub910p-0")) > 0:									
+								if len(row_cells[1].select("svg.TableCaptains__StyledCaptain-sc-1ub910p-0")) > 0:						
 									data_dict[squad_gameweek]["captain_name"] = str(player_name)
 									data_dict[squad_gameweek]["captain_score"] = float(points_scored)
 								
@@ -377,8 +362,7 @@ def scrape():
 									elif idx == 1:
 										#player on bench
 										bench_score += float(points_scored)
-          
-          
+
 								"""
 								row_cells = row.select("td")
 
