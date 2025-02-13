@@ -176,7 +176,7 @@ for gw in range(1,gameweeks_played+1):
 			msg += f"Round {gw} was the lowest-scoring week for {abs(high_low_gw_score_since(gw))} rounds."
 
 
-		msg += f"Chumpionship teams scored a combined {comma_format(int(return_combinedscore(gw)))} points"
+		msg += f" Chumpionship teams scored a combined {comma_format(int(return_combinedscore(gw)))} points"
 		
 		if gw > 1:
 			score_diff = return_combinedscore(gw) - return_combinedscore(gw-1)
@@ -587,6 +587,3 @@ for gw in range(1,gameweeks_played+1):
 
 
 	if msg_pwscores(): print(msg_pwscores())
-
-
-
