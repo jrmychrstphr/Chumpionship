@@ -1,14 +1,14 @@
 {
     "captain_name": "M.Salah",
     "captain_score": 40.0,
-    "chip_played": "None",
+    "chip_played": "Assistant Manager",
     "fixture_score": 108.0,
     "overall_total_points": 1616.0,
-    "points_assistant_manager": 0,
+    "points_assistant_manager": 14.0,
     "points_on_bench": 21.0,
     "points_scored": 108.0,
     "points_spent": 0.0,
-    "points_starting_xi": 108.0,
+    "points_starting_xi": 94.0,
     "squad_value": 104.7,
     "transfers_made": 2
 }
