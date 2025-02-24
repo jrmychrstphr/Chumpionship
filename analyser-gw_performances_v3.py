@@ -236,20 +236,21 @@ for gw in range(1,gameweeks_played+1):
 
 		if len(gw_chip_dict) == 1:
 			for key,val in gw_chip_dict.items():
-				msg += f"{written_number(int(val)).title()} team"
+				msg += f"{written_number(int(val)).title()} gaffer"
 				if val > 1: msg += f"s"
 				msg += f" played a {key.title()}"
 
 		else:
-			msg += f"{written_number(int(gw_chip_count)).title()} teams played a chip:"
+			msg += f"{written_number(int(gw_chip_count)).title()} chips were active:"
 
 			for i,x in enumerate(gw_chip_dict.most_common()):
 				chip_name = str(x[0])
 				val = int(x[1])
 
-				if i != 0: msg += f";"
-				msg += f" {chip_name}: {val}"
-
+				if i != 0: msg += f","
+				msg += f" {written_number(int(val)).title()} {chip_name}"
+				if val > 1:
+					msg += f"s"
 
 		return msg
 	if msg_chips(): print(msg_chips())
