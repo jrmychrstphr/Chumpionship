@@ -187,7 +187,7 @@ if len(entries) == 0:
 else:
 	print(f"{len(entries)} 'Free Hit' scores have been set so far...")
 	top_score = max([x['bench_score'] for x in entries])
-	print(f"The highest 'Free Hit' score set so far is {int(top_score)}pts")
+	print(f"The highest 'Bench Boost' score set so far is {int(top_score)}pts")
 	results = [x for x in entries if x['bench_score'] == top_score]
 	print(f"This score has been met {len(results)} times:")	
 	for x in results:
